@@ -1,0 +1,29 @@
+20:19:30 **** Build of configuration Debug for project LibFreeRTOS_8.2.3 ****
+make -r all 
+make: No se hace nada para «all».
+20:19:31 **** Build of configuration Debug for project cr_dsplib_cm3 ****
+make -r all 
+make: No se hace nada para «all».
+20:19:31 **** Incremental Build of configuration Debug for project lpc_chip_175x_6x ****
+make -r all 
+make: No se hace nada para «all».
+20:19:31 **** Incremental Build of configuration Debug for project lpc_myboard_1769 ****
+make -r all 
+make: No se hace nada para «all».
+20:19:32 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/media/pablo/Disco_Auxiliar/UTN/Git/TD_II/TD_II/workspace/lpc_myboard_1769/Debug" -L"/media/pablo/Disco_Auxiliar/UTN/Git/TD_II/TD_II/workspace/lpc_chip_175x_6x/Debug" -L"/media/pablo/Disco_Auxiliar/UTN/Git/TD_II/TD_II/workspace/CMSIS_DSPLIB_CM3/lib" -L"/media/pablo/Disco_Auxiliar/UTN/Git/TD_II/TD_II/workspace/LibFreeRTOS_8.2.3/Debug" -L"/media/pablo/Disco_Auxiliar/UTN/Git/TD_II/TD_II/workspace/cr_dsplib_cm3/Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/THD_Meter.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/sysinit.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:       12760 B       512 KB      2.43%
+        RamLoc32:       11420 B        32 KB     34.85%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+  12760	      0	  11420	  24180	   5e74	THD_Meter_RTOS.axf
+ 
