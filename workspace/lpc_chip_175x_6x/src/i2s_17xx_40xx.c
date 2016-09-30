@@ -137,6 +137,11 @@ Status Chip_I2S_TxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
 	uint16_t xDiv, yDiv;
 	uint32_t N;
 
+
+	uint32_t pClk;
+
+
+
 	if (getClkDiv(pI2S, format, &xDiv, &yDiv, &N) == ERROR) {
 		return ERROR;
 	}
@@ -156,8 +161,24 @@ Status Chip_I2S_TxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
 	temp |= I2S_MASTER_MODE;
 	temp |= I2S_DAO_WS_HALFPERIOD(format->WordWidth - 1);
 	pI2S->DAO = temp;
-	pI2S->TXMODE = I2S_TXMODE_CLKSEL(0);
-	pI2S->TXBITRATE = N - 1;
+
+
+
+
+
+	// PRUEBAAA
+//	pI2S->TXMODE = I2S_RXMODE_CLKSEL(0);
+	pI2S->TXMODE = 0x8;
+	// FIN PRUEBA
+//
+	pClk = Chip_Clock_GetPeripheralClockRate(SYSCTL_PCLK_I2S);
+
+	xDiv = 32;
+	yDiv = 125;
+
+//	pI2S->TXBITRATE = N - 1;
+	pI2S->TXBITRATE = 5;
+
 	pI2S->TXRATE = yDiv | (xDiv << 8);
 	return SUCCESS;
 }
@@ -168,6 +189,8 @@ Status Chip_I2S_RxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
 	uint32_t temp;
 	uint16_t xDiv, yDiv;
 	uint32_t N;
+
+	uint32_t pClk = 0;
 
 	if (getClkDiv(pI2S, format, &xDiv, &yDiv, &N) == ERROR) {
 		return ERROR;
@@ -187,8 +210,22 @@ Status Chip_I2S_RxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
 	temp |= I2S_MASTER_MODE;
 	temp |= I2S_DAI_WS_HALFPERIOD(format->WordWidth - 1);
 	pI2S->DAI = temp;
-	pI2S->RXMODE = I2S_RXMODE_CLKSEL(0);
-	pI2S->RXBITRATE = N - 1;
+
+
+
+	// PRUEBAAA
+//	pI2S->RXMODE = I2S_RXMODE_CLKSEL(0);
+	pI2S->RXMODE = 0x8;
+	// FIN PRUEBA
+//
+	pClk = Chip_Clock_GetPeripheralClockRate(SYSCTL_PCLK_I2S);
+
+	xDiv = 32;
+	yDiv = 125;
+
+//	pI2S->RXBITRATE = N - 1;
+	pI2S->RXBITRATE = 5;
+
 	pI2S->RXRATE = yDiv | (xDiv << 8);
 	return SUCCESS;
 }

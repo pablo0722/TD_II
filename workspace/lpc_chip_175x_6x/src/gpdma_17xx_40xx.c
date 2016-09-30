@@ -700,5 +700,5 @@ uint8_t Chip_GPDMA_GetFreeChannel(LPC_GPDMA_T *pGPDMA,
 			return temp;
 		}
 	}
-	return 0;
+	return -1;
 }

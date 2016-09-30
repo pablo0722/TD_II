@@ -243,7 +243,14 @@ void Chip_I2S_DeInit(LPC_I2S_T *pI2S);
  */
 STATIC INLINE void Chip_I2S_Send(LPC_I2S_T *pI2S, uint32_t data)
 {
-	pI2S->TXFIFO = data;
+
+
+	pI2S->TXFIFO = 0xFAFA;
+
+		Chip_IOCON_PinMux(LPC_IOCON, 0,9, MD_PLN, IOCON_FUNC1);
+
+
+
 }
 
 /**
