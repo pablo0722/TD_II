@@ -9,40 +9,43 @@
 #include "header.h"
 
 
-void dma_init()
-{
-	static char init_flag = 0;
-
-	if(!init_flag)
+#if defined(USE_ADC) || defined(USE_DAC)
+	void dma_init()
 	{
-		Chip_GPDMA_Init(LPC_GPDMA);
+		static char init_flag = 0;
 
-		NVIC_DisableIRQ(DMA_IRQn);
-		NVIC_SetPriority(DMA_IRQn, ((0x01 << 3) | 0x01));
-		NVIC_EnableIRQ(DMA_IRQn);
+		if(!init_flag)
+		{
+			Chip_GPDMA_Init(LPC_GPDMA);
 
-		#ifdef USE_ADC
-			//Chip_GPDMA_GetFreeChannel(LPC_GPDMA , 0);
-			//Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_ADC,
-			//								(uint32_t) GPDMA_CONN_ADC, (uint32_t) dma_memory_adc,
-			//								ADC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, NULL);
-			//DMA_descriptor_ADC.src = GPDMA_CONN_ADC;
-		#endif
+			NVIC_DisableIRQ(DMA_IRQn);
+			NVIC_SetPriority(DMA_IRQn, ((0x01 << 3) | 0x01));
+			NVIC_EnableIRQ(DMA_IRQn);
 
-		#ifdef USE_DAC
-			//Chip_GPDMA_GetFreeChannel(LPC_GPDMA , 0);
-			//Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_DAC,
-			//								(uint32_t) dma_memory_adc, (uint32_t) GPDMA_CONN_DAC,
-			//								DAC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA, NULL);
-			//DMA_descriptor_DAC.dst = GPDMA_CONN_DAC;
-		#endif
+			#ifdef USE_ADC
+				//Chip_GPDMA_GetFreeChannel(LPC_GPDMA , 0);
+				//Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_ADC,
+				//								(uint32_t) GPDMA_CONN_ADC, (uint32_t) dma_memory_adc,
+				//								ADC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, NULL);
+				//DMA_descriptor_ADC.src = GPDMA_CONN_ADC;
+			#endif
 
-			// Setting GPDMA interrupt
-		NVIC_EnableIRQ(DMA_IRQn);
+			#ifdef USE_DAC
+				//Chip_GPDMA_GetFreeChannel(LPC_GPDMA , 0);
+				//Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_DAC,
+				//								(uint32_t) dma_memory_adc, (uint32_t) GPDMA_CONN_DAC,
+				//								DAC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA, NULL);
+				//DMA_descriptor_DAC.dst = GPDMA_CONN_DAC;
+			#endif
 
-		init_flag = 1;
+				// Setting GPDMA interrupt
+			NVIC_EnableIRQ(DMA_IRQn);
+
+			init_flag = 1;
+		}
 	}
-}
+#endif
+
 
 #ifdef USE_UART
 	void uart_init()
@@ -65,31 +68,23 @@ void dma_init()
 
 		/* Envia mensaje inicial por UART*/
 		Chip_UART_SendRB(LPC_UART0, &txring, Uart_init_msg, sizeof(Uart_init_msg));
-
-
-			// Inicializacion de colas
-		xQueue_in = xQueueCreate(QUEUE_LEN_IN, QUEUE_ITEM_SIZE_IN);
-		xQueue_rem = xQueueCreate(QUEUE_LEN_REM, QUEUE_ITEM_SIZE_REM);
-		xQueue_THD = xQueueCreate(QUEUE_LEN_THD, QUEUE_ITEM_SIZE_THD);
-
-		xTaskCreate(vTask_THD, "vTask_THD", configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
-				(xTaskHandle *) NULL);
 	}
 #endif
 
-void fft_init()
+int fft_init()
 {
-		// Asigno la direccion en memoria
-		//mSignalIn     = (int16_t *) 0x2007C000;
-		//mFFTOut       = (int16_t *)(0x2007C000 + LENGTH_SAMPLES * sizeof(int16_t));
+	const uint8_t ifft = FALSE;
+	const uint8_t bit_reverse = TRUE;
+	const uint16_t fft_length = FFT_SIZE*2; // el "*2" es porque el espectro original esta espejado
+	arm_status status = ARM_MATH_SUCCESS;
 
-		memset(mSignalIn, 	0, sizeof(int16_t) * LENGTH_SAMPLES );	//Inicializo en 0 la entrada
-		memset(mFFTOut, 	0, sizeof(int16_t) * LENGTH_SAMPLES);		//Inicializo en 0 la salida
+	status = arm_cfft_radix2_init_q31(&fft_inst_q31, fft_length, ifft, bit_reverse);
+	if(status == ARM_MATH_TEST_FAILURE)
+	{
+		return -1;
+	}
 
-//		// Seno -- // Arma el seno de prueba (completa solo la parte real)
-//		for(indice=0; indice < FFT_SIZE ; indice++)
-//			mSignalIn[indice*2] = seno[indice];
-
+	return 0;
 }
 
 #ifdef USE_ADC
@@ -144,12 +139,16 @@ void main_init()
 		dac_init();
 	#endif
 
-	//fft_init();
+	#ifdef USE_FFT
+		fft_init();
+	#endif
 
 
-	Chip_GPDMA_Transfer(LPC_GPDMA, ADC_DMA_CHANNEL,
-							(uint32_t) (GPDMA_CONN_ADC), (uint32_t) dma_memory_adc,
-							GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, ADC_DMA_CANT_MUESTRAS);
+	#if defined(USE_ADC) || defined(USE_DAC)
+		Chip_GPDMA_Transfer(LPC_GPDMA, ADC_DMA_CHANNEL,
+								(uint32_t) (GPDMA_CONN_ADC), (uint32_t) dma_memory_adc,
+								GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, ADC_DMA_CANT_MUESTRAS);
+	#endif
 
 
 	// Start the scheduler so the created tasks start executing.

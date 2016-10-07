@@ -5,6 +5,7 @@
  *      Author: pablo
  */
 
+
 #ifndef HEADER_H_
 #define HEADER_H_
 
@@ -19,40 +20,60 @@
 	#include <string.h>	// Funcion memset
 	#include <math.h>	// Funcion sqrt
 
-	#include "cr_dsplib.h"
+		// CMSIS
+	#include "arm_math.h"
 
 
-		// ***** PERIFERICOS ***** //
-	//#define USE_UART
-	#define USE_ADC
-	#define USE_DAC
-		// *********************** //
+// ***** PERIFERICOS ***** //
+	#define USE_UART
+	//#define USE_ADC
+	//#define USE_DAC
+// *********************** //
 
-		// ***** FFT ***** //
-	#define     LENGTH_SAMPLES             2048					// Tamanio de los vectores de muestras (son complejos, doble tamano)
-	#define     FFT_SIZE    	           LENGTH_SAMPLES/2
 
-	extern int16_t spectrum[FFT_SIZE/2];				// Espectro de la senal transformada (solo la mitad, por estar espejado)
-	extern int16_t mSignalIn[LENGTH_SAMPLES], mFFTOut[LENGTH_SAMPLES];  	// Senal  de entrada y salida. Son vectores complejos.
+// ***** UTILIDADES ***** //
+	#define USE_FFT
+// ********************** //
 
-	extern uint8_t signalin_flag;
-		// *************** //
 
+// ***** FUNCIONES ****** //
+	void main_init();
+
+	#ifdef USE_FFT
+		void fft_function();
+	#endif
+// ********************** //
+
+
+// ***** VARIABLES GLOBALES ***** //
+	#ifdef USE_FFT
+
+		#define     LENGTH_SAMPLES             2048					// Tamanio de los vectores de muestras (son complejos, doble tamanio por real+imaginario)
+		#define     FFT_SIZE    	           LENGTH_SAMPLES/4		// Tamanio del vector del modulo de la FFT (Es un cuarto (1/4) del tamanio original por ser solo el modulo y por estar espejado)
+
+		extern arm_cfft_radix2_instance_q31 fft_inst_q31;			// Estructura para aplicar FFT
+
+		extern q31_t spectrum[FFT_SIZE];							// Espectro de la senal transformada
+		extern q31_t mSignalIn[LENGTH_SAMPLES];						// Senal  de entrada. Es vector complejo.
+		extern q31_t mFFTOut[LENGTH_SAMPLES];  						// Senal  de salida. Es vector complejo.
+
+		extern uint8_t signalin_flag;
+	#endif
 
 
 	#ifdef USE_UART
-		/* Transmit and receive ring buffer sizes */
+			/* Transmit and receive ring buffer sizes */
 		#define UART_SRB_SIZE LENGTH_SAMPLES	/* Send */
-		#define UART_RRB_SIZE 2*50	/* Receive */
+		#define UART_RRB_SIZE LENGTH_SAMPLES	/* Receive */
 
-		/* Transmit and receive buffers */
-		extern static uint8_t *rxbuff, *txbuff;
+			/* Transmit and receive buffers */
+		extern uint8_t rxbuff[UART_RRB_SIZE], txbuff[UART_SRB_SIZE];
 
-		/* Transmit and receive ring buffers */
-		extern STATIC RINGBUFF_T txring, rxring;
+			/* Transmit and receive ring buffers */
+		extern RINGBUFF_T txring, rxring;
 	#endif
 
-		// ***** VARIABLES GLOBALES ***** //
+
 	#ifdef USE_ADC
 		#define ADC_FREQ 20000
 		#define ADC_DMA_CANT_MUESTRAS 1
@@ -62,6 +83,7 @@
 		extern volatile uint32_t dma_memory_adc[ADC_DMA_CANT_MUESTRAS];
 	#endif
 
+
 	#ifdef USE_DAC
 		#define DAC_FREQ ADC_FREQ
 		#define DAC_DMA_CANT_MUESTRAS ADC_DMA_CANT_MUESTRAS
@@ -70,13 +92,7 @@
 		//extern DMA_TransferDescriptor_t DMA_descriptor_DAC;
 		extern volatile uint16_t dma_memory_dac[DAC_DMA_CANT_MUESTRAS];
 	#endif
-		// ****************************** //
-
-
-	// ***** FUNCIONES ****** //
-		void main_init();
-		void fft_function();
-	// ********************** //
+// ****************************** //
 
 
 #endif /* HEADER_H_ */

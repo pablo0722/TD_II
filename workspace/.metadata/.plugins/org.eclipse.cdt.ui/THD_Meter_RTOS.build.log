@@ -1,25 +1,6 @@
-03:05:13 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+06:19:21 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
 make -r all 
-Building file: ../src/Interrupciones.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Interrupciones.d" -MT"src/Interrupciones.o" -MT"src/Interrupciones.d" -o "src/Interrupciones.o" "../src/Interrupciones.c"
-Finished building: ../src/Interrupciones.c
- 
-Building target: THD_Meter_RTOS.axf
-Invoking: MCU Linker
-arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
-Memory region         Used Size  Region Size  %age Used
-       MFlash512:        6060 B       512 KB      1.16%
-        RamLoc32:         120 B        32 KB      0.37%
-        RamAHB32:          0 GB        32 KB      0.00%
-Finished building target: THD_Meter_RTOS.axf
- 
-make --no-print-directory post-build
-Performing post-build steps
-arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
-   text	   data	    bss	    dec	    hex	filename
-   5964	     96	     24	   6084	   17c4	THD_Meter_RTOS.axf
- 
+make: Nothing to be done for `all'.
 
-03:05:14 Build Finished (took 577ms)
+06:19:21 Build Finished (took 94ms)
 

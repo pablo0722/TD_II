@@ -1,0 +1,16 @@
+/*
+ * procesamiento.c
+ *
+ *  Created on: 7 de oct. de 2016
+ *      Author: Pablo
+ */
+
+
+#include "header.h"
+
+
+void fft_function()
+{
+	arm_cfft_q15(1024pt_fft, ADC_samples, sample_length);
+	arm_cmplx_mag_q15(ADC_samples, MAG_of_fft, fftlength);
+}

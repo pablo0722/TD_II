@@ -9,20 +9,25 @@
 #include "header.h"
 
 
-// ************* FFT ************* //
-int16_t spectrum[FFT_SIZE/2];		// Espectro de la senal transformada (solo la mitad, por estar espejado)
-int16_t mSignalIn[LENGTH_SAMPLES], mFFTOut[LENGTH_SAMPLES];     	// Senal  de entrada y salida. Son vectores complejos.
+#ifdef USE_FFT
+	arm_cfft_radix2_instance_q31 fft_inst_q31;
 
-uint8_t signalin_flag = 0;
-// ****************************** //
+	q31_t spectrum[FFT_SIZE];			// Espectro de la senal transformada
+	q31_t mSignalIn[LENGTH_SAMPLES];	// Senal  de entrada. Es vector complejo.
+	q31_t mFFTOut[LENGTH_SAMPLES]; 	// Senal  de salida. Es vector complejo.
+
+	uint8_t signalin_flag = 0;
+#endif
+
 
 #ifdef USE_UART
 	/* Transmit and receive buffers */
-	static uint8_t rxbuff[UART_RRB_SIZE], txbuff[UART_SRB_SIZE];
+	uint8_t rxbuff[UART_RRB_SIZE], txbuff[UART_SRB_SIZE];
 
 	/* Transmit and receive ring buffers */
-	STATIC RINGBUFF_T txring, rxring;
+	RINGBUFF_T txring, rxring;
 #endif
+
 
 #ifdef USE_ADC
 	//DMA_TransferDescriptor_t DMA_descriptor_ADC;

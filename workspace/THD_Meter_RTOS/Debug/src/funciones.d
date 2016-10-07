@@ -54,7 +54,9 @@ src/funciones.o src/funciones.d: ../src/funciones.c \
  D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/semphr.h \
  D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/queue.h \
  D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/queue.h \
- D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc/cr_dsplib.h
+ D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/core_cm3.h
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:
 
@@ -166,4 +168,8 @@ D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/queue.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/queue.h:
 
-D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc/cr_dsplib.h:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/core_cm3.h:

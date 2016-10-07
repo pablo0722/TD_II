@@ -1,0 +1,22 @@
+/*
+ * procesamiento.c
+ *
+ *  Created on: 7 de oct. de 2016
+ *      Author: Pablo
+ */
+
+
+#include "header.h"
+
+
+void fft_function()
+{
+	const uint8_t ifft = FALSE;
+	const uint8_t bit_reverse = TRUE;
+	arm_cfft_radix2_instance_q31 fft_inst_31;
+	arm_status status;
+
+	status = arm_cfft_radix2_init_q31(&fft_inst_31, FFT_SIZE, ifft, bit_reverse);
+	arm_cfft_radix2_q31(&fft_inst_31, mSignalIn);
+	arm_cmplx_mag_q31(mSignalIn, mFFTOut, FFT_SIZE);
+}

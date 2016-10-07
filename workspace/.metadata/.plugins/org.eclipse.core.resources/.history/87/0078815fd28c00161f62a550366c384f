@@ -1,0 +1,18 @@
+/*
+ * procesamiento.c
+ *
+ *  Created on: 7 de oct. de 2016
+ *      Author: Pablo
+ */
+
+
+#include "header.h"
+
+
+void fft_function()
+{
+	arm_cfft_radix2_instance_q31 fft_inst_31;
+	arm_cfft_radix2_init_q31();
+	arm_cfft_radix2_q31(1024pt_fft, ADC_samples, sample_length);
+	arm_cmplx_mag_q15(ADC_samples, MAG_of_fft, fftlength);
+}
