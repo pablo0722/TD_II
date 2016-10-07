@@ -1,0 +1,47 @@
+/*
+ * Interrupciones.c
+ *
+ *  Created on: 7 de oct. de 2016
+ *      Author: Pablo
+ */
+
+
+#include "header.h"
+
+
+#ifdef USE_UART
+	/**
+	 * @brief	UART 1 interrupt handler using ring buffers
+	 * @return	Nothing
+	 */
+	void UART0_IRQHandler(void)
+	{
+		static uint16_t idx=0;
+		uint8_t read_char = 0;
+
+		Chip_UART_IRQRBHandler(LPC_UART0, &rxring, &txring);
+
+		int bytes = Chip_UART_ReadRB(LPC_UART0, &rxring, &read_char, 1);
+
+		if(bytes>0)
+		{
+			char *SignalIn_p = (char *) mSignalIn;
+			SignalIn_p[idx] = read_char;
+			idx++;
+			idx %= LENGTH_SAMPLES*2; //el "*2" es porq son int_16 y recibo de a int_8
+
+			if(idx==0)
+			{
+				signalin_flag = 1;
+			}
+		}
+	}
+#endif
+
+#ifdef USE_ADC
+	void ADC_IRQHandler(void)
+	{
+		Chip_GPDMA_Transfer(LPC_GPDMA , Canal_Libre , &DMA_LLI_Struct , GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
+	}
+#endif
+

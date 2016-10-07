@@ -1,0 +1,114 @@
+/*
+===============================================================================
+ Name        : THD_Meter.c
+ Author      : $(author)
+ Version     :
+ Copyright   : $(copyright)
+ Description : main definition
+===============================================================================
+*/
+
+#include <cr_section_macros.h>
+
+#include "header.h"
+
+
+
+#define     LENGTH_SAMPLES             2048					// Tamanio de los vectores de muestras (son complejos, doble tamano)
+#define     FFT_SIZE    	           LENGTH_SAMPLES/2
+
+int16_t spectrum[FFT_SIZE/2];		// Espectro de la senal transformada (solo la mitad, por estar espejado)
+int16_t mSignalIn[LENGTH_SAMPLES], mFFTOut[LENGTH_SAMPLES];     	// Senal  de entrada y salida. Son vectores complejos.
+
+uint8_t signalin_flag = 0;
+
+
+
+/* Transmit and receive ring buffer sizes */
+#define UART_SRB_SIZE LENGTH_SAMPLES	/* Send */
+#define UART_RRB_SIZE 2*50	/* Receive */
+
+/* Transmit and receive buffers */
+static uint8_t rxbuff[UART_RRB_SIZE], txbuff[UART_SRB_SIZE];
+
+/* Transmit and receive ring buffers */
+STATIC RINGBUFF_T txring, rxring;
+
+
+
+/*
+
+void fft_function()
+{
+	int16_t i;
+	int16_t real,imaginaria;
+	// Segun la cantidad de muestras de la fft (definidas en FFT_SIZE) se llama a la funcion correspondiente
+	#if FFT_SIZE == 64
+		vF_dspl_fftR4b16N64(mFFTOut, mSignalIn);
+	#elif FFT_SIZE == 256
+		vF_dspl_fftR4b16N256(mFFTOut, mSignalIn);
+	#elif FFT_SIZE == 1024
+		vF_dspl_fftR4b16N1024(mFFTOut, mSignalIn);
+	#elif FFT_SIZE == 4096
+		vF_dspl_fftR4b16N4096(mFFTOut, mSignalIn);
+	#else
+	#endif
+
+	// Se arma el espectro en frecuencia, a partir del modulo de la transformada
+	// Se toman solamente la primer mitad de los puntos, ya que el espectro esta espejado
+	for(i = 0; i < FFT_SIZE/2; i++)
+	{
+		// Se toman la parte real e imaginaria de cada punto
+		real 		= mFFTOut[ i*2 ];
+		imaginaria 	= mFFTOut[ i*2 + 1];
+
+		// Se calcula cada punto del espectro obteniendo el modulo
+		spectrum[i] = (int16_t) sqrt( (real * real) + ( imaginaria * imaginaria) );
+	}
+}
+
+void vTask_THD( void *pvParameters )
+{
+	short int buf_rem[QUEUE_LEN_IN];
+
+	if(xQueueReceive(xQueue_in, mSignalIn, 0) == pdTRUE)
+	{
+		fft_function();
+
+		signalin_flag = 0;
+
+		xQueueSend(xQueue_rem, spectrum, 0);
+	}
+}
+*/
+
+void main_uninit()
+{
+	/* DeInitialize UART1 peripheral */
+	NVIC_DisableIRQ(UART0_IRQn);
+	Chip_UART_DeInit(LPC_UART0);
+}
+
+int main(void)
+{
+	uint16_t i,j;
+
+	main_init();
+
+	while(1)
+	{
+		/*
+		if (signalin_flag == 1)
+		{
+			// Wrap value back around
+			//Chip_UART_SendRB(LPC_UART0, &txring, (const uint8_t *) &key, 1);
+		}
+		*/
+	}
+
+	main_uninit();
+
+	while(1);
+
+    return 0 ;
+}

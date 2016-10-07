@@ -1,6 +1,6 @@
-20:24:00 **** Incremental Build of configuration Debug for project cr_dsplib_cm3 ****
+01:09:34 **** Incremental Build of configuration Debug for project cr_dsplib_cm3 ****
 make -r all 
-make: No se hace nada para «all».
+make: Nothing to be done for `all'.
 
-20:24:00 Build Finished (took 58ms)
+01:09:34 Build Finished (took 85ms)
 

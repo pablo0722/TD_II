@@ -1,0 +1,12 @@
+/*
+ * Variables_globales.c
+ *
+ *  Created on: 7 de oct. de 2016
+ *      Author: Pablo
+ */
+
+
+#include "header.h"
+
+
+DMA_TransferDescriptor_t DMA_LLI_Struct;

@@ -38,8 +38,6 @@
 #define CH_R					2
 
 
-#define BURST_MODE
-
 #define DMA_DESCRIPTOR_COUNT   	256
 
 #define TRANSFER_BLOCK     		GPDMA_BSIZE_128 /* size of data transfered per LLI */
@@ -47,6 +45,9 @@
 #define CANT_DESC 				4
 
 #define TRANSFER_SIZE          	(TRANSFER_BLOCK_SZ * CANT_DESC)
+
+#define MEM_DMA_SIZE			64
+
 
 /*****************************************************************************
  * Private types/enumerations/variables
@@ -59,6 +60,8 @@
 uint8_t DMA_I2S_RX_CH_A = 0;
 uint8_t DMA_I2S_RX_CH_B = 0;
 uint32_t bufferA[128], bufferB[128];
+
+volatile uint16_t mem_dma[MEM_DMA_SIZE];
 
 // descriptores del dma
 static DMA_TransferDescriptor_t RX_descriptorA;
@@ -107,6 +110,48 @@ void link_DMA_descriptor()
 	}
 }
 
+void init_dma()
+{
+	NVIC_DisableIRQ(DMA_IRQn);
+
+	Chip_GPDMA_Init(LPC_GPDMA);		//Se inicia el módulo del DMA.
+
+	// chequeo canal libre y lo habilito
+	Chip_GPDMA_ChannelCmd(LPC_GPDMA, DMA_I2S_RX_CH_A, DISABLE);
+	DMA_I2S_RX_CH_A = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
+
+	Chip_GPDMA_ChannelCmd(LPC_GPDMA, DMA_I2S_RX_CH_B, DISABLE);
+	DMA_I2S_RX_CH_B = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
+
+	if(DMA_I2S_RX_CH_A == -1)
+	{
+		//Error, no hay canal libre
+		DMA_I2S_RX_CH_A = -1;
+		return;
+	}
+
+	if(DMA_I2S_RX_CH_B == -1)
+	{
+		//Error, no hay canal libre
+		DMA_I2S_RX_CH_B = -1;
+		return;
+	}
+
+	Chip_GPDMA_ChannelCmd(LPC_GPDMA, DMA_I2S_RX_CH_A, ENABLE);		//Se habilita el funcionamiento del canal disponible del DMA
+	Chip_GPDMA_ChannelCmd(LPC_GPDMA, DMA_I2S_RX_CH_B, ENABLE);		//Se habilita el funcionamiento del canal disponible del DMA.
+	NVIC_EnableIRQ (DMA_IRQn);		//Se habilita la interrupción del DMA.
+
+	Chip_GPDMA_Stop(LPC_GPDMA, DMA_I2S_RX_CH_A);
+	Chip_GPDMA_Stop(LPC_GPDMA, DMA_I2S_RX_CH_B);
+
+	prepare_DMA_descriptors();
+
+	link_DMA_descriptor();
+
+	NVIC_SetPriority(DMA_IRQn, ((0x01 << 3) | 0x01));
+	NVIC_EnableIRQ(DMA_IRQn);
+}
+
 static void InitHardware(void)
 {
 	// Configuro el timer del micro en 120MHz						NO ANDA!
@@ -125,41 +170,16 @@ static void InitHardware(void)
 
 #if I2S_DMA
 
-	// Init GPDMA
-	Chip_GPDMA_Init(LPC_GPDMA);
+	//init_dma();
 
-	NVIC_DisableIRQ(DMA_IRQn);
+	Chip_GPDMA_Init(LPC_GPDMA);		//Se inicia el módulo del DMA.
+	Chip_GPDMA_ChannelCmd(LPC_GPDMA, 0, ENABLE);		//Se habilita el funcionamiento del canal disponible del DMA.
+	NVIC_EnableIRQ (DMA_IRQn);		//Se habilita la interrupción del DMA.
 
-	// chequeo canal libre y lo habilito
-	Chip_GPDMA_ChannelCmd(LPC_GPDMA, DMA_I2S_RX_CH_A, DISABLE);
-	DMA_I2S_RX_CH_A = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
+	uint8_t canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);		//Se obtiene un canal disponible del DMA.
+	//Se configura la transferencia periférico a memoria de NPOINTS muestras, desde el ADC hacia el sector de memoria indicado.
+	Chip_GPDMA_Transfer(LPC_GPDMA, canal, (uint32_t) (GPDMA_CONN_ADC), (uint32_t) mem_dma, GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, MEM_DMA_SIZE);
 
-	Chip_GPDMA_ChannelCmd(LPC_GPDMA, DMA_I2S_RX_CH_B, DISABLE);
-	DMA_I2S_RX_CH_B = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
-
-	if(DMA_I2S_RX_CH_A == -1)
-	{
-		//Error, no hay canal libre
-		DMA_I2S_RX_CH_A = -1;
-	}
-
-	if(DMA_I2S_RX_CH_B == -1)
-	{
-		//Error, no hay canal libre
-		DMA_I2S_RX_CH_B = -1;
-	}
-
-	Chip_GPDMA_Stop(LPC_GPDMA, DMA_I2S_RX_CH_A);
-	Chip_GPDMA_Stop(LPC_GPDMA, DMA_I2S_RX_CH_B);
-
-	prepare_DMA_descriptors();
-
-	#ifdef BURST_MODE
-	#endif
-
-	//Chip_GPDMA_Interrupt()
-	//Chip_GPDMA_IntGetStatus()
-	//Chip_GPDMA_ClearIntPending()
 #endif
 
 	// Init I2S
@@ -212,12 +232,6 @@ static void InitHardware(void)
 #else
 	Chip_I2S_Int_RxCmd(LPC_I2S, ENABLE, 1);
 	NVIC_DisableIRQ(I2S_IRQn); //la interrupcion de i2s es para hacer pooling
-
-	link_DMA_descriptor();
-
-	NVIC_SetPriority(DMA_IRQn, ((0x01 << 3) | 0x01));
-	NVIC_EnableIRQ(DMA_IRQn);
-
 
 #endif
 
@@ -278,7 +292,8 @@ int main(void)
 
 	InitHardware();
 
-	while(1){
+	while(1)
+	{
 
 		if(adcFlag)
 		{

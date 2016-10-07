@@ -1,0 +1,6 @@
+02:05:41 **** Incremental Build of configuration Debug for project test_PCM1802_PCM1781 ****
+make -r all 
+make: Nothing to be done for `all'.
+
+02:05:41 Build Finished (took 94ms)
+

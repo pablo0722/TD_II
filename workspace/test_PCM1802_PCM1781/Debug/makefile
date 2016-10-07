@@ -29,7 +29,7 @@ all: test_PCM1802_PCM1781.axf
 test_PCM1802_PCM1781.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"/home/aortiz/UTN/TD II/TEST_DMA_I2S/lpc_board_nxp_lpcxpresso_1769/Debug" -L"/home/aortiz/UTN/TD II/TEST_DMA_I2S/lpc_chip_175x_6x/Debug" -Xlinker -Map="test_PCM1802_PCM1781.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "test_PCM1802_PCM1781_Debug.ld" -o "test_PCM1802_PCM1781.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_board_nxp_lpcxpresso_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -Xlinker -Map="test_PCM1802_PCM1781.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "test_PCM1802_PCM1781_Debug.ld" -o "test_PCM1802_PCM1781.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build

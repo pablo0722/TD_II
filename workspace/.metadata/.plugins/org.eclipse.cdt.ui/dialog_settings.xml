@@ -4,9 +4,9 @@
 	<item value="Default C source template" key="LastUsedSourceTemplate"/>
 	<item value="Default C header template" key="LastUsedHeaderTemplate"/>
 	<section name="org.eclipse.cdt.ui.OPEN_ACTION_SELECTION_DIALOG_SECTION">
-		<item value="384" key="DIALOG_WIDTH"/>
-		<item value="1|Droid Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="398" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="437" key="DIALOG_HEIGHT"/>
 		<item value="52" key="DIALOG_Y_ORIGIN"/>
 		<item value="303" key="DIALOG_X_ORIGIN"/>
 	</section>
@@ -25,7 +25,11 @@
 		<item value="0" key="y"/>
 		<item value="true" key="show_typedefs"/>
 		<item value="true" key="show_variables"/>
-		<item value="748" key="height"/>
+		<item value="728" key="height"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
+		<item value="180" key="size.height"/>
+		<item value="384" key="size.width"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>

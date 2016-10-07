@@ -1,0 +1,20 @@
+/*
+ * Variables_globales.c
+ *
+ *  Created on: 7 de oct. de 2016
+ *      Author: Pablo
+ */
+
+
+#include "header.h"
+
+
+#ifdef USE_ADC
+	DMA_TransferDescriptor_t DMA_descriptor_ADC;
+#endif
+
+
+#ifdef USE_DAC
+	DMA_TransferDescriptor_t DMA_descriptor_DAC;
+	uint16_t dma_mem_dac;
+#endif

@@ -1,0 +1,53 @@
+/*
+ * header.h
+ *
+ *  Created on: 18 de ago. de 2016
+ *      Author: pablo
+ */
+
+#ifndef HEADER_H_
+#define HEADER_H_
+
+
+	#include "FreeRTOS.h"
+	#include "task.h"
+	#include "board.h"
+	#include "chip.h"
+	#include "semphr.h"
+	#include "queue.h"
+
+	#include <string.h>	// Funcion memset
+	#include <math.h>	// Funcion sqrt
+
+	#include "cr_dsplib.h"
+
+
+		// ***** PERIFERICOS ***** //
+	//#define USE_UART
+	#define USE_ADC
+	#define USE_DAC
+		// *********************** //
+
+
+
+		// ***** VARIABLES GLOBALES ***** //
+	#ifdef USE_ADC
+		#define ADC_DMA_CANT_MUESTRAS 64
+
+		extern DMA_TransferDescriptor_t DMA_descriptor_ADC;
+		extern uint16_t *dma_memory_adc;
+		extern uint16_t dma_channel_adc;
+	#endif
+
+	#ifdef USE_DAC
+		#define DAC_FREQ 8000
+		#define DAC_DMA_CANT_MUESTRAS 64
+
+		extern DMA_TransferDescriptor_t DMA_descriptor_DAC;
+		extern uint16_t *dma_memory_dac;
+		extern uint16_t dma_channel_dac;
+	#endif
+		// ****************************** //
+
+
+#endif /* HEADER_H_ */
