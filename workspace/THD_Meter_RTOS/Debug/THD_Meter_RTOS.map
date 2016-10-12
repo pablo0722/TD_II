@@ -218,7 +218,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./src/Interrupciones.o
  .debug_macro   0x00000000       0x12 ./src/Interrupciones.o
  .debug_macro   0x00000000       0xba ./src/Interrupciones.o
- .debug_macro   0x00000000       0x28 ./src/Interrupciones.o
+ .debug_macro   0x00000000       0x3a ./src/Interrupciones.o
  .group         0x00000000        0x8 ./src/THD_Meter.o
  .group         0x00000000        0x8 ./src/THD_Meter.o
  .group         0x00000000        0x8 ./src/THD_Meter.o
@@ -336,7 +336,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./src/THD_Meter.o
  .debug_macro   0x00000000       0x12 ./src/THD_Meter.o
  .debug_macro   0x00000000       0xba ./src/THD_Meter.o
- .debug_macro   0x00000000       0x28 ./src/THD_Meter.o
+ .debug_macro   0x00000000       0x3a ./src/THD_Meter.o
  .group         0x00000000        0x8 ./src/Variables_globales.o
  .group         0x00000000        0x8 ./src/Variables_globales.o
  .group         0x00000000        0x8 ./src/Variables_globales.o
@@ -451,7 +451,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./src/Variables_globales.o
  .debug_macro   0x00000000       0x12 ./src/Variables_globales.o
  .debug_macro   0x00000000       0xba ./src/Variables_globales.o
- .debug_macro   0x00000000       0x28 ./src/Variables_globales.o
+ .debug_macro   0x00000000       0x3a ./src/Variables_globales.o
  .group         0x00000000        0x8 ./src/cr_startup_lpc175x_6x.o
  .text          0x00000000        0x0 ./src/cr_startup_lpc175x_6x.o
  .data          0x00000000        0x0 ./src/cr_startup_lpc175x_6x.o
@@ -595,9 +595,9 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./src/funciones.o
  .debug_macro   0x00000000       0x12 ./src/funciones.o
  .debug_macro   0x00000000       0xba ./src/funciones.o
- .debug_macro   0x00000000       0x28 ./src/funciones.o
+ .debug_macro   0x00000000       0x3a ./src/funciones.o
  .debug_line    0x00000000      0x66f ./src/funciones.o
- .debug_str     0x00000000    0x15ef2 ./src/funciones.o
+ .debug_str     0x00000000    0x15f3e ./src/funciones.o
  .comment       0x00000000       0x6f ./src/funciones.o
  .debug_frame   0x00000000       0x34 ./src/funciones.o
  .ARM.attributes
@@ -2257,7 +2257,7 @@ OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
  .debug_ranges  0x00000430      0x118 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
  .debug_ranges  0x00000548       0x10 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_cfft_radix2_init_q31.o)
 
-.debug_macro    0x00000000     0x748f
+.debug_macro    0x00000000     0x74a1
  .debug_macro   0x00000000      0x2f3 ./src/Inicializaciones.o
  .debug_macro   0x000002f3      0x892 ./src/Inicializaciones.o
  .debug_macro   0x00000b85       0x10 ./src/Inicializaciones.o
@@ -2313,31 +2313,31 @@ OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
  .debug_macro   0x00004630       0x10 ./src/Inicializaciones.o
  .debug_macro   0x00004640       0x12 ./src/Inicializaciones.o
  .debug_macro   0x00004652       0xba ./src/Inicializaciones.o
- .debug_macro   0x0000470c       0x28 ./src/Inicializaciones.o
- .debug_macro   0x00004734      0x2f3 ./src/Interrupciones.o
- .debug_macro   0x00004a27      0x2fc ./src/THD_Meter.o
- .debug_macro   0x00004d23       0x82 ./src/THD_Meter.o
- .debug_macro   0x00004da5      0x2f3 ./src/Variables_globales.o
- .debug_macro   0x00005098       0x1d ./src/cr_startup_lpc175x_6x.o
- .debug_macro   0x000050b5      0x217 ./src/sysinit.o
- .debug_macro   0x000052cc       0x7b ./src/sysinit.o
- .debug_macro   0x00005347       0x18 ./src/sysinit.o
- .debug_macro   0x0000535f      0x22e D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_macro   0x0000558d      0x886 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_macro   0x00005e13       0x12 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_macro   0x00005e25      0x217 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_macro   0x0000603c      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_macro   0x00006209      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_macro   0x000063d6      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_macro   0x000065a3       0x83 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(ring_buffer.o)
- .debug_macro   0x00006626       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(ring_buffer.o)
- .debug_macro   0x00006636      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
- .debug_macro   0x00006803      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
- .debug_macro   0x000069d0       0xa3 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_cfft_radix2_init_q31.o)
- .debug_macro   0x00006a73      0x886 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_cfft_radix2_init_q31.o)
- .debug_macro   0x000072f9       0xb3 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_cfft_radix2_init_q31.o)
- .debug_macro   0x000073ac       0x40 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_cfft_radix2_init_q31.o)
- .debug_macro   0x000073ec       0xa3 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_common_tables.o)
+ .debug_macro   0x0000470c       0x3a ./src/Inicializaciones.o
+ .debug_macro   0x00004746      0x2f3 ./src/Interrupciones.o
+ .debug_macro   0x00004a39      0x2fc ./src/THD_Meter.o
+ .debug_macro   0x00004d35       0x82 ./src/THD_Meter.o
+ .debug_macro   0x00004db7      0x2f3 ./src/Variables_globales.o
+ .debug_macro   0x000050aa       0x1d ./src/cr_startup_lpc175x_6x.o
+ .debug_macro   0x000050c7      0x217 ./src/sysinit.o
+ .debug_macro   0x000052de       0x7b ./src/sysinit.o
+ .debug_macro   0x00005359       0x18 ./src/sysinit.o
+ .debug_macro   0x00005371      0x22e D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_macro   0x0000559f      0x886 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_macro   0x00005e25       0x12 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_macro   0x00005e37      0x217 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_macro   0x0000604e      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_macro   0x0000621b      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_macro   0x000063e8      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_macro   0x000065b5       0x83 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(ring_buffer.o)
+ .debug_macro   0x00006638       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(ring_buffer.o)
+ .debug_macro   0x00006648      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_macro   0x00006815      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+ .debug_macro   0x000069e2       0xa3 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_cfft_radix2_init_q31.o)
+ .debug_macro   0x00006a85      0x886 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_cfft_radix2_init_q31.o)
+ .debug_macro   0x0000730b       0xb3 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_cfft_radix2_init_q31.o)
+ .debug_macro   0x000073be       0x40 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_cfft_radix2_init_q31.o)
+ .debug_macro   0x000073fe       0xa3 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_common_tables.o)
 
 .debug_line     0x00000000     0x4d72
  .debug_line    0x00000000      0x6ee ./src/Inicializaciones.o
@@ -2357,38 +2357,38 @@ OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
  .debug_line    0x0000498f      0x24d D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_cfft_radix2_init_q31.o)
  .debug_line    0x00004bdc      0x196 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_common_tables.o)
 
-.debug_str      0x00000000    0x18d30
- .debug_str     0x00000000    0x1626e ./src/Inicializaciones.o
-                              0x163b8 (size before relaxing)
- .debug_str     0x0001626e       0x4b ./src/Interrupciones.o
-                              0x15f32 (size before relaxing)
- .debug_str     0x000162b9      0x47d ./src/THD_Meter.o
-                              0x16607 (size before relaxing)
- .debug_str     0x00016736      0x1cf ./src/Variables_globales.o
-                              0x160df (size before relaxing)
- .debug_str     0x00016905      0x197 ./src/cr_startup_lpc175x_6x.o
+.debug_str      0x00000000    0x18d71
+ .debug_str     0x00000000    0x162af ./src/Inicializaciones.o
+                              0x16404 (size before relaxing)
+ .debug_str     0x000162af       0x4b ./src/Interrupciones.o
+                              0x15f7e (size before relaxing)
+ .debug_str     0x000162fa      0x47d ./src/THD_Meter.o
+                              0x16653 (size before relaxing)
+ .debug_str     0x00016777      0x1cf ./src/Variables_globales.o
+                              0x1612b (size before relaxing)
+ .debug_str     0x00016946      0x197 ./src/cr_startup_lpc175x_6x.o
                                0x26c0 (size before relaxing)
- .debug_str     0x00016a9c       0x51 ./src/sysinit.o
+ .debug_str     0x00016add       0x51 ./src/sysinit.o
                               0x10bc2 (size before relaxing)
- .debug_str     0x00016aed      0xa81 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_str     0x00016b2e      0xa81 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
                               0x11789 (size before relaxing)
- .debug_str     0x0001756e      0x22d D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_str     0x000175af      0x22d D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
                               0x10f8e (size before relaxing)
- .debug_str     0x0001779b       0xbb D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_str     0x000177dc       0xbb D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
                               0x10b6a (size before relaxing)
- .debug_str     0x00017856      0x857 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_str     0x00017897      0x857 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
                               0x111d8 (size before relaxing)
- .debug_str     0x000180ad       0x79 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_str     0x000180ee       0x79 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
                               0x10655 (size before relaxing)
- .debug_str     0x00018126      0x138 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(ring_buffer.o)
+ .debug_str     0x00018167      0x138 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(ring_buffer.o)
                                0x4021 (size before relaxing)
- .debug_str     0x0001825e       0xc4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_str     0x0001829f       0xc4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
                               0x1083d (size before relaxing)
- .debug_str     0x00018322      0x360 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
+ .debug_str     0x00018363      0x360 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(uart_17xx_40xx.o)
                               0x110ad (size before relaxing)
- .debug_str     0x00018682      0x446 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_cfft_radix2_init_q31.o)
+ .debug_str     0x000186c3      0x446 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_cfft_radix2_init_q31.o)
                                0x4c9d (size before relaxing)
- .debug_str     0x00018ac8      0x268 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_common_tables.o)
+ .debug_str     0x00018b09      0x268 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib\libCMSIS_DSPLIB_CM3.a(arm_common_tables.o)
                                0x4db0 (size before relaxing)
 
 .comment        0x00000000       0xdc

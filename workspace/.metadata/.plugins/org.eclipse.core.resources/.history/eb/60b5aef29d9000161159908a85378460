@@ -50,7 +50,7 @@
 #ifdef USE_UART
 	void uart_init()
 	{
-		Board_UART_Init((uint32_t)LPC_UARTN, UART_BAUDRATE);
+		Board_UART_Init((uint32_t)LPC_UARTN, 9600);
 
 		// Before using the ring buffers, initialize them using the ring
 		// buffer init function

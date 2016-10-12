@@ -1,6 +1,45 @@
-06:19:21 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+01:01:19 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
 make -r all 
-make: Nothing to be done for `all'.
+Building file: ../src/Inicializaciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Inicializaciones.d" -MT"src/Inicializaciones.o" -MT"src/Inicializaciones.d" -o "src/Inicializaciones.o" "../src/Inicializaciones.c"
+Finished building: ../src/Inicializaciones.c
+ 
+Building file: ../src/Interrupciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Interrupciones.d" -MT"src/Interrupciones.o" -MT"src/Interrupciones.d" -o "src/Interrupciones.o" "../src/Interrupciones.c"
+Finished building: ../src/Interrupciones.c
+ 
+Building file: ../src/THD_Meter.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/THD_Meter.d" -MT"src/THD_Meter.o" -MT"src/THD_Meter.d" -o "src/THD_Meter.o" "../src/THD_Meter.c"
+Finished building: ../src/THD_Meter.c
+ 
+Building file: ../src/Variables_globales.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Variables_globales.d" -MT"src/Variables_globales.o" -MT"src/Variables_globales.d" -o "src/Variables_globales.o" "../src/Variables_globales.c"
+Finished building: ../src/Variables_globales.c
+ 
+Building file: ../src/funciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+Finished building: ../src/funciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:       32808 B       512 KB      6.26%
+        RamLoc32:       12360 B        32 KB     37.72%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+  32808	      0	  12360	  45168	   b070	THD_Meter_RTOS.axf
+ 
 
-06:19:21 Build Finished (took 94ms)
+01:01:24 Build Finished (took 4s.401ms)
 

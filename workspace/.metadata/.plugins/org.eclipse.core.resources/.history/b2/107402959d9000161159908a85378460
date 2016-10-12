@@ -29,10 +29,10 @@ int main(void)
 	{
 		if (signalin_flag == 1)
 		{
-			signalin_flag = 0;
-
 			// Wrap value back around
 			Chip_UART_SendRB(LPC_UART0, &txring, mSignalIn, sizeof(LENGTH_SAMPLES));
+
+			signalin_flag = 0;
 		}
 	}
 

@@ -50,7 +50,7 @@
 #ifdef USE_UART
 	void uart_init()
 	{
-		Board_UART_Init((uint32_t)LPC_UARTN, UART_BAUDRATE);
+		Board_UART_Init((uint32_t)UARTN, 9600);
 
 		// Before using the ring buffers, initialize them using the ring
 		// buffer init function
@@ -58,16 +58,16 @@
 		RingBuffer_Init(&txring, txbuff, 1, UART_SRB_SIZE);
 
 		// Enable receive data and line status interrupt
-		Chip_UART_IntEnable(LPC_UARTN, (UART_IER_RBRINT | UART_IER_RLSINT));
+		Chip_UART_IntEnable(UARTN, (UART_IER_RBRINT | UART_IER_RLSINT));
 
 		/* preemption = 1, sub-priority = 1 */
-		NVIC_SetPriority(UARTN_IRQn, 1);
-		NVIC_EnableIRQ(UARTN_IRQn);
+		NVIC_SetPriority(UARTN_IRQ, 1);
+		NVIC_EnableIRQ(UARTN_IRQ);
 
 		const char Uart_init_msg[] = "\r\nHola mundo:\r\n";
 
 		/* Envia mensaje inicial por UART*/
-		Chip_UART_SendRB(LPC_UARTN, &txring, Uart_init_msg, sizeof(Uart_init_msg));
+		Chip_UART_SendRB(UARTN, &txring, Uart_init_msg, sizeof(Uart_init_msg));
 	}
 #endif
 

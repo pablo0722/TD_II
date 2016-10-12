@@ -62,20 +62,16 @@
 
 
 	#ifdef USE_UART
-		#define LPC_UARTN 			LPC_UART0				// Numero de UART a utilizar
-		#define UARTN_IRQn 			UART0_IRQn				// Numero de UART a utilizar
-		#define UARTN_IRQHandler 	UART0_IRQHandler		// Numero de UART a utilizar
-
-		#define UART_BAUDRATE 		9600					// Baud rate de la UART
-
+		#define UART_N 			LPC_UART0		//Numero de UART a utilizar
+		#define UART_IRQ_N 		UART0_IRQn		//Numero de UART a utilizar
 			// Transmit and receive ring buffer sizes
 		#define UART_SRB_SIZE 	LENGTH_SAMPLES	// Send
 		#define UART_RRB_SIZE 	LENGTH_SAMPLES	// Receive
 
-			// Transmit and receive buffers
+			/* Transmit and receive buffers */
 		extern uint8_t rxbuff[UART_RRB_SIZE], txbuff[UART_SRB_SIZE];
 
-			// Transmit and receive ring buffers
+			/* Transmit and receive ring buffers */
 		extern RINGBUFF_T txring, rxring;
 	#endif
 
