@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="sel"/>
 			<item value="dma"/>
 			<item value="tra"/>
 			<item value="transfer"/>
@@ -15,7 +16,6 @@
 			<item value="DMA_IRQHandler"/>
 			<item value="signalin_flag"/>
 			<item value="&#x0A;&#x09;xQueueSend(xQueue_rem, buf_rem, 0);"/>
-			<item value="xQueueSend"/>
 		</list>
 		<list key="replacehistory">
 			<item value="InitPinGPIO"/>

@@ -31,13 +31,13 @@ int main(void)
 
 	while(1)
 	{
-		/*
-		if (signalin_flag == 1)
-		{
-			// Wrap value back around
-			//Chip_UART_SendRB(LPC_UART0, &txring, (const uint8_t *) &key, 1);
-		}
-		*/
+		#ifdef USE_UART
+			main_uart();
+		#endif
+
+		#ifdef USE_ADC_DAC_INTERNO
+			main_dac();
+		#endif
 	}
 
 	main_uninit();

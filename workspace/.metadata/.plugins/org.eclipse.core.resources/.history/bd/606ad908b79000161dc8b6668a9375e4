@@ -1,0 +1,80 @@
+/*
+===============================================================================
+ Name        : THD_Meter.c
+ Author      : $(author)
+ Version     :
+ Copyright   : $(copyright)
+ Description : main definition
+===============================================================================
+*/
+
+#include <cr_section_macros.h>
+
+#include "header.h"
+
+
+
+
+
+
+
+void main_uninit()
+{
+	/* DeInitialize UART1 peripheral */
+	NVIC_DisableIRQ(UART0_IRQn);
+	Chip_UART_DeInit(LPC_UART0);
+}
+
+int main(void)
+{
+	int count = 0, sel = CH_L, i = 0;
+
+	main_init();
+
+	while(1)
+	{
+		/*
+		if (signalin_flag == 1)
+		{
+			// Wrap value back around
+			//Chip_UART_SendRB(LPC_UART0, &txring, (const uint8_t *) &key, 1);
+		}
+		*/
+
+		NVIC_EnableIRQ(DMA_IRQn);
+		Chip_GPDMA_Transfer(LPC_GPDMA, canal_adc,
+								(uint32_t) (GPDMA_CONN_I2S_Channel_1), (uint32_t) dma_memory_adc,
+								GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, ADC_DMA_CANT_MUESTRAS);
+		//if(adcFlag)
+		{
+			data = dma_memory_dac[0];
+			if(data < 0)
+				data = (data >> 8);
+			else
+			{
+				data = data >> 8 ;
+				data &= (0x00FFFFFF);
+			}
+
+			if(sel == CH_L)
+			{
+				if(data < 1024)
+					data = data + 512;
+				else
+					data = data - 512;
+
+				Chip_DAC_UpdateValue(LPC_DAC, data);
+				adcFlag = 0;
+				sel = CH_R;
+			}
+			else
+				sel = CH_L;
+		}
+	}
+
+	main_uninit();
+
+	while(1);
+
+    return 0 ;
+}

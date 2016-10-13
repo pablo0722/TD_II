@@ -14,6 +14,8 @@ D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(da
                               ./src/Inicializaciones.o (Chip_DAC_Init)
 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
                               ./src/Inicializaciones.o (Chip_GPDMA_Init)
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+                              ./src/Inicializaciones.o (Chip_I2S_Init)
 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
                               ./src/Inicializaciones.o (Chip_IOCON_PinMux)
 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
@@ -22,26 +24,14 @@ D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(ua
                               D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o) (Chip_UART_Init)
 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(ring_buffer.o)
                               D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(uart_17xx_40xx.o) (RingBuffer_Insert)
-D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug\libcr_dsplibFFT_cm3.a(cr_dsplib_fft1024.o)
-                              ./src/funciones.o (vF_dspl_fftR4b16N1024)
 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memcpy.o)
                               D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o) (memcpy)
-c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
-                              ./src/Inicializaciones.o (memset)
 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
                               ./src/cr_startup_lpc175x_6x.o (__main)
-c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(sqrt.o)
-                              ./src/funciones.o (sqrt)
-c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_hugeval.o)
-                              c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(sqrt.o) (__huge_val)
-c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(errno.o)
-                              c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(sqrt.o) (errno)
 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
-                              D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(uart_17xx_40xx.o) (__aeabi_uldivmod)
+                              ./src/Inicializaciones.o (__aeabi_uldivmod)
 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_idiv0.o)
                               c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o) (__aeabi_idiv0)
-c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
-                              c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(sqrt.o) (__aeabi_dmul)
 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(memcpy.o)
                               c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memcpy.o) (__aeabi_memcpy)
 
@@ -107,8 +97,6 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/Inicializaciones.o
  .data          0x00000000        0x0 ./src/Inicializaciones.o
  .bss           0x00000000        0x0 ./src/Inicializaciones.o
- .text.fft_init
-                0x00000000       0x28 ./src/Inicializaciones.o
  .group         0x00000000        0x8 ./src/Interrupciones.o
  .group         0x00000000        0x8 ./src/Interrupciones.o
  .group         0x00000000        0x8 ./src/Interrupciones.o
@@ -215,7 +203,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xb0 ./src/Interrupciones.o
  .debug_macro   0x00000000       0x7f ./src/Interrupciones.o
  .debug_macro   0x00000000       0xc4 ./src/Interrupciones.o
- .debug_macro   0x00000000       0x40 ./src/Interrupciones.o
+ .debug_macro   0x00000000       0x9a ./src/Interrupciones.o
  .group         0x00000000        0x8 ./src/THD_Meter.o
  .group         0x00000000        0x8 ./src/THD_Meter.o
  .group         0x00000000        0x8 ./src/THD_Meter.o
@@ -327,7 +315,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xb0 ./src/THD_Meter.o
  .debug_macro   0x00000000       0x7f ./src/THD_Meter.o
  .debug_macro   0x00000000       0xc4 ./src/THD_Meter.o
- .debug_macro   0x00000000       0x40 ./src/THD_Meter.o
+ .debug_macro   0x00000000       0x9a ./src/THD_Meter.o
  .group         0x00000000        0x8 ./src/Variables_globales.o
  .group         0x00000000        0x8 ./src/Variables_globales.o
  .group         0x00000000        0x8 ./src/Variables_globales.o
@@ -383,12 +371,12 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/Variables_globales.o
  .data          0x00000000        0x0 ./src/Variables_globales.o
  .bss           0x00000000        0x0 ./src/Variables_globales.o
- .bss.spectrum  0x00000000      0x400 ./src/Variables_globales.o
- .bss.mSignalIn
-                0x00000000     0x1000 ./src/Variables_globales.o
- .bss.mFFTOut   0x00000000     0x1000 ./src/Variables_globales.o
- .bss.signalin_flag
-                0x00000000        0x1 ./src/Variables_globales.o
+ .bss.DMA_descriptor_ADC
+                0x00000000       0x10 ./src/Variables_globales.o
+ .bss.DMA_descriptor_DAC
+                0x00000000       0x10 ./src/Variables_globales.o
+ .bss.cont      0x00000000        0x4 ./src/Variables_globales.o
+ .bss.ch        0x00000000        0x4 ./src/Variables_globales.o
  .debug_macro   0x00000000      0x892 ./src/Variables_globales.o
  .debug_macro   0x00000000       0x10 ./src/Variables_globales.o
  .debug_macro   0x00000000      0x12d ./src/Variables_globales.o
@@ -440,7 +428,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xb0 ./src/Variables_globales.o
  .debug_macro   0x00000000       0x7f ./src/Variables_globales.o
  .debug_macro   0x00000000       0xc4 ./src/Variables_globales.o
- .debug_macro   0x00000000       0x40 ./src/Variables_globales.o
+ .debug_macro   0x00000000       0x9a ./src/Variables_globales.o
  .group         0x00000000        0x8 ./src/cr_startup_lpc175x_6x.o
  .text          0x00000000        0x0 ./src/cr_startup_lpc175x_6x.o
  .data          0x00000000        0x0 ./src/cr_startup_lpc175x_6x.o
@@ -519,14 +507,6 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/funciones.o
  .data          0x00000000        0x0 ./src/funciones.o
  .bss           0x00000000        0x0 ./src/funciones.o
- .text.fft_function
-                0x00000000       0xa4 ./src/funciones.o
- .debug_info    0x00000000      0x15a ./src/funciones.o
- .debug_abbrev  0x00000000       0xb2 ./src/funciones.o
- .debug_aranges
-                0x00000000       0x20 ./src/funciones.o
- .debug_ranges  0x00000000       0x10 ./src/funciones.o
- .debug_macro   0x00000000      0x2e1 ./src/funciones.o
  .debug_macro   0x00000000      0x892 ./src/funciones.o
  .debug_macro   0x00000000       0x10 ./src/funciones.o
  .debug_macro   0x00000000      0x12d ./src/funciones.o
@@ -578,13 +558,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xb0 ./src/funciones.o
  .debug_macro   0x00000000       0x7f ./src/funciones.o
  .debug_macro   0x00000000       0xc4 ./src/funciones.o
- .debug_macro   0x00000000       0x40 ./src/funciones.o
- .debug_line    0x00000000      0x647 ./src/funciones.o
- .debug_str     0x00000000    0x159b6 ./src/funciones.o
- .comment       0x00000000       0x6f ./src/funciones.o
- .debug_frame   0x00000000       0x38 ./src/funciones.o
- .ARM.attributes
-                0x00000000       0x33 ./src/funciones.o
+ .debug_macro   0x00000000       0x9a ./src/funciones.o
  .group         0x00000000        0x8 ./src/sysinit.o
  .group         0x00000000        0x8 ./src/sysinit.o
  .group         0x00000000        0x8 ./src/sysinit.o
@@ -1114,8 +1088,6 @@ Discarded input sections
                 0x00000000       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetUSBClockDiv
                 0x00000000       0x1c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .text.Chip_Clock_SetPCLKDiv
-                0x00000000       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_SetCLKOUTSource
                 0x00000000       0x44 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetUSBPLLOutClockRate
@@ -1197,8 +1169,6 @@ Discarded input sections
  .bss           0x00000000        0x0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
  .text.Chip_DAC_DeInit
                 0x00000000       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .text.Chip_DAC_UpdateValue
-                0x00000000       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
  .debug_macro   0x00000000      0x886 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
  .debug_macro   0x00000000       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
  .debug_macro   0x00000000      0x12d D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
@@ -1280,8 +1250,6 @@ Discarded input sections
                 0x00000000       0xc4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .text.Chip_GPDMA_SGTransfer
                 0x00000000       0xd0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .text.Chip_GPDMA_GetFreeChannel
-                0x00000000       0x58 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .debug_macro   0x00000000      0x886 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .debug_macro   0x00000000       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .debug_macro   0x00000000      0x12d D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
@@ -1317,6 +1285,87 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .debug_macro   0x00000000       0xca D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .debug_macro   0x00000000       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .text          0x00000000        0x0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .data          0x00000000        0x0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .bss           0x00000000        0x0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .text.getClkDiv
+                0x00000000      0x1f8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .text.Chip_I2S_DeInit
+                0x00000000       0x44 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .text.Chip_I2S_TxConfig
+                0x00000000       0xc4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .text.Chip_I2S_RxConfig
+                0x00000000       0xc8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000      0x886 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000      0x12d D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000      0x5b2 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x22 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x7b D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x2d D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x3a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x2d D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000      0xbb1 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000      0x235 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x42 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x52 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x78 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x82 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000      0x48c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000      0x4c5 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000      0x1b7 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000      0x21b D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000      0x1b9 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x40 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x22 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000      0x162 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x94 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0xb8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x4c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x16 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000      0x328 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x49 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x16 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0xca D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00000000       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
  .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
  .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
  .group         0x00000000        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
@@ -1669,11 +1718,6 @@ Discarded input sections
  .debug_frame   0x00000000      0x164 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(ring_buffer.o)
  .ARM.attributes
                 0x00000000       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(ring_buffer.o)
- .text          0x00000000     0x11dc D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug\libcr_dsplibFFT_cm3.a(cr_dsplib_fft1024.o)
- .data          0x00000000        0x0 D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug\libcr_dsplibFFT_cm3.a(cr_dsplib_fft1024.o)
- .bss           0x00000000        0x0 D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug\libcr_dsplibFFT_cm3.a(cr_dsplib_fft1024.o)
- .ARM.attributes
-                0x00000000       0x21 D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug\libcr_dsplibFFT_cm3.a(cr_dsplib_fft1024.o)
  .text          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memcpy.o)
  .data          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memcpy.o)
  .bss           0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memcpy.o)
@@ -1681,112 +1725,17 @@ Discarded input sections
  .comment       0x00000000       0x6f c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memcpy.o)
  .ARM.attributes
                 0x00000000       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memcpy.o)
- .text          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
- .data          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
- .bss           0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
- .text.memset   0x00000000        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
- .comment       0x00000000       0x6f c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
- .ARM.attributes
-                0x00000000       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
  .text          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
  .data          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
  .bss           0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
- .text          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(sqrt.o)
- .data          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(sqrt.o)
- .bss           0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(sqrt.o)
- .text.sqrt     0x00000000      0x11c c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(sqrt.o)
- .comment       0x00000000       0x6f c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(sqrt.o)
- .ARM.attributes
-                0x00000000       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(sqrt.o)
- .text          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_hugeval.o)
- .data          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_hugeval.o)
- .bss           0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_hugeval.o)
- .rodata.__huge_val
-                0x00000000        0x8 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_hugeval.o)
- .rodata.__huge_vall
-                0x00000000        0x8 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_hugeval.o)
- .comment       0x00000000       0x6f c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_hugeval.o)
- .ARM.attributes
-                0x00000000       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_hugeval.o)
- .text          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(errno.o)
- .data          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(errno.o)
- .bss           0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(errno.o)
- .bss.errno     0x00000000        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(errno.o)
- .comment       0x00000000       0x6f c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(errno.o)
- .ARM.attributes
-                0x00000000       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(errno.o)
  .text          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
  .data          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
  .bss           0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
  .text.__aeabi_division_ldivmod
                 0x00000000       0x26 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
- .text.__aeabi_division_uldivmod
-                0x00000000      0x174 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
- .ARM.attributes
-                0x00000000       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
  .text          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_idiv0.o)
  .data          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_idiv0.o)
  .bss           0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_idiv0.o)
- .text.__aeabi_division_idiv0
-                0x00000000        0x2 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_idiv0.o)
- .ARM.attributes
-                0x00000000       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_idiv0.o)
- .text          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .data          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .bss           0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_dmul
-                0x00000000      0x110 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_ddiv
-                0x00000000      0x138 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_dsub
-                0x00000000      0x1a0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_dadd
-                0x00000000      0x10c c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_drsub
-                0x00000000       0x1c c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_dneg
-                0x00000000        0x8 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_d2f
-                0x00000000       0x54 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_d2iz
-                0x00000000       0x40 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_d2uiz
-                0x00000000       0x30 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_d2lz
-                0x00000000       0x6a c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_d2ulz
-                0x00000000       0x54 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__bhs_ui2d
-                0x00000000       0x46 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__bhs_ul2d
-                0x00000000       0x88 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_i2d
-                0x00000000       0x10 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_ui2d
-                0x00000000        0x8 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_l2d
-                0x00000000       0x18 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_ul2d
-                0x00000000        0x8 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_dcmpeq
-                0x00000000       0x2c c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_dcmplt
-                0x00000000       0x54 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_dcmpgt
-                0x00000000       0x54 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_dcmple
-                0x00000000       0x54 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_dcmpge
-                0x00000000       0x54 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_dcmpun
-                0x00000000       0x1a c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_cdcmple
-                0x00000000       0x24 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .text.__aeabi_cdrcmple
-                0x00000000       0x14 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .comment       0x00000000       0x6f c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
- .ARM.attributes
-                0x00000000       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(double.o)
  .text          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(memcpy.o)
  .data          0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(memcpy.o)
  .bss           0x00000000        0x0 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(memcpy.o)
@@ -1845,7 +1794,7 @@ END GROUP
                 0x20084000                __top_RamAHB32 = 0x20084000
                 0x20084000                __top_RAM2 = 0x20084000
 
-.text           0x00000000     0x174c
+.text           0x00000000     0x2218
  FILL mask 0xff
                 0x00000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -1854,16 +1803,16 @@ END GROUP
                 0x000000cc                . = ALIGN (0x4)
                 0x000000cc                __section_table_start = .
                 0x000000cc                __data_section_table = .
-                0x000000cc        0x4 LONG 0x174c LOADADDR (.data)
+                0x000000cc        0x4 LONG 0x2218 LOADADDR (.data)
                 0x000000d0        0x4 LONG 0x10000000 ADDR (.data)
-                0x000000d4        0x4 LONG 0x60 SIZEOF (.data)
-                0x000000d8        0x4 LONG 0x174c LOADADDR (.data_RAM2)
+                0x000000d4        0x4 LONG 0x64 SIZEOF (.data)
+                0x000000d8        0x4 LONG 0x2218 LOADADDR (.data_RAM2)
                 0x000000dc        0x4 LONG 0x2007c000 ADDR (.data_RAM2)
                 0x000000e0        0x4 LONG 0x0 SIZEOF (.data_RAM2)
                 0x000000e4                __data_section_table_end = .
                 0x000000e4                __bss_section_table = .
-                0x000000e4        0x4 LONG 0x10000060 ADDR (.bss)
-                0x000000e8        0x4 LONG 0x18 SIZEOF (.bss)
+                0x000000e4        0x4 LONG 0x10000064 ADDR (.bss)
+                0x000000e8        0x4 LONG 0x24 SIZEOF (.bss)
                 0x000000ec        0x4 LONG 0x2007c000 ADDR (.bss_RAM2)
                 0x000000f0        0x4 LONG 0x0 SIZEOF (.bss_RAM2)
                 0x000000f4                __bss_section_table_end = .
@@ -1929,245 +1878,303 @@ END GROUP
                 0x000002f0       0x28 ./src/Inicializaciones.o
  .text.Chip_DAC_SetDMATimeOut
                 0x00000318       0x1c ./src/Inicializaciones.o
+ .text.Chip_I2S_TxStart
+                0x00000334       0x24 ./src/Inicializaciones.o
+ .text.Chip_I2S_RxStart
+                0x00000358       0x20 ./src/Inicializaciones.o
+ .text.Chip_I2S_EnableMute
+                0x00000378       0x20 ./src/Inicializaciones.o
+ .text.Chip_I2S_DisableMute
+                0x00000398       0x20 ./src/Inicializaciones.o
+ .text.Chip_I2S_TxStop
+                0x000003b8       0x2c ./src/Inicializaciones.o
+ .text.Chip_I2S_RxStop
+                0x000003e4       0x20 ./src/Inicializaciones.o
  .text.dma_init
-                0x00000334       0x40 ./src/Inicializaciones.o
-                0x00000334                dma_init
- .text.adc_init
-                0x00000374       0x64 ./src/Inicializaciones.o
-                0x00000374                adc_init
- .text.dac_init
-                0x000003d8       0x54 ./src/Inicializaciones.o
-                0x000003d8                dac_init
- .text.main_init
-                0x0000042c       0x3c ./src/Inicializaciones.o
-                0x0000042c                main_init
- .text.DMA_IRQHandler
-                0x00000468       0xbc ./src/Interrupciones.o
-                0x00000468                DMA_IRQHandler
- .text.main     0x00000524        0xc ./src/THD_Meter.o
-                0x00000524                main
- .text.SystemInit
-                0x00000530       0x24 ./src/sysinit.o
-                0x00000530                SystemInit
- .text.Chip_IOCON_Init
-                0x00000554       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .text.Chip_GPIO_Init
-                0x0000056c       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .text.Chip_GPIO_SetPinDIROutput
-                0x00000584       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .text.Chip_GPIO_SetPinDIRInput
-                0x000005bc       0x3c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .text.Chip_GPIO_SetPinDIR
-                0x000005f8       0x44 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .text.Chip_GPIO_WriteDirBit
-                0x0000063c       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .text.Board_LED_Init
-                0x0000066c       0x6c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .text.Board_Buttons_Init
-                0x000006d8       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
-                0x000006d8                Board_Buttons_Init
- .text.Board_Init
-                0x000006fc       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
-                0x000006fc                Board_Init
- .text.Chip_SYSCTL_SetFLASHAccess
-                0x00000720       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .text.Board_SetupMuxing
-                0x00000750       0x1c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
-                0x00000750                Board_SetupMuxing
- .text.Board_SetupClocking
-                0x0000076c       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
-                0x0000076c                Board_SetupClocking
- .text.Board_SystemInit
-                0x00000780       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
-                0x00000780                Board_SystemInit
- .text.getFullConvClk
-                0x00000790       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+                0x00000404       0x68 ./src/Inicializaciones.o
+                0x00000404                dma_init
  .text.getClkDiv
-                0x000007a0       0x4c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+                0x0000046c      0x1f8 ./src/Inicializaciones.o
+ .text.mi_Chip_I2S_TxConfig
+                0x00000664       0xc0 ./src/Inicializaciones.o
+                0x00000664                mi_Chip_I2S_TxConfig
+ .text.mi_Chip_I2S_RxConfig
+                0x00000724       0xc0 ./src/Inicializaciones.o
+                0x00000724                mi_Chip_I2S_RxConfig
+ .text.i2s_init
+                0x000007e4      0x130 ./src/Inicializaciones.o
+                0x000007e4                i2s_init
+ .text.adc_init
+                0x00000914       0x60 ./src/Inicializaciones.o
+                0x00000914                adc_init
+ .text.dac_init
+                0x00000974       0x50 ./src/Inicializaciones.o
+                0x00000974                dac_init
+ .text.main_init
+                0x000009c4       0x48 ./src/Inicializaciones.o
+                0x000009c4                main_init
+ .text.DMA_IRQHandler
+                0x00000a0c       0xc8 ./src/Interrupciones.o
+                0x00000a0c                DMA_IRQHandler
+ .text.main     0x00000ad4       0x10 ./src/THD_Meter.o
+                0x00000ad4                main
+ .text.main_dac
+                0x00000ae4       0xa4 ./src/funciones.o
+                0x00000ae4                main_dac
+ .text.SystemInit
+                0x00000b88       0x24 ./src/sysinit.o
+                0x00000b88                SystemInit
+ .text.Chip_IOCON_Init
+                0x00000bac       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .text.Chip_GPIO_Init
+                0x00000bc4       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .text.Chip_GPIO_SetPinDIROutput
+                0x00000bdc       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .text.Chip_GPIO_SetPinDIRInput
+                0x00000c14       0x3c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .text.Chip_GPIO_SetPinDIR
+                0x00000c50       0x44 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .text.Chip_GPIO_WriteDirBit
+                0x00000c94       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .text.Board_LED_Init
+                0x00000cc4       0x6c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .text.Board_Buttons_Init
+                0x00000d30       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x00000d30                Board_Buttons_Init
+ .text.Board_Init
+                0x00000d54       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x00000d54                Board_Init
+ .text.Chip_SYSCTL_SetFLASHAccess
+                0x00000d78       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .text.Board_SetupMuxing
+                0x00000da8       0x1c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x00000da8                Board_SetupMuxing
+ .text.Board_SetupClocking
+                0x00000dc4       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x00000dc4                Board_SetupClocking
+ .text.Board_SystemInit
+                0x00000dd8       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x00000dd8                Board_SystemInit
+ .text.getFullConvClk
+                0x00000de8       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+ .text.getClkDiv
+                0x00000df8       0x4c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
  .text.setStartMode
-                0x000007ec       0x2c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
-                0x000007ec                setStartMode
+                0x00000e44       0x2c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+                0x00000e44                setStartMode
  .text.Chip_ADC_Init
-                0x00000818       0x74 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
-                0x00000818                Chip_ADC_Init
+                0x00000e70       0x74 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+                0x00000e70                Chip_ADC_Init
  .text.Chip_ADC_Int_SetChannelCmd
-                0x0000088c       0x48 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
-                0x0000088c                Chip_ADC_Int_SetChannelCmd
+                0x00000ee4       0x48 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+                0x00000ee4                Chip_ADC_Int_SetChannelCmd
  .text.Chip_ADC_SetSampleRate
-                0x000008d4       0x50 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
-                0x000008d4                Chip_ADC_SetSampleRate
+                0x00000f2c       0x50 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+                0x00000f2c                Chip_ADC_SetSampleRate
  .text.Chip_ADC_EnableChannel
-                0x00000924       0x54 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
-                0x00000924                Chip_ADC_EnableChannel
+                0x00000f7c       0x54 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+                0x00000f7c                Chip_ADC_EnableChannel
  .text.Chip_ADC_SetBurstCmd
-                0x00000978       0x3c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
-                0x00000978                Chip_ADC_SetBurstCmd
+                0x00000fd0       0x3c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+                0x00000fd0                Chip_ADC_SetBurstCmd
  .text.SystemCoreClockUpdate
-                0x000009b4       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
-                0x000009b4                SystemCoreClockUpdate
+                0x0000100c       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+                0x0000100c                SystemCoreClockUpdate
  .text.Chip_Clock_IsMainPLLEnabled
-                0x000009cc       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001024       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_IsMainPLLConnected
-                0x000009f0       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001048       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_FeedPLL
-                0x00000a14       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000106c       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetMainPLLSource
-                0x00000a48       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000010a0       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetMainOscRate
-                0x00000a68       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000010c0       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetIntOscRate
-                0x00000a7c       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000010d4       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetRTCOscRate
-                0x00000a90       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000010e8       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetMainPLLInClockRate
-                0x00000aa4       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000010fc       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_EnablePLL
-                0x00000ab4       0x44 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000ab4                Chip_Clock_EnablePLL
+                0x0000110c       0x44 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000110c                Chip_Clock_EnablePLL
  .text.Chip_Clock_DisablePLL
-                0x00000af8       0x48 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000af8                Chip_Clock_DisablePLL
+                0x00001150       0x48 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001150                Chip_Clock_DisablePLL
  .text.Chip_Clock_SetupPLL
-                0x00000b40       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000b40                Chip_Clock_SetupPLL
+                0x00001198       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001198                Chip_Clock_SetupPLL
  .text.Chip_Clock_EnablePeriphClock
-                0x00000b9c       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000b9c                Chip_Clock_EnablePeriphClock
+                0x000011f4       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000011f4                Chip_Clock_EnablePeriphClock
  .text.Chip_Clock_GetCPUClockSource
-                0x00000bd0       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000bd0                Chip_Clock_GetCPUClockSource
+                0x00001228       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001228                Chip_Clock_GetCPUClockSource
  .text.Chip_Clock_SetCPUClockDiv
-                0x00000bf4       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000bf4                Chip_Clock_SetCPUClockDiv
+                0x0000124c       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000124c                Chip_Clock_SetCPUClockDiv
  .text.Chip_Clock_GetCPUClockDiv
-                0x00000c14       0x1c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000c14                Chip_Clock_GetCPUClockDiv
+                0x0000126c       0x1c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000126c                Chip_Clock_GetCPUClockDiv
+ .text.Chip_Clock_SetPCLKDiv
+                0x00001288       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001288                Chip_Clock_SetPCLKDiv
  .text.Chip_Clock_GetPCLKDiv
-                0x00000c30       0x8c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000c30                Chip_Clock_GetPCLKDiv
+                0x000012ec       0x8c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000012ec                Chip_Clock_GetPCLKDiv
  .text.Chip_Clock_GetSYSCLKRate
-                0x00000cbc       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000cbc                Chip_Clock_GetSYSCLKRate
+                0x00001378       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001378                Chip_Clock_GetSYSCLKRate
  .text.Chip_Clock_GetMainPLLOutClockRate
-                0x00000cf0       0x54 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000cf0                Chip_Clock_GetMainPLLOutClockRate
+                0x000013ac       0x54 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000013ac                Chip_Clock_GetMainPLLOutClockRate
  .text.Chip_Clock_GetMainClockRate
-                0x00000d44       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000d44                Chip_Clock_GetMainClockRate
+                0x00001400       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001400                Chip_Clock_GetMainClockRate
  .text.Chip_Clock_GetSystemClockRate
-                0x00000d6c       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000d6c                Chip_Clock_GetSystemClockRate
+                0x00001428       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001428                Chip_Clock_GetSystemClockRate
  .text.Chip_Clock_GetPeripheralClockRate
-                0x00000d84       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00000d84                Chip_Clock_GetPeripheralClockRate
+                0x00001440       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001440                Chip_Clock_GetPeripheralClockRate
  .text.Chip_DAC_Init
-                0x00000dac       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
-                0x00000dac                Chip_DAC_Init
+                0x00001468       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+                0x00001468                Chip_DAC_Init
+ .text.Chip_DAC_UpdateValue
+                0x00001480       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+                0x00001480                Chip_DAC_UpdateValue
  .text.Chip_DAC_SetBias
-                0x00000dc4       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
-                0x00000dc4                Chip_DAC_SetBias
+                0x000014b0       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+                0x000014b0                Chip_DAC_SetBias
  .text.configDMAMux
-                0x00000df8       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x000014e4       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .text.makeCtrlWord
-                0x00000e5c      0x124 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x00000e5c                makeCtrlWord
+                0x00001548      0x124 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00001548                makeCtrlWord
  .text.setupChannel
-                0x00000f80       0xbc D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x00000f80                setupChannel
+                0x0000166c       0xbc D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x0000166c                setupChannel
  .text.Chip_GPDMA_Init
-                0x0000103c       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x0000103c                Chip_GPDMA_Init
+                0x00001728       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00001728                Chip_GPDMA_Init
  .text.Chip_GPDMA_Interrupt
-                0x000010a0       0x6c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x000010a0                Chip_GPDMA_Interrupt
+                0x0000178c       0x6c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x0000178c                Chip_GPDMA_Interrupt
  .text.Chip_GPDMA_InitChannelCfg
-                0x0000110c       0xe0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x0000110c                Chip_GPDMA_InitChannelCfg
+                0x000017f8       0xe0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x000017f8                Chip_GPDMA_InitChannelCfg
  .text.Chip_GPDMA_IntGetStatus
-                0x000011ec       0xbc D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x000011ec                Chip_GPDMA_IntGetStatus
+                0x000018d8       0xbc D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x000018d8                Chip_GPDMA_IntGetStatus
  .text.Chip_GPDMA_ClearIntPending
-                0x000012a8       0x40 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x000012a8                Chip_GPDMA_ClearIntPending
+                0x00001994       0x40 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00001994                Chip_GPDMA_ClearIntPending
  .text.Chip_GPDMA_ChannelCmd
-                0x000012e8       0x48 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x000012e8                Chip_GPDMA_ChannelCmd
+                0x000019d4       0x48 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x000019d4                Chip_GPDMA_ChannelCmd
  .text.Chip_GPDMA_Transfer
-                0x00001330       0xf4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x00001330                Chip_GPDMA_Transfer
+                0x00001a1c       0xf4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00001a1c                Chip_GPDMA_Transfer
+ .text.Chip_GPDMA_GetFreeChannel
+                0x00001b10       0x58 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00001b10                Chip_GPDMA_GetFreeChannel
+ .text.Chip_I2S_Init
+                0x00001b68       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+                0x00001b68                Chip_I2S_Init
+ .text.Chip_I2S_Int_TxCmd
+                0x00001b80       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+                0x00001b80                Chip_I2S_Int_TxCmd
+ .text.Chip_I2S_Int_RxCmd
+                0x00001bdc       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+                0x00001bdc                Chip_I2S_Int_RxCmd
+ .text.Chip_I2S_DMA_TxCmd
+                0x00001c38       0xa0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+                0x00001c38                Chip_I2S_DMA_TxCmd
+ .text.Chip_I2S_DMA_RxCmd
+                0x00001cd8       0xa0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+                0x00001cd8                Chip_I2S_DMA_RxCmd
  .text.Chip_IOCON_PinMuxSet
-                0x00001424       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
-                0x00001424                Chip_IOCON_PinMuxSet
+                0x00001d78       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x00001d78                Chip_IOCON_PinMuxSet
  .text.Chip_IOCON_PinMux
-                0x0000145c       0x94 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
-                0x0000145c                Chip_IOCON_PinMux
+                0x00001db0       0x94 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x00001db0                Chip_IOCON_PinMux
  .text.Chip_IOCON_SetPinMuxing
-                0x000014f0       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
-                0x000014f0                Chip_IOCON_SetPinMuxing
+                0x00001e44       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x00001e44                Chip_IOCON_SetPinMuxing
  .text.Chip_Clock_IsMainPLLEnabled
-                0x00001554       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00001ea8       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_IsMainPLLLocked
-                0x00001578       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00001ecc       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_IsMainPLLConnected
-                0x0000159c       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00001ef0       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_EnableCrystal
-                0x000015c0       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00001f14       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_IsCrystalEnabled
-                0x000015e0       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00001f34       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_SetMainPLLSource
-                0x00001604       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00001f58       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_SetupXtalClocking
-                0x00001624       0x90 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
-                0x00001624                Chip_SetupXtalClocking
+                0x00001f78       0x90 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00001f78                Chip_SetupXtalClocking
  .text.__weak_main
-                0x000016b4        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
-                0x000016b4                __weak_main
-                0x000016b4                __main
+                0x00002008        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
+                0x00002008                __weak_main
+                0x00002008                __main
+ .text.__aeabi_division_uldivmod
+                0x0000200c      0x174 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
+                0x0000200c                __aeabi_uldivmod
+                0x00002010                __bhs_ldivmod1
+ .text.__aeabi_division_idiv0
+                0x00002180        0x2 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_idiv0.o)
+                0x00002180                __aeabi_idiv0
  *(.rodata .rodata.* .constdata .constdata.*)
+ *fill*         0x00002182        0x2 ff
  .rodata.OscRateIn
-                0x000016b8        0x4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
-                0x000016b8                OscRateIn
+                0x00002184        0x4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x00002184                OscRateIn
  .rodata.RTCOscRateIn
-                0x000016bc        0x4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
-                0x000016bc                RTCOscRateIn
+                0x00002188        0x4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x00002188                RTCOscRateIn
  .rodata.pinmuxing
-                0x000016c0       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x0000218c       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
  .rodata.GPDMA_LUTPerBurst
-                0x0000171c       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x0000171c                GPDMA_LUTPerBurst
+                0x000021e8       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x000021e8                GPDMA_LUTPerBurst
  .rodata.GPDMA_LUTPerWid
-                0x00001734       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x00001734                GPDMA_LUTPerWid
-                0x0000174c                . = ALIGN (0x4)
+                0x00002200       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00002200                GPDMA_LUTPerWid
+                0x00002218                . = ALIGN (0x4)
 
-.glue_7         0x0000174c        0x0
- .glue_7        0x0000174c        0x0 linker stubs
+.glue_7         0x00002218        0x0
+ .glue_7        0x00002218        0x0 linker stubs
 
-.glue_7t        0x0000174c        0x0
- .glue_7t       0x0000174c        0x0 linker stubs
+.glue_7t        0x00002218        0x0
+ .glue_7t       0x00002218        0x0 linker stubs
 
-.vfp11_veneer   0x0000174c        0x0
- .vfp11_veneer  0x0000174c        0x0 linker stubs
+.vfp11_veneer   0x00002218        0x0
+ .vfp11_veneer  0x00002218        0x0 linker stubs
 
-.v4_bx          0x0000174c        0x0
- .v4_bx         0x0000174c        0x0 linker stubs
+.v4_bx          0x00002218        0x0
+ .v4_bx         0x00002218        0x0 linker stubs
 
-.iplt           0x0000174c        0x0
- .iplt          0x0000174c        0x0 ./src/Inicializaciones.o
+.iplt           0x00002218        0x0
+ .iplt          0x00002218        0x0 ./src/Inicializaciones.o
 
-.rel.dyn        0x0000174c        0x0
- .rel.iplt      0x0000174c        0x0 ./src/Inicializaciones.o
+.rel.dyn        0x00002218        0x0
+ .rel.iplt      0x00002218        0x0 ./src/Inicializaciones.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000174c                __exidx_start = .
+                0x00002218                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000174c                __exidx_end = .
-                0x0000174c                _etext = .
+                0x00002218                __exidx_end = .
+                0x00002218                _etext = .
 
-.data_RAM2      0x2007c000        0x0 load address 0x0000174c
+.data_RAM2      0x2007c000        0x0 load address 0x00002218
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM2, .)
  *(.ramfunc.$RAM2)
@@ -2183,20 +2190,23 @@ END GROUP
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _end_uninit_RESERVED = .
 
-.data           0x10000000       0x60 load address 0x0000174c
+.data           0x10000000       0x64 load address 0x00002218
  FILL mask 0xff
                 0x10000000                _data = .
  *(vtable)
  *(.ramfunc*)
  *(.data*)
+ .data.adcFlag  0x10000000        0x2 ./src/Variables_globales.o
+                0x10000000                adcFlag
+ *fill*         0x10000002        0x2 ff
  .data.GPDMA_LUTPerAddr
-                0x10000000       0x60 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x10000000                GPDMA_LUTPerAddr
-                0x10000060                . = ALIGN (0x4)
-                0x10000060                _edata = .
+                0x10000004       0x60 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x10000004                GPDMA_LUTPerAddr
+                0x10000064                . = ALIGN (0x4)
+                0x10000064                _edata = .
 
-.igot.plt       0x10000060        0x0 load address 0x000017ac
- .igot.plt      0x10000060        0x0 ./src/Inicializaciones.o
+.igot.plt       0x10000064        0x0 load address 0x0000227c
+ .igot.plt      0x10000064        0x0 ./src/Inicializaciones.o
 
 .bss_RAM2       0x2007c000        0x0
                 [!provide]                PROVIDE (__start_bss_RAM2, .)
@@ -2205,26 +2215,37 @@ END GROUP
                 0x2007c000                . = ALIGN ((. != 0x0)?0x4:0x1)
                 [!provide]                PROVIDE (__end_bss_RAM2, .)
 
-.bss            0x10000060       0x18
-                0x10000060                _bss = .
+.bss            0x10000064       0x24
+                0x10000064                _bss = .
  *(.bss*)
- .bss.init_flag.8063
-                0x10000060        0x1 ./src/Inicializaciones.o
- *fill*         0x10000061        0x3 
+ .bss.init_flag.8067
+                0x10000064        0x1 ./src/Inicializaciones.o
+ .bss.init_flag.8110
+                0x10000065        0x1 ./src/Inicializaciones.o
+ *fill*         0x10000066        0x2 
  .bss.dma_memory_adc
-                0x10000064        0x4 ./src/Variables_globales.o
-                0x10000064                dma_memory_adc
+                0x10000068        0x4 ./src/Variables_globales.o
+                0x10000068                dma_memory_adc
+ .bss.canal_adc
+                0x1000006c        0x1 ./src/Variables_globales.o
+                0x1000006c                canal_adc
+ *fill*         0x1000006d        0x3 
  .bss.dma_memory_dac
-                0x10000068        0x2 ./src/Variables_globales.o
-                0x10000068                dma_memory_dac
- *fill*         0x1000006a        0x2 
+                0x10000070        0x4 ./src/Variables_globales.o
+                0x10000070                dma_memory_dac
+ .bss.canal_dac
+                0x10000074        0x1 ./src/Variables_globales.o
+                0x10000074                canal_dac
+ *fill*         0x10000075        0x3 
+ .bss.data      0x10000078        0x4 ./src/Variables_globales.o
+                0x10000078                data
  .bss.ChannelHandlerArray
-                0x1000006c        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x1000007c        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  *(COMMON)
- COMMON         0x10000074        0x4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
-                0x10000074                SystemCoreClock
-                0x10000078                . = ALIGN (0x4)
-                0x10000078                _ebss = .
+ COMMON         0x10000084        0x4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+                0x10000084                SystemCoreClock
+                0x10000088                . = ALIGN (0x4)
+                0x10000088                _ebss = .
                 [!provide]                PROVIDE (end, .)
 
 .noinit_RAM2    0x2007c000        0x0
@@ -2232,99 +2253,109 @@ END GROUP
  *(.noinit.$RamAHB32*)
                 0x2007c000                . = ALIGN (0x4)
 
-.noinit         0x10000078        0x0
-                0x10000078                _noinit = .
+.noinit         0x10000088        0x0
+                0x10000088                _noinit = .
  *(.noinit*)
-                0x10000078                . = ALIGN (0x4)
-                0x10000078                _end_noinit = .
+                0x10000088                . = ALIGN (0x4)
+                0x10000088                _end_noinit = .
                 [!provide]                PROVIDE (_pvHeapStart, DEFINED (__user_heap_base)?__user_heap_base:.)
                 0x10008000                PROVIDE (_vStackTop, DEFINED (__user_stack_top)?__user_stack_top:(__top_RamLoc32 - 0x0))
                 0xefff74b2                PROVIDE (__valid_user_code_checksum, (0x0 - ((((((_vStackTop + (ResetISR + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
 OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
 
-.debug_info     0x00000000     0x658d
- .debug_info    0x00000000      0xa5a ./src/Inicializaciones.o
- .debug_info    0x00000a5a      0x347 ./src/Interrupciones.o
- .debug_info    0x00000da1      0x563 ./src/THD_Meter.o
- .debug_info    0x00001304      0x24f ./src/Variables_globales.o
- .debug_info    0x00001553      0x253 ./src/cr_startup_lpc175x_6x.o
- .debug_info    0x000017a6      0x110 ./src/sysinit.o
- .debug_info    0x000018b6     0x1214 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_info    0x00002aca      0x591 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_info    0x0000305b      0x88d D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
- .debug_info    0x000038e8      0x51e D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_info    0x00003e06      0xb62 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_info    0x00004968      0x1e0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .debug_info    0x00004b48     0x1323 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .debug_info    0x00005e6b      0x2e9 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_info    0x00006154      0x439 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+.debug_info     0x00000000     0x740c
+ .debug_info    0x00000000      0xf80 ./src/Inicializaciones.o
+ .debug_info    0x00000f80      0x348 ./src/Interrupciones.o
+ .debug_info    0x000012c8      0x563 ./src/THD_Meter.o
+ .debug_info    0x0000182b      0x29e ./src/Variables_globales.o
+ .debug_info    0x00001ac9      0x253 ./src/cr_startup_lpc175x_6x.o
+ .debug_info    0x00001d1c      0x16f ./src/funciones.o
+ .debug_info    0x00001e8b      0x110 ./src/sysinit.o
+ .debug_info    0x00001f9b     0x1214 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_info    0x000031af      0x591 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_info    0x00003740      0x88d D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+ .debug_info    0x00003fcd      0x51e D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_info    0x000044eb      0xb62 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_info    0x0000504d      0x1e0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_info    0x0000522d     0x1323 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_info    0x00006550      0x79a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_info    0x00006cea      0x2e9 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_info    0x00006fd3      0x439 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
 
-.debug_abbrev   0x00000000     0x173b
- .debug_abbrev  0x00000000      0x204 ./src/Inicializaciones.o
- .debug_abbrev  0x00000204      0x113 ./src/Interrupciones.o
- .debug_abbrev  0x00000317      0x19f ./src/THD_Meter.o
- .debug_abbrev  0x000004b6       0xaa ./src/Variables_globales.o
- .debug_abbrev  0x00000560       0xf5 ./src/cr_startup_lpc175x_6x.o
- .debug_abbrev  0x00000655       0xa3 ./src/sysinit.o
- .debug_abbrev  0x000006f8      0x2e4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_abbrev  0x000009dc      0x15c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_abbrev  0x00000b38      0x1bc D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
- .debug_abbrev  0x00000cf4      0x13c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_abbrev  0x00000e30      0x2ec D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_abbrev  0x0000111c      0x10a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .debug_abbrev  0x00001226      0x27a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .debug_abbrev  0x000014a0      0x126 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_abbrev  0x000015c6      0x175 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+.debug_abbrev   0x00000000     0x1a86
+ .debug_abbrev  0x00000000      0x288 ./src/Inicializaciones.o
+ .debug_abbrev  0x00000288      0x113 ./src/Interrupciones.o
+ .debug_abbrev  0x0000039b      0x19f ./src/THD_Meter.o
+ .debug_abbrev  0x0000053a       0xec ./src/Variables_globales.o
+ .debug_abbrev  0x00000626       0xf5 ./src/cr_startup_lpc175x_6x.o
+ .debug_abbrev  0x0000071b       0xce ./src/funciones.o
+ .debug_abbrev  0x000007e9       0xa3 ./src/sysinit.o
+ .debug_abbrev  0x0000088c      0x2e4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_abbrev  0x00000b70      0x15c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_abbrev  0x00000ccc      0x1bc D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+ .debug_abbrev  0x00000e88      0x13c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_abbrev  0x00000fc4      0x2ec D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_abbrev  0x000012b0      0x10a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_abbrev  0x000013ba      0x27a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_abbrev  0x00001634      0x1b7 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_abbrev  0x000017eb      0x126 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_abbrev  0x00001911      0x175 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
 
-.debug_aranges  0x00000000      0x618
+.debug_aranges  0x00000000      0x6e0
  .debug_aranges
-                0x00000000       0x68 ./src/Inicializaciones.o
+                0x00000000       0xb0 ./src/Inicializaciones.o
  .debug_aranges
-                0x00000068       0x20 ./src/Interrupciones.o
+                0x000000b0       0x20 ./src/Interrupciones.o
  .debug_aranges
-                0x00000088       0x30 ./src/THD_Meter.o
+                0x000000d0       0x30 ./src/THD_Meter.o
  .debug_aranges
-                0x000000b8       0x18 ./src/Variables_globales.o
+                0x00000100       0x18 ./src/Variables_globales.o
  .debug_aranges
-                0x000000d0       0x80 ./src/cr_startup_lpc175x_6x.o
+                0x00000118       0x80 ./src/cr_startup_lpc175x_6x.o
  .debug_aranges
-                0x00000150       0x20 ./src/sysinit.o
+                0x00000198       0x20 ./src/funciones.o
  .debug_aranges
-                0x00000170      0x138 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x000001b8       0x20 ./src/sysinit.o
  .debug_aranges
-                0x000002a8       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x000001d8      0x138 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
  .debug_aranges
-                0x000002e0       0x88 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+                0x00000310       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
  .debug_aranges
-                0x00000368       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+                0x00000348       0x88 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
  .debug_aranges
-                0x000003a0      0x120 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000003d0       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
  .debug_aranges
-                0x000004c0       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+                0x00000408      0x120 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .debug_aranges
-                0x000004f8       0x90 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00000528       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
  .debug_aranges
-                0x00000588       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x00000560       0x90 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .debug_aranges
-                0x000005b8       0x60 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x000005f0       0x60 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_aranges
+                0x00000650       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_aranges
+                0x00000680       0x60 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
 
-.debug_ranges   0x00000000      0x520
- .debug_ranges  0x00000000       0x58 ./src/Inicializaciones.o
- .debug_ranges  0x00000058       0x10 ./src/Interrupciones.o
- .debug_ranges  0x00000068       0x20 ./src/THD_Meter.o
- .debug_ranges  0x00000088       0x70 ./src/cr_startup_lpc175x_6x.o
- .debug_ranges  0x000000f8       0x10 ./src/sysinit.o
- .debug_ranges  0x00000108      0x128 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_ranges  0x00000230       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_ranges  0x00000258       0x78 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
- .debug_ranges  0x000002d0       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_ranges  0x000002f8      0x110 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_ranges  0x00000408       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .debug_ranges  0x00000430       0x80 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .debug_ranges  0x000004b0       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_ranges  0x000004d0       0x50 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+.debug_ranges   0x00000000      0x5c8
+ .debug_ranges  0x00000000       0xa0 ./src/Inicializaciones.o
+ .debug_ranges  0x000000a0       0x10 ./src/Interrupciones.o
+ .debug_ranges  0x000000b0       0x20 ./src/THD_Meter.o
+ .debug_ranges  0x000000d0       0x70 ./src/cr_startup_lpc175x_6x.o
+ .debug_ranges  0x00000140       0x10 ./src/funciones.o
+ .debug_ranges  0x00000150       0x10 ./src/sysinit.o
+ .debug_ranges  0x00000160      0x128 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_ranges  0x00000288       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_ranges  0x000002b0       0x78 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+ .debug_ranges  0x00000328       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_ranges  0x00000350      0x110 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_ranges  0x00000460       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_ranges  0x00000488       0x80 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_ranges  0x00000508       0x50 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_ranges  0x00000558       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_ranges  0x00000578       0x50 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
 
-.debug_macro    0x00000000     0x6bcb
+.debug_macro    0x00000000     0x70d3
  .debug_macro   0x00000000      0x2e1 ./src/Inicializaciones.o
  .debug_macro   0x000002e1      0x892 ./src/Inicializaciones.o
  .debug_macro   0x00000b73       0x10 ./src/Inicializaciones.o
@@ -2377,74 +2408,82 @@ OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
  .debug_macro   0x0000442b       0xb0 ./src/Inicializaciones.o
  .debug_macro   0x000044db       0x7f ./src/Inicializaciones.o
  .debug_macro   0x0000455a       0xc4 ./src/Inicializaciones.o
- .debug_macro   0x0000461e       0x40 ./src/Inicializaciones.o
- .debug_macro   0x0000465e      0x2e1 ./src/Interrupciones.o
- .debug_macro   0x0000493f      0x2ea ./src/THD_Meter.o
- .debug_macro   0x00004c29       0x82 ./src/THD_Meter.o
- .debug_macro   0x00004cab      0x2e1 ./src/Variables_globales.o
- .debug_macro   0x00004f8c       0x1d ./src/cr_startup_lpc175x_6x.o
- .debug_macro   0x00004fa9      0x217 ./src/sysinit.o
- .debug_macro   0x000051c0       0x7b ./src/sysinit.o
- .debug_macro   0x0000523b       0x18 ./src/sysinit.o
- .debug_macro   0x00005253      0x22e D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_macro   0x00005481      0x886 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_macro   0x00005d07       0x12 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_macro   0x00005d19      0x217 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_macro   0x00005f30      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
- .debug_macro   0x000060fd      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_macro   0x000062ca      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_macro   0x00006497      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .debug_macro   0x00006664      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .debug_macro   0x00006831      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_macro   0x000069fe      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_macro   0x0000461e       0x9a ./src/Inicializaciones.o
+ .debug_macro   0x000046b8      0x2e1 ./src/Interrupciones.o
+ .debug_macro   0x00004999      0x2ea ./src/THD_Meter.o
+ .debug_macro   0x00004c83       0x82 ./src/THD_Meter.o
+ .debug_macro   0x00004d05      0x2e1 ./src/Variables_globales.o
+ .debug_macro   0x00004fe6       0x1d ./src/cr_startup_lpc175x_6x.o
+ .debug_macro   0x00005003      0x2e1 ./src/funciones.o
+ .debug_macro   0x000052e4      0x217 ./src/sysinit.o
+ .debug_macro   0x000054fb       0x7b ./src/sysinit.o
+ .debug_macro   0x00005576       0x18 ./src/sysinit.o
+ .debug_macro   0x0000558e      0x22e D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_macro   0x000057bc      0x886 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_macro   0x00006042       0x12 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_macro   0x00006054      0x217 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_macro   0x0000626b      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+ .debug_macro   0x00006438      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_macro   0x00006605      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_macro   0x000067d2      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_macro   0x0000699f      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_macro   0x00006b6c      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00006d39      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_macro   0x00006f06      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
 
-.debug_line     0x00000000     0x4e4d
- .debug_line    0x00000000      0x6f6 ./src/Inicializaciones.o
- .debug_line    0x000006f6      0x645 ./src/Interrupciones.o
- .debug_line    0x00000d3b      0x6a6 ./src/THD_Meter.o
- .debug_line    0x000013e1      0x61b ./src/Variables_globales.o
- .debug_line    0x000019fc       0xd5 ./src/cr_startup_lpc175x_6x.o
- .debug_line    0x00001ad1      0x45a ./src/sysinit.o
- .debug_line    0x00001f2b      0x77c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_line    0x000026a7      0x49a D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_line    0x00002b41      0x51a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
- .debug_line    0x0000305b      0x442 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_line    0x0000349d      0x6be D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_line    0x00003b5b      0x42a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .debug_line    0x00003f85      0x5e2 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .debug_line    0x00004567      0x42e D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_line    0x00004995      0x4b8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+.debug_line     0x00000000     0x5b9c
+ .debug_line    0x00000000      0x89a ./src/Inicializaciones.o
+ .debug_line    0x0000089a      0x645 ./src/Interrupciones.o
+ .debug_line    0x00000edf      0x6ab ./src/THD_Meter.o
+ .debug_line    0x0000158a      0x61b ./src/Variables_globales.o
+ .debug_line    0x00001ba5       0xd5 ./src/cr_startup_lpc175x_6x.o
+ .debug_line    0x00001c7a      0x632 ./src/funciones.o
+ .debug_line    0x000022ac      0x45a ./src/sysinit.o
+ .debug_line    0x00002706      0x77c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_line    0x00002e82      0x49a D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_line    0x0000331c      0x51a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+ .debug_line    0x00003836      0x442 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_line    0x00003c78      0x6be D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_line    0x00004336      0x42a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_line    0x00004760      0x5e2 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_line    0x00004d42      0x574 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_line    0x000052b6      0x42e D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_line    0x000056e4      0x4b8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
 
-.debug_str      0x00000000    0x18703
- .debug_str     0x00000000    0x15f4a ./src/Inicializaciones.o
-                              0x16096 (size before relaxing)
- .debug_str     0x00015f4a       0x85 ./src/Interrupciones.o
-                              0x15c1e (size before relaxing)
- .debug_str     0x00015fcf      0x4c2 ./src/THD_Meter.o
-                              0x160fd (size before relaxing)
- .debug_str     0x00016491      0x1d5 ./src/Variables_globales.o
-                              0x15b81 (size before relaxing)
- .debug_str     0x00016666      0x197 ./src/cr_startup_lpc175x_6x.o
+.debug_str      0x00000000    0x189dd
+ .debug_str     0x00000000    0x16486 ./src/Inicializaciones.o
+                              0x165e6 (size before relaxing)
+ .debug_str     0x00016486       0x6e ./src/Interrupciones.o
+                              0x15d21 (size before relaxing)
+ .debug_str     0x000164f4      0x4c2 ./src/THD_Meter.o
+                              0x161ed (size before relaxing)
+ .debug_str     0x000169b6      0x1db ./src/Variables_globales.o
+                              0x15cc1 (size before relaxing)
+ .debug_str     0x00016b91      0x197 ./src/cr_startup_lpc175x_6x.o
                                0x26c0 (size before relaxing)
- .debug_str     0x000167fd       0x51 ./src/sysinit.o
+ .debug_str     0x00016d28       0x1c ./src/funciones.o
+                              0x15aaa (size before relaxing)
+ .debug_str     0x00016d44       0x51 ./src/sysinit.o
                               0x10bc2 (size before relaxing)
- .debug_str     0x0001684e      0xa59 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_str     0x00016d95      0xa54 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
                               0x11789 (size before relaxing)
- .debug_str     0x000172a7      0x22d D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_str     0x000177e9      0x22d D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
                               0x10f8e (size before relaxing)
- .debug_str     0x000174d4      0x53f D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+ .debug_str     0x00017a16      0x306 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
                               0x10e0d (size before relaxing)
- .debug_str     0x00017a13       0x73 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_str     0x00017d1c       0x73 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
                               0x10b6a (size before relaxing)
- .debug_str     0x00017a86      0x623 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_str     0x00017d8f      0x5ce D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
                               0x111d8 (size before relaxing)
- .debug_str     0x000180a9       0xb1 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_str     0x0001835d       0xb1 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
                               0x1062c (size before relaxing)
- .debug_str     0x0001815a      0x471 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_str     0x0001840e      0x3ee D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
                               0x1129d (size before relaxing)
- .debug_str     0x000185cb       0x74 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_str     0x000187fc       0xa9 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+                              0x10c7a (size before relaxing)
+ .debug_str     0x000188a5       0x74 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
                               0x10655 (size before relaxing)
- .debug_str     0x0001863f       0xc4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_str     0x00018919       0xc4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
                               0x1083d (size before relaxing)
 
 .comment        0x00000000       0xdc
@@ -2454,6 +2493,7 @@ OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
  .comment       0x0000006e       0x6f ./src/THD_Meter.o
  .comment       0x0000006e       0x6f ./src/Variables_globales.o
  .comment       0x0000006e       0x6f ./src/cr_startup_lpc175x_6x.o
+ .comment       0x0000006e       0x6f ./src/funciones.o
  .comment       0x0000006e       0x6f ./src/sysinit.o
  .comment       0x0000006e       0x6f D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
  .comment       0x0000006e       0x6f D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
@@ -2462,6 +2502,7 @@ OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
  .comment       0x0000006e       0x6f D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .comment       0x0000006e       0x6f D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
  .comment       0x0000006e       0x6f D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .comment       0x0000006e       0x6f D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
  .comment       0x0000006e       0x6f D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
  .comment       0x0000006e       0x6f D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .comment       0x0000006e       0x6e c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
@@ -2480,40 +2521,50 @@ OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
  .ARM.attributes
                 0x000000cc       0x33 ./src/cr_startup_lpc175x_6x.o
  .ARM.attributes
-                0x000000ff       0x33 ./src/sysinit.o
+                0x000000ff       0x33 ./src/funciones.o
  .ARM.attributes
-                0x00000132       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x00000132       0x33 ./src/sysinit.o
  .ARM.attributes
-                0x00000165       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x00000165       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
  .ARM.attributes
-                0x00000198       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+                0x00000198       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
  .ARM.attributes
-                0x000001cb       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+                0x000001cb       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
  .ARM.attributes
-                0x000001fe       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000001fe       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
  .ARM.attributes
-                0x00000231       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+                0x00000231       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .ARM.attributes
-                0x00000264       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00000264       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
  .ARM.attributes
-                0x00000297       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x00000297       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .ARM.attributes
-                0x000002ca       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x000002ca       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
  .ARM.attributes
-                0x000002fd       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
+                0x000002fd       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .ARM.attributes
+                0x00000330       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .ARM.attributes
+                0x00000363       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
+ .ARM.attributes
+                0x00000396       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
+ .ARM.attributes
+                0x000003b7       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_idiv0.o)
 
-.debug_frame    0x00000000     0x1564
- .debug_frame   0x00000000      0x17c ./src/Inicializaciones.o
- .debug_frame   0x0000017c       0x38 ./src/Interrupciones.o
- .debug_frame   0x000001b4       0x70 ./src/THD_Meter.o
- .debug_frame   0x00000224      0x170 ./src/cr_startup_lpc175x_6x.o
- .debug_frame   0x00000394       0x34 ./src/sysinit.o
- .debug_frame   0x000003c8      0x52c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_frame   0x000008f4       0x8c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_frame   0x00000980      0x218 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
- .debug_frame   0x00000b98       0x88 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_frame   0x00000c20      0x490 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_frame   0x000010b0       0xac D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .debug_frame   0x0000115c      0x25c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .debug_frame   0x000013b8       0x80 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_frame   0x00001438      0x12c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+.debug_frame    0x00000000     0x1894
+ .debug_frame   0x00000000      0x2fc ./src/Inicializaciones.o
+ .debug_frame   0x000002fc       0x38 ./src/Interrupciones.o
+ .debug_frame   0x00000334       0x70 ./src/THD_Meter.o
+ .debug_frame   0x000003a4      0x170 ./src/cr_startup_lpc175x_6x.o
+ .debug_frame   0x00000514       0x34 ./src/funciones.o
+ .debug_frame   0x00000548       0x34 ./src/sysinit.o
+ .debug_frame   0x0000057c      0x52c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_frame   0x00000aa8       0x8c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_frame   0x00000b34      0x218 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(adc_17xx_40xx.o)
+ .debug_frame   0x00000d4c       0x88 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_frame   0x00000dd4      0x490 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_frame   0x00001264       0xac D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_frame   0x00001310      0x25c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_frame   0x0000156c      0x17c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_frame   0x000016e8       0x80 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_frame   0x00001768      0x12c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)

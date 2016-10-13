@@ -1,24 +1,6 @@
-01:09:34 **** Incremental Build of configuration Debug for project lpc_myboard_1769 ****
+04:03:51 **** Incremental Build of configuration Debug for project lpc_myboard_1769 ****
 make -r all 
-Building file: ../src/board.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M3 -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/board.d" -MT"src/board.o" -MT"src/board.d" -o "src/board.o" "../src/board.c"
-Finished building: ../src/board.c
- 
-Building target: liblpc_myboard_1769.a
-Invoking: MCU Archiver
-arm-none-eabi-ar -r  "liblpc_myboard_1769.a"  ./src/board.o ./src/board_sysinit.o ./src/lpc_phy_smsc87x0.o   
-c:\nxp\LPCXpresso_8.2.2_650\lpcxpresso\tools\bin\arm-none-eabi-ar.exe: creating liblpc_myboard_1769.a
-Finished building target: liblpc_myboard_1769.a
- 
-make --no-print-directory post-build
-Performing post-build steps
-arm-none-eabi-size "liblpc_myboard_1769.a" ; # arm-none-eabi-objdump -h -S "liblpc_myboard_1769.a" >"liblpc_myboard_1769.lss"
-   text	   data	    bss	    dec	    hex	filename
-   2062	      0	      0	   2062	    80e	board.o (ex liblpc_myboard_1769.a)
-    204	      0	      0	    204	     cc	board_sysinit.o (ex liblpc_myboard_1769.a)
-    856	      0	     18	    874	    36a	lpc_phy_smsc87x0.o (ex liblpc_myboard_1769.a)
- 
+make: Nothing to be done for `all'.
 
-01:09:35 Build Finished (took 531ms)
+04:03:51 Build Finished (took 93ms)
 
