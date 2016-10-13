@@ -115,11 +115,6 @@ void main_init()
 
 	Board_Init();
 
-	Chip_IOCON_PinMux (LPC_IOCON, 0,  2, MD_PLN, IOCON_FUNC1 ); // P0[2] -> TXD0
-	Chip_IOCON_PinMux (LPC_IOCON, 0,  3, MD_PLN, IOCON_FUNC1 ); // P0[3] -> RXD0
-	Chip_IOCON_PinMux (LPC_IOCON, 0,  15, MD_PLN, IOCON_FUNC1 ); // P0[15] -> TXD1
-	Chip_IOCON_PinMux (LPC_IOCON, 0,  16, MD_PLN, IOCON_FUNC1 ); // P0[16] -> RXD1
-
 	Board_UART_Init((uint32_t)LPC_UART0, 9600);
 
 	/* Before using the ring buffers, initialize them using the ring
