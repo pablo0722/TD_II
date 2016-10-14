@@ -1,16 +1,74 @@
-01:01:14 **** Incremental Build of configuration Debug for project LibFreeRTOS_8.2.3 ****
+03:05:01 **** Incremental Build of configuration Debug for project LibFreeRTOS_8.2.3 ****
 make -r all 
 make: Nothing to be done for `all'.
-01:01:16 **** Incremental Build of configuration Debug for project cr_dsplib_cm3 ****
+03:05:03 **** Incremental Build of configuration Debug for project cr_dsplib_cm3 ****
 make -r all 
 make: Nothing to be done for `all'.
-01:01:17 **** Incremental Build of configuration Debug for project lpc_chip_175x_6x ****
+03:05:04 **** Incremental Build of configuration Debug for project lpc_chip_175x_6x ****
 make -r all 
 make: Nothing to be done for `all'.
-01:01:18 **** Incremental Build of configuration Debug for project lpc_myboard_1769 ****
+03:05:05 **** Incremental Build of configuration Debug for project lpc_myboard_1769 ****
 make -r all 
 make: Nothing to be done for `all'.
-01:01:19 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+03:05:06 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Inicializaciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Inicializaciones.d" -MT"src/Inicializaciones.o" -MT"src/Inicializaciones.d" -o "src/Inicializaciones.o" "../src/Inicializaciones.c"
+../src/Inicializaciones.c: In function 'fft_init':
+../src/Inicializaciones.c:92:46: error: 'fft_inst_q31_complex' undeclared (first use in this function)
+   status = arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, fft_length, ifft, bit_reverse);
+                                              ^
+../src/Inicializaciones.c:92:46: note: each undeclared identifier is reported only once for each function it appears in
+../src/Inicializaciones.c:92:30: warning: passing argument 1 of 'arm_rfft_init_q31' from incompatible pointer type [-Wincompatible-pointer-types]
+   status = arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, fft_length, ifft, bit_reverse);
+                              ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/Inicializaciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2180:14: note: expected 'arm_rfft_instance_q31 * {aka struct <anonymous> *}' but argument is of type 'arm_cfft_radix2_instance_q31 * {aka struct <anonymous> *}'
+   arm_status arm_rfft_init_q31(
+              ^
+make: *** [src/Inicializaciones.o] Error 1
+03:11:34 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Inicializaciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Inicializaciones.d" -MT"src/Inicializaciones.o" -MT"src/Inicializaciones.d" -o "src/Inicializaciones.o" "../src/Inicializaciones.c"
+../src/Inicializaciones.c: In function 'fft_init':
+../src/Inicializaciones.c:92:30: warning: passing argument 1 of 'arm_rfft_init_q31' from incompatible pointer type [-Wincompatible-pointer-types]
+   status = arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, fft_length, ifft, bit_reverse);
+                              ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/Inicializaciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2180:14: note: expected 'arm_rfft_instance_q31 * {aka struct <anonymous> *}' but argument is of type 'arm_cfft_radix2_instance_q31 * {aka struct <anonymous> *}'
+   arm_status arm_rfft_init_q31(
+              ^
+Finished building: ../src/Inicializaciones.c
+ 
+Building file: ../src/Interrupciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Interrupciones.d" -MT"src/Interrupciones.o" -MT"src/Interrupciones.d" -o "src/Interrupciones.o" "../src/Interrupciones.c"
+Finished building: ../src/Interrupciones.c
+ 
+Building file: ../src/THD_Meter.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/THD_Meter.d" -MT"src/THD_Meter.o" -MT"src/THD_Meter.d" -o "src/THD_Meter.o" "../src/THD_Meter.c"
+Finished building: ../src/THD_Meter.c
+ 
+Building file: ../src/Variables_globales.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Variables_globales.d" -MT"src/Variables_globales.o" -MT"src/Variables_globales.d" -o "src/Variables_globales.o" "../src/Variables_globales.c"
+../src/Variables_globales.c:13:24: error: conflicting types for 'fft_inst_q31'
+  arm_rfft_instance_q31 fft_inst_q31;
+                        ^
+In file included from ../src/Variables_globales.c:9:0:
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:74:39: note: previous declaration of 'fft_inst_q31' was here
+   extern arm_cfft_radix2_instance_q31 fft_inst_q31;   // Estructura para aplicar FFT
+                                       ^
+make: *** [src/Variables_globales.o] Error 1
+03:12:14 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
 make -r all 
 Building file: ../src/Inicializaciones.c
 Invoking: MCU C Compiler
@@ -35,14 +93,153 @@ Finished building: ../src/Variables_globales.c
 Building file: ../src/funciones.c
 Invoking: MCU C Compiler
 arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+../src/funciones.c: In function 'fft_function':
+../src/funciones.c:21:32: warning: passing argument 2 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:21:43: warning: passing argument 3 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                           ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:22:22: warning: passing argument 1 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, mFFTOut, fft_length);
+                      ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c:22:32: warning: passing argument 2 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, mFFTOut, fft_length);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c: In function 'main_uart':
+../src/funciones.c:46:42: warning: passing argument 3 of 'Chip_UART_SendRB' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     Chip_UART_SendRB(LPC_UART0, &txring, mFFTOut, LENGTH_SAMPLES*FFT_TYPE_SIZE);
+                                          ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip_lpc175x_6x.h:182:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip.h:139,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc/board.h:35,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOSConfig.h:8,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h:98,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:13,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/uart_17xx_40xx.h:760:10: note: expected 'const void *' but argument is of type 'volatile q31_t * {aka volatile int *}'
+ uint32_t Chip_UART_SendRB(LPC_USART_T *pUART, RINGBUFF_T *pRB, const void *data, int bytes);
+          ^
 Finished building: ../src/funciones.c
  
 Building target: THD_Meter_RTOS.axf
 Invoking: MCU Linker
 arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
 Memory region         Used Size  Region Size  %age Used
-       MFlash512:       32808 B       512 KB      6.26%
-        RamLoc32:       12360 B        32 KB     37.72%
+       MFlash512:      102364 B       512 KB     19.52%
+        RamLoc32:       36964 B        32 KB    112.81%
+c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/bin/ld.exe: THD_Meter_RTOS.axf section `.bss' will not fit in region `RamLoc32'
+collect2.exe: error: ld returned 1 exit status
+        RamAHB32:          0 GB        32 KB      0.00%
+make: *** [THD_Meter_RTOS.axf] Error 1
+03:12:56 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Inicializaciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Inicializaciones.d" -MT"src/Inicializaciones.o" -MT"src/Inicializaciones.d" -o "src/Inicializaciones.o" "../src/Inicializaciones.c"
+Finished building: ../src/Inicializaciones.c
+ 
+Building file: ../src/Interrupciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Interrupciones.d" -MT"src/Interrupciones.o" -MT"src/Interrupciones.d" -o "src/Interrupciones.o" "../src/Interrupciones.c"
+Finished building: ../src/Interrupciones.c
+ 
+Building file: ../src/THD_Meter.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/THD_Meter.d" -MT"src/THD_Meter.o" -MT"src/THD_Meter.d" -o "src/THD_Meter.o" "../src/THD_Meter.c"
+Finished building: ../src/THD_Meter.c
+ 
+Building file: ../src/Variables_globales.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Variables_globales.d" -MT"src/Variables_globales.o" -MT"src/Variables_globales.d" -o "src/Variables_globales.o" "../src/Variables_globales.c"
+Finished building: ../src/Variables_globales.c
+ 
+Building file: ../src/funciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+../src/funciones.c: In function 'fft_function':
+../src/funciones.c:21:32: warning: passing argument 2 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:21:43: warning: passing argument 3 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                           ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:22:22: warning: passing argument 1 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, mFFTOut, fft_length);
+                      ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c:22:32: warning: passing argument 2 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, mFFTOut, fft_length);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c: In function 'main_uart':
+../src/funciones.c:46:42: warning: passing argument 3 of 'Chip_UART_SendRB' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     Chip_UART_SendRB(LPC_UART0, &txring, mFFTOut, LENGTH_SAMPLES*FFT_TYPE_SIZE);
+                                          ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip_lpc175x_6x.h:182:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip.h:139,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc/board.h:35,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOSConfig.h:8,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h:98,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:13,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/uart_17xx_40xx.h:760:10: note: expected 'const void *' but argument is of type 'volatile q31_t * {aka volatile int *}'
+ uint32_t Chip_UART_SendRB(LPC_USART_T *pUART, RINGBUFF_T *pRB, const void *data, int bytes);
+          ^
+Finished building: ../src/funciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:      102364 B       512 KB     19.52%
+        RamLoc32:        9316 B        32 KB     28.43%
         RamAHB32:          0 GB        32 KB      0.00%
 Finished building target: THD_Meter_RTOS.axf
  
@@ -50,5 +247,927 @@ make --no-print-directory post-build
 Performing post-build steps
 arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
    text	   data	    bss	    dec	    hex	filename
-  32808	      0	  12360	  45168	   b070	THD_Meter_RTOS.axf
+ 102364	      0	   9316	 111680	  1b440	THD_Meter_RTOS.axf
+ 
+03:24:26 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Inicializaciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Inicializaciones.d" -MT"src/Inicializaciones.o" -MT"src/Inicializaciones.d" -o "src/Inicializaciones.o" "../src/Inicializaciones.c"
+Finished building: ../src/Inicializaciones.c
+ 
+Building file: ../src/Interrupciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Interrupciones.d" -MT"src/Interrupciones.o" -MT"src/Interrupciones.d" -o "src/Interrupciones.o" "../src/Interrupciones.c"
+Finished building: ../src/Interrupciones.c
+ 
+Building file: ../src/THD_Meter.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/THD_Meter.d" -MT"src/THD_Meter.o" -MT"src/THD_Meter.d" -o "src/THD_Meter.o" "../src/THD_Meter.c"
+Finished building: ../src/THD_Meter.c
+ 
+Building file: ../src/Variables_globales.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Variables_globales.d" -MT"src/Variables_globales.o" -MT"src/Variables_globales.d" -o "src/Variables_globales.o" "../src/Variables_globales.c"
+Finished building: ../src/Variables_globales.c
+ 
+Building file: ../src/funciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+../src/funciones.c: In function 'fft_function':
+../src/funciones.c:21:32: warning: passing argument 2 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:21:43: warning: passing argument 3 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                           ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:22:22: warning: passing argument 1 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, mFFTOut, fft_length);
+                      ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c:22:32: warning: passing argument 2 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, mFFTOut, fft_length);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c: In function 'main_uart':
+../src/funciones.c:46:42: warning: passing argument 3 of 'Chip_UART_SendRB' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     Chip_UART_SendRB(LPC_UART0, &txring, mFFTOut, LENGTH_SAMPLES*FFT_TYPE_SIZE);
+                                          ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip_lpc175x_6x.h:182:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip.h:139,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc/board.h:35,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOSConfig.h:8,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h:98,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:13,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/uart_17xx_40xx.h:760:10: note: expected 'const void *' but argument is of type 'volatile q31_t * {aka volatile int *}'
+ uint32_t Chip_UART_SendRB(LPC_USART_T *pUART, RINGBUFF_T *pRB, const void *data, int bytes);
+          ^
+Finished building: ../src/funciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:      102364 B       512 KB     19.52%
+        RamLoc32:       10340 B        32 KB     31.56%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 102364	      0	  10340	 112704	  1b840	THD_Meter_RTOS.axf
+ 
+03:27:34 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Variables_globales.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Variables_globales.d" -MT"src/Variables_globales.o" -MT"src/Variables_globales.d" -o "src/Variables_globales.o" "../src/Variables_globales.c"
+../src/Variables_globales.c:16:17: error: conflicting types for 'spectrum'
+  volatile q31_t spectrum[FFT_SIZE*2];   // Espectro de la senal transformada
+                 ^
+In file included from ../src/Variables_globales.c:9:0:
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:77:25: note: previous declaration of 'spectrum' was here
+   extern volatile q31_t spectrum[FFT_SIZE];     // Espectro de la senal transformada
+                         ^
+../src/Variables_globales.c:17:17: error: conflicting types for 'mSignalIn'
+  volatile q31_t mSignalIn[LENGTH_SAMPLES*2]; // Senal  de entrada. Es vector complejo.
+                 ^
+In file included from ../src/Variables_globales.c:9:0:
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:78:25: note: previous declaration of 'mSignalIn' was here
+   extern volatile q31_t mSignalIn[LENGTH_SAMPLES];   // Senal  de entrada. Es vector complejo.
+                         ^
+../src/Variables_globales.c:18:17: error: conflicting types for 'mFFTOut'
+  volatile q31_t mFFTOut[LENGTH_SAMPLES*2];  // Senal  de salida. Es vector complejo.
+                 ^
+In file included from ../src/Variables_globales.c:9:0:
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:79:25: note: previous declaration of 'mFFTOut' was here
+   extern volatile q31_t mFFTOut[LENGTH_SAMPLES];     // Senal  de salida. Es vector complejo.
+                         ^
+make: *** [src/Variables_globales.o] Error 1
+03:27:47 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Inicializaciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Inicializaciones.d" -MT"src/Inicializaciones.o" -MT"src/Inicializaciones.d" -o "src/Inicializaciones.o" "../src/Inicializaciones.c"
+Finished building: ../src/Inicializaciones.c
+ 
+Building file: ../src/Interrupciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Interrupciones.d" -MT"src/Interrupciones.o" -MT"src/Interrupciones.d" -o "src/Interrupciones.o" "../src/Interrupciones.c"
+Finished building: ../src/Interrupciones.c
+ 
+Building file: ../src/THD_Meter.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/THD_Meter.d" -MT"src/THD_Meter.o" -MT"src/THD_Meter.d" -o "src/THD_Meter.o" "../src/THD_Meter.c"
+Finished building: ../src/THD_Meter.c
+ 
+Building file: ../src/Variables_globales.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Variables_globales.d" -MT"src/Variables_globales.o" -MT"src/Variables_globales.d" -o "src/Variables_globales.o" "../src/Variables_globales.c"
+Finished building: ../src/Variables_globales.c
+ 
+Building file: ../src/funciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+../src/funciones.c: In function 'fft_function':
+../src/funciones.c:21:32: warning: passing argument 2 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:21:43: warning: passing argument 3 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                           ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:22:22: warning: passing argument 1 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, mFFTOut, fft_length);
+                      ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c:22:32: warning: passing argument 2 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, mFFTOut, fft_length);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c: In function 'main_uart':
+../src/funciones.c:46:42: warning: passing argument 3 of 'Chip_UART_SendRB' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     Chip_UART_SendRB(LPC_UART0, &txring, mFFTOut, LENGTH_SAMPLES*FFT_TYPE_SIZE);
+                                          ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip_lpc175x_6x.h:182:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip.h:139,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc/board.h:35,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOSConfig.h:8,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h:98,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:13,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/uart_17xx_40xx.h:760:10: note: expected 'const void *' but argument is of type 'volatile q31_t * {aka volatile int *}'
+ uint32_t Chip_UART_SendRB(LPC_USART_T *pUART, RINGBUFF_T *pRB, const void *data, int bytes);
+          ^
+Finished building: ../src/funciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:      102364 B       512 KB     19.52%
+        RamLoc32:       16484 B        32 KB     50.31%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 102364	      0	  16484	 118848	  1d040	THD_Meter_RTOS.axf
+ 
+03:29:41 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Variables_globales.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Variables_globales.d" -MT"src/Variables_globales.o" -MT"src/Variables_globales.d" -o "src/Variables_globales.o" "../src/Variables_globales.c"
+../src/Variables_globales.c:17:17: error: conflicting types for 'mSignalIn'
+  volatile q31_t mSignalIn[LENGTH_SAMPLES]; // Senal  de entrada. Es vector complejo.
+                 ^
+In file included from ../src/Variables_globales.c:9:0:
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:78:25: note: previous declaration of 'mSignalIn' was here
+   extern volatile q31_t mSignalIn[LENGTH_SAMPLES*2];   // Senal  de entrada. Es vector complejo.
+                         ^
+make: *** [src/Variables_globales.o] Error 1
+03:31:16 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Inicializaciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Inicializaciones.d" -MT"src/Inicializaciones.o" -MT"src/Inicializaciones.d" -o "src/Inicializaciones.o" "../src/Inicializaciones.c"
+Finished building: ../src/Inicializaciones.c
+ 
+Building file: ../src/Interrupciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Interrupciones.d" -MT"src/Interrupciones.o" -MT"src/Interrupciones.d" -o "src/Interrupciones.o" "../src/Interrupciones.c"
+Finished building: ../src/Interrupciones.c
+ 
+Building file: ../src/THD_Meter.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/THD_Meter.d" -MT"src/THD_Meter.o" -MT"src/THD_Meter.d" -o "src/THD_Meter.o" "../src/THD_Meter.c"
+Finished building: ../src/THD_Meter.c
+ 
+Building file: ../src/Variables_globales.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Variables_globales.d" -MT"src/Variables_globales.o" -MT"src/Variables_globales.d" -o "src/Variables_globales.o" "../src/Variables_globales.c"
+Finished building: ../src/Variables_globales.c
+ 
+Building file: ../src/funciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+../src/funciones.c: In function 'fft_function':
+../src/funciones.c:21:32: warning: passing argument 2 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:21:43: warning: passing argument 3 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                           ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:22:22: warning: passing argument 1 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length*2);
+                      ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c:22:32: warning: passing argument 2 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length*2);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c: In function 'main_uart':
+../src/funciones.c:46:42: error: 'mFFTOut' undeclared (first use in this function)
+     Chip_UART_SendRB(LPC_UART0, &txring, mFFTOut, LENGTH_SAMPLES*FFT_TYPE_SIZE);
+                                          ^
+../src/funciones.c:46:42: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/funciones.o] Error 1
+03:32:51 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/funciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+../src/funciones.c: In function 'fft_function':
+../src/funciones.c:21:32: warning: passing argument 2 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:21:43: warning: passing argument 3 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                           ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:22:22: warning: passing argument 1 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length*2);
+                      ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c:22:32: warning: passing argument 2 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length*2);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c: In function 'main_uart':
+../src/funciones.c:46:42: warning: passing argument 3 of 'Chip_UART_SendRB' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     Chip_UART_SendRB(LPC_UART0, &txring, spectrum, LENGTH_SAMPLES*FFT_TYPE_SIZE);
+                                          ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip_lpc175x_6x.h:182:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip.h:139,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc/board.h:35,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOSConfig.h:8,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h:98,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:13,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/uart_17xx_40xx.h:760:10: note: expected 'const void *' but argument is of type 'volatile q31_t * {aka volatile int *}'
+ uint32_t Chip_UART_SendRB(LPC_USART_T *pUART, RINGBUFF_T *pRB, const void *data, int bytes);
+          ^
+Finished building: ../src/funciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:      102364 B       512 KB     19.52%
+        RamLoc32:       10340 B        32 KB     31.56%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 102364	      0	  10340	 112704	  1b840	THD_Meter_RTOS.axf
+ 
+03:34:38 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Inicializaciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Inicializaciones.d" -MT"src/Inicializaciones.o" -MT"src/Inicializaciones.d" -o "src/Inicializaciones.o" "../src/Inicializaciones.c"
+Finished building: ../src/Inicializaciones.c
+ 
+Building file: ../src/Interrupciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Interrupciones.d" -MT"src/Interrupciones.o" -MT"src/Interrupciones.d" -o "src/Interrupciones.o" "../src/Interrupciones.c"
+Finished building: ../src/Interrupciones.c
+ 
+Building file: ../src/THD_Meter.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/THD_Meter.d" -MT"src/THD_Meter.o" -MT"src/THD_Meter.d" -o "src/THD_Meter.o" "../src/THD_Meter.c"
+Finished building: ../src/THD_Meter.c
+ 
+Building file: ../src/Variables_globales.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Variables_globales.d" -MT"src/Variables_globales.o" -MT"src/Variables_globales.d" -o "src/Variables_globales.o" "../src/Variables_globales.c"
+Finished building: ../src/Variables_globales.c
+ 
+Building file: ../src/funciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+../src/funciones.c: In function 'fft_function':
+../src/funciones.c:21:32: warning: passing argument 2 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:21:43: warning: passing argument 3 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                           ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:22:22: warning: passing argument 1 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length*2);
+                      ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c:22:32: warning: passing argument 2 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length*2);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c: In function 'main_uart':
+../src/funciones.c:46:42: warning: passing argument 3 of 'Chip_UART_SendRB' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     Chip_UART_SendRB(LPC_UART0, &txring, spectrum, LENGTH_SAMPLES*FFT_TYPE_SIZE);
+                                          ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip_lpc175x_6x.h:182:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip.h:139,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc/board.h:35,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOSConfig.h:8,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h:98,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:13,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/uart_17xx_40xx.h:760:10: note: expected 'const void *' but argument is of type 'volatile q31_t * {aka volatile int *}'
+ uint32_t Chip_UART_SendRB(LPC_USART_T *pUART, RINGBUFF_T *pRB, const void *data, int bytes);
+          ^
+Finished building: ../src/funciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:      102364 B       512 KB     19.52%
+        RamLoc32:       10340 B        32 KB     31.56%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 102364	      0	  10340	 112704	  1b840	THD_Meter_RTOS.axf
+ 
+03:37:09 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/funciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+../src/funciones.c: In function 'fft_function':
+../src/funciones.c:21:32: warning: passing argument 2 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:21:43: warning: passing argument 3 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                           ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:22:22: warning: passing argument 1 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length);
+                      ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c:22:32: warning: passing argument 2 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c: In function 'main_uart':
+../src/funciones.c:47:42: warning: passing argument 3 of 'Chip_UART_SendRB' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     Chip_UART_SendRB(LPC_UART0, &txring, spectrum, LENGTH_SAMPLES*2*FFT_TYPE_SIZE);
+                                          ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip_lpc175x_6x.h:182:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip.h:139,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc/board.h:35,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOSConfig.h:8,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h:98,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:13,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/uart_17xx_40xx.h:760:10: note: expected 'const void *' but argument is of type 'volatile q31_t * {aka volatile int *}'
+ uint32_t Chip_UART_SendRB(LPC_USART_T *pUART, RINGBUFF_T *pRB, const void *data, int bytes);
+          ^
+Finished building: ../src/funciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:      102360 B       512 KB     19.52%
+        RamLoc32:       10340 B        32 KB     31.56%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 102360	      0	  10340	 112700	  1b83c	THD_Meter_RTOS.axf
+ 
+03:45:18 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Inicializaciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Inicializaciones.d" -MT"src/Inicializaciones.o" -MT"src/Inicializaciones.d" -o "src/Inicializaciones.o" "../src/Inicializaciones.c"
+Finished building: ../src/Inicializaciones.c
+ 
+Building file: ../src/Interrupciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Interrupciones.d" -MT"src/Interrupciones.o" -MT"src/Interrupciones.d" -o "src/Interrupciones.o" "../src/Interrupciones.c"
+Finished building: ../src/Interrupciones.c
+ 
+Building file: ../src/THD_Meter.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/THD_Meter.d" -MT"src/THD_Meter.o" -MT"src/THD_Meter.d" -o "src/THD_Meter.o" "../src/THD_Meter.c"
+Finished building: ../src/THD_Meter.c
+ 
+Building file: ../src/Variables_globales.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Variables_globales.d" -MT"src/Variables_globales.o" -MT"src/Variables_globales.d" -o "src/Variables_globales.o" "../src/Variables_globales.c"
+Finished building: ../src/Variables_globales.c
+ 
+Building file: ../src/funciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+../src/funciones.c: In function 'fft_function':
+../src/funciones.c:21:32: warning: passing argument 2 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:21:43: warning: passing argument 3 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                           ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:22:22: warning: passing argument 1 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length);
+                      ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c:22:32: warning: passing argument 2 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c: In function 'main_uart':
+../src/funciones.c:47:42: warning: passing argument 3 of 'Chip_UART_SendRB' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     Chip_UART_SendRB(LPC_UART0, &txring, spectrum, LENGTH_SAMPLES*FFT_TYPE_SIZE);
+                                          ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip_lpc175x_6x.h:182:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip.h:139,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc/board.h:35,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOSConfig.h:8,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h:98,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:13,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/uart_17xx_40xx.h:760:10: note: expected 'const void *' but argument is of type 'volatile q31_t * {aka volatile int *}'
+ uint32_t Chip_UART_SendRB(LPC_USART_T *pUART, RINGBUFF_T *pRB, const void *data, int bytes);
+          ^
+Finished building: ../src/funciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:      102360 B       512 KB     19.52%
+        RamLoc32:        8292 B        32 KB     25.31%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 102360	      0	   8292	 110652	  1b03c	THD_Meter_RTOS.axf
+ 
+04:10:15 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Inicializaciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Inicializaciones.d" -MT"src/Inicializaciones.o" -MT"src/Inicializaciones.d" -o "src/Inicializaciones.o" "../src/Inicializaciones.c"
+In file included from ../src/Inicializaciones.c:9:0:
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:96:26: error: 'LENGTH_SAMPLES' undeclared here (not in a function)
+   #define UART_RRB_SIZE  LENGTH_SAMPLES*FFT_TYPE_SIZE // Receive
+                          ^
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:99:25: note: in expansion of macro 'UART_RRB_SIZE'
+   extern uint8_t rxbuff[UART_RRB_SIZE], txbuff[UART_SRB_SIZE];
+                         ^
+make: *** [src/Inicializaciones.o] Error 1
+04:14:29 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Inicializaciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Inicializaciones.d" -MT"src/Inicializaciones.o" -MT"src/Inicializaciones.d" -o "src/Inicializaciones.o" "../src/Inicializaciones.c"
+Finished building: ../src/Inicializaciones.c
+ 
+Building file: ../src/Interrupciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Interrupciones.d" -MT"src/Interrupciones.o" -MT"src/Interrupciones.d" -o "src/Interrupciones.o" "../src/Interrupciones.c"
+Finished building: ../src/Interrupciones.c
+ 
+Building file: ../src/THD_Meter.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/THD_Meter.d" -MT"src/THD_Meter.o" -MT"src/THD_Meter.d" -o "src/THD_Meter.o" "../src/THD_Meter.c"
+Finished building: ../src/THD_Meter.c
+ 
+Building file: ../src/Variables_globales.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Variables_globales.d" -MT"src/Variables_globales.o" -MT"src/Variables_globales.d" -o "src/Variables_globales.o" "../src/Variables_globales.c"
+Finished building: ../src/Variables_globales.c
+ 
+Building file: ../src/funciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+../src/funciones.c: In function 'fft_function':
+../src/funciones.c:21:32: warning: passing argument 2 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:21:43: warning: passing argument 3 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                           ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:22:22: warning: passing argument 1 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length/2);
+                      ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c:22:32: warning: passing argument 2 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length/2);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c: In function 'main_uart':
+../src/funciones.c:47:42: warning: passing argument 3 of 'Chip_UART_SendRB' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     Chip_UART_SendRB(LPC_UART0, &txring, spectrum, UART_SIZE);
+                                          ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip_lpc175x_6x.h:182:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip.h:139,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc/board.h:35,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOSConfig.h:8,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h:98,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:13,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/uart_17xx_40xx.h:760:10: note: expected 'const void *' but argument is of type 'volatile q31_t * {aka volatile int *}'
+ uint32_t Chip_UART_SendRB(LPC_USART_T *pUART, RINGBUFF_T *pRB, const void *data, int bytes);
+          ^
+Finished building: ../src/funciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:      102364 B       512 KB     19.52%
+        RamLoc32:        8292 B        32 KB     25.31%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 102364	      0	   8292	 110656	  1b040	THD_Meter_RTOS.axf
+ 
+04:15:40 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/funciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+../src/funciones.c: In function 'fft_function':
+../src/funciones.c:21:32: warning: passing argument 2 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:21:43: warning: passing argument 3 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                           ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:22:22: warning: passing argument 1 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length);
+                      ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c:22:32: warning: passing argument 2 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c: In function 'main_uart':
+../src/funciones.c:47:42: warning: passing argument 3 of 'Chip_UART_SendRB' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     Chip_UART_SendRB(LPC_UART0, &txring, spectrum, UART_SIZE);
+                                          ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip_lpc175x_6x.h:182:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip.h:139,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc/board.h:35,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOSConfig.h:8,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h:98,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:13,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/uart_17xx_40xx.h:760:10: note: expected 'const void *' but argument is of type 'volatile q31_t * {aka volatile int *}'
+ uint32_t Chip_UART_SendRB(LPC_USART_T *pUART, RINGBUFF_T *pRB, const void *data, int bytes);
+          ^
+Finished building: ../src/funciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:      102360 B       512 KB     19.52%
+        RamLoc32:        8292 B        32 KB     25.31%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 102360	      0	   8292	 110652	  1b03c	THD_Meter_RTOS.axf
+ 
+04:17:22 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/funciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/funciones.d" -MT"src/funciones.o" -MT"src/funciones.d" -o "src/funciones.o" "../src/funciones.c"
+../src/funciones.c: In function 'fft_function':
+../src/funciones.c:21:32: warning: passing argument 2 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:21:43: warning: passing argument 3 of 'arm_rfft_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_rfft_q31(&fft_inst_q31, mSignalIn, spectrum);
+                                           ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:2187:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_rfft_q31(
+        ^
+../src/funciones.c:22:22: warning: passing argument 1 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length);
+                      ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c:22:32: warning: passing argument 2 of 'arm_cmplx_mag_q31' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+    arm_cmplx_mag_q31(spectrum, spectrum, fft_length);
+                                ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:37:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:24,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:6467:8: note: expected 'q31_t * {aka int *}' but argument is of type 'volatile q31_t * {aka volatile int *}'
+   void arm_cmplx_mag_q31(
+        ^
+../src/funciones.c: In function 'main_uart':
+../src/funciones.c:47:42: warning: passing argument 3 of 'Chip_UART_SendRB' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     Chip_UART_SendRB(LPC_UART0, &txring, spectrum, UART_SIZE/2); // Envio la mitad del espectro ya que esta espejado
+                                          ^
+In file included from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip_lpc175x_6x.h:182:0,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/chip.h:139,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc/board.h:35,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOSConfig.h:8,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h:98,
+                 from D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:13,
+                 from ../src/funciones.c:9:
+D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/uart_17xx_40xx.h:760:10: note: expected 'const void *' but argument is of type 'volatile q31_t * {aka volatile int *}'
+ uint32_t Chip_UART_SendRB(LPC_USART_T *pUART, RINGBUFF_T *pRB, const void *data, int bytes);
+          ^
+Finished building: ../src/funciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:      102360 B       512 KB     19.52%
+        RamLoc32:        8292 B        32 KB     25.31%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 102360	      0	   8292	 110652	  1b03c	THD_Meter_RTOS.axf
+ 
+04:19:09 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Interrupciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Interrupciones.d" -MT"src/Interrupciones.o" -MT"src/Interrupciones.d" -o "src/Interrupciones.o" "../src/Interrupciones.c"
+Finished building: ../src/Interrupciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:      102360 B       512 KB     19.52%
+        RamLoc32:        8292 B        32 KB     25.31%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 102360	      0	   8292	 110652	  1b03c	THD_Meter_RTOS.axf
+ 
+04:20:55 **** Incremental Build of configuration Debug for project THD_Meter_RTOS ****
+make -r all 
+Building file: ../src/Interrupciones.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M3 -D__USE_LPCOPEN -D__USE_CMSIS_DSPLIB=CMSIS_DSPLIB_CM3 -D__LPC17XX__ -D__REDLIB__ -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\src\portable\GCC\ARM_CM3" -I"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc" -I"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -specs=redlib.specs -MMD -MP -MF"src/Interrupciones.d" -MT"src/Interrupciones.o" -MT"src/Interrupciones.d" -o "src/Interrupciones.o" "../src/Interrupciones.c"
+Finished building: ../src/Interrupciones.c
+ 
+Building target: THD_Meter_RTOS.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf"  ./src/Inicializaciones.o ./src/Interrupciones.o ./src/THD_Meter.o ./src/Variables_globales.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/funciones.o ./src/sysinit.o ./src/tareas.o   -llpc_myboard_1769 -llpc_chip_175x_6x -lCMSIS_DSPLIB_CM3 -lLibFreeRTOS_8.2.3 -lcr_dsplibFFT_cm3 -lcr_dsplib_cm3
+Memory region         Used Size  Region Size  %age Used
+       MFlash512:      102360 B       512 KB     19.52%
+        RamLoc32:        8292 B        32 KB     25.31%
+        RamAHB32:          0 GB        32 KB      0.00%
+Finished building target: THD_Meter_RTOS.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "THD_Meter_RTOS.axf"; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 102360	      0	   8292	 110652	  1b03c	THD_Meter_RTOS.axf
  
