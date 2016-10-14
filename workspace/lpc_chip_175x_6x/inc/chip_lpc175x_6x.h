@@ -54,6 +54,9 @@ extern "C" {
  * @{
  */
 
+#define LPC_PWM1 				  ((LPC_PWM_T 			   *) LPC_PWM1_BASE)
+
+
 #define LPC_GPIO0_BASE            0x2009C000
 #define LPC_GPIO1_BASE            0x2009C020
 #define LPC_GPIO2_BASE            0x2009C040

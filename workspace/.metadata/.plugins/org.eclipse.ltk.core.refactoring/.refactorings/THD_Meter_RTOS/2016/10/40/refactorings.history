@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;THD_Meter_RTOS/src/procesamiento.c&apos; to &apos;funciones.c&apos;" description="Rename resource &apos;procesamiento.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/procesamiento.c" name="funciones.c" stamp="1475778405535" updateReferences="true"/>
+</session>

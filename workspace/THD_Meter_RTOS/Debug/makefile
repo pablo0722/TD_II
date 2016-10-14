@@ -29,7 +29,7 @@ all: THD_Meter_RTOS.axf
 THD_Meter_RTOS.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"/media/pablo/Disco_Auxiliar/UTN/Git/TD_II/TD_II/workspace/lpc_myboard_1769/Debug" -L"/media/pablo/Disco_Auxiliar/UTN/Git/TD_II/TD_II/workspace/lpc_chip_175x_6x/Debug" -L"/media/pablo/Disco_Auxiliar/UTN/Git/TD_II/TD_II/workspace/CMSIS_DSPLIB_CM3/lib" -L"/media/pablo/Disco_Auxiliar/UTN/Git/TD_II/TD_II/workspace/LibFreeRTOS_8.2.3/Debug" -L"/media/pablo/Disco_Auxiliar/UTN/Git/TD_II/TD_II/workspace/cr_dsplib_cm3/Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
