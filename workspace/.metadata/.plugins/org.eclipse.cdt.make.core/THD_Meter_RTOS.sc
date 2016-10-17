@@ -2,8 +2,11 @@
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="com.crt.advproject.config.exe.debug.397707580;com.crt.advproject.config.exe.debug.397707580.;com.crt.advproject.gcc.exe.debug.597588427;com.crt.advproject.compiler.input.1344491254">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
-<includePath path="c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/redlib/include"/>
-<includePath path="c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/features/include"/>
+<includePath path="c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/lib/gcc/arm-none-eabi/4.9.3/include"/>
+<includePath path="c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/lib/gcc/arm-none-eabi/4.9.3/include-fixed"/>
+<includePath path="c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/arm-none-eabi/include"/>
+<includePath path="c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/redlib/include" removed="true"/>
+<includePath path="c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/features/include" removed="true"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_VERSION__=201112L"/>
 <definedSymbol symbol="__STDC_UTF_16__=1"/>
@@ -14,11 +17,14 @@
 <definedSymbol symbol="__GNUC_MINOR__=2"/>
 <definedSymbol symbol="__GNUC_MINOR__=6"/>
 <definedSymbol symbol="__GNUC_MINOR__=4"/>
+<definedSymbol symbol="__GNUC_MINOR__=9"/>
 <definedSymbol symbol="__GNUC_PATCHLEVEL__=1"/>
 <definedSymbol symbol="__GNUC_PATCHLEVEL__=2"/>
+<definedSymbol symbol="__GNUC_PATCHLEVEL__=3"/>
 <definedSymbol symbol="__VERSION__=&quot;5.2.1 20151202 (release) [ARM/embedded-5-branch revision 231848]&quot;"/>
 <definedSymbol symbol="__VERSION__=&quot;4.6.2 20121016 (release) [ARM/embedded-4_6-branch revision 192487]&quot;"/>
 <definedSymbol symbol="__VERSION__=&quot;5.4.1 20160609 (release) [ARM/embedded-5-branch revision 237715]&quot;"/>
+<definedSymbol symbol="__VERSION__=&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 224288]&quot;"/>
 <definedSymbol symbol="__ATOMIC_RELAXED=0"/>
 <definedSymbol symbol="__ATOMIC_SEQ_CST=5"/>
 <definedSymbol symbol="__ATOMIC_ACQUIRE=2"/>
@@ -393,12 +399,17 @@
 <definedSymbol symbol="__ELF__=1"/>
 <definedSymbol symbol="__USES_INITFINI__=1"/>
 <definedSymbol symbol="__GNUC_GNU_INLINE__=1"/>
+<definedSymbol symbol="__ARM_FP=12"/>
+<definedSymbol symbol="__ARM_NEON_FP=4"/>
 </collector>
 </instance>
 <instance id="com.crt.advproject.config.exe.debug.397707580;com.crt.advproject.config.exe.debug.397707580.;com.crt.advproject.gas.exe.debug.2131313632;com.crt.advproject.assembler.input.1202499936">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
-<includePath path="c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/redlib/include"/>
-<includePath path="c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/features/include"/>
+<includePath path="c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/lib/gcc/arm-none-eabi/4.9.3/include"/>
+<includePath path="c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/lib/gcc/arm-none-eabi/4.9.3/include-fixed"/>
+<includePath path="c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/arm-none-eabi/include"/>
+<includePath path="c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/redlib/include" removed="true"/>
+<includePath path="c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/features/include" removed="true"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_VERSION__=201112L"/>
 <definedSymbol symbol="__STDC_UTF_16__=1"/>
@@ -409,11 +420,14 @@
 <definedSymbol symbol="__GNUC_MINOR__=2"/>
 <definedSymbol symbol="__GNUC_MINOR__=6"/>
 <definedSymbol symbol="__GNUC_MINOR__=4"/>
+<definedSymbol symbol="__GNUC_MINOR__=9"/>
 <definedSymbol symbol="__GNUC_PATCHLEVEL__=1"/>
 <definedSymbol symbol="__GNUC_PATCHLEVEL__=2"/>
+<definedSymbol symbol="__GNUC_PATCHLEVEL__=3"/>
 <definedSymbol symbol="__VERSION__=&quot;5.2.1 20151202 (release) [ARM/embedded-5-branch revision 231848]&quot;"/>
 <definedSymbol symbol="__VERSION__=&quot;4.6.2 20121016 (release) [ARM/embedded-4_6-branch revision 192487]&quot;"/>
 <definedSymbol symbol="__VERSION__=&quot;5.4.1 20160609 (release) [ARM/embedded-5-branch revision 237715]&quot;"/>
+<definedSymbol symbol="__VERSION__=&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 224288]&quot;"/>
 <definedSymbol symbol="__ATOMIC_RELAXED=0"/>
 <definedSymbol symbol="__ATOMIC_SEQ_CST=5"/>
 <definedSymbol symbol="__ATOMIC_ACQUIRE=2"/>
@@ -788,6 +802,8 @@
 <definedSymbol symbol="__ELF__=1"/>
 <definedSymbol symbol="__USES_INITFINI__=1"/>
 <definedSymbol symbol="__GNUC_GNU_INLINE__=1"/>
+<definedSymbol symbol="__ARM_FP=12"/>
+<definedSymbol symbol="__ARM_NEON_FP=4"/>
 </collector>
 </instance>
 <instance id="com.crt.advproject.config.exe.release.1961356935;com.crt.advproject.config.exe.release.1961356935.;com.crt.advproject.gcc.exe.release.278668635;com.crt.advproject.compiler.input.1839829719">

@@ -16,25 +16,7 @@
 	 */
 	void UARTN_IRQHandler(void)
 	{
-		static uint16_t idx=0;
-		uint8_t read_char = 0;
-
 		Chip_UART_IRQRBHandler(LPC_UARTN, &rxring, &txring);
-
-		int bytes = Chip_UART_ReadRB(LPC_UARTN, &rxring, &read_char, 1);
-
-		if(bytes > 0)
-		{
-			char *SignalIn_p = (char *) mSignalIn;
-			SignalIn_p[idx] = read_char;
-			idx++;
-			idx %= UART_SIZE;
-
-			if(idx==0)
-			{
-				uart_rx_done = 1;
-			}
-		}
 	}
 #endif
 

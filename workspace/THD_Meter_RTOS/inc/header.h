@@ -43,10 +43,11 @@
 
 
 // ***** UTILIDADES (main while) ***** //
-	#define IS_DEBUG		ON
-
-	#define UART_LOOPBACK	OFF
-	#define UART_FFT 		ON
+	#define UART_LOOPBACK		OFF
+	#define UART_BYTE_BY_BYTE	OFF	// Lee byte por byte, avisa apenas recibe un byte. Util para strings de largo indefinido (no es compatible con el siguiente define "UART_BY_VECTOR")
+	#define UART_BY_VECTOR		ON	// Lee byte por byte, pero avisa cuando se lleno un vector. Util cuando se quiere recibir una senial y procesarla varias veces "en paralelo" (no es compatible con el anterior define "UART_BYTE_BY_BYTE")
+	#define FFT_TO_UART 		ON
+	#define FFT_FROM_UART 		ON
 // *********************************** //
 
 
@@ -67,22 +68,35 @@
 // ********************** //
 
 
+// Corroboracion de errores //
+
+#if (UART_BYTE_BY_BYTE) && (UART_BY_VECTOR)
+	#error defines incompatibles activados simultaneamente: "UART_BYTE_BY_BYTE" y "UART_BY_VECTOR"
+#endif
+// ************************ //
+
+
 // ***** VARIABLES GLOBALES ***** //
 	#if USE_FFT
 		#define     FFT_SIZE    	           	512	// Tamanio del vector del modulo de la FFT (Es un cuarto (1/2) del tamanio original por estar espejado)
 		#define 	FFT_TYPE_SIZE				4					// Es el tamanio (en bytes) del tipo de los datos para fft (q31_t => 4, q15_t => 2, etc)
 
 			// Cantidad de veces que se usara la FFT
-		#define 	FFT_DONE_MAX				UART_FFT
+		#define 	FFT_DONE_MAX				FFT_TO_UART
+
+			// Cantidad de veces que se usara lo leido por UART
+		#define UART_RX_FFT_DONE_MAX 	UART_LOOPBACK + \
+										USE_FFT
 
 
 		extern arm_rfft_instance_q31 fft_inst_q31;					// Estructura para aplicar FFT
 		extern arm_cfft_radix4_instance_q31 fft_inst_q31_complex;	// Estructura para aplicar FFT
 
-		extern volatile q31_t spectrum[FFT_SIZE*2];			// Espectro de la senal transformada (el "*2" es porque es real e imaginario)
-		extern volatile q31_t mSignalIn[FFT_SIZE];			// Senal de entrada. Es vector complejo.
+		extern volatile q31_t fft_out[FFT_SIZE*2];			// Espectro de la senal transformada (el "*2" es porque es real e imaginario)
+		extern volatile q31_t fft_in[FFT_SIZE];				// Senal de entrada. Es vector complejo.
 
-		extern uint8_t fft_done;									// Cantidad de veces que se uso la FFT
+		extern uint8_t fft_done;							// Cantidad de veces que se uso la FFT
+		extern uint8_t uart_rx_fft_done;					// Cantidad de veces que se uso lo que lei por uart
 	#endif
 
 
@@ -118,10 +132,6 @@
 			#define UART_SIZE 			1						// Tamanio de UART buffer
 		#endif
 
-			// Cantidad de veces que se usara la UART
-		#define UART_RX_DONE_MAX 	UART_LOOPBACK + \
-									USE_FFT
-
 
 		#define UART_BAUDRATE 		9600					// Baud rate de la UART
 
@@ -134,7 +144,6 @@
 
 			// Transmit and receive ring buffers
 		extern RINGBUFF_T txring, rxring;
-		extern uint8_t uart_rx_done;							// Cantidad de veces que se uso la UART
 	#endif
 
 

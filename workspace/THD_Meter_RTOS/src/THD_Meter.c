@@ -24,18 +24,20 @@ int main(void)
 {
 	main_init();
 
-	while(1)
-	{
-		#if USE_FFT
-			fft_function();
-		#endif
+	#if !USE_RTOS
+		while(1)
+		{
+			#if USE_FFT
+				fft_function();
+			#endif
 
-		#if USE_UART
-			main_uart();
-		#endif
-	}
+			#if USE_UART
+				main_uart();
+			#endif
+		}
 
-	main_uninit();
+		main_uninit();
+	#endif
 
 	while(1);
 

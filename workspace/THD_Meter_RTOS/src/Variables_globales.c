@@ -20,10 +20,11 @@
 	arm_rfft_instance_q31 fft_inst_q31;
 	arm_cfft_radix4_instance_q31 fft_inst_q31_complex;
 
-	volatile q31_t spectrum[FFT_SIZE*2];		// Espectro de la senal transformada
-	volatile q31_t mSignalIn[FFT_SIZE];	// Senal  de entrada. Es vector complejo.
+	volatile q31_t fft_out[FFT_SIZE*2];	// Espectro de la senal transformada
+	volatile q31_t fft_in[FFT_SIZE];	// Senal  de entrada. Es vector complejo.
 
 	uint8_t fft_done = 0;
+	uint8_t uart_rx_fft_done = 0;
 #endif
 
 
@@ -33,8 +34,6 @@
 
 	/* Transmit and receive ring buffers */
 	RINGBUFF_T txring, rxring;
-
-	uint8_t uart_rx_done = 0;
 #endif
 
 

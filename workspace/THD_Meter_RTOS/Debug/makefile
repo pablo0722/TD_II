@@ -25,18 +25,23 @@ endif
 # All Target
 all: THD_Meter_RTOS.axf
 
+dependents:
+	-cd C:/Users/Usuario/Documents/Gits/TD_II/workspace/LibFreeRTOS_8.2.3/Debug && $(MAKE) all
+	-cd C:/Users/Usuario/Documents/Gits/TD_II/workspace/lpc_chip_175x_6x/Debug && $(MAKE) all
+	-cd C:/Users/Usuario/Documents/Gits/TD_II/workspace/lpc_myboard_1769/Debug && $(MAKE) all
+
 # Tool invocations
-THD_Meter_RTOS.axf: $(OBJS) $(USER_OBJS)
+THD_Meter_RTOS.axf: $(OBJS) $(USER_OBJS) C:/Users/Usuario/Documents/Gits/TD_II/workspace/LibFreeRTOS_8.2.3/Debug/libLibFreeRTOS_8.2.3.a C:/Users/Usuario/Documents/Gits/TD_II/workspace/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a C:/Users/Usuario/Documents/Gits/TD_II/workspace/lpc_myboard_1769/Debug/liblpc_myboard_1769.a
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\cr_dsplib_cm3\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"C:\Users\Usuario\Documents\Gits\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"C:\Users\Usuario\Documents\Gits\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"C:\Users\Usuario\Documents\Gits\TD_II\workspace\lpc_myboard_1769\Debug" -L"C:\Users\Usuario\Documents\Gits\TD_II\workspace\lpc_chip_175x_6x\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) THD_Meter_RTOS.axf
+	-$(RM) $(OBJS)$(C_DEPS)$(EXECUTABLES) THD_Meter_RTOS.axf
 	-@echo ' '
 
 post-build:
@@ -46,5 +51,8 @@ post-build:
 
 .PHONY: all clean dependents
 .SECONDARY: post-build
+C:/Users/Usuario/Documents/Gits/TD_II/workspace/LibFreeRTOS_8.2.3/Debug/libLibFreeRTOS_8.2.3.a:
+C:/Users/Usuario/Documents/Gits/TD_II/workspace/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a:
+C:/Users/Usuario/Documents/Gits/TD_II/workspace/lpc_myboard_1769/Debug/liblpc_myboard_1769.a:
 
 -include ../makefile.targets

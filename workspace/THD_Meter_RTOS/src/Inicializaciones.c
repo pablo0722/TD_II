@@ -77,30 +77,13 @@
 #endif
 
 
-#if IS_DEBUG
-	int fft_init()
-#else
-	void fft_init()
-#endif
+void fft_init()
 {
 	const uint8_t ifft = FALSE;
 	const uint8_t bit_reverse = TRUE;
 	const uint16_t fft_length = FFT_SIZE;
 
-	#if IS_DEBUG
-		arm_status status = ARM_MATH_SUCCESS;
-		status = arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, fft_length, ifft, bit_reverse);
-
-
-		if(status == ARM_MATH_TEST_FAILURE)
-		{
-			return -1;
-		}
-
-		return 0;
-	#else
-		arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, fft_length, ifft, bit_reverse);
-	#endif
+	arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, fft_length, ifft, bit_reverse);
 }
 
 

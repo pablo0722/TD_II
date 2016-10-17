@@ -4,8 +4,6 @@
 	<comment></comment>
 	<projects>
 		<project>CMSIS_DSPLIB_CM3</project>
-		<project>cr_dsplib_cm3</project>
-		<project>cr_dsplibFFTbin_cm3</project>
 		<project>LibFreeRTOS_8.2.3</project>
 		<project>lpc_chip_175x_6x</project>
 		<project>lpc_myboard_1769</project>

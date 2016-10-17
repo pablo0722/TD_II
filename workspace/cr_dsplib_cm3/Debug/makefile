@@ -35,7 +35,7 @@ libcr_dsplib_cm3.a: $(OBJS) $(USER_OBJS)
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(ARCHIVES)$(C_DEPS) libcr_dsplib_cm3.a
+	-$(RM) $(OBJS)$(C_DEPS)$(ARCHIVES) libcr_dsplib_cm3.a
 	-@echo ' '
 
 post-build:

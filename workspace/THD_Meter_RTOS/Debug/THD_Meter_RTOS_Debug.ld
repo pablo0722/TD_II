@@ -5,7 +5,7 @@
  * Generated linker script file for LPC1769
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.23
- * LPCXpresso v8.2.2 [Build 650] [2016-09-09]  on 15-oct-2016 6:11:24
+ * LPCXpresso v7.9.2 [Build 493] [2015-09-14]  on 17/10/2016 18:58:10
  */
 
 INCLUDE "THD_Meter_RTOS_Debug_library.ld"
@@ -43,6 +43,13 @@ SECTIONS
 
         *(.after_vectors*)
 
+        /* Code Read Protect data */
+        . = 0x000002FC ;
+        PROVIDE(__CRP_WORD_START__ = .) ;
+        KEEP(*(.crp))
+        PROVIDE(__CRP_WORD_END__ = .) ;
+        ASSERT(!(__CRP_WORD_START__ == __CRP_WORD_END__), "Linker CRP Enabled, but no CRP_WORD provided within application");
+        /* End of Code Read Protect */
     } >MFlash512
 
     .text : ALIGN(4)    
