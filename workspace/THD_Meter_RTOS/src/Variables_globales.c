@@ -16,6 +16,7 @@
 	xQueueHandle xQueue_THD;
 #endif
 
+
 #if USE_FFT
 	arm_rfft_instance_q31 fft_inst_q31;
 	arm_cfft_radix4_instance_q31 fft_inst_q31_complex;
@@ -45,13 +46,22 @@
 #endif
 
 
-#if USE_ADC
-	//DMA_TransferDescriptor_t DMA_descriptor_ADC;
+#if USE_ADC_INTERNO
+	DMA_TransferDescriptor_t DMA_descriptor_ADC;
 	volatile uint32_t dma_memory_adc[ADC_DMA_CANT_MUESTRAS];
+	uint8_t canal_adc;
+	uint8_t canal_adc;
+#endif
+
+#if USE_DAC_INTERNO
+	DMA_TransferDescriptor_t DMA_descriptor_DAC;
+	volatile uint32_t dma_memory_dac[DAC_DMA_CANT_MUESTRAS];
+
+	uint8_t canal_dac;
 #endif
 
 
-#if USE_DAC
-	//DMA_TransferDescriptor_t DMA_descriptor_DAC;
-	volatile uint16_t dma_memory_dac[DAC_DMA_CANT_MUESTRAS];
+#if (USE_ADC_EXTERNO)||(USE_DAC_EXTERNO)
+	uint16_t adcFlag = 1;
+	int32_t data, cont = 0, ch = 0;
 #endif

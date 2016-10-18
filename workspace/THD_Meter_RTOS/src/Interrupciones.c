@@ -66,26 +66,25 @@
 	#endif
 #endif
 
-
-#if (USE_ADC) || (USE_DAC)
+#if USE_DMA
 	void DMA_IRQHandler(void)
 	{
 		Status transf_success;
+		int i;
 
-
-		#if USE_ADC
+		#if USE_ADC_EXTERNO
 			transf_success = Chip_GPDMA_Interrupt(LPC_GPDMA, ADC_DMA_CHANNEL);
-			if (transf_success == SUCCESS)
+			if (transf_success == SUCCESS) // Se fija si interrumpio el ADC
 			{
 					// Copiar buffer del adc al del dac
-				for(int i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
+				for(i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
 				{
-					dma_memory_dac[i] = /*ADC_DR_RESULT*/((dma_memory_adc[i] & 0xFFFFFFFF) >> 0) & 0xFFFFFFFF;
+					dma_memory_dac[i] = /*ADC_DR_RESULT*/(dma_memory_adc[i] << 8);
 				}
 
 					// Cuando interrumpe el ADC, envia al DAC
-				transf_success = Chip_GPDMA_Transfer(LPC_GPDMA, DAC_DMA_CHANNEL,
-						(uint32_t) dma_memory_dac, (uint32_t) (GPDMA_CONN_DAC),
+				transf_success = Chip_GPDMA_Transfer(LPC_GPDMA, canal_dac,
+						(uint32_t) dma_memory_dac, (uint32_t) (GPDMA_CONN_I2S_Channel_1),
 						GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA, DAC_DMA_CANT_MUESTRAS);
 				if(transf_success == ERROR)
 				{
@@ -95,14 +94,13 @@
 			Chip_GPDMA_ClearIntPending (LPC_GPDMA, GPDMA_STATCLR_INTTC, ADC_DMA_CHANNEL);
 		#endif
 
-
-		#if USE_DAC
+		#if USE_DAC_EXTERNO
 			transf_success = Chip_GPDMA_Interrupt(LPC_GPDMA, DAC_DMA_CHANNEL);
-			if (transf_success == SUCCESS)
+			if (transf_success == SUCCESS) // Se fija si interrumpio el DAC
 			{
 					// Cuando interrumpe el DAC, recibo desde el ADC
-				transf_success = Chip_GPDMA_Transfer(LPC_GPDMA, ADC_DMA_CHANNEL,
-						(uint32_t) (GPDMA_CONN_ADC), (uint32_t) dma_memory_adc,
+				transf_success = Chip_GPDMA_Transfer(LPC_GPDMA, canal_adc,
+						(uint32_t) (GPDMA_CONN_I2S_Channel_1), (uint32_t) dma_memory_adc,
 						GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, ADC_DMA_CANT_MUESTRAS);
 				if(transf_success == ERROR)
 				{
@@ -114,3 +112,16 @@
 	}
 #endif
 
+
+#if (USE_ADC_EXTERNO_INTERRUPCION)||(USE_DAC_EXTERNO_INTERRUPCION)
+	void I2S_IRQHandler(void)
+	{
+		if(Chip_I2S_GetRxLevel(LPC_I2S))
+		{
+			data = Chip_I2S_Receive(LPC_I2S);
+			adcFlag=1;
+		}
+
+		Chip_I2S_Send(LPC_I2S, (data << 6) );
+	}
+#endif

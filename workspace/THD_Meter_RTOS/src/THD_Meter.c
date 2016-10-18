@@ -34,6 +34,10 @@ int main(void)
 			#if USE_UART
 				main_uart();
 			#endif
+
+			#if USE_ADC_DAC_INTERNO
+				main_dac();
+			#endif
 		}
 
 		main_uninit();
