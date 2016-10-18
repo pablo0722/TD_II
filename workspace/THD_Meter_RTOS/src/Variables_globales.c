@@ -24,7 +24,6 @@
 	volatile q31_t fft_in[FFT_SIZE];	// Senal  de entrada. Es vector complejo.
 
 	uint8_t fft_done = 0;
-	uint8_t uart_rx_fft_done = 0;
 #endif
 
 
@@ -34,6 +33,15 @@
 
 	/* Transmit and receive ring buffers */
 	RINGBUFF_T txring, rxring;
+	uint8_t uart_rx_done = 0;
+	#if UART_BY_VECTOR
+		volatile int32_t uart_in_A[UART_SIZE/4];			// Senal de entrada A (primer vector del ping-pong)
+		volatile int32_t uart_in_B[UART_SIZE/4];			// Senal de entrada B (segundo vector del ping-pong)
+		volatile int32_t *uart_in;						// Senal de entrada.
+	#elif UART_BYTE_BY_BYTE
+		volatile uint8_t uart_in;						// Senal de entrada.
+	#endif
+
 #endif
 
 

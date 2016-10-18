@@ -1,6 +1,0 @@
-17:42:15 **** Incremental Build of configuration Debug for project test_PCM1802_dac ****
-make -r all 
-make: No se hace nada para «all».
-
-17:42:15 Build Finished (took 57ms)
-

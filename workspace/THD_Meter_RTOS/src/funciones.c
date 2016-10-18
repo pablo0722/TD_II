@@ -12,17 +12,25 @@
 #if USE_FFT
 	void fft_function()
 	{
-		if (uart_rx_fft_done)
-		{
-			uart_rx_fft_done --;
+		#if (FFT_FROM_UART) && (UART_BY_VECTOR)
+			if (uart_rx_done)
+			{
+				uart_rx_done --;
+		#endif
 
-			const uint16_t fft_length = FFT_SIZE*2; // el "*2" es porque es real e imaginario
+				const uint16_t fft_length = FFT_SIZE*2; // el "*2" es porque es real e imaginario
 
-			arm_rfft_q31(&fft_inst_q31, fft_in, fft_out);
-			arm_cmplx_mag_q31(fft_out, fft_out, fft_length);
+				#if (FFT_FROM_UART) && (UART_BY_VECTOR)
+					arm_rfft_q31(&fft_inst_q31, (q31_t *) uart_in, fft_out);
+				#else
+					arm_rfft_q31(&fft_inst_q31, fft_in, fft_out);
+				#endif
+				arm_cmplx_mag_q31(fft_out, fft_out, fft_length);
 
-			fft_done = FFT_DONE_MAX;
-		}
+				fft_done = FFT_DONE_MAX;
+		#if (FFT_FROM_UART) && (UART_BY_VECTOR)
+			}
+		#endif
 	}
 #endif
 
@@ -39,21 +47,17 @@
 			}
 		#endif
 
-		#if FFT_FROM_UART
-			static uint16_t idx=0;
-			uint8_t read_char = 0;
-			int bytes = Chip_UART_ReadRB(LPC_UARTN, &rxring, &read_char, 1);
-
-			if(bytes > 0)
+		#if UART_BYTE_BY_BYTE
+			if(!uart_rx_done)
 			{
-				char *fft_in_p = (char *) fft_in;	// uso puntero a char para guardar byte por byte desde la uart al vector de fft_in
-				fft_in_p[idx] = read_char;
-				idx++;
-				idx %= UART_SIZE;
+				static uint16_t idx = 0;
+				uint8_t read_char = 0;
+				int bytes = Chip_UART_ReadRB(LPC_UARTN, &rxring, &read_char, 1);
 
-				if(idx==0)
+				if(bytes > 0)
 				{
-					uart_rx_fft_done = 1;
+					uart_in = read_char;
+					uart_rx_done = UART_RX_DONE_MAX;
 				}
 			}
 		#endif

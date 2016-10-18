@@ -50,10 +50,23 @@
 #if USE_UART
 	void uart_init()
 	{
-		Chip_IOCON_PinMux (LPC_IOCON, 0,  2, MD_PLN, IOCON_FUNC1 ); // P0[2] -> TXD0
-		Chip_IOCON_PinMux (LPC_IOCON, 0,  3, MD_PLN, IOCON_FUNC1 ); // P0[3] -> RXD0
-		Chip_IOCON_PinMux (LPC_IOCON, 0,  15, MD_PLN, IOCON_FUNC1 ); // P0[15] -> TXD1
-		Chip_IOCON_PinMux (LPC_IOCON, 0,  16, MD_PLN, IOCON_FUNC1 ); // P0[16] -> RXD1
+		#if USE_UART0
+			#if DEBUG_MODE
+				printf("[info] init Uart0: \r\n");
+				printf("\t Baudrate: %d \r\n", UART_BAUDRATE);
+				printf("\t format: 8N1 \r\n");
+				printf("\t buffsize: %d \r\n", UART_RRB_SIZE);
+				#if UART_BYTE_BY_BYTE
+					printf("\t modo: Byte x Byte \r\n");
+				#elif UART_BY_VECTOR
+					printf("\t modo: Vector x Vector (ping-pong) \r\n");
+				#endif
+			#endif
+			Chip_IOCON_PinMux (LPC_IOCON, 0,  2, MD_PLN, IOCON_FUNC1 ); // P0[2] -> TXD0
+			Chip_IOCON_PinMux (LPC_IOCON, 0,  3, MD_PLN, IOCON_FUNC1 ); // P0[3] -> RXD0
+			Chip_IOCON_PinMux (LPC_IOCON, 0,  15, MD_PLN, IOCON_FUNC1 ); // P0[15] -> TXD1
+			Chip_IOCON_PinMux (LPC_IOCON, 0,  16, MD_PLN, IOCON_FUNC1 ); // P0[16] -> RXD1
+		#endif
 
 		Board_UART_Init((uint32_t)LPC_UARTN, UART_BAUDRATE);
 
@@ -79,11 +92,29 @@
 
 void fft_init()
 {
+	#if DEBUG_MODE
+		printf("[info] init FFT: \r\n");
+		printf("\t format: q31 \r\n");
+		printf("\t fftLength(solo parte real): %d \r\n", FFT_SIZE);
+	#endif
+
 	const uint8_t ifft = FALSE;
 	const uint8_t bit_reverse = TRUE;
 	const uint16_t fft_length = FFT_SIZE;
 
+	#if DEBUG_MODE
+		arm_status st =
+	#endif
+
 	arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, fft_length, ifft, bit_reverse);
+
+	#if DEBUG_MODE
+		if(st != ARM_MATH_SUCCESS)
+		{
+			printf("[error] FFT init: \r\n");
+			printf("\t st = %d \r\n", st);
+		}
+	#endif
 }
 
 

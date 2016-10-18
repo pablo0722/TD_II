@@ -1,6 +1,0 @@
-16:14:00 **** Incremental Build of configuration Debug for project LPC_BaseBoardBB1769_R02 ****
-make -r all 
-make: No se hace nada para «all».
-
-16:14:00 Build Finished (took 58ms)
-

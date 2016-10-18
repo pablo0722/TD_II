@@ -43,11 +43,17 @@
 
 
 // ***** UTILIDADES (main while) ***** //
+	#define DEBUG_MODE			ON
+
+		// Numero de UART a utilizar
+	#define USE_UART0 			ON
+
 	#define UART_LOOPBACK		OFF
 	#define UART_BYTE_BY_BYTE	OFF	// Lee byte por byte, avisa apenas recibe un byte. Util para strings de largo indefinido (no es compatible con el siguiente define "UART_BY_VECTOR")
 	#define UART_BY_VECTOR		ON	// Lee byte por byte, pero avisa cuando se lleno un vector. Util cuando se quiere recibir una senial y procesarla varias veces "en paralelo" (no es compatible con el anterior define "UART_BYTE_BY_BYTE")
-	#define FFT_TO_UART 		ON
+
 	#define FFT_FROM_UART 		ON
+	#define FFT_TO_UART 		ON
 // *********************************** //
 
 
@@ -69,9 +75,35 @@
 
 
 // Corroboracion de errores //
-
 #if (UART_BYTE_BY_BYTE) && (UART_BY_VECTOR)
 	#error defines incompatibles activados simultaneamente: "UART_BYTE_BY_BYTE" y "UART_BY_VECTOR"
+#endif
+
+#if (USE_UART) && !(UART_BYTE_BY_BYTE) && !(UART_BY_VECTOR)
+	#error Con la UART activada, debe activar uno de los siguientes Defines: "UART_BYTE_BY_BYTE" o "UART_BY_VECTOR"
+#endif
+
+#if (UART_LOOPBACK) && (FFT_TO_UART)
+	#error defines incompatibles activados simultaneamente: "UART_LOOPBACK" y "FFT_TO_UART"
+#endif
+
+#if (!USE_UART)
+	#undef USE_UART0
+		#define USE_UART0 			OFF
+
+	#undef UART_LOOPBACK
+		#define UART_LOOPBACK		OFF
+	#undef UART_BYTE_BY_BYTE
+		#define UART_BYTE_BY_BYTE	OFF
+	#undef UART_BYTE_BY_BYTE
+		#define UART_BY_VECTOR		OFF
+#endif
+
+#if (!USE_FFT)
+	#undef FFT_TO_UART
+		#define FFT_TO_UART 		OFF
+	#undef FFT_FROM_UART
+		#define FFT_FROM_UART 		OFF
 #endif
 // ************************ //
 
@@ -84,19 +116,18 @@
 			// Cantidad de veces que se usara la FFT
 		#define 	FFT_DONE_MAX				FFT_TO_UART
 
-			// Cantidad de veces que se usara lo leido por UART
-		#define UART_RX_FFT_DONE_MAX 	UART_LOOPBACK + \
-										USE_FFT
-
 
 		extern arm_rfft_instance_q31 fft_inst_q31;					// Estructura para aplicar FFT
 		extern arm_cfft_radix4_instance_q31 fft_inst_q31_complex;	// Estructura para aplicar FFT
 
 		extern volatile q31_t fft_out[FFT_SIZE*2];			// Espectro de la senal transformada (el "*2" es porque es real e imaginario)
-		extern volatile q31_t fft_in[FFT_SIZE];				// Senal de entrada. Es vector complejo.
+
+		#if (FFT_FROM_UART) && (UART_BY_VECTOR)		// Si esta definido UART_BY_VECTOR, la FFT usa el mismo vector de entrada de la UART: uart_in[]
+		#else
+			extern volatile q31_t fft_in[FFT_SIZE];			// Senal de entrada. Es vector complejo.
+		#endif
 
 		extern uint8_t fft_done;							// Cantidad de veces que se uso la FFT
-		extern uint8_t uart_rx_fft_done;					// Cantidad de veces que se uso lo que lei por uart
 	#endif
 
 
@@ -122,28 +153,41 @@
 
 
 	#if USE_UART
-		#define LPC_UARTN 			LPC_UART0					// Numero de UART a utilizar
-		#define UARTN_IRQn 			UART0_IRQn					// Numero de UART a utilizar
-		#define UARTN_IRQHandler 	UART0_IRQHandler			// Numero de UART a utilizar
+		#define UART_BAUDRATE 		9600						// Baud rate de la UART
+
+		#if USE_UART0
+			#define LPC_UARTN 			LPC_UART0					// Numero de UART a utilizar
+			#define UARTN_IRQn 			UART0_IRQn					// Numero de UART a utilizar
+		#endif
 
 		#if USE_FFT
 			#define UART_SIZE 			FFT_SIZE*FFT_TYPE_SIZE	// Tamanio de UART buffer. El "*FFT_TYPE_SIZE" es porq son de algun tipo de dato de varios bytes y recibo de a 1 byte
 		#else
-			#define UART_SIZE 			1						// Tamanio de UART buffer
+			#define UART_SIZE 			16						// Tamanio de UART buffer
 		#endif
-
-
-		#define UART_BAUDRATE 		9600					// Baud rate de la UART
 
 			// Transmit and receive ring buffer sizes
 		#define UART_SRB_SIZE 	UART_SIZE	// Send
 		#define UART_RRB_SIZE 	UART_SIZE	// Receive
+
+			// Cantidad de veces que se usara lo leido por UART
+		#define UART_RX_DONE_MAX 	UART_LOOPBACK + \
+									USE_FFT*FFT_FROM_UART*UART_BY_VECTOR
+
+		#if UART_BY_VECTOR
+			extern volatile int32_t uart_in_A[UART_SIZE/4];			// Senal de entrada A (primer vector del ping-pong)
+			extern volatile int32_t uart_in_B[UART_SIZE/4];			// Senal de entrada B (segundo vector del ping-pong)
+			extern volatile int32_t *uart_in;						// Senal de entrada.
+		#elif UART_BYTE_BY_BYTE
+			extern volatile uint8_t uart_in;						// Senal de entrada.
+		#endif
 
 			// Transmit and receive buffers
 		extern uint8_t rxbuff[UART_RRB_SIZE], txbuff[UART_SRB_SIZE];
 
 			// Transmit and receive ring buffers
 		extern RINGBUFF_T txring, rxring;
+		extern uint8_t uart_rx_done;					// Cantidad de veces que se uso lo que lei por uart
 	#endif
 
 

@@ -1,7 +1,0 @@
-19:29:20 **** Clean-only build of configuration Debug for project Ejemplo_pseudo_pwm ****
-make -r clean 
-rm -rf  ./src/Ejemplo_pseudo_pwm.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o ./src/sysinit.o  ./src/Ejemplo_pseudo_pwm.d ./src/cr_startup_lpc175x_6x.d ./src/crp.d ./src/sysinit.d  Ejemplo_pseudo_pwm.axf
- 
-
-19:29:20 Build Finished (took 110ms)
-
