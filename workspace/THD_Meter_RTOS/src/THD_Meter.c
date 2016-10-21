@@ -38,6 +38,8 @@ int main(void)
 			#if USE_ADC_DAC_INTERNO
 				main_dac();
 			#endif
+
+			main_while();
 		}
 
 		main_uninit();

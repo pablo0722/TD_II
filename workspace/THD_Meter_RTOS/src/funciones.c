@@ -8,102 +8,25 @@
 
 #include "header.h"
 
-
-
-#if USE_FFT
-	void fft_function()
+void main_while()
+{
+		// Para hacer la FFT que entra por UART0
+	if(uart0_rx_status == UART_STATUS_LEIDO && fft_status != FFT_STATUS_TO_DO)
 	{
-		#if (FFT_FROM_UART) && (UART_BY_VECTOR)
-			if (uart_rx_done)
-			{
-				uart_rx_done --;
-		#endif
+		static uint16_t fft_idx = 0;
+		uint8_t *fft_vector_p = (uint8_t *) fft_vector;	// uso un (uint8_t *) porque por la uart leo de a 1 byte
 
-				const uint16_t fft_length = FFT_SIZE*2; // el "*2" es porque es real e imaginario
+		fft_vector_p[fft_idx] = uart0_in;		// Guardo lo leido en el vector de la FFT
 
-				#if (FFT_FROM_UART) && (UART_BY_VECTOR)
-					arm_rfft_q31(&fft_inst_q31, (q31_t *) uart_in, fft_out);
-				#else
-					arm_rfft_q31(&fft_inst_q31, fft_in, fft_out);
-				#endif
-				arm_cmplx_mag_q31(fft_out, fft_out, fft_length);
+		uart0_rx_status = UART_STATUS_EMPTY;	// Una vez guardado el valor, doy permiso para leer otro dato
 
-				fft_done = FFT_DONE_MAX;
-		#if (FFT_FROM_UART) && (UART_BY_VECTOR)
-			}
-		#endif
-	}
-#endif
+		fft_idx ++;
+		fft_idx %= FFT_SIZE*sizeof(uint32_t);
 
-
-#if USE_UART
-	void main_uart()
-	{
-		#if UART_LOOPBACK
-			if (uart_rx_done)
-			{
-				uart_rx_done --;
-
-				Chip_UART_SendRB(LPC_UART0, &txring, mSignalIn, UART_SIZE);
-			}
-		#endif
-
-		#if UART_BYTE_BY_BYTE
-			if(!uart_rx_done)
-			{
-				static uint16_t idx = 0;
-				uint8_t read_char = 0;
-				int bytes = Chip_UART_ReadRB(LPC_UARTN, &rxring, &read_char, 1);
-
-				if(bytes > 0)
-				{
-					uart_in = read_char;
-					uart_rx_done = UART_RX_DONE_MAX;
-				}
-			}
-		#endif
-
-		#if FFT_TO_UART
-			if (fft_done)
-			{
-				fft_done --;
-
-				Chip_UART_SendRB(LPC_UART0, &txring, fft_out, UART_SIZE/2); // Envio la mitad del espectro ya que esta espejado
-			}
-		#endif
-	}
-#endif
-
-#if USE_DAC_INTERNO
-	void main_dac()
-	{
-		int sel = CH_L;
-
-
-		if(adcFlag)
+		if(!fft_idx)
 		{
-			data = dma_memory_dac[0];
-			if(data < 0)
-				data = (data >> 8);
-			else
-			{
-				data = data >> 8 ;
-				data &= (0x00FFFFFF);
-			}
-
-			if(sel == CH_L)
-			{
-				if(data < 1024)
-					data = data + 512;
-				else
-					data = data - 512;
-
-				Chip_DAC_UpdateValue(LPC_DAC, data);
-				adcFlag = 0;
-				sel = CH_R;
-			}
-			else
-				sel = CH_L;
+			fft_status = FFT_STATUS_TO_DO;	// Doy orden para realizar FFT
+			// una vez que se realiza la fft, se envia automaticamente por la UART
 		}
 	}
-#endif
+}

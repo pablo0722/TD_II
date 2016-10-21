@@ -138,7 +138,7 @@ Status Chip_I2S_TxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
 	uint32_t N;
 
 
-	uint32_t pClk;
+	//uint32_t pClk;
 
 
 
@@ -171,7 +171,7 @@ Status Chip_I2S_TxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
 	pI2S->TXMODE = 0x8;
 	// FIN PRUEBA
 //
-	pClk = Chip_Clock_GetPeripheralClockRate(SYSCTL_PCLK_I2S);
+	/*pClk = */Chip_Clock_GetPeripheralClockRate(SYSCTL_PCLK_I2S);
 
 	xDiv = 32;
 	yDiv = 125;
@@ -190,7 +190,7 @@ Status Chip_I2S_RxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
 	uint16_t xDiv, yDiv;
 	uint32_t N;
 
-	uint32_t pClk = 0;
+	//uint32_t pClk = 0;
 
 	if (getClkDiv(pI2S, format, &xDiv, &yDiv, &N) == ERROR) {
 		return ERROR;
@@ -218,7 +218,7 @@ Status Chip_I2S_RxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
 	pI2S->RXMODE = 0x8;
 	// FIN PRUEBA
 //
-	pClk = Chip_Clock_GetPeripheralClockRate(SYSCTL_PCLK_I2S);
+	/*pClk = */Chip_Clock_GetPeripheralClockRate(SYSCTL_PCLK_I2S);
 
 	xDiv = 32;
 	yDiv = 125;

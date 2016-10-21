@@ -1,5 +1,7 @@
-src/tareas.o src/tareas.d: ../src/tareas.c \
+UART/uart_init.o UART/uart_init.d: ../UART/uart_init.c \
+ ../UART/uart_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/utilidades.h \
  D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h \
  D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOSConfig.h \
  D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\inc/board.h \
@@ -56,9 +58,16 @@ src/tareas.o src/tareas.d: ../src/tareas.c \
  D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/queue.h \
  D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h \
  D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h \
- D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/core_cm3.h
+ D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/core_cm3.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\FFT/fft_header.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h
+
+../UART/uart_header.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/utilidades.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h:
 
@@ -173,3 +182,9 @@ D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h:
 D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/core_cm3.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\FFT/fft_header.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h:
