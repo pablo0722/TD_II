@@ -367,8 +367,8 @@
 #define __USE_LPCOPEN 1
 #define __USE_CMSIS_DSPLIB CMSIS_DSPLIB_CM3
 #define __LPC17XX__ 1
-#define __NEWLIB__ 1
-#define __NEWLIB__ 1
+#define __REDLIB__ 1
+#define __REDLIB__ 1
 # 1 "../UART/uart_globales.c"
 # 10 "../UART/uart_globales.c"
 # 1 "../UART/uart_header.h" 1
@@ -393,47 +393,36 @@
 
 
 
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 1 3 4
-# 39 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#define _STDDEF_H 
-#define _STDDEF_H_ 
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stddef.h" 1 3 4
+# 9 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stddef.h" 3 4
+#define __STDDEF_H_INCLUDED 
 
-#define _ANSI_STDDEF_H 
-# 137 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#define _PTRDIFF_T 
-#define _T_PTRDIFF_ 
-#define _T_PTRDIFF 
-#define __PTRDIFF_T 
-#define _PTRDIFF_T_ 
-#define _BSD_PTRDIFF_T_ 
-#define ___int_ptrdiff_t_h 
-#define _GCC_PTRDIFF_T 
-#define _PTRDIFF_T_DECLARED 
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\redlib_version.h" 1 3 4
+# 14 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\redlib_version.h" 3 4
+#define REDLIB_VERSION_H_ 
 
 
+#define __REDLIB_INTERFACE_VERSION__ 20000
+# 12 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stddef.h" 2 3 4
 
 
-# 149 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-typedef int ptrdiff_t;
-# 161 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef __need_ptrdiff_t
-# 187 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#define __size_t__ 
-#define __SIZE_T__ 
-#define _SIZE_T 
-#define _SYS_SIZE_T_H 
-#define _T_SIZE_ 
-#define _T_SIZE 
-#define __SIZE_T 
-#define _SIZE_T_ 
-#define _BSD_SIZE_T_ 
-#define _SIZE_T_DEFINED_ 
-#define _SIZE_T_DEFINED 
-#define _BSD_SIZE_T_DEFINED_ 
-#define _SIZE_T_DECLARED 
-#define ___int_size_t_h 
-#define _GCC_SIZE_T 
-#define _SIZET_ 
+#define __CODEMIST 
+
+
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig.h" 1 3 4
+# 25 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig.h" 3 4
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h" 1 3 4
+# 18 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h" 3 4
+#define __SYS_LIBCONFIG_H_INCLUDED 
+
+
+
+
+
+
+#define restrict __restrict__
+# 39 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h" 3 4
+#define __THREAD 
 
 
 
@@ -441,630 +430,528 @@ typedef int ptrdiff_t;
 
 
 
-#define __size_t 
+#define __START_CRITICAL_REGION() do {} while (0)
+#define __END_CRITICAL_REGION() do {} while (0)
 
 
+#define __SIZEOF_CHAR 1
+
+
+#define __SIZEOF_SHORT 2
+
+
+#define __SIZEOF_INT 4
+
+
+#define __SIZEOF_LONG 4
+
+
+#define __SIZEOF_LONG_LONG 8
+
+
+#define __SIZEOF_FLOAT 4
+
+
+#define __SIZEOF_DOUBLE 8
+
+
+#define __SIZEOF_LONG_DOUBLE 12
+
+
+#define __SIZEOF_FLOAT__COMPLEX 8
+
+
+#define __SIZEOF__COMPLEX 16
+
+
+#define __SIZEOF_DOUBLE__COMPLEX 16
+
+
+#define __SIZEOF_LONG_DOUBLE__COMPLEX 24
+
+
+#define __SIZEOF_PTR 4
+# 97 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h" 3 4
+#define __JMP_BUF_SIZE 22
+
+
+#define __EXIT_FAILURE 1
+#define __EXIT_SUCCESS 0
+
+
+
+
+
+
+#define __CLK_TCK 100
+# 122 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h" 3 4
+#define BYTESEX_EVEN 1
+#undef BYTESEX_ODD
+
+
+
+#define DOUBLE_EXP_LAST 1
+#undef OTHER_WORD_ORDER_FOR_FP_NUMBERS
+
+
+#define MAXSTORE 0x03ffffff
+#define HOST_LACKS_ALLOC 1
+
+
+# 134 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h" 3 4
+struct __FILE_struct
+{
+    unsigned char *__ptr;
+    int __icnt;
+    int __ocnt;
+    int __flag;
+
+
+
+    unsigned char *__base;
+
+#define FILEHANDLE int
+
+    int __file;
+    long __pos;
+    int __bufsiz;
+    int __signature;
+    struct __extradata *__extrap;
+};
+# 163 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h" 3 4
+extern int _interrupts_off;
+extern void _raise_stacked_interrupts(void);
+extern void _postmortem(void);
+extern void _mapstore(void);
+extern void _Cwrite_profile(char *filename);
+
+extern void _init_alloc(void), _initio(char*, char*, char*),
+            _terminateio(void), _lib_shutdown(void), _signal_init(void),
+            _exit_init(void);
+
+extern int _signal_real_handler(int sig);
+
+
+#define __SIZE_T_DEFINED 
 
 
 
 typedef unsigned int size_t;
-# 238 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef __need_size_t
-# 267 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#define __wchar_t__ 
-#define __WCHAR_T__ 
-#define _WCHAR_T 
-#define _T_WCHAR_ 
-#define _T_WCHAR 
-#define __WCHAR_T 
-#define _WCHAR_T_ 
-#define _BSD_WCHAR_T_ 
-#define _WCHAR_T_DEFINED_ 
-#define _WCHAR_T_DEFINED 
-#define _WCHAR_T_H 
-#define ___int_wchar_t_h 
-#define __INT_WCHAR_T_H 
-#define _GCC_WCHAR_T 
-#define _WCHAR_T_DECLARED 
-# 294 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef _BSD_WCHAR_T_
-# 328 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-typedef unsigned int wchar_t;
-# 347 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef __need_wchar_t
-# 401 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef NULL
 
+
+
+extern void *_Csys_alloc(size_t n);
+extern void _init_user_alloc(void);
+extern void _terminate_user_alloc(void);
+extern void _Csys_msg(const char *);
+extern void _deferredlazyseek(struct __FILE_struct *stream);
+extern int _fflush(struct __FILE_struct *stream);
+extern int _Cwritebuf(unsigned char *buf, int len, struct __FILE_struct *stream);
+extern struct __FILE_struct *_fdopen(int fh, const char *mode, struct __FILE_struct *iob);
+extern int _Cread(char *ptr, int nbytes, struct __FILE_struct *stream);
+extern int _Cwrite(const char *ptr, int nbytes, struct __FILE_struct *stream);
+extern int _fillb2(struct __FILE_struct *stream);
+
+#define _exit(n) __sys_appexit()
+# 207 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h" 3 4
+#define _kernel_sdiv10(x) ((x)/10)
+#define _kernel_sdiv(x,y) ((y)/(x))
+#define _kernel_udiv10(v) ((unsigned)((v))/10)
+
+
+
+
+
+#define NONHANDLE ((FILEHANDLE)(-1))
+
+
+#define __TIME_T_DEFINED 
+typedef unsigned int time_t;
+
+
+
+#define __CLOCK_T_DEFINED 
+typedef unsigned int clock_t;
+
+
+void __sys_appexit (void);
+clock_t __sys_clock(void);
+int __sys_close(int iFileHandle);
+int __sys_flen(int handle);
+int __sys_istty(int handle);
+int __sys_open(const char *pcFileName, int iFileMode, int len);
+int __sys_read(int iFileHandle, char *pcBuffer, int iLen);
+int __sys_readc(void);
+int __sys_remove(const char *pcFileName, int len);
+int __sys_rename(const char *oldFileName, int oldlen, const char *newFileName, int newlen);
+int __sys_seek(int handle, int pos);
+time_t __sys_time(void);
+int __sys_tmpnam(char *pcBuf, int iTargetId, int iBufLen);
+int __sys_write(int iFileHandle, char *pcBuffer, int iLength);
+void __sys_write0(char *pcBuffer);
+
+#define _Csys_istty_(fh) __sys_istty((int)fh)
+#define _Csys_seek_(fh,pos) __sys_seek((int)fh,(int)pos)
+#define _Csys_flen_(fh) __sys_flen((int)fh)
+#define _ttywrite(buf,len,wh) __sys_write(0,(int)(buf),len)
+#define _Csys_write_(fh,buf,len,mode) __sys_write(fh,buf,len)
+extern int _Csys_read_(int fh, unsigned char *buf, int len, int mode);
+#define _Csys_close_(fh) __sys_close((int)(fh))
+
+#define _Csys_open(name,mode,len) __sys_open(name,mode,len)
+
+
+
+
+
+
+
+#define FLOAT64 double
+# 282 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h" 3 4
+typedef union
+{
+ struct
+ {
+  unsigned mlo;
+  unsigned int mhi:20, x:11, s:1;
+ } i;
+  double d;
+} fp_number;
+# 313 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h" 3 4
+#define _fp_normalize(high,low) { fp_number temp; double temp1; temp.d = high; temp.i.mlo = 0; temp1 = high - temp.d; low += temp1; high = temp.d; }
+# 323 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h" 3 4
+extern struct __FILE_struct *_fopen_string_file(const char *data, int length);
+
+extern int _number_of_exit_functions;
+extern void (*_exitvector[])(void);
+
+
+
+
+
+extern double _frexpl(double, int *);
+extern double _ldexpl(double, int);
+
+extern double _sincos(double x, double y, int sign, int coscase);
+extern double _tancot(double, int);
+extern double _asinacos(double, int);
+# 26 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig.h" 2 3 4
+# 18 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stddef.h" 2 3 4
+
+typedef int ptrdiff_t;
+
+
+#define WCHAR_T_DEFINED 
+typedef unsigned int wchar_t;
 
 
 
 #define NULL ((void *)0)
 
 
-
-
-
-#undef __need_NULL
-
-
-
-
-#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-
-
-
-
-#define _GCC_MAX_ALIGN_T 
-
-
-
-typedef struct {
-  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
-  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
-} max_align_t;
+#define offsetof(type,member_designator) ((size_t)((char *)&(((type *)0)->member_designator) - (char *)0))
 # 77 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/FreeRTOS.h" 2
 # 91 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/FreeRTOS.h"
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stdint.h" 1 3 4
-# 9 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stdint.h" 3 4
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 1 3 4
-# 10 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define _STDINT_H 
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 1 3 4
-
-
-
-
-
-#define _MACHINE__DEFAULT_TYPES_H 
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\features.h" 1 3 4
-# 22 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
-#define _SYS_FEATURES_H 
-
-
-
-
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\_newlib_version.h" 1 3 4
-
-
-
-#define _NEWLIB_VERSION_H__ 1
-
-#define _NEWLIB_VERSION "2.4.0"
-#define __NEWLIB__ 2
-#define __NEWLIB_MINOR__ 4
-#define __NEWLIB_PATCHLEVEL__ 0
-# 29 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\features.h" 2 3 4
-
-
-
-
-#define __GNUC_PREREQ(maj,min) ((__GNUC__ << 16) + __GNUC_MINOR__ >= ((maj) << 16) + (min))
-
-
-
-
-
-
-#define __GNUC_PREREQ__(ma,mi) __GNUC_PREREQ(ma, mi)
-# 128 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
-#undef _DEFAULT_SOURCE
-#define _DEFAULT_SOURCE 1
-
-
-
-#undef _POSIX_SOURCE
-#define _POSIX_SOURCE 1
-#undef _POSIX_C_SOURCE
-#define _POSIX_C_SOURCE 200809L
-# 155 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
-#undef _ATFILE_SOURCE
-#define _ATFILE_SOURCE 1
-# 242 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
-#define __ATFILE_VISIBLE 1
-
-
-
-
-
-#define __BSD_VISIBLE 1
-
-
-
-
-
-
-
-#define __GNU_VISIBLE 0
-
-
-
-
-#define __ISO_C_VISIBLE 2011
-# 272 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
-#define __LARGEFILE_VISIBLE 0
-
-
-
-#define __MISC_VISIBLE 1
-
-
-
-
-
-#define __POSIX_VISIBLE 200809
-# 298 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
-#define __SVID_VISIBLE 1
-# 314 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
-#define __XSI_VISIBLE 0
-# 9 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 2 3 4
-
-
-
-
-
-
-#define __EXP(x) __ ##x ##__
-# 27 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
-typedef signed char __int8_t;
-
-typedef unsigned char __uint8_t;
-
-
-
-#define ___int8_t_defined 1
-
-
-
-
-
-
-
-typedef short int __int16_t;
-
-typedef short unsigned int __uint16_t;
-
-
-
-#define ___int16_t_defined 1
-# 63 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
-typedef long int __int32_t;
-
-typedef long unsigned int __uint32_t;
-
-
-
-#define ___int32_t_defined 1
-# 89 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
-typedef long long int __int64_t;
-
-typedef long long unsigned int __uint64_t;
-
-
-
-#define ___int64_t_defined 1
-# 120 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
-typedef signed char __int_least8_t;
-
-typedef unsigned char __uint_least8_t;
-
-
-
-#define ___int_least8_t_defined 1
-# 146 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
-typedef short int __int_least16_t;
-
-typedef short unsigned int __uint_least16_t;
-
-
-
-#define ___int_least16_t_defined 1
-# 168 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
-typedef long int __int_least32_t;
-
-typedef long unsigned int __uint_least32_t;
-
-
-
-#define ___int_least32_t_defined 1
-# 186 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
-typedef long long int __int_least64_t;
-
-typedef long long unsigned int __uint_least64_t;
-
-
-
-#define ___int_least64_t_defined 1
-
-
-
-
-
-
-
-typedef int __intptr_t;
-
-typedef unsigned int __uintptr_t;
-# 214 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
-#undef __EXP
-# 13 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 2 3 4
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 1 3 4
-# 10 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-#define _SYS__INTSUP_H 
-
-
-
-
-
-#define __STDINT_EXP(x) __ ##x ##__
-# 26 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-#define __have_longlong64 1
-
-
-
-
-
-
-#define __have_long32 1
-# 49 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-       
-       
-       
-       
-       
-       
-       
-#undef signed
-#undef unsigned
-#undef char
-#undef short
-#undef int
-#undef __int20
-#undef long
-#define signed +0
-#define unsigned +0
-#define char +0
-#define short +1
-#define __int20 +2
-#define int +2
-#define long +4
-# 78 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-#define _INTPTR_EQ_INT 
-
-
-
-
-
-
-#define _INT32_EQ_LONG 
-
-
-
-
-
-
-
-#define __INT8 "hh"
-# 104 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-#define __INT16 "h"
-# 115 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-#define __INT32 "l"
-# 124 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-#define __INT64 "ll"
-
-
-
-
-
-
-#define __FAST8 
-# 140 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-#define __FAST16 
-
-
-
-
-
-
-#define __FAST32 
-# 158 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-#define __FAST64 "ll"
-
-
-
-#define __LEAST8 "hh"
-# 173 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-#define __LEAST16 "h"
-# 184 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-#define __LEAST32 "l"
-# 193 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-#define __LEAST64 "ll"
-
-#undef signed
-#undef unsigned
-#undef char
-#undef short
-#undef int
-#undef long
-       
-       
-       
-       
-       
-# 205 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
-#undef __int20
-       
-       
-# 14 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 2 3 4
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_stdint.h" 1 3 4
-# 10 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_stdint.h" 3 4
-#define _SYS__STDINT_H 
-# 20 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_stdint.h" 3 4
-typedef __int8_t int8_t ;
-#define _INT8_T_DECLARED 
-
-
-typedef __uint8_t uint8_t ;
-#define _UINT8_T_DECLARED 
-
-#define __int8_t_defined 1
-
-
-
-
-typedef __int16_t int16_t ;
-#define _INT16_T_DECLARED 
-
-
-typedef __uint16_t uint16_t ;
-#define _UINT16_T_DECLARED 
-
-#define __int16_t_defined 1
-
-
-
-
-typedef __int32_t int32_t ;
-#define _INT32_T_DECLARED 
-
-
-typedef __uint32_t uint32_t ;
-#define _UINT32_T_DECLARED 
-
-#define __int32_t_defined 1
-
-
-
-
-typedef __int64_t int64_t ;
-#define _INT64_T_DECLARED 
-
-
-typedef __uint64_t uint64_t ;
-#define _UINT64_T_DECLARED 
-
-#define __int64_t_defined 1
-
-
-
-typedef __intptr_t intptr_t;
-#define _INTPTR_T_DECLARED 
-
-
-
-typedef __uintptr_t uintptr_t;
-#define _UINTPTR_T_DECLARED 
-# 15 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 2 3 4
-
-
-
-
-
-
-typedef __int_least8_t int_least8_t;
-typedef __uint_least8_t uint_least8_t;
-#define __int_least8_t_defined 1
-
-
-
-typedef __int_least16_t int_least16_t;
-typedef __uint_least16_t uint_least16_t;
-#define __int_least16_t_defined 1
-
-
-
-typedef __int_least32_t int_least32_t;
-typedef __uint_least32_t uint_least32_t;
-#define __int_least32_t_defined 1
-
-
-
-typedef __int_least64_t int_least64_t;
-typedef __uint_least64_t uint_least64_t;
-#define __int_least64_t_defined 1
-# 51 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-  typedef int int_fast8_t;
-  typedef unsigned int uint_fast8_t;
-#define __int_fast8_t_defined 1
-
-
-
-
-
-
-
-  typedef int int_fast16_t;
-  typedef unsigned int uint_fast16_t;
-#define __int_fast16_t_defined 1
-
-
-
-
-
-
-
-  typedef int int_fast32_t;
-  typedef unsigned int uint_fast32_t;
-#define __int_fast32_t_defined 1
-
-
-
-
-
-
-
-  typedef long long int int_fast64_t;
-  typedef long long unsigned int uint_fast64_t;
-#define __int_fast64_t_defined 1
-# 130 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-  typedef long long int intmax_t;
-# 139 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-  typedef long long unsigned int uintmax_t;
-
-
-
-
-
-
-
-#define INTPTR_MIN (-__INTPTR_MAX__ - 1)
-#define INTPTR_MAX (__INTPTR_MAX__)
-#define UINTPTR_MAX (__UINTPTR_MAX__)
-# 171 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT8_MIN (-__INT8_MAX__ - 1)
-#define INT8_MAX (__INT8_MAX__)
-#define UINT8_MAX (__UINT8_MAX__)
-
-
-
-
-
-
-
-#define INT_LEAST8_MIN (-__INT_LEAST8_MAX__ - 1)
-#define INT_LEAST8_MAX (__INT_LEAST8_MAX__)
-#define UINT_LEAST8_MAX (__UINT_LEAST8_MAX__)
-# 193 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT16_MIN (-__INT16_MAX__ - 1)
-#define INT16_MAX (__INT16_MAX__)
-#define UINT16_MAX (__UINT16_MAX__)
-
-
-
-
-
-
-
-#define INT_LEAST16_MIN (-__INT_LEAST16_MAX__ - 1)
-#define INT_LEAST16_MAX (__INT_LEAST16_MAX__)
-#define UINT_LEAST16_MAX (__UINT_LEAST16_MAX__)
-# 215 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT32_MIN (-__INT32_MAX__ - 1)
-#define INT32_MAX (__INT32_MAX__)
-#define UINT32_MAX (__UINT32_MAX__)
-# 231 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT_LEAST32_MIN (-__INT_LEAST32_MAX__ - 1)
-#define INT_LEAST32_MAX (__INT_LEAST32_MAX__)
-#define UINT_LEAST32_MAX (__UINT_LEAST32_MAX__)
-# 249 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT64_MIN (-__INT64_MAX__ - 1)
-#define INT64_MAX (__INT64_MAX__)
-#define UINT64_MAX (__UINT64_MAX__)
-# 265 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT_LEAST64_MIN (-__INT_LEAST64_MAX__ - 1)
-#define INT_LEAST64_MAX (__INT_LEAST64_MAX__)
-#define UINT_LEAST64_MAX (__UINT_LEAST64_MAX__)
-# 281 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT_FAST8_MIN (-__INT_FAST8_MAX__ - 1)
-#define INT_FAST8_MAX (__INT_FAST8_MAX__)
-#define UINT_FAST8_MAX (__UINT_FAST8_MAX__)
-# 297 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT_FAST16_MIN (-__INT_FAST16_MAX__ - 1)
-#define INT_FAST16_MAX (__INT_FAST16_MAX__)
-#define UINT_FAST16_MAX (__UINT_FAST16_MAX__)
-# 313 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT_FAST32_MIN (-__INT_FAST32_MAX__ - 1)
-#define INT_FAST32_MAX (__INT_FAST32_MAX__)
-#define UINT_FAST32_MAX (__UINT_FAST32_MAX__)
-# 329 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT_FAST64_MIN (-__INT_FAST64_MAX__ - 1)
-#define INT_FAST64_MAX (__INT_FAST64_MAX__)
-#define UINT_FAST64_MAX (__UINT_FAST64_MAX__)
-# 345 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INTMAX_MAX (__INTMAX_MAX__)
-#define INTMAX_MIN (-INTMAX_MAX - 1)
-
-
-
-
-
-
-
-#define UINTMAX_MAX (__UINTMAX_MAX__)
-
-
-
-
-
-
-
-#define SIZE_MAX (__SIZE_MAX__)
-
-
-
-
-
-#define SIG_ATOMIC_MIN (-__STDINT_EXP(INT_MAX) - 1)
-#define SIG_ATOMIC_MAX (__STDINT_EXP(INT_MAX))
-
-
-
-#define PTRDIFF_MAX (__PTRDIFF_MAX__)
-
-
-
-#define PTRDIFF_MIN (-PTRDIFF_MAX - 1)
-
-
-
-
-#define WCHAR_MIN (__WCHAR_MIN__)
-# 393 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define WCHAR_MAX (__WCHAR_MAX__)
-# 403 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define WINT_MAX (__WINT_MAX__)
-
-
-
-
-#define WINT_MIN (__WINT_MIN__)
-
-
-
-
-
-
-#define INT8_C(x) __INT8_C(x)
-#define UINT8_C(x) __UINT8_C(x)
-# 427 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT16_C(x) __INT16_C(x)
-#define UINT16_C(x) __UINT16_C(x)
-# 439 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT32_C(x) __INT32_C(x)
-#define UINT32_C(x) __UINT32_C(x)
-# 452 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INT64_C(x) __INT64_C(x)
-#define UINT64_C(x) __UINT64_C(x)
-# 468 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
-#define INTMAX_C(x) __INTMAX_C(x)
-#define UINTMAX_C(x) __UINTMAX_C(x)
-# 10 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stdint.h" 2 3 4
-
-
-
-#define _GCC_WRAP_STDINT_H 
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdint.h" 1 3 4
+# 11 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdint.h" 3 4
+#define __STDINT_H_INCLUDED 
+
+
+
+
+
+
+
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig.h" 1 3 4
+# 20 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdint.h" 2 3 4
+# 28 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdint.h" 3 4
+typedef signed char int8_t;
+typedef unsigned char uint8_t;
+#define INT8_C(value) ((signed char)(value))
+#define UINT8_C(value) ((unsigned char)(value))
+typedef signed char int_least8_t;
+typedef unsigned char uint_least8_t;
+#define INT8_MIN (-0x80)
+#define INT8_MAX 0x7f
+#define UINT8_MAX 0xffU
+#define INT_LEAST8_MIN (-0x80)
+#define INT_LEAST8_MAX 0x7f
+#define UINT_LEAST8_MAX 0xffU
+
+typedef int int_fast8_t;
+typedef unsigned int uint_fast8_t;
+
+
+#define INT_FAST8_MIN (-0x80000000)
+#define INT_FAST8_MAX 0x7fffffff
+#define UINT_FAST8_MAX 0xffffffffU
+
+
+
+#define __PRIdFAST8 "%d"
+#define __PRIiFAST8 "%i"
+#define __PRIoFAST8 "%o"
+#define __PRIuFAST8 "%u"
+#define __PRIxFAST8 "%x"
+#define __PRIXFAST8 "%X"
+#define __SCNdFAST8 "%d"
+#define __SCNiFAST8 "%i"
+#define __SCNoFAST8 "%o"
+#define __SCNuFAST8 "%u"
+#define __SCNxFAST8 "%x"
+
+
+
+#define __PRId8 "%hhd"
+#define __PRIdLEAST8 "%hhd"
+#define __PRIi8 "%hhi"
+#define __PRIiLEAST8 "%hhi"
+#define __PRIo8 "%hho"
+#define __PRIoLEAST8 "%hho"
+#define __PRIu8 "%hhu"
+#define __PRIuLEAST8 "%hhu"
+#define __PRIx8 "%hhx"
+#define __PRIxLEAST8 "%hhx"
+#define __PRIX8 "%hhX"
+#define __PRIXLEAST8 "%hhX"
+#define __SCNd8 "%hhd"
+#define __SCNdLEAST8 "%hhd"
+#define __SCNi8 "%hhi"
+#define __SCNiLEAST8 "%hhi"
+#define __SCNo8 "%hho"
+#define __SCNoLEAST8 "%hho"
+#define __SCNu8 "%hhu"
+#define __SCNuLEAST8 "%hhu"
+#define __SCNx8 "%hhx"
+#define __SCNxLEAST8 "%hhx"
+
+
+typedef short int16_t;
+typedef unsigned short uint16_t;
+#define INT16_C(value) ((short)(value))
+#define UINT16_C(value) ((unsigned short)(value))
+typedef short int_least16_t;
+typedef unsigned short uint_least16_t;
+#define INT16_MIN (-0x8000)
+#define INT16_MAX 0x7fff
+#define UINT16_MAX 0xffffU
+#define INT_LEAST16_MIN (-0x8000)
+#define INT_LEAST16_MAX 0x7fff
+#define UINT_LEAST16_MAX 0xffffU
+
+typedef int int_fast16_t;
+typedef unsigned int uint_fast16_t;
+
+#define INT_FAST16_MIN (-0x80000000)
+#define INT_FAST16_MAX 0x7fffffff
+#define UINT_FAST16_MAX 0xffffffffU
+
+#define __PRIdFAST16 "%d"
+#define __PRIiFAST16 "%i"
+#define __PRIoFAST16 "%o"
+#define __PRIuFAST16 "%o"
+#define __PRIxFAST16 "%x"
+#define __PRIXFAST16 "%X"
+#define __SCNdFAST16 "%d"
+#define __SCNiFAST16 "%i"
+#define __SCNoFAST16 "%o"
+#define __SCNuFAST16 "%u"
+#define __SCNxFAST16 "%x"
+
+
+#define __PRId16 "%hd"
+#define __PRIdLEAST16 "%hd"
+#define __PRIi16 "%hi"
+#define __PRIiLEAST16 "%hi"
+#define __PRIo16 "%ho"
+#define __PRIoLEAST16 "%ho"
+#define __PRIu16 "%hu"
+#define __PRIuLEAST16 "%hu"
+#define __PRIx16 "%hx"
+#define __PRIxLEAST16 "%hx"
+#define __PRIX16 "%hX"
+#define __PRIXLEAST16 "%hX"
+#define __SCNd16 "%hd"
+#define __SCNdLEAST16 "%hd"
+#define __SCNi16 "%hi"
+#define __SCNiLEAST16 "%hi"
+#define __SCNo16 "%ho"
+#define __SCNoLEAST16 "%ho"
+#define __SCNu16 "%hu"
+#define __SCNuLEAST16 "%hu"
+#define __SCNx16 "%hx"
+#define __SCNxLEAST16 "%hx"
+
+typedef int int32_t;
+typedef unsigned int uint32_t;
+#define INT32_C(value) ((int)(value))
+#define UINT32_C(value) ((unsigned int)(value))
+typedef int int_least32_t;
+typedef unsigned int uint_least32_t;
+typedef int int_fast32_t;
+typedef unsigned int uint_fast32_t;
+#define INT32_MIN (-0x80000000)
+#define INT32_MAX 0x7fffffff
+#define UINT32_MAX 0xffffffffU
+#define INT_LEAST32_MIN (-0x80000000)
+#define INT_LEAST32_MAX 0x7fffffff
+#define UINT_LEAST32_MAX 0xffffffffU
+#define INT_FAST32_MIN (-0x80000000)
+#define INT_FAST32_MAX 0x7fffffff
+#define UINT_FAST32_MAX 0xffffffffU
+#define __PRId32 "%d"
+#define __PRIdLEAST32 "%d"
+#define __PRIdFAST32 "%d"
+#define __PRIi32 "%i"
+#define __PRIiLEAST32 "%i"
+#define __PRIiFAST32 "%i"
+#define __PRIo32 "%o"
+#define __PRIoLEAST32 "%o"
+#define __PRIoFAST32 "%o"
+#define __PRIu32 "%u"
+#define __PRIuLEAST32 "%u"
+#define __PRIuFAST32 "%u"
+#define __PRIx32 "%x"
+#define __PRIxLEAST32 "%x"
+#define __PRIxFAST32 "%x"
+#define __PRIX32 "%X"
+#define __PRIXLEAST32 "%X"
+#define __PRIXFAST32 "%X"
+#define __SCNd32 "%d"
+#define __SCNdLEAST32 "%d"
+#define __SCNdFAST32 "%d"
+#define __SCNi32 "%i"
+#define __SCNiLEAST32 "%i"
+#define __SCNiFAST32 "%i"
+#define __SCNo32 "%o"
+#define __SCNoLEAST32 "%o"
+#define __SCNoFAST32 "%o"
+#define __SCNu32 "%u"
+#define __SCNuLEAST32 "%u"
+#define __SCNuFAST32 "%u"
+#define __SCNx32 "%x"
+#define __SCNxLEAST32 "%x"
+#define __SCNxFAST32 "%x"
+
+
+typedef long long int64_t;
+typedef unsigned long long uint64_t;
+#define INT64_C(value) ((long long)(value))
+#define UINT64_C(value) ((unsigned long long)(value))
+typedef long long int_least64_t;
+typedef unsigned long long uint_least64_t;
+typedef long long int_fast64_t;
+typedef unsigned long long uint_fast64_t;
+#define INT64_MIN (-0x8000000000000000LL)
+#define INT64_MAX 0x7fffffffffffffffLL
+#define UINT64_MAX 0xffffffffffffffffULL
+#define INT_LEAST64_MIN (-0x8000000000000000LL)
+#define INT_LEAST64_MAX 0x7fffffffffffffffLL
+#define UINT_LEAST64_MAX 0xffffffffffffffffULL
+#define INT_FAST64_MIN (-0x8000000000000000LL)
+#define INT_FAST64_MAX 0x7fffffffffffffffLL
+#define UINT_FAST64_MAX 0xffffffffffffffffULL
+#define __PRId64 "%lld"
+#define __PRIdLEAST64 "%lld"
+#define __PRIdFAST64 "%lld"
+#define __PRIi64 "%lli"
+#define __PRIiLEAST64 "%lli"
+#define __PRIiFAST64 "%lli"
+#define __PRIo64 "%llo"
+#define __PRIoLEAST64 "%llo"
+#define __PRIoFAST64 "%llo"
+#define __PRIu64 "%llu"
+#define __PRIuLEAST64 "%llu"
+#define __PRIuFAST64 "%llu"
+#define __PRIx64 "%llx"
+#define __PRIxLEAST64 "%llx"
+#define __PRIxFAST64 "%llx"
+#define __PRIX64 "%llX"
+#define __PRIXLEAST64 "%llX"
+#define __PRIXFAST64 "%llX"
+#define __SCNd64 "%lld"
+#define __SCNdLEAST64 "%lld"
+#define __SCNdFAST64 "%lld"
+#define __SCNi64 "%lli"
+#define __SCNiLEAST64 "%lli"
+#define __SCNiFAST64 "%lli"
+#define __SCNo64 "%llo"
+#define __SCNoLEAST64 "%llo"
+#define __SCNoFAST64 "%llo"
+#define __SCNu64 "%llu"
+#define __SCNuLEAST64 "%llu"
+#define __SCNuFAST64 "%llu"
+#define __SCNx64 "%llx"
+#define __SCNxLEAST64 "%llx"
+#define __SCNxFAST64 "%llx"
+
+
+
+
+
+
+typedef int intptr_t;
+typedef unsigned int uintptr_t;
+
+#define INTPTR_MIN (-0x80000000)
+#define INTPTR_MAX 0x7fffffff
+#define UINTPTR_MAX 0xffffffffU
+
+#define __PRIdPTR "%d"
+#define __PRIiPTR "%i"
+#define __PRIoPTR "%o"
+#define __PRIuPTR "%u"
+#define __PRIxPTR "%x"
+#define __PRIXPTR "%X"
+#define __SCNdPTR "%d"
+#define __SCNiPTR "%i"
+#define __SCNoPTR "%o"
+#define __SCNuPTR "%u"
+#define __SCNxPTR "%x"
+
+
+
+
+
+
+typedef long long intmax_t;
+typedef unsigned long long uintmax_t;
+#define __SIZEOF_INTMAX __SIZEOF_LONG_LONG
+
+#define INTMAX_MIN (-0x8000000000000000LL)
+#define INTMAX_MAX 0x7fffffffffffffffLL
+#define UINTMAX_MAX 0xffffffffffffffffULL
+
+#define INTMAX_C(value) ((long long)(value))
+#define UINTMAX_C(value) ((unsigned long long)(value))
+#define __PRIdMAX "%lld"
+#define __PRIiMAX "%lli"
+#define __PRIoMAX "%llo"
+#define __PRIuMAX "%llu"
+#define __PRIxMAX "%llx"
+#define __PRIXMAX "%llX"
+#define __SCNdMAX "%lld"
+#define __SCNiMAX "%lli"
+#define __SCNoMAX "%llo"
+#define __SCNuMAX "%llu"
+#define __SCNxMAX "%llx"
+
+#define __SIZEOF_PTRDIFF 4
+#define PTRDIFF_MIN (-0x80000000)
+#define PTRDIFF_MAX 0x7fffffff
+
+#define __SIZEOF_SIZE 4
+#define SIZE_MAX 0xffffffffU
+
+
+#define WCHAR_MIN __WCHAR_MIN__
+#define WCHAR_MAX __WCHAR_MAX__
+
+#define WINT_MIN INT32_MIN
+#define WINT_MAX INT32_MAX
+
+#define SIG_ATOMIC_MIN 0
+#define SIG_ATOMIC_MAX 0xff
 # 92 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/FreeRTOS.h" 2
 
 
@@ -1093,16 +980,16 @@ typedef __uint_least64_t uint_least64_t;
 #define __LPC_TYPES_H_ 
 
 
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stdbool.h" 1 3 4
-# 29 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stdbool.h" 3 4
-#define _STDBOOL_H 
-
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdbool.h" 1 3 4
+# 15 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdbool.h" 3 4
+#define STDBOOL_H_ 
 
 
 #define bool _Bool
-#define true 1
 #define false 0
-# 52 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stdbool.h" 3 4
+#define true 1
+
+
 #define __bool_true_false_are_defined 1
 # 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/lpc_types.h" 2
 # 50 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/lpc_types.h"
@@ -9999,1932 +9886,206 @@ void Board_USBD_Init(uint32_t port);
 
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/lpc_types.h" 1
 # 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/board_api.h" 2
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 1 3
-# 27 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 3
-#define _STDIO_H_ 
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdio.h" 1 3 4
+# 9 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdio.h" 3 4
+#define __STDIO_H_INCLUDED 
 
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\_ansi.h" 1 3
-# 13 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\_ansi.h" 3
-#define _ANSIDECL_H_ 
 
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\newlib.h" 1 3
 
 
 
 
 
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig.h" 1 3 4
+# 18 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdio.h" 2 3 4
 
 
-#define __NEWLIB_H__ 1
-# 21 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\newlib.h" 3
-#define _WANT_IO_LONG_LONG 1
 
 
-#define _WANT_REGISTER_FINI 1
-# 40 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\newlib.h" 3
-#define _MB_LEN_MAX 1
-# 50 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\newlib.h" 3
-#define HAVE_INITFINI_ARRAY 1
 
 
+# 23 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdio.h" 3 4
+typedef __builtin_va_list ___gnuc_va_list;
+typedef ___gnuc_va_list __va_list;
 
-#define _ATEXIT_DYNAMIC_ALLOC 1
 
 
-#define _HAVE_LONG_DOUBLE 1
 
 
-#define _HAVE_CC_INHIBIT_LOOP_TO_LIBCALL 1
 
+typedef struct __FILE_struct FILE;
 
-#define _LDBL_EQ_DBL 1
-
-
-#define _FVWRITE_IN_STREAMIO 1
-
-
-#define _FSEEK_OPTIMIZATION 1
-
-
-#define _WIDE_ORIENT 1
-
-
-#define _UNBUF_STREAM_OPT 1
-# 16 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\_ansi.h" 2 3
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\config.h" 1 3
-
-#define __SYS_CONFIG_H__ 
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\ieeefp.h" 1 3
-# 60 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\ieeefp.h" 3
-#define __IEEE_LITTLE_ENDIAN 
-# 5 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\config.h" 2 3
-# 219 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\config.h" 3
-#define _POINTER_INT long
-
-
-
-
-
-#undef __RAND_MAX
-
-
-
-#define __RAND_MAX 0x7fffffff
-# 244 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\config.h" 3
-#define __EXPORT 
-
-
-
-#define __IMPORT 
-
-
-
-
-
-
-#define _READ_WRITE_RETURN_TYPE int
-
-
-
-
-
-#define _READ_WRITE_BUFSIZE_TYPE int
-# 17 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\_ansi.h" 2 3
-
-
-
-
-
-
-#define _HAVE_STDC 
-# 44 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\_ansi.h" 3
-#define _BEGIN_STD_C 
-#define _END_STD_C 
-#define _NOTHROW 
-
-
-
-#define _PTR void *
-#define _AND ,
-#define _NOARGS void
-#define _CONST const
-#define _VOLATILE volatile
-#define _SIGNED signed
-#define _DOTS , ...
-#define _VOID void
-
-
-
-
-
-
-#define _EXFUN_NOTHROW(name,proto) name proto _NOTHROW
-#define _EXFUN(name,proto) name proto
-#define _EXPARM(name,proto) (* name) proto
-#define _EXFNPTR(name,proto) (* name) proto
-
-#define _DEFUN(name,arglist,args) name(args)
-#define _DEFUN_VOID(name) name(_NOARGS)
-#define _CAST_VOID (void)
-
-#define _LONG_DOUBLE long double
-
-
-#define _PARAMS(paramlist) paramlist
-# 101 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\_ansi.h" 3
-#define _ATTRIBUTE(attrs) __attribute__ (attrs)
-# 127 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\_ansi.h" 3
-#define _ELIDABLE_INLINE static __inline__
-
-
-
-#define _NOINLINE __attribute__ ((__noinline__))
-#define _NOINLINE_STATIC _NOINLINE static
-# 30 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
-
-#define _FSTDIO 
-
-#define __need_size_t 
-#define __need_NULL 
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 1 3
-# 41 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define _SYS_CDEFS_H_ 
-
-
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 1 3 4
-# 161 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef __need_ptrdiff_t
-# 238 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef __need_size_t
-# 347 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef __need_wchar_t
-# 401 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef NULL
-
-
-
-
-#define NULL ((void *)0)
-
-
-
-
-
-#undef __need_NULL
-
-
-
-
-#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 46 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 2 3
-
-#define __PMT(args) args
-#define __DOTS , ...
-#define __THROW 
-
-
-#define __ASMNAME(cname) __XSTRING (__USER_LABEL_PREFIX__) cname
-
-
-#define __ptr_t void *
-#define __long_double_t long double
-
-#define __attribute_malloc__ 
-#define __attribute_pure__ 
-#define __attribute_format_strfmon__(a,b) 
-#define __flexarr [0]
-
-
-#define __bounded 
-#define __unbounded 
-#define __ptrvalue 
-# 76 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __has_extension __has_feature
-
-
-#define __has_feature(x) 0
-
-
-
-
-
-#define __has_builtin(x) 0
-
-
-
-
-
-
-#define __BEGIN_DECLS 
-#define __END_DECLS 
-# 105 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __GNUCLIKE_ASM 3
-#define __GNUCLIKE_MATH_BUILTIN_CONSTANTS 
-
-
-
-#define __GNUCLIKE___TYPEOF 1
-#define __GNUCLIKE___OFFSETOF 1
-#define __GNUCLIKE___SECTION 1
-
-
-#define __GNUCLIKE_CTOR_SECTION_HANDLING 1
-
-
-#define __GNUCLIKE_BUILTIN_CONSTANT_P 1
-
-
-
-
-
-
-#define __GNUCLIKE_BUILTIN_VARARGS 1
-#define __GNUCLIKE_BUILTIN_STDARG 1
-#define __GNUCLIKE_BUILTIN_VAALIST 1
-
-
-
-#define __GNUC_VA_LIST_COMPATIBILITY 1
-
-
-
-
-
-
-#define __compiler_membar() __asm __volatile(" " : : : "memory")
-
-
-
-#define __GNUCLIKE_BUILTIN_NEXT_ARG 1
-#define __GNUCLIKE_MATH_BUILTIN_RELOPS 
-
-
-#define __GNUCLIKE_BUILTIN_MEMCPY 1
-
-
-#define __CC_SUPPORTS_INLINE 1
-#define __CC_SUPPORTS___INLINE 1
-#define __CC_SUPPORTS___INLINE__ 1
-
-#define __CC_SUPPORTS___FUNC__ 1
-#define __CC_SUPPORTS_WARNING 1
-
-#define __CC_SUPPORTS_VARADIC_XXX 1
-
-#define __CC_SUPPORTS_DYNAMIC_ARRAY_INIT 1
-# 175 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __P(protos) protos
-#define __CONCAT1(x,y) x ## y
-#define __CONCAT(x,y) __CONCAT1(x,y)
-#define __STRING(x) #x
-#define __XSTRING(x) __STRING(x)
-
-#define __const const
-#define __signed signed
-#define __volatile volatile
-# 239 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __weak_symbol __attribute__((__weak__))
-# 252 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __dead2 __attribute__((__noreturn__))
-#define __pure2 __attribute__((__const__))
-#define __unused __attribute__((__unused__))
-#define __used __attribute__((__used__))
-#define __packed __attribute__((__packed__))
-#define __aligned(x) __attribute__((__aligned__(x)))
-#define __section(x) __attribute__((__section__(x)))
-
-
-#define __alloc_size(x) __attribute__((__alloc_size__(x)))
-
-
-
-
-#define __alloc_align(x) __attribute__((__alloc_align__(x)))
-# 355 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __generic(expr,t,yes,no) _Generic(expr, t: yes, default: no)
-# 364 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __malloc_like __attribute__((__malloc__))
-#define __pure __attribute__((__pure__))
-
-
-
-
-
-
-#define __always_inline __attribute__((__always_inline__))
-
-
-
-
-
-#define __noinline __attribute__ ((__noinline__))
-
-
-
-
-
-#define __nonnull(x) __attribute__((__nonnull__(x)))
-#define __nonnull_all __attribute__((__nonnull__))
-
-
-
-
-
-
-#define __fastcall __attribute__((__fastcall__))
-#define __result_use_check __attribute__((__warn_unused_result__))
-
-
-
-
-
-
-#define __returns_twice __attribute__((__returns_twice__))
-
-
-
-
-
-#define __unreachable() __builtin_unreachable()
-# 426 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __restrict restrict
-# 459 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __predict_true(exp) __builtin_expect((exp), 1)
-#define __predict_false(exp) __builtin_expect((exp), 0)
-
-
-
-
-
-
-#define __sentinel __attribute__((__sentinel__))
-#define __exported __attribute__((__visibility__("default")))
-#define __hidden __attribute__((__visibility__("hidden")))
-
-
-
-
-
-
-#define __offsetof(type,field) offsetof(type, field)
-#define __rangeof(type,start,end) (__offsetof(type, end) - __offsetof(type, start))
-# 487 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __containerof(x,s,m) ({ const volatile __typeof(((s *)0)->m) *__x = (x); __DEQUALIFY(s *, (const volatile char *)__x - __offsetof(s, m));})
-# 509 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __printflike(fmtarg,firstvararg) __attribute__((__format__ (__printf__, fmtarg, firstvararg)))
-
-#define __scanflike(fmtarg,firstvararg) __attribute__((__format__ (__scanf__, fmtarg, firstvararg)))
-
-#define __format_arg(fmtarg) __attribute__((__format_arg__ (fmtarg)))
-#define __strfmonlike(fmtarg,firstvararg) __attribute__((__format__ (__strfmon__, fmtarg, firstvararg)))
-
-#define __strftimelike(fmtarg,firstvararg) __attribute__((__format__ (__strftime__, fmtarg, firstvararg)))
-# 528 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __gnu_inline __attribute__((__gnu_inline__, __artificial__))
-# 542 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __printf0like(fmtarg,firstvararg) 
-
-
-
-
-#define __strong_reference(sym,aliassym) extern __typeof (sym) aliassym __attribute__ ((__alias__ (#sym)))
-
-
-
-
-#define __weak_reference(sym,alias) __asm__(".weak " #alias); __asm__(".equ " #alias ", " #sym)
-
-
-#define __warn_references(sym,msg) __asm__(".section .gnu.warning." #sym); __asm__(".asciz \"" msg "\""); __asm__(".previous")
-
-
-
-#define __sym_compat(sym,impl,verid) __asm__(".symver " #impl ", " #sym "@" #verid)
-
-#define __sym_default(sym,impl,verid) __asm__(".symver " #impl ", " #sym "@@" #verid)
-# 596 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __FBSDID(s) struct __hack
-
-
-
-#define __RCSID(s) struct __hack
-
-
-
-#define __RCSID_SOURCE(s) struct __hack
-
-
-
-#define __SCCSID(s) struct __hack
-
-
-
-#define __COPYRIGHT(s) struct __hack
-
-
-
-#define __DECONST(type,var) ((type)(__uintptr_t)(const void *)(var))
-
-
-
-#define __DEVOLATILE(type,var) ((type)(__uintptr_t)(volatile void *)(var))
-
-
-
-#define __DEQUALIFY(type,var) ((type)(__uintptr_t)(const volatile void *)(var))
-# 641 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __arg_type_tag(arg_kind,arg_idx,type_tag_idx) 
-#define __datatype_type_tag(kind,type) 
-# 660 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
-#define __lock_annotate(x) 
-
-
-
-#define __lockable __lock_annotate(lockable)
-
-
-#define __locks_exclusive(...) __lock_annotate(exclusive_lock_function(__VA_ARGS__))
-
-#define __locks_shared(...) __lock_annotate(shared_lock_function(__VA_ARGS__))
-
-
-
-#define __trylocks_exclusive(...) __lock_annotate(exclusive_trylock_function(__VA_ARGS__))
-
-#define __trylocks_shared(...) __lock_annotate(shared_trylock_function(__VA_ARGS__))
-
-
-
-#define __unlocks(...) __lock_annotate(unlock_function(__VA_ARGS__))
-
-
-#define __asserts_exclusive(...) __lock_annotate(assert_exclusive_lock(__VA_ARGS__))
-
-#define __asserts_shared(...) __lock_annotate(assert_shared_lock(__VA_ARGS__))
-
-
-
-#define __requires_exclusive(...) __lock_annotate(exclusive_locks_required(__VA_ARGS__))
-
-#define __requires_shared(...) __lock_annotate(shared_locks_required(__VA_ARGS__))
-
-#define __requires_unlocked(...) __lock_annotate(locks_excluded(__VA_ARGS__))
-
-
-
-#define __no_lock_analysis __lock_annotate(no_thread_safety_analysis)
-
-
-#define __guarded_by(x) __lock_annotate(guarded_by(x))
-#define __pt_guarded_by(x) __lock_annotate(pt_guarded_by(x))
-# 36 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 1 3 4
-# 37 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
-
-#define __need___va_list 
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stdarg.h" 1 3 4
-# 34 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stdarg.h" 3 4
-#undef __need___va_list
-
-
-
-
-#define __GNUC_VA_LIST 
-
-# 40 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stdarg.h" 3 4
-typedef __builtin_va_list __gnuc_va_list;
-# 40 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
-
-
-
-
-
-
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 1 3
-# 11 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _SYS_REENT_H_ 
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\_ansi.h" 1 3
-# 14 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 2 3
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 1 3 4
-# 15 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 2 3
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_types.h" 1 3
-# 20 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_types.h" 3
-#define _SYS__TYPES_H 
-
-
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_types.h" 1 3
-
-
-
-
-
-#define _MACHINE__TYPES_H 
-# 25 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_types.h" 2 3
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\lock.h" 1 3
-
-#define __SYS_LOCK_H__ 
-
-
-
-typedef int _LOCK_T;
-typedef int _LOCK_RECURSIVE_T;
-
-
-
-#define __LOCK_INIT(class,lock) static int lock = 0;
-#define __LOCK_INIT_RECURSIVE(class,lock) static int lock = 0;
-#define __lock_init(lock) (_CAST_VOID 0)
-#define __lock_init_recursive(lock) (_CAST_VOID 0)
-#define __lock_close(lock) (_CAST_VOID 0)
-#define __lock_close_recursive(lock) (_CAST_VOID 0)
-#define __lock_acquire(lock) (_CAST_VOID 0)
-#define __lock_acquire_recursive(lock) (_CAST_VOID 0)
-#define __lock_try_acquire(lock) (_CAST_VOID 0)
-#define __lock_try_acquire_recursive(lock) (_CAST_VOID 0)
-#define __lock_release(lock) (_CAST_VOID 0)
-#define __lock_release_recursive(lock) (_CAST_VOID 0)
-# 26 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_types.h" 2 3
-
-
-typedef long __blkcnt_t;
-
-
-
-typedef long __blksize_t;
-
-
-
-typedef __uint64_t __fsblkcnt_t;
-
-
-
-typedef __uint32_t __fsfilcnt_t;
-
-
-
-typedef long _off_t;
-
-
-
-
-
-typedef int __pid_t;
-
-
-
-typedef short __dev_t;
-
-
-
-typedef unsigned short __uid_t;
-
-
-typedef unsigned short __gid_t;
-
-
-
-typedef __uint32_t __id_t;
-
-
-
-
-
-
-
-typedef unsigned short __ino_t;
-# 88 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_types.h" 3
-typedef __uint32_t __mode_t;
-
-
-
-
-
-__extension__ typedef long long _off64_t;
-
-
-
-
-
-typedef _off_t __off_t;
-
-
-typedef _off64_t __loff_t;
-
-
-typedef long __key_t;
-
-
-
-
-
-
-
-typedef long _fpos_t;
-# 125 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_types.h" 3
-#undef __size_t
-
-
-
-typedef unsigned int __size_t;
-# 144 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_types.h" 3
-#define unsigned signed
-typedef signed int _ssize_t;
-#undef unsigned
-# 156 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_types.h" 3
-typedef _ssize_t __ssize_t;
-
-#define __need_wint_t 
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 1 3 4
-# 161 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef __need_ptrdiff_t
-# 238 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef __need_size_t
-# 347 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef __need_wchar_t
-
-
-
-
-#define _WINT_T 
-
-
-
-
-typedef unsigned int wint_t;
-
-#undef __need_wint_t
-# 401 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef NULL
-
-
-
-
-#define NULL ((void *)0)
-
-
-
-
-
-#undef __need_NULL
-
-
-
-
-#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 160 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_types.h" 2 3
-
-
-
-typedef struct
+typedef struct __ftpos_t_struct
 {
-  int __count;
-  union
-  {
-    wint_t __wch;
-    unsigned char __wchb[4];
-  } __value;
-} _mbstate_t;
+    unsigned long __lo;
 
 
 
-typedef _LOCK_RECURSIVE_T _flock_t;
 
 
+} fpos_t;
 
 
-typedef void *_iconv_t;
 
 
-#define _CLOCK_T_ unsigned long
-typedef unsigned long __clock_t;
 
-#define _TIME_T_ long
-typedef long __time_t;
 
-#define _CLOCKID_T_ unsigned long
-typedef unsigned long __clockid_t;
 
-#define _TIMER_T_ unsigned long
-typedef unsigned long __timer_t;
+#define __IOEOF 0x40
+#define __IOERR 0x80
 
+#define _IOFBF 0x100
+#define _IOLBF 0x200
+#define _IONBF 0x400
 
-typedef __uint8_t __sa_family_t;
-
-
-
-typedef __uint32_t __socklen_t;
-
-
-typedef unsigned short __nlink_t;
-typedef long __suseconds_t;
-typedef unsigned long __useconds_t;
-
-
-typedef __builtin_va_list __va_list;
-# 16 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 2 3
-
-#define _NULL 0
-
-
-
-#define __Long long
-typedef unsigned long __ULong;
-# 38 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-struct _reent;
-
-
-
-
-
-
-struct _Bigint
-{
-  struct _Bigint *_next;
-  int _k, _maxwds, _sign, _wds;
-  __ULong _x[1];
-};
-
-
-struct __tm
-{
-  int __tm_sec;
-  int __tm_min;
-  int __tm_hour;
-  int __tm_mday;
-  int __tm_mon;
-  int __tm_year;
-  int __tm_wday;
-  int __tm_yday;
-  int __tm_isdst;
-};
-
-
-
-
-
-#define _ATEXIT_SIZE 32
-
-struct _on_exit_args {
- void * _fnargs[32];
- void * _dso_handle[32];
-
- __ULong _fntypes;
-
-
- __ULong _is_cxa;
-};
-# 91 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-struct _atexit {
- struct _atexit *_next;
- int _ind;
-
- void (*_fns[32])(void);
-        struct _on_exit_args _on_exit_args;
-};
-#define _ATEXIT_INIT {_NULL, 0, {_NULL}, {{_NULL}, {_NULL}, 0, 0}}
-
-
-
-
-
-#define _REENT_INIT_ATEXIT _NULL, _ATEXIT_INIT,
-# 115 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-# 176 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _REENT_SMALL_CHECK_INIT(ptr) 
-
-
-struct __sFILE {
-  unsigned char *_p;
-  int _r;
-  int _w;
-  short _flags;
-  short _file;
-  struct __sbuf _bf;
-  int _lbfsize;
-
-
-
-
-
-
-  void * _cookie;
-
-  int (* _read) (struct _reent *, void *, char *, int)
-                                          ;
-  int (* _write) (struct _reent *, void *, const char *, int)
-
-                                   ;
-  _fpos_t (* _seek) (struct _reent *, void *, _fpos_t, int);
-  int (* _close) (struct _reent *, void *);
-
-
-  struct __sbuf _ub;
-  unsigned char *_up;
-  int _ur;
-
-
-  unsigned char _ubuf[3];
-  unsigned char _nbuf[1];
-
-
-  struct __sbuf _lb;
-
-
-  int _blksize;
-  _off_t _offset;
-
-
-  struct _reent *_data;
-
-
-
-  _flock_t _lock;
-
-  _mbstate_t _mbstate;
-  int _flags2;
-};
-# 285 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-typedef struct __sFILE __FILE;
-
-
-
-struct _glue
-{
-  struct _glue *_next;
-  int _niobs;
-  __FILE *_iobs;
-};
-# 310 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _RAND48_SEED_0 (0x330e)
-#define _RAND48_SEED_1 (0xabcd)
-#define _RAND48_SEED_2 (0x1234)
-#define _RAND48_MULT_0 (0xe66d)
-#define _RAND48_MULT_1 (0xdeec)
-#define _RAND48_MULT_2 (0x0005)
-#define _RAND48_ADD (0x000b)
-struct _rand48 {
-  unsigned short _seed[3];
-  unsigned short _mult[3];
-  unsigned short _add;
-
-
-
-
-};
-
-
-#define _REENT_EMERGENCY_SIZE 25
-#define _REENT_ASCTIME_SIZE 26
-#define _REENT_SIGNAL_SIZE 24
-# 568 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-struct _reent
-{
-  int _errno;
-
-
-
-
-  __FILE *_stdin, *_stdout, *_stderr;
-
-  int _inc;
-  char _emergency[25];
-
-  int _current_category;
-  const char *_current_locale;
-
-  int __sdidinit;
-
-  void (* __cleanup) (struct _reent *);
-
-
-  struct _Bigint *_result;
-  int _result_k;
-  struct _Bigint *_p5s;
-  struct _Bigint **_freelist;
-
-
-  int _cvtlen;
-  char *_cvtbuf;
-
-  union
-    {
-      struct
-        {
-          unsigned int _unused_rand;
-          char * _strtok_last;
-          char _asctime_buf[26];
-          struct __tm _localtime_buf;
-          int _gamma_signgam;
-          __extension__ unsigned long long _rand_next;
-          struct _rand48 _r48;
-          _mbstate_t _mblen_state;
-          _mbstate_t _mbtowc_state;
-          _mbstate_t _wctomb_state;
-          char _l64a_buf[8];
-          char _signal_buf[24];
-          int _getdate_err;
-          _mbstate_t _mbrlen_state;
-          _mbstate_t _mbrtowc_state;
-          _mbstate_t _mbsrtowcs_state;
-          _mbstate_t _wcrtomb_state;
-          _mbstate_t _wcsrtombs_state;
-   int _h_errno;
-        } _reent;
-
-
-
-      struct
-        {
-#define _N_LISTS 30
-          unsigned char * _nextf[30];
-          unsigned int _nmalloc[30];
-        } _unused;
-    } _new;
-
-
-
-  struct _atexit *_atexit;
-  struct _atexit _atexit0;
-
-
-
-  void (**(_sig_func))(int);
-
-
-
-
-  struct _glue __sglue;
-  __FILE __sf[3];
-};
-
-#define _REENT_INIT(var) { 0, &(var).__sf[0], &(var).__sf[1], &(var).__sf[2], 0, "", 0, "C", 0, _NULL, _NULL, 0, _NULL, _NULL, 0, _NULL, { { 0, _NULL, "", {0, 0, 0, 0, 0, 0, 0, 0, 0}, 0, 1, { {_RAND48_SEED_0, _RAND48_SEED_1, _RAND48_SEED_2}, {_RAND48_MULT_0, _RAND48_MULT_1, _RAND48_MULT_2}, _RAND48_ADD }, {0, {0}}, {0, {0}}, {0, {0}}, "", "", 0, {0, {0}}, {0, {0}}, {0, {0}}, {0, {0}}, {0, {0}} } }, _REENT_INIT_ATEXIT _NULL, {_NULL, 0, _NULL} }
-# 696 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _REENT_INIT_PTR_ZEROED(var) { (var)->_stdin = &(var)->__sf[0]; (var)->_stdout = &(var)->__sf[1]; (var)->_stderr = &(var)->__sf[2]; (var)->_current_locale = "C"; (var)->_new._reent._rand_next = 1; (var)->_new._reent._r48._seed[0] = _RAND48_SEED_0; (var)->_new._reent._r48._seed[1] = _RAND48_SEED_1; (var)->_new._reent._r48._seed[2] = _RAND48_SEED_2; (var)->_new._reent._r48._mult[0] = _RAND48_MULT_0; (var)->_new._reent._r48._mult[1] = _RAND48_MULT_1; (var)->_new._reent._r48._mult[2] = _RAND48_MULT_2; (var)->_new._reent._r48._add = _RAND48_ADD; }
-# 711 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _REENT_CHECK_RAND48(ptr) 
-#define _REENT_CHECK_MP(ptr) 
-#define _REENT_CHECK_TM(ptr) 
-#define _REENT_CHECK_ASCTIME_BUF(ptr) 
-#define _REENT_CHECK_EMERGENCY(ptr) 
-#define _REENT_CHECK_MISC(ptr) 
-#define _REENT_CHECK_SIGNAL_BUF(ptr) 
-
-#define _REENT_SIGNGAM(ptr) ((ptr)->_new._reent._gamma_signgam)
-#define _REENT_RAND_NEXT(ptr) ((ptr)->_new._reent._rand_next)
-#define _REENT_RAND48_SEED(ptr) ((ptr)->_new._reent._r48._seed)
-#define _REENT_RAND48_MULT(ptr) ((ptr)->_new._reent._r48._mult)
-#define _REENT_RAND48_ADD(ptr) ((ptr)->_new._reent._r48._add)
-#define _REENT_MP_RESULT(ptr) ((ptr)->_result)
-#define _REENT_MP_RESULT_K(ptr) ((ptr)->_result_k)
-#define _REENT_MP_P5S(ptr) ((ptr)->_p5s)
-#define _REENT_MP_FREELIST(ptr) ((ptr)->_freelist)
-#define _REENT_ASCTIME_BUF(ptr) ((ptr)->_new._reent._asctime_buf)
-#define _REENT_TM(ptr) (&(ptr)->_new._reent._localtime_buf)
-#define _REENT_EMERGENCY(ptr) ((ptr)->_emergency)
-#define _REENT_STRTOK_LAST(ptr) ((ptr)->_new._reent._strtok_last)
-#define _REENT_MBLEN_STATE(ptr) ((ptr)->_new._reent._mblen_state)
-#define _REENT_MBTOWC_STATE(ptr) ((ptr)->_new._reent._mbtowc_state)
-#define _REENT_WCTOMB_STATE(ptr) ((ptr)->_new._reent._wctomb_state)
-#define _REENT_MBRLEN_STATE(ptr) ((ptr)->_new._reent._mbrlen_state)
-#define _REENT_MBRTOWC_STATE(ptr) ((ptr)->_new._reent._mbrtowc_state)
-#define _REENT_MBSRTOWCS_STATE(ptr) ((ptr)->_new._reent._mbsrtowcs_state)
-#define _REENT_WCRTOMB_STATE(ptr) ((ptr)->_new._reent._wcrtomb_state)
-#define _REENT_WCSRTOMBS_STATE(ptr) ((ptr)->_new._reent._wcsrtombs_state)
-#define _REENT_L64A_BUF(ptr) ((ptr)->_new._reent._l64a_buf)
-#define _REENT_SIGNAL_BUF(ptr) ((ptr)->_new._reent._signal_buf)
-#define _REENT_GETDATE_ERR_P(ptr) (&((ptr)->_new._reent._getdate_err))
-
-
-
-#define _REENT_INIT_PTR(var) { memset((var), 0, sizeof(*(var))); _REENT_INIT_PTR_ZEROED(var); }
-
-
-
-
-
-
-
-#define _Kmax (sizeof (size_t) << 3)
-
-
-
-
-
-
-
-#define __ATTRIBUTE_IMPURE_PTR__ 
-
-
-extern struct _reent *_impure_ptr ;
-extern struct _reent *const _global_impure_ptr ;
-
-void _reclaim_reent (struct _reent *);
-# 778 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _REENT _impure_ptr
-
-
-#define _GLOBAL_REENT _global_impure_ptr
-
-
-
-
-
-#define _GLOBAL_ATEXIT (_GLOBAL_REENT->_atexit)
-# 48 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\types.h" 1 3
-# 28 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\types.h" 3
-typedef __uint8_t u_int8_t;
-
-
-typedef __uint16_t u_int16_t;
-
-
-typedef __uint32_t u_int32_t;
-
-
-typedef __uint64_t u_int64_t;
-
-typedef int register_t;
-#define __BIT_TYPES_DEFINED__ 1
-# 60 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\types.h" 3
-#define _SYS_TYPES_H 
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 1 3 4
-# 63 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\types.h" 2 3
-
-
-
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\endian.h" 1 3
-
-#define __MACHINE_ENDIAN_H__ 
-
-
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_endian.h" 1 3
-# 31 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\_endian.h" 3
-#define _LITTLE_ENDIAN 1234
-#define _BIG_ENDIAN 4321
-#define _PDP_ENDIAN 3412
-
-
-
-
-#define _BYTE_ORDER _LITTLE_ENDIAN
-# 7 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\endian.h" 2 3
-
-
-#define _QUAD_HIGHWORD 1
-#define _QUAD_LOWWORD 0
-
-
-
-
-
-
-#define LITTLE_ENDIAN _LITTLE_ENDIAN
-#define BIG_ENDIAN _BIG_ENDIAN
-#define PDP_ENDIAN _PDP_ENDIAN
-#define BYTE_ORDER _BYTE_ORDER
-
-
-
-#define __bswap16(_x) __builtin_bswap16(_x)
-#define __bswap32(_x) __builtin_bswap32(_x)
-#define __bswap64(_x) __builtin_bswap64(_x)
-# 57 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\endian.h" 3
-#define __htonl(_x) __bswap32(_x)
-#define __htons(_x) __bswap16(_x)
-#define __ntohl(_x) __bswap32(_x)
-#define __ntohs(_x) __bswap16(_x)
-# 68 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\types.h" 2 3
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\select.h" 1 3
-# 13 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\select.h" 3
-#define _SYS_SELECT_H 
-# 25 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\select.h" 3
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_sigset.h" 1 3
-# 39 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_sigset.h" 3
-#define _SYS__SIGSET_H_ 
-
-typedef unsigned long __sigset_t;
-# 26 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\select.h" 2 3
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_timeval.h" 1 3
-# 30 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_timeval.h" 3
-#define _SYS__TIMEVAL_H_ 
-
-
-
-
-typedef __suseconds_t suseconds_t;
-#define _SUSECONDS_T_DECLARED 
-
-
-
-typedef long time_t;
-#define __time_t_defined 
-#define _TIME_T_DECLARED 
-
-
-
-
-#define _TIMEVAL_DEFINED 
-
-
-
-
-struct timeval {
- time_t tv_sec;
- suseconds_t tv_usec;
-};
-
-
-
-
-#define timerclear(tvp) ((tvp)->tv_sec = (tvp)->tv_usec = 0)
-#define timerisset(tvp) ((tvp)->tv_sec || (tvp)->tv_usec)
-#define timercmp(tvp,uvp,cmp) (((tvp)->tv_sec == (uvp)->tv_sec) ? ((tvp)->tv_usec cmp (uvp)->tv_usec) : ((tvp)->tv_sec cmp (uvp)->tv_sec))
-
-
-
-#define timeradd(tvp,uvp,vvp) do { (vvp)->tv_sec = (tvp)->tv_sec + (uvp)->tv_sec; (vvp)->tv_usec = (tvp)->tv_usec + (uvp)->tv_usec; if ((vvp)->tv_usec >= 1000000) { (vvp)->tv_sec++; (vvp)->tv_usec -= 1000000; } } while (0)
-# 75 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_timeval.h" 3
-#define timersub(tvp,uvp,vvp) do { (vvp)->tv_sec = (tvp)->tv_sec - (uvp)->tv_sec; (vvp)->tv_usec = (tvp)->tv_usec - (uvp)->tv_usec; if ((vvp)->tv_usec < 0) { (vvp)->tv_sec--; (vvp)->tv_usec += 1000000; } } while (0)
-# 27 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\select.h" 2 3
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\timespec.h" 1 3
-# 35 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\timespec.h" 3
-#define _SYS_TIMESPEC_H_ 
-
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_timespec.h" 1 3
-# 35 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_timespec.h" 3
-#define _SYS__TIMESPEC_H_ 
-# 45 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\_timespec.h" 3
-struct timespec {
- time_t tv_sec;
- long tv_nsec;
-};
-# 39 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\timespec.h" 2 3
-
-
-#define TIMEVAL_TO_TIMESPEC(tv,ts) do { (ts)->tv_sec = (tv)->tv_sec; (ts)->tv_nsec = (tv)->tv_usec * 1000; } while (0)
-
-
-
-
-#define TIMESPEC_TO_TIMEVAL(tv,ts) do { (tv)->tv_sec = (ts)->tv_sec; (tv)->tv_usec = (ts)->tv_nsec / 1000; } while (0)
-# 58 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\timespec.h" 3
-struct itimerspec {
- struct timespec it_interval;
- struct timespec it_value;
-};
-# 28 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\select.h" 2 3
-
-
-#define _SIGSET_T_DECLARED 
-typedef __sigset_t sigset_t;
-
-
-#define _SYS_TYPES_FD_SET 
-
-
-
-
-
-
-
-#define FD_SETSIZE 64
-
-
-typedef unsigned long fd_mask;
-#define NFDBITS (sizeof (fd_mask) * 8)
-
-#define _howmany(x,y) (((x)+((y)-1))/(y))
-
-
-
-
-typedef struct _types_fd_set {
- fd_mask fds_bits[(((64)+(((sizeof (fd_mask) * 8))-1))/((sizeof (fd_mask) * 8)))];
-} _types_fd_set;
-
-#define fd_set _types_fd_set
-
-#define FD_SET(n,p) ((p)->fds_bits[(n)/NFDBITS] |= (1L << ((n) % NFDBITS)))
-#define FD_CLR(n,p) ((p)->fds_bits[(n)/NFDBITS] &= ~(1L << ((n) % NFDBITS)))
-#define FD_ISSET(n,p) ((p)->fds_bits[(n)/NFDBITS] & (1L << ((n) % NFDBITS)))
-#define FD_ZERO(p) (__extension__ (void)({ size_t __i; char *__tmp = (char *)p; for (__i = 0; __i < sizeof (*(p)); ++__i) *__tmp++ = 0; }))
-# 71 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\select.h" 3
-
-
-int select (int __n, _types_fd_set *__readfds, _types_fd_set *__writefds, _types_fd_set *__exceptfds, struct timeval *__timeout)
-                                                   ;
-
-int pselect (int __n, _types_fd_set *__readfds, _types_fd_set *__writefds, _types_fd_set *__exceptfds, const struct timespec *__timeout, const sigset_t *__set)
-
-                           ;
-
-
-
-# 69 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\types.h" 2 3
-#define physadr physadr_t
-#define quad quad_t
-
-
-typedef __uint32_t in_addr_t;
-#define _IN_ADDR_T_DECLARED 
-
-
-
-typedef __uint16_t in_port_t;
-#define _IN_PORT_T_DECLARED 
-
-
-
-
-
-
-
-typedef unsigned char u_char;
-#define __u_char_defined 
-
-
-typedef unsigned short u_short;
-#define __u_short_defined 
-
-
-typedef unsigned int u_int;
-#define __u_int_defined 
-
-
-typedef unsigned long u_long;
-#define __u_long_defined 
-
-#define _BSDTYPES_DEFINED 
-
-
-
-
-typedef unsigned short ushort;
-typedef unsigned int uint;
-typedef unsigned long ulong;
-
-
-
-typedef __blkcnt_t blkcnt_t;
-#define _BLKCNT_T_DECLARED 
-
-
-
-typedef __blksize_t blksize_t;
-#define _BLKSIZE_T_DECLARED 
-
-
-
-typedef unsigned long clock_t;
-#define __clock_t_defined 
-#define _CLOCK_T_DECLARED 
-# 135 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\types.h" 3
-typedef long daddr_t;
-#define __daddr_t_defined 
-
-
-typedef char * caddr_t;
-#define __caddr_t_defined 
-
-
-
-typedef __fsblkcnt_t fsblkcnt_t;
-typedef __fsfilcnt_t fsfilcnt_t;
-#define _FSBLKCNT_T_DECLARED 
-
-
-
-typedef __id_t id_t;
-#define _ID_T_DECLARED 
-
-
-
-typedef __ino_t ino_t;
-#define _INO_T_DECLARED 
-# 173 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\types.h" 3
-typedef __off_t off_t;
-#define _OFF_T_DECLARED 
-
-
-typedef __dev_t dev_t;
-#define _DEV_T_DECLARED 
-
-
-typedef __uid_t uid_t;
-#define _UID_T_DECLARED 
-
-
-typedef __gid_t gid_t;
-#define _GID_T_DECLARED 
-
-
-
-typedef __pid_t pid_t;
-#define _PID_T_DECLARED 
-
-
-
-typedef __key_t key_t;
-#define _KEY_T_DECLARED 
-
-
-
-typedef _ssize_t ssize_t;
-#define _SSIZE_T_DECLARED 
-
-
-
-typedef __mode_t mode_t;
-#define _MODE_T_DECLARED 
-
-
-
-typedef __nlink_t nlink_t;
-#define _NLINK_T_DECLARED 
-
-
-
-typedef __clockid_t clockid_t;
-#define __clockid_t_defined 
-#define _CLOCKID_T_DECLARED 
-
-
-
-typedef __timer_t timer_t;
-#define __timer_t_defined 
-#define _TIMER_T_DECLARED 
-
-
-
-typedef __useconds_t useconds_t;
-#define _USECONDS_T_DECLARED 
-
-
-
-
-
-
-
-typedef __int64_t sbintime_t;
-# 465 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\types.h" 3
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\types.h" 1 3
-# 466 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\types.h" 2 3
-
-
-
-#undef __need_inttypes
-# 49 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
-
-
-
-
-typedef __FILE FILE;
-#define __FILE_defined 
-
-
-
-
-
-typedef _fpos_t fpos_t;
-
-
-
-
-
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\stdio.h" 1 3
-
-#define _NEWLIB_STDIO_H 
-# 13 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\stdio.h" 3
-#define _flockfile(fp) (((fp)->_flags & __SSTR) ? 0 : __lock_acquire_recursive((fp)->_lock))
-
-
-
-
-
-
-
-#define _funlockfile(fp) (((fp)->_flags & __SSTR) ? 0 : __lock_release_recursive((fp)->_lock))
-# 67 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
-
-#define __SLBF 0x0001
-#define __SNBF 0x0002
-#define __SRD 0x0004
-#define __SWR 0x0008
-
-#define __SRW 0x0010
-#define __SEOF 0x0020
-#define __SERR 0x0040
-#define __SMBF 0x0080
-#define __SAPP 0x0100
-#define __SSTR 0x0200
-#define __SOPT 0x0400
-#define __SNPT 0x0800
-#define __SOFF 0x1000
-#define __SORD 0x2000
-
-
-
-#define __SL64 0x8000
-
-
-#define __SNLK 0x0001
-#define __SWID 0x2000
-# 101 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 3
-#define _IOFBF 0
-#define _IOLBF 1
-#define _IONBF 2
-
+#define BUFSIZ (4096)
 #define EOF (-1)
 
 
 
 
-#define BUFSIZ 1024
+
+
+#define FOPEN_MAX 8
 
 
 
 
 
-#define FOPEN_MAX 20
+#define FILENAME_MAX 256
 
 
 
 
 
-#define FILENAME_MAX 1024
+
+#define L_tmpnam 32
 
 
 
-
-
-#define L_tmpnam FILENAME_MAX
-
-
-
-#define P_tmpdir "/tmp"
 
 
 
 #define SEEK_SET 0
-
-
 #define SEEK_CUR 1
-
-
 #define SEEK_END 2
 
-
-#define TMP_MAX 26
-
-#define stdin (_REENT->_stdin)
-#define stdout (_REENT->_stdout)
-#define stderr (_REENT->_stderr)
-
-#define _stdin_r(x) ((x)->_stdin)
-#define _stdout_r(x) ((x)->_stdout)
-#define _stderr_r(x) ((x)->_stderr)
-
-
-
-
-
-
-
-#define __VALIST __gnuc_va_list
-
-
-
-
-
-
-char * ctermid (char *);
-
-
-
-
-FILE * tmpfile (void);
-char * tmpnam (char *);
-
-char * tempnam (const char *, const char *);
-
-int fclose (FILE *);
-int fflush (FILE *);
-FILE * freopen (const char *restrict, const char *restrict, FILE *restrict);
-void setbuf (FILE *restrict, char *restrict);
-int setvbuf (FILE *restrict, char *restrict, int, size_t);
-int fprintf (FILE *restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
-int fscanf (FILE *restrict, const char *restrict, ...) __attribute__ ((__format__ (__scanf__, 2, 3)))
-                                                           ;
-int printf (const char *restrict, ...) __attribute__ ((__format__ (__printf__, 1, 2)))
-                                                            ;
-int scanf (const char *restrict, ...) __attribute__ ((__format__ (__scanf__, 1, 2)))
-                                                           ;
-int sscanf (const char *restrict, const char *restrict, ...) __attribute__ ((__format__ (__scanf__, 2, 3)))
-                                                           ;
-int vfprintf (FILE *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
-int vprintf (const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 1, 0)))
-                                                            ;
-int vsprintf (char *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
-int fgetc (FILE *);
-char * fgets (char *restrict, int, FILE *restrict);
-int fputc (int, FILE *);
-int fputs (const char *restrict, FILE *restrict);
-int getc (FILE *);
-int getchar (void);
-char * gets (char *);
-int putc (int, FILE *);
-int putchar (int);
-int puts (const char *);
-int ungetc (int, FILE *);
-size_t fread (void * restrict, size_t _size, size_t _n, FILE *restrict);
-size_t fwrite (const void * restrict , size_t _size, size_t _n, FILE *);
-
-
-
-int fgetpos (FILE *restrict, fpos_t *restrict);
-
-int fseek (FILE *, long, int);
-
-
-
-int fsetpos (FILE *, const fpos_t *);
-
-long ftell ( FILE *);
-void rewind (FILE *);
-void clearerr (FILE *);
-int feof (FILE *);
-int ferror (FILE *);
-void perror (const char *);
-
-FILE * fopen (const char *restrict _name, const char *restrict _type);
-int sprintf (char *restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
-int remove (const char *);
-int rename (const char *, const char *);
-# 244 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 3
-int fseeko (FILE *, off_t, int);
-off_t ftello ( FILE *);
-
-
-
-
-
-
-
-int snprintf (char *restrict, size_t, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int vsnprintf (char *restrict, size_t, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int vfscanf (FILE *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 2, 0)))
-                                                           ;
-int vscanf (const char *, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 1, 0)))
-                                                           ;
-int vsscanf (const char *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 2, 0)))
-                                                           ;
-# 271 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 3
-int asiprintf (char **, const char *, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
-char * asniprintf (char *, size_t *, const char *, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-char * asnprintf (char *restrict, size_t *restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-
-int diprintf (int, const char *, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
-
-int fiprintf (FILE *, const char *, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
-int fiscanf (FILE *, const char *, ...) __attribute__ ((__format__ (__scanf__, 2, 3)))
-                                                           ;
-int iprintf (const char *, ...) __attribute__ ((__format__ (__printf__, 1, 2)))
-                                                            ;
-int iscanf (const char *, ...) __attribute__ ((__format__ (__scanf__, 1, 2)))
-                                                           ;
-int siprintf (char *, const char *, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
-int siscanf (const char *, const char *, ...) __attribute__ ((__format__ (__scanf__, 2, 3)))
-                                                           ;
-int sniprintf (char *, size_t, const char *, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int vasiprintf (char **, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
-char * vasniprintf (char *, size_t *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-char * vasnprintf (char *, size_t *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int vdiprintf (int, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
-int vfiprintf (FILE *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
-int vfiscanf (FILE *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 2, 0)))
-                                                           ;
-int viprintf (const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 1, 0)))
-                                                            ;
-int viscanf (const char *, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 1, 0)))
-                                                           ;
-int vsiprintf (char *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
-int vsiscanf (const char *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 2, 0)))
-                                                           ;
-int vsniprintf (char *, size_t, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-# 326 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 3
-FILE * fdopen (int, const char *);
-
-int fileno (FILE *);
-
-
-int pclose (FILE *);
-FILE * popen (const char *, const char *);
-
-
-
-void setbuffer (FILE *, char *, int);
-int setlinebuf (FILE *);
-
-
-
-int getw (FILE *);
-int putw (int, FILE *);
-
-
-int getc_unlocked (FILE *);
-int getchar_unlocked (void);
-void flockfile (FILE *);
-int ftrylockfile (FILE *);
-void funlockfile (FILE *);
-int putc_unlocked (int, FILE *);
-int putchar_unlocked (int);
-# 361 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 3
-int dprintf (int, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
-
-FILE * fmemopen (void *restrict, size_t, const char *restrict);
-
-
-FILE * open_memstream (char **, size_t *);
-int vdprintf (int, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
-
-
-
-int renameat (int, const char *, int, const char *);
-
-
-
-
-
-
-int _asiprintf_r (struct _reent *, char **, const char *, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-char * _asniprintf_r (struct _reent *, char *, size_t *, const char *, ...) __attribute__ ((__format__ (__printf__, 4, 5)))
-                                                            ;
-char * _asnprintf_r (struct _reent *, char *restrict, size_t *restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 4, 5)))
-                                                            ;
-int _asprintf_r (struct _reent *, char **restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int _diprintf_r (struct _reent *, int, const char *, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int _dprintf_r (struct _reent *, int, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int _fclose_r (struct _reent *, FILE *);
-int _fcloseall_r (struct _reent *);
-FILE * _fdopen_r (struct _reent *, int, const char *);
-int _fflush_r (struct _reent *, FILE *);
-int _fgetc_r (struct _reent *, FILE *);
-int _fgetc_unlocked_r (struct _reent *, FILE *);
-char * _fgets_r (struct _reent *, char *restrict, int, FILE *restrict);
-char * _fgets_unlocked_r (struct _reent *, char *restrict, int, FILE *restrict);
-
-
-
-
-int _fgetpos_r (struct _reent *, FILE *, fpos_t *);
-int _fsetpos_r (struct _reent *, FILE *, const fpos_t *);
-
-int _fiprintf_r (struct _reent *, FILE *, const char *, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int _fiscanf_r (struct _reent *, FILE *, const char *, ...) __attribute__ ((__format__ (__scanf__, 3, 4)))
-                                                           ;
-FILE * _fmemopen_r (struct _reent *, void *restrict, size_t, const char *restrict);
-FILE * _fopen_r (struct _reent *, const char *restrict, const char *restrict);
-FILE * _freopen_r (struct _reent *, const char *restrict, const char *restrict, FILE *restrict);
-int _fprintf_r (struct _reent *, FILE *restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int _fpurge_r (struct _reent *, FILE *);
-int _fputc_r (struct _reent *, int, FILE *);
-int _fputc_unlocked_r (struct _reent *, int, FILE *);
-int _fputs_r (struct _reent *, const char *restrict, FILE *restrict);
-int _fputs_unlocked_r (struct _reent *, const char *restrict, FILE *restrict);
-size_t _fread_r (struct _reent *, void * restrict, size_t _size, size_t _n, FILE *restrict);
-size_t _fread_unlocked_r (struct _reent *, void * restrict, size_t _size, size_t _n, FILE *restrict);
-int _fscanf_r (struct _reent *, FILE *restrict, const char *restrict, ...) __attribute__ ((__format__ (__scanf__, 3, 4)))
-                                                           ;
-int _fseek_r (struct _reent *, FILE *, long, int);
-int _fseeko_r (struct _reent *, FILE *, _off_t, int);
-long _ftell_r (struct _reent *, FILE *);
-_off_t _ftello_r (struct _reent *, FILE *);
-void _rewind_r (struct _reent *, FILE *);
-size_t _fwrite_r (struct _reent *, const void * restrict, size_t _size, size_t _n, FILE *restrict);
-size_t _fwrite_unlocked_r (struct _reent *, const void * restrict, size_t _size, size_t _n, FILE *restrict);
-int _getc_r (struct _reent *, FILE *);
-int _getc_unlocked_r (struct _reent *, FILE *);
-int _getchar_r (struct _reent *);
-int _getchar_unlocked_r (struct _reent *);
-char * _gets_r (struct _reent *, char *);
-int _iprintf_r (struct _reent *, const char *, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
-int _iscanf_r (struct _reent *, const char *, ...) __attribute__ ((__format__ (__scanf__, 2, 3)))
-                                                           ;
-FILE * _open_memstream_r (struct _reent *, char **, size_t *);
-void _perror_r (struct _reent *, const char *);
-int _printf_r (struct _reent *, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 2, 3)))
-                                                            ;
-int _putc_r (struct _reent *, int, FILE *);
-int _putc_unlocked_r (struct _reent *, int, FILE *);
-int _putchar_unlocked_r (struct _reent *, int);
-int _putchar_r (struct _reent *, int);
-int _puts_r (struct _reent *, const char *);
-int _remove_r (struct _reent *, const char *);
-int _rename_r (struct _reent *, const char *_old, const char *_new)
-                                          ;
-int _scanf_r (struct _reent *, const char *restrict, ...) __attribute__ ((__format__ (__scanf__, 2, 3)))
-                                                           ;
-int _siprintf_r (struct _reent *, char *, const char *, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int _siscanf_r (struct _reent *, const char *, const char *, ...) __attribute__ ((__format__ (__scanf__, 3, 4)))
-                                                           ;
-int _sniprintf_r (struct _reent *, char *, size_t, const char *, ...) __attribute__ ((__format__ (__printf__, 4, 5)))
-                                                            ;
-int _snprintf_r (struct _reent *, char *restrict, size_t, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 4, 5)))
-                                                            ;
-int _sprintf_r (struct _reent *, char *restrict, const char *restrict, ...) __attribute__ ((__format__ (__printf__, 3, 4)))
-                                                            ;
-int _sscanf_r (struct _reent *, const char *restrict, const char *restrict, ...) __attribute__ ((__format__ (__scanf__, 3, 4)))
-                                                           ;
-char * _tempnam_r (struct _reent *, const char *, const char *);
-FILE * _tmpfile_r (struct _reent *);
-char * _tmpnam_r (struct _reent *, char *);
-int _ungetc_r (struct _reent *, int, FILE *);
-int _vasiprintf_r (struct _reent *, char **, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-char * _vasniprintf_r (struct _reent*, char *, size_t *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 4, 0)))
-                                                            ;
-char * _vasnprintf_r (struct _reent*, char *, size_t *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 4, 0)))
-                                                            ;
-int _vasprintf_r (struct _reent *, char **, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vdiprintf_r (struct _reent *, int, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vdprintf_r (struct _reent *, int, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vfiprintf_r (struct _reent *, FILE *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vfiscanf_r (struct _reent *, FILE *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 3, 0)))
-                                                           ;
-int _vfprintf_r (struct _reent *, FILE *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vfscanf_r (struct _reent *, FILE *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 3, 0)))
-                                                           ;
-int _viprintf_r (struct _reent *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
-int _viscanf_r (struct _reent *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 2, 0)))
-                                                           ;
-int _vprintf_r (struct _reent *, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 2, 0)))
-                                                            ;
-int _vscanf_r (struct _reent *, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 2, 0)))
-                                                           ;
-int _vsiprintf_r (struct _reent *, char *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vsiscanf_r (struct _reent *, const char *, const char *, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 3, 0)))
-                                                           ;
-int _vsniprintf_r (struct _reent *, char *, size_t, const char *, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 4, 0)))
-                                                            ;
-int _vsnprintf_r (struct _reent *, char *restrict, size_t, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 4, 0)))
-                                                            ;
-int _vsprintf_r (struct _reent *, char *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__printf__, 3, 0)))
-                                                            ;
-int _vsscanf_r (struct _reent *, const char *restrict, const char *restrict, __gnuc_va_list) __attribute__ ((__format__ (__scanf__, 3, 0)))
-                                                           ;
-
-
-
-int fpurge (FILE *);
-ssize_t __getdelim (char **, size_t *, int, FILE *);
-ssize_t __getline (char **, size_t *, FILE *);
-
-
-void clearerr_unlocked (FILE *);
-int feof_unlocked (FILE *);
-int ferror_unlocked (FILE *);
-int fileno_unlocked (FILE *);
-int fflush_unlocked (FILE *);
-int fgetc_unlocked (FILE *);
-int fputc_unlocked (int, FILE *);
-size_t fread_unlocked (void * restrict, size_t _size, size_t _n, FILE *restrict);
-size_t fwrite_unlocked (const void * restrict , size_t _size, size_t _n, FILE *);
-# 561 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 3
-int __srget_r (struct _reent *, FILE *);
-int __swbuf_r (struct _reent *, int, FILE *);
-# 585 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 3
-FILE *funopen (const void * __cookie, int (*__readfn)(void * __cookie, char *__buf, int __n), int (*__writefn)(void * __cookie, const char *__buf, int __n), fpos_t (*__seekfn)(void * __cookie, fpos_t __off, int __whence), int (*__closefn)(void * __cookie))
-
-
-
-
-
-                                   ;
-FILE *_funopen_r (struct _reent *, const void * __cookie, int (*__readfn)(void * __cookie, char *__buf, int __n), int (*__writefn)(void * __cookie, const char *__buf, int __n), fpos_t (*__seekfn)(void * __cookie, fpos_t __off, int __whence), int (*__closefn)(void * __cookie))
-
-
-
-
-
-                                   ;
-
-
-#define fropen(__cookie,__fn) funopen(__cookie, __fn, (int (*)())0, (fpos_t (*)())0, (int (*)())0)
-
-#define fwopen(__cookie,__fn) funopen(__cookie, (int (*)())0, __fn, (fpos_t (*)())0, (int (*)())0)
-# 638 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 3
-#define __sgetc_raw_r(__ptr,__f) (--(__f)->_r < 0 ? __srget_r(__ptr, __f) : (int)(*(__f)->_p++))
-# 667 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 3
-#define __sgetc_r(__ptr,__p) __sgetc_raw_r(__ptr, __p)
-
-
-
-static __inline__ int __sputc_r(struct _reent *_ptr, int _c, FILE *_p) {
-
-
-
-
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf_r(_ptr, _c, _p));
-}
-# 703 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 3
-#define __sfeof(p) ((int)(((p)->_flags & __SEOF) != 0))
-#define __sferror(p) ((int)(((p)->_flags & __SERR) != 0))
-#define __sclearerr(p) ((void)((p)->_flags &= ~(__SERR|__SEOF)))
-#define __sfileno(p) ((p)->_file)
-
-
-#define feof(p) __sfeof(p)
-#define ferror(p) __sferror(p)
-#define clearerr(p) __sclearerr(p)
-
-
-#define feof_unlocked(p) __sfeof(p)
-#define ferror_unlocked(p) __sferror(p)
-#define clearerr_unlocked(p) __sclearerr(p)
-# 726 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\stdio.h" 3
-#define getc(fp) __sgetc_r(_REENT, fp)
-#define putc(x,fp) __sputc_r(_REENT, x, fp)
-
-
-
-
-
-#define fast_putc(x,p) (--(p)->_w < 0 ? __swbuf_r(_REENT, (int)(x), p) == EOF : (*(p)->_p = (x), (p)->_p++, 0))
-
-
-
-
-
-
-
-#define L_ctermid 16
-
-
-
-
+#define TMP_MAX 1000000000
+
+
+
+
+
+
+#define _SYS_OPEN 8
+# 105 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdio.h" 3 4
+extern FILE __Ciob[];
+
+
+#define stdin (&__Ciob[0])
+
+#define stdout (&__Ciob[1])
+
+#define stderr (&__Ciob[2])
+
+
+extern int remove(const char *filename);
+extern int rename(const char *old, const char *new);
+extern FILE *tmpfile(void);
+extern char *tmpnam(char *s);
+extern int fclose(FILE *stream);
+extern int fflush(FILE *stream);
+extern FILE *fopen(const char * __restrict__ filename,
+                   const char * __restrict__ mode);
+extern FILE *freopen(const char * __restrict__ filename,
+                     const char * __restrict__ mode,
+                     FILE * __restrict__ stream);
+extern void setbuf(FILE * __restrict__ stream,
+                   char * __restrict__ buf);
+extern int setvbuf(FILE * __restrict__ stream,
+                   char * __restrict__ buf,
+                   int mode, size_t size);
+extern int fprintf(FILE * __restrict__ stream,
+                   const char * __restrict__ format, ...);
+extern int fscanf(FILE * __restrict__ stream,
+                  const char * __restrict__ format, ...);
+extern int printf(const char * __restrict__ format, ...);
+extern int scanf(const char * __restrict__ format, ...);
+extern int snprintf(char * __restrict__ s, size_t n,
+                    const char * __restrict__ format, ...);
+extern int sprintf(char * __restrict__ s,
+                   const char * __restrict__ format, ...);
+extern int sscanf(const char * __restrict__ s,
+                  const char * __restrict__ format, ...);
+extern int vfprintf(FILE * __restrict__ stream,
+                    const char * __restrict__ format, __va_list arg);
+extern int vfscanf(FILE * __restrict__ stream,
+                   const char * __restrict__ format, __va_list arg);
+extern int vprintf(const char * __restrict__ format, __va_list arg);
+
+extern int vsnprintf(char * __restrict__ s, size_t n,
+                     const char * __restrict__ format, __va_list arg);
+extern int vsprintf(char * __restrict__ s,
+                    const char * __restrict__ format, __va_list arg);
+extern int fgetc(FILE *stream);
+extern char *fgets(char * __restrict__ s, int n,
+                   FILE * __restrict__ stream);
+extern int fputc(int c, FILE *stream);
+extern int fputs(const char * __restrict__ s,
+                 FILE * __restrict__ stream);
+extern int __filbuf(FILE *);
+extern int getc(FILE *stream);
+#define getc(p) (--((p)->__icnt) >= 0 ? *((p)->__ptr)++ : __filbuf(p))
+
+extern int getchar(void);
 #define getchar() getc(stdin)
-#define putchar(x) putc(x, stdout)
+extern char *gets(char *s);
+extern int putc(int c, FILE *stream);
+extern int __flsbuf(int , FILE * );
 
 
-#define getchar_unlocked() getc_unlocked(stdin)
-#define putchar_unlocked(x) putc_unlocked(x, stdout)
 
 
+#define putc(ch,p) (--((p)->__ocnt) >= 0 ? (*((p)->__ptr)++ = (ch)) : __flsbuf(ch,p))
 
+extern int putchar(int c);
+#define putchar(ch) putc(ch, stdout)
+extern int puts(const char *s);
+extern int ungetc(int c, FILE *stream);
+extern size_t fread(void * __restrict__ ptr,
+                    size_t size, size_t nmemb,
+                    FILE * __restrict__ stream);
+extern size_t fwrite(const void * __restrict__ ptr,
+                     size_t size, size_t nmemb,
+                     FILE * __restrict__ stream);
+extern int fgetpos(FILE * __restrict__ stream,
+                   fpos_t * __restrict__ pos);
+extern int fseek(FILE *stream, long int offset, int whence);
+extern int fsetpos(FILE *stream, const fpos_t *pos);
+extern long int ftell(FILE *stream);
+extern void rewind(FILE *stream);
+extern void clearerr(FILE *stream);
+extern int feof(FILE *stream);
+#define feof(stream) ((stream)->__flag & __IOEOF)
+extern int ferror(FILE *stream);
+#define ferror(stream) ((stream)->__flag & __IOERR)
+extern void perror(const char *s);
+
+
+extern int _fprintf(FILE *fp, const char *fmt, ...);
+extern int _printf(const char *fmt, ...);
+extern int _sprintf(char *buff, const char *fmt, ...);
+extern int _vprintf(const char * __restrict__ format, __va_list arg);
+extern int _vfprintf(FILE *p, const char *fmt, __va_list args);
+extern int _vsprintf(char *buff, const char *fmt, __va_list args);
+extern int _snprintf(char *buff, size_t limit, const char *fmt, ...);
+extern int _vsnprintf(char *buff, size_t limit, const char *fmt, __va_list args);
+
+
+extern int _printf_char(const char *fmt, ...);
+extern int printf_char(const char *fmt, ...);
+
+extern int puts_char(const char *s);
 # 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/board_api.h" 2
 # 58 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/board_api.h"
 
@@ -13510,647 +11671,250 @@ typedef QueueHandle_t SemaphoreHandle_t;
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/queue.h" 1
 # 18 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h" 2
 
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\string.h" 1 3
-
-
-
-
-
-
-
-#define _STRING_H_ 
-
-
-
-
-
-
-#define __need_size_t 
-#define __need_NULL 
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 1 3 4
-# 161 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef __need_ptrdiff_t
-# 238 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef __need_size_t
-# 347 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef __need_wchar_t
-# 401 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\lib\\gcc\\arm-none-eabi\\5.4.1\\include\\stddef.h" 3 4
-#undef NULL
-
-
-
-
-#define NULL ((void *)0)
-
-
-
-
-
-#undef __need_NULL
-
-
-
-
-#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 18 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\string.h" 2 3
-
-
-
-
-# 21 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\string.h" 3
-void * memchr (const void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void * memcpy (void * restrict, const void * restrict, size_t);
-void * memmove (void *, const void *, size_t);
-void * memset (void *, int, size_t);
-char *strcat (char *restrict, const char *restrict);
-char *strchr (const char *, int);
-int strcmp (const char *, const char *);
-int strcoll (const char *, const char *);
-char *strcpy (char *restrict, const char *restrict);
-size_t strcspn (const char *, const char *);
-char *strerror (int);
-size_t strlen (const char *);
-char *strncat (char *restrict, const char *restrict, size_t);
-int strncmp (const char *, const char *, size_t);
-char *strncpy (char *restrict, const char *restrict, size_t);
-char *strpbrk (const char *, const char *);
-char *strrchr (const char *, int);
-size_t strspn (const char *, const char *);
-char *strstr (const char *, const char *);
-
-char *strtok (char *restrict, const char *restrict);
-
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-
-
-int bcmp (const void *, const void *, size_t);
-void bcopy (const void *, void *, size_t);
-void bzero (void *, size_t);
-
-
-void explicit_bzero (void *, size_t);
-int timingsafe_bcmp (const void *, const void *, size_t);
-int timingsafe_memcmp (const void *, const void *, size_t);
-
-
-int ffs (int);
-char *index (const char *, int);
-
-
-void * memccpy (void * restrict, const void * restrict, int, size_t);
-# 73 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\string.h" 3
-char *rindex (const char *, int);
-
-
-char *stpcpy (char *restrict, const char *restrict);
-char *stpncpy (char *restrict, const char *restrict, size_t);
-
-
-int strcasecmp (const char *, const char *);
-
-
-
-
-
-
-char *strdup (const char *);
-
-char *_strdup_r (struct _reent *, const char *);
-
-char *strndup (const char *, size_t);
-
-char *_strndup_r (struct _reent *, const char *, size_t);
-# 108 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\string.h" 3
-int strerror_r (int, char *, size_t)
-
-             __asm__ ("" "__xpg_strerror_r")
-
-  ;
-
-
-
-
-
-
-
-char * _strerror_r (struct _reent *, int, int, int *);
-
-
-size_t strlcat (char *, const char *, size_t);
-size_t strlcpy (char *, const char *, size_t);
-
-
-int strncasecmp (const char *, const char *, size_t);
-
-
-size_t strnlen (const char *, size_t);
-
-
-char *strsep (char **, const char *);
-
-
-
-char *strlwr (char *);
-char *strupr (char *);
-
-
-
-char *strsignal (int __signo);
-# 179 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\string.h" 3
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\sys\\string.h" 1 3
-# 180 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\string.h" 2 3
-
-
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\string.h" 1 3 4
+# 10 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\string.h" 3 4
+#define __STRING_H_INCLUDED 
+
+
+
+
+
+
+
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig.h" 1 3 4
+# 19 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\string.h" 2 3 4
+# 33 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\string.h" 3 4
+
+# 33 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\string.h" 3 4
+extern void *memcpy(void * __restrict__ __s1,
+                   const void * __restrict__ __s2, size_t __n);
+extern void *memmove(void *__s1, const void *__s2, size_t __n);
+extern char *strcpy(char * __restrict__ __s1,
+                    const char * __restrict__ __s2);
+extern char *strncpy(char * __restrict__ __s1,
+                     const char * __restrict__ __s2, size_t __n);
+extern char *strcat(char * __restrict__ __s1,
+                    const char * __restrict__ __s2);
+extern char *strncat(char * __restrict__ __s1,
+                     const char * __restrict__ __s2, size_t __n);
+extern int memcmp(const void *__s1, const void *__s2, size_t __n);
+extern int strcmp(const char *__s1, const char *__s2);
+extern int strcoll(const char *__s1, const char *__s2);
+extern int strncmp(const char *__s1, const char *__s2, size_t __n);
+                   size_t strxfrm(char * __restrict__ __s1,
+                   const char * __restrict__ __s2, size_t ____n);
+extern void *memchr(const void *__s, int __c, size_t ____n);
+extern char *strchr(const char *__s, int __c);
+extern size_t strcspn(const char *__s1, const char *__s2);
+extern char *strpbrk(const char *__s1, const char *__s2);
+extern char *strrchr(const char *s, int c);
+extern size_t strspn(const char *__s1, const char *__s2);
+extern char *strstr(const char *__s1, const char *__s2);
+extern char *strtok(char * __restrict__ __s1,
+                    const char * __restrict__ __s2);
+extern void *memset(void *__s, int __c, size_t __n);
+extern char *strerror(int __errnum);
+extern size_t strlen(const char *__s);
+
+
+
+
+extern int strncasecmp(char const *s1, char const *s2, size_t n) ;
+extern int strcasecmp(const char * s1, const char * s2);
 # 20 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h" 2
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 1 3
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\math.h" 1 3 4
+# 9 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\math.h" 3 4
+#define __MATH_H_INCLUDED 
 
 
-#define _MATH_H_ 
 
 
 
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\machine\\ieeefp.h" 1 3
-# 8 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 2 3
 
 
+typedef double float_t;
+typedef double double_t;
 
 
+#define HUGE_VAL __huge_val
+extern const double __huge_val;
 
 
 
-union __dmath
-{
-  double d;
-  __ULong i[2];
-};
+#define HUGE_VALF __huge_valf
+extern const double __huge_valf;
 
-union __fmath
-{
-  float f;
-  __ULong i[1];
-};
 
 
-union __ldmath
-{
-  long double ld;
-  __ULong i[4];
-};
+#define HUGE_VALL __huge_vall
+extern const double __huge_vall;
 
 
 
-#define _M_LN2 0.693147180559945309417
+#define INFINITY __huge_val
+extern const double __huge_val;
 
 
 
+#define NAN __huge_val
+extern const double __huge_val;
 
 
-#define HUGE_VAL (__builtin_huge_val())
 
+#undef FP_FAST_FMA
+#undef FP_FAST_FMAF
+#undef FP_FAST_FMAL
 
-
-#define HUGE_VALF (__builtin_huge_valf())
-
-
-
-#define HUGE_VALL (__builtin_huge_vall())
-
-
-
-#define INFINITY (__builtin_inff())
-
-
-
-#define NAN (__builtin_nanf(""))
-# 109 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 3
-extern double atan (double);
-extern double cos (double);
-extern double sin (double);
-extern double tan (double);
-extern double tanh (double);
-extern double frexp (double, int *);
-extern double modf (double, double *);
-extern double ceil (double);
-extern double fabs (double);
-extern double floor (double);
-
-
-
-
-
-
-extern double acos (double);
-extern double asin (double);
-extern double atan2 (double, double);
-extern double cosh (double);
-extern double sinh (double);
-extern double exp (double);
-extern double ldexp (double, int);
-extern double log (double);
-extern double log10 (double);
-extern double pow (double, double);
-extern double sqrt (double);
-extern double fmod (double, double);
-
-
-
-
-extern int finite (double);
-extern int finitef (float);
-extern int finitel (long double);
-extern int isinff (float);
-extern int isnanf (float);
-
-
-
-
-
-extern int isinf (double);
-
-
-
-
-extern int isnan (double);
-# 168 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 3
-#define FLT_EVAL_METHOD __FLT_EVAL_METHOD__
-#define __TMP_FLT_EVAL_METHOD 
-
-
-
-    typedef float float_t;
-    typedef double double_t;
-# 191 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 3
-#undef FLT_EVAL_METHOD
-
-
-#define FP_NAN 0
-#define FP_INFINITE 1
-#define FP_ZERO 2
-#define FP_SUBNORMAL 3
-#define FP_NORMAL 4
-
-
-#define FP_ILOGB0 (-__INT_MAX__)
-
-
-#define FP_ILOGBNAN __INT_MAX__
-
-
+#define FP_ILOGB0 INT_MIN
+#define FP_ILOGBNAN INT_MIN
 
 #define MATH_ERRNO 1
-
-
 #define MATH_ERREXCEPT 2
-
-
 #define math_errhandling MATH_ERRNO
 
 
-extern int __isinff (float x);
-extern int __isinfd (double x);
-extern int __isnanf (float x);
-extern int __isnand (double x);
-extern int __fpclassifyf (float x);
-extern int __fpclassifyd (double x);
-extern int __signbitf (float x);
-extern int __signbitd (double x);
-# 234 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 3
-#define fpclassify(__x) (__builtin_fpclassify (FP_NAN, FP_INFINITE, FP_NORMAL, FP_SUBNORMAL, FP_ZERO, __x))
-
 
 
-#define isfinite(__x) (__builtin_isfinite (__x))
+#define FP_INFINITE 4
+#define FP_NAN 3
+#define FP_NORMAL 2
+#define FP_SUBNORMAL 1
+#define FP_ZERO 0
 
+extern int __fpclassifyf(float), __fpclassify(double), __fpclassifyl(long double);
+extern int __isfinitef(float), __isfinite(double), __isfinitel(long double);
+extern int __isinff(float), __isinf(double), __isinfl(long double);
+extern int __isnanf(float), __isnan(double), __isnanl(long double);
+extern int __isnormalf(float), __isnormal(double), __isnormall(long double);
+extern int __signbitf(float), __signbit(double), __signbitl(long double);
 
-#define isinf(__x) (__builtin_isinf_sign (__x))
+#define fpclassify(x) ((sizeof (x) == sizeof (float)) ? __fpclassifyf(x) : (sizeof (x) == sizeof (double)) ? __fpclassifyd(x) : __fpclassifyl(x))
 
 
-#define isnan(__x) (__builtin_isnan (__x))
 
-#define isnormal(__x) (__builtin_isnormal (__x))
-# 267 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 3
-#define signbit(__x) ((sizeof(__x) == sizeof(float)) ? __builtin_signbitf(__x) : (sizeof(__x) == sizeof(double)) ? __builtin_signbit (__x) : __builtin_signbitl(__x))
-# 283 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 3
-#define isgreater(__x,__y) (__builtin_isgreater (__x, __y))
-#define isgreaterequal(__x,__y) (__builtin_isgreaterequal (__x, __y))
-#define isless(__x,__y) (__builtin_isless (__x, __y))
-#define islessequal(__x,__y) (__builtin_islessequal (__x, __y))
-#define islessgreater(__x,__y) (__builtin_islessgreater (__x, __y))
-#define isunordered(__x,__y) (__builtin_isunordered (__x, __y))
-# 313 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 3
-extern double infinity (void);
-extern double nan (const char *);
-extern double copysign (double, double);
-extern double logb (double);
-extern int ilogb (double);
-
-extern double asinh (double);
-extern double cbrt (double);
-extern double nextafter (double, double);
-extern double rint (double);
-extern double scalbn (double, int);
-
-extern double exp2 (double);
-extern double scalbln (double, long int);
-extern double tgamma (double);
-extern double nearbyint (double);
-extern long int lrint (double);
-extern long long int llrint (double);
-extern double round (double);
-extern long int lround (double);
-extern long long int llround (double);
-extern double trunc (double);
-extern double remquo (double, double, int *);
-extern double fdim (double, double);
-extern double fmax (double, double);
-extern double fmin (double, double);
-extern double fma (double, double, double);
-
-
-extern double log1p (double);
-extern double expm1 (double);
-
-
-
-extern double acosh (double);
-extern double atanh (double);
-extern double remainder (double, double);
-extern double gamma (double);
-extern double lgamma (double);
-extern double erf (double);
-extern double erfc (double);
-extern double log2 (double);
-
-#define log2(x) (log (x) / _M_LN2)
-
-
-
-extern double hypot (double, double);
-
-
-
-
-
-
-extern float atanf (float);
-extern float cosf (float);
-extern float sinf (float);
-extern float tanf (float);
-extern float tanhf (float);
-extern float frexpf (float, int *);
-extern float modff (float, float *);
-extern float ceilf (float);
-extern float fabsf (float);
-extern float floorf (float);
-
-
-extern float acosf (float);
-extern float asinf (float);
-extern float atan2f (float, float);
-extern float coshf (float);
-extern float sinhf (float);
-extern float expf (float);
-extern float ldexpf (float, int);
-extern float logf (float);
-extern float log10f (float);
-extern float powf (float, float);
-extern float sqrtf (float);
-extern float fmodf (float, float);
-
-
-
-
-extern float exp2f (float);
-extern float scalblnf (float, long int);
-extern float tgammaf (float);
-extern float nearbyintf (float);
-extern long int lrintf (float);
-extern long long int llrintf (float);
-extern float roundf (float);
-extern long int lroundf (float);
-extern long long int llroundf (float);
-extern float truncf (float);
-extern float remquof (float, float, int *);
-extern float fdimf (float, float);
-extern float fmaxf (float, float);
-extern float fminf (float, float);
-extern float fmaf (float, float, float);
-
-extern float infinityf (void);
-extern float nanf (const char *);
-extern float copysignf (float, float);
-extern float logbf (float);
-extern int ilogbf (float);
-
-extern float asinhf (float);
-extern float cbrtf (float);
-extern float nextafterf (float, float);
-extern float rintf (float);
-extern float scalbnf (float, int);
-extern float log1pf (float);
-extern float expm1f (float);
-
-
-extern float acoshf (float);
-extern float atanhf (float);
-extern float remainderf (float, float);
-extern float gammaf (float);
-extern float lgammaf (float);
-extern float erff (float);
-extern float erfcf (float);
-extern float log2f (float);
-extern float hypotf (float, float);
-# 445 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 3
-extern long double atanl (long double);
-extern long double cosl (long double);
-extern long double sinl (long double);
-extern long double tanl (long double);
-extern long double tanhl (long double);
-extern long double frexpl (long double, int *);
-extern long double modfl (long double, long double *);
-extern long double ceill (long double);
-extern long double fabsl (long double);
-extern long double floorl (long double);
-extern long double log1pl (long double);
-extern long double expm1l (long double);
-
-
-
-
-extern long double acosl (long double);
-extern long double asinl (long double);
-extern long double atan2l (long double, long double);
-extern long double coshl (long double);
-extern long double sinhl (long double);
-extern long double expl (long double);
-extern long double ldexpl (long double, int);
-extern long double logl (long double);
-extern long double log10l (long double);
-extern long double powl (long double, long double);
-extern long double sqrtl (long double);
-extern long double fmodl (long double, long double);
-extern long double hypotl (long double, long double);
-
-
-extern long double copysignl (long double, long double);
-extern long double nanl (const char *);
-extern int ilogbl (long double);
-extern long double asinhl (long double);
-extern long double cbrtl (long double);
-extern long double nextafterl (long double, long double);
-extern float nexttowardf (float, long double);
-extern double nexttoward (double, long double);
-extern long double nexttowardl (long double, long double);
-extern long double logbl (long double);
-extern long double log2l (long double);
-extern long double rintl (long double);
-extern long double scalbnl (long double, int);
-extern long double exp2l (long double);
-extern long double scalblnl (long double, long);
-extern long double tgammal (long double);
-extern long double nearbyintl (long double);
-extern long int lrintl (long double);
-extern long long int llrintl (long double);
-extern long double roundl (long double);
-extern long lroundl (long double);
-extern long long int llroundl (long double);
-extern long double truncl (long double);
-extern long double remquol (long double, long double, int *);
-extern long double fdiml (long double, long double);
-extern long double fmaxl (long double, long double);
-extern long double fminl (long double, long double);
-extern long double fmal (long double, long double, long double);
-
-extern long double acoshl (long double);
-extern long double atanhl (long double);
-extern long double remainderl (long double, long double);
-extern long double lgammal (long double);
-extern long double erfl (long double);
-extern long double erfcl (long double);
-# 526 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 3
-extern double drem (double, double);
-extern float dremf (float, float);
-
-
-
-extern double gamma_r (double, int *);
-extern double lgamma_r (double, int *);
-extern float gammaf_r (float, int *);
-extern float lgammaf_r (float, int *);
-
-
-
-extern double y0 (double);
-extern double y1 (double);
-extern double yn (int, double);
-extern double j0 (double);
-extern double j1 (double);
-extern double jn (int, double);
-
-
-
-extern float y0f (float);
-extern float y1f (float);
-extern float ynf (int, float);
-extern float j0f (float);
-extern float j1f (float);
-extern float jnf (int, float);
-# 587 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 3
-#define signgam (*__signgam())
-extern int *__signgam (void);
-
-
-#define __signgam_r(ptr) _REENT_SIGNGAM(ptr)
-# 601 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\math.h" 3
-struct exception
-
-{
-  int type;
-  char *name;
-  double arg1;
-  double arg2;
-  double retval;
-  int err;
-};
-
-
-
-
-extern int matherr (struct exception *e);
-
-
-
-
-#define DOMAIN 1
-#define SING 2
-#define OVERFLOW 3
-#define UNDERFLOW 4
-#define TLOSS 5
-#define PLOSS 6
-
-
-
-
-
-
-
-#define MAXFLOAT 3.40282347e+38F
-
-#define M_E 2.7182818284590452354
-#define M_LOG2E 1.4426950408889634074
-#define M_LOG10E 0.43429448190325182765
-#define M_LN2 _M_LN2
-#define M_LN10 2.30258509299404568402
-#define M_PI 3.14159265358979323846
-#define M_PI_2 1.57079632679489661923
-#define M_PI_4 0.78539816339744830962
-#define M_1_PI 0.31830988618379067154
-#define M_2_PI 0.63661977236758134308
-#define M_2_SQRTPI 1.12837916709551257390
-#define M_SQRT2 1.41421356237309504880
-#define M_SQRT1_2 0.70710678118654752440
-
-
-
-
-
-#define M_TWOPI (M_PI * 2.0)
-#define M_3PI_4 2.3561944901923448370E0
-#define M_SQRTPI 1.77245385090551602792981
-#define M_LN2LO 1.9082149292705877000E-10
-#define M_LN2HI 6.9314718036912381649E-1
-#define M_SQRT3 1.73205080756887719000
-#define M_IVLN10 0.43429448190325182765
-#define M_LOG2_E _M_LN2
-#define M_INVLN2 1.4426950408889633870E0
-
-
-
-enum __fdlibm_version
-{
-  __fdlibm_ieee = -1,
-  __fdlibm_svid,
-  __fdlibm_xopen,
-  __fdlibm_posix
-};
-
-#define _LIB_VERSION_TYPE enum __fdlibm_version
-#define _LIB_VERSION __fdlib_version
-
-extern enum __fdlibm_version __fdlib_version;
-
-#define _IEEE_ __fdlibm_ieee
-#define _SVID_ __fdlibm_svid
-#define _XOPEN_ __fdlibm_xopen
-#define _POSIX_ __fdlibm_posix
+#define isfinite(x) ((sizeof (x) == sizeof (float)) ? __isfinitef(x) : (sizeof (x) == sizeof (double)) ? __isfinited(x) : __isfinitel(x))
 
 
 
+#define isinf(x) ((sizeof (x) == sizeof (float)) ? __isinff(x) : (sizeof (x) == sizeof (double)) ? __isinfd(x) : __isinfl(x))
 
+
+
+#define isnan(x) ((sizeof (x) == sizeof (float)) ? __isnanf(x) : (sizeof (x) == sizeof (double)) ? __isnand(x) : __isnanl(x))
+
+
+
+#define isnormal(x) ((sizeof (x) == sizeof (float)) ? __isnormalf(x) : (sizeof (x) == sizeof (double)) ? __isnormald(x) : __isnormall(x))
+
+
+
+#define signbit(x) ((sizeof (x) == sizeof (float)) ? __signbitf(x) : (sizeof (x) == sizeof (double)) ? __signbitd(x) : __signbitl(x))
+# 104 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\math.h" 3 4
+extern double cos(double __x);
+extern float cosf(float __x);
+
+
+extern double sin(double __x);
+extern float sinf(float __x);
+
+
+extern double tan(double __x);
+extern float tanf(float __x);
+
+
+extern double acos(double __x);
+extern float acosf(float __x);
+
+
+extern double asin(double __x);
+extern float asinf(float __x);
+
+
+extern double atan(double __x);
+extern float atanf(float __x);
+
+
+extern double atan2(double __y, double __x);
+extern float atan2f(float __y, float __x);
+
+
+
+
+
+extern double cosh(double __x);
+extern float coshf(float __x);
+
+
+extern double sinh(double __x);
+extern float sinhf(float __x);
+
+
+extern double tanh(double __x);
+extern float tanhf(float __x);
+
+
+
+
+
+extern double exp(double __x);
+extern float expf(float __x);
+
+
+extern double frexp(double __value, int *__exp);
+extern float frexpf(float __value, int *__exp);
+
+
+extern double ldexp(double __x, int __exp);
+extern float ldexpf(float __x, int __exp);
+
+
+extern double log(double __x);
+extern float logf(float __x);
+
+
+extern double log10(double __x);
+extern float log10f(float __x);
+
+
+extern double modf(double __value, double *iptr);
+extern float modff(float __value, float *iptr);
+
+
+
+
+
+extern double pow(double __x, double __y);
+extern float powf(float __x, float __y);
+
+
+extern double sqrt(double __x);
+extern float sqrtf(float __x);
+
+
+
+
+
+extern double ceil(double __x);
+extern float ceilf(float __x);
+
+
+extern double fabs(double __x);
+extern float fabsf(float __x);
+
+
+extern double floor(double __x);
+extern float floorf(float __x);
+
+
+extern double fmod(double __x, double __y);
+extern float fmodf(float __x, float __y);
+# 211 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\math.h" 3 4
+#define isgreater(x,y) ((x) > (y))
+#define isgreaterequal(x,y) ((x) >= (y))
+#define isless(x,y) ((x) < (y))
+#define islessequal(x,y) ((x) <= (y))
+#define islessgreater(x,y) ((x) != (y))
+#define isunordered(x,y) (0)
 # 21 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h" 2
 
 
@@ -18204,7 +15968,7 @@ void arm_rfft_fast_f32(
 
 
 
-#define DEBUG_MODE ON
+#define DEBUG_MODE OFF
 
 
 
@@ -18222,12 +15986,7 @@ void arm_rfft_fast_f32(
 #define UART1_TRANSMIT UART_TRANSMIT_FFT
 #define UART2_TRANSMIT UART_TRANSMIT_FFT
 #define UART3_TRANSMIT UART_TRANSMIT_FFT
-
-
-
-#define FFT_FROM_UART ON
-#define FFT_TO_UART ON
-# 102 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+# 97 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
  void main_init();
 # 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 1
@@ -18238,7 +15997,7 @@ void arm_rfft_fast_f32(
 
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 1
 # 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
-# 33 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
   void fft_init();
   void fft_function();
 
@@ -18263,6 +16022,7 @@ void arm_rfft_fast_f32(
   extern arm_cfft_radix4_instance_q31 fft_inst_q31_complex;
 
   extern volatile q31_t fft_vector[512*2];
+  extern volatile q31_t fft_vector_out[512];
 
   extern uint8_t fft_status;
 # 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
@@ -18272,21 +16032,13 @@ void arm_rfft_fast_f32(
 # 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
 #define ADC_DAC_HEADER_H_ 
 # 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
-
-
-
- void main_while();
 # 14 "../UART/uart_header.h" 2
-
-
-
-
-
+# 41 "../UART/uart_header.h"
   void uart_init();
   void main_uart();
-# 29 "../UART/uart_header.h"
-#define UART0_SRB_SIZE 16
-#define UART0_RRB_SIZE 16
+# 51 "../UART/uart_header.h"
+#define UART0_SRB_SIZE 256*4
+#define UART0_RRB_SIZE 4
 #define UART1_SRB_SIZE 16
 #define UART1_RRB_SIZE 16
 #define UART2_SRB_SIZE 16
@@ -18342,11 +16094,11 @@ void arm_rfft_fast_f32(
 
 
    extern volatile uint8_t uart0_in;
-# 99 "../UART/uart_header.h"
-   extern RINGBUFF_T rxbuff0[16], txbuff0[16];
-# 113 "../UART/uart_header.h"
+# 121 "../UART/uart_header.h"
+   extern RINGBUFF_T rxbuff0[4], txbuff0[256*4];
+# 135 "../UART/uart_header.h"
    extern RINGBUFF_T txring0, rxring0;
-# 127 "../UART/uart_header.h"
+# 149 "../UART/uart_header.h"
    extern uint8_t uart0_rx_status;
 # 11 "../UART/uart_globales.c" 2
 
@@ -18355,7 +16107,7 @@ void arm_rfft_fast_f32(
 
    volatile uint8_t uart0_in;
 # 30 "../UART/uart_globales.c"
-   RINGBUFF_T rxbuff0[16], txbuff0[16];
+   RINGBUFF_T rxbuff0[4], txbuff0[256*4];
 # 45 "../UART/uart_globales.c"
    RINGBUFF_T txring0, rxring0;
 # 60 "../UART/uart_globales.c"

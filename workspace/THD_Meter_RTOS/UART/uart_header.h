@@ -38,7 +38,6 @@
 
 // ********* FUNCIONES ********** //
 	#if USE_UART
-		void uart_init();
 		void main_uart();
 	#endif
 // ****************************** //
@@ -48,8 +47,8 @@
 // ***************** DEFINES ***************** //
 	#if USE_UART
 			// *** TAMANIOS DE RING BUFFERS
-		#define UART0_SRB_SIZE 	16	// Send ring buffer
-		#define UART0_RRB_SIZE 	16	// Receive ring buffer
+		#define UART0_SRB_SIZE 	256*4	// Send ring buffer
+		#define UART0_RRB_SIZE 	4	// Receive ring buffer
 		#define UART1_SRB_SIZE 	16	// Send ring buffer
 		#define UART1_RRB_SIZE 	16	// Receive ring buffer
 		#define UART2_SRB_SIZE 	16	// Send ring buffer
@@ -118,16 +117,16 @@
 
 			// Transmit and receive buffers
 		#if USE_UART0
-			extern RINGBUFF_T rxbuff0[UART0_RRB_SIZE], txbuff0[UART0_SRB_SIZE];
+			extern uint8_t rxbuff0[UART0_RRB_SIZE], txbuff0[UART0_SRB_SIZE];
 		#endif
 		#if USE_UART1
-			extern RINGBUFF_T rxbuff1[UART1_RRB_SIZE], txbuff1[UART1_SRB_SIZE];
+			extern uint8_t rxbuff1[UART1_RRB_SIZE], txbuff1[UART1_SRB_SIZE];
 		#endif
 		#if USE_UART2
-			extern RINGBUFF_T rxbuff2[UART2_RRB_SIZE], txbuff2[UART2_SRB_SIZE];
+			extern uint8_t rxbuff2[UART2_RRB_SIZE], txbuff2[UART2_SRB_SIZE];
 		#endif
 		#if USE_UART3
-			extern RINGBUFF_T rxbuff3[UART3_RRB_SIZE], txbuff3[UART3_SRB_SIZE];
+			extern uint8_t rxbuff3[UART3_RRB_SIZE], txbuff3[UART3_SRB_SIZE];
 		#endif
 
 			// Transmit and receive ring buffers
@@ -160,6 +159,11 @@
 
 	#endif
 // ********************************************** //
+
+
+// ************* INICIALIZACION ************* //
+	#include "uart_init.h"
+// ****************************************** //
 
 
 #endif /* UART_HEADER_H_ */

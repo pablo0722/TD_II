@@ -30,15 +30,15 @@ endif
 all: THD_Meter_RTOS.axf
 
 dependents:
-	-cd D:/UTN/Git/TD_II/TD_II/workspace/LibFreeRTOS_8.2.3/Debug && $(MAKE) all
-	-cd D:/UTN/Git/TD_II/TD_II/workspace/lpc_chip_175x_6x/Debug && $(MAKE) all
-	-cd D:/UTN/Git/TD_II/TD_II/workspace/lpc_myboard_1769/Debug && $(MAKE) all
+	-cd D:/UTN/Git/TD_II/TD_II/workspace/LibFreeRTOS_8.2.3/Debug && $(MAKE) clean all
+	-cd D:/UTN/Git/TD_II/TD_II/workspace/lpc_chip_175x_6x/Debug && $(MAKE) clean all
+	-cd D:/UTN/Git/TD_II/TD_II/workspace/lpc_myboard_1769/Debug && $(MAKE) clean all
 
 # Tool invocations
 THD_Meter_RTOS.axf: $(OBJS) $(USER_OBJS) D:/UTN/Git/TD_II/TD_II/workspace/LibFreeRTOS_8.2.3/Debug/libLibFreeRTOS_8.2.3.a D:/UTN/Git/TD_II/TD_II/workspace/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a D:/UTN/Git/TD_II/TD_II/workspace/lpc_myboard_1769/Debug/liblpc_myboard_1769.a
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\lib" -L"D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug" -L"D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug" -Xlinker -Map="THD_Meter_RTOS.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "THD_Meter_RTOS_Debug.ld" -o "THD_Meter_RTOS.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build

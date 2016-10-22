@@ -1,10 +1,9 @@
 /*
  * Inicializaciones.c
  *
- *  Created on: 7 de oct. de 2016
+ *  Created on: 22 de oct. de 2016
  *      Author: Pablo
  */
-
 
 
 #include "header.h"

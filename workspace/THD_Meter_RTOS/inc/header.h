@@ -15,6 +15,13 @@
 	#include "adc_dac_header.h"
 
 
+// *** MEMORIA *** //
+//  MFlash512 (rx) : 	ORIGIN = 0x0, 			/* 256M byte */		LENGTH = 0x80000 	/* 512K bytes */
+//  RamLoc64 (rwx) : 	ORIGIN = 0x10000000 	/* 256M byte */,	LENGTH = 0x10000 	/* 64K bytes */
+//  RamPeriph32 (rwx) : ORIGIN = 0x20000000		/* 512M byte */, 	LENGTH = 0x8000 	/* 32K bytes */
+//  RamExt32M (rwx) : 	ORIGIN = 0xA0000000		/* 256M byte */, 	LENGTH = 0x2000000 	/* 32M bytes */
+// *************** //
+
 // ********* FUNCIONES ********** //
 	void main_while();
 // ****************************** //

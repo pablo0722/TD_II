@@ -15,7 +15,8 @@
 	arm_rfft_instance_q31 fft_inst_q31;
 	arm_cfft_radix4_instance_q31 fft_inst_q31_complex;
 
-	volatile q31_t fft_vector[FFT_SIZE*2];	// Espectro de la senal transformada
+	volatile q31_t fft_vector[FFT_SIZE];	// Espectro de la senal transformada
+	volatile q31_t fft_vector_out[FFT_SIZE*2];	// Espectro de la senal transformada
 
 	uint8_t fft_status = FFT_STATUS_EMPTY;
 #endif

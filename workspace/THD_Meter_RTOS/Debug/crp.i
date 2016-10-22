@@ -367,14 +367,14 @@
 #define __USE_LPCOPEN 1
 #define __USE_CMSIS_DSPLIB CMSIS_DSPLIB_CM3
 #define __LPC17XX__ 1
-#define __NEWLIB__ 1
-#define __NEWLIB__ 1
+#define __REDLIB__ 1
+#define __REDLIB__ 1
 # 1 "../src/crp.c"
 # 33 "../src/crp.c"
-# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\nxp\\crp.h" 1 3
-# 17 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\nxp\\crp.h" 3
+# 1 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\features\\include\\nxp\\crp.h" 1 3 4
+# 17 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\features\\include\\nxp\\crp.h" 3 4
 #define _CRP_H_INCLUDED_ 
-# 31 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\nxp\\crp.h" 3
+# 31 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\features\\include\\nxp\\crp.h" 3 4
 #define __CRP __attribute__ ((used,section(".crp")))
 
 #define CRP_NO_CRP 0xFFFFFFFF
@@ -382,7 +382,7 @@
 
 
 #define CRP_NO_ISP 0x4E697370
-# 46 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\nxp\\crp.h" 3
+# 46 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\features\\include\\nxp\\crp.h" 3 4
 #define CRP_CRP1 0x12345678
 
 
@@ -395,18 +395,18 @@
 
 
 #define CRP_CRP3_CONSUME_PART 0x43218765
-# 81 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\nxp\\crp.h" 3
+# 81 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\features\\include\\nxp\\crp.h" 3 4
 #define CURRENT_CRP_SETTING CRP_NO_CRP
 # 34 "../src/crp.c" 2
 
 
 
 
-# 37 "../src/crp.c" 3
+# 37 "../src/crp.c" 3 4
 __attribute__ ((used,section(".crp"))) 
 # 37 "../src/crp.c"
      const unsigned int CRP_WORD = 
-# 37 "../src/crp.c" 3
+# 37 "../src/crp.c" 3 4
                                    0xFFFFFFFF 
 # 37 "../src/crp.c"
                                               ;

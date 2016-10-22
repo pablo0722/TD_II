@@ -1228,7 +1228,7 @@ CRP_WORD:
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF365
-	.file 2 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\arm-none-eabi\\include\\nxp\\crp.h"
+	.file 2 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\features\\include\\nxp\\crp.h"
 	.byte	0x3
 	.uleb128 0x21
 	.uleb128 0x2
@@ -1429,6 +1429,8 @@ CRP_WORD:
 	.ascii	"__LPC17XX__ 1\000"
 .LASF168:
 	.ascii	"__LDBL_HAS_INFINITY__ 1\000"
+.LASF365:
+	.ascii	"__REDLIB__ 1\000"
 .LASF139:
 	.ascii	"__FLT_HAS_DENORM__ 1\000"
 .LASF329:
@@ -1670,8 +1672,6 @@ CRP_WORD:
 .LASF152:
 	.ascii	"__DBL_DENORM_MIN__ ((double)4.9406564584124654e-324"
 	.ascii	"L)\000"
-.LASF365:
-	.ascii	"__NEWLIB__ 1\000"
 .LASF128:
 	.ascii	"__FLT_MANT_DIG__ 24\000"
 .LASF5:

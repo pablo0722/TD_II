@@ -41,7 +41,7 @@
 
 
 // ***** UTILIDADES (main while) ***** //
-	#define DEBUG_MODE			ON
+	#define DEBUG_MODE			OFF
 
 	#if (USE_UART)
 			// Numero de UART a utilizar

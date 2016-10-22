@@ -396,8 +396,8 @@ ResetISR:
 	.loc 1 295 0
 	bl	SystemInit
 .LVL22:
-	.loc 1 309 0
-	bl	main
+	.loc 1 307 0
+	bl	__main
 .LVL23:
 .L35:
 	b	.L35
@@ -754,7 +754,7 @@ g_pfnVectors:
 	.4byte	.LASF396
 	.4byte	.LASF396
 	.byte	0x1
-	.byte	0x8a
+	.byte	0x88
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -2613,6 +2613,8 @@ g_pfnVectors:
 	.ascii	"__LPC17XX__ 1\000"
 .LASF92:
 	.ascii	"__INT64_MAX__ 0x7fffffffffffffffLL\000"
+.LASF365:
+	.ascii	"__REDLIB__ 1\000"
 .LASF89:
 	.ascii	"__INT8_MAX__ 0x7f\000"
 .LASF220:
@@ -2963,8 +2965,6 @@ g_pfnVectors:
 	.ascii	"__DQ_FBIT__ 63\000"
 .LASF300:
 	.ascii	"__UHA_IBIT__ 8\000"
-.LASF365:
-	.ascii	"__NEWLIB__ 1\000"
 .LASF334:
 	.ascii	"__ARM_FEATURE_LDREX 7\000"
 .LASF73:
@@ -3133,6 +3133,8 @@ g_pfnVectors:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 2\000"
 .LASF15:
 	.ascii	"__OPTIMIZE_SIZE__ 1\000"
+.LASF396:
+	.ascii	"__main\000"
 .LASF132:
 	.ascii	"__FLT_MAX_EXP__ 128\000"
 .LASF398:
@@ -3170,8 +3172,6 @@ g_pfnVectors:
 	.ascii	"__QQ_FBIT__ 7\000"
 .LASF369:
 	.ascii	"HardFault_Handler\000"
-.LASF396:
-	.ascii	"main\000"
 .LASF56:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF338:

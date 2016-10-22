@@ -32,7 +32,8 @@
 			#if (USE_FFT) && (UART0_TRANSMIT == UART_TRANSMIT_FFT)
 				if (fft_status == FFT_STATUS_DONE)
 				{
-					Chip_UART_SendRB(LPC_UART0, &txring0, (const void *)fft_vector, FFT_SIZE/2); // Envio la mitad del espectro ya que esta espejado
+					fft_status = FFT_STATUS_EMPTY;
+					Chip_UART_SendRB(LPC_UART0, &txring0, (const void *)fft_vector_out, FFT_SIZE*2); // Envio la mitad del espectro ya que esta espejado
 				}
 			#endif
 

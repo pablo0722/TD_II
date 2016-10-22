@@ -27,16 +27,16 @@
 
 			// Transmit and receive buffers
 		#if USE_UART0
-			RINGBUFF_T rxbuff0[UART0_RRB_SIZE], txbuff0[UART0_SRB_SIZE];
+			uint8_t rxbuff0[UART0_RRB_SIZE], txbuff0[UART0_SRB_SIZE];
 		#endif
 		#if USE_UART1
-			RINGBUFF_T rxbuff1[UART1_RRB_SIZE], txbuff1[UART1_SRB_SIZE];
+			uint8_t rxbuff1[UART1_RRB_SIZE], txbuff1[UART1_SRB_SIZE];
 		#endif
 		#if USE_UART2
-			RINGBUFF_T rxbuff2[UART2_RRB_SIZE], txbuff2[UART2_SRB_SIZE];
+			uint8_t rxbuff2[UART2_RRB_SIZE], txbuff2[UART2_SRB_SIZE];
 		#endif
 		#if USE_UART3
-			RINGBUFF_T rxbuff3[UART3_RRB_SIZE], txbuff3[UART3_SRB_SIZE];
+			uint8_t rxbuff3[UART3_RRB_SIZE], txbuff3[UART3_SRB_SIZE];
 		#endif
 
 
@@ -55,7 +55,7 @@
 		#endif
 
 
-			// Cantidad de veces que se uso lo que lei por uart
+			// Estado de recepcion de UART
 		#if USE_UART0
 			uint8_t uart0_rx_status = UART_STATUS_EMPTY;
 		#endif

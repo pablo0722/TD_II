@@ -34,7 +34,6 @@
 
 // ********* FUNCIONES ********** //
 	#if USE_FFT
-		void fft_init();
 		void fft_function();
 	#endif
 // ****************************** //
@@ -57,11 +56,17 @@
 		extern arm_rfft_instance_q31 fft_inst_q31;					// Estructura para aplicar FFT
 		extern arm_cfft_radix4_instance_q31 fft_inst_q31_complex;	// Estructura para aplicar FFT
 
-		extern volatile q31_t fft_vector[FFT_SIZE*2];				// Espectro de la senal transformada (el "*2" es porque es real e imaginario)
+		extern volatile q31_t fft_vector[FFT_SIZE];				// Espectro de la senal transformada (el "*2" es porque es real e imaginario)
+		extern volatile q31_t fft_vector_out[FFT_SIZE*2];				// Espectro de la senal transformada (el "*2" es porque es real e imaginario)
 
 		extern uint8_t fft_status;									// Estado de la FFT
 	#endif
 // ********************************************** //
+
+
+// ************* INICIALIZACION ************* //
+	#include "fft_init.h"
+// ****************************************** //
 
 
 #endif /* FFT_HEADER_H_ */

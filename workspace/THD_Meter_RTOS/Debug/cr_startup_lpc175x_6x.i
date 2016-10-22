@@ -367,8 +367,8 @@
 #define __USE_LPCOPEN 1
 #define __USE_CMSIS_DSPLIB CMSIS_DSPLIB_CM3
 #define __LPC17XX__ 1
-#define __NEWLIB__ 1
-#define __NEWLIB__ 1
+#define __REDLIB__ 1
+#define __REDLIB__ 1
 # 1 "../src/cr_startup_lpc175x_6x.c"
 # 47 "../src/cr_startup_lpc175x_6x.c"
 #define WEAK __attribute__ ((weak))
@@ -427,7 +427,9 @@ void QEI_IRQHandler(void) __attribute__ ((weak, alias ("IntDefaultHandler")));
 void PLL1_IRQHandler(void) __attribute__ ((weak, alias ("IntDefaultHandler")));
 void USBActivity_IRQHandler(void) __attribute__ ((weak, alias ("IntDefaultHandler")));
 void CANActivity_IRQHandler(void) __attribute__ ((weak, alias ("IntDefaultHandler")));
-# 138 "../src/cr_startup_lpc175x_6x.c"
+# 136 "../src/cr_startup_lpc175x_6x.c"
+extern void __main(void);
+
 extern int main(void);
 
 
@@ -569,8 +571,10 @@ ResetISR(void) {
 
 
     SystemInit();
-# 309 "../src/cr_startup_lpc175x_6x.c"
-    main();
+# 307 "../src/cr_startup_lpc175x_6x.c"
+    __main() ;
+
+
 
 
 

@@ -16,8 +16,8 @@
 	{
 		if(fft_status == FFT_STATUS_TO_DO)
 		{
-			arm_rfft_q31(&fft_inst_q31, (q31_t *)fft_vector, (q31_t *)fft_vector);
-			arm_cmplx_mag_q31((q31_t *)fft_vector, (q31_t *)fft_vector, FFT_SIZE*2);
+			arm_rfft_q31(&fft_inst_q31, (q31_t *)fft_vector, (q31_t *)fft_vector_out);
+			arm_cmplx_mag_q31((q31_t *)fft_vector_out, (q31_t *)fft_vector_out, FFT_SIZE*2);
 
 			fft_status = FFT_STATUS_DONE;
 		}
