@@ -1,6 +1,6 @@
-function [ signal ] = signalforMU_file( f,fs,L,Lword )
-%% si desea un archivo este se genera en signal.txt, signal contiene la señal generada.
-
+function [ signal ] = signalforMU( f,fs,L,Lword )
+clc;
+close all;
 %% seteo de la señal
 signal=0.9*tono(f,fs,L);
 
