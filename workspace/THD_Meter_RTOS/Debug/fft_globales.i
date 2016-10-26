@@ -16,8 +16,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE_SIZE__ 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 4
 #define __SIZEOF_LONG__ 4
@@ -311,6 +309,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __CHAR_UNSIGNED__ 1
 #define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1
 #define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1
@@ -15953,34 +15952,45 @@ void arm_rfft_fast_f32(
 
 
 
-#define USE_UART ON
-#define USE_ADC OFF
-#define USE_DAC OFF
-#define USE_FFT ON
+#define USE_UART OFF
+#define USE_ADC ON
+#define USE_DAC ON
+#define USE_FFT OFF
 #define USE_RTOS OFF
 
 
 
 
-#define DEBUG_MODE OFF
+#define DEBUG_MODE ON
+# 66 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+#define USE_ADC_INTERNO OFF
+#define USE_ADC_EXTERNO ON
+# 77 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+#define ADC_EXTERNO_INTERRUPCION 0
+#define ADC_EXTERNO_DMA 1
+#define ADC_EXTERNO_MODO ADC_EXTERNO_DMA
 
 
 
-#define USE_UART0 ON
-#define USE_UART1 OFF
-#define USE_UART2 OFF
-#define USE_UART3 OFF
+
+
+#define USE_DAC_INTERNO ON
+#define USE_DAC_EXTERNO OFF
 
 
 
-#define UART_TRANSMIT_NONE 0
-#define UART_TRANSMIT_LOOPBACK 1
-#define UART_TRANSMIT_FFT 2
-#define UART0_TRANSMIT UART_TRANSMIT_FFT
-#define UART1_TRANSMIT UART_TRANSMIT_FFT
-#define UART2_TRANSMIT UART_TRANSMIT_FFT
-#define UART3_TRANSMIT UART_TRANSMIT_FFT
-# 97 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+#define DAC_INTERNO_INTERRUPCION 0
+#define DAC_INTERNO_DMA 1
+#define DAC_INTERNO_MODO DAC_INTERNO_INTERRUPCION
+# 109 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+#define USE_DMA ON
+
+
+
+
+
+
+
  void main_init();
 # 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 1
@@ -15991,119 +16001,475 @@ void arm_rfft_fast_f32(
 
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 1
 # 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
-# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
-  void fft_init();
-  void fft_function();
-
-
-
-
-
-
-#define FFT_SIZE 512
-
-
-#define FFT_STATUS_EMPTY 0
-#define FFT_STATUS_TO_DO 1
-#define FFT_STATUS_DONE 2
-
-
-
-
-
-
-  extern arm_rfft_instance_q31 fft_inst_q31;
-  extern arm_cfft_radix4_instance_q31 fft_inst_q31_complex;
-
-  extern volatile q31_t fft_vector[512*2];
-  extern volatile q31_t fft_vector_out[512];
-
-  extern uint8_t fft_status;
+# 68 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h" 1
+# 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
+#define FFT_INIT_FFT_LENGTH FFT_SIZE
+#define FFT_INIT_IFFT FALSE
+#define FFT_INIT_BIT_REVERSE TRUE
+# 69 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
 # 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h" 1
 # 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
 #define UART_HEADER_H_ 
-# 41 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
-  void uart_init();
-  void main_uart();
-# 51 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
-#define UART0_SRB_SIZE 256*4
-#define UART0_RRB_SIZE 4
-#define UART1_SRB_SIZE 16
-#define UART1_RRB_SIZE 16
-#define UART2_SRB_SIZE 16
-#define UART2_RRB_SIZE 16
-#define UART3_SRB_SIZE 16
-#define UART3_RRB_SIZE 16
-
-
-#define UART_BAUDRATE_9600 9600
-#define UART_BAUDRATE_19200 19200
-#define UART_BAUDRATE_38400 38400
-#define UART_BAUDRATE_57600 57600
-#define UART_BAUDRATE_115200 115200
-#define UART0_BAUDRATE UART_BAUDRATE_9600
-#define UART1_BAUDRATE UART_BAUDRATE_9600
-#define UART2_BAUDRATE UART_BAUDRATE_9600
-#define UART3_BAUDRATE UART_BAUDRATE_9600
-
-
-#define UART_STATUS_EMPTY 0
-#define UART_STATUS_LEIDO 1
-
-
-#define UART0_TX_P0_2 0, 2, MD_PLN, IOCON_FUNC1
-#define UART0_RX_P0_3 0, 3, MD_PLN, IOCON_FUNC1
-#define UART0_TX UART0_TX_P0_2
-#define UART0_RX UART0_RX_P0_3
-
-#define UART1_TX_P0_15 0, 15, MD_PLN, IOCON_FUNC1
-#define UART1_TX_P2_0 2, 0, MD_PLN, IOCON_FUNC2
-#define UART1_RX_P0_16 0, 16, MD_PLN, IOCON_FUNC1
-#define UART1_RX_P2_1 2, 1, MD_PLN, IOCON_FUNC2
-#define UART1_TX UART1_TX_P0_15
-#define UART1_RX UART1_RX_P0_16
-
-#define UART2_TX_P0_10 0, 10, MD_PLN, IOCON_FUNC1
-#define UART2_TX_P2_8 2, 8, MD_PLN, IOCON_FUNC2
-#define UART2_RX_P0_11 0, 11, MD_PLN, IOCON_FUNC1
-#define UART2_TX UART2_TX_P0_10
-#define UART2_RX UART2_RX_P0_11
-
-#define UART3_TX_P0_0 0, 0, MD_PLN, IOCON_FUNC2
-#define UART3_TX_P0_25 0, 25, MD_PLN, IOCON_FUNC3
-#define UART3_RX_P0_1 0, 1, MD_PLN, IOCON_FUNC2
-#define UART3_RX_P0_26 0, 26, MD_PLN, IOCON_FUNC3
-#define UART3_TX UART3_TX_P0_0
-#define UART3_RX UART3_RX_P0_1
+# 165 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_init.h" 1
+# 10 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_init.h"
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h" 1
+# 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_init.h" 2
 
 
 
 
 
 
+#define RX_RING0_P NULL
 
-   extern volatile uint8_t uart0_in;
-# 121 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
-   extern RINGBUFF_T rxbuff0[4], txbuff0[256*4];
-# 135 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
-   extern RINGBUFF_T txring0, rxring0;
-# 149 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
-   extern uint8_t uart0_rx_status;
+
+
+
+#define RX_RING1_P NULL
+
+
+
+
+#define RX_RING2_P NULL
+
+
+
+
+#define RX_RING3_P NULL
+
+
+
+
+
+
+#define TX_RING0_P NULL
+
+
+
+
+#define TX_RING1_P NULL
+
+
+
+
+#define TX_RING2_P NULL
+
+
+
+
+#define TX_RING3_P NULL
+
+
+
+
+
+
+#define RX_BUFF0_P NULL
+
+
+
+
+#define RX_BUFF1_P NULL
+
+
+
+
+#define RX_BUFF2_P NULL
+
+
+
+
+#define RX_BUFF3_P NULL
+
+
+
+
+
+
+#define TX_BUFF0_P NULL
+
+
+
+
+#define TX_BUFF1_P NULL
+
+
+
+
+#define TX_BUFF2_P NULL
+
+
+
+
+#define TX_BUFF3_P NULL
+
+
+
+
+#define BAUDRATE_UART(n) (n==0?UART0_BAUDRATE: (n==1?UART1_BAUDRATE: (n==2?UART2_BAUDRATE: UART3_BAUDRATE)))
+#define SRB_SIZE_UART(n) (n==0?UART0_SRB_SIZE: (n==1?UART1_SRB_SIZE: (n==2?UART2_SRB_SIZE: UART3_SRB_SIZE)))
+#define RRB_SIZE_UART(n) (n==0?UART0_RRB_SIZE: (n==1?UART1_RRB_SIZE: (n==2?UART2_RRB_SIZE: UART3_RRB_SIZE)))
+#define MODE_UART(n) (n==0?UART0_MODE: (n==1?UART1_MODE: (n==2?UART2_MODE: UART3_MODE)))
+#define LPC_UART(n) (n==0?LPC_UART0: (n==1?LPC_UART1: (n==2?LPC_UART2: LPC_UART3)))
+#define RX_RING(n) (n==0?RX_RING0_P: (n==1?RX_RING1_P: (n==2?RX_RING2_P: RX_RING3_P)))
+#define TX_RING(n) (n==0?TX_RING0_P: (n==1?TX_RING1_P: (n==2?TX_RING2_P: TX_RING3_P)))
+#define RX_BUFF(n) (n==0?RX_BUFF0_P: (n==1?RX_BUFF1_P: (n==2?RX_BUFF2_P: RX_BUFF3_P)))
+#define TX_BUFF(n) (n==0?TX_BUFF0_P: (n==1?TX_BUFF1_P: (n==2?TX_BUFF2_P: TX_BUFF3_P)))
+#define IRQn_UART(n) (n==0?UART0_IRQn: (n==1?UART1_IRQn: (n==2?UART2_IRQn: UART3_IRQn)))
+# 166 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h" 2
 # 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 1
 # 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
 #define ADC_DAC_HEADER_H_ 
+# 19 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+  void main_dac();
+  void main_dac_aux();
+
+
+
+
+
+
+#define ADC_FREQ 20000
+#define ADC_DMA_CANT_MUESTRAS 8
+#define ADC_DMA_CHANNEL 1
+
+
+
+#define DAC_FREQ ADC_FREQ
+#define DAC_DMA_CANT_MUESTRAS ADC_DMA_CANT_MUESTRAS
+#define DAC_DMA_CHANNEL 0
+
+
+
+#define I2S_INT_POLLING 1
+#define I2S_DMA (!(I2S_INT_POLLING))
+
+#define LED_stick 0,22
+#define AOUT 0,26
+
+#define I2SRX_CLK 0,4
+#define I2SRX_WS 0,5
+#define I2SRX_SDA 0,6
+#define RX_MCLK 4,28
+
+#define I2STX_CLK 0,7
+#define I2STX_WS 0,8
+#define I2STX_SDA 0,9
+#define TX_MCLK 4,29
+
+#define CH_L 1
+#define CH_R 2
+
+
+
+
+
+
+  extern DMA_TransferDescriptor_t DMA_descriptor_ADC;
+  extern volatile uint32_t dma_memory_adc[8];
+  extern volatile uint8_t canal_adc;
+
+
+
+  extern DMA_TransferDescriptor_t DMA_descriptor_DAC;
+  extern volatile uint32_t dma_memory_dac[8];
+  extern volatile uint8_t canal_dac;
+
+
+
+  extern uint16_t adcFlag;
+  extern int32_t data, cont, ch;
+
+
+
+
+
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 1
+# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+ static inline void dma_init()
+ {
+# 80 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+  Chip_GPDMA_Init(((LPC_GPDMA_T *) 0x50004000));
+
+
+  NVIC_DisableIRQ(DMA_IRQn);
+  NVIC_SetPriority(DMA_IRQn, ((0x01<<3)|0x01));
+  NVIC_EnableIRQ(DMA_IRQn);
+# 95 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+   canal_dac = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
+   Chip_GPDMA_PrepareDescriptor(((LPC_GPDMA_T *) 0x50004000), &DMA_descriptor_DAC,
+           (uint32_t) dma_memory_adc, (uint32_t) ((7UL)),
+           8, GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA, 
+# 98 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 3 4
+                                                                        ((void *)0)
+# 98 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+                                                                            );
+   DMA_descriptor_DAC.dst = ((7UL));
+
+
+
+   canal_adc = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
+   Chip_GPDMA_PrepareDescriptor(((LPC_GPDMA_T *) 0x50004000), &DMA_descriptor_ADC,
+           (uint32_t) ((6UL)), (uint32_t) dma_memory_adc,
+           8, GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, 
+# 106 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 3 4
+                                                                        ((void *)0)
+# 106 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+                                                                            );
+   DMA_descriptor_ADC.src = ((6UL));
+
+   Chip_GPDMA_SGTransfer(((LPC_GPDMA_T *) 0x50004000), canal_adc,
+         &DMA_descriptor_ADC,
+         GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
+# 123 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+ }
+
+
+
+
+
+ static Status getClkDiv(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format, uint16_t *pxDiv, uint16_t *pyDiv, uint32_t *pN)
+ {
+  uint32_t pClk;
+  uint32_t x, y;
+  uint64_t divider;
+  uint16_t dif;
+  uint16_t xDiv = 0, yDiv = 0;
+  uint32_t N;
+  uint16_t err, ErrorOptimal = 0xFFFF;
+
+
+  pClk = Chip_Clock_GetPeripheralClockRate(SYSCTL_PCLK_I2S);
+
+
+
+
+
+  divider = (((uint64_t) (format->SampleRate) * 2 * (format->WordWidth) * 2) << 16) / pClk;
+
+  for (N = 64; N > 0; N--) {
+   if ((divider * N) < (1 << 16)) {
+    break;
+   }
+  }
+  if (N == 0) {
+   return ERROR;
+  }
+  divider *= N;
+  for (y = 255; y > 0; y--) {
+   x = y * divider;
+   if (x & (0xFF000000)) {
+    continue;
+   }
+   dif = x & 0xFFFF;
+   if (dif > 0x8000) {
+    err = 0x10000 - dif;
+   }
+   else {
+    err = dif;
+   }
+   if (err == 0) {
+    yDiv = y;
+    break;
+   }
+   else if (err < ErrorOptimal) {
+    ErrorOptimal = err;
+    yDiv = y;
+   }
+  }
+  xDiv = ((uint64_t) yDiv * (format->SampleRate) * 2 * (format->WordWidth) * N * 2) / pClk;
+  if (xDiv >= 256) {
+   xDiv = 0xFF;
+  }
+  if (xDiv == 0) {
+   xDiv = 1;
+  }
+
+  *pxDiv = xDiv;
+  *pyDiv = yDiv;
+  *pN = N;
+  return SUCCESS;
+ }
+
+
+
+ static inline Status mi_Chip_I2S_TxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
+ {
+  uint32_t temp;
+  uint16_t xDiv, yDiv;
+  uint32_t N;
+
+
+  if (getClkDiv(pI2S, format, &xDiv, &yDiv, &N) == ERROR)
+  {
+   return ERROR;
+  }
+
+  temp = pI2S->DAO & (~(((uint32_t) (3)) | ((uint32_t) (1 << 2)) | ((uint32_t) (1 << 5)) | ((uint32_t) ((0x1FF) << 6))));
+  if (format->WordWidth <= 8)
+  {
+   temp |= (0UL << 0);
+  }
+  else if (format->WordWidth <= 16)
+  {
+   temp |= (1UL << 0);
+  }
+  else
+  {
+   temp |= (3UL << 0);
+  }
+
+  temp |= (format->ChannelNumber) == 1 ? (1UL << 2) : (0UL << 2);
+  temp |= (0UL << 5);
+  temp |= ((uint32_t) (((format->WordWidth - 1) & 0x1FF) << 6));
+  pI2S->DAO = temp;
+
+  pI2S->TXMODE = 0x8;
+
+  Chip_Clock_GetPeripheralClockRate(SYSCTL_PCLK_I2S);
+
+  xDiv = 32;
+  yDiv = 125;
+
+  pI2S->TXBITRATE = 5;
+
+  pI2S->TXRATE = yDiv | (xDiv << 8);
+  return SUCCESS;
+ }
+
+
+
+ static inline Status mi_Chip_I2S_RxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
+ {
+  uint32_t temp;
+  uint16_t xDiv, yDiv;
+  uint32_t N;
+
+  if (getClkDiv(pI2S, format, &xDiv, &yDiv, &N) == ERROR) {
+   return ERROR;
+  }
+  temp = pI2S->DAI & (~(((uint32_t) (3)) | ((uint32_t) (1 << 2)) | ((uint32_t) (1 << 5)) | ((uint32_t) ((0x1FF) << 6))));
+  if (format->WordWidth <= 8)
+  {
+   temp |= (0UL << 0);
+  }
+  else if (format->WordWidth <= 16)
+  {
+   temp |= (1UL << 0);
+  }
+  else
+  {
+   temp |= (3UL << 0);
+  }
+
+  temp |= (format->ChannelNumber) == 1 ? (1UL << 2) : (0UL << 2);
+  temp |= (0UL << 5);
+  temp |= ((uint32_t) (((format->WordWidth - 1) & 0x1FF) << 6));
+  pI2S->DAI = temp;
+
+  pI2S->RXMODE = 0x8;
+
+  Chip_Clock_GetPeripheralClockRate(SYSCTL_PCLK_I2S);
+
+  xDiv = 32;
+  yDiv = 125;
+
+  pI2S->RXBITRATE = 5;
+
+  pI2S->RXRATE = yDiv | (xDiv << 8);
+  return SUCCESS;
+ }
+
+ static inline void i2s_init()
+ {
+  static char init_flag = 0;
+
+  if(!init_flag)
+  {
+
+   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,4, (0x2), 0x1);
+   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,6, (0x2), 0x1);
+   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,5, (0x2), 0x1);
+   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 4,28, (0x2), 0x1);
+
+   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,7, (0x2), 0x1);
+   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,9, (0x2), 0x1);
+   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,8, (0x2), 0x1);
+   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 4,29, (0x2), 0x1);
+
+
+
+   I2S_AUDIO_FORMAT_T audio_Confg;
+   audio_Confg.SampleRate = 32000;
+   audio_Confg.ChannelNumber = 2;
+   audio_Confg.WordWidth = 32;
+
+
+   Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_I2S, SYSCTL_CLKDIV_1);
+
+   Chip_I2S_Init(((LPC_I2S_T *) 0x400A8000));
+
+   Chip_I2S_RxStop(((LPC_I2S_T *) 0x400A8000));
+   Chip_I2S_TxStop(((LPC_I2S_T *) 0x400A8000));
+   Chip_I2S_EnableMute(((LPC_I2S_T *) 0x400A8000));
+
+
+   Chip_I2S_DisableMute(((LPC_I2S_T *) 0x400A8000));
+   Chip_I2S_RxStart(((LPC_I2S_T *) 0x400A8000));
+   Chip_I2S_TxStart(((LPC_I2S_T *) 0x400A8000));
+
+   Chip_I2S_Int_RxCmd(((LPC_I2S_T *) 0x400A8000), ENABLE, 1);
+   Chip_I2S_Int_TxCmd(((LPC_I2S_T *) 0x400A8000), DISABLE, 1);
+
+
+   mi_Chip_I2S_RxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
+
+   mi_Chip_I2S_TxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
+
+
+    Chip_I2S_DMA_RxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
+    Chip_I2S_DMA_TxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
+
+    NVIC_DisableIRQ(I2S_IRQn);
+
+
+
+
+
+
+   init_flag = 1;
+  }
+ }
+# 363 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+ static inline void dac_init()
+ {
+
+  printf("[info] Init DAC \r\n");
+  printf("\t DAC freq %d \r\n", 20000);
+  printf("\t DMA buff size %d \r\n", 8);
+
+
+  Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_DAC, SYSCTL_CLKDIV_4);
+
+  Chip_IOCON_PinMux (((LPC_IOCON_T *) 0x4002C000), 0, 26, (0x2), 0x2 );
+
+  Chip_DAC_Init(((LPC_DAC_T *) 0x4008C000));
+
+
+
+  Chip_DAC_SetBias(((LPC_DAC_T *) 0x4008C000), 1);
+
+  Chip_DAC_SetDMATimeOut(((LPC_DAC_T *) 0x4008C000), (SystemCoreClock/4) / (20000 * 8) );
+
+  Chip_DAC_ConfigDAConverterControl(((LPC_DAC_T *) 0x4008C000), ((uint32_t) (1 << 1)) | ((uint32_t) (1 << 2)) | ((uint32_t) (1 << 3)));
+
+ }
+# 83 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 2
 # 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 26 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h"
+ void main_while();
 # 11 "../FFT/fft_globales.c" 2
-
-
-
-
- arm_rfft_instance_q31 fft_inst_q31;
- arm_cfft_radix4_instance_q31 fft_inst_q31_complex;
-
- volatile q31_t fft_vector[512*2];
- volatile q31_t fft_vector_out[512];
-
- uint8_t fft_status = 0;

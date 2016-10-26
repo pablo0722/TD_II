@@ -20,28 +20,24 @@ void main_init()
 		uart_init();
 	#endif
 
-	#if USE_ADC_DAC_INTERNO
+	#if USE_ADC_INTERNO
 		adc_init();
+	#endif
+
+	#if USE_DAC_INTERNO
 		dac_init();
 	#endif
 
-	#if USE_ADC_DAC_EXTERNO
+	#if (USE_ADC_EXTERNO) || (USE_DAC_EXTERNO)
 		i2s_init();
-	#endif
-
-	#if USE_FFT
-		fft_init();
 	#endif
 
 	#if USE_DMA
 		dma_init();
 	#endif
 
-
-	#if USE_ADC_DMA
-		Chip_GPDMA_Transfer(LPC_GPDMA, canal_adc,
-								(uint32_t) (GPDMA_CONN_I2S_Channel_1), (uint32_t) dma_memory_adc,
-								GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, ADC_DMA_CANT_MUESTRAS);
+	#if USE_FFT
+		fft_init();
 	#endif
 
 

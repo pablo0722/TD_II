@@ -36,7 +36,7 @@ liblpc_board_nxp_lpcxpresso_1769.a: $(OBJS) $(USER_OBJS)
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(ARCHIVES) liblpc_board_nxp_lpcxpresso_1769.a
+	-$(RM) $(OBJS)$(ARCHIVES)$(C_DEPS) liblpc_board_nxp_lpcxpresso_1769.a
 	-@echo ' '
 
 post-build:

@@ -22,6 +22,7 @@ void main_uninit()
 
 int main(void)
 {
+	main_dac_aux();
 	main_init();
 
 	#if !USE_RTOS
@@ -35,8 +36,8 @@ int main(void)
 				main_uart();
 			#endif
 
-			#if USE_ADC_DAC_INTERNO
-				main_dac();
+			#if USE_DAC_INTERNO
+				main_dac_aux();
 			#endif
 
 			main_while();

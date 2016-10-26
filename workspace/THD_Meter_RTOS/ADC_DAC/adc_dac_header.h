@@ -15,32 +15,24 @@
 
 
 // ********* FUNCIONES ********** //
-	#if USE_ADC
-		void adc_init();
-	#endif
-
-	#if USE_DAC
-		void dac_init();
-	#endif
-
-	#if USE_DAC_INTERNO
+	#if (USE_DAC_INTERNO)
 		void main_dac();
+		void main_dac_aux();
 	#endif
 // ****************************** //
 
 
 // ***************** DEFINES ***************** //
-	#if USE_ADC_INTERNO
-			// *** ADC *** //
+	#if USE_ADC
 		#define ADC_FREQ 				20000
-		#define ADC_DMA_CANT_MUESTRAS 	1
-		#define ADC_DMA_CHANNEL 		0
+		#define ADC_DMA_CANT_MUESTRAS 	8
+		#define ADC_DMA_CHANNEL 		1
 	#endif
 
-	#if USE_DAC_INTERNO
+	#if USE_DAC
 		#define DAC_FREQ 				ADC_FREQ
 		#define DAC_DMA_CANT_MUESTRAS 	ADC_DMA_CANT_MUESTRAS
-		#define DAC_DMA_CHANNEL 		1
+		#define DAC_DMA_CHANNEL 		0
 	#endif
 
 	#if (USE_ADC_EXTERNO)||(USE_DAC_EXTERNO)
@@ -67,16 +59,16 @@
 
 
 // ************* VARIABLES GLOBALES ************* //
-	#if USE_ADC_INTERNO
+	#if USE_ADC
 		extern DMA_TransferDescriptor_t DMA_descriptor_ADC;
 		extern volatile uint32_t dma_memory_adc[ADC_DMA_CANT_MUESTRAS];
-		extern uint8_t canal_adc;
+		extern volatile uint8_t canal_adc;
 	#endif
 
-	#if USE_DAC_INTERNO
+	#if USE_DAC
 		extern DMA_TransferDescriptor_t DMA_descriptor_DAC;
 		extern volatile uint32_t dma_memory_dac[DAC_DMA_CANT_MUESTRAS];
-		extern uint8_t canal_dac;
+		extern volatile uint8_t canal_dac;
 	#endif
 
 	#if (USE_ADC_EXTERNO)||(USE_DAC_EXTERNO)
@@ -84,5 +76,11 @@
 		extern int32_t data, cont, ch;
 	#endif
 // ********************************************** //
+
+
+// ************* INICIALIZACION ************* //
+	#include "adc_dac_init.h"
+// ****************************************** //
+
 
 #endif /* ADC_DAC_HEADER_H_ */

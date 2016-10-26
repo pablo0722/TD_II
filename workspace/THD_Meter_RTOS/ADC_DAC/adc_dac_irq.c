@@ -16,42 +16,54 @@
 		Status transf_success;
 		int i;
 
-		#if USE_ADC_EXTERNO
-			transf_success = Chip_GPDMA_Interrupt(LPC_GPDMA, ADC_DMA_CHANNEL);
-			if (transf_success == SUCCESS) // Se fija si interrumpio el ADC
+		#if USE_ADC
+			if(Chip_GPDMA_Interrupt(LPC_GPDMA, canal_adc)) // Se fija si interrumpio el ADC
 			{
-					// Copiar buffer del adc al del dac
+					// Shiftear el dato antes de enviar por DAC
 				for(i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
 				{
-					dma_memory_dac[i] = /*ADC_DR_RESULT*/(dma_memory_adc[i] << 8);
+					dma_memory_adc[i] = /*ADC_DR_RESULT*/(dma_memory_adc[i]);
 				}
 
 					// Cuando interrumpe el ADC, envia al DAC
-				transf_success = Chip_GPDMA_Transfer(LPC_GPDMA, canal_dac,
-						(uint32_t) dma_memory_dac, (uint32_t) (GPDMA_CONN_I2S_Channel_1),
-						GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA, DAC_DMA_CANT_MUESTRAS);
-				if(transf_success == ERROR)
-				{
-					transf_success = SUCCESS;
-				}
+				#if DEBUG_MODE
+					transf_success =
+				#endif
+
+				Chip_GPDMA_SGTransfer(LPC_GPDMA, canal_dac,
+										&DMA_descriptor_DAC,
+										GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
+
+				#if DEBUG_MODE
+					if(transf_success == ERROR)
+					{
+						printf("[error] interrupcion DMA:");
+						printf("%d, %s", __LINE__, __FILE__);
+					}
+				#endif
 			}
-			Chip_GPDMA_ClearIntPending (LPC_GPDMA, GPDMA_STATCLR_INTTC, ADC_DMA_CHANNEL);
 		#endif
 
-		#if USE_DAC_EXTERNO
-			transf_success = Chip_GPDMA_Interrupt(LPC_GPDMA, DAC_DMA_CHANNEL);
-			if (transf_success == SUCCESS) // Se fija si interrumpio el DAC
+		#if USE_DAC
+			if(Chip_GPDMA_Interrupt(LPC_GPDMA, canal_dac)) // Se fija si interrumpio el DAC
 			{
 					// Cuando interrumpe el DAC, recibo desde el ADC
-				transf_success = Chip_GPDMA_Transfer(LPC_GPDMA, canal_adc,
-						(uint32_t) (GPDMA_CONN_I2S_Channel_1), (uint32_t) dma_memory_adc,
-						GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, ADC_DMA_CANT_MUESTRAS);
-				if(transf_success == ERROR)
-				{
-					transf_success = SUCCESS;
-				}
+				#if DEBUG_MODE
+					transf_success =
+				#endif
+
+				Chip_GPDMA_SGTransfer(LPC_GPDMA, canal_adc,
+										&DMA_descriptor_ADC,
+										GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
+
+				#if DEBUG_MODE
+					if(transf_success == ERROR)
+					{
+						printf("[error] interrupcion DMA:");
+						printf("%d, %s", __LINE__, __FILE__);
+					}
+				#endif
 			}
-			Chip_GPDMA_ClearIntPending (LPC_GPDMA, GPDMA_STATCLR_INTTC, DAC_DMA_CHANNEL);
 		#endif
 	}
 #endif
