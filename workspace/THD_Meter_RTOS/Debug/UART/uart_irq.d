@@ -63,6 +63,7 @@ UART/uart_irq.o UART/uart_irq.d: ../UART/uart_irq.c ../UART/uart_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h \
  ../UART/uart_init.h
 
 ../UART/uart_header.h:
@@ -194,5 +195,7 @@ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h:
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h:
 
 ../UART/uart_init.h:

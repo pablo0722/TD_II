@@ -18,6 +18,7 @@
 	#if (USE_DAC_INTERNO)
 		void main_dac();
 		void main_dac_aux();
+		uint32_t set_data (uint32_t data);
 	#endif
 // ****************************** //
 
@@ -54,21 +55,36 @@
 
 		#define CH_L				1
 		#define CH_R				2
+
+		#define BUFFER_A_PINGPONG	0
+		#define	BUFFER_B_PINGPONG	1
 	#endif
 // ******************************************* //
 
 
 // ************* VARIABLES GLOBALES ************* //
 	#if USE_ADC
-		extern DMA_TransferDescriptor_t DMA_descriptor_ADC;
-		extern volatile uint32_t dma_memory_adc[ADC_DMA_CANT_MUESTRAS];
+		extern volatile DMA_TransferDescriptor_t DMA_descriptor_ADC_A;		// Descriptor del buffer A del Ping-Pong del ADC
+		extern volatile DMA_TransferDescriptor_t DMA_descriptor_ADC_B;		// Descriptor del buffer B del Ping-Pong del ADC
+
+		extern volatile uint32_t dma_memory_adc_A[ADC_DMA_CANT_MUESTRAS];	// Buffer A del Ping-Pong del ADC
+		extern volatile uint32_t dma_memory_adc_B[ADC_DMA_CANT_MUESTRAS];	// Buffer B del Ping-Pong del ADC
+
 		extern volatile uint8_t canal_adc;
+
+		extern volatile uint8_t adc_buffer = BUFFER_A_PINGPONG;
 	#endif
 
 	#if USE_DAC
-		extern DMA_TransferDescriptor_t DMA_descriptor_DAC;
-		extern volatile uint32_t dma_memory_dac[DAC_DMA_CANT_MUESTRAS];
+		extern DMA_TransferDescriptor_t DMA_descriptor_DAC_A;				// Descriptor del buffer A del Ping-Pong del DAC
+		extern DMA_TransferDescriptor_t DMA_descriptor_DAC_B;				// Descriptor del buffer B del Ping-Pong del DAC
+
+		extern volatile uint16_t dma_memory_dac_A[DAC_DMA_CANT_MUESTRAS];	// Buffer A del Ping-Pong del DAC
+		extern volatile uint16_t dma_memory_dac_B[DAC_DMA_CANT_MUESTRAS];	// Buffer B del Ping-Pong del DAC
+
 		extern volatile uint8_t canal_dac;
+
+		extern volatile uint8_t dac_buffer = BUFFER_A_PINGPONG;
 	#endif
 
 	#if (USE_ADC_EXTERNO)||(USE_DAC_EXTERNO)

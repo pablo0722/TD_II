@@ -15955,17 +15955,17 @@ void arm_rfft_fast_f32(
 #define USE_UART OFF
 #define USE_ADC ON
 #define USE_DAC ON
-#define USE_FFT OFF
-#define USE_RTOS OFF
+#define USE_FFT ON
+#define USE_RTOS ON
 
 
 
 
 #define DEBUG_MODE ON
-# 66 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+# 70 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_ADC_INTERNO OFF
 #define USE_ADC_EXTERNO ON
-# 77 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+# 81 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define ADC_EXTERNO_INTERRUPCION 0
 #define ADC_EXTERNO_DMA 1
 #define ADC_EXTERNO_MODO ADC_EXTERNO_DMA
@@ -15982,7 +15982,7 @@ void arm_rfft_fast_f32(
 #define DAC_INTERNO_INTERRUPCION 0
 #define DAC_INTERNO_DMA 1
 #define DAC_INTERNO_MODO DAC_INTERNO_INTERRUPCION
-# 109 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+# 113 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_DMA ON
 
 
@@ -16001,13 +16001,85 @@ void arm_rfft_fast_f32(
 
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 1
 # 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
-# 68 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
+  void fft_function();
+
+
+
+
+
+
+#define FFT_SIZE 512
+
+
+#define FFT_STATUS_EMPTY 0
+#define FFT_STATUS_TO_DO 1
+#define FFT_STATUS_DONE 2
+
+
+#define IFFT_STATUS_EMPTY 0
+#define IFFT_STATUS_TO_DO 1
+#define IFFT_STATUS_DONE 2
+
+
+
+
+
+
+  extern arm_rfft_instance_q31 fft_inst_q31;
+  extern arm_rfft_instance_q31 ifft_inst_q31;
+
+  extern volatile q31_t fft_in[512];
+  extern volatile q31_t fft_out_cmplx[512*2];
+  extern volatile q31_t fft_out_dep[512];
+  extern volatile q31_t fft_out_rem[512];
+
+  extern volatile q31_t fft_max_val;
+  extern volatile uint32_t fft_max_index;
+
+  extern volatile q31_t THD;
+
+  extern volatile uint8_t fft_status;
+  extern volatile uint8_t ifft_status;
+
+
+
+
+
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h" 1
 # 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
 #define FFT_INIT_FFT_LENGTH FFT_SIZE
+#define FFT_INIT_FFT TRUE
 #define FFT_INIT_IFFT FALSE
 #define FFT_INIT_BIT_REVERSE TRUE
-# 69 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
+
+
+
+ static inline void fft_init()
+ {
+  static arm_cfft_radix4_instance_q31 fft_inst_q31_complex;
+
+   printf("[info] init FFT: \r\n");
+   printf("\t format: q31 \r\n");
+   printf("\t fftLength(solo parte real): %d \r\n", 512);
+
+
+
+   arm_status st =
+
+
+  arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, 512, TRUE, TRUE);
+  arm_rfft_init_q31(&ifft_inst_q31, &fft_inst_q31_complex, 512, FALSE, TRUE);
+
+
+   if(st != ARM_MATH_SUCCESS)
+   {
+    printf("[error] FFT init: \r\n");
+    printf("\t st = %d \r\n", st);
+   }
+
+ }
+# 82 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
 # 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h" 1
 # 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
@@ -16470,6 +16542,84 @@ void arm_rfft_fast_f32(
  }
 # 83 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 2
 # 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
-# 26 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h"
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h" 1
+# 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h"
+#define RTOS_HEADER_H_ 
+# 21 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h"
+  void task_init();
+  void vTask_THD( void *pvParameters );
+
+
+
+
+
+ void vTask_THD( void *pvParameters );
+
+
+
+
+
+
+#define QUEUE_LEN_IN 1
+#define QUEUE_LEN_REM QUEUE_LEN_IN
+#define QUEUE_LEN_THD 1
+
+
+#define QUEUE_ITEM_SIZE_IN (sizeof(short int)*FFT_SIZE)
+
+
+
+
+#define QUEUE_ITEM_SIZE_REM QUEUE_ITEM_SIZE_IN
+#define QUEUE_ITEM_SIZE_THD (sizeof(float))
+
+
+
+
+
+
+  extern QueueHandle_t xQueue_in;
+  extern QueueHandle_t xQueue_rem;
+  extern QueueHandle_t xQueue_THD;
+# 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 63 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h"
  void main_while();
 # 11 "../FFT/fft_main.c" 2
+
+
+
+
+ void fft_function()
+ {
+  if(fft_status == 1)
+  {
+   arm_rfft_q31(&fft_inst_q31, (q31_t *)fft_in, (q31_t *)fft_out_cmplx);
+   arm_cmplx_mag_q31((q31_t *)fft_out_cmplx, (q31_t *)fft_out_dep, 512*2);
+
+
+   arm_mult_q31(
+       (q31_t *) fft_out_dep,
+       (q31_t *) fft_out_dep,
+       (q31_t *) fft_out_dep,
+       512);
+
+
+   arm_max_q31 ( (q31_t *) fft_out_dep,
+       512,
+       (q31_t *) fft_max_val,
+       (uint32_t *) fft_max_index
+      );
+
+   fft_status = 2;
+  }
+ }
+
+ void ifft_function()
+ {
+  if(ifft_status == 1)
+  {
+   arm_rfft_q31(&ifft_inst_q31, (q31_t *)fft_out_cmplx, (q31_t *)fft_out_rem);
+
+   ifft_status = 2;
+  }
+ }

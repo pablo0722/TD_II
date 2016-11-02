@@ -77,6 +77,10 @@
 		 * * DMACTC[15:0] — DMA terminal count signals. The DMACTC signal can be used by the DMA controller to indicate to the peripheral that the DMA transfer is complete.
 		 */
 
+		#if DEBUG_MODE
+			printf("[info] Init DMA \r\n");
+		#endif
+
 		Chip_GPDMA_Init(LPC_GPDMA);
 
 			// Setting GPDMA interrupt
@@ -86,39 +90,53 @@
 
 
 		#if (USE_DAC_EXTERNO)
-			canal_dac = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
-			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_DAC,
-											(uint32_t) dma_memory_adc, (uint32_t) GPDMA_CONN_I2S_Channel_0,
-											DAC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA, NULL);
-			DMA_descriptor_DAC.dst = GPDMA_CONN_I2S_Channel_0;
 		#elif (USE_DAC_INTERNO)
+			#if DEBUG_MODE
+				printf("\t init buffers DAC interno \r\n");
+			#endif
+
+			// Pido un canal disponible al GPDMA para el DAC
 			canal_dac = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
-			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_DAC,
-											(uint32_t) dma_memory_adc, (uint32_t) GPDMA_CONN_DAC,
+
+			// Preparo el descriptor para el BUFFER_A
+			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_DAC_A,
+											(uint32_t) dma_memory_adc_A, (uint32_t) GPDMA_CONN_DAC,
 											DAC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA, NULL);
-			DMA_descriptor_DAC.dst = GPDMA_CONN_DAC;
+			DMA_descriptor_DAC_A.dst = GPDMA_CONN_DAC;
+
+			// Preparo el descriptor para el BUFFER_B
+			canal_dac = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
+			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_DAC_B,
+											(uint32_t) dma_memory_adc_B, (uint32_t) GPDMA_CONN_DAC,
+											DAC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA, NULL);
+			DMA_descriptor_DAC_B.dst = GPDMA_CONN_DAC;
 		#endif
 
 		#if (USE_ADC_EXTERNO)
-			canal_adc = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
-			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_ADC,
-											(uint32_t) GPDMA_CONN_I2S_Channel_1, (uint32_t) dma_memory_adc,
-											ADC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, NULL);
-			DMA_descriptor_ADC.src = GPDMA_CONN_I2S_Channel_1;
+			#if DEBUG_MODE
+				printf("\t init buffers ADC externo \r\n");
+			#endif
 
+			// Pido un canal disponible al GPDMA para el ADC
+			canal_adc = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
+
+			// Preparo el descriptor para el BUFFER_A
+			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_ADC_A,
+											(uint32_t) GPDMA_CONN_I2S_Channel_1, (uint32_t) dma_memory_adc_A,
+											ADC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, NULL);
+			DMA_descriptor_ADC_A.src = GPDMA_CONN_I2S_Channel_1;
+
+			// Preparo el descriptor para el BUFFER_B
+			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_ADC_B,
+											(uint32_t) GPDMA_CONN_I2S_Channel_1, (uint32_t) dma_memory_adc_B,
+											ADC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, NULL);
+			DMA_descriptor_ADC_B.src = GPDMA_CONN_I2S_Channel_1;
+
+			// Inicio la transmición del ADC -> MEMORY usando el BUFFER_A
 			Chip_GPDMA_SGTransfer(LPC_GPDMA, canal_adc,
-									&DMA_descriptor_ADC,
+									&DMA_descriptor_ADC_A,
 									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
 		#elif (USE_ADC_INTERNO)
-			canal_adc = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
-			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_ADC,
-											(uint32_t) GPDMA_CONN_ADC, (uint32_t) dma_memory_adc,
-											ADC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, NULL);
-			DMA_descriptor_ADC.src = GPDMA_CONN_ADC;
-
-			Chip_GPDMA_SGTransfer(LPC_GPDMA, canal_adc,
-									&DMA_descriptor_ADC,
-									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
 		#endif
 	}
 #endif
@@ -282,6 +300,10 @@
 	{
 		static char init_flag = 0;
 
+		#if DEBUG_MODE
+			printf("[info] Init I2S \r\n");
+		#endif
+
 		if(!init_flag)
 		{
 			// Configuro los pines de RX de P0, ver defines
@@ -363,9 +385,9 @@
 	STATIC INLINE void dac_init()
 	{
 		#if DEBUG_MODE
-		printf("[info] Init DAC \r\n");
-		printf("\t DAC freq %d \r\n", DAC_FREQ);
-		printf("\t DMA buff size %d \r\n", DAC_DMA_CANT_MUESTRAS);
+			printf("[info] Init DAC \r\n");
+			printf("\t DAC freq %d \r\n", DAC_FREQ);
+			printf("\t DMA buff size %d \r\n", DAC_DMA_CANT_MUESTRAS);
 		#endif
 
 		Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_DAC, SYSCTL_CLKDIV_4);

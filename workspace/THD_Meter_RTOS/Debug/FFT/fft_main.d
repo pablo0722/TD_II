@@ -64,7 +64,8 @@ FFT/fft_main.o FFT/fft_main.d: ../FFT/fft_main.c \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h \
- D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:
 
@@ -197,3 +198,5 @@ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h:
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h:

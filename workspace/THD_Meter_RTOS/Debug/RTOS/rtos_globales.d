@@ -64,7 +64,8 @@ RTOS/rtos_globales.o RTOS/rtos_globales.d: ../RTOS/rtos_globales.c \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h \
- D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:
 
@@ -197,3 +198,5 @@ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h:
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h:

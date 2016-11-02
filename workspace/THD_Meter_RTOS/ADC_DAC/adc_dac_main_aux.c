@@ -6,6 +6,7 @@
  */
 
 
+/*
 
 
 #include "header.h"
@@ -105,7 +106,7 @@
 	void main_dac_aux()
 	{
 		#if (DEBUG_MODE)
-/*
+
 			static uint32_t IntStat = -1;
 			if(IntStat != DMACIntStat)
 			{
@@ -231,8 +232,10 @@
 				C1Config = DMACC1Config;
 				printf("DMACC1Config: %d%d%d%d %d%d%d%d %d%d%d%d %d%d%d%d %d%d%d%d %d%d%d%d %d%d%d%d %d%d%d%d \r\n", BYTE_TO_BINARY_32(C1Config));
 			}
-*/
+
 		#endif
 	}
 #endif
+
+*/
 

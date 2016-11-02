@@ -13,16 +13,30 @@
 #if USE_DMA
 	void DMA_IRQHandler(void)
 	{
-		Status transf_success;
-		int i;
+		#if DEBUG_MODE
+			Status transf_success;
+		#endif
 
 		#if USE_ADC
 			if(Chip_GPDMA_Interrupt(LPC_GPDMA, canal_adc)) // Se fija si interrumpio el ADC
 			{
-					// Shiftear el dato antes de enviar por DAC
-				for(i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
+				uint32_t *dma_memory_adc = NULL;
+				DMA_TransferDescriptor_t *DMA_descriptor_DAC
+				if(adc_buffer == BUFFER_A_PINGPONG)
 				{
-					dma_memory_adc[i] = /*ADC_DR_RESULT*/(dma_memory_adc[i]);
+					dma_memory_adc = dma_memory_adc_A;
+					DMA_descriptor_DAC = &DMA_descriptor_DAC_A;
+				}
+				else
+				{
+					uint32_t *dma_memory_adc = dma_memory_adc_B;
+					DMA_descriptor_DAC = &DMA_descriptor_DAC_B;
+				}
+
+					// Shiftear el dato antes de enviar por DAC
+				for(int i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
+				{
+					dma_memory_dac[i] = set_data(dma_memory_adc[i]);
 				}
 
 					// Cuando interrumpe el ADC, envia al DAC
@@ -30,9 +44,15 @@
 					transf_success =
 				#endif
 
-				Chip_GPDMA_SGTransfer(LPC_GPDMA, canal_dac,
-										&DMA_descriptor_DAC,
-										GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
+				#if USE_DAC
+					Chip_GPDMA_SGTransfer(LPC_GPDMA, canal_dac,
+											DMA_descriptor_DAC,
+											GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
+				#else
+					Chip_GPDMA_SGTransfer(LPC_GPDMA, canal_adc,
+											&DMA_descriptor_DAC,
+											GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
+				#endif
 
 				#if DEBUG_MODE
 					if(transf_success == ERROR)

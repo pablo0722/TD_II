@@ -35,13 +35,17 @@
 	#define USE_UART	OFF
 	#define USE_ADC		ON
 	#define USE_DAC		ON
-	#define USE_FFT		OFF
-	#define USE_RTOS	OFF
+	#define USE_FFT		ON
+	#define USE_RTOS	ON
 // ****************************** //
 
 
 // ***** UTILIDADES (main while) ***** //
 	#define DEBUG_MODE			ON
+
+	#if (USE_UART) && (USE_FFT)
+		#define UART_FFT_LOOPBACK	ON
+	#endif
 
 	#if (USE_UART)
 			// Numero de UART a utilizar

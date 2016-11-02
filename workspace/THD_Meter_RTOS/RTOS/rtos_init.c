@@ -15,9 +15,9 @@
 	void task_init()
 	{
 			// Inicializacion de colas
-		xQueue_in = xQueueCreate(QUEUE_LEN_IN, QUEUE_ITEM_SIZE_IN);
-		xQueue_rem = xQueueCreate(QUEUE_LEN_REM, QUEUE_ITEM_SIZE_REM);
-		xQueue_THD = xQueueCreate(QUEUE_LEN_THD, QUEUE_ITEM_SIZE_THD);
+		//xQueue_in = xQueueCreate(QUEUE_LEN_IN, QUEUE_ITEM_SIZE_IN);
+		//xQueue_rem = xQueueCreate(QUEUE_LEN_REM, QUEUE_ITEM_SIZE_REM);
+		//xQueue_THD = xQueueCreate(QUEUE_LEN_THD, QUEUE_ITEM_SIZE_THD);
 
 		xTaskCreate(vTask_THD, "vTask_THD", configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
 				(xTaskHandle *) NULL);

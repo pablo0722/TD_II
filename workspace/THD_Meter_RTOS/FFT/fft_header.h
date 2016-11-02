@@ -47,19 +47,32 @@
 		#define	FFT_STATUS_EMPTY 	0	// No hay FFT realizada ni pedido para realizarla
 		#define	FFT_STATUS_TO_DO 	1	// Orden para realizar la FFT
 		#define	FFT_STATUS_DONE 	2	// FFT realizada
+
+			// estados del flag 'ifft_status'
+		#define	IFFT_STATUS_EMPTY 	0	// No hay FFT realizada ni pedido para realizarla
+		#define	IFFT_STATUS_TO_DO 	1	// Orden para realizar la FFT
+		#define	IFFT_STATUS_DONE 	2	// FFT realizada
 	#endif
 // ******************************************* //
 
 
 // ************* VARIABLES GLOBALES ************* //
 	#if USE_FFT
-		extern arm_rfft_instance_q31 fft_inst_q31;					// Estructura para aplicar FFT
-		extern arm_cfft_radix4_instance_q31 fft_inst_q31_complex;	// Estructura para aplicar FFT
+		extern arm_rfft_instance_q31 fft_inst_q31;			// Estructura para aplicar FFT
+		extern arm_rfft_instance_q31 ifft_inst_q31;			// Estructura para aplicar IFFT
 
-		extern volatile q31_t fft_vector[FFT_SIZE];				// Espectro de la senal transformada (el "*2" es porque es real e imaginario)
-		extern volatile q31_t fft_vector_out[FFT_SIZE*2];				// Espectro de la senal transformada (el "*2" es porque es real e imaginario)
+		extern volatile q31_t fft_in[FFT_SIZE];				// Espectro de la senal a transformar
+		extern volatile q31_t fft_out_cmplx[FFT_SIZE*2];	// Espectro de la senal transformada compleja
+		extern volatile q31_t fft_out_dep[FFT_SIZE];		// Densidad espectral de potencia
+		extern volatile q31_t fft_out_rem[FFT_SIZE];		// Senal temporal remanente (sin fundamental)
 
-		extern uint8_t fft_status;									// Estado de la FFT
+		extern volatile q31_t fft_max_val;					// max de la dep
+		extern volatile uint32_t fft_max_index;				// posición de la dep
+
+		extern volatile q31_t THD;
+
+		extern volatile uint8_t fft_status;					// Estado de la FFT
+		extern volatile uint8_t ifft_status;				// Estado de la IFFT
 	#endif
 // ********************************************** //
 

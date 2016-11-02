@@ -13,12 +13,15 @@
 #include "header.h"
 
 
-void main_uninit()
-{
-	/* DeInitialize UART1 peripheral */
-	NVIC_DisableIRQ(UART0_IRQn);
-	Chip_UART_DeInit(LPC_UART0);
-}
+#if (!USE_RTOS)
+	static void main_uninit()
+	{
+		/* DeInitialize UART1 peripheral */
+		NVIC_DisableIRQ(UART0_IRQn);
+		Chip_UART_DeInit(LPC_UART0);
+	}
+#endif
+
 
 int main(void)
 {

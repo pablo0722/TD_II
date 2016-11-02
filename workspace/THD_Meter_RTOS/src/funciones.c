@@ -10,7 +10,7 @@
 
 void main_while()
 {
-	#if (USE_FFT)
+	#if (UART_FFT_LOOPBACK)
 		// Para hacer la FFT que entra por UART0
 		if(uart0_rx_status == UART_STATUS_LEIDO && fft_status != FFT_STATUS_TO_DO)
 		{
