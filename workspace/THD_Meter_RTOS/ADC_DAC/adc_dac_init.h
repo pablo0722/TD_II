@@ -136,6 +136,7 @@
 			Chip_GPDMA_SGTransfer(LPC_GPDMA, canal_adc,
 									&DMA_descriptor_ADC_A,
 									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
+			dma_adc_ext_status = PINGPONG_TRANSMITIENDO_A;
 		#elif (USE_ADC_INTERNO)
 		#endif
 	}

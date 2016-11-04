@@ -11,33 +11,33 @@
 
 
 
-#if USE_ADC
-	volatile DMA_TransferDescriptor_t DMA_descriptor_ADC_A;		// Descriptor del buffer A del Ping-Pong del ADC
-	volatile DMA_TransferDescriptor_t DMA_descriptor_ADC_B;		// Descriptor del buffer B del Ping-Pong del ADC
+#if USE_ADC_EXTERNO
+	volatile DMA_TransferDescriptor_t dma_adc_ext_descriptor_A;		// Descriptor del buffer A del Ping-Pong del ADC
+	volatile DMA_TransferDescriptor_t dma_adc_ext_descriptor_B;		// Descriptor del buffer B del Ping-Pong del ADC
 
-	volatile uint32_t dma_memory_adc_A[ADC_DMA_CANT_MUESTRAS]	// Buffer A del Ping-Pong del ADC
-									   __attribute__ ((section (".data.$RamAHB32")));
+	volatile uint32_t dma_adc_ext_memory_A[ADC_DMA_CANT_MUESTRAS]	// Buffer A del Ping-Pong del ADC
+									   __attribute__ ((section (".bss.$RamAHB32")));
 
-	volatile uint32_t dma_memory_adc_B[ADC_DMA_CANT_MUESTRAS]	// Buffer B del Ping-Pong del ADC
-									   __attribute__ ((section (".data.$RamAHB32")));
+	volatile uint32_t dma_adc_ext_memory_B[ADC_DMA_CANT_MUESTRAS]	// Buffer B del Ping-Pong del ADC
+									   __attribute__ ((section (".bss.$RamAHB32")));
 
-	volatile uint8_t canal_adc;
+	volatile uint8_t dma_adc_ext_canal;
 
-	volatile uint8_t adc_buffer = BUFFER_A_PINGPONG;
+	volatile uint8_t dma_dac_int_status = PINGPONG_IDLE;
 #endif
 
 #if USE_DAC_INTERNO
-	DMA_TransferDescriptor_t DMA_descriptor_DAC_A;				// Descriptor del buffer A del Ping-Pong del DAC
-	DMA_TransferDescriptor_t DMA_descriptor_DAC_B;				// Descriptor del buffer B del Ping-Pong del DAC
+	DMA_TransferDescriptor_t dma_dac_int_descriptor_A;				// Descriptor del buffer A del Ping-Pong del DAC
+	DMA_TransferDescriptor_t dma_dac_int_descriptor_B;				// Descriptor del buffer B del Ping-Pong del DAC
 
-	volatile uint16_t dma_memory_dac_A[DAC_DMA_CANT_MUESTRAS]	// Buffer A del Ping-Pong del DAC
-									   __attribute__ ((section (".data.$RamAHB32")));
-	volatile uint16_t dma_memory_dac_B[DAC_DMA_CANT_MUESTRAS]	// Buffer B del Ping-Pong del DAC
-									   __attribute__ ((section (".data.$RamAHB32")));
+	volatile uint16_t dma_dac_int_memory_A[DAC_DMA_CANT_MUESTRAS]	// Buffer A del Ping-Pong del DAC
+									   __attribute__ ((section (".bss.$RamAHB32")));
+	volatile uint16_t dma_dac_int_memory_B[DAC_DMA_CANT_MUESTRAS]	// Buffer B del Ping-Pong del DAC
+									   __attribute__ ((section (".bss.$RamAHB32")));
 
-	volatile uint8_t canal_dac;
+	volatile uint8_t dma_dac_int_canal;
 
-	volatile uint8_t dac_buffer = BUFFER_A_PINGPONG;
+	volatile uint8_t dma_dac_int_status = PINGPONG_IDLE;
 #endif
 
 

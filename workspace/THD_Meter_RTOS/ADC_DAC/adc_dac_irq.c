@@ -13,76 +13,44 @@
 #if USE_DMA
 	void DMA_IRQHandler(void)
 	{
-		#if DEBUG_MODE
-			Status transf_success;
-		#endif
-
-		#if USE_ADC
-			if(Chip_GPDMA_Interrupt(LPC_GPDMA, canal_adc)) // Se fija si interrumpio el ADC
+		#if USE_ADC_EXTERNO
+			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_adc_ext_canal)) // Se fija si interrumpio el ADC externo
 			{
-				uint32_t *dma_memory_adc = NULL;
-				DMA_TransferDescriptor_t *DMA_descriptor_DAC
-				if(adc_buffer == BUFFER_A_PINGPONG)
+				uint32_t *dma_adc_ext_memory;
+				DMA_TransferDescriptor_t *dma_adc_ext_descriptor;
+
+				if(dma_adc_ext_status == PINGPONG_TRANSFIRIENDO_A)	// Si SOLO estaba transfiriendo buffer A, ya termino de transferir. Hago transfer B y proceso A
 				{
-					dma_memory_adc = dma_memory_adc_A;
-					DMA_descriptor_DAC = &DMA_descriptor_DAC_A;
+					dma_adc_ext_status = PINGPONG_TRANS_B_PROC_A;
+
+					Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_adc_ext_canal,
+											&dma_adc_ext_descriptor,
+											GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
+				}
+				else if(dma_adc_ext_status == PINGPONG_TRANSFIRIENDO_B)	// Si SOLO estaba transfiriendo buffer A, ya termino de transferir. Hago transfer B y proceso A
+				{
+					dma_adc_ext_status = PINGPONG_TRANS_A_PROC_B;
+
+					Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_adc_ext_canal,
+											&dma_adc_ext_descriptor,
+											GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
 				}
 				else
 				{
-					uint32_t *dma_memory_adc = dma_memory_adc_B;
-					DMA_descriptor_DAC = &DMA_descriptor_DAC_B;
+					// Si termino de transferir antes de terminar procesamiento, doy una senal con PINGPONG_PROC2ERR para que
+					// se continue con la transferencia luego de terminar procesamiento
+					PINGPONG_PROC2ERR(dma_adc_ext_status);
+
+					#if DEBUG_MODE
+						printf("[warning] ADC externo interrumpio antes de terminar procesamiento\r\n");
+					#endif
 				}
-
-					// Shiftear el dato antes de enviar por DAC
-				for(int i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
-				{
-					dma_memory_dac[i] = set_data(dma_memory_adc[i]);
-				}
-
-					// Cuando interrumpe el ADC, envia al DAC
-				#if DEBUG_MODE
-					transf_success =
-				#endif
-
-				#if USE_DAC
-					Chip_GPDMA_SGTransfer(LPC_GPDMA, canal_dac,
-											DMA_descriptor_DAC,
-											GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
-				#else
-					Chip_GPDMA_SGTransfer(LPC_GPDMA, canal_adc,
-											&DMA_descriptor_DAC,
-											GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
-				#endif
-
-				#if DEBUG_MODE
-					if(transf_success == ERROR)
-					{
-						printf("[error] interrupcion DMA:");
-						printf("%d, %s", __LINE__, __FILE__);
-					}
-				#endif
 			}
 		#endif
 
-		#if USE_DAC
-			if(Chip_GPDMA_Interrupt(LPC_GPDMA, canal_dac)) // Se fija si interrumpio el DAC
+		#if USE_DAC_INTERNO
+			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_dac_int_canal)) // Se fija si interrumpio el DAC interno
 			{
-					// Cuando interrumpe el DAC, recibo desde el ADC
-				#if DEBUG_MODE
-					transf_success =
-				#endif
-
-				Chip_GPDMA_SGTransfer(LPC_GPDMA, canal_adc,
-										&DMA_descriptor_ADC,
-										GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
-
-				#if DEBUG_MODE
-					if(transf_success == ERROR)
-					{
-						printf("[error] interrupcion DMA:");
-						printf("%d, %s", __LINE__, __FILE__);
-					}
-				#endif
 			}
 		#endif
 	}
