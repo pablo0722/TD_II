@@ -17,6 +17,8 @@ SUBDIRS := \
 ADC_DAC \
 FFT \
 RTOS \
+TFT \
+TIMER \
 UART \
 src \
 

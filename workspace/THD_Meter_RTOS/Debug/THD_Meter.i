@@ -15993,6 +15993,7 @@ void arm_rfft_fast_f32(
 
 
 #define USE_UART OFF
+#define USE_TIMER ON
 #define USE_ADC ON
 #define USE_DAC ON
 #define USE_FFT ON
@@ -16002,10 +16003,10 @@ void arm_rfft_fast_f32(
 
 
 #define DEBUG_MODE ON
-# 70 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+# 71 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_ADC_INTERNO OFF
 #define USE_ADC_EXTERNO ON
-# 81 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+# 82 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define ADC_EXTERNO_INTERRUPCION 0
 #define ADC_EXTERNO_DMA 1
 #define ADC_EXTERNO_MODO ADC_EXTERNO_DMA
@@ -16022,7 +16023,7 @@ void arm_rfft_fast_f32(
 #define DAC_INTERNO_INTERRUPCION 0
 #define DAC_INTERNO_DMA 1
 #define DAC_INTERNO_MODO DAC_INTERNO_INTERRUPCION
-# 113 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+# 114 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_DMA ON
 
 
@@ -16049,7 +16050,15 @@ void arm_rfft_fast_f32(
 
 
 
-#define FFT_SIZE 512
+#define FFT_SIZE_32 32
+#define FFT_SIZE_64 64
+#define FFT_SIZE_128 128
+#define FFT_SIZE_256 256
+#define FFT_SIZE_512 512
+#define FFT_SIZE_1024 1024
+#define FFT_SIZE_2048 2048
+#define FFT_SIZE_4096 4096
+#define FFT_SIZE FFT_SIZE_2048
 
 
 #define FFT_STATUS_EMPTY 0
@@ -16068,19 +16077,6 @@ void arm_rfft_fast_f32(
 
   extern arm_rfft_instance_q31 fft_inst_q31;
   extern arm_rfft_instance_q31 ifft_inst_q31;
-
-  extern volatile q31_t fft_in[512];
-  extern volatile q31_t fft_out_cmplx[512*2];
-  extern volatile q31_t fft_out_dep[512];
-  extern volatile q31_t fft_out_rem[512];
-
-  extern volatile q31_t fft_max_val;
-  extern volatile uint32_t fft_max_index;
-
-  extern volatile q31_t THD;
-
-  extern volatile uint8_t fft_status;
-  extern volatile uint8_t ifft_status;
 
 
 
@@ -16101,15 +16097,15 @@ void arm_rfft_fast_f32(
 
    printf("[info] init FFT: \r\n");
    printf("\t format: q31 \r\n");
-   printf("\t fftLength(solo parte real): %d \r\n", 512);
+   printf("\t fftLength(solo parte real): %d \r\n", 2048);
 
 
 
    arm_status st =
 
 
-  arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, 512, TRUE, TRUE);
-  arm_rfft_init_q31(&ifft_inst_q31, &fft_inst_q31_complex, 512, FALSE, TRUE);
+  arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, 2048, TRUE, TRUE);
+  arm_rfft_init_q31(&ifft_inst_q31, &fft_inst_q31_complex, 2048, FALSE, TRUE);
 
 
    if(st != ARM_MATH_SUCCESS)
@@ -16119,7 +16115,35 @@ void arm_rfft_fast_f32(
    }
 
  }
-# 82 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
+# 77 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_func.h" 1
+# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_func.h"
+ static inline void fft_toCmplx(q31_t fft_in_real[2048], q31_t fft_out_cmplx[2048*2])
+ {
+  arm_rfft_q31(&fft_inst_q31, fft_in_real, fft_out_cmplx);
+ }
+
+ static inline void fft_toDep(q31_t fft_in_cmplx[2048*2], q31_t fft_out_dep[2048/2])
+ {
+  q31_t aux_fft_out_dep[2048];
+
+  arm_cmplx_mag_q31(fft_in_cmplx, aux_fft_out_dep, 2048*2);
+
+  memcpy(fft_out_dep, aux_fft_out_dep, 2048/2);
+
+
+  arm_mult_q31(
+      (q31_t *) fft_out_dep,
+      (q31_t *) fft_out_dep,
+      (q31_t *) fft_out_dep,
+      2048);
+ }
+
+ static inline void fft_toReal(q31_t fft_in_cmplx[2048], q31_t fft_out_real[2048])
+ {
+  arm_rfft_q31(&ifft_inst_q31, fft_in_cmplx, fft_out_real);
+ }
+# 78 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
 # 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h" 1
 # 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
@@ -16236,9 +16260,16 @@ void arm_rfft_fast_f32(
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 1
 # 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
 #define ADC_DAC_HEADER_H_ 
-# 19 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-  void main_dac();
-  void main_dac_aux();
+# 18 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+  void main_adc_pre();
+  void main_adc_post();
+
+
+
+
+
+  void main_adc_task_pre();
+  void main_adc_task_post();
 
 
 
@@ -16246,7 +16277,7 @@ void arm_rfft_fast_f32(
 
 
 #define ADC_FREQ 20000
-#define ADC_DMA_CANT_MUESTRAS 8
+#define ADC_DMA_CANT_MUESTRAS 2048
 #define ADC_DMA_CHANNEL 1
 
 
@@ -16256,9 +16287,6 @@ void arm_rfft_fast_f32(
 #define DAC_DMA_CHANNEL 0
 
 
-
-#define I2S_INT_POLLING 1
-#define I2S_DMA (!(I2S_INT_POLLING))
 
 #define LED_stick 0,22
 #define AOUT 0,26
@@ -16275,21 +16303,71 @@ void arm_rfft_fast_f32(
 
 #define CH_L 1
 #define CH_R 2
+# 76 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+#define PINGPONG_ADC_IDLE -1
+#define PINGPONG_ADC_TRANSFIRIENDO_A 0x00
+#define PINGPONG_ADC_TRANSFIRIENDO_B 0x01
+#define PINGPONG_ADC_TRANS_A_PROC_B 0x02
+#define PINGPONG_ADC_TRANS_B_PROC_A 0x03
+#define PINGPONG_ADC_TRANS_A_PROC_B_ERR 0x04
+#define PINGPONG_ADC_TRANS_B_PROC_A_ERR 0x05
+
+#define PINGPONG_ADC_ISPROC(status) ((status & 0x06) == 0x02)
+#define PINGPONG_ADC_ISERR(status) ((status & 0x06) == 0x04)
+
+#define PINGPONG_ADC_PROC2ERR(status) status |= 0x04
+#define PINGPONG_ADC_PROC2TRANS(status) status &= 0x01
+# 113 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+#define PINGPONG_DAC_IDLE -1
+#define PINGPONG_DAC_RECIBIDO_A 0x00
+#define PINGPONG_DAC_RECIBIDO_B 0x01
+#define PINGPONG_DAC_RECIBIDO_A_ERR 0x02
+#define PINGPONG_DAC_RECIBIDO_B_ERR 0x03
+#define PINGPONG_DAC_TRANSFIRIENDO_A 0x04
+#define PINGPONG_DAC_TRANSFIRIENDO_B 0x05
+
+#define PINGPONG_DAC_ISTRANS(status) ((status & 0x04) == 0x04)
+
+#define PINGPONG_DAC_TRANS2ERR(status) status -= 0x02
 
 
 
 
 
 
-  extern DMA_TransferDescriptor_t DMA_descriptor_ADC;
-  extern volatile uint32_t dma_memory_adc[8];
-  extern volatile uint8_t canal_adc;
+
+  extern DMA_TransferDescriptor_t *dma_adc_ext_descriptor;
+  extern DMA_TransferDescriptor_t dma_adc_ext_descriptor_A;
+  extern DMA_TransferDescriptor_t dma_adc_ext_descriptor_B;
+
+  extern volatile uint32_t *dma_adc_ext_memory;
+  extern volatile uint32_t dma_adc_ext_memory_A[2048];
+  extern volatile uint32_t dma_adc_ext_memory_B[2048];
+
+  extern uint8_t dma_adc_ext_canal;
+
+  extern volatile uint8_t dma_adc_ext_status;
+
+
+   extern SemaphoreHandle_t sem_adc_pre;
+   extern SemaphoreHandle_t sem_adc_proc;
+   extern SemaphoreHandle_t sem_adc_post;
 
 
 
-  extern DMA_TransferDescriptor_t DMA_descriptor_DAC;
-  extern volatile uint32_t dma_memory_dac[8];
-  extern volatile uint8_t canal_dac;
+
+  extern Bool flag_use_dac;
+
+
+  extern DMA_TransferDescriptor_t dma_dac_int_descriptor_A;
+  extern DMA_TransferDescriptor_t dma_dac_int_descriptor_B;
+
+  extern volatile uint16_t dma_dac_int_memory_A[2048];
+  extern volatile uint16_t dma_dac_int_memory_B[2048];
+
+  extern uint8_t dma_dac_int_canal;
+
+  extern volatile uint8_t dma_dac_int_status;
 
 
 
@@ -16304,40 +16382,100 @@ void arm_rfft_fast_f32(
 # 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
  static inline void dma_init()
  {
-# 80 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+# 81 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+   printf("[info] Init DMA \r\n");
+
+
   Chip_GPDMA_Init(((LPC_GPDMA_T *) 0x50004000));
 
 
   NVIC_DisableIRQ(DMA_IRQn);
   NVIC_SetPriority(DMA_IRQn, ((0x01<<3)|0x01));
   NVIC_EnableIRQ(DMA_IRQn);
-# 95 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
-   canal_dac = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
-   Chip_GPDMA_PrepareDescriptor(((LPC_GPDMA_T *) 0x50004000), &DMA_descriptor_DAC,
-           (uint32_t) dma_memory_adc, (uint32_t) ((7UL)),
-           8, GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA, 
-# 98 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 3 4
-                                                                        ((void *)0)
-# 98 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
-                                                                            );
-   DMA_descriptor_DAC.dst = ((7UL));
 
 
 
-   canal_adc = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
-   Chip_GPDMA_PrepareDescriptor(((LPC_GPDMA_T *) 0x50004000), &DMA_descriptor_ADC,
-           (uint32_t) ((6UL)), (uint32_t) dma_memory_adc,
-           8, GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, 
-# 106 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 3 4
-                                                                        ((void *)0)
-# 106 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
-                                                                            );
-   DMA_descriptor_ADC.src = ((6UL));
 
-   Chip_GPDMA_SGTransfer(((LPC_GPDMA_T *) 0x50004000), canal_adc,
-         &DMA_descriptor_ADC,
+    printf("\t init buffers ADC externo \r\n");
+
+
+
+   dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
+
+
+   Chip_GPDMA_PrepareDescriptor(((LPC_GPDMA_T *) 0x50004000),
+          (DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_A,
+          (uint32_t) ((6UL)),
+          (uint32_t) dma_adc_ext_memory_A,
+          2048,
+          GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA,
+          
+# 107 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 3 4
+         ((void *)0)
+# 107 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+             );
+   dma_adc_ext_descriptor_A.src = ((6UL));
+
+
+   Chip_GPDMA_PrepareDescriptor(((LPC_GPDMA_T *) 0x50004000),
+          (DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_B,
+          (uint32_t) ((6UL)),
+          (uint32_t) dma_adc_ext_memory_B,
+          2048,
+          GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA,
+          
+# 117 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 3 4
+         ((void *)0)
+# 117 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+             );
+   dma_adc_ext_descriptor_B.src = ((6UL));
+
+
+   Chip_GPDMA_SGTransfer(((LPC_GPDMA_T *) 0x50004000),
+         dma_adc_ext_canal,
+         (DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_A,
          GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
-# 123 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+   dma_adc_ext_status = 0x00;
+
+
+
+
+
+
+    printf("\t init buffers DAC interno \r\n");
+
+
+
+   dma_dac_int_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
+
+
+   Chip_GPDMA_PrepareDescriptor(((LPC_GPDMA_T *) 0x50004000),
+          (DMA_TransferDescriptor_t *) &dma_dac_int_descriptor_A,
+          (uint32_t) dma_dac_int_memory_A,
+          (uint32_t) ((7UL)),
+          2048,
+          GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA,
+          
+# 145 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 3 4
+         ((void *)0)
+# 145 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+             );
+   dma_dac_int_descriptor_A.dst = ((7UL));
+
+
+   Chip_GPDMA_PrepareDescriptor(((LPC_GPDMA_T *) 0x50004000),
+          (DMA_TransferDescriptor_t *) &dma_dac_int_descriptor_B,
+          (uint32_t) dma_dac_int_memory_B,
+          (uint32_t) ((7UL)),
+          2048,
+          GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA,
+          
+# 155 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 3 4
+         ((void *)0)
+# 155 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+             );
+   dma_dac_int_descriptor_B.dst = ((7UL));
+
  }
 
 
@@ -16500,6 +16638,10 @@ void arm_rfft_fast_f32(
  {
   static char init_flag = 0;
 
+
+   printf("[info] Init I2S \r\n");
+
+
   if(!init_flag)
   {
 
@@ -16556,13 +16698,13 @@ void arm_rfft_fast_f32(
    init_flag = 1;
   }
  }
-# 363 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+# 402 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
  static inline void dac_init()
  {
 
-  printf("[info] Init DAC \r\n");
-  printf("\t DAC freq %d \r\n", 20000);
-  printf("\t DMA buff size %d \r\n", 8);
+   printf("[info] Init DAC \r\n");
+   printf("\t DAC freq %d \r\n", 20000);
+   printf("\t DMA buff size %d \r\n", 2048);
 
 
   Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_DAC, SYSCTL_CLKDIV_4);
@@ -16575,18 +16717,236 @@ void arm_rfft_fast_f32(
 
   Chip_DAC_SetBias(((LPC_DAC_T *) 0x4008C000), 1);
 
-  Chip_DAC_SetDMATimeOut(((LPC_DAC_T *) 0x4008C000), (SystemCoreClock/4) / (20000 * 8) );
+  Chip_DAC_SetDMATimeOut(((LPC_DAC_T *) 0x4008C000), (SystemCoreClock/4) / (20000 * 2048) );
 
   Chip_DAC_ConfigDAConverterControl(((LPC_DAC_T *) 0x4008C000), ((uint32_t) (1 << 1)) | ((uint32_t) (1 << 2)) | ((uint32_t) (1 << 3)));
 
  }
-# 83 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 2
+# 174 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 2
 # 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 1
+# 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
+#define TIMER_HEADER_H_ 
+# 33 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
+#define TIMER0_TICKRATE 50
+
+
+
+
+
+
+
+   extern SemaphoreHandle_t sem_timer0_match1;
+   extern SemaphoreHandle_t sem_timer1_match0;
+   extern SemaphoreHandle_t sem_timer1_match1;
+# 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TFT/tft_header.h" 1
+# 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TFT/tft_header.h"
+#define TFT_HEADER_H_ 
+# 20 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TFT/tft_header.h"
+ typedef enum
+ {
+  TFT_ORIENTATION_LANDSCAPE,
+  TFT_ORIENTATION_PORTRAIT,
+  TFT_ORIENTATION_PORTRAIT_1,
+  TFT_ORIENTATION_PORTRAIT_2,
+  TFT_ORIENTATION_LANDSCAPE_1,
+  TFT_ORIENTATION_LANDSCAPE_2
+ } tft_Orientation;
+
+
+
+
+ typedef struct
+ {
+  unsigned char FontWidth;
+  unsigned char FontHeight;
+  const uint16_t *data;
+ } tft_font_t;
+
+
+
+
+
+ typedef struct
+ {
+  unsigned short int width;
+
+  unsigned short int height;
+  tft_Orientation orientation;
+ } tft_Options_t;
+
+
+
+
+ extern const int signal[300];
+
+ extern uint16_t tft_x;
+ extern uint16_t tft_y;
+ extern tft_Options_t tft_Opts;
+
+ extern tft_font_t tft_Font_7x10;
+ extern tft_font_t tft_Font_11x18;
+ extern tft_font_t tft_Font_16x26;
+
+
+
+
+
+  void vTask_tft_BL(void *pvParameters);
+  void vtask_tft_display(void *pvParameters);
+
+
+
+
+
+
+  void tft_init();
+
+
+
+  void tft_Delay(volatile unsigned long int delay);
+  void tft_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
+  void tft_DrawPixel(uint16_t x, uint16_t y, uint16_t color);
+  void tft_Fill(uint16_t color);
+  void tft_Rotate(tft_Orientation orientation);
+  void tft_Puts(uint16_t x, uint16_t y, char *str, tft_font_t *font, uint16_t foreground, uint16_t background);
+  void tft_GetStringSize(char *str, tft_font_t *font, uint16_t *width, uint16_t *height);
+  void tft_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
+  void tft_DrawRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
+  void tft_DrawFilledRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
+  void tft_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
+  void tft_DrawFilledCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
+  void playBL( int frecuencia , int duty );
+
+
+
+
+
+
+#define WINDOWWIDTHX2 230
+#define WINDOWHEIGTHX2 310
+#define WINDOWHEIGTHX1 85
+#define WINDOWWIDTHX1 30
+#define WINDOWMULTIPLIER 190
+#define RECTHEIGHT WINDOWHEIGTHX2-WINDOWHEIGTHX1
+
+#define TFT_WIDTH 240
+#define TFT_HEIGHT 320
+#define TFT_PIXEL 76800
+#define TFT_HFACTOR 4095
+
+
+
+#define DB0 2,7
+#define DB1 1,29
+#define DB2 4,28
+#define DB3 1,23
+#define DB4 1,20
+#define DB5 0,19
+#define DB6 3,26
+#define DB7 1,25
+#define DB8 1,22
+#define DB9 1,19
+#define DB10 0,20
+#define DB11 3,25
+#define DB12 2,6
+#define DB13 1,24
+#define DB14 1,21
+#define DB15 1,18
+
+#define CS 0,9
+#define RS 0,8
+#define WR 0,7
+#define READ_DATA 0,6
+#define REST 2,5
+
+#define BL 2,4
+
+
+
+#define TFT_COLOR_WHITE 0xFFFF
+#define TFT_COLOR_BLACK 0x0000
+#define TFT_COLOR_RED 0xF800
+#define TFT_COLOR_GREEN 0x07E0
+#define TFT_COLOR_GREEN2 0xB723
+#define TFT_COLOR_BLUE 0x001F
+#define TFT_COLOR_BLUE2 0x051D
+#define TFT_COLOR_YELLOW 0xFFE0
+#define TFT_COLOR_ORANGE 0xFBE4
+#define TFT_COLOR_CYAN 0x07FF
+#define TFT_COLOR_MAGENTA 0xA254
+#define TFT_COLOR_GRAY 0x7BEF
+#define TFT_COLOR_BROWN 0xBBCA
+
+#define TFT_FOREGROUND_WHITE TFT_COLOR_WHITE
+#define TFT_FOREGROUND_BLACK TFT_COLOR_BLACK
+#define TFT_FOREGROUND_RED TFT_COLOR_RED
+#define TFT_FOREGROUND_GREEN TFT_COLOR_GREEN
+#define TFT_FOREGROUND_GREEN2 TFT_COLOR_GREEN2
+#define TFT_FOREGROUND_BLUE TFT_COLOR_BLUE
+#define TFT_FOREGROUND_BLUE2 TFT_COLOR_BLUE2
+#define TFT_FOREGROUND_YELLOW TFT_COLOR_YELLOW
+#define TFT_FOREGROUND_ORANGE TFT_COLOR_ORANGE
+#define TFT_FOREGROUND_CYAN TFT_COLOR_CYAN
+#define TFT_FOREGROUND_MAGENTA TFT_COLOR_CYAN
+#define TFT_FOREGROUND_GRAY TFT_COLOR_MAGENTA
+#define TFT_FOREGROUND_BROWN TFT_COLOR_GRAY
+
+#define TFT_BACKGROUND_WHITE TFT_COLOR_WHITE
+#define TFT_BACKGROUND_BLACK TFT_COLOR_BLACK
+#define TFT_BACKGROUND_RED TFT_COLOR_RED
+#define TFT_BACKGROUND_GREEN TFT_COLOR_GREEN
+#define TFT_BACKGROUND_GREEN2 TFT_COLOR_GREEN2
+#define TFT_BACKGROUND_BLUE TFT_COLOR_BLUE
+#define TFT_BACKGROUND_BLUE2 TFT_COLOR_BLUE2
+#define TFT_BACKGROUND_YELLOW TFT_COLOR_YELLOW
+#define TFT_BACKGROUND_ORANGE TFT_COLOR_ORANGE
+#define TFT_BACKGROUND_CYAN TFT_COLOR_CYAN
+#define TFT_BACKGROUND_MAGENTA TFT_COLOR_CYAN
+#define TFT_BACKGROUND_GRAY TFT_COLOR_MAGENTA
+#define TFT_BACKGROUND_BROWN TFT_COLOR_GRAY
+
+
+
+#define ILI9341_RESET 0x01
+#define ILI9341_SLEEP_OUT 0x11
+#define ILI9341_GAMMA 0x26
+#define ILI9341_DISPLAY_OFF 0x28
+#define ILI9341_DISPLAY_ON 0x29
+#define ILI9341_COLUMN_ADDR 0x2A
+#define ILI9341_PAGE_ADDR 0x2B
+#define ILI9341_GRAM 0x2C
+#define ILI9341_MAC 0x36
+#define ILI9341_PIXEL_FORMAT 0x3A
+#define ILI9341_WDB 0x51
+#define ILI9341_WCD 0x53
+#define ILI9341_WCABC 0x55
+#define ILI9341_RGB_INTERFACE 0xB0
+#define ILI9341_FRC 0xB1
+#define ILI9341_BPC 0xB5
+#define ILI9341_DFC 0xB6
+#define ILI9341_POWER1 0xC0
+#define ILI9341_POWER2 0xC1
+#define ILI9341_VCOM1 0xC5
+#define ILI9341_VCOM2 0xC7
+#define ILI9341_POWERA 0xCB
+#define ILI9341_POWERB 0xCF
+#define ILI9341_PGAMMA 0xE0
+#define ILI9341_NGAMMA 0xE1
+#define ILI9341_DTCA 0xE8
+#define ILI9341_DTCB 0xEA
+#define ILI9341_POWER_SEQ 0xED
+#define ILI9341_3GAMMA_EN 0xF2
+#define ILI9341_INTERFACE 0xF6
+#define ILI9341_PRC 0xF7
+# 18 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h" 1
 # 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h"
 #define RTOS_HEADER_H_ 
 # 21 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h"
   void task_init();
+  void vtask_ImAlive(void * pvParameters);
   void vTask_THD( void *pvParameters );
 
 
@@ -16599,46 +16959,34 @@ void arm_rfft_fast_f32(
 
 
 
+#define ENTRADA 0
+#define SALIDA 1
 
-#define QUEUE_LEN_IN 1
-#define QUEUE_LEN_REM QUEUE_LEN_IN
-#define QUEUE_LEN_THD 1
-
-
-#define QUEUE_ITEM_SIZE_IN (sizeof(short int)*FFT_SIZE)
-
-
-
-
-#define QUEUE_ITEM_SIZE_REM QUEUE_ITEM_SIZE_IN
-#define QUEUE_ITEM_SIZE_THD (sizeof(float))
+#define BUTTON0 0, 0
+#define BUTTON1 0, 0
+#define BUTTON2 0, 0
+#define BUTTON3 0, 0
 
 
 
 
 
 
-  extern QueueHandle_t xQueue_in;
-  extern QueueHandle_t xQueue_rem;
-  extern QueueHandle_t xQueue_THD;
-# 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
-# 63 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h"
+  extern Bool flag_use_dac;
+  extern Bool flag_do_thd;
+  extern Bool flag_do_rem;
+# 19 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+
+
+
+
  void main_while();
 # 14 "../src/THD_Meter.c" 2
-
-
-void main_uninit()
-{
-
- NVIC_DisableIRQ(UART0_IRQn);
- Chip_UART_DeInit(((LPC_USART_T *) 0x4000C000));
-}
-
+# 26 "../src/THD_Meter.c"
 int main(void)
 {
- main_dac_aux();
  main_init();
-# 49 "../src/THD_Meter.c"
+# 51 "../src/THD_Meter.c"
  while(1);
 
     return 0 ;

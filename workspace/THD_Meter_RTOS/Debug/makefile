@@ -10,6 +10,8 @@ RM := rm -rf
 -include sources.mk
 -include src/subdir.mk
 -include UART/subdir.mk
+-include TIMER/subdir.mk
+-include TFT/subdir.mk
 -include RTOS/subdir.mk
 -include FFT/subdir.mk
 -include ADC_DAC/subdir.mk

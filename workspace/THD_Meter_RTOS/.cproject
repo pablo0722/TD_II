@@ -38,7 +38,6 @@
 								<option id="com.crt.advproject.gcc.hdrlib.995640832" name="Library headers" superClass="com.crt.advproject.gcc.hdrlib" value="com.crt.advproject.gcc.hdrlib.codered" valueType="enumerated"/>
 								<option id="com.crt.advproject.gcc.specs.44238531" name="Specs" superClass="com.crt.advproject.gcc.specs" value="com.crt.advproject.gcc.specs.codered" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.159095383" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/lpc_board_nxp_lpcxpresso_1769}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/lpc_chip_175x_6x}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/LibFreeRTOS_8.2.3}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/LibFreeRTOS_8.2.3/src/portable/GCC/ARM_CM3}&quot;"/>
@@ -50,6 +49,8 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/THD_Meter_RTOS/UART}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/THD_Meter_RTOS/FFT}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/THD_Meter_RTOS/ADC_DAC}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/THD_Meter_RTOS/TIMER}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/THD_Meter_RTOS/TFT}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/THD_Meter_RTOS/RTOS}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.1634910591" name="Undefined symbols (-U)" superClass="gnu.c.compiler.option.preprocessor.undef.symbol"/>
@@ -63,7 +64,6 @@
 								<option id="com.crt.advproject.gas.hdrlib.576267932" name="Library headers" superClass="com.crt.advproject.gas.hdrlib" value="com.crt.advproject.gas.hdrlib.codered" valueType="enumerated"/>
 								<option id="com.crt.advproject.gas.specs.1363228878" name="Specs" superClass="com.crt.advproject.gas.specs" value="com.crt.advproject.gas.specs.codered" valueType="enumerated"/>
 								<option id="gnu.both.asm.option.include.paths.686754001" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/lpc_board_nxp_lpcxpresso_1769}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/lpc_chip_175x_6x}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/LibFreeRTOS_8.2.3}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/THD_Meter_RTOS/inc}&quot;"/>
@@ -114,6 +114,8 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="ADC_DAC"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FFT"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="RTOS"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="TFT"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="TIMER"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="UART"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
@@ -248,6 +250,8 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="ADC_DAC"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FFT"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="RTOS"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="TFT"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="TIMER"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="UART"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>

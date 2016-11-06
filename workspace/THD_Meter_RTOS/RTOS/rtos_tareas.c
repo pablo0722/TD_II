@@ -8,53 +8,101 @@
 #include "header.h"
 
 
+q31_t THD;
+q31_t fft_max;
+uint32_t fft_max_idx;
+q31_t fft_min;
+q31_t fft_cmplx[FFT_SIZE*2];
+
+
 #if USE_RTOS
-/***************************************************/
-/*****************Procesamiento*********************/
-/***************************************************/
 
-	void vTask_THD( void *pvParameters )
+	void vtask_ImAlive(void * pvParameters)
 	{
-		q31_t numcuad = 0; 	// Es la suma cuadratica de los armonicos de la DEP (numerador del THD al cuadrado)
-		q31_t num;			// Es la raiz cuadrada de la suma cuadratica de los armonicos de la DEP (numerador del THD)
-		uint32_t i;
-
-		if(xQueueReceive(xQueue_in, fft_in, 0) == pdTRUE)
+		while (1)
 		{
-			/*obtengo la fft*/
-			fft_function();
-
-			/*armado del numerador de la división, sumará armonicos hasta el fin del vector, el denominador es max_val*/
-			for(i=2; i*fft_max_index < FFT_SIZE; i++)
-			{
-				numcuad += fft_out_dep[i*fft_max_index];
-				i++;
-			}
-
-			arm_sqrt_q31(numcuad, &num);
-
-			/* calculo de THD propiamente dicho */
-			THD = num/fft_max_val;
-			//signalin_flag = 0;
-
-			xQueueSend(xQueue_rem, fft_out_dep, 0);
+			Board_LED_Toggle(0, 22);
+			vTaskDelay(500 / portTICK_RATE_MS);
 		}
 	}
 
-	void vTask_Remanente( void *pvParameters )
+	void vTask_main(void *pvParameters)
 	{
-//		q31_t min;
-//		uint32_t min_index;
-//		short int buf_rem[QUEUE_LEN_IN];
-//		uint32_t i=2;
-//
-//		if(xQueueReceive(xQueue_in, mSignalIn, 0) == pdTRUE)
-//		{
-//			/*al espectro obtenido debo quitarle el primer armonico*/
-//			arm_min_q31((q31_t *) fft_vector_out, FFT_SIZE, (q31_t *) min, (q31_t *) min_index);
-//			fft_complete[max_index]=min;
-//			remanente = ifft_function(*fft_complete);
-//			xQueueSend(xQueue_rem, spectrum, 0);
-//		}
+		xSemaphoreTake(sem_timer0_match1, 0);
+
+		while(1)
+		{
+			xSemaphoreTake(sem_timer0_match1, 0);
+
+			if(Chip_GPIO_GetPinState(LPC_GPIO, BUTTON0))
+			{
+				flag_use_dac = TRUE;
+				flag_do_thd = FALSE;
+				flag_do_rem = FALSE;
+			}
+			if(Chip_GPIO_GetPinState(LPC_GPIO, BUTTON1))
+			{
+				flag_use_dac = FALSE;
+				flag_do_thd = TRUE;
+				flag_do_rem = FALSE;
+			}
+			if(Chip_GPIO_GetPinState(LPC_GPIO, BUTTON2))
+			{
+				flag_use_dac = FALSE;
+				flag_do_thd = FALSE;
+				flag_do_rem = TRUE;
+			}
+		}
+	}
+
+	void vTask_THD( void *pvParameters )
+	{
+		q31_t num = 0; 	// Es la raiz cuadrada de la suma cuadratica de los armonicos de la DEP (numerador del THD)
+		uint32_t i;
+		q31_t fft_dep[FFT_SIZE/2];
+
+
+		xSemaphoreTake(sem_adc_proc, 0);
+
+		while(1)
+		{
+			xSemaphoreTake(sem_adc_proc, 0);
+
+				// Obtengo la fft
+			fft_toCmplx((q31_t *)dma_adc_ext_memory, fft_cmplx);
+			fft_toDep(fft_cmplx, fft_dep);
+
+				// Busco el piso de ruido a traves del minimo valor
+			arm_min_q31(fft_dep, FFT_SIZE/2, &fft_min, &fft_max_idx);
+
+				// Busco la fundamental a traves del maximo valor
+			arm_max_q31(fft_dep, FFT_SIZE/2, &fft_max, &fft_max_idx);
+
+
+				// *** THD *** //
+			if(flag_do_thd)
+			{
+					// Armado del numerador de la división, sumará armonicos hasta el fin del vector, el denominador es max_val
+				for(i=2; i*fft_max_idx < FFT_SIZE; i++)
+				{
+					num += fft_dep[i*fft_max_idx];
+					i++;
+				}
+
+				arm_sqrt_q31(num, &num);
+
+				/* calculo de THD propiamente dicho */
+				THD = num/fft_max;
+			}
+				// *** REMANENTE *** //
+			else if(flag_do_rem)
+			{
+				// Al espectro obtenido debo quitarle el primer armonico (a la parte real y a la imaginaria
+				fft_cmplx[fft_max_idx*2] = fft_cmplx[fft_max_idx*2-1] = fft_min;
+				fft_toReal(fft_cmplx, (q31_t *) dma_adc_ext_memory);
+			}
+
+			xSemaphoreGive(sem_adc_post);
+		}
 	}
 #endif

@@ -89,6 +89,43 @@
 		NVIC_EnableIRQ(DMA_IRQn);
 
 
+		#if (USE_ADC_EXTERNO)
+			#if DEBUG_MODE
+				printf("\t init buffers ADC externo \r\n");
+			#endif
+
+			// Pido un canal disponible al GPDMA para el ADC
+			dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
+
+			// Preparo el descriptor para el BUFFER_A
+			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
+										(DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_A,
+										(uint32_t) GPDMA_CONN_I2S_Channel_1,
+										(uint32_t) dma_adc_ext_memory_A,
+										ADC_DMA_CANT_MUESTRAS,
+										GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA,
+										NULL);
+			dma_adc_ext_descriptor_A.src = GPDMA_CONN_I2S_Channel_1;
+
+			// Preparo el descriptor para el BUFFER_B
+			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
+										(DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_B,
+										(uint32_t) GPDMA_CONN_I2S_Channel_1,
+										(uint32_t) dma_adc_ext_memory_B,
+										ADC_DMA_CANT_MUESTRAS,
+										GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA,
+										NULL);
+			dma_adc_ext_descriptor_B.src = GPDMA_CONN_I2S_Channel_1;
+
+			// Inicio la transmición del ADC -> MEMORY usando el BUFFER_A
+			Chip_GPDMA_SGTransfer(LPC_GPDMA,
+									dma_adc_ext_canal,
+									(DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_A,
+									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
+			dma_adc_ext_status = PINGPONG_ADC_TRANSFIRIENDO_A;
+		#elif (USE_ADC_INTERNO)
+		#endif
+
 		#if (USE_DAC_EXTERNO)
 		#elif (USE_DAC_INTERNO)
 			#if DEBUG_MODE
@@ -96,48 +133,27 @@
 			#endif
 
 			// Pido un canal disponible al GPDMA para el DAC
-			canal_dac = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
+			dma_dac_int_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
 
 			// Preparo el descriptor para el BUFFER_A
-			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_DAC_A,
-											(uint32_t) dma_memory_adc_A, (uint32_t) GPDMA_CONN_DAC,
-											DAC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA, NULL);
-			DMA_descriptor_DAC_A.dst = GPDMA_CONN_DAC;
+			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
+										(DMA_TransferDescriptor_t *) &dma_dac_int_descriptor_A,
+										(uint32_t) dma_dac_int_memory_A,
+										(uint32_t) GPDMA_CONN_DAC,
+										DAC_DMA_CANT_MUESTRAS,
+										GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA,
+										NULL);
+			dma_dac_int_descriptor_A.dst = GPDMA_CONN_DAC;
 
 			// Preparo el descriptor para el BUFFER_B
-			canal_dac = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
-			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_DAC_B,
-											(uint32_t) dma_memory_adc_B, (uint32_t) GPDMA_CONN_DAC,
-											DAC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA, NULL);
-			DMA_descriptor_DAC_B.dst = GPDMA_CONN_DAC;
-		#endif
-
-		#if (USE_ADC_EXTERNO)
-			#if DEBUG_MODE
-				printf("\t init buffers ADC externo \r\n");
-			#endif
-
-			// Pido un canal disponible al GPDMA para el ADC
-			canal_adc = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
-
-			// Preparo el descriptor para el BUFFER_A
-			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_ADC_A,
-											(uint32_t) GPDMA_CONN_I2S_Channel_1, (uint32_t) dma_memory_adc_A,
-											ADC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, NULL);
-			DMA_descriptor_ADC_A.src = GPDMA_CONN_I2S_Channel_1;
-
-			// Preparo el descriptor para el BUFFER_B
-			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA, &DMA_descriptor_ADC_B,
-											(uint32_t) GPDMA_CONN_I2S_Channel_1, (uint32_t) dma_memory_adc_B,
-											ADC_DMA_CANT_MUESTRAS, GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA, NULL);
-			DMA_descriptor_ADC_B.src = GPDMA_CONN_I2S_Channel_1;
-
-			// Inicio la transmición del ADC -> MEMORY usando el BUFFER_A
-			Chip_GPDMA_SGTransfer(LPC_GPDMA, canal_adc,
-									&DMA_descriptor_ADC_A,
-									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
-			dma_adc_ext_status = PINGPONG_TRANSMITIENDO_A;
-		#elif (USE_ADC_INTERNO)
+			Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
+										(DMA_TransferDescriptor_t *) &dma_dac_int_descriptor_B,
+										(uint32_t) dma_dac_int_memory_B,
+										(uint32_t) GPDMA_CONN_DAC,
+										DAC_DMA_CANT_MUESTRAS,
+										GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA,
+										NULL);
+			dma_dac_int_descriptor_B.dst = GPDMA_CONN_DAC;
 		#endif
 	}
 #endif

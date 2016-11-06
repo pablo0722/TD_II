@@ -25,7 +25,6 @@
 
 int main(void)
 {
-	main_dac_aux();
 	main_init();
 
 	#if !USE_RTOS

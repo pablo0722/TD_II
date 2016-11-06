@@ -41,7 +41,15 @@
 
 // ***************** DEFINES ***************** //
 	#if USE_FFT
-		#define     FFT_SIZE    	           	512	// Tamanio del vector del modulo de la FFT (Es un cuarto (1/2) del tamanio original por estar espejado)
+			#define     FFT_SIZE_32				32
+			#define     FFT_SIZE_64				64
+			#define     FFT_SIZE_128			128
+			#define     FFT_SIZE_256			256
+			#define     FFT_SIZE_512			512
+			#define     FFT_SIZE_1024			1024
+			#define     FFT_SIZE_2048			2048
+			#define     FFT_SIZE_4096			4096
+		#define     FFT_SIZE    	           	FFT_SIZE_2048	// Tamanio del vector del modulo de la FFT (Es un 1/2 del tamanio original por estar espejado)
 
 			// estados del flag 'fft_status'
 		#define	FFT_STATUS_EMPTY 	0	// No hay FFT realizada ni pedido para realizarla
@@ -60,25 +68,13 @@
 	#if USE_FFT
 		extern arm_rfft_instance_q31 fft_inst_q31;			// Estructura para aplicar FFT
 		extern arm_rfft_instance_q31 ifft_inst_q31;			// Estructura para aplicar IFFT
-
-		extern volatile q31_t fft_in[FFT_SIZE];				// Espectro de la senal a transformar
-		extern volatile q31_t fft_out_cmplx[FFT_SIZE*2];	// Espectro de la senal transformada compleja
-		extern volatile q31_t fft_out_dep[FFT_SIZE];		// Densidad espectral de potencia
-		extern volatile q31_t fft_out_rem[FFT_SIZE];		// Senal temporal remanente (sin fundamental)
-
-		extern volatile q31_t fft_max_val;					// max de la dep
-		extern volatile uint32_t fft_max_index;				// posición de la dep
-
-		extern volatile q31_t THD;
-
-		extern volatile uint8_t fft_status;					// Estado de la FFT
-		extern volatile uint8_t ifft_status;				// Estado de la IFFT
 	#endif
 // ********************************************** //
 
 
 // ************* INICIALIZACION ************* //
 	#include "fft_init.h"
+	#include "fft_func.h"
 // ****************************************** //
 
 

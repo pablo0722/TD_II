@@ -16,41 +16,66 @@
 		#if USE_ADC_EXTERNO
 			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_adc_ext_canal)) // Se fija si interrumpio el ADC externo
 			{
-				uint32_t *dma_adc_ext_memory;
-				DMA_TransferDescriptor_t *dma_adc_ext_descriptor;
-
-				if(dma_adc_ext_status == PINGPONG_TRANSFIRIENDO_A)	// Si SOLO estaba transfiriendo buffer A, ya termino de transferir. Hago transfer B y proceso A
+				if(dma_adc_ext_status == PINGPONG_ADC_TRANSFIRIENDO_A)	// Si SOLO estaba transfiriendo buffer A, ya termino de transferir. Hago transfer B y proceso A
 				{
-					dma_adc_ext_status = PINGPONG_TRANS_B_PROC_A;
+					dma_adc_ext_status = PINGPONG_ADC_TRANS_B_PROC_A;
+
+					dma_adc_ext_memory = dma_adc_ext_memory_A;
+					dma_adc_ext_descriptor = &dma_adc_ext_descriptor_A;
 
 					Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_adc_ext_canal,
-											&dma_adc_ext_descriptor,
+											&dma_adc_ext_descriptor_B,
 											GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
 				}
-				else if(dma_adc_ext_status == PINGPONG_TRANSFIRIENDO_B)	// Si SOLO estaba transfiriendo buffer A, ya termino de transferir. Hago transfer B y proceso A
+				else if(dma_adc_ext_status == PINGPONG_ADC_TRANSFIRIENDO_B)	// Si SOLO estaba transfiriendo buffer B, ya termino de transferir. Hago transfer A y proceso B
 				{
-					dma_adc_ext_status = PINGPONG_TRANS_A_PROC_B;
+					dma_adc_ext_status = PINGPONG_ADC_TRANS_A_PROC_B;
+
+					dma_adc_ext_memory = dma_adc_ext_memory_B;
+					dma_adc_ext_descriptor = &dma_adc_ext_descriptor_B;
 
 					Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_adc_ext_canal,
-											&dma_adc_ext_descriptor,
+											&dma_adc_ext_descriptor_A,
 											GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
 				}
 				else
 				{
 					// Si termino de transferir antes de terminar procesamiento, doy una senal con PINGPONG_PROC2ERR para que
 					// se continue con la transferencia luego de terminar procesamiento
-					PINGPONG_PROC2ERR(dma_adc_ext_status);
+					PINGPONG_ADC_PROC2ERR(dma_adc_ext_status);
 
 					#if DEBUG_MODE
 						printf("[warning] ADC externo interrumpio antes de terminar procesamiento\r\n");
 					#endif
 				}
+
+				#if USE_RTOS
+					portBASE_TYPE xHigherPriorityTaskWoken = pdFALSE;
+					xSemaphoreGiveFromISR(sem_adc_pre, &xHigherPriorityTaskWoken);
+					portEND_SWITCHING_ISR(xHigherPriorityTaskWoken);
+				#endif
 			}
 		#endif
 
 		#if USE_DAC_INTERNO
 			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_dac_int_canal)) // Se fija si interrumpio el DAC interno
 			{
+				if(dma_dac_int_status == PINGPONG_DAC_RECIBIDO_A_ERR)
+				{
+					// si 'status == PINGPONG_DAC_RECIBIDO_A_ERR', envia por el DAC el buffer A procesado
+					Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_dac_int_canal,
+											(DMA_TransferDescriptor_t *) &dma_dac_int_descriptor_A,
+											GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
+				}
+				else if(dma_dac_int_status == PINGPONG_DAC_RECIBIDO_B_ERR)
+				{
+					// si 'status == PINGPONG_DAC_RECIBIDO_B_ERR', envia por el DAC el buffer B procesado
+					Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_dac_int_canal,
+											(DMA_TransferDescriptor_t *) &dma_dac_int_descriptor_B,
+											GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
+				}
+
+				dma_dac_int_status = PINGPONG_DAC_IDLE;
 			}
 		#endif
 	}

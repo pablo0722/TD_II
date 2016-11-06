@@ -12,7 +12,6 @@
 
 
 #if USE_RTOS
-	xQueueHandle xQueue_in;
-	xQueueHandle xQueue_rem;
-	xQueueHandle xQueue_THD;
+	Bool flag_do_thd = FALSE;	// Calcula THD
+	Bool flag_do_rem = FALSE;	// Calcula senal remanente
 #endif

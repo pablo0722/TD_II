@@ -13,6 +13,8 @@
 	#include "fft_header.h"
 	#include "uart_header.h"
 	#include "adc_dac_header.h"
+	#include "timer_header.h"
+	#include "tft_header.h"
 	#include "rtos_header.h"
 
 

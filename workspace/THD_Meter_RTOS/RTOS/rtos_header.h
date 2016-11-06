@@ -19,6 +19,7 @@
 // ********* FUNCIONES ********** //
 	#if USE_RTOS
 		void task_init();
+		void vtask_ImAlive(void * pvParameters);
 		void vTask_THD( void *pvParameters );
 	#endif
 // ****************************** //
@@ -31,28 +32,22 @@
 
 // ***************** DEFINES ***************** //
 	#if USE_RTOS
-			//Colas
-		#define QUEUE_LEN_IN	1
-		#define QUEUE_LEN_REM	QUEUE_LEN_IN
-		#define QUEUE_LEN_THD	1
+		#define ENTRADA 	0
+		#define SALIDA 		1
 
-		#if USE_FFT
-			#define QUEUE_ITEM_SIZE_IN	(sizeof(short int)*FFT_SIZE)
-		#else
-			#define QUEUE_ITEM_SIZE_IN	(sizeof(short int)*512)
-		#endif
-
-		#define QUEUE_ITEM_SIZE_REM	QUEUE_ITEM_SIZE_IN
-		#define QUEUE_ITEM_SIZE_THD	(sizeof(float))
+		#define	BUTTON0		0, 0
+		#define	BUTTON1		0, 0
+		#define	BUTTON2		0, 0
+		#define	BUTTON3		0, 0
 	#endif
 // ******************************************* //
 
 
 // ************* VARIABLES GLOBALES ************* //
 	#if USE_RTOS
-		extern xQueueHandle xQueue_in;
-		extern xQueueHandle xQueue_rem;
-		extern xQueueHandle xQueue_THD;
+		extern Bool flag_use_dac;	// Hace loopback por DAC
+		extern Bool flag_do_thd;	// Calcula THD
+		extern Bool flag_do_rem;	// Calcula senal remanente
 	#endif
 // ********************************************** //
 
