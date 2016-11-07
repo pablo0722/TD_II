@@ -4,19 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../UART/uart_globales.c \
-../UART/uart_irq.c \
-../UART/uart_main.c 
+../UART/uart_func.c \
+../UART/uart_globales_priv.c \
+../UART/uart_irq.c 
 
 OBJS += \
-./UART/uart_globales.o \
-./UART/uart_irq.o \
-./UART/uart_main.o 
+./UART/uart_func.o \
+./UART/uart_globales_priv.o \
+./UART/uart_irq.o 
 
 C_DEPS += \
-./UART/uart_globales.d \
-./UART/uart_irq.d \
-./UART/uart_main.d 
+./UART/uart_func.d \
+./UART/uart_globales_priv.d \
+./UART/uart_irq.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

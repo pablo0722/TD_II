@@ -32,9 +32,9 @@ endif
 all: THD_Meter_RTOS.axf
 
 dependents:
-	-cd D:/UTN/Git/TD_II/TD_II/workspace/LibFreeRTOS_8.2.3/Debug && $(MAKE) clean all
-	-cd D:/UTN/Git/TD_II/TD_II/workspace/lpc_chip_175x_6x/Debug && $(MAKE) clean all
-	-cd D:/UTN/Git/TD_II/TD_II/workspace/lpc_myboard_1769/Debug && $(MAKE) clean all
+	-cd D:/UTN/Git/TD_II/TD_II/workspace/LibFreeRTOS_8.2.3/Debug && $(MAKE) all
+	-cd D:/UTN/Git/TD_II/TD_II/workspace/lpc_chip_175x_6x/Debug && $(MAKE) all
+	-cd D:/UTN/Git/TD_II/TD_II/workspace/lpc_myboard_1769/Debug && $(MAKE) all
 
 # Tool invocations
 THD_Meter_RTOS.axf: $(OBJS) $(USER_OBJS) D:/UTN/Git/TD_II/TD_II/workspace/LibFreeRTOS_8.2.3/Debug/libLibFreeRTOS_8.2.3.a D:/UTN/Git/TD_II/TD_II/workspace/lpc_chip_175x_6x/Debug/liblpc_chip_175x_6x.a D:/UTN/Git/TD_II/TD_II/workspace/lpc_myboard_1769/Debug/liblpc_myboard_1769.a

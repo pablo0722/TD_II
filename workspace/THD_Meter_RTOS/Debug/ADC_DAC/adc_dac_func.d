@@ -1,4 +1,4 @@
-UART/uart_main.o UART/uart_main.d: ../UART/uart_main.c \
+ADC_DAC/adc_dac_func.o ADC_DAC/adc_dac_func.d: ../ADC_DAC/adc_dac_func.c \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/utilidades.h \
  D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h \
@@ -63,7 +63,6 @@ UART/uart_main.o UART/uart_main.d: ../UART/uart_main.c \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\FFT/fft_func.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_init.h \
- D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_header.h \
@@ -197,8 +196,6 @@ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\FFT/fft_func.h:
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_init.h:
-
-D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h:
 

@@ -49,11 +49,7 @@
 					#endif
 				}
 
-				#if USE_RTOS
-					portBASE_TYPE xHigherPriorityTaskWoken = pdFALSE;
-					xSemaphoreGiveFromISR(sem_adc_pre, &xHigherPriorityTaskWoken);
-					portEND_SWITCHING_ISR(xHigherPriorityTaskWoken);
-				#endif
+				adc_pre_procesamiento();
 			}
 		#endif
 

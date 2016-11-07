@@ -15958,21 +15958,46 @@ void arm_rfft_fast_f32(
 
 
 
-#define USE_UART OFF
+#define USE_UART ON
 #define USE_TIMER ON
 #define USE_ADC ON
 #define USE_DAC ON
 #define USE_FFT ON
+#define USE_TFT ON
 #define USE_RTOS ON
 
 
 
 
 #define DEBUG_MODE ON
-# 71 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+
+
+#define UART_FFT_LOOPBACK OFF
+
+
+
+
+#define USE_UART0 ON
+#define USE_UART1 ON
+#define USE_UART2 OFF
+#define USE_UART3 OFF
+
+
+
+#define UART_TRANSMIT_NONE 0
+#define UART_TRANSMIT_LOOPBACK 1
+#define UART_TRANSMIT_FFT 2
+#define UART0_TRANSMIT UART_TRANSMIT_NONE
+#define UART1_TRANSMIT UART_TRANSMIT_NONE
+#define UART2_TRANSMIT UART_TRANSMIT_NONE
+#define UART3_TRANSMIT UART_TRANSMIT_NONE
+
+
+
+
 #define USE_ADC_INTERNO OFF
 #define USE_ADC_EXTERNO ON
-# 82 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+# 83 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define ADC_EXTERNO_INTERRUPCION 0
 #define ADC_EXTERNO_DMA 1
 #define ADC_EXTERNO_MODO ADC_EXTERNO_DMA
@@ -15989,7 +16014,7 @@ void arm_rfft_fast_f32(
 #define DAC_INTERNO_INTERRUPCION 0
 #define DAC_INTERNO_DMA 1
 #define DAC_INTERNO_MODO DAC_INTERNO_INTERRUPCION
-# 114 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+# 115 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_DMA ON
 
 
@@ -16838,112 +16863,190 @@ void arm_rfft_fast_f32(
 
  void main_while();
 # 14 "../UART/uart_header.h" 2
+# 41 "../UART/uart_header.h"
+  void main_uart();
+# 50 "../UART/uart_header.h"
+#define UART0_SRB_SIZE 256*4
+#define UART0_RRB_SIZE 4
+#define UART1_SRB_SIZE 16
+#define UART1_RRB_SIZE 16
+#define UART2_SRB_SIZE 16
+#define UART2_RRB_SIZE 16
+#define UART3_SRB_SIZE 16
+#define UART3_RRB_SIZE 16
+
+
+#define UART_BAUDRATE_9600 9600
+#define UART_BAUDRATE_19200 19200
+#define UART_BAUDRATE_38400 38400
+#define UART_BAUDRATE_57600 57600
+#define UART_BAUDRATE_115200 115200
+#define UART0_BAUDRATE UART_BAUDRATE_9600
+#define UART1_BAUDRATE UART_BAUDRATE_9600
+#define UART2_BAUDRATE UART_BAUDRATE_9600
+#define UART3_BAUDRATE UART_BAUDRATE_9600
+
+
+#define UART_STATUS_EMPTY 0
+#define UART_STATUS_LEIDO 1
+
+
+#define UART0_TX_P0_2 0, 2, MD_PLN, IOCON_FUNC1
+#define UART0_RX_P0_3 0, 3, MD_PLN, IOCON_FUNC1
+#define UART0_TX UART0_TX_P0_2
+#define UART0_RX UART0_RX_P0_3
+
+#define UART1_TX_P0_15 0, 15, MD_PLN, IOCON_FUNC1
+#define UART1_TX_P2_0 2, 0, MD_PLN, IOCON_FUNC2
+#define UART1_RX_P0_16 0, 16, MD_PLN, IOCON_FUNC1
+#define UART1_RX_P2_1 2, 1, MD_PLN, IOCON_FUNC2
+#define UART1_TX UART1_TX_P0_15
+#define UART1_RX UART1_RX_P0_16
+
+#define UART2_TX_P0_10 0, 10, MD_PLN, IOCON_FUNC1
+#define UART2_TX_P2_8 2, 8, MD_PLN, IOCON_FUNC2
+#define UART2_RX_P0_11 0, 11, MD_PLN, IOCON_FUNC1
+#define UART2_TX UART2_TX_P0_10
+#define UART2_RX UART2_RX_P0_11
+
+#define UART3_TX_P0_0 0, 0, MD_PLN, IOCON_FUNC2
+#define UART3_TX_P0_25 0, 25, MD_PLN, IOCON_FUNC3
+#define UART3_RX_P0_1 0, 1, MD_PLN, IOCON_FUNC2
+#define UART3_RX_P0_26 0, 26, MD_PLN, IOCON_FUNC3
+#define UART3_TX UART3_TX_P0_0
+#define UART3_RX UART3_RX_P0_1
+
+
+
+
+
+
+
+   extern volatile uint8_t uart0_in;
+
+
+   extern volatile uint8_t uart1_in;
+# 120 "../UART/uart_header.h"
+   extern uint8_t rxbuff0[4], txbuff0[256*4];
+
+
+   extern uint8_t rxbuff1[16], txbuff1[16];
+# 134 "../UART/uart_header.h"
+   extern RINGBUFF_T txring0, rxring0;
+
+
+   extern RINGBUFF_T txring1, rxring1;
+# 148 "../UART/uart_header.h"
+   extern uint8_t uart0_rx_status;
+
+
+   extern uint8_t uart1_rx_status;
 # 165 "../UART/uart_header.h"
 # 1 "../UART/uart_init.h" 1
-# 10 "../UART/uart_init.h"
-# 1 "../UART/uart_header.h" 1
-# 11 "../UART/uart_init.h" 2
+# 15 "../UART/uart_init.h"
+  static inline void init_uart0()
+  {
 
+    printf("[info] init Uart0: \r\n");
+    printf("\t Baudrate: %d \r\n", 9600);
+    printf("\t SendBuffSize: %d \r\n", 256*4);
+    printf("\t RecvBuffSize: %d \r\n", 4);
 
 
+   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0, 2, (0x2), 0x1);
+   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0, 3, (0x2), 0x1);
 
+   Board_UART_Init((uint32_t)((LPC_USART_T *) 0x4000C000), 9600);
 
 
-#define RX_RING0_P NULL
 
+   RingBuffer_Init(&rxring0, rxbuff0, 1, 4);
+   RingBuffer_Init(&txring0, txbuff0, 1, 256*4);
 
 
+   Chip_UART_IntEnable(((LPC_USART_T *) 0x4000C000), ((1 << 0) | (1 << 2)));
 
-#define RX_RING1_P NULL
 
+   NVIC_SetPriority(UART0_IRQn, 1);
+   NVIC_EnableIRQ(UART0_IRQn);
 
+   const char Uart_init_msg[] = "\r\nInit:\r\n";
 
 
-#define RX_RING2_P NULL
+   Chip_UART_SendRB(((LPC_USART_T *) 0x4000C000), &txring0, Uart_init_msg, sizeof(Uart_init_msg));
+  }
 
 
 
+  static inline void init_uart1()
+  {
 
-#define RX_RING3_P NULL
+    printf("[info] init Uart1: \r\n");
+    printf("\t Baudrate: %d \r\n", 9600);
+    printf("\t SendBuffSize: %d \r\n", 16);
+    printf("\t RecvBuffSize: %d \r\n", 16);
 
 
+   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0, 15, (0x2), 0x1);
+   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0, 16, (0x2), 0x1);
 
+   Board_UART_Init((uint32_t)((LPC_USART_T *) 0x40010000), 9600);
 
 
 
-#define TX_RING0_P NULL
+   RingBuffer_Init(&rxring1, rxbuff1, 1, 16);
+   RingBuffer_Init(&txring1, txbuff1, 1, 16);
 
 
+   Chip_UART_IntEnable(((LPC_USART_T *) 0x40010000), ((1 << 0) | (1 << 2)));
 
 
-#define TX_RING1_P NULL
+   NVIC_SetPriority(UART1_IRQn, 1);
+   NVIC_EnableIRQ(UART1_IRQn);
 
+   const char Uart_init_msg[] = "\r\nInit:\r\n";
 
 
+   Chip_UART_SendRB(((LPC_USART_T *) 0x40010000), &txring1, Uart_init_msg, sizeof(Uart_init_msg));
+  }
+# 150 "../UART/uart_init.h"
+ static inline void uart_init()
+ {
 
-#define TX_RING2_P NULL
+   init_uart0();
 
 
+   init_uart1();
 
 
-#define TX_RING3_P NULL
 
 
 
 
 
-
-#define RX_BUFF0_P NULL
-
-
-
-
-#define RX_BUFF1_P NULL
-
-
-
-
-#define RX_BUFF2_P NULL
-
-
-
-
-#define RX_BUFF3_P NULL
-
-
-
-
-
-
-#define TX_BUFF0_P NULL
-
-
-
-
-#define TX_BUFF1_P NULL
-
-
-
-
-#define TX_BUFF2_P NULL
-
-
-
-
-#define TX_BUFF3_P NULL
-
-
-
-
-#define BAUDRATE_UART(n) (n==0?UART0_BAUDRATE: (n==1?UART1_BAUDRATE: (n==2?UART2_BAUDRATE: UART3_BAUDRATE)))
-#define SRB_SIZE_UART(n) (n==0?UART0_SRB_SIZE: (n==1?UART1_SRB_SIZE: (n==2?UART2_SRB_SIZE: UART3_SRB_SIZE)))
-#define RRB_SIZE_UART(n) (n==0?UART0_RRB_SIZE: (n==1?UART1_RRB_SIZE: (n==2?UART2_RRB_SIZE: UART3_RRB_SIZE)))
-#define MODE_UART(n) (n==0?UART0_MODE: (n==1?UART1_MODE: (n==2?UART2_MODE: UART3_MODE)))
-#define LPC_UART(n) (n==0?LPC_UART0: (n==1?LPC_UART1: (n==2?LPC_UART2: LPC_UART3)))
-#define RX_RING(n) (n==0?RX_RING0_P: (n==1?RX_RING1_P: (n==2?RX_RING2_P: RX_RING3_P)))
-#define TX_RING(n) (n==0?TX_RING0_P: (n==1?TX_RING1_P: (n==2?TX_RING2_P: TX_RING3_P)))
-#define RX_BUFF(n) (n==0?RX_BUFF0_P: (n==1?RX_BUFF1_P: (n==2?RX_BUFF2_P: RX_BUFF3_P)))
-#define TX_BUFF(n) (n==0?TX_BUFF0_P: (n==1?TX_BUFF1_P: (n==2?TX_BUFF2_P: TX_BUFF3_P)))
-#define IRQn_UART(n) (n==0?UART0_IRQn: (n==1?UART1_IRQn: (n==2?UART2_IRQn: UART3_IRQn)))
+ }
 # 166 "../UART/uart_header.h" 2
 # 11 "../UART/uart_globales.c" 2
+
+
+
+
+   volatile uint8_t uart0_in;
+
+
+   volatile uint8_t uart1_in;
+# 30 "../UART/uart_globales.c"
+   uint8_t rxbuff0[4], txbuff0[256*4];
+
+
+   uint8_t rxbuff1[16], txbuff1[16];
+# 45 "../UART/uart_globales.c"
+   RINGBUFF_T txring0, rxring0;
+
+
+   RINGBUFF_T txring1, rxring1;
+# 60 "../UART/uart_globales.c"
+   uint8_t uart0_rx_status = 0;
+
+
+   uint8_t uart1_rx_status = 0;

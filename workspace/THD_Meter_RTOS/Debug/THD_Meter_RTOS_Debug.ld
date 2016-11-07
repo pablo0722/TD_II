@@ -5,7 +5,7 @@
  * Generated linker script file for LPC1769
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.23
- * LPCXpresso v8.2.2 [Build 650] [2016-09-09]  on 06-nov-2016 8:50:47
+ * LPCXpresso v8.2.2 [Build 650] [2016-09-09]  on 07-nov-2016 15:20:24
  */
 
 INCLUDE "THD_Meter_RTOS_Debug_library.ld"

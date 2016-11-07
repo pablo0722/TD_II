@@ -22,8 +22,8 @@
 
 // ********* TAREAS ********** //
 	#if (USE_ADC_EXTERNO)
-		void main_adc_task_pre();
-		void main_adc_task_post();
+		void adc_pre_procesamiento();
+		void adc_post_procesamiento();
 	#endif
 // *************************** //
 
@@ -140,10 +140,8 @@
 
 		extern volatile uint8_t dma_adc_ext_status;
 
-		#if USE_RTOS
-			extern xSemaphoreHandle sem_adc_pre;	// incica que llegaron datos del adc, se activa tarea main_adc_task_pre()
-			extern xSemaphoreHandle sem_adc_proc;	// incica que ya se preprocesaron los datos del adc y ya se pueden procesar
-			extern xSemaphoreHandle sem_adc_post;	// incica que ya se procesaron los datos, se activa tarea main_adc_task_post()
+		#if (USE_RTOS)
+			extern xSemaphoreHandle sem_adc_proc;
 		#endif
 	#endif
 

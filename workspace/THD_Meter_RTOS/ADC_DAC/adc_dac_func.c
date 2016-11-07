@@ -11,22 +11,26 @@
 
 
 
-STATIC INLINE uint32_t adc_ext_set_data(uint32_t data)
-{
-		// Shiftea 8 veces para acomodar los 24 bits adquiridos en la parte baja del uint32_t. asi tengo 8 bits de overflow.
-		// 		Nota: Al ser uint32_t, se hace un shifteo logico (completa con ceros).
-		// Luego, invierte el bit de signo para convertir de 'signed' (como toma el adc) a unsigned
-	return ((data >> 8) ^ 0x00800000);
-}
+#if USE_ADC_EXTERNO
+	STATIC INLINE uint32_t adc_ext_set_data(uint32_t data)
+	{
+			// Shiftea 8 veces para acomodar los 24 bits adquiridos en la parte baja del uint32_t. asi tengo 8 bits de overflow.
+			// 		Nota: Al ser uint32_t, se hace un shifteo logico (completa con ceros).
+			// Luego, invierte el bit de signo para convertir de 'signed' (como toma el adc) a unsigned
+		return ((data >> 8) ^ 0x00800000);
+	}
+#endif
 
-STATIC INLINE uint16_t dac_int_set_data(uint32_t data)
-{
-	return (data >> 8);
-}
+#if USE_DAC_INTERNO
+	STATIC INLINE uint16_t dac_int_set_data(uint32_t data)
+	{
+		return (data >> 8);
+	}
+#endif
 
 
 #if USE_ADC_EXTERNO
-	void main_adc_pre()
+	void adc_pre_procesamiento()
 	{
 		if(PINGPONG_ADC_ISPROC(dma_adc_ext_status)) // Si ya recibi del ADC, proceso la senal
 		{
@@ -35,11 +39,15 @@ STATIC INLINE uint16_t dac_int_set_data(uint32_t data)
 			{
 				dma_adc_ext_memory[i] = adc_ext_set_data(dma_adc_ext_memory[i]);
 			}
+
+			#if USE_RTOS
+				xSemaphoreGive(sem_adc_proc);
+			#endif
 		}
 	}
 
 
-	void main_adc_post()
+	void adc_post_procesamiento()
 	{
 			// acomodar el dato antes de enviar por DAC
 		#if USE_DAC_INTERNO

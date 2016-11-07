@@ -49,17 +49,7 @@
 			#define     FFT_SIZE_1024			1024
 			#define     FFT_SIZE_2048			2048
 			#define     FFT_SIZE_4096			4096
-		#define     FFT_SIZE    	           	FFT_SIZE_2048	// Tamanio del vector del modulo de la FFT (Es un 1/2 del tamanio original por estar espejado)
-
-			// estados del flag 'fft_status'
-		#define	FFT_STATUS_EMPTY 	0	// No hay FFT realizada ni pedido para realizarla
-		#define	FFT_STATUS_TO_DO 	1	// Orden para realizar la FFT
-		#define	FFT_STATUS_DONE 	2	// FFT realizada
-
-			// estados del flag 'ifft_status'
-		#define	IFFT_STATUS_EMPTY 	0	// No hay FFT realizada ni pedido para realizarla
-		#define	IFFT_STATUS_TO_DO 	1	// Orden para realizar la FFT
-		#define	IFFT_STATUS_DONE 	2	// FFT realizada
+		#define     FFT_SIZE    	           	FFT_SIZE_2048	// Tamanio del vector del modulo de la FFT = tamanio parte real de senial a transformar
 	#endif
 // ******************************************* //
 

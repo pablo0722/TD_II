@@ -10,7 +10,7 @@
 
 
 
-	#include "header.h"
+#include "header.h"
 
 
 // ********* MODO DE USO ********** //
@@ -38,7 +38,37 @@
 
 // ********* FUNCIONES ********** //
 	#if USE_UART
-		void main_uart();
+		#if (USE_UART0)
+			void 		uart0_leer(uint8_t *buffer_in_A, uint8_t *buffer_in_B, uint32_t buffer_len);
+			uint8_t*	uart0_puedo_procesar();		// Termino de leer un buffer
+			void 		uart0_proceso_listo();		// Llamar cuando se termine de procesar un buffer (permite seguir leyendo)
+			Bool 		uart0_escribir(const uint8_t *buffer_out, uint32_t buffer_len);
+			Bool 		uart0_escribiendo();		// Determina si se encuentra escribiendo algo
+		#endif
+
+		#if (USE_UART1)
+			void 		uart1_leer(uint8_t *buffer_in_A, uint8_t *buffer_in_B, uint32_t buffer_len);
+			uint8_t*	uart1_puedo_procesar();		// Termino de leer un buffer
+			void 		uart1_proceso_listo();		// Llamar cuando se termine de procesar un buffer (permite seguir leyendo)
+			Bool 		uart1_escribir(const uint8_t *buffer_out, uint32_t buffer_len);
+			Bool 		uart1_escribiendo();		// Determina si se encuentra escribiendo algo
+		#endif
+
+		#if (USE_UART2)
+			void 		uart2_leer(uint8_t *buffer_in_A, uint8_t *buffer_in_B, uint32_t buffer_len);
+			uint8_t*	uart2_puedo_procesar();		// Termino de leer un buffer
+			void 		uart2_proceso_listo();		// Llamar cuando se termine de procesar un buffer (permite seguir leyendo)
+			Bool 		uart2_escribir(const uint8_t *buffer_out, uint32_t buffer_len);
+			Bool 		uart2_escribiendo();		// Determina si se encuentra escribiendo algo
+		#endif
+
+		#if (USE_UART3)
+			void 		uart3_leer(uint8_t *buffer_in_A, uint8_t *buffer_in_B, uint32_t buffer_len);
+			uint8_t*	uart3_puedo_procesar();		// Termino de leer un buffer
+			void 		uart3_proceso_listo();		// Llamar cuando se termine de procesar un buffer (permite seguir leyendo)
+			bool 		uart3_escribir(const uint8_t *buffer_out, uint32_t buffer_len);
+			Bool 		uart3_escribiendo();		// Determina si se encuentra escribiendo algo
+		#endif
 	#endif
 // ****************************** //
 
@@ -46,16 +76,6 @@
 
 // ***************** DEFINES ***************** //
 	#if USE_UART
-			// *** TAMANIOS DE RING BUFFERS
-		#define UART0_SRB_SIZE 	256*4	// Send ring buffer
-		#define UART0_RRB_SIZE 	4	// Receive ring buffer
-		#define UART1_SRB_SIZE 	16	// Send ring buffer
-		#define UART1_RRB_SIZE 	16	// Receive ring buffer
-		#define UART2_SRB_SIZE 	16	// Send ring buffer
-		#define UART2_RRB_SIZE 	16	// Receive ring buffer
-		#define UART3_SRB_SIZE 	16	// Send ring buffer
-		#define UART3_RRB_SIZE 	16	// Receive ring buffer
-
 			// *** BAUDRATES DE UART
 			#define UART_BAUDRATE_9600	9600
 			#define UART_BAUDRATE_19200	19200
@@ -67,98 +87,33 @@
 		#define UART2_BAUDRATE 	UART_BAUDRATE_9600	// Baudrate de UART2
 		#define UART3_BAUDRATE 	UART_BAUDRATE_9600	// Baudrate de UART3
 
-			// *** estados del flag 'uartN_rx_status'
-			#define UART_STATUS_EMPTY	0	// No hay nada leido o algo ya leido
-			#define UART_STATUS_LEIDO	1	// Hay algo leido pero aun NO usado
-
 			// *** PINOUT DE UART
-			#define UART0_TX_P0_2	0, 2, MD_PLN, IOCON_FUNC1
-			#define UART0_RX_P0_3	0, 3, MD_PLN, IOCON_FUNC1
-		#define UART0_TX	UART0_TX_P0_2
-		#define UART0_RX	UART0_RX_P0_3
+			#define UART0_TX_PIN_P0_2	0, 2, MD_PLN, IOCON_FUNC1
+			#define UART0_RX_PIN_P0_3	0, 3, MD_PLN, IOCON_FUNC1
+		#define UART0_TX_PIN	UART0_TX_PIN_P0_2
+		#define UART0_RX_PIN	UART0_RX_PIN_P0_3
 
-			#define UART1_TX_P0_15	0, 15, MD_PLN, IOCON_FUNC1
-			#define UART1_TX_P2_0	2, 0, MD_PLN, IOCON_FUNC2
-			#define UART1_RX_P0_16	0, 16, MD_PLN, IOCON_FUNC1
-			#define UART1_RX_P2_1	2, 1, MD_PLN, IOCON_FUNC2
-		#define UART1_TX	UART1_TX_P0_15
-		#define UART1_RX	UART1_RX_P0_16
+			#define UART1_TX_PIN_P0_15	0, 15, MD_PLN, IOCON_FUNC1
+			#define UART1_TX_PIN_P2_0	2, 0, MD_PLN, IOCON_FUNC2
+			#define UART1_RX_PIN_P0_16	0, 16, MD_PLN, IOCON_FUNC1
+			#define UART1_RX_PIN_P2_1	2, 1, MD_PLN, IOCON_FUNC2
+		#define UART1_TX_PIN	UART1_TX_PIN_P0_15
+		#define UART1_RX_PIN	UART1_RX_PIN_P0_16
 
-			#define UART2_TX_P0_10	0, 10, MD_PLN, IOCON_FUNC1
-			#define UART2_TX_P2_8	2, 8, MD_PLN, IOCON_FUNC2
-			#define UART2_RX_P0_11	0, 11, MD_PLN, IOCON_FUNC1
-		#define UART2_TX	UART2_TX_P0_10
-		#define UART2_RX	UART2_RX_P0_11
+			#define UART2_TX_PIN_P0_10	0, 10, MD_PLN, IOCON_FUNC1
+			#define UART2_TX_PIN_P2_8	2, 8, MD_PLN, IOCON_FUNC2
+			#define UART2_RX_PIN_P0_11	0, 11, MD_PLN, IOCON_FUNC1
+		#define UART2_TX_PIN	UART2_TX_PIN_P0_10
+		#define UART2_RX_PIN	UART2_RX_PIN_P0_11
 
-			#define UART3_TX_P0_0	0, 0, MD_PLN, IOCON_FUNC2
-			#define UART3_TX_P0_25	0, 25, MD_PLN, IOCON_FUNC3
-			#define UART3_RX_P0_1	0, 1, MD_PLN, IOCON_FUNC2
-			#define UART3_RX_P0_26	0, 26, MD_PLN, IOCON_FUNC3
-		#define UART3_TX	UART3_TX_P0_0
-		#define UART3_RX	UART3_RX_P0_1
+			#define UART3_TX_PIN_P0_0	0, 0, MD_PLN, IOCON_FUNC2
+			#define UART3_TX_PIN_P0_25	0, 25, MD_PLN, IOCON_FUNC3
+			#define UART3_RX_PIN_P0_1	0, 1, MD_PLN, IOCON_FUNC2
+			#define UART3_RX_PIN_P0_26	0, 26, MD_PLN, IOCON_FUNC3
+		#define UART3_TX_PIN	UART3_TX_PIN_P0_0
+		#define UART3_RX_PIN	UART3_RX_PIN_P0_1
 	#endif
 // ******************************************* //
-
-
-// ************* VARIABLES GLOBALES ************* //
-	#if USE_UART
-		#if USE_UART0
-			extern volatile uint8_t uart0_in;						// Senal de entrada.
-		#endif
-		#if USE_UART1
-			extern volatile uint8_t uart1_in;						// Senal de entrada.
-		#endif
-		#if USE_UART2
-			extern volatile uint8_t uart2_in;						// Senal de entrada.
-		#endif
-		#if USE_UART3
-			extern volatile uint8_t uart3_in;						// Senal de entrada.
-		#endif
-
-			// Transmit and receive buffers
-		#if USE_UART0
-			extern uint8_t rxbuff0[UART0_RRB_SIZE], txbuff0[UART0_SRB_SIZE];
-		#endif
-		#if USE_UART1
-			extern uint8_t rxbuff1[UART1_RRB_SIZE], txbuff1[UART1_SRB_SIZE];
-		#endif
-		#if USE_UART2
-			extern uint8_t rxbuff2[UART2_RRB_SIZE], txbuff2[UART2_SRB_SIZE];
-		#endif
-		#if USE_UART3
-			extern uint8_t rxbuff3[UART3_RRB_SIZE], txbuff3[UART3_SRB_SIZE];
-		#endif
-
-			// Transmit and receive ring buffers
-		#if USE_UART0
-			extern RINGBUFF_T txring0, rxring0;
-		#endif
-		#if USE_UART1
-			extern RINGBUFF_T txring1, rxring1;
-		#endif
-		#if USE_UART2
-			extern RINGBUFF_T txring2, rxring2;
-		#endif
-		#if USE_UART3
-			extern RINGBUFF_T txring3, rxring3;
-		#endif
-
-			// Estado de recepcion de la UART
-		#if USE_UART0
-			extern uint8_t uart0_rx_status;
-		#endif
-		#if USE_UART1
-			extern uint8_t uart1_rx_status;
-		#endif
-		#if USE_UART2
-			extern uint8_t uart2_rx_status;
-		#endif
-		#if USE_UART3
-			extern uint8_t uart3_rx_status;
-		#endif
-
-	#endif
-// ********************************************** //
 
 
 // ************* INICIALIZACION ************* //

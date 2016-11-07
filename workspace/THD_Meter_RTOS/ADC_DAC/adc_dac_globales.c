@@ -28,10 +28,8 @@
 
 	volatile uint8_t dma_adc_ext_status = PINGPONG_ADC_IDLE;
 
-	#if USE_RTOS
-		xSemaphoreHandle sem_adc_pre;
+	#if (USE_RTOS)
 		xSemaphoreHandle sem_adc_proc;
-		xSemaphoreHandle sem_adc_post;
 	#endif
 #endif
 

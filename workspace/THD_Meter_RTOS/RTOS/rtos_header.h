@@ -21,6 +21,9 @@
 		void task_init();
 		void vtask_ImAlive(void * pvParameters);
 		void vTask_THD( void *pvParameters );
+		#if (USE_UART)
+			void vtask_uart(void * pvParameters);
+		#endif
 	#endif
 // ****************************** //
 

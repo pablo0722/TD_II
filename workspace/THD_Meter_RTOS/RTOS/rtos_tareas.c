@@ -16,7 +16,6 @@ q31_t fft_cmplx[FFT_SIZE*2];
 
 
 #if USE_RTOS
-
 	void vtask_ImAlive(void * pvParameters)
 	{
 		while (1)
@@ -26,10 +25,38 @@ q31_t fft_cmplx[FFT_SIZE*2];
 		}
 	}
 
+	#if (USE_UART)
+		#if (UART0_MODE == UART_MODE_LOOPBACK)
+			void vtask_uart(void * pvParameters)
+			{
+				uint8_t buffer_A[1];
+				uint8_t buffer_B[1];
+				uint8_t *uart0_buf;
+
+				uart0_leer(buffer_A, buffer_B, 1);
+
+				while (1)
+				{
+					if( (uart0_buf = uart0_puedo_procesar()) )
+					{
+						uart0_escribir(uart0_buf, 1);
+
+						while( uart0_escribiendo() );
+
+						uart0_proceso_listo();
+					}
+				}
+			}
+		#else
+			void vtask_uart(void * pvParameters)
+			{
+				while(1);
+			}
+		#endif
+	#endif
+
 	void vTask_main(void *pvParameters)
 	{
-		xSemaphoreTake(sem_timer0_match1, 0);
-
 		while(1)
 		{
 			xSemaphoreTake(sem_timer0_match1, 0);
@@ -60,9 +87,6 @@ q31_t fft_cmplx[FFT_SIZE*2];
 		q31_t num = 0; 	// Es la raiz cuadrada de la suma cuadratica de los armonicos de la DEP (numerador del THD)
 		uint32_t i;
 		q31_t fft_dep[FFT_SIZE/2];
-
-
-		xSemaphoreTake(sem_adc_proc, 0);
 
 		while(1)
 		{
@@ -102,7 +126,7 @@ q31_t fft_cmplx[FFT_SIZE*2];
 				fft_toReal(fft_cmplx, (q31_t *) dma_adc_ext_memory);
 			}
 
-			xSemaphoreGive(sem_adc_post);
+			adc_post_procesamiento();
 		}
 	}
 #endif

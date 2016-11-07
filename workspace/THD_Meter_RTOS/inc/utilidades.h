@@ -32,38 +32,39 @@
 
 
 // ***** PERIFERICOS (init) ***** //
-	#define USE_UART	OFF
+	#define USE_UART	ON
 	#define USE_TIMER	ON
 	#define USE_ADC		ON
 	#define USE_DAC		ON
 	#define USE_FFT		ON
+	#define USE_TFT		ON
 	#define USE_RTOS	ON
 // ****************************** //
 
 
 // ***** UTILIDADES (main while) ***** //
-	#define DEBUG_MODE			ON
+	#define DEBUG_MODE				ON
 
 	#if (USE_UART) && (USE_FFT)
-		#define UART_FFT_LOOPBACK	ON
+		#define UART_FFT_LOOPBACK	OFF
 	#endif
 
 	#if (USE_UART)
 			// Numero de UART a utilizar
-		#define USE_UART0 		ON
-		#define USE_UART1 		OFF
-		#define USE_UART2 		OFF
-		#define USE_UART3 		OFF
+		#define USE_UART0 			ON
+		#define USE_UART1 			ON
+		#define USE_UART2 			OFF
+		#define USE_UART3 			OFF
 
 
 			// Funcion de la UART
-			#define UART_TRANSMIT_NONE		0		// no transmite nada
-			#define UART_TRANSMIT_LOOPBACK	1		// transmite lo mismo que recibio
-			#define UART_TRANSMIT_FFT		2		// transmite la FFT
-		#define UART0_TRANSMIT	UART_TRANSMIT_FFT
-		#define UART1_TRANSMIT	UART_TRANSMIT_FFT
-		#define UART2_TRANSMIT	UART_TRANSMIT_FFT
-		#define UART3_TRANSMIT	UART_TRANSMIT_FFT
+			#define UART_MODE_NONE		0		// no transmite nada
+			#define UART_MODE_LOOPBACK	1		// transmite lo mismo que recibio
+			#define UART_MODE_FFT		2		// transmite la FFT
+		#define UART0_MODE	UART_MODE_LOOPBACK
+		#define UART1_MODE	UART_MODE_NONE
+		#define UART2_MODE	UART_MODE_NONE
+		#define UART3_MODE	UART_MODE_NONE
 	#endif
 
 	#if (USE_ADC)

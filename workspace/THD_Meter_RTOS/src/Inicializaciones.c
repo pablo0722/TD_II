@@ -9,12 +9,27 @@
 #include "header.h"
 
 
+static inline void main_gpio_init()
+{
+		// *** Habilito los botones
+	Chip_IOCON_PinMux (LPC_IOCON, BUTTON0, MD_PLN, IOCON_FUNC0 );
+	Chip_GPIO_SetDir(LPC_GPIO, BUTTON0, ENTRADA);
+	Chip_IOCON_PinMux (LPC_IOCON, BUTTON1, MD_PLN, IOCON_FUNC0 );
+	Chip_GPIO_SetDir(LPC_GPIO, BUTTON1, ENTRADA);
+	Chip_IOCON_PinMux (LPC_IOCON, BUTTON2, MD_PLN, IOCON_FUNC0 );
+	Chip_GPIO_SetDir(LPC_GPIO, BUTTON2, ENTRADA);
+	Chip_IOCON_PinMux (LPC_IOCON, BUTTON3, MD_PLN, IOCON_FUNC0 );
+	Chip_GPIO_SetDir(LPC_GPIO, BUTTON3, ENTRADA);
+}
+
 
 void main_init()
 {
 	SystemCoreClockUpdate();
 
 	Board_Init();
+
+	main_gpio_init();
 
 	#if USE_UART
 		uart_init();

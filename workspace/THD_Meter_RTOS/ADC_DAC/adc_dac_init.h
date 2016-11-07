@@ -321,6 +321,11 @@
 			printf("[info] Init I2S \r\n");
 		#endif
 
+		#if (USE_RTOS)
+			vSemaphoreCreateBinary(sem_adc_proc);
+			xSemaphoreTake(sem_adc_proc, 0);
+		#endif
+
 		if(!init_flag)
 		{
 			// Configuro los pines de RX de P0, ver defines

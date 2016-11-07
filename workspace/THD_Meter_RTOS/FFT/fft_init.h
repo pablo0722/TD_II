@@ -30,8 +30,19 @@
 			arm_status st =
 		#endif
 
-		arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, FFT_INIT_FFT_LENGTH, FFT_INIT_FFT, FFT_INIT_BIT_REVERSE);
-		arm_rfft_init_q31(&ifft_inst_q31, &fft_inst_q31_complex, FFT_INIT_FFT_LENGTH, FFT_INIT_IFFT, FFT_INIT_BIT_REVERSE);
+		arm_rfft_init_q31(&fft_inst_q31, 	&fft_inst_q31_complex, FFT_INIT_FFT_LENGTH, FFT_INIT_FFT, 	FFT_INIT_BIT_REVERSE);	// Inicializa estructura para hacer FFT
+
+		#if DEBUG_MODE
+			if(st != ARM_MATH_SUCCESS)
+			{
+				printf("[error] FFT init: \r\n");
+				printf("\t st = %d \r\n", st);
+			}
+
+			st =
+		#endif
+
+		arm_rfft_init_q31(&ifft_inst_q31, 	&fft_inst_q31_complex, FFT_INIT_FFT_LENGTH, FFT_INIT_IFFT, 	FFT_INIT_BIT_REVERSE);	// Inicializa estructura para hacer IFFT
 
 		#if DEBUG_MODE
 			if(st != ARM_MATH_SUCCESS)

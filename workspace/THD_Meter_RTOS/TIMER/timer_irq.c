@@ -19,7 +19,8 @@ void TIMER0_IRQHandler(void)
 
 	if (Chip_TIMER_MatchPending(LPC_TIMER0, channel_1))
 	{
-		// 'Give' the semaphore to unblock the task.
+		Chip_TIMER_ClearMatch(LPC_TIMER0, channel_1);
+
 		xSemaphoreGiveFromISR(sem_timer0_match1, &xHigherPriorityTaskWoken );
 
 		/* Giving the semaphore may have unblocked a task - if it did and the
@@ -33,7 +34,6 @@ void TIMER0_IRQHandler(void)
 		the Cortex M3 port layer for this purpose.  taskYIELD() must never be called
 		from an ISR! */
 		portEND_SWITCHING_ISR(xHigherPriorityTaskWoken);
-		Chip_TIMER_ClearMatch(LPC_TIMER0, channel_1);
 	}
 }
 
@@ -45,17 +45,16 @@ void TIMER1_IRQHandler( void )
 
 	if( Chip_TIMER_MatchPending(LPC_TIMER1, channel_0) )
 	{
+		Chip_TIMER_ClearMatch(LPC_TIMER1, channel_0);
+
 		xSemaphoreGiveFromISR(sem_timer1_match0, &xHigherPriorityTaskWoken );
 		portEND_SWITCHING_ISR(xHigherPriorityTaskWoken);
-		Chip_TIMER_ClearMatch(LPC_TIMER1, channel_0);
-		//Chip_GPIO_SetPinOutHigh(LPC_GPIO, BL);
 	}
 	if( Chip_TIMER_MatchPending(LPC_TIMER1, channel_1) )
 	{
+		Chip_TIMER_ClearMatch(LPC_TIMER1, channel_1);
+
 		xSemaphoreGiveFromISR(sem_timer1_match1, &xHigherPriorityTaskWoken );
 		portEND_SWITCHING_ISR(xHigherPriorityTaskWoken);
-		Chip_TIMER_ClearMatch(LPC_TIMER1, channel_1);
-		//Chip_GPIO_SetPinOutLow(LPC_GPIO, BL);
 	}
-	portEND_SWITCHING_ISR(xHigherPriorityTaskWoken);
 }

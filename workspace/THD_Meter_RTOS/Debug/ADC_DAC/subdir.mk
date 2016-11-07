@@ -4,25 +4,22 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../ADC_DAC/adc_dac_func.c \
+../ADC_DAC/adc_dac_func_aux.c \
 ../ADC_DAC/adc_dac_globales.c \
-../ADC_DAC/adc_dac_irq.c \
-../ADC_DAC/adc_dac_main.c \
-../ADC_DAC/adc_dac_main_aux.c \
-../ADC_DAC/adc_dac_tareas.c 
+../ADC_DAC/adc_dac_irq.c 
 
 OBJS += \
+./ADC_DAC/adc_dac_func.o \
+./ADC_DAC/adc_dac_func_aux.o \
 ./ADC_DAC/adc_dac_globales.o \
-./ADC_DAC/adc_dac_irq.o \
-./ADC_DAC/adc_dac_main.o \
-./ADC_DAC/adc_dac_main_aux.o \
-./ADC_DAC/adc_dac_tareas.o 
+./ADC_DAC/adc_dac_irq.o 
 
 C_DEPS += \
+./ADC_DAC/adc_dac_func.d \
+./ADC_DAC/adc_dac_func_aux.d \
 ./ADC_DAC/adc_dac_globales.d \
-./ADC_DAC/adc_dac_irq.d \
-./ADC_DAC/adc_dac_main.d \
-./ADC_DAC/adc_dac_main_aux.d \
-./ADC_DAC/adc_dac_tareas.d 
+./ADC_DAC/adc_dac_irq.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
