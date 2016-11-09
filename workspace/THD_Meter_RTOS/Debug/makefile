@@ -52,7 +52,7 @@ clean:
 
 post-build:
 	-@echo 'Performing post-build steps'
-	-arm-none-eabi-size "THD_Meter_RTOS.axf" ; # arm-none-eabi-nm -S --size-sort -s "THD_Meter_RTOS.axf" ; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin"
+	-arm-none-eabi-size "THD_Meter_RTOS.axf" ; arm-none-eabi-nm -S --size-sort -s "THD_Meter_RTOS.axf" ; # arm-none-eabi-objcopy -v -O binary "THD_Meter_RTOS.axf" "THD_Meter_RTOS.bin" ; # checksum -p LPC1769 -d "THD_Meter_RTOS.bin"
 	-@echo ' '
 
 .PHONY: all clean dependents

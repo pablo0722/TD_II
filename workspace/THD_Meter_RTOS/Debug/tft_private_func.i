@@ -16268,7 +16268,6 @@ void arm_rfft_fast_f32(
 # 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
 #define ADC_DAC_HEADER_H_ 
 # 18 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-  void main_adc_pre();
   void main_adc_post();
 
 
@@ -16310,7 +16309,7 @@ void arm_rfft_fast_f32(
 
 #define CH_L 1
 #define CH_R 2
-# 76 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+# 75 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
 #define PINGPONG_ADC_IDLE -1
 #define PINGPONG_ADC_TRANSFIRIENDO_A 0x00
 #define PINGPONG_ADC_TRANSFIRIENDO_B 0x01
@@ -16324,7 +16323,7 @@ void arm_rfft_fast_f32(
 
 #define PINGPONG_ADC_PROC2ERR(status) status |= 0x04
 #define PINGPONG_ADC_PROC2TRANS(status) status &= 0x01
-# 113 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+# 112 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
 #define PINGPONG_DAC_IDLE -1
 #define PINGPONG_DAC_RECIBIDO_A 0x00
 #define PINGPONG_DAC_RECIBIDO_B 0x01
@@ -16361,7 +16360,7 @@ void arm_rfft_fast_f32(
 
 
 
-  extern Bool flag_use_dac;
+  extern Bool dac_send;
 
 
   extern DMA_TransferDescriptor_t dma_dac_int_descriptor_A;
@@ -16373,11 +16372,6 @@ void arm_rfft_fast_f32(
   extern uint8_t dma_dac_int_canal;
 
   extern volatile uint8_t dma_dac_int_status;
-
-
-
-  extern uint16_t adcFlag;
-  extern int32_t data, cont, ch;
 
 
 
@@ -16744,7 +16738,7 @@ void arm_rfft_fast_f32(
   Chip_DAC_ConfigDAConverterControl(((LPC_DAC_T *) 0x4008C000), ((uint32_t) (1 << 1)) | ((uint32_t) (1 << 2)) | ((uint32_t) (1 << 3)));
 
  }
-# 172 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 2
+# 166 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 2
 # 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 1
 # 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
@@ -16968,17 +16962,18 @@ void arm_rfft_fast_f32(
 #define RTOS_HEADER_H_ 
 # 21 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h"
   void task_init();
+
+
+
+
+
+
   void vtask_ImAlive(void * pvParameters);
-  void vTask_THD( void *pvParameters );
+
 
    void vtask_uart(void * pvParameters);
 
 
-
-
-
-
- void vTask_THD( void *pvParameters );
 
 
 
@@ -17005,7 +17000,8 @@ void arm_rfft_fast_f32(
 
 
 
- void main_while();
+ void vTask_teclado(void *pvParameters);
+ void vTask_THD(void *pvParameters);
 # 10 "../TFT/tft_private_func.c" 2
 
 

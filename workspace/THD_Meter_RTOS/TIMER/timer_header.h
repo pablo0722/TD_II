@@ -29,16 +29,9 @@
 // ******************************************* //
 
 
-// ************* VARIABLES GLOBALES ************* //
-	#if USE_TIMER
-		#if USE_RTOS
-			extern xSemaphoreHandle sem_timer0_match1;
-			extern xSemaphoreHandle sem_timer1_match0;
-			extern xSemaphoreHandle sem_timer1_match1;
-		#endif
-	#endif
-// ********************************************** //
-
+// ************* INICIALIZACION ************* //
+	#include "timer_init.h"
+// ****************************************** //
 
 
 #endif /* TIMER_HEADER_H_ */

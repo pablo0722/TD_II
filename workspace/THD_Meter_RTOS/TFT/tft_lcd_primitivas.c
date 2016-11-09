@@ -7,7 +7,7 @@
 
 
 #include "header.h"
-#include "tft_private_func.h"
+#include "tft_header_priv.h"
 
 
 
@@ -31,23 +31,18 @@ void tft_DrawPixel(uint16_t x, uint16_t y, uint16_t color)
 	tft_SetCursorPosition(x, y, x, y);
 
 	tft_SendCommand_priv(ILI9341_GRAM);
-	tft_SendData_priv(color >> 8);
-	tft_SendData_priv(color & 0xFF);
+	tft_SendData_priv(color);
 }
 
 void tft_Fill(uint16_t color)
 {
-	unsigned int n, i, j;
-	i = color >> 8;
-	j = color & 0xFF;
 	tft_SetCursorPosition(0, 0, tft_Opts.width - 1, tft_Opts.height - 1);
 
 	tft_SendCommand_priv(ILI9341_GRAM);
 
-	for (n = 0; n < TFT_PIXEL; n++)
+	for (int n = 0; n < TFT_PIXEL; n++)
 	{
-		tft_SendData_priv(i);
-		tft_SendData_priv(j);
+		tft_SendData_priv(color);
 	}
 }
 
@@ -121,8 +116,6 @@ static void tft_Putc(uint16_t x, uint16_t y, char c, tft_font_t *font, uint16_t 
 
 void tft_Puts(uint16_t x, uint16_t y, char *str, tft_font_t *font, uint16_t foreground, uint16_t background)
 {
-	uint16_t startX = x;
-
 		// Set X and Y coordinates
 	tft_x = x;
 	tft_y = y;
@@ -130,6 +123,7 @@ void tft_Puts(uint16_t x, uint16_t y, char *str, tft_font_t *font, uint16_t fore
 	while (*str)
 	{
 		//New line
+		/*
 		if (*str == '\n')
 		{
 			tft_y += font->FontHeight + 1;
@@ -151,6 +145,7 @@ void tft_Puts(uint16_t x, uint16_t y, char *str, tft_font_t *font, uint16_t fore
 			str++;
 			continue;
 		}
+		*/
 
 		tft_Putc(tft_x, tft_y, *str++, font, foreground, background);
 	}
@@ -304,23 +299,4 @@ void tft_DrawFilledCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
         tft_DrawLine(x0 + y, y0 + x, x0 - y, y0 + x, color);
         tft_DrawLine(x0 + y, y0 - x, x0 - y, y0 - x, color);
     }
-}
-
-void playBL( int frecuencia , int duty )
-{
-        int tmp = 1000000/frecuencia;
-       // Match 0 (period)
-       Chip_TIMER_MatchEnableInt( LPC_TIMER1 , 0 );
-       Chip_TIMER_ResetOnMatchEnable( LPC_TIMER1 , 0 );
-       Chip_TIMER_StopOnMatchDisable( LPC_TIMER1 , 0 );
-       Chip_TIMER_SetMatch( LPC_TIMER1 , 0 , tmp );
-
-       // Match 1 (duty)
-       Chip_TIMER_MatchEnableInt( LPC_TIMER1 , 1 );
-       Chip_TIMER_ResetOnMatchDisable( LPC_TIMER1 , 1 );
-       Chip_TIMER_StopOnMatchDisable( LPC_TIMER1 , 1 );
-       Chip_TIMER_SetMatch( LPC_TIMER1 , 1 , tmp*duty/100 );
-       Chip_TIMER_Reset( LPC_TIMER1 );
-       Chip_TIMER_Enable( LPC_TIMER1 );
-       NVIC_EnableIRQ( TIMER1_IRQn );
 }

@@ -6,29 +6,26 @@
 C_SRCS += \
 ../TFT/tft_Init.c \
 ../TFT/tft_fonts.c \
+../TFT/tft_func_priv.c \
 ../TFT/tft_globales.c \
 ../TFT/tft_lcd_primitivas.c \
-../TFT/tft_private_func.c \
-../TFT/tft_signalTFT.c \
-../TFT/tft_tareas.c 
+../TFT/tft_signalTFT.c 
 
 OBJS += \
 ./TFT/tft_Init.o \
 ./TFT/tft_fonts.o \
+./TFT/tft_func_priv.o \
 ./TFT/tft_globales.o \
 ./TFT/tft_lcd_primitivas.o \
-./TFT/tft_private_func.o \
-./TFT/tft_signalTFT.o \
-./TFT/tft_tareas.o 
+./TFT/tft_signalTFT.o 
 
 C_DEPS += \
 ./TFT/tft_Init.d \
 ./TFT/tft_fonts.d \
+./TFT/tft_func_priv.d \
 ./TFT/tft_globales.d \
 ./TFT/tft_lcd_primitivas.d \
-./TFT/tft_private_func.d \
-./TFT/tft_signalTFT.d \
-./TFT/tft_tareas.d 
+./TFT/tft_signalTFT.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

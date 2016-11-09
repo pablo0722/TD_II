@@ -63,15 +63,6 @@
 	extern tft_font_t tft_Font_16x26;
 // ************************** //
 
-
-// *** TAREAS *** //
-	#if (USE_RTOS)
-		void vTask_tft_BL(void *pvParameters);
-		void vtask_tft_display(void *pvParameters);
-	#endif
-// ************** //
-
-
 // *** FUNCIONES *** //
 	// *** INICIALIZACION *** //
 		void tft_init();
@@ -90,7 +81,6 @@
 		void tft_DrawFilledRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
 		void tft_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
 		void tft_DrawFilledCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
-		void playBL( int frecuencia , int duty );
 	// ****************** //
 // ***************** //
 

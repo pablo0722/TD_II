@@ -66,6 +66,7 @@ UART/uart_func.o UART/uart_func.d: ../UART/uart_func.c \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_header.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TFT/tft_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h \
  ../UART/uart_header_priv.h
@@ -203,6 +204,8 @@ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h:
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_header.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_init.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TFT/tft_header.h:
 

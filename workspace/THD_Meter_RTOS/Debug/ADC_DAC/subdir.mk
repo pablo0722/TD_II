@@ -6,19 +6,25 @@
 C_SRCS += \
 ../ADC_DAC/adc_dac_func.c \
 ../ADC_DAC/adc_dac_func_aux.c \
+../ADC_DAC/adc_dac_func_priv.c \
 ../ADC_DAC/adc_dac_globales.c \
+../ADC_DAC/adc_dac_globales_priv.c \
 ../ADC_DAC/adc_dac_irq.c 
 
 OBJS += \
 ./ADC_DAC/adc_dac_func.o \
 ./ADC_DAC/adc_dac_func_aux.o \
+./ADC_DAC/adc_dac_func_priv.o \
 ./ADC_DAC/adc_dac_globales.o \
+./ADC_DAC/adc_dac_globales_priv.o \
 ./ADC_DAC/adc_dac_irq.o 
 
 C_DEPS += \
 ./ADC_DAC/adc_dac_func.d \
 ./ADC_DAC/adc_dac_func_aux.d \
+./ADC_DAC/adc_dac_func_priv.d \
 ./ADC_DAC/adc_dac_globales.d \
+./ADC_DAC/adc_dac_globales_priv.d \
 ./ADC_DAC/adc_dac_irq.d 
 
 

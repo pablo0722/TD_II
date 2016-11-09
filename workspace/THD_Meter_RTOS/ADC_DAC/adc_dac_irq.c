@@ -7,7 +7,7 @@
 
 
 #include "header.h"
-
+#include "adc_dac_header_priv.h"
 
 
 #if USE_DMA

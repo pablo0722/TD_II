@@ -15,12 +15,15 @@
 	#include "adc_dac_header.h"
 	#include "timer_header.h"
 	#include "tft_header.h"
+	#include "timer_header.h"
 	#include "rtos_header.h"
 
 
 
-// ********* FUNCIONES ********** //
-	void main_while();
+// ********* TAREAS ********** //
+	void vTask_teclado(void *pvParameters);
+	void vTask_tft(void *pvParameters);
+	void vTask_THD(void *pvParameters);
 // ****************************** //
 
 

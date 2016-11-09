@@ -1,5 +1,5 @@
 #include "header.h"
-#include "tft_private_func.h"
+#include "tft_header_priv.h"
 
 
 // *** PROTOTIPOS FUNCIONES PRIVADAS *** //
@@ -20,17 +20,11 @@ void tft_init()
 	tft_Opts.height = TFT_HEIGHT;
 	tft_Opts.orientation = TFT_ORIENTATION_PORTRAIT;
 
+	timer_BL_init(100, 50);
+
 	tft_Fill(TFT_COLOR_WHITE);
 
 	MenuInit();
-
-	playBL(60, 1);
-
-	#if (USE_RTOS)
-			// *** Tareas
-		xTaskCreate(vTask_tft_BL, "vTask_tft_BL", 		configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL), (xTaskHandle *) NULL);
-		xTaskCreate(vtask_tft_display, "vtask_tft_display", configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL), (xTaskHandle *) NULL);
-	#endif
 }
 // ************************ //
 
@@ -38,7 +32,6 @@ void tft_init()
 // *** FUNCIONES PRIVADAS *** //
 static void MenuInit()
 {
-	extern tft_font_t TM_Font_11x18;
 	//TM_ILI9341_Orientation peperota=TM_ILI9341_Landscape ;
 		/* MODOS DE ORIENTACION (funcion TM_ILI9341_Rotate())
 		 * 0: MAL
@@ -48,16 +41,13 @@ static void MenuInit()
 		 * 4: Apaisado con pines hacia la izquierda
 		 * 5: Apaisado con pines hacia la derecha
 		 */
-	tft_Rotate(4);
+	tft_Rotate(2);
 
-	tft_DrawRectangle(2,2,60,40, TFT_COLOR_WHITE);
-	tft_Puts(5, 5,	"ECG", 			&TM_Font_11x18,  TFT_FOREGROUND_BLUE2, TFT_BACKGROUND_BLACK);
-	tft_Puts(5, 70, 	"Cargando", 	&TM_Font_11x18,  TFT_FOREGROUND_BLUE2, TFT_BACKGROUND_BLACK);
-	tft_Puts(5, 130, "Version 15.0", &TM_Font_11x18,  TFT_FOREGROUND_BLUE2, TFT_BACKGROUND_BLACK);
-	tft_DrawFilledCircle(10,		160, 10, TFT_COLOR_YELLOW);
-	tft_DrawFilledCircle(50,		160, 10, TFT_COLOR_GREEN);
-	tft_DrawFilledCircle(90,		160, 10, TFT_COLOR_WHITE);
-	tft_DrawFilledCircle(130,	160, 10, TFT_COLOR_ORANGE);
+	tft_Fill(TFT_COLOR_BLACK);
+
+	tft_Puts(5, 5,		"ECG", 			&tft_Font_11x18,  TFT_FOREGROUND_RED, 	TFT_BACKGROUND_BLACK);
+	tft_Puts(5, 70, 	"Cargando", 	&tft_Font_11x18,  TFT_FOREGROUND_GREEN, TFT_BACKGROUND_BLACK);
+	tft_Puts(5, 130, 	"Version 15.0", &tft_Font_11x18,  TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
 }
 
 static void tft_gpio_init_priv()

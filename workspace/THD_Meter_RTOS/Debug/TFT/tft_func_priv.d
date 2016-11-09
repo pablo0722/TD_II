@@ -1,4 +1,4 @@
-TIMER/timer_globales.o TIMER/timer_globales.d: ../TIMER/timer_globales.c \
+TFT/tft_func_priv.o TFT/tft_func_priv.d: ../TFT/tft_func_priv.c \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/utilidades.h \
  D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h \
@@ -66,6 +66,7 @@ TIMER/timer_globales.o TIMER/timer_globales.d: ../TIMER/timer_globales.c \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_header.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TFT/tft_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h
 
@@ -202,6 +203,8 @@ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h:
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_header.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_init.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TFT/tft_header.h:
 

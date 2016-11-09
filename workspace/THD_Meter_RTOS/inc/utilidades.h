@@ -32,7 +32,7 @@
 
 
 // ***** PERIFERICOS (init) ***** //
-	#define USE_UART	ON
+	#define USE_UART	OFF
 	#define USE_TIMER	ON
 	#define USE_ADC		ON
 	#define USE_DAC		ON
@@ -52,7 +52,7 @@
 	#if (USE_UART)
 			// Numero de UART a utilizar
 		#define USE_UART0 			ON
-		#define USE_UART1 			ON
+		#define USE_UART1 			OFF
 		#define USE_UART2 			OFF
 		#define USE_UART3 			OFF
 

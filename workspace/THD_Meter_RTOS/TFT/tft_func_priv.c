@@ -10,7 +10,7 @@
 
 
 // *** PROTOTIPOS FUNCIONES PRIVADAS (en serio) *** //
-	static void tft_TM_Send(uint8_t data);
+	static void tft_TM_Send(uint16_t data);
 // ********************************************* //
 
 
@@ -20,7 +20,7 @@
 		for (; delay != 0; delay--);
 	}
 
-	void tft_SendCommand_priv(uint8_t data)
+	void tft_SendCommand_priv(uint16_t data)
 	{
 		Chip_GPIO_SetPinState(LPC_GPIO,READ_DATA,1);
 		Chip_GPIO_SetPinState(LPC_GPIO, RS,0);
@@ -31,7 +31,7 @@
 		Chip_GPIO_SetPinState(LPC_GPIO, WR,1);
 	}
 
-	void tft_SendData_priv(uint8_t data)
+	void tft_SendData_priv(uint16_t data)
 	{
 		Chip_GPIO_SetPinState(LPC_GPIO, RS,1);
 		Chip_GPIO_SetPinState(LPC_GPIO, WR,0);
@@ -45,7 +45,7 @@
 
 
 // *** FUNCIONES 'SUPER' PRIVADAS *** //
-	static void tft_TM_Send(uint8_t data)
+	static void tft_TM_Send(uint16_t data)
 	{
 			Chip_GPIO_SetPinState(LPC_GPIO, DB0, (data >> 0) & 1);
 			Chip_GPIO_SetPinState(LPC_GPIO, DB1, (data >> 1) & 1);

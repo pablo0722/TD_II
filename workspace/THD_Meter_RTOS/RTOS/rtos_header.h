@@ -19,17 +19,18 @@
 // ********* FUNCIONES ********** //
 	#if USE_RTOS
 		void task_init();
-		void vtask_ImAlive(void * pvParameters);
-		void vTask_THD( void *pvParameters );
-		#if (USE_UART)
-			void vtask_uart(void * pvParameters);
-		#endif
 	#endif
 // ****************************** //
 
 
 // ********** TAREAS *********** //
-	void vTask_THD( void *pvParameters );
+	#if USE_RTOS
+		void vtask_ImAlive(void * pvParameters);	// led testigo
+
+		#if (USE_UART)
+			void vtask_uart(void * pvParameters);
+		#endif
+	#endif
 // ***************************** //
 
 

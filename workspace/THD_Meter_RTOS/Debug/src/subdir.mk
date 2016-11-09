@@ -8,24 +8,27 @@ C_SRCS += \
 ../src/THD_Meter.c \
 ../src/cr_startup_lpc175x_6x.c \
 ../src/crp.c \
-../src/funciones.c \
-../src/sysinit.c 
+../src/globales.c \
+../src/sysinit.c \
+../src/tareas.c 
 
 OBJS += \
 ./src/Inicializaciones.o \
 ./src/THD_Meter.o \
 ./src/cr_startup_lpc175x_6x.o \
 ./src/crp.o \
-./src/funciones.o \
-./src/sysinit.o 
+./src/globales.o \
+./src/sysinit.o \
+./src/tareas.o 
 
 C_DEPS += \
 ./src/Inicializaciones.d \
 ./src/THD_Meter.d \
 ./src/cr_startup_lpc175x_6x.d \
 ./src/crp.d \
-./src/funciones.d \
-./src/sysinit.d 
+./src/globales.d \
+./src/sysinit.d \
+./src/tareas.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
