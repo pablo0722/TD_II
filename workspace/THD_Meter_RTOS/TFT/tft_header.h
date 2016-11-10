@@ -127,6 +127,11 @@
 		#define BL 							2,4 	// LCD_D6
 	// *************** //
 
+	// *** PIN MODE *** //
+			#define ENTRADA 	0
+			#define SALIDA 		1
+	// **************** //
+
 	// *** COLORES *** //
 		#define TFT_COLOR_WHITE			0xFFFF
 		#define TFT_COLOR_BLACK			0x0000

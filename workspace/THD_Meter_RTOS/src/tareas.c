@@ -21,24 +21,24 @@ q31_t fft_cmplx[FFT_SIZE*2];
 	{
 		while(1)
 		{
-			if(Chip_GPIO_GetPinState(LPC_GPIO, BUTTON0))
-			{
-				dac_send = TRUE;
-				flag_do_thd = FALSE;
-				flag_do_rem = FALSE;
-			}
-			if(Chip_GPIO_GetPinState(LPC_GPIO, BUTTON1))
-			{
-				dac_send = FALSE;
-				flag_do_thd = TRUE;
-				flag_do_rem = FALSE;
-			}
-			if(Chip_GPIO_GetPinState(LPC_GPIO, BUTTON2))
-			{
-				dac_send = FALSE;
-				flag_do_thd = FALSE;
-				flag_do_rem = TRUE;
-			}
+//			if(Chip_GPIO_GetPinState(LPC_GPIO, BUTTON0))
+//			{
+//				dac_send = TRUE;
+//				flag_do_thd = FALSE;
+//				flag_do_rem = FALSE;
+//			}
+//			if(Chip_GPIO_GetPinState(LPC_GPIO, BUTTON1))
+//			{
+//				dac_send = FALSE;
+//				flag_do_thd = TRUE;
+//				flag_do_rem = FALSE;
+//			}
+//			if(Chip_GPIO_GetPinState(LPC_GPIO, BUTTON2))
+//			{
+//				dac_send = FALSE;
+//				flag_do_thd = FALSE;
+//				flag_do_rem = TRUE;
+//			}
 
 			vTaskDelay(50/portTICK_RATE_MS);
 		}
@@ -47,23 +47,23 @@ q31_t fft_cmplx[FFT_SIZE*2];
 	void vTask_tft(void *pvParameters)
 	{
 		tft_Puts(0, 0, 		"TECNICAS DIGITALES",	&tft_Font_11x18, 	TFT_FOREGROUND_GREEN, 	TFT_BACKGROUND_BLACK);
-		/*
-		tft_Fill(TFT_COLOR_BLACK);
-		tft_Puts(0, 0, 		"TECNICAS DIGITALES",	&tft_Font_11x18, 	TFT_FOREGROUND_GREEN, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(120, 25, 	"II",					&tft_Font_11x18, 	TFT_FOREGROUND_RED, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(0, 50, 	"PROCESAMIENTO DE",		&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(100, 75, 	"AUDIO",				&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(0, 100, 	"MENU",					&tft_Font_11x18,	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(50, 125, 	"Reverb",				&tft_Font_11x18,	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
-		tft_Puts( 50, 150, 	"Echo",					&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(50, 175, 	"High Pass Filter",		&tft_Font_11x18,  	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(50, 200, 	"Low Pass Filter",		&tft_Font_11x18,  	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
 
-		tft_DrawFilledCircle(30, 135, 7, TFT_COLOR_WHITE);
-		tft_DrawFilledCircle(30, 160, 7, TFT_COLOR_WHITE);
-		tft_DrawFilledCircle(30, 185, 7, TFT_COLOR_WHITE);
-		tft_DrawFilledCircle(30, 210, 7, TFT_COLOR_WHITE);
-		*/
+//		tft_Fill(TFT_COLOR_BLACK);
+//		tft_Puts(0, 0, 		"TECNICAS DIGITALES",	&tft_Font_11x18, 	TFT_FOREGROUND_GREEN, 	TFT_BACKGROUND_BLACK);
+//		tft_Puts(120, 25, 	"II",					&tft_Font_11x18, 	TFT_FOREGROUND_RED, 	TFT_BACKGROUND_BLACK);
+//		tft_Puts(0, 50, 	"PROCESAMIENTO DE",		&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+//		tft_Puts(100, 75, 	"AUDIO",				&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+//		tft_Puts(0, 100, 	"MENU",					&tft_Font_11x18,	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+//		tft_Puts(50, 125, 	"Reverb",				&tft_Font_11x18,	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+//		tft_Puts( 50, 150, 	"Echo",					&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+//		tft_Puts(50, 175, 	"High Pass Filter",		&tft_Font_11x18,  	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+//		tft_Puts(50, 200, 	"Low Pass Filter",		&tft_Font_11x18,  	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+//
+//		tft_DrawFilledCircle(30, 135, 7, TFT_COLOR_WHITE);
+//		tft_DrawFilledCircle(30, 160, 7, TFT_COLOR_WHITE);
+//		tft_DrawFilledCircle(30, 185, 7, TFT_COLOR_WHITE);
+//		tft_DrawFilledCircle(30, 210, 7, TFT_COLOR_WHITE);
+
 
 		while(1)
 		{

@@ -15,6 +15,7 @@ C_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 ADC_DAC \
+BASICS \
 FFT \
 RTOS \
 TFT \

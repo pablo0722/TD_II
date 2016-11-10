@@ -52,99 +52,39 @@ static void MenuInit()
 
 static void tft_gpio_init_priv()
 {
-	Chip_IOCON_PinMux(LPC_IOCON, DB0, IOCON_MODE_INACT, IOCON_FUNC0);
-	Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB0);	// Expansion 0 -> P 2 , 6
-	Chip_GPIO_SetPinState(LPC_GPIO, DB0,0);
+	pin_gpio_init(DB0, 		 IOCON_MODE_INACT, SALIDA); // Expansion 0 -> P 2 , 6
+	pin_gpio_init(DB1, 		 IOCON_MODE_INACT, SALIDA); // Expansion 1 -> P 1 , 29
+	pin_gpio_init(DB2, 		 IOCON_MODE_INACT, SALIDA); // Expansion 2 -> P 4 , 28
+	pin_gpio_init(DB3, 		 IOCON_MODE_INACT, SALIDA); // Expansion 3 -> P 1 , 23
+	pin_gpio_init(DB4, 		 IOCON_MODE_INACT, SALIDA); // Expansion 4 -> P 1 , 20
+	pin_gpio_init(DB5, 		 IOCON_MODE_INACT, SALIDA); // Expansion 5 -> P 0 , 19
+	pin_gpio_init(DB6, 		 IOCON_MODE_INACT, SALIDA); // Expansion 6 -> P 3 , 26
+	pin_gpio_init(DB7, 		 IOCON_MODE_INACT, SALIDA); // Expansion 7 -> P 1 , 25
+	pin_gpio_init(DB8, 		 IOCON_MODE_INACT, SALIDA); // Expansion 8 -> P 1 , 22
+	pin_gpio_init(DB9, 		 IOCON_MODE_INACT, SALIDA); // Expansion 9 -> P 1 , 19
+	pin_gpio_init(DB10, 	 IOCON_MODE_INACT, SALIDA); // Expansion 10 -> P 0 , 20
+	pin_gpio_init(DB11, 	 IOCON_MODE_INACT, SALIDA); // Expansion 11 -> P 3 , 25
+	pin_gpio_init(DB12, 	 IOCON_MODE_INACT, SALIDA); // LCD_RESET
+	pin_gpio_init(DB13, 	 IOCON_MODE_INACT, SALIDA); // Expansion 13 -> P 1 , 24
+	pin_gpio_init(DB14, 	 IOCON_MODE_INACT, SALIDA); // Expansion 14 -> P 1 , 21
+	pin_gpio_init(DB15, 	 IOCON_MODE_INACT, SALIDA); // Expansion 15 -> P 1 , 18 CN4
+	pin_gpio_init(CS, 		 IOCON_MODE_INACT, SALIDA); // MOSI
+    pin_gpio_init(RS, 		 IOCON_MODE_INACT, SALIDA); // MISO
+    pin_gpio_init(WR, 		 IOCON_MODE_INACT, SALIDA); // SCK
+    pin_gpio_init(READ_DATA, IOCON_MODE_INACT, SALIDA); // SSEL
+    pin_gpio_init(REST, 	 IOCON_MODE_INACT, SALIDA); // LCD_D7
+    pin_gpio_init(BL, 		 IOCON_MODE_INACT, SALIDA); // LCD_D6
 
-	Chip_IOCON_PinMux(LPC_IOCON, DB1, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB1);	// Expansion 1 -> P 1 , 29
-    Chip_GPIO_SetPinState(LPC_GPIO, DB1,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB2, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB2);	// Expansion 2 -> P 4 , 28
-    Chip_GPIO_SetPinState(LPC_GPIO, DB2,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB3, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB3);// Expansion 3 -> P 1 , 23
-    Chip_GPIO_SetPinState(LPC_GPIO, DB3,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB4, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB4);// Expansion 4 -> P 1 , 20
-    Chip_GPIO_SetPinState(LPC_GPIO, DB4,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB5, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB5);// Expansion 5 -> P 0 , 19
-    Chip_GPIO_SetPinState(LPC_GPIO, DB5,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB6, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB6);// Expansion 6 -> P 3 , 26
-    Chip_GPIO_SetPinState(LPC_GPIO, DB6,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB7, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB7);// Expansion 7 -> P 1 , 25
-    Chip_GPIO_SetPinState(LPC_GPIO, DB7,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB8, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB8);// Expansion 8 -> P 1 , 22
-    Chip_GPIO_SetPinState(LPC_GPIO, DB8,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB9, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB9);// Expansion 9 -> P 1 , 19
-    Chip_GPIO_SetPinState(LPC_GPIO, DB9,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB10, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB10);// Expansion 10 -> P 0 , 20
-    Chip_GPIO_SetPinState(LPC_GPIO, DB10,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB11, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB11);// Expansion 11 -> P 3 , 25
-    Chip_GPIO_SetPinState(LPC_GPIO, DB11,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB12, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB12);//LCD_RESET
-    Chip_GPIO_SetPinState(LPC_GPIO,DB12,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB13, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB13);// Expansion 13 -> P 1 , 24
-    Chip_GPIO_SetPinState(LPC_GPIO, DB13,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB14, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB14);// Expansion 14 -> P 1 , 21
-    Chip_GPIO_SetPinState(LPC_GPIO, DB14,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, DB15, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, DB15);// Expansion 15 -> P 1 , 18 CN4
-    Chip_GPIO_SetPinState(LPC_GPIO, DB15,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, CS, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, CS); // MOSI
-    Chip_GPIO_SetPinState(LPC_GPIO, CS,1); // Activa en Bajo
-
-    Chip_IOCON_PinMux(LPC_IOCON, RS, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, RS); // MISO
-    Chip_GPIO_SetPinState(LPC_GPIO, RS,0);
-
-    Chip_IOCON_PinMux(LPC_IOCON, WR, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, WR); // SCK
-    Chip_GPIO_SetPinState(LPC_GPIO, WR,1);  // Activa en Bajo
-
-    Chip_IOCON_PinMux(LPC_IOCON, READ_DATA, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, READ_DATA); // SSEL
-    Chip_GPIO_SetPinState(LPC_GPIO, READ_DATA,1);//ACTIVA EN BAJO
-
-    Chip_IOCON_PinMux(LPC_IOCON, REST, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, REST); // LCD_D7
-    Chip_GPIO_SetPinState(LPC_GPIO, REST,1);	// Activa en Bajo
-
-    Chip_IOCON_PinMux(LPC_IOCON, BL, IOCON_MODE_INACT, IOCON_FUNC0);
-    Chip_GPIO_SetPinDIROutput(LPC_GPIO, BL); // LCD_D6
-    Chip_GPIO_SetPinState(LPC_GPIO,BL,0);
+    pin_set(CS,1); 			// Activa en Bajo
+    pin_set(WR,1);  		// Activa en Bajo
+    pin_set(READ_DATA,1);	// Activa en Bajo
+    pin_set(REST,1);		// Activa en Bajo
 }
 
 static void tft_LCD_Init_priv()
 {
-		Chip_GPIO_SetPinState(LPC_GPIO, REST,0);
-		Chip_GPIO_SetPinState(LPC_GPIO, REST,1);
+		pin_set(REST,0);
+		pin_set(REST,1);
 
 		tft_SendCommand_priv(ILI9341_RESET);
 		tft_Delay_priv(2000000);

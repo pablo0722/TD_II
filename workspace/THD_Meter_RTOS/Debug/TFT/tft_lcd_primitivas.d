@@ -59,6 +59,8 @@ TFT/tft_lcd_primitivas.o TFT/tft_lcd_primitivas.d: \
  D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm_math.h \
  D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h \
  D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/core_cm3.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\BASICS/basics_header.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\BASICS/basics_header_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\FFT/fft_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\FFT/fft_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\FFT/fft_func.h \
@@ -66,6 +68,7 @@ TFT/tft_lcd_primitivas.o TFT/tft_lcd_primitivas.d: \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init_priv.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TFT/tft_header.h \
@@ -190,6 +193,10 @@ D:\UTN\Git\TD_II\TD_II\workspace\CMSIS_DSPLIB_CM3\inc/arm/arm_math.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\inc/core_cm3.h:
 
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\BASICS/basics_header.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\BASICS/basics_header_init.h:
+
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\FFT/fft_header.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\FFT/fft_init.h:
@@ -203,6 +210,8 @@ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_init.h:
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init_priv.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_header.h:
 

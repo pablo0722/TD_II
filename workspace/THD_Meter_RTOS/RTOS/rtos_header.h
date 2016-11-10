@@ -39,10 +39,10 @@
 		#define ENTRADA 	0
 		#define SALIDA 		1
 
-		#define	BUTTON0		0, 0
-		#define	BUTTON1		0, 0
-		#define	BUTTON2		0, 0
-		#define	BUTTON3		0, 0
+		#define	BUTTON0		2, 10
+		#define	BUTTON1		0, 18
+		#define	BUTTON2		0, 11
+		#define	BUTTON3		2, 13
 	#endif
 // ******************************************* //
 

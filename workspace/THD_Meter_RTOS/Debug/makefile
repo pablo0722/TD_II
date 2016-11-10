@@ -14,6 +14,7 @@ RM := rm -rf
 -include TFT/subdir.mk
 -include RTOS/subdir.mk
 -include FFT/subdir.mk
+-include BASICS/subdir.mk
 -include ADC_DAC/subdir.mk
 -include subdir.mk
 -include objects.mk

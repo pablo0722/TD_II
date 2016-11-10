@@ -46,6 +46,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CMSIS_DSPLIB_CM3/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/LibFreeRTOS_8.2.3/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/THD_Meter_RTOS/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/THD_Meter_RTOS/BASICS}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/THD_Meter_RTOS/UART}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/THD_Meter_RTOS/FFT}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/THD_Meter_RTOS/ADC_DAC}&quot;"/>
@@ -112,6 +113,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="ADC_DAC"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="BASICS"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FFT"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="RTOS"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="TFT"/>
@@ -248,6 +250,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="ADC_DAC"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="BASICS"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FFT"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="RTOS"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="TFT"/>

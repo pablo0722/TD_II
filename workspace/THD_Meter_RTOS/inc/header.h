@@ -10,6 +10,7 @@
 #define HEADER_H_
 
 	#include "utilidades.h"
+	#include "basics_header.h"
 	#include "fft_header.h"
 	#include "uart_header.h"
 	#include "adc_dac_header.h"

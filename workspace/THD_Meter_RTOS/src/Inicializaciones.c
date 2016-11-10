@@ -11,18 +11,11 @@
 
 static inline void main_gpio_init()
 {
-	/*
 		// *** Habilito los botones
-	Chip_IOCON_PinMux (LPC_IOCON, BUTTON0, MD_PLN, IOCON_FUNC0 );
-	Chip_IOCON_PinMux (LPC_IOCON, BUTTON1, MD_PLN, IOCON_FUNC0 );
-	Chip_IOCON_PinMux (LPC_IOCON, BUTTON2, MD_PLN, IOCON_FUNC0 );
-	Chip_IOCON_PinMux (LPC_IOCON, BUTTON3, MD_PLN, IOCON_FUNC0 );
-
-	Chip_GPIO_SetDir(LPC_GPIO, BUTTON0, ENTRADA);
-	Chip_GPIO_SetDir(LPC_GPIO, BUTTON1, ENTRADA);
-	Chip_GPIO_SetDir(LPC_GPIO, BUTTON2, ENTRADA);
-	Chip_GPIO_SetDir(LPC_GPIO, BUTTON3, ENTRADA);
-	*/
+//	pin_init(LPC_IOCON, BUTTON0, MD_PLN, IOCON_FUNC0, ENTRADA);
+//	pin_init(LPC_IOCON, BUTTON1, MD_PLN, IOCON_FUNC0, ENTRADA);
+//	pin_init(LPC_IOCON, BUTTON2, MD_PLN, IOCON_FUNC0, ENTRADA);
+//	pin_init(LPC_IOCON, BUTTON3, MD_PLN, IOCON_FUNC0, ENTRADA);
 }
 
 static inline void main_task_init()
@@ -48,18 +41,6 @@ void main_init()
 
 	#if USE_ADC_INTERNO
 		adc_init();
-	#endif
-
-	#if USE_DAC_INTERNO
-		dac_init();
-	#endif
-
-	#if (USE_ADC_EXTERNO) || (USE_DAC_EXTERNO)
-		i2s_init();
-	#endif
-
-	#if USE_DMA
-		dma_init();
 	#endif
 
 	#if USE_FFT

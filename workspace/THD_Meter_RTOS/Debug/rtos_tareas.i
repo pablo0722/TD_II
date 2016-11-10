@@ -16001,14 +16001,83 @@ void arm_rfft_fast_f32(
 
  void main_init();
 # 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
-# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 1
-# 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
-#define FFT_HEADER_H_ 
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header.h" 1
+# 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header.h"
+#define BASICS_HEADER_H_ 
 
+
+
+
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h" 1
+# 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h"
+#define BASICS_HEADER_INIT_H_ 
 
 
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 1
-# 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
+# 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h" 2
+
+
+static inline void pin_set(uint8_t port, uint8_t pin, 
+# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h" 3 4
+                                                     _Bool 
+# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h"
+                                                          estado)
+{
+ Chip_GPIO_SetPinState(((LPC_GPIO_T *) 0x2009C000), port, pin, estado);
+}
+
+static inline 
+# 20 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h" 3 4
+             _Bool 
+# 20 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h"
+                  pin_get(uint8_t port, uint8_t pin)
+{
+ return Chip_GPIO_GetPinState(((LPC_GPIO_T *) 0x2009C000), port, pin);
+}
+
+static inline void pin_gpio_init(uint8_t port, uint8_t pin, uint32_t mode, 
+# 25 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h" 3 4
+                                                                          _Bool 
+# 25 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h"
+                                                                               salida)
+{
+ if(1)
+ {
+  printf("[info] pin_init: \n");
+  printf("\t puerto %hhu, pin %hhu, modo %hhu, salida %hhu \n", port, pin, mode, salida);
+ }
+
+ Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, 0x0);
+
+ Chip_GPIO_SetDir(((LPC_GPIO_T *) 0x2009C000), port, pin, (uint8_t)salida);
+
+ if(salida)
+  pin_set(port, pin, 0);
+}
+
+static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t func)
+{
+ if(1)
+ {
+  if(func == 0)
+  {
+   printf("[error] pin_init:\n");
+   printf("\t Quiso inicializar pin como GPIO sin usar funcion dedicada \"pin_gpio_init\" \n");
+  }
+  else
+  {
+   printf("[info] pin_init:\n");
+  }
+  printf("\t puerto %hhu, pin %hhu, modo %hhu, funcion %hhu\n", port, pin, mode, func);
+ }
+
+ Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, func);
+}
+# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header.h" 2
+# 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 1
+# 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
+#define FFT_HEADER_H_ 
 # 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
   void fft_function();
 
@@ -16112,14 +16181,14 @@ void arm_rfft_fast_f32(
   arm_rfft_q31(&ifft_inst_q31, fft_in_cmplx, fft_out_real);
  }
 # 68 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
-# 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h" 1
 # 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
 #define UART_HEADER_H_ 
 # 120 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_init.h" 1
 # 121 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h" 2
-# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 1
 # 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
 #define ADC_DAC_HEADER_H_ 
@@ -16186,7 +16255,19 @@ void arm_rfft_fast_f32(
 
 
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 1
-# 18 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+# 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init_priv.h" 1
+# 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init_priv.h"
+#define ADC_DAC_INIT_PRIV_H_ 
+
+
+
+
+void dma_init();
+
+
+
+
  static Status getClkDiv(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format, uint16_t *pxDiv, uint16_t *pyDiv, uint32_t *pN)
  {
   uint32_t pClk;
@@ -16341,88 +16422,88 @@ void arm_rfft_fast_f32(
 
  static inline void i2s_init()
  {
-  static char init_flag = 0;
-
 
    printf("[info] Init I2S \r\n");
 
 
 
    { ( sem_adc_proc ) = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) ); if( ( sem_adc_proc ) != 
-# 179 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 3 4
+# 178 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init_priv.h" 3 4
   ((void *)0) 
-# 179 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+# 178 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init_priv.h"
   ) { ( void ) xQueueGenericSend( ( QueueHandle_t ) ( ( sem_adc_proc ) ), 
-# 179 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 3 4
+# 178 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init_priv.h" 3 4
   ((void *)0)
-# 179 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+# 178 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init_priv.h"
   , ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) ); } };
    xQueueGenericReceive( ( QueueHandle_t ) ( sem_adc_proc ), 
-# 180 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 3 4
+# 179 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init_priv.h" 3 4
   ((void *)0)
-# 180 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+# 179 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init_priv.h"
   , ( 0 ), ( ( BaseType_t ) 0 ) );
 
 
-  if(!init_flag)
-  {
 
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,4, (0x2), 0x1);
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,6, (0x2), 0x1);
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,5, (0x2), 0x1);
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 4,28, (0x2), 0x1);
-
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,7, (0x2), 0x1);
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,9, (0x2), 0x1);
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,8, (0x2), 0x1);
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 4,29, (0x2), 0x1);
+   dma_init();
 
 
 
-   I2S_AUDIO_FORMAT_T audio_Confg;
-   audio_Confg.SampleRate = 32000;
-   audio_Confg.ChannelNumber = 2;
-   audio_Confg.WordWidth = 32;
+  pin_init(0,4, (0x2), 0x1);
+  pin_init(0,6, (0x2), 0x1);
+  pin_init(0,5, (0x2), 0x1);
+  pin_init(4,28, (0x2), 0x1);
 
-
-   Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_I2S, SYSCTL_CLKDIV_1);
-
-   Chip_I2S_Init(((LPC_I2S_T *) 0x400A8000));
-
-   Chip_I2S_RxStop(((LPC_I2S_T *) 0x400A8000));
-   Chip_I2S_TxStop(((LPC_I2S_T *) 0x400A8000));
-   Chip_I2S_EnableMute(((LPC_I2S_T *) 0x400A8000));
-
-
-   Chip_I2S_DisableMute(((LPC_I2S_T *) 0x400A8000));
-   Chip_I2S_RxStart(((LPC_I2S_T *) 0x400A8000));
-   Chip_I2S_TxStart(((LPC_I2S_T *) 0x400A8000));
-
-   Chip_I2S_Int_RxCmd(((LPC_I2S_T *) 0x400A8000), ENABLE, 1);
-   Chip_I2S_Int_TxCmd(((LPC_I2S_T *) 0x400A8000), DISABLE, 1);
-
-
-   mi_Chip_I2S_RxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
-
-   mi_Chip_I2S_TxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
-
-
-    Chip_I2S_DMA_RxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
-    Chip_I2S_DMA_TxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
-
-    NVIC_DisableIRQ(I2S_IRQn);
+  pin_init(0,7, (0x2), 0x1);
+  pin_init(0,9, (0x2), 0x1);
+  pin_init(0,8, (0x2), 0x1);
+  pin_init(4,29, (0x2), 0x1);
 
 
 
+  I2S_AUDIO_FORMAT_T audio_Confg;
+  audio_Confg.SampleRate = 32000;
+  audio_Confg.ChannelNumber = 2;
+  audio_Confg.WordWidth = 32;
+
+
+  Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_I2S, SYSCTL_CLKDIV_1);
+
+  Chip_I2S_Init(((LPC_I2S_T *) 0x400A8000));
+
+  Chip_I2S_RxStop(((LPC_I2S_T *) 0x400A8000));
+  Chip_I2S_TxStop(((LPC_I2S_T *) 0x400A8000));
+  Chip_I2S_EnableMute(((LPC_I2S_T *) 0x400A8000));
+
+
+  Chip_I2S_DisableMute(((LPC_I2S_T *) 0x400A8000));
+  Chip_I2S_RxStart(((LPC_I2S_T *) 0x400A8000));
+  Chip_I2S_TxStart(((LPC_I2S_T *) 0x400A8000));
+
+  Chip_I2S_Int_RxCmd(((LPC_I2S_T *) 0x400A8000), ENABLE, 1);
+  Chip_I2S_Int_TxCmd(((LPC_I2S_T *) 0x400A8000), DISABLE, 1);
+
+
+  mi_Chip_I2S_RxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
+
+  mi_Chip_I2S_TxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
+
+
+   Chip_I2S_DMA_RxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
+   Chip_I2S_DMA_TxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
+
+   NVIC_DisableIRQ(I2S_IRQn);
 
 
 
-   init_flag = 1;
-  }
+
  }
-# 261 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h"
+# 262 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init_priv.h"
  static inline void dac_init()
  {
+
+   dma_init();
+
+
 
    printf("[info] Init DAC \r\n");
    printf("\t DAC freq %d \r\n", 20000);
@@ -16431,7 +16512,7 @@ void arm_rfft_fast_f32(
 
   Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_DAC, SYSCTL_CLKDIV_4);
 
-  Chip_IOCON_PinMux (((LPC_IOCON_T *) 0x4002C000), 0, 26, (0x2), 0x2 );
+  pin_init(0, 26, (0x2), 0x2);
 
   Chip_DAC_Init(((LPC_DAC_T *) 0x4008C000));
 
@@ -16444,8 +16525,21 @@ void arm_rfft_fast_f32(
   Chip_DAC_ConfigDAConverterControl(((LPC_DAC_T *) 0x4008C000), ((uint32_t) (1 << 1)) | ((uint32_t) (1 << 2)) | ((uint32_t) (1 << 3)));
 
  }
+# 12 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_init.h" 2
+
+
+static inline void adc_dac_init()
+{
+
+  dac_init();
+
+
+
+  i2s_init();
+
+}
 # 80 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 2
-# 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 1
 # 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
 #define TIMER_HEADER_H_ 
@@ -16482,7 +16576,7 @@ void arm_rfft_fast_f32(
        NVIC_EnableIRQ( TIMER1_IRQn );
  }
 # 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 2
-# 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 18 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TFT/tft_header.h" 1
 # 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TFT/tft_header.h"
 #define TFT_HEADER_H_ 
@@ -16598,6 +16692,11 @@ void arm_rfft_fast_f32(
 
 
 
+#define ENTRADA 0
+#define SALIDA 1
+
+
+
 #define TFT_COLOR_WHITE 0xFFFF
 #define TFT_COLOR_BLACK 0x0000
 #define TFT_COLOR_RED 0xF800
@@ -16673,7 +16772,7 @@ void arm_rfft_fast_f32(
 #define ILI9341_3GAMMA_EN 0xF2
 #define ILI9341_INTERFACE 0xF6
 #define ILI9341_PRC 0xF7
-# 18 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 19 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h" 1
 # 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h"
@@ -16704,7 +16803,7 @@ void arm_rfft_fast_f32(
   extern Bool flag_use_dac;
   extern Bool flag_do_thd;
   extern Bool flag_do_rem;
-# 20 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 21 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 
 
 
