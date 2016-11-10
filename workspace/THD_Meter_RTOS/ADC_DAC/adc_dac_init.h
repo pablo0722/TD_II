@@ -20,4 +20,8 @@ STATIC INLINE void adc_dac_init()
 	#if (USE_ADC_EXTERNO) || (USE_DAC_EXTERNO)
 		i2s_init();
 	#endif
+
+	#if USE_DMA
+		dma_init();
+	#endif
 }

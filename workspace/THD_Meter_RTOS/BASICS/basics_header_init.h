@@ -24,11 +24,11 @@ static inline bool pin_get(uint8_t port, uint8_t pin)
 
 static inline void pin_gpio_init(uint8_t port, uint8_t pin, uint32_t mode, bool salida)
 {
-	if(DEBUG_MODE)
-	{
-		printf("[info] pin_init: \n");
-		printf("\t puerto %hhu, pin %hhu, modo %hhu, salida %hhu \n", port, pin, mode, salida);
-	}
+//	if(DEBUG_MODE)
+//	{
+//		printf("[info] pin_init: \n");
+//		printf("\t puerto %hhu, pin %hhu, modo %hhu, salida %hhu \n", port, pin, mode, salida);
+//	}
 
 	Chip_IOCON_PinMux(LPC_IOCON, port, pin, mode, IOCON_FUNC0);		// Setea modo (inactivo/pulldown/pullup/repeater) y funcion (gpio) del pin
 
@@ -47,11 +47,11 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 			printf("[error] pin_init:\n");
 			printf("\t Quiso inicializar pin como GPIO sin usar funcion dedicada \"pin_gpio_init\" \n");
 		}
-		else
-		{
-			printf("[info] pin_init:\n");
-		}
-		printf("\t puerto %hhu, pin %hhu, modo %hhu, funcion %hhu\n", port, pin, mode, func);	// Setea modo (inactivo/pulldown/pullup/repeater) y funcion del pin
+//		else
+//		{
+//			printf("[info] pin_init:\n");
+//		}
+//		printf("\t puerto %hhu, pin %hhu, modo %hhu, funcion %hhu\n", port, pin, mode, func);	// Setea modo (inactivo/pulldown/pullup/repeater) y funcion del pin
 	}
 
 	Chip_IOCON_PinMux(LPC_IOCON, port, pin, mode, func);		// Setea modo y funcion del pin

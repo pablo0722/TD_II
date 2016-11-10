@@ -10,6 +10,8 @@
 #include "tft_header_priv.h"
 
 
+static bool using_tft = false;
+
 
 void tft_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
 {
@@ -26,7 +28,7 @@ void tft_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
 	tft_SendData_priv(y2 & 0xFF);
 }
 
-void tft_DrawPixel(uint16_t x, uint16_t y, uint16_t color)
+static void tft_DrawPixel(uint16_t x, uint16_t y, uint16_t color)
 {
 	tft_SetCursorPosition(x, y, x, y);
 
@@ -36,6 +38,9 @@ void tft_DrawPixel(uint16_t x, uint16_t y, uint16_t color)
 
 void tft_Fill(uint16_t color)
 {
+	if(using_tft) return;
+	using_tft = 1;
+
 	tft_SetCursorPosition(0, 0, tft_Opts.width - 1, tft_Opts.height - 1);
 
 	tft_SendCommand_priv(ILI9341_GRAM);
@@ -44,11 +49,16 @@ void tft_Fill(uint16_t color)
 	{
 		tft_SendData_priv(color);
 	}
+
+	using_tft = 0;
 }
 
 
 void tft_Rotate(tft_Orientation orientation)
 {
+	if(using_tft) return;
+	using_tft = 1;
+
 	tft_SendCommand_priv(ILI9341_MAC);
 
 	if (orientation == TFT_ORIENTATION_PORTRAIT_1)
@@ -80,6 +90,8 @@ void tft_Rotate(tft_Orientation orientation)
 		tft_Opts.height = TFT_WIDTH;
 		tft_Opts.orientation = TFT_ORIENTATION_LANDSCAPE;
 	}
+
+	using_tft = 0;
 }
 
 static void tft_Putc(uint16_t x, uint16_t y, char c, tft_font_t *font, uint16_t foreground, uint16_t background)
@@ -116,6 +128,9 @@ static void tft_Putc(uint16_t x, uint16_t y, char c, tft_font_t *font, uint16_t 
 
 void tft_Puts(uint16_t x, uint16_t y, char *str, tft_font_t *font, uint16_t foreground, uint16_t background)
 {
+	if(using_tft) return;
+	using_tft = 1;
+
 		// Set X and Y coordinates
 	tft_x = x;
 	tft_y = y;
@@ -149,6 +164,8 @@ void tft_Puts(uint16_t x, uint16_t y, char *str, tft_font_t *font, uint16_t fore
 
 		tft_Putc(tft_x, tft_y, *str++, font, foreground, background);
 	}
+
+	using_tft = 0;
 }
 
 void tft_GetStringSize(char *str, tft_font_t *font, uint16_t *width, uint16_t *height)
@@ -166,7 +183,7 @@ void tft_GetStringSize(char *str, tft_font_t *font, uint16_t *width, uint16_t *h
 }
 
 
-void tft_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color)
+static void tft_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color)
 {
 	int16_t dx, dy, sx, sy, err, e2;
 
@@ -217,21 +234,35 @@ void tft_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t c
 
 void tft_DrawRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color)
 {
+	if(using_tft) return;
+	using_tft = 1;
+
 	tft_DrawLine(x0, y0, x1, y0, color); //Top
 	tft_DrawLine(x0, y0, x0, y1, color);//Left
 	tft_DrawLine(x1, y0, x1, y1, color);//Right
 	tft_DrawLine(x0, y1, x1, y1, color);//Bottom
+
+	using_tft = 0;
 }
 
 void tft_DrawFilledRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color)
 {
-	for (; y0 < y1; y0++) {
+	if(using_tft) return;
+	using_tft = 1;
+
+	for (; y0 < y1; y0++)
+	{
 		tft_DrawLine(x0, y0, x1, y0, color);
 	}
+
+	using_tft = 0;
 }
 
 void tft_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
 {
+	if(using_tft) return;
+	using_tft = 1;
+
 	int16_t f = 1 - r;
 	int16_t ddF_x = 1;
 	int16_t ddF_y = -2 * r;
@@ -265,10 +296,15 @@ void tft_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
         tft_DrawPixel(x0 + y, y0 - x, color);
         tft_DrawPixel(x0 - y, y0 - x, color);
     }
+
+	using_tft = 0;
 }
 
 void tft_DrawFilledCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
 {
+	if(using_tft) return;
+	using_tft = 1;
+
 	int16_t f = 1 - r;
 	int16_t ddF_x = 1;
 	int16_t ddF_y = -2 * r;
@@ -299,4 +335,6 @@ void tft_DrawFilledCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
         tft_DrawLine(x0 + y, y0 + x, x0 - y, y0 + x, color);
         tft_DrawLine(x0 + y, y0 - x, x0 - y, y0 - x, color);
     }
+
+	using_tft = 0;
 }

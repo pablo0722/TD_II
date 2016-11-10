@@ -12,10 +12,10 @@
 static inline void main_gpio_init()
 {
 		// *** Habilito los botones
-//	pin_init(LPC_IOCON, BUTTON0, MD_PLN, IOCON_FUNC0, ENTRADA);
-//	pin_init(LPC_IOCON, BUTTON1, MD_PLN, IOCON_FUNC0, ENTRADA);
-//	pin_init(LPC_IOCON, BUTTON2, MD_PLN, IOCON_FUNC0, ENTRADA);
-//	pin_init(LPC_IOCON, BUTTON3, MD_PLN, IOCON_FUNC0, ENTRADA);
+	pin_gpio_init(BUTTON0, MD_PUP, ENTRADA);
+	pin_gpio_init(BUTTON1, MD_PUP, ENTRADA);
+	pin_gpio_init(BUTTON2, MD_PUP, ENTRADA);
+	pin_gpio_init(BUTTON3, MD_PUP, ENTRADA);
 }
 
 static inline void main_task_init()
@@ -39,9 +39,7 @@ void main_init()
 		uart_init();
 	#endif
 
-	#if USE_ADC_INTERNO
-		adc_init();
-	#endif
+	//adc_dac_init();
 
 	#if USE_FFT
 		fft_init();

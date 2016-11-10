@@ -16041,11 +16041,11 @@ static inline void pin_gpio_init(uint8_t port, uint8_t pin, uint32_t mode,
 # 25 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h"
                                                                                salida)
 {
- if(1)
- {
-  printf("[info] pin_init: \n");
-  printf("\t puerto %hhu, pin %hhu, modo %hhu, salida %hhu \n", port, pin, mode, salida);
- }
+
+
+
+
+
 
  Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, 0x0);
 
@@ -16064,11 +16064,11 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
    printf("[error] pin_init:\n");
    printf("\t Quiso inicializar pin como GPIO sin usar funcion dedicada \"pin_gpio_init\" \n");
   }
-  else
-  {
-   printf("[info] pin_init:\n");
-  }
-  printf("\t puerto %hhu, pin %hhu, modo %hhu, funcion %hhu\n", port, pin, mode, func);
+
+
+
+
+
  }
 
  Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, func);
@@ -16537,6 +16537,10 @@ static inline void adc_dac_init()
 
   i2s_init();
 
+
+
+  dma_init();
+
 }
 # 80 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 2
 # 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
@@ -16635,12 +16639,10 @@ static inline void adc_dac_init()
 
   void tft_Delay(volatile unsigned long int delay);
   void tft_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
-  void tft_DrawPixel(uint16_t x, uint16_t y, uint16_t color);
   void tft_Fill(uint16_t color);
   void tft_Rotate(tft_Orientation orientation);
   void tft_Puts(uint16_t x, uint16_t y, char *str, tft_font_t *font, uint16_t foreground, uint16_t background);
   void tft_GetStringSize(char *str, tft_font_t *font, uint16_t *width, uint16_t *height);
-  void tft_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
   void tft_DrawRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
   void tft_DrawFilledRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
   void tft_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
@@ -16790,11 +16792,6 @@ static inline void adc_dac_init()
 #define ENTRADA 0
 #define SALIDA 1
 
-#define BUTTON0 0, 0
-#define BUTTON1 0, 0
-#define BUTTON2 0, 0
-#define BUTTON3 0, 0
-
 
 
 
@@ -16811,6 +16808,14 @@ static inline void adc_dac_init()
  void vTask_teclado(void *pvParameters);
  void vTask_tft(void *pvParameters);
  void vTask_THD(void *pvParameters);
+
+
+
+
+#define BUTTON0 2, 10
+#define BUTTON1 0, 18
+#define BUTTON2 0, 11
+#define BUTTON3 2, 13
 # 9 "../RTOS/rtos_tareas.c" 2
 
 

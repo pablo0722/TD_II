@@ -4749,12 +4749,14 @@ adc_pre_procesamiento:
 	.byte	0x7
 	.4byte	.Ldebug_macro60
 	.byte	0x4
+	.byte	0x7
+	.4byte	.Ldebug_macro61
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xb
 	.uleb128 0x12
 	.byte	0x7
-	.4byte	.Ldebug_macro61
+	.4byte	.Ldebug_macro62
 	.byte	0x4
 	.byte	0x4
 	.byte	0
@@ -11945,7 +11947,7 @@ adc_pre_procesamiento:
 	.uleb128 0x1b
 	.4byte	.LASF2691
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.tft_header.h.9.3265f31e2300e064b89f9e90227dbaf0,comdat
+	.section	.debug_macro,"G",%progbits,wm4.tft_header.h.9.06852538ee7c9ed415bdc8b9b0614f2a,comdat
 .Ldebug_macro59:
 	.2byte	0x4
 	.byte	0
@@ -11953,319 +11955,319 @@ adc_pre_procesamiento:
 	.uleb128 0x9
 	.4byte	.LASF2692
 	.byte	0x5
-	.uleb128 0x5a
+	.uleb128 0x58
 	.4byte	.LASF2693
 	.byte	0x5
-	.uleb128 0x5b
+	.uleb128 0x59
 	.4byte	.LASF2694
 	.byte	0x5
-	.uleb128 0x5c
+	.uleb128 0x5a
 	.4byte	.LASF2695
 	.byte	0x5
-	.uleb128 0x5d
+	.uleb128 0x5b
 	.4byte	.LASF2696
 	.byte	0x5
-	.uleb128 0x5e
+	.uleb128 0x5c
 	.4byte	.LASF2697
 	.byte	0x5
-	.uleb128 0x5f
+	.uleb128 0x5d
 	.4byte	.LASF2698
 	.byte	0x5
-	.uleb128 0x61
+	.uleb128 0x5f
 	.4byte	.LASF2699
 	.byte	0x5
-	.uleb128 0x62
+	.uleb128 0x60
 	.4byte	.LASF2700
 	.byte	0x5
-	.uleb128 0x63
+	.uleb128 0x61
 	.4byte	.LASF2701
 	.byte	0x5
-	.uleb128 0x64
+	.uleb128 0x62
 	.4byte	.LASF2702
 	.byte	0x5
-	.uleb128 0x68
+	.uleb128 0x66
 	.4byte	.LASF2703
 	.byte	0x5
-	.uleb128 0x69
+	.uleb128 0x67
 	.4byte	.LASF2704
 	.byte	0x5
-	.uleb128 0x6a
+	.uleb128 0x68
 	.4byte	.LASF2705
 	.byte	0x5
-	.uleb128 0x6b
+	.uleb128 0x69
 	.4byte	.LASF2706
 	.byte	0x5
-	.uleb128 0x6c
+	.uleb128 0x6a
 	.4byte	.LASF2707
 	.byte	0x5
-	.uleb128 0x6d
+	.uleb128 0x6b
 	.4byte	.LASF2708
 	.byte	0x5
-	.uleb128 0x6e
+	.uleb128 0x6c
 	.4byte	.LASF2709
 	.byte	0x5
-	.uleb128 0x6f
+	.uleb128 0x6d
 	.4byte	.LASF2710
 	.byte	0x5
-	.uleb128 0x70
+	.uleb128 0x6e
 	.4byte	.LASF2711
 	.byte	0x5
-	.uleb128 0x71
+	.uleb128 0x6f
 	.4byte	.LASF2712
 	.byte	0x5
-	.uleb128 0x72
+	.uleb128 0x70
 	.4byte	.LASF2713
 	.byte	0x5
-	.uleb128 0x73
+	.uleb128 0x71
 	.4byte	.LASF2714
 	.byte	0x5
-	.uleb128 0x74
+	.uleb128 0x72
 	.4byte	.LASF2715
 	.byte	0x5
-	.uleb128 0x75
+	.uleb128 0x73
 	.4byte	.LASF2716
 	.byte	0x5
-	.uleb128 0x76
+	.uleb128 0x74
 	.4byte	.LASF2717
 	.byte	0x5
-	.uleb128 0x77
+	.uleb128 0x75
 	.4byte	.LASF2718
 	.byte	0x5
-	.uleb128 0x79
+	.uleb128 0x77
 	.4byte	.LASF2719
 	.byte	0x5
-	.uleb128 0x7a
+	.uleb128 0x78
 	.4byte	.LASF2720
 	.byte	0x5
-	.uleb128 0x7b
+	.uleb128 0x79
 	.4byte	.LASF2721
 	.byte	0x5
-	.uleb128 0x7c
+	.uleb128 0x7a
 	.4byte	.LASF2722
 	.byte	0x5
-	.uleb128 0x7d
+	.uleb128 0x7b
 	.4byte	.LASF2723
 	.byte	0x5
-	.uleb128 0x7f
+	.uleb128 0x7d
 	.4byte	.LASF2724
 	.byte	0x5
-	.uleb128 0x83
+	.uleb128 0x81
 	.4byte	.LASF2725
 	.byte	0x5
-	.uleb128 0x84
+	.uleb128 0x82
 	.4byte	.LASF2726
 	.byte	0x5
-	.uleb128 0x88
+	.uleb128 0x86
 	.4byte	.LASF2727
 	.byte	0x5
-	.uleb128 0x89
+	.uleb128 0x87
 	.4byte	.LASF2728
 	.byte	0x5
-	.uleb128 0x8a
+	.uleb128 0x88
 	.4byte	.LASF2729
 	.byte	0x5
-	.uleb128 0x8b
+	.uleb128 0x89
 	.4byte	.LASF2730
 	.byte	0x5
-	.uleb128 0x8c
+	.uleb128 0x8a
 	.4byte	.LASF2731
 	.byte	0x5
-	.uleb128 0x8d
+	.uleb128 0x8b
 	.4byte	.LASF2732
 	.byte	0x5
-	.uleb128 0x8e
+	.uleb128 0x8c
 	.4byte	.LASF2733
 	.byte	0x5
-	.uleb128 0x8f
+	.uleb128 0x8d
 	.4byte	.LASF2734
 	.byte	0x5
-	.uleb128 0x90
+	.uleb128 0x8e
 	.4byte	.LASF2735
 	.byte	0x5
-	.uleb128 0x91
+	.uleb128 0x8f
 	.4byte	.LASF2736
 	.byte	0x5
-	.uleb128 0x92
+	.uleb128 0x90
 	.4byte	.LASF2737
 	.byte	0x5
-	.uleb128 0x93
+	.uleb128 0x91
 	.4byte	.LASF2738
 	.byte	0x5
-	.uleb128 0x94
+	.uleb128 0x92
 	.4byte	.LASF2739
 	.byte	0x5
-	.uleb128 0x96
+	.uleb128 0x94
 	.4byte	.LASF2740
 	.byte	0x5
-	.uleb128 0x97
+	.uleb128 0x95
 	.4byte	.LASF2741
 	.byte	0x5
-	.uleb128 0x98
+	.uleb128 0x96
 	.4byte	.LASF2742
 	.byte	0x5
-	.uleb128 0x99
+	.uleb128 0x97
 	.4byte	.LASF2743
 	.byte	0x5
-	.uleb128 0x9a
+	.uleb128 0x98
 	.4byte	.LASF2744
 	.byte	0x5
-	.uleb128 0x9b
+	.uleb128 0x99
 	.4byte	.LASF2745
 	.byte	0x5
-	.uleb128 0x9c
+	.uleb128 0x9a
 	.4byte	.LASF2746
 	.byte	0x5
-	.uleb128 0x9d
+	.uleb128 0x9b
 	.4byte	.LASF2747
 	.byte	0x5
-	.uleb128 0x9e
+	.uleb128 0x9c
 	.4byte	.LASF2748
 	.byte	0x5
-	.uleb128 0x9f
+	.uleb128 0x9d
 	.4byte	.LASF2749
 	.byte	0x5
-	.uleb128 0xa0
+	.uleb128 0x9e
 	.4byte	.LASF2750
 	.byte	0x5
-	.uleb128 0xa1
+	.uleb128 0x9f
 	.4byte	.LASF2751
 	.byte	0x5
-	.uleb128 0xa2
+	.uleb128 0xa0
 	.4byte	.LASF2752
 	.byte	0x5
-	.uleb128 0xa4
+	.uleb128 0xa2
 	.4byte	.LASF2753
 	.byte	0x5
-	.uleb128 0xa5
+	.uleb128 0xa3
 	.4byte	.LASF2754
 	.byte	0x5
-	.uleb128 0xa6
+	.uleb128 0xa4
 	.4byte	.LASF2755
 	.byte	0x5
-	.uleb128 0xa7
+	.uleb128 0xa5
 	.4byte	.LASF2756
 	.byte	0x5
-	.uleb128 0xa8
+	.uleb128 0xa6
 	.4byte	.LASF2757
 	.byte	0x5
-	.uleb128 0xa9
+	.uleb128 0xa7
 	.4byte	.LASF2758
 	.byte	0x5
-	.uleb128 0xaa
+	.uleb128 0xa8
 	.4byte	.LASF2759
 	.byte	0x5
-	.uleb128 0xab
+	.uleb128 0xa9
 	.4byte	.LASF2760
 	.byte	0x5
-	.uleb128 0xac
+	.uleb128 0xaa
 	.4byte	.LASF2761
 	.byte	0x5
-	.uleb128 0xad
+	.uleb128 0xab
 	.4byte	.LASF2762
 	.byte	0x5
-	.uleb128 0xae
+	.uleb128 0xac
 	.4byte	.LASF2763
 	.byte	0x5
-	.uleb128 0xaf
+	.uleb128 0xad
 	.4byte	.LASF2764
 	.byte	0x5
-	.uleb128 0xb0
+	.uleb128 0xae
 	.4byte	.LASF2765
 	.byte	0x5
-	.uleb128 0xb4
+	.uleb128 0xb2
 	.4byte	.LASF2766
 	.byte	0x5
-	.uleb128 0xb5
+	.uleb128 0xb3
 	.4byte	.LASF2767
 	.byte	0x5
-	.uleb128 0xb6
+	.uleb128 0xb4
 	.4byte	.LASF2768
 	.byte	0x5
-	.uleb128 0xb7
+	.uleb128 0xb5
 	.4byte	.LASF2769
 	.byte	0x5
-	.uleb128 0xb8
+	.uleb128 0xb6
 	.4byte	.LASF2770
 	.byte	0x5
-	.uleb128 0xb9
+	.uleb128 0xb7
 	.4byte	.LASF2771
 	.byte	0x5
-	.uleb128 0xba
+	.uleb128 0xb8
 	.4byte	.LASF2772
 	.byte	0x5
-	.uleb128 0xbb
+	.uleb128 0xb9
 	.4byte	.LASF2773
 	.byte	0x5
-	.uleb128 0xbc
+	.uleb128 0xba
 	.4byte	.LASF2774
 	.byte	0x5
-	.uleb128 0xbd
+	.uleb128 0xbb
 	.4byte	.LASF2775
 	.byte	0x5
-	.uleb128 0xbe
+	.uleb128 0xbc
 	.4byte	.LASF2776
 	.byte	0x5
-	.uleb128 0xbf
+	.uleb128 0xbd
 	.4byte	.LASF2777
 	.byte	0x5
-	.uleb128 0xc0
+	.uleb128 0xbe
 	.4byte	.LASF2778
 	.byte	0x5
-	.uleb128 0xc1
+	.uleb128 0xbf
 	.4byte	.LASF2779
 	.byte	0x5
-	.uleb128 0xc2
+	.uleb128 0xc0
 	.4byte	.LASF2780
 	.byte	0x5
-	.uleb128 0xc3
+	.uleb128 0xc1
 	.4byte	.LASF2781
 	.byte	0x5
-	.uleb128 0xc4
+	.uleb128 0xc2
 	.4byte	.LASF2782
 	.byte	0x5
-	.uleb128 0xc5
+	.uleb128 0xc3
 	.4byte	.LASF2783
 	.byte	0x5
-	.uleb128 0xc6
+	.uleb128 0xc4
 	.4byte	.LASF2784
 	.byte	0x5
-	.uleb128 0xc7
+	.uleb128 0xc5
 	.4byte	.LASF2785
 	.byte	0x5
-	.uleb128 0xc8
+	.uleb128 0xc6
 	.4byte	.LASF2786
 	.byte	0x5
-	.uleb128 0xc9
+	.uleb128 0xc7
 	.4byte	.LASF2787
 	.byte	0x5
-	.uleb128 0xca
+	.uleb128 0xc8
 	.4byte	.LASF2788
 	.byte	0x5
-	.uleb128 0xcb
+	.uleb128 0xc9
 	.4byte	.LASF2789
 	.byte	0x5
-	.uleb128 0xcc
+	.uleb128 0xca
 	.4byte	.LASF2790
 	.byte	0x5
-	.uleb128 0xcd
+	.uleb128 0xcb
 	.4byte	.LASF2791
 	.byte	0x5
-	.uleb128 0xce
+	.uleb128 0xcc
 	.4byte	.LASF2792
 	.byte	0x5
-	.uleb128 0xcf
+	.uleb128 0xcd
 	.4byte	.LASF2793
 	.byte	0x5
-	.uleb128 0xd0
+	.uleb128 0xce
 	.4byte	.LASF2794
 	.byte	0x5
-	.uleb128 0xd1
+	.uleb128 0xcf
 	.4byte	.LASF2795
 	.byte	0x5
-	.uleb128 0xd2
+	.uleb128 0xd0
 	.4byte	.LASF2796
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.rtos_header.h.11.2aef1465dd78dfd1faa87f677a53c010,comdat
+	.section	.debug_macro,"G",%progbits,wm4.rtos_header.h.11.bcae3c5ee886ef89d225e3a2f3981364,comdat
 .Ldebug_macro60:
 	.2byte	0x4
 	.byte	0
@@ -12278,21 +12280,26 @@ adc_pre_procesamiento:
 	.byte	0x5
 	.uleb128 0x28
 	.4byte	.LASF2726
+	.byte	0
+	.section	.debug_macro,"G",%progbits,wm4.header.h.32.b62524425ac85c5f8d7abff906c7eb6a,comdat
+.Ldebug_macro61:
+	.2byte	0x4
+	.byte	0
 	.byte	0x5
-	.uleb128 0x2a
+	.uleb128 0x20
 	.4byte	.LASF2798
 	.byte	0x5
-	.uleb128 0x2b
+	.uleb128 0x21
 	.4byte	.LASF2799
 	.byte	0x5
-	.uleb128 0x2c
+	.uleb128 0x22
 	.4byte	.LASF2800
 	.byte	0x5
-	.uleb128 0x2d
+	.uleb128 0x23
 	.4byte	.LASF2801
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.adc_dac_header_priv.h.9.ff792c77f50a2feec1d248d458f34e64,comdat
-.Ldebug_macro61:
+.Ldebug_macro62:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
@@ -12565,8 +12572,8 @@ adc_pre_procesamiento:
 .LASF758:
 	.ascii	"SCB_CCR_UNALIGN_TRP_Msk (1UL << SCB_CCR_UNALIGN_TRP"
 	.ascii	"_Pos)\000"
-.LASF2799:
-	.ascii	"BUTTON1 0, 0\000"
+.LASF1899:
+	.ascii	"RTC_CALIB_DIR_BACKWARD ((uint8_t) (1))\000"
 .LASF1642:
 	.ascii	"GPDMA_DMACCxConfig_A ((1UL << 17))\000"
 .LASF3030:
@@ -12710,8 +12717,6 @@ adc_pre_procesamiento:
 	.ascii	"FFT_SIZE_32 32\000"
 .LASF2385:
 	.ascii	"traceQUEUE_SEND_FROM_ISR(pxQueue) \000"
-.LASF2798:
-	.ascii	"BUTTON0 0, 0\000"
 .LASF1025:
 	.ascii	"MPU_RASR_ATTRS_Pos 16\000"
 .LASF696:
@@ -12975,6 +12980,8 @@ adc_pre_procesamiento:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF1646:
 	.ascii	"GPDMA_CONN_SSP1_Tx ((2UL))\000"
+.LASF2307:
+	.ascii	"portTICK_TYPE_IS_ATOMIC 1\000"
 .LASF518:
 	.ascii	"INT_FAST32_MIN (-0x80000000)\000"
 .LASF1711:
@@ -14064,6 +14071,8 @@ adc_pre_procesamiento:
 	.ascii	"& (int32_t)0xFFFF0000) )\000"
 .LASF709:
 	.ascii	"SCB_ICSR_PENDSVSET_Pos 28\000"
+.LASF2800:
+	.ascii	"BUTTON2 0, 11\000"
 .LASF2962:
 	.ascii	"INTERRSTAT\000"
 .LASF2557:
@@ -14641,6 +14650,8 @@ adc_pre_procesamiento:
 	.ascii	"dma_dac_int_memory_A\000"
 .LASF3058:
 	.ascii	"dma_dac_int_memory_B\000"
+.LASF2799:
+	.ascii	"BUTTON1 0, 18\000"
 .LASF2952:
 	.ascii	"_Bool\000"
 .LASF218:
@@ -15539,6 +15550,8 @@ adc_pre_procesamiento:
 	.ascii	"ccurred\000"
 .LASF159:
 	.ascii	"__LDBL_MAX_10_EXP__ 308\000"
+.LASF2801:
+	.ascii	"BUTTON3 2, 13\000"
 .LASF401:
 	.ascii	"__SIZE_T_DEFINED \000"
 .LASF1801:
@@ -16251,8 +16264,6 @@ adc_pre_procesamiento:
 	.ascii	"INCLUDE_xQueueGetMutexHolder 0\000"
 .LASF2577:
 	.ascii	"FP_FAST_FMA\000"
-.LASF1947:
-	.ascii	"SSP_CPOL_HI SSP_CR0_CPOL_LO\000"
 .LASF1104:
 	.ascii	"SysTick_BASE (SCS_BASE + 0x0010UL)\000"
 .LASF2309:
@@ -16854,8 +16865,8 @@ adc_pre_procesamiento:
 	.ascii	"__NVIC_PRIO_BITS 5\000"
 .LASF2837:
 	.ascii	"ERROR\000"
-.LASF2800:
-	.ascii	"BUTTON2 0, 0\000"
+.LASF1947:
+	.ascii	"SSP_CPOL_HI SSP_CR0_CPOL_LO\000"
 .LASF266:
 	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
 .LASF2973:
@@ -17028,8 +17039,6 @@ adc_pre_procesamiento:
 	.ascii	"CAN_EWL_BITMASK (0xFF)\000"
 .LASF949:
 	.ascii	"TPI_FFCR_TrigIn_Pos 8\000"
-.LASF1899:
-	.ascii	"RTC_CALIB_DIR_BACKWARD ((uint8_t) (1))\000"
 .LASF1210:
 	.ascii	"SYSCTL_RST_WDT (1 << 2)\000"
 .LASF1159:
@@ -17160,8 +17169,6 @@ adc_pre_procesamiento:
 .LASF186:
 	.ascii	"__DEC128_MAX__ 9.999999999999999999999999999999999E"
 	.ascii	"6144DL\000"
-.LASF2801:
-	.ascii	"BUTTON3 0, 0\000"
 .LASF2903:
 	.ascii	"sizetype\000"
 .LASF1821:
@@ -17205,8 +17212,8 @@ adc_pre_procesamiento:
 	.ascii	"INCLUDE_xTimerPendFunctionCall 0\000"
 .LASF384:
 	.ascii	"__SIZEOF_LONG_DOUBLE 12\000"
-.LASF2307:
-	.ascii	"portTICK_TYPE_IS_ATOMIC 1\000"
+.LASF2798:
+	.ascii	"BUTTON0 2, 10\000"
 .LASF2285:
 	.ascii	"pdFREERTOS_ERRNO_ETIMEDOUT 116\000"
 .LASF565:

@@ -71,12 +71,10 @@
 	// *** PRIMITIVAS *** //
 		void tft_Delay(volatile unsigned long int delay);
 		void tft_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
-		void tft_DrawPixel(uint16_t x, uint16_t y, uint16_t color);
 		void tft_Fill(uint16_t color);
 		void tft_Rotate(tft_Orientation orientation);
 		void tft_Puts(uint16_t x, uint16_t y, char *str, tft_font_t *font, uint16_t foreground, uint16_t background);
 		void tft_GetStringSize(char *str, tft_font_t *font, uint16_t *width, uint16_t *height);
-		void tft_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
 		void tft_DrawRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
 		void tft_DrawFilledRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
 		void tft_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);

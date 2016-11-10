@@ -16035,11 +16035,11 @@ static inline void pin_gpio_init(uint8_t port, uint8_t pin, uint32_t mode,
 # 25 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h"
                                                                                salida)
 {
- if(1)
- {
-  printf("[info] pin_init: \n");
-  printf("\t puerto %hhu, pin %hhu, modo %hhu, salida %hhu \n", port, pin, mode, salida);
- }
+
+
+
+
+
 
  Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, 0x0);
 
@@ -16058,11 +16058,11 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
    printf("[error] pin_init:\n");
    printf("\t Quiso inicializar pin como GPIO sin usar funcion dedicada \"pin_gpio_init\" \n");
   }
-  else
-  {
-   printf("[info] pin_init:\n");
-  }
-  printf("\t puerto %hhu, pin %hhu, modo %hhu, funcion %hhu\n", port, pin, mode, func);
+
+
+
+
+
  }
 
  Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, func);
@@ -16531,6 +16531,10 @@ static inline void adc_dac_init()
 
   i2s_init();
 
+
+
+  dma_init();
+
 }
 # 80 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 2
 # 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
@@ -16629,12 +16633,10 @@ static inline void adc_dac_init()
 
   void tft_Delay(volatile unsigned long int delay);
   void tft_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
-  void tft_DrawPixel(uint16_t x, uint16_t y, uint16_t color);
   void tft_Fill(uint16_t color);
   void tft_Rotate(tft_Orientation orientation);
   void tft_Puts(uint16_t x, uint16_t y, char *str, tft_font_t *font, uint16_t foreground, uint16_t background);
   void tft_GetStringSize(char *str, tft_font_t *font, uint16_t *width, uint16_t *height);
-  void tft_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
   void tft_DrawRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
   void tft_DrawFilledRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
   void tft_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
@@ -16784,11 +16786,6 @@ static inline void adc_dac_init()
 #define ENTRADA 0
 #define SALIDA 1
 
-#define BUTTON0 0, 0
-#define BUTTON1 0, 0
-#define BUTTON2 0, 0
-#define BUTTON3 0, 0
-
 
 
 
@@ -16805,6 +16802,14 @@ static inline void adc_dac_init()
  void vTask_teclado(void *pvParameters);
  void vTask_tft(void *pvParameters);
  void vTask_THD(void *pvParameters);
+
+
+
+
+#define BUTTON0 2, 10
+#define BUTTON1 0, 18
+#define BUTTON2 0, 11
+#define BUTTON3 2, 13
 # 10 "../TFT/tft_lcd_primitivas.c" 2
 # 1 "../TFT/tft_header_priv.h" 1
 # 9 "../TFT/tft_header_priv.h"
@@ -16817,6 +16822,16 @@ static inline void adc_dac_init()
  void tft_SendData_priv(uint16_t data);
 # 11 "../TFT/tft_lcd_primitivas.c" 2
 
+
+static 
+# 13 "../TFT/tft_lcd_primitivas.c" 3 4
+      _Bool 
+# 13 "../TFT/tft_lcd_primitivas.c"
+           using_tft = 
+# 13 "../TFT/tft_lcd_primitivas.c" 3 4
+                       0
+# 13 "../TFT/tft_lcd_primitivas.c"
+                            ;
 
 
 void tft_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
@@ -16834,7 +16849,7 @@ void tft_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
  tft_SendData_priv(y2 & 0xFF);
 }
 
-void tft_DrawPixel(uint16_t x, uint16_t y, uint16_t color)
+static void tft_DrawPixel(uint16_t x, uint16_t y, uint16_t color)
 {
  tft_SetCursorPosition(x, y, x, y);
 
@@ -16844,6 +16859,9 @@ void tft_DrawPixel(uint16_t x, uint16_t y, uint16_t color)
 
 void tft_Fill(uint16_t color)
 {
+ if(using_tft) return;
+ using_tft = 1;
+
  tft_SetCursorPosition(0, 0, tft_Opts.width - 1, tft_Opts.height - 1);
 
  tft_SendCommand_priv(0x2C);
@@ -16852,11 +16870,16 @@ void tft_Fill(uint16_t color)
  {
   tft_SendData_priv(color);
  }
+
+ using_tft = 0;
 }
 
 
 void tft_Rotate(tft_Orientation orientation)
 {
+ if(using_tft) return;
+ using_tft = 1;
+
  tft_SendCommand_priv(0x36);
 
  if (orientation == TFT_ORIENTATION_PORTRAIT_1)
@@ -16888,6 +16911,8 @@ void tft_Rotate(tft_Orientation orientation)
   tft_Opts.height = 240;
   tft_Opts.orientation = TFT_ORIENTATION_LANDSCAPE;
  }
+
+ using_tft = 0;
 }
 
 static void tft_Putc(uint16_t x, uint16_t y, char c, tft_font_t *font, uint16_t foreground, uint16_t background)
@@ -16924,15 +16949,20 @@ static void tft_Putc(uint16_t x, uint16_t y, char c, tft_font_t *font, uint16_t 
 
 void tft_Puts(uint16_t x, uint16_t y, char *str, tft_font_t *font, uint16_t foreground, uint16_t background)
 {
+ if(using_tft) return;
+ using_tft = 1;
+
 
  tft_x = x;
  tft_y = y;
 
  while (*str)
  {
-# 150 "../TFT/tft_lcd_primitivas.c"
+# 165 "../TFT/tft_lcd_primitivas.c"
   tft_Putc(tft_x, tft_y, *str++, font, foreground, background);
  }
+
+ using_tft = 0;
 }
 
 void tft_GetStringSize(char *str, tft_font_t *font, uint16_t *width, uint16_t *height)
@@ -16950,7 +16980,7 @@ void tft_GetStringSize(char *str, tft_font_t *font, uint16_t *width, uint16_t *h
 }
 
 
-void tft_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color)
+static void tft_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color)
 {
  int16_t dx, dy, sx, sy, err, e2;
 
@@ -17001,21 +17031,35 @@ void tft_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t c
 
 void tft_DrawRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color)
 {
+ if(using_tft) return;
+ using_tft = 1;
+
  tft_DrawLine(x0, y0, x1, y0, color);
  tft_DrawLine(x0, y0, x0, y1, color);
  tft_DrawLine(x1, y0, x1, y1, color);
  tft_DrawLine(x0, y1, x1, y1, color);
+
+ using_tft = 0;
 }
 
 void tft_DrawFilledRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color)
 {
- for (; y0 < y1; y0++) {
+ if(using_tft) return;
+ using_tft = 1;
+
+ for (; y0 < y1; y0++)
+ {
   tft_DrawLine(x0, y0, x1, y0, color);
  }
+
+ using_tft = 0;
 }
 
 void tft_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
 {
+ if(using_tft) return;
+ using_tft = 1;
+
  int16_t f = 1 - r;
  int16_t ddF_x = 1;
  int16_t ddF_y = -2 * r;
@@ -17049,10 +17093,15 @@ void tft_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
         tft_DrawPixel(x0 + y, y0 - x, color);
         tft_DrawPixel(x0 - y, y0 - x, color);
     }
+
+ using_tft = 0;
 }
 
 void tft_DrawFilledCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
 {
+ if(using_tft) return;
+ using_tft = 1;
+
  int16_t f = 1 - r;
  int16_t ddF_x = 1;
  int16_t ddF_y = -2 * r;
@@ -17083,4 +17132,6 @@ void tft_DrawFilledCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
         tft_DrawLine(x0 + y, y0 + x, x0 - y, y0 + x, color);
         tft_DrawLine(x0 + y, y0 - x, x0 - y, y0 - x, color);
     }
+
+ using_tft = 0;
 }

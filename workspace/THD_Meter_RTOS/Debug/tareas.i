@@ -16035,11 +16035,11 @@ static inline void pin_gpio_init(uint8_t port, uint8_t pin, uint32_t mode,
 # 25 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h"
                                                                                salida)
 {
- if(1)
- {
-  printf("[info] pin_init: \n");
-  printf("\t puerto %hhu, pin %hhu, modo %hhu, salida %hhu \n", port, pin, mode, salida);
- }
+
+
+
+
+
 
  Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, 0x0);
 
@@ -16058,11 +16058,11 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
    printf("[error] pin_init:\n");
    printf("\t Quiso inicializar pin como GPIO sin usar funcion dedicada \"pin_gpio_init\" \n");
   }
-  else
-  {
-   printf("[info] pin_init:\n");
-  }
-  printf("\t puerto %hhu, pin %hhu, modo %hhu, funcion %hhu\n", port, pin, mode, func);
+
+
+
+
+
  }
 
  Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, func);
@@ -16531,6 +16531,10 @@ static inline void adc_dac_init()
 
   i2s_init();
 
+
+
+  dma_init();
+
 }
 # 80 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 2
 # 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
@@ -16629,12 +16633,10 @@ static inline void adc_dac_init()
 
   void tft_Delay(volatile unsigned long int delay);
   void tft_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
-  void tft_DrawPixel(uint16_t x, uint16_t y, uint16_t color);
   void tft_Fill(uint16_t color);
   void tft_Rotate(tft_Orientation orientation);
   void tft_Puts(uint16_t x, uint16_t y, char *str, tft_font_t *font, uint16_t foreground, uint16_t background);
   void tft_GetStringSize(char *str, tft_font_t *font, uint16_t *width, uint16_t *height);
-  void tft_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
   void tft_DrawRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
   void tft_DrawFilledRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
   void tft_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
@@ -16784,11 +16786,6 @@ static inline void adc_dac_init()
 #define ENTRADA 0
 #define SALIDA 1
 
-#define BUTTON0 0, 0
-#define BUTTON1 0, 0
-#define BUTTON2 0, 0
-#define BUTTON3 0, 0
-
 
 
 
@@ -16805,6 +16802,14 @@ static inline void adc_dac_init()
  void vTask_teclado(void *pvParameters);
  void vTask_tft(void *pvParameters);
  void vTask_THD(void *pvParameters);
+
+
+
+
+#define BUTTON0 2, 10
+#define BUTTON1 0, 18
+#define BUTTON2 0, 11
+#define BUTTON3 2, 13
 # 10 "../src/tareas.c" 2
 
 
@@ -16820,18 +16825,57 @@ q31_t fft_cmplx[2048*2];
  {
   while(1)
   {
-# 43 "../src/tareas.c"
+   if(!pin_get(2, 10))
+   {
+    dac_send = TRUE;
+    flag_do_thd = FALSE;
+    flag_do_rem = FALSE;
+   }
+   if(!pin_get(0, 18))
+   {
+    dac_send = FALSE;
+    flag_do_thd = TRUE;
+    flag_do_rem = FALSE;
+   }
+   if(!pin_get(0, 11))
+   {
+    dac_send = FALSE;
+    flag_do_thd = FALSE;
+    flag_do_rem = TRUE;
+   }
+
    vTaskDelay(50/( ( TickType_t ) 1000 / ( ( TickType_t ) 1000 ) ));
   }
  }
 
  void vTask_tft(void *pvParameters)
  {
+  tft_Fill(0x0000);
   tft_Puts(0, 0, "TECNICAS DIGITALES", &tft_Font_11x18, 0x07E0, 0x0000);
-# 68 "../src/tareas.c"
+  tft_Puts(120, 25, "II", &tft_Font_11x18, 0xF800, 0x0000);
+  tft_Puts(0, 50, "PROCESAMIENTO DE", &tft_Font_11x18, 0x001F, 0x0000);
+  tft_Puts(100, 75, "AUDIO", &tft_Font_11x18, 0x001F, 0x0000);
+  tft_Puts(0, 100, "MENU", &tft_Font_11x18, 0x001F, 0x0000);
+  tft_Puts(50, 125, "Reverb", &tft_Font_11x18, 0x001F, 0x0000);
+  tft_Puts( 50, 150, "Echo", &tft_Font_11x18, 0x001F, 0x0000);
+  tft_Puts(50, 175, "High Pass Filter", &tft_Font_11x18, 0x001F, 0x0000);
+  tft_Puts(50, 200, "Low Pass Filter", &tft_Font_11x18, 0x001F, 0x0000);
+
+  tft_DrawFilledCircle(30, 135, 7, 0xFFFF);
+  tft_DrawFilledCircle(30, 160, 7, 0xFFFF);
+  tft_DrawFilledCircle(30, 185, 7, 0xFFFF);
+  tft_DrawFilledCircle(30, 210, 7, 0xFFFF);
+
   while(1)
   {
-   vTaskDelay(1000/( ( TickType_t ) 1000 / ( ( TickType_t ) 1000 ) ));
+   if(dac_send)
+    tft_Puts(200, 20, "Boton 0", &tft_Font_11x18, 0xF800, 0x0000);
+   if(flag_do_thd)
+    tft_Puts(200, 20, "Boton 1", &tft_Font_11x18, 0x07E0, 0x0000);
+   if(flag_do_rem)
+    tft_Puts(200, 20, "Boton 2", &tft_Font_11x18, 0x001F, 0x0000);
+
+   vTaskDelay(100/( ( TickType_t ) 1000 / ( ( TickType_t ) 1000 ) ));
   }
  }
 
@@ -16844,9 +16888,9 @@ q31_t fft_cmplx[2048*2];
   while(1)
   {
    xQueueGenericReceive( ( QueueHandle_t ) ( sem_adc_proc ), 
-# 82 "../src/tareas.c" 3 4
+# 86 "../src/tareas.c" 3 4
   ((void *)0)
-# 82 "../src/tareas.c"
+# 86 "../src/tareas.c"
   , ( 0 ), ( ( BaseType_t ) 0 ) );
 
 

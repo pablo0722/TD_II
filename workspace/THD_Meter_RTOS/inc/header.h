@@ -28,6 +28,14 @@
 // ****************************** //
 
 
+// *** BOTONES *** //
+	#define	BUTTON0		2, 10
+	#define	BUTTON1		0, 18
+	#define	BUTTON2		0, 11
+	#define	BUTTON3		2, 13
+// *************** //
+
+
 /* *** MEMORIA *** //
  *  MFlash512  (xr-) : 	ADDR = 0x0000 0000 -> 0x0007 FFFF,	LENGTH = 0x0008 0000 (512K bytes)
  *  RamLoc32   (xrw) : 	ADDR = 0x1000 0000 -> 0x1000 7FFF,	LENGTH = 0x0000 8000 (32K bytes)

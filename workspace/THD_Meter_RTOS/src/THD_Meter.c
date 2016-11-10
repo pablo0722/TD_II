@@ -16,7 +16,7 @@
 #if (!USE_RTOS)
 	static void main_uninit()
 	{
-		/* DeInitialize UART1 peripheral */
+		/* DeInitialize UART0 peripheral */
 		NVIC_DisableIRQ(UART0_IRQn);
 		Chip_UART_DeInit(LPC_UART0);
 	}

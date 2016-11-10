@@ -41,7 +41,7 @@ static void MenuInit()
 		 * 4: Apaisado con pines hacia la izquierda
 		 * 5: Apaisado con pines hacia la derecha
 		 */
-	tft_Rotate(2);
+	tft_Rotate(4);
 
 	tft_Fill(TFT_COLOR_BLACK);
 
