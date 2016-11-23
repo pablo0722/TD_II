@@ -66,12 +66,11 @@ src/THD_Meter.o src/THD_Meter.d: ../src/THD_Meter.c \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h \
- D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h \
- D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init_priv.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TFT/tft_header.h \
- D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_init.h
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:
 
@@ -207,10 +206,6 @@ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_init.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h:
 
-D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h:
-
-D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init_priv.h:
-
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_header.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_init.h:
@@ -218,3 +213,5 @@ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_init.h:
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TFT/tft_header.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_init.h:

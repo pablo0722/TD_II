@@ -36,8 +36,8 @@
 	#define USE_TIMER	ON
 	#define USE_ADC		ON
 	#define USE_DAC		ON
-	#define USE_FFT		ON
-	#define USE_TFT		ON
+	#define USE_FFT		OFF
+	#define USE_TFT		OFF
 	#define USE_RTOS	ON
 // ****************************** //
 

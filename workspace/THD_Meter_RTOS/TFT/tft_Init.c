@@ -12,6 +12,11 @@
 // *** PUBLIC FUNCTIONS *** //
 void tft_init()
 {
+	#if DEBUG_MODE
+		printf("[info] init TFT: \r\n");
+		printf("\t frecuencia de back-light: %d \r\n", BACKLIGHT_FREC);
+	#endif
+
 	tft_gpio_init_priv();
 	tft_LCD_Init_priv();
 
@@ -20,7 +25,7 @@ void tft_init()
 	tft_Opts.height = TFT_HEIGHT;
 	tft_Opts.orientation = TFT_ORIENTATION_PORTRAIT;
 
-	timer_BL_init(100, 50);
+	timer_BL_init(100, BACKLIGHT_FREC);
 
 	tft_Fill(TFT_COLOR_WHITE);
 

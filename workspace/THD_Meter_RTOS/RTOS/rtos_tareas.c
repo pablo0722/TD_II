@@ -9,6 +9,28 @@
 
 
 #if USE_RTOS
+	void vTask_nvic_init(void *pvParameters)
+	{
+		#if (USE_TIMER)
+	       NVIC_EnableIRQ( TIMER1_IRQn );
+		#endif
+
+		#if (USE_ADC_INTERNO)
+			NVIC_EnableIRQ(ADC_IRQn);
+		#endif
+
+		#if (USE_ADC_EXTERNO) || (USE_DAC_EXTERNO)
+			NVIC_EnableIRQ(I2S_IRQn);
+		#endif
+
+		#if (USE_DMA)
+			NVIC_EnableIRQ(DMA_IRQn);
+		#endif
+
+
+		vTaskDelete(NULL);	// Se mata a si misma luego de inicianizar las interrupciones
+	}
+
 	void vtask_ImAlive(void * pvParameters)
 	{
 		while (1)

@@ -14,70 +14,49 @@
 
 
 // ********* FUNCIONES ********** //
+	void adc_dac_init();								// Inicializa lo necesario para usar dma y adc/dac interno/externo (externo por i2s)
+
 	#if (USE_ADC_EXTERNO)
-		void main_adc_post();	// Funcion que debe ejecutar luego de procesar los datos, para enviar por DAC
-		void dma_init();
+		void adc_ext_prepare(volatile uint32_t *buffer_A,	// Prepara el buffer para poder recibir desde el ADC. Si esta definido buffer B, comienza a recibir por el A
+						 volatile uint32_t *buffer_B);
+		void adc_ext_start();								// Si el buffer B no fue definido, se detendra la transferencia luego de llenar el A. para reanudar hay que llamar a esta funcion
+		void adc_ext_post_procesamiento();					// Funcion que debe ejecutar luego de procesar los datos, para continuar con la transferencia del ADC
+	#endif
+
+	#if USE_DAC_INTERNO
+		void dac_int_prepare(volatile uint16_t *buffer);	// Prepara el buffer para poder ser enviado por DAC
+		void dac_int_send();								// Envia una senial por DAC
 	#endif
 // ****************************** //
 
-// ********* TAREAS ********** //
-	#if (USE_ADC_EXTERNO)
-		void adc_pre_procesamiento();
-		void adc_post_procesamiento();
-	#endif
-// *************************** //
-
-
 // ***************** DEFINES ***************** //
 	#if USE_ADC
-		#define ADC_FREQ 				20000
 		#define ADC_DMA_CANT_MUESTRAS 	2048
-		#define ADC_DMA_CHANNEL 		1
+		#define ADC_FREQ 				32000
 	#endif
 
 	#if USE_DAC
+		#define DAC_DMA_CANT_MUESTRAS 	2048
 		#define DAC_FREQ 				ADC_FREQ
-		#define DAC_DMA_CANT_MUESTRAS 	ADC_DMA_CANT_MUESTRAS
-		#define DAC_DMA_CHANNEL 		0
-	#endif
-
-	#if (USE_ADC_EXTERNO)||(USE_DAC_EXTERNO)
-		#define LED_stick			0,22
-		#define AOUT				0,26
-
-		#define I2SRX_CLK			0,4
-		#define I2SRX_WS			0,5
-		#define I2SRX_SDA			0,6
-		#define RX_MCLK				4,28
-
-		#define I2STX_CLK			0,7
-		#define I2STX_WS			0,8
-		#define I2STX_SDA			0,9
-		#define TX_MCLK				4,29
-
-		#define CH_L				1
-		#define CH_R				2
 	#endif
 // ******************************************* //
 
 
 // ************* VARIABLES GLOBALES ************* //
 	#if (USE_ADC_EXTERNO)
-		extern volatile uint32_t *dma_adc_ext_memory;					// Apunta al buffer actual (el que se puede procesar) del ADC
+		extern volatile uint32_t 		*dma_adc_ext_memory;	// Apunta al buffer actual (el que se puede procesar) del ADC
 
 		#if (USE_RTOS)
-			extern xSemaphoreHandle sem_adc_proc;
+			extern xSemaphoreHandle 	sem_adc_proc;			// Semaforo que indica que recibio un dato por adc y debe ser procesado.
 		#endif
 	#endif
 
 	#if (USE_DAC_INTERNO)
-		extern Bool dac_send;
+		#if (USE_RTOS)
+			extern xSemaphoreHandle 	sem_dac_finish;			// Semaforo que indica cuando se termino de enviar un dato por DAC
+		#endif
 	#endif
 // ********************************************** //
-
-// ************* INICIALIZACION ************* //
-	#include "adc_dac_init.h"
-// ****************************************** //
 
 
 #endif /* ADC_DAC_HEADER_H_ */

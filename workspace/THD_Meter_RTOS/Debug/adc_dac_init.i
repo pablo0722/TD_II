@@ -16,8 +16,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE_SIZE__ 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 4
 #define __SIZEOF_LONG__ 4
@@ -311,6 +309,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __CHAR_UNSIGNED__ 1
 #define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1
 #define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1
@@ -15953,40 +15952,22 @@ void arm_rfft_fast_f32(
 
 
 
-#define USE_UART ON
+#define USE_UART OFF
+#define USE_TIMER ON
 #define USE_ADC ON
 #define USE_DAC ON
 #define USE_FFT ON
-#define USE_RTOS OFF
+#define USE_TFT ON
+#define USE_RTOS ON
 
 
 
 
-#define DEBUG_MODE OFF
-
-
-
-#define USE_UART0 ON
-#define USE_UART1 OFF
-#define USE_UART2 OFF
-#define USE_UART3 OFF
-
-
-
-#define UART_TRANSMIT_NONE 0
-#define UART_TRANSMIT_LOOPBACK 1
-#define UART_TRANSMIT_FFT 2
-#define UART0_TRANSMIT UART_TRANSMIT_FFT
-#define UART1_TRANSMIT UART_TRANSMIT_FFT
-#define UART2_TRANSMIT UART_TRANSMIT_FFT
-#define UART3_TRANSMIT UART_TRANSMIT_FFT
-
-
-
-
+#define DEBUG_MODE ON
+# 72 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_ADC_INTERNO OFF
 #define USE_ADC_EXTERNO ON
-# 77 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+# 83 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define ADC_EXTERNO_INTERRUPCION 0
 #define ADC_EXTERNO_DMA 1
 #define ADC_EXTERNO_MODO ADC_EXTERNO_DMA
@@ -15995,25 +15976,102 @@ void arm_rfft_fast_f32(
 
 
 
-#define USE_DAC_INTERNO OFF
-#define USE_DAC_EXTERNO ON
-# 96 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
-#define DAC_EXTERNO_INTERRUPCION 0
-#define DAC_EXTERNO_DMA 1
-#define DAC_EXTERNO_MODO DAC_EXTERNO_DMA
-# 110 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+#define USE_DAC_INTERNO ON
+#define USE_DAC_EXTERNO OFF
+
+
+
+#define DAC_INTERNO_INTERRUPCION 0
+#define DAC_INTERNO_DMA 1
+#define DAC_INTERNO_MODO DAC_INTERNO_INTERRUPCION
+# 115 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_DMA ON
-# 119 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+
+
+
+
+
+
+
  void main_init();
 # 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
-# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 1
-# 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
-#define FFT_HEADER_H_ 
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header.h" 1
+# 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header.h"
+#define BASICS_HEADER_H_ 
 
+
+
+
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h" 1
+# 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h"
+#define BASICS_HEADER_INIT_H_ 
 
 
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 1
-# 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
+# 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h" 2
+
+
+static inline void pin_set(uint8_t port, uint8_t pin, 
+# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h" 3 4
+                                                     _Bool 
+# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h"
+                                                          estado)
+{
+ Chip_GPIO_SetPinState(((LPC_GPIO_T *) 0x2009C000), port, pin, estado);
+}
+
+static inline 
+# 20 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h" 3 4
+             _Bool 
+# 20 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h"
+                  pin_get(uint8_t port, uint8_t pin)
+{
+ return Chip_GPIO_GetPinState(((LPC_GPIO_T *) 0x2009C000), port, pin);
+}
+
+static inline void pin_gpio_init(uint8_t port, uint8_t pin, uint32_t mode, 
+# 25 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h" 3 4
+                                                                          _Bool 
+# 25 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header_init.h"
+                                                                               salida)
+{
+
+
+
+
+
+
+ Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, 0x0);
+
+ Chip_GPIO_SetDir(((LPC_GPIO_T *) 0x2009C000), port, pin, (uint8_t)salida);
+
+ if(salida)
+  pin_set(port, pin, 0);
+}
+
+static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t func)
+{
+ if(1)
+ {
+  if(func == 0)
+  {
+   printf("[error] pin_init:\n");
+   printf("\t Quiso inicializar pin como GPIO sin usar funcion dedicada \"pin_gpio_init\" \n");
+  }
+
+
+
+
+
+ }
+
+ Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, func);
+}
+# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header.h" 2
+# 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 1
+# 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
+#define FFT_HEADER_H_ 
 # 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
   void fft_function();
 
@@ -16022,12 +16080,15 @@ void arm_rfft_fast_f32(
 
 
 
-#define FFT_SIZE 512
-
-
-#define FFT_STATUS_EMPTY 0
-#define FFT_STATUS_TO_DO 1
-#define FFT_STATUS_DONE 2
+#define FFT_SIZE_32 32
+#define FFT_SIZE_64 64
+#define FFT_SIZE_128 128
+#define FFT_SIZE_256 256
+#define FFT_SIZE_512 512
+#define FFT_SIZE_1024 1024
+#define FFT_SIZE_2048 2048
+#define FFT_SIZE_4096 4096
+#define FFT_SIZE FFT_SIZE_2048
 
 
 
@@ -16035,12 +16096,7 @@ void arm_rfft_fast_f32(
 
 
   extern arm_rfft_instance_q31 fft_inst_q31;
-  extern arm_cfft_radix4_instance_q31 fft_inst_q31_complex;
-
-  extern volatile q31_t fft_vector[512];
-  extern volatile q31_t fft_vector_out[512*2];
-
-  extern uint8_t fft_status;
+  extern arm_rfft_instance_q31 ifft_inst_q31;
 
 
 
@@ -16049,6 +16105,7 @@ void arm_rfft_fast_f32(
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h" 1
 # 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
 #define FFT_INIT_FFT_LENGTH FFT_SIZE
+#define FFT_INIT_FFT TRUE
 #define FFT_INIT_IFFT FALSE
 #define FFT_INIT_BIT_REVERSE TRUE
 
@@ -16056,245 +16113,442 @@ void arm_rfft_fast_f32(
 
  static inline void fft_init()
  {
-# 31 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
-  arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, 512, FALSE, TRUE);
-# 40 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
+  static arm_cfft_radix4_instance_q31 fft_inst_q31_complex;
+
+   printf("[info] init FFT: \r\n");
+   printf("\t format: q31 \r\n");
+   printf("\t fftLength(solo parte real): %d \r\n", 2048);
+
+
+
+   arm_status st =
+
+
+  arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, 2048, TRUE, TRUE);
+
+
+   if(st != ARM_MATH_SUCCESS)
+   {
+    printf("[error] FFT init: \r\n");
+    printf("\t st = %d \r\n", st);
+   }
+
+   st =
+
+
+  arm_rfft_init_q31(&ifft_inst_q31, &fft_inst_q31_complex, 2048, FALSE, TRUE);
+
+
+   if(st != ARM_MATH_SUCCESS)
+   {
+    printf("[error] FFT init: \r\n");
+    printf("\t st = %d \r\n", st);
+   }
+
  }
-# 69 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
-# 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 67 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_func.h" 1
+# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_func.h"
+ static inline void fft_toCmplx(q31_t fft_in_real[2048], q31_t fft_out_cmplx[2048*2])
+ {
+  arm_rfft_q31(&fft_inst_q31, fft_in_real, fft_out_cmplx);
+ }
+
+ static inline void fft_toDep(q31_t fft_in_cmplx[2048*2], q31_t fft_out_dep[2048/2])
+ {
+  q31_t aux_fft_out_dep[2048];
+
+  arm_cmplx_mag_q31(fft_in_cmplx, aux_fft_out_dep, 2048*2);
+
+  memcpy(fft_out_dep, aux_fft_out_dep, 2048/2);
+
+
+  arm_mult_q31(
+      (q31_t *) fft_out_dep,
+      (q31_t *) fft_out_dep,
+      (q31_t *) fft_out_dep,
+      2048);
+ }
+
+ static inline void fft_toReal(q31_t fft_in_cmplx[2048], q31_t fft_out_real[2048])
+ {
+  arm_rfft_q31(&ifft_inst_q31, fft_in_cmplx, fft_out_real);
+ }
+# 68 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
+# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h" 1
 # 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
 #define UART_HEADER_H_ 
-# 41 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
-  void main_uart();
-# 50 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
-#define UART0_SRB_SIZE 256*4
-#define UART0_RRB_SIZE 4
-#define UART1_SRB_SIZE 16
-#define UART1_RRB_SIZE 16
-#define UART2_SRB_SIZE 16
-#define UART2_RRB_SIZE 16
-#define UART3_SRB_SIZE 16
-#define UART3_RRB_SIZE 16
-
-
-#define UART_BAUDRATE_9600 9600
-#define UART_BAUDRATE_19200 19200
-#define UART_BAUDRATE_38400 38400
-#define UART_BAUDRATE_57600 57600
-#define UART_BAUDRATE_115200 115200
-#define UART0_BAUDRATE UART_BAUDRATE_9600
-#define UART1_BAUDRATE UART_BAUDRATE_9600
-#define UART2_BAUDRATE UART_BAUDRATE_9600
-#define UART3_BAUDRATE UART_BAUDRATE_9600
-
-
-#define UART_STATUS_EMPTY 0
-#define UART_STATUS_LEIDO 1
-
-
-#define UART0_TX_P0_2 0, 2, MD_PLN, IOCON_FUNC1
-#define UART0_RX_P0_3 0, 3, MD_PLN, IOCON_FUNC1
-#define UART0_TX UART0_TX_P0_2
-#define UART0_RX UART0_RX_P0_3
-
-#define UART1_TX_P0_15 0, 15, MD_PLN, IOCON_FUNC1
-#define UART1_TX_P2_0 2, 0, MD_PLN, IOCON_FUNC2
-#define UART1_RX_P0_16 0, 16, MD_PLN, IOCON_FUNC1
-#define UART1_RX_P2_1 2, 1, MD_PLN, IOCON_FUNC2
-#define UART1_TX UART1_TX_P0_15
-#define UART1_RX UART1_RX_P0_16
-
-#define UART2_TX_P0_10 0, 10, MD_PLN, IOCON_FUNC1
-#define UART2_TX_P2_8 2, 8, MD_PLN, IOCON_FUNC2
-#define UART2_RX_P0_11 0, 11, MD_PLN, IOCON_FUNC1
-#define UART2_TX UART2_TX_P0_10
-#define UART2_RX UART2_RX_P0_11
-
-#define UART3_TX_P0_0 0, 0, MD_PLN, IOCON_FUNC2
-#define UART3_TX_P0_25 0, 25, MD_PLN, IOCON_FUNC3
-#define UART3_RX_P0_1 0, 1, MD_PLN, IOCON_FUNC2
-#define UART3_RX_P0_26 0, 26, MD_PLN, IOCON_FUNC3
-#define UART3_TX UART3_TX_P0_0
-#define UART3_RX UART3_RX_P0_1
-
-
-
-
-
-
-
-   extern volatile uint8_t uart0_in;
 # 120 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
-   extern uint8_t rxbuff0[4], txbuff0[256*4];
-# 134 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
-   extern RINGBUFF_T txring0, rxring0;
-# 148 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
-   extern uint8_t uart0_rx_status;
-# 165 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_init.h" 1
-# 10 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_init.h"
-# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h" 1
-# 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_init.h" 2
-
-
-
-
-#define RX_RING0_P &rxring0
-
-
-
-
-
-
-#define RX_RING1_P NULL
-
-
-
-
-#define RX_RING2_P NULL
-
-
-
-
-#define RX_RING3_P NULL
-
-
-
-
-#define TX_RING0_P &txring0
-
-
-
-
-
-
-#define TX_RING1_P NULL
-
-
-
-
-#define TX_RING2_P NULL
-
-
-
-
-#define TX_RING3_P NULL
-
-
-
-
-#define RX_BUFF0_P &rxbuff0
-
-
-
-
-
-
-#define RX_BUFF1_P NULL
-
-
-
-
-#define RX_BUFF2_P NULL
-
-
-
-
-#define RX_BUFF3_P NULL
-
-
-
-
-#define TX_BUFF0_P &txbuff0
-
-
-
-
-
-
-#define TX_BUFF1_P NULL
-
-
-
-
-#define TX_BUFF2_P NULL
-
-
-
-
-#define TX_BUFF3_P NULL
-
-
-
-
-#define BAUDRATE_UART(n) (n==0?UART0_BAUDRATE: (n==1?UART1_BAUDRATE: (n==2?UART2_BAUDRATE: UART3_BAUDRATE)))
-#define SRB_SIZE_UART(n) (n==0?UART0_SRB_SIZE: (n==1?UART1_SRB_SIZE: (n==2?UART2_SRB_SIZE: UART3_SRB_SIZE)))
-#define RRB_SIZE_UART(n) (n==0?UART0_RRB_SIZE: (n==1?UART1_RRB_SIZE: (n==2?UART2_RRB_SIZE: UART3_RRB_SIZE)))
-#define MODE_UART(n) (n==0?UART0_MODE: (n==1?UART1_MODE: (n==2?UART2_MODE: UART3_MODE)))
-#define LPC_UART(n) (n==0?LPC_UART0: (n==1?LPC_UART1: (n==2?LPC_UART2: LPC_UART3)))
-#define RX_RING(n) (n==0?RX_RING0_P: (n==1?RX_RING1_P: (n==2?RX_RING2_P: RX_RING3_P)))
-#define TX_RING(n) (n==0?TX_RING0_P: (n==1?TX_RING1_P: (n==2?TX_RING2_P: TX_RING3_P)))
-#define RX_BUFF(n) (n==0?RX_BUFF0_P: (n==1?RX_BUFF1_P: (n==2?RX_BUFF2_P: RX_BUFF3_P)))
-#define TX_BUFF(n) (n==0?TX_BUFF0_P: (n==1?TX_BUFF1_P: (n==2?TX_BUFF2_P: TX_BUFF3_P)))
-#define IRQn_UART(n) (n==0?UART0_IRQn: (n==1?UART1_IRQn: (n==2?UART2_IRQn: UART3_IRQn)))
-
-
-
- static inline void init_uart0()
- {
-
-
-
-
-
-
-
-  Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0, 2, (0x2), 0x1);
-  Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0, 3, (0x2), 0x1);
-
-  Board_UART_Init((uint32_t)((LPC_USART_T *) 0x4000C000), 9600);
-
-
-
-  RingBuffer_Init(&rxring0, &rxbuff0, 1, 4);
-  RingBuffer_Init(&txring0, &txbuff0, 1, 256*4);
-
-
-  Chip_UART_IntEnable(((LPC_USART_T *) 0x4000C000), ((1 << 0) | (1 << 2)));
-
-
-  NVIC_SetPriority(UART0_IRQn, 1);
-  NVIC_EnableIRQ(UART0_IRQn);
-
-  const char Uart_init_msg[] = "\r\nInit:\r\n";
-
-
-  Chip_UART_SendRB(((LPC_USART_T *) 0x4000C000), &txring0, Uart_init_msg, sizeof(Uart_init_msg));
- }
-
- static inline void uart_init()
- {
-
-   init_uart0();
-# 162 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_init.h"
- }
-# 166 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h" 2
-# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 121 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h" 2
+# 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 1
 # 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
 #define ADC_DAC_HEADER_H_ 
-# 19 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-  void adc_init();
 
 
 
-  void dac_init();
-# 47 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-#define I2S_INT_POLLING 1
-#define I2S_DMA (!(I2S_INT_POLLING))
 
-#define LED_stick 0,22
+
+
+
+ void adc_dac_init();
+
+
+  void adc_ext_prepare(volatile uint32_t *buffer_A,
+       volatile uint32_t *buffer_B);
+  void adc_ext_start();
+  void adc_ext_post_procesamiento();
+
+
+
+  void dac_int_prepare(volatile uint16_t *buffer);
+  void dac_int_send();
+
+
+
+
+
+#define ADC_DMA_CANT_MUESTRAS 2048
+#define ADC_FREQ 32000
+
+
+
+#define DAC_DMA_CANT_MUESTRAS 2048
+#define DAC_FREQ ADC_FREQ
+
+
+
+
+
+
+  extern volatile uint32_t *dma_adc_ext_memory;
+
+
+   extern SemaphoreHandle_t sem_adc_proc;
+
+
+
+
+
+   extern SemaphoreHandle_t sem_dac_finish;
+# 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 1
+# 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
+#define TIMER_HEADER_H_ 
+# 27 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
+#define TIMER0_TICKRATE 50
+
+
+
+
+
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_init.h" 1
+# 55 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_init.h"
+ static inline void timer_BL_init(int frecuencia , int duty)
+ {
+     Chip_TIMER_Init(((LPC_TIMER_T *) 0x40008000));
+     Chip_TIMER_PrescaleSet( ((LPC_TIMER_T *) 0x40008000) , Chip_Clock_GetPeripheralClockRate( SYSCTL_PCLK_TIMER1 ) / 1000000 - 1 );
+
+        int tmp = 1000000/frecuencia;
+
+       Chip_TIMER_MatchEnableInt( ((LPC_TIMER_T *) 0x40008000) , 0 );
+       Chip_TIMER_ResetOnMatchEnable( ((LPC_TIMER_T *) 0x40008000) , 0 );
+       Chip_TIMER_StopOnMatchDisable( ((LPC_TIMER_T *) 0x40008000) , 0 );
+       Chip_TIMER_SetMatch( ((LPC_TIMER_T *) 0x40008000) , 0 , tmp );
+
+
+       Chip_TIMER_MatchEnableInt( ((LPC_TIMER_T *) 0x40008000) , 1 );
+       Chip_TIMER_ResetOnMatchDisable( ((LPC_TIMER_T *) 0x40008000) , 1 );
+       Chip_TIMER_StopOnMatchDisable( ((LPC_TIMER_T *) 0x40008000) , 1 );
+       Chip_TIMER_SetMatch( ((LPC_TIMER_T *) 0x40008000) , 1 , tmp*duty/100 );
+
+       Chip_TIMER_Reset( ((LPC_TIMER_T *) 0x40008000) );
+       Chip_TIMER_Enable( ((LPC_TIMER_T *) 0x40008000) );
+       NVIC_ClearPendingIRQ(TIMER1_IRQn);
+       NVIC_DisableIRQ( TIMER1_IRQn );
+ }
+# 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 2
+# 18 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TFT/tft_header.h" 1
+# 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TFT/tft_header.h"
+#define TFT_HEADER_H_ 
+# 20 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TFT/tft_header.h"
+ typedef enum
+ {
+  TFT_ORIENTATION_LANDSCAPE,
+  TFT_ORIENTATION_PORTRAIT,
+  TFT_ORIENTATION_PORTRAIT_1,
+  TFT_ORIENTATION_PORTRAIT_2,
+  TFT_ORIENTATION_LANDSCAPE_1,
+  TFT_ORIENTATION_LANDSCAPE_2
+ } tft_Orientation;
+
+
+
+
+ typedef struct
+ {
+  unsigned char FontWidth;
+  unsigned char FontHeight;
+  const uint16_t *data;
+ } tft_font_t;
+
+
+
+
+
+ typedef struct
+ {
+  unsigned short int width;
+
+  unsigned short int height;
+  tft_Orientation orientation;
+ } tft_Options_t;
+
+
+
+
+ extern const int signal[300];
+
+ extern uint16_t tft_x;
+ extern uint16_t tft_y;
+ extern tft_Options_t tft_Opts;
+
+ extern tft_font_t tft_Font_7x10;
+ extern tft_font_t tft_Font_11x18;
+ extern tft_font_t tft_Font_16x26;
+
+
+
+
+  void tft_init();
+
+
+
+  void tft_Delay(volatile unsigned long int delay);
+  void tft_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
+  void tft_Fill(uint16_t color);
+  void tft_Rotate(tft_Orientation orientation);
+  void tft_Puts(uint16_t x, uint16_t y, char *str, tft_font_t *font, uint16_t foreground, uint16_t background);
+  void tft_GetStringSize(char *str, tft_font_t *font, uint16_t *width, uint16_t *height);
+  void tft_DrawRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
+  void tft_DrawFilledRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
+  void tft_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
+  void tft_DrawFilledCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
+
+
+
+
+
+
+#define BACKLIGHT_FREC 60
+
+
+
+#define TFT_COLOR_WHITE 0xFFFF
+#define TFT_COLOR_BLACK 0x0000
+#define TFT_COLOR_RED 0xF800
+#define TFT_COLOR_GREEN 0x07E0
+#define TFT_COLOR_GREEN2 0xB723
+#define TFT_COLOR_BLUE 0x001F
+#define TFT_COLOR_BLUE2 0x051D
+#define TFT_COLOR_YELLOW 0xFFE0
+#define TFT_COLOR_ORANGE 0xFBE4
+#define TFT_COLOR_CYAN 0x07FF
+#define TFT_COLOR_MAGENTA 0xA254
+#define TFT_COLOR_GRAY 0x7BEF
+#define TFT_COLOR_BROWN 0xBBCA
+
+#define TFT_FOREGROUND_WHITE TFT_COLOR_WHITE
+#define TFT_FOREGROUND_BLACK TFT_COLOR_BLACK
+#define TFT_FOREGROUND_RED TFT_COLOR_RED
+#define TFT_FOREGROUND_GREEN TFT_COLOR_GREEN
+#define TFT_FOREGROUND_GREEN2 TFT_COLOR_GREEN2
+#define TFT_FOREGROUND_BLUE TFT_COLOR_BLUE
+#define TFT_FOREGROUND_BLUE2 TFT_COLOR_BLUE2
+#define TFT_FOREGROUND_YELLOW TFT_COLOR_YELLOW
+#define TFT_FOREGROUND_ORANGE TFT_COLOR_ORANGE
+#define TFT_FOREGROUND_CYAN TFT_COLOR_CYAN
+#define TFT_FOREGROUND_MAGENTA TFT_COLOR_CYAN
+#define TFT_FOREGROUND_GRAY TFT_COLOR_MAGENTA
+#define TFT_FOREGROUND_BROWN TFT_COLOR_GRAY
+
+#define TFT_BACKGROUND_WHITE TFT_COLOR_WHITE
+#define TFT_BACKGROUND_BLACK TFT_COLOR_BLACK
+#define TFT_BACKGROUND_RED TFT_COLOR_RED
+#define TFT_BACKGROUND_GREEN TFT_COLOR_GREEN
+#define TFT_BACKGROUND_GREEN2 TFT_COLOR_GREEN2
+#define TFT_BACKGROUND_BLUE TFT_COLOR_BLUE
+#define TFT_BACKGROUND_BLUE2 TFT_COLOR_BLUE2
+#define TFT_BACKGROUND_YELLOW TFT_COLOR_YELLOW
+#define TFT_BACKGROUND_ORANGE TFT_COLOR_ORANGE
+#define TFT_BACKGROUND_CYAN TFT_COLOR_CYAN
+#define TFT_BACKGROUND_MAGENTA TFT_COLOR_CYAN
+#define TFT_BACKGROUND_GRAY TFT_COLOR_MAGENTA
+#define TFT_BACKGROUND_BROWN TFT_COLOR_GRAY
+
+
+
+#define DB0 2,7
+#define DB1 1,29
+#define DB2 4,28
+#define DB3 1,23
+#define DB4 1,20
+#define DB5 0,19
+#define DB6 3,26
+#define DB7 1,25
+#define DB8 1,22
+#define DB9 1,19
+#define DB10 0,20
+#define DB11 3,25
+#define DB12 2,6
+#define DB13 1,24
+#define DB14 1,21
+#define DB15 1,18
+
+#define CS 0,9
+#define RS 0,8
+#define WR 0,7
+#define READ_DATA 0,6
+#define REST 2,5
+
+#define BL 2,4
+# 19 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h" 1
+# 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h"
+#define RTOS_HEADER_H_ 
+# 26 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h"
+#define PRIORIDAD_MAXIMA 4
+#define PRIORIDAD_MINIMA 0
+
+
+
+
+
+  void vTask_nvic_init(void *pvParameters);
+  void vtask_ImAlive(void * pvParameters);
+# 45 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h"
+#define ENTRADA 0
+#define SALIDA 1
+
+
+
+
+
+# 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 1
+# 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+ static inline void task_create( TaskFunction_t pxTaskCode, const char * const pcName, const uint16_t usStackDepth,
+        void * const pvParameters, UBaseType_t uxPriority, TaskHandle_t * const pxCreatedTask)
+ {
+
+   BaseType_t ret_task =
+
+
+  xTaskGenericCreate( ( pxTaskCode ), ( pcName ), ( usStackDepth ), ( pvParameters ), ( uxPriority ), ( pxCreatedTask ), ( 
+# 22 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+ ((void *)0) 
+# 22 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+ ), ( 
+# 22 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+ ((void *)0) 
+# 22 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+ ) );
+
+
+   if(ret_task < 0)
+   {
+    printf("[error] tarea %s \n", pcName);
+    printf("\t no hay memoria suficiente");
+   }
+
+ }
+
+
+ static inline void task_init()
+ {
+
+  task_create( vTask_nvic_init, "vTask_nvic_init", ( ( unsigned short ) 128 ), 
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+                                                                            ((void *)0)
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+                                                                                , 4 +1, (TaskHandle_t *) 
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+                                                                                                                      ((void *)0)
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+                                                                                                                          );
+  task_create( vtask_ImAlive, "vtask_ImAlive", ( ( unsigned short ) 128 ), 
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+                                                                           ((void *)0)
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+                                                                               , 0, (TaskHandle_t *) 
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+                                                                                                                    ((void *)0)
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+                                                                                                                        );
+
+
+
+
+
+  vTaskStartScheduler();
+ }
+# 53 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h" 2
+# 21 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
+
+
+
+
+ void vTask_teclado(void *pvParameters);
+ void vTask_tft(void *pvParameters);
+ void vTask_THD(void *pvParameters);
+
+
+
+
+
+  extern Bool flag_dac_send;
+  extern Bool flag_do_thd;
+  extern Bool flag_do_rem;
+
+  extern q31_t THD;
+  extern q31_t fft_max;
+  extern uint32_t fft_max_idx;
+  extern q31_t fft_min;
+
+
+
+
+ extern uint32_t buffer_complex [2048*2];
+ extern uint32_t buffer_dep [2048];
+ extern uint32_t buffer_dac [2048/2];
+
+
+
+
+#define BUTTON0 2, 10
+#define BUTTON1 0, 18
+#define BUTTON2 0, 11
+#define BUTTON3 2, 13
+# 11 "../ADC_DAC/adc_dac_init.c" 2
+# 1 "../ADC_DAC/private/adc_dac_header_priv.h" 1
+# 9 "../ADC_DAC/private/adc_dac_header_priv.h"
+#define ADC_DAC_HEADER_PRIV_H_ 
+
+
+
+
+
+
+ void adc_ext_pre_procesamiento();
+
+
+
+
+
+
 #define AOUT 0,26
 
 #define I2SRX_CLK 0,4
@@ -16306,46 +16560,104 @@ void arm_rfft_fast_f32(
 #define I2STX_WS 0,8
 #define I2STX_SDA 0,9
 #define TX_MCLK 4,29
+# 52 "../ADC_DAC/private/adc_dac_header_priv.h"
+#define STATUS_ADC_IDLE -1
+#define STATUS_ADC_TRANSFIRIENDO_A 0x00
+#define STATUS_ADC_TRANSFIRIENDO_B 0x01
+#define STATUS_ADC_TRANS_A_PROC_B 0x02
+#define STATUS_ADC_TRANS_B_PROC_A 0x03
+#define STATUS_ADC_TRANS_B_PROC_A_ERR 0x04
+#define STATUS_ADC_TRANS_A_PROC_B_ERR 0x05
 
-#define CH_L 1
-#define CH_R 2
-# 83 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-  extern uint16_t adcFlag;
-  extern int32_t data, cont, ch;
-# 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
-# 26 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h"
- void main_while();
-# 11 "../ADC_DAC/adc_dac_init.c" 2
+#define STATUS_ADC_ISPROC(status) ((status & 0x06) == 0x02)
+#define STATUS_ADC_ISERR(status) ((status & 0x06) == 0x04)
+
+#define STATUS_ADC_PROC2ERR(status) status += 2
+#define STATUS_ADC_PROC2TRANS(status) status &= 0x01
+# 89 "../ADC_DAC/private/adc_dac_header_priv.h"
+#define STATUS_DAC_IDLE -1
+#define STATUS_DAC_RECIBIDO 0x00
+#define STATUS_DAC_TRANSFIRIENDO 0x01
 
 
 
 
- void dma_init()
+
+
+  extern DMA_TransferDescriptor_t *dma_adc_ext_descriptor;
+  extern DMA_TransferDescriptor_t dma_adc_ext_descriptor_A;
+  extern DMA_TransferDescriptor_t dma_adc_ext_descriptor_B;
+
+  extern volatile uint32_t *dma_adc_ext_memory_A;
+  extern volatile uint32_t *dma_adc_ext_memory_B;
+
+  extern uint8_t dma_adc_ext_canal;
+
+  extern volatile uint8_t dma_adc_ext_status;
+
+
+
+  extern DMA_TransferDescriptor_t dma_dac_int_descriptor;
+
+  extern volatile uint16_t * dma_dac_int_memory;
+
+  extern uint8_t dma_dac_int_canal;
+
+  extern volatile uint8_t dma_dac_int_status;
+
+
+
+
+# 1 "../ADC_DAC/private/adc_dac_init_priv.h" 1
+# 9 "../ADC_DAC/private/adc_dac_init_priv.h"
+#define ADC_DAC_INIT_PRIV_H_ 
+
+
+
+# 1 "../ADC_DAC/private/adc_dac_header_priv.h" 1
+# 14 "../ADC_DAC/private/adc_dac_init_priv.h" 2
+
+
+
+ static inline void dma_init()
  {
-  static char init_flag = 0;
+# 83 "../ADC_DAC/private/adc_dac_init_priv.h"
+  char flag_init = 1;
 
-  if(!init_flag)
+
+   printf("[info] Init DMA \r\n");
+
+
+  if(flag_init)
   {
    Chip_GPDMA_Init(((LPC_GPDMA_T *) 0x50004000));
 
+
    NVIC_DisableIRQ(DMA_IRQn);
-   NVIC_SetPriority(DMA_IRQn, ((0x01 << 3) | 0x01));
-   NVIC_EnableIRQ(DMA_IRQn);
-
-
-   canal_adc = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
+   NVIC_SetPriority(DMA_IRQn, ((0x01<<3)|0x01));
 
 
 
 
+     printf("\t init buffers ADC externo \r\n");
 
 
 
-   canal_dac = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
-# 45 "../ADC_DAC/adc_dac_init.c"
-   NVIC_EnableIRQ(DMA_IRQn);
+    dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
 
-   init_flag = 1;
+
+
+
+
+
+     printf("\t init buffers DAC interno \r\n");
+
+
+
+    dma_dac_int_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
+
+
+   flag_init = 0;
   }
  }
 
@@ -16418,7 +16730,7 @@ void arm_rfft_fast_f32(
 
 
 
- Status mi_Chip_I2S_TxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
+ static inline Status mi_Chip_I2S_TxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
  {
   uint32_t temp;
   uint16_t xDiv, yDiv;
@@ -16464,7 +16776,7 @@ void arm_rfft_fast_f32(
 
 
 
- Status mi_Chip_I2S_RxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
+ static inline Status mi_Chip_I2S_RxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
  {
   uint32_t temp;
   uint16_t xDiv, yDiv;
@@ -16505,97 +16817,125 @@ void arm_rfft_fast_f32(
   return SUCCESS;
  }
 
- void i2s_init()
+ static inline void i2s_init()
  {
-  static char init_flag = 0;
 
-  if(!init_flag)
-  {
-
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,4, (0x2), 0x1);
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,6, (0x2), 0x1);
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,5, (0x2), 0x1);
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 4,28, (0x2), 0x1);
-
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,7, (0x2), 0x1);
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,9, (0x2), 0x1);
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 0,8, (0x2), 0x1);
-   Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 4,29, (0x2), 0x1);
+   printf("[info] Init I2S \r\n");
 
 
 
-   I2S_AUDIO_FORMAT_T audio_Confg;
-   audio_Confg.SampleRate = 32000;
-   audio_Confg.ChannelNumber = 2;
-   audio_Confg.WordWidth = 32;
-
-
-   Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_I2S, SYSCTL_CLKDIV_1);
-
-   Chip_I2S_Init(((LPC_I2S_T *) 0x400A8000));
-
-   Chip_I2S_RxStop(((LPC_I2S_T *) 0x400A8000));
-   Chip_I2S_TxStop(((LPC_I2S_T *) 0x400A8000));
-   Chip_I2S_EnableMute(((LPC_I2S_T *) 0x400A8000));
-
-
-   Chip_I2S_DisableMute(((LPC_I2S_T *) 0x400A8000));
-   Chip_I2S_RxStart(((LPC_I2S_T *) 0x400A8000));
-   Chip_I2S_TxStart(((LPC_I2S_T *) 0x400A8000));
-
-   Chip_I2S_Int_RxCmd(((LPC_I2S_T *) 0x400A8000), ENABLE, 1);
-   Chip_I2S_Int_TxCmd(((LPC_I2S_T *) 0x400A8000), DISABLE, 1);
-
-
-   mi_Chip_I2S_RxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
-
-   mi_Chip_I2S_TxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
-
-
-    Chip_I2S_DMA_RxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
-    Chip_I2S_DMA_TxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
-
-    NVIC_DisableIRQ(I2S_IRQn);
+   { ( sem_adc_proc ) = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) ); if( ( sem_adc_proc ) != 
+# 285 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
+  ((void *)0) 
+# 285 "../ADC_DAC/private/adc_dac_init_priv.h"
+  ) { ( void ) xQueueGenericSend( ( QueueHandle_t ) ( ( sem_adc_proc ) ), 
+# 285 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
+  ((void *)0)
+# 285 "../ADC_DAC/private/adc_dac_init_priv.h"
+  , ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) ); } };
+   xQueueGenericReceive( ( QueueHandle_t ) ( sem_adc_proc ), 
+# 286 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
+  ((void *)0)
+# 286 "../ADC_DAC/private/adc_dac_init_priv.h"
+  , ( 0 ), ( ( BaseType_t ) 0 ) );
 
 
 
+   dma_init();
 
 
 
-   init_flag = 1;
-  }
- }
+  pin_init(0,4, (0x2), 0x1);
+  pin_init(0,6, (0x2), 0x1);
+  pin_init(0,5, (0x2), 0x1);
+  pin_init(4,28, (0x2), 0x1);
+
+  pin_init(0,7, (0x2), 0x1);
+  pin_init(0,9, (0x2), 0x1);
+  pin_init(0,8, (0x2), 0x1);
+  pin_init(4,29, (0x2), 0x1);
+
+
+  I2S_AUDIO_FORMAT_T audio_Confg;
+  audio_Confg.SampleRate = 32000;
+  audio_Confg.ChannelNumber = 2;
+  audio_Confg.WordWidth = 32;
+
+
+  Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_I2S, SYSCTL_CLKDIV_1);
+
+  Chip_I2S_Init(((LPC_I2S_T *) 0x400A8000));
+
+  Chip_I2S_RxStop(((LPC_I2S_T *) 0x400A8000));
+  Chip_I2S_TxStop(((LPC_I2S_T *) 0x400A8000));
+  Chip_I2S_EnableMute(((LPC_I2S_T *) 0x400A8000));
+
+
+  Chip_I2S_DisableMute(((LPC_I2S_T *) 0x400A8000));
+  Chip_I2S_RxStart(((LPC_I2S_T *) 0x400A8000));
+  Chip_I2S_TxStart(((LPC_I2S_T *) 0x400A8000));
+
+  Chip_I2S_Int_RxCmd(((LPC_I2S_T *) 0x400A8000), ENABLE, 1);
+  Chip_I2S_Int_TxCmd(((LPC_I2S_T *) 0x400A8000), DISABLE, 1);
+
+
+  mi_Chip_I2S_RxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
+
+  mi_Chip_I2S_TxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
+
+
+   Chip_I2S_DMA_RxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
+   Chip_I2S_DMA_TxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
+
+   NVIC_DisableIRQ(I2S_IRQn);
 
 
 
-
- void adc_init()
- {
-  Chip_IOCON_PinMux (((LPC_IOCON_T *) 0x4002C000), 0, 23, (0x2), 0x1 );
-
-
-  ADC_CLOCK_SETUP_T adc;
-
-  Chip_ADC_Init(((LPC_ADC_T *) 0x40034000), &adc);
-  NVIC_DisableIRQ(ADC_IRQn);
-  Chip_ADC_EnableChannel(((LPC_ADC_T *) 0x40034000), ADC_CH0, ENABLE);
-  Chip_ADC_SetSampleRate(((LPC_ADC_T *) 0x40034000), &adc, ADC_FREQ);
-  Chip_ADC_Int_SetChannelCmd(((LPC_ADC_T *) 0x40034000), ADC_CH0, ENABLE);
-  Chip_ADC_SetBurstCmd(((LPC_ADC_T *) 0x40034000), ENABLE);
 
  }
-
-
-
-
- void dac_init()
+# 368 "../ADC_DAC/private/adc_dac_init_priv.h"
+ static inline void dac_init()
  {
-  Chip_IOCON_PinMux (((LPC_IOCON_T *) 0x4002C000), 0, 26, (0x2), 0x2 );
 
+   dma_init();
+
+
+
+   printf("[info] Init DAC \r\n");
+   printf("\t DAC freq %d \r\n", 32000);
+   printf("\t DMA buff size %d \r\n", 2048);
+
+
+  Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_DAC, SYSCTL_CLKDIV_4);
+
+  pin_init(0,26, (0x2), 0x2);
 
   Chip_DAC_Init(((LPC_DAC_T *) 0x4008C000));
 
-  Chip_DAC_SetDMATimeOut(((LPC_DAC_T *) 0x4008C000), (SystemCoreClock/4) / (DAC_FREQ * DAC_DMA_CANT_MUESTRAS) );
+
+
+  Chip_DAC_SetBias(((LPC_DAC_T *) 0x4008C000), 1);
+
+  Chip_DAC_SetDMATimeOut(((LPC_DAC_T *) 0x4008C000), (SystemCoreClock/4) / (32000 * 2048) );
 
   Chip_DAC_ConfigDAConverterControl(((LPC_DAC_T *) 0x4008C000), ((uint32_t) (1 << 1)) | ((uint32_t) (1 << 2)) | ((uint32_t) (1 << 3)));
+
  }
+# 123 "../ADC_DAC/private/adc_dac_header_priv.h" 2
+# 12 "../ADC_DAC/adc_dac_init.c" 2
+
+
+void adc_dac_init()
+{
+
+  dac_init();
+
+
+
+  i2s_init();
+
+
+
+  dma_init();
+
+}

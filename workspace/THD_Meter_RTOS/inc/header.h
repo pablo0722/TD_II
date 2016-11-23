@@ -28,6 +28,26 @@
 // ****************************** //
 
 
+// ************* VARIABLES GLOBALES ************* //
+	#if USE_RTOS
+		extern Bool flag_dac_send;	// Envia senial por DAC
+		extern Bool flag_do_thd;	// Calcula THD
+		extern Bool flag_do_rem;	// Calcula senal remanente
+
+		extern q31_t THD;
+		extern q31_t fft_max;
+		extern uint32_t fft_max_idx;
+		extern q31_t fft_min;
+	#endif
+// ********************************************** //
+
+// *** BUFFERS *** //
+	extern uint32_t buffer_complex	[FFT_SIZE*2];
+	extern uint32_t buffer_dep		[FFT_SIZE];
+	extern uint32_t buffer_dac		[FFT_SIZE/2];
+// *************** //
+
+
 // *** BOTONES *** //
 	#define	BUTTON0		2, 10
 	#define	BUTTON1		0, 18

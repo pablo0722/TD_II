@@ -84,51 +84,9 @@
 
 
 // *** DEFINES *** //
-	// *** DIMENSIONES *** //
-		#define WINDOWWIDTHX2				230		// DISTANCIA DESDE EL SUPERIOR
-		#define WINDOWHEIGTHX2				310		// DISTANCIA DESDE LA DERECHA
-		#define WINDOWHEIGTHX1				85		// DISTANCIA DESDE LA IZQUIERDA
-		#define WINDOWWIDTHX1				30		// DISTANCIA DESDE EL INFERIOR
-		#define WINDOWMULTIPLIER    		190
-		#define RECTHEIGHT 					WINDOWHEIGTHX2-WINDOWHEIGTHX1
-
-		#define TFT_WIDTH 					240		// Alto del display
-		#define TFT_HEIGHT					320		// Ancho del display
-		#define TFT_PIXEL					76800	// Cantidad de pixels en pantalla
-		#define TFT_HFACTOR					4095 	// Cantidad de cuentas del ADC (12bits)
-	// ******************* //
-
-	// *** PIN-OUT *** //
-		#define DB0 						2,7		// Expansion0
-		#define DB1 						1,29	// Expansion1
-		#define DB2 						4,28	// Expansion2
-		#define DB3 						1,23	// Expansion3
-		#define DB4 						1,20	// Expansion4
-		#define DB5 						0,19	// Expansion5
-		#define DB6 						3,26	// Expansion6
-		#define DB7 						1,25	// Expansion7
-		#define DB8 						1,22	// Expansion8
-		#define DB9 						1,19	// Expansion9
-		#define DB10 						0,20	// Expansion10
-		#define DB11 						3,25	// Expansion11
-		#define DB12 						2,6		// LCD_RESET SI FUNCA
-		#define DB13 						1,24	// Expansion13
-		#define DB14 						1,21	// Expansion14
-		#define DB15 						1,18	// Expansion15
-
-		#define CS 							0,9		// MOSI
-		#define RS 							0,8 	// MISO
-		#define WR 							0,7 	// SCK
-		#define READ_DATA 					0,6 	// SSEL
-		#define REST 						2,5 	// LCD_d7
-
-		#define BL 							2,4 	// LCD_D6
-	// *************** //
-
-	// *** PIN MODE *** //
-			#define ENTRADA 	0
-			#define SALIDA 		1
-	// **************** //
+	// *** BACK LIGHT *** //
+		#define BACKLIGHT_FREC	60
+	// ****************** //
 
 	// *** COLORES *** //
 		#define TFT_COLOR_WHITE			0xFFFF
@@ -174,39 +132,32 @@
 		#define TFT_BACKGROUND_BROWN	TFT_COLOR_GRAY
 	// *************** //
 
-	// *** COMANDOS *** //
-		#define ILI9341_RESET				0x01
-		#define ILI9341_SLEEP_OUT			0x11
-		#define ILI9341_GAMMA				0x26
-		#define ILI9341_DISPLAY_OFF			0x28
-		#define ILI9341_DISPLAY_ON			0x29
-		#define ILI9341_COLUMN_ADDR			0x2A
-		#define ILI9341_PAGE_ADDR			0x2B
-		#define ILI9341_GRAM				0x2C
-		#define ILI9341_MAC					0x36
-		#define ILI9341_PIXEL_FORMAT		0x3A
-		#define ILI9341_WDB					0x51	// Write Display Brightness (WDB)
-		#define ILI9341_WCD					0x53	// Write CTRL Display (WCD)
-		#define ILI9341_WCABC				0x55	// Write Content Adaptative Brightness Control (WCABC)
-		#define ILI9341_RGB_INTERFACE		0xB0
-		#define ILI9341_FRC					0xB1
-		#define ILI9341_BPC					0xB5
-		#define ILI9341_DFC					0xB6
-		#define ILI9341_POWER1				0xC0
-		#define ILI9341_POWER2				0xC1
-		#define ILI9341_VCOM1				0xC5
-		#define ILI9341_VCOM2				0xC7
-		#define ILI9341_POWERA				0xCB
-		#define ILI9341_POWERB				0xCF
-		#define ILI9341_PGAMMA				0xE0
-		#define ILI9341_NGAMMA				0xE1
-		#define ILI9341_DTCA				0xE8
-		#define ILI9341_DTCB				0xEA
-		#define ILI9341_POWER_SEQ			0xED
-		#define ILI9341_3GAMMA_EN			0xF2
-		#define ILI9341_INTERFACE			0xF6
-		#define ILI9341_PRC					0xF7
-	// **************** //
+	// *** PIN-OUT *** //
+		#define DB0 						2,7		// Expansion0
+		#define DB1 						1,29	// Expansion1
+		#define DB2 						4,28	// Expansion2
+		#define DB3 						1,23	// Expansion3
+		#define DB4 						1,20	// Expansion4
+		#define DB5 						0,19	// Expansion5
+		#define DB6 						3,26	// Expansion6
+		#define DB7 						1,25	// Expansion7
+		#define DB8 						1,22	// Expansion8
+		#define DB9 						1,19	// Expansion9
+		#define DB10 						0,20	// Expansion10
+		#define DB11 						3,25	// Expansion11
+		#define DB12 						2,6		// LCD_RESET SI FUNCA
+		#define DB13 						1,24	// Expansion13
+		#define DB14 						1,21	// Expansion14
+		#define DB15 						1,18	// Expansion15
+
+		#define CS 							0,9		// MOSI
+		#define RS 							0,8 	// MISO
+		#define WR 							0,7 	// SCK
+		#define READ_DATA 					0,6 	// SSEL
+		#define REST 						2,5 	// LCD_d7
+
+		#define BL 							2,4 	// LCD_D6
+	// *************** //
 // *************** //
 
 

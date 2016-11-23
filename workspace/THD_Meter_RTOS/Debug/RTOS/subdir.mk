@@ -5,17 +5,14 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../RTOS/rtos_globales.c \
-../RTOS/rtos_init.c \
 ../RTOS/rtos_tareas.c 
 
 OBJS += \
 ./RTOS/rtos_globales.o \
-./RTOS/rtos_init.o \
 ./RTOS/rtos_tareas.o 
 
 C_DEPS += \
 ./RTOS/rtos_globales.d \
-./RTOS/rtos_init.d \
 ./RTOS/rtos_tareas.d 
 
 

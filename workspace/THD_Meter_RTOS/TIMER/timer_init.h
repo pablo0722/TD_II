@@ -73,6 +73,6 @@
        Chip_TIMER_Reset( LPC_TIMER1 );
        Chip_TIMER_Enable( LPC_TIMER1 );
        NVIC_ClearPendingIRQ(TIMER1_IRQn);
-       NVIC_EnableIRQ( TIMER1_IRQn );
+       NVIC_DisableIRQ( TIMER1_IRQn );
 	}
 #endif

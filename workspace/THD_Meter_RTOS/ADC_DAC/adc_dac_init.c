@@ -8,10 +8,10 @@
 
 
 #include "header.h"
-#include "adc_dac_init_priv.h"
+#include "private/adc_dac_header_priv.h"
 
 
-STATIC INLINE void adc_dac_init()
+void adc_dac_init()
 {
 	#if USE_DAC_INTERNO
 		dac_init();

@@ -16647,49 +16647,7 @@ static inline void adc_dac_init()
 
 
 
-#define WINDOWWIDTHX2 230
-#define WINDOWHEIGTHX2 310
-#define WINDOWHEIGTHX1 85
-#define WINDOWWIDTHX1 30
-#define WINDOWMULTIPLIER 190
-#define RECTHEIGHT WINDOWHEIGTHX2-WINDOWHEIGTHX1
-
-#define TFT_WIDTH 240
-#define TFT_HEIGHT 320
-#define TFT_PIXEL 76800
-#define TFT_HFACTOR 4095
-
-
-
-#define DB0 2,7
-#define DB1 1,29
-#define DB2 4,28
-#define DB3 1,23
-#define DB4 1,20
-#define DB5 0,19
-#define DB6 3,26
-#define DB7 1,25
-#define DB8 1,22
-#define DB9 1,19
-#define DB10 0,20
-#define DB11 3,25
-#define DB12 2,6
-#define DB13 1,24
-#define DB14 1,21
-#define DB15 1,18
-
-#define CS 0,9
-#define RS 0,8
-#define WR 0,7
-#define READ_DATA 0,6
-#define REST 2,5
-
-#define BL 2,4
-
-
-
-#define ENTRADA 0
-#define SALIDA 1
+#define BACKLIGHT_FREC 60
 
 
 
@@ -16737,37 +16695,30 @@ static inline void adc_dac_init()
 
 
 
-#define ILI9341_RESET 0x01
-#define ILI9341_SLEEP_OUT 0x11
-#define ILI9341_GAMMA 0x26
-#define ILI9341_DISPLAY_OFF 0x28
-#define ILI9341_DISPLAY_ON 0x29
-#define ILI9341_COLUMN_ADDR 0x2A
-#define ILI9341_PAGE_ADDR 0x2B
-#define ILI9341_GRAM 0x2C
-#define ILI9341_MAC 0x36
-#define ILI9341_PIXEL_FORMAT 0x3A
-#define ILI9341_WDB 0x51
-#define ILI9341_WCD 0x53
-#define ILI9341_WCABC 0x55
-#define ILI9341_RGB_INTERFACE 0xB0
-#define ILI9341_FRC 0xB1
-#define ILI9341_BPC 0xB5
-#define ILI9341_DFC 0xB6
-#define ILI9341_POWER1 0xC0
-#define ILI9341_POWER2 0xC1
-#define ILI9341_VCOM1 0xC5
-#define ILI9341_VCOM2 0xC7
-#define ILI9341_POWERA 0xCB
-#define ILI9341_POWERB 0xCF
-#define ILI9341_PGAMMA 0xE0
-#define ILI9341_NGAMMA 0xE1
-#define ILI9341_DTCA 0xE8
-#define ILI9341_DTCB 0xEA
-#define ILI9341_POWER_SEQ 0xED
-#define ILI9341_3GAMMA_EN 0xF2
-#define ILI9341_INTERFACE 0xF6
-#define ILI9341_PRC 0xF7
+#define DB0 2,7
+#define DB1 1,29
+#define DB2 4,28
+#define DB3 1,23
+#define DB4 1,20
+#define DB5 0,19
+#define DB6 3,26
+#define DB7 1,25
+#define DB8 1,22
+#define DB9 1,19
+#define DB10 0,20
+#define DB11 3,25
+#define DB12 2,6
+#define DB13 1,24
+#define DB14 1,21
+#define DB15 1,18
+
+#define CS 0,9
+#define RS 0,8
+#define WR 0,7
+#define READ_DATA 0,6
+#define REST 2,5
+
+#define BL 2,4
 # 19 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_header.h" 1

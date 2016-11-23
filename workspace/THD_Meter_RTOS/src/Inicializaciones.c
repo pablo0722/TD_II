@@ -20,9 +20,14 @@ static inline void main_gpio_init()
 
 static inline void main_task_init()
 {
-	xTaskCreate(vTask_tft, 		"vTask_tft", 		configMINIMAL_STACK_SIZE, 					NULL, (tskIDLE_PRIORITY + 1UL), (xTaskHandle *) NULL);
-	xTaskCreate(vTask_THD, 		"vTask_THD", 		configMINIMAL_STACK_SIZE+4+4+4*FFT_SIZE/2, 	NULL, (tskIDLE_PRIORITY + 1UL), (xTaskHandle *) NULL);
-	xTaskCreate(vTask_teclado, 	"vTask_teclado", 	configMINIMAL_STACK_SIZE, 					NULL, (tskIDLE_PRIORITY + 1UL), (xTaskHandle *) NULL);
+	task_create(vTask_tft, 		"vTask_tft", 		configMINIMAL_STACK_SIZE, 	NULL, PRIORIDAD_MINIMA, (xTaskHandle *) NULL);
+	task_create(vTask_THD, 		"vTask_THD", 		configMINIMAL_STACK_SIZE+8, NULL, PRIORIDAD_MINIMA, (xTaskHandle *) NULL);
+	task_create(vTask_teclado, 	"vTask_teclado", 	configMINIMAL_STACK_SIZE, 	NULL, PRIORIDAD_MINIMA, (xTaskHandle *) NULL);
+}
+
+static inline void main_buffer_init()
+{
+	adc_ext_prepare(buffer_complex, NULL);
 }
 
 void main_init()
@@ -32,6 +37,10 @@ void main_init()
 	Board_Init();
 
 	main_gpio_init();
+
+	main_buffer_init();
+
+	main_task_init();
 
 	tft_init();
 
@@ -44,8 +53,6 @@ void main_init()
 	#if USE_FFT
 		fft_init();
 	#endif
-
-	main_task_init();
 
 	#if USE_RTOS
 		task_init();

@@ -18,14 +18,20 @@
 
 // ********* FUNCIONES ********** //
 	#if USE_RTOS
-		void task_init();
 	#endif
 // ****************************** //
 
+// ********* PRIORIDADES ********** //
+	#if USE_RTOS
+		#define PRIORIDAD_MAXIMA	4
+		#define PRIORIDAD_MINIMA	0
+	#endif
+// ******************************** //
 
 // ********** TAREAS *********** //
 	#if USE_RTOS
-		void vtask_ImAlive(void * pvParameters);	// led testigo
+		void vTask_nvic_init(void *pvParameters);	// Inicializa las interupciones
+		void vtask_ImAlive(void * pvParameters);	// Led testigo
 
 		#if (USE_UART)
 			void vtask_uart(void * pvParameters);
@@ -41,15 +47,11 @@
 	#endif
 // ******************************************* //
 
-
-// ************* VARIABLES GLOBALES ************* //
+// ********* INICIALIZACIONES ********** //
 	#if USE_RTOS
-		extern Bool flag_use_dac;	// Hace loopback por DAC
-		extern Bool flag_do_thd;	// Calcula THD
-		extern Bool flag_do_rem;	// Calcula senal remanente
+		#include "rtos_init.h"
 	#endif
-// ********************************************** //
-
+// ************************************* //
 
 
 #endif /* RTOS_HEADER_H_ */

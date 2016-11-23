@@ -1,5 +1,5 @@
-ADC_DAC/adc_dac_globales_priv.o ADC_DAC/adc_dac_globales_priv.d: \
- ../ADC_DAC/adc_dac_globales_priv.c \
+ADC_DAC/private/adc_dac_func_priv.o ADC_DAC/private/adc_dac_func_priv.d: \
+ ../ADC_DAC/private/adc_dac_func_priv.c \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/utilidades.h \
  D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\inc/FreeRTOS.h \
@@ -67,13 +67,14 @@ ADC_DAC/adc_dac_globales_priv.o ADC_DAC/adc_dac_globales_priv.d: \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h \
- D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h \
- D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init_priv.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_init.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TFT/tft_header.h \
  D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h \
- ../ADC_DAC/adc_dac_header_priv.h
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_init.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/private/adc_dac_header_priv.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/private/adc_dac_init_priv.h \
+ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/private/adc_dac_header_priv.h
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\inc/header.h:
 
@@ -209,10 +210,6 @@ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\UART/uart_init.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_header.h:
 
-D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init.h:
-
-D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/adc_dac_init_priv.h:
-
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_header.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TIMER/timer_init.h:
@@ -221,4 +218,10 @@ D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\TFT/tft_header.h:
 
 D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_header.h:
 
-../ADC_DAC/adc_dac_header_priv.h:
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\RTOS/rtos_init.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/private/adc_dac_header_priv.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/private/adc_dac_init_priv.h:
+
+D:\UTN\Git\TD_II\TD_II\workspace\THD_Meter_RTOS\ADC_DAC/private/adc_dac_header_priv.h:

@@ -8,7 +8,7 @@
 
 
 #include "header.h"
-#include "adc_dac_header_priv.h"
+#include "private/adc_dac_header_priv.h"
 
 
 #if USE_DAC_INTERNO
@@ -16,70 +16,117 @@
 	{
 		return (data >> 8);
 	}
-#endif
 
+	void dac_int_prepare(volatile uint16_t *buffer)
+	{
+		dma_dac_int_memory = buffer;
 
-#if USE_ADC_EXTERNO
-	void adc_post_procesamiento()
+		// Preparo el descriptor para el BUFFER_A
+		Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
+									(DMA_TransferDescriptor_t *) &dma_dac_int_descriptor,
+									(uint32_t) dma_dac_int_memory,
+									(uint32_t) GPDMA_CONN_DAC,
+									DAC_DMA_CANT_MUESTRAS,
+									GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA,
+									NULL);
+		dma_dac_int_descriptor.dst = GPDMA_CONN_DAC;
+	}
+
+	STATIC INLINE bool dac_int_disponible()
+	{
+		if(dma_dac_int_status == STATUS_DAC_IDLE)
+			return true;
+		return false;
+	}
+
+	void dac_int_send()
 	{
 			// acomodar el dato antes de enviar por DAC
-		#if USE_DAC_INTERNO
-			if(dac_send)
-			{
-				volatile uint16_t *dma_dac_int_memory;
-				DMA_TransferDescriptor_t *dma_dac_int_descriptor;
-				uint8_t pingpong_dac_transfiriendo;
-
-				if(dma_adc_ext_status == PINGPONG_ADC_TRANS_B_PROC_A)
-				{
-						// proceso buffer A
-					dma_dac_int_memory = dma_dac_int_memory_A;
-					dma_dac_int_descriptor = &dma_dac_int_descriptor_A;
-					pingpong_dac_transfiriendo = PINGPONG_DAC_TRANSFIRIENDO_A;
-				}
-				else if(dma_adc_ext_status == PINGPONG_ADC_TRANS_A_PROC_B)
-				{
-						// proceso buffer B
-					dma_dac_int_memory = dma_dac_int_memory_B;
-					dma_dac_int_descriptor = &dma_dac_int_descriptor_B;
-					pingpong_dac_transfiriendo = PINGPONG_DAC_TRANSFIRIENDO_B;
-				}
-
-
-				for(int i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
-				{
-					dma_dac_int_memory[i] = dac_int_set_data(dma_adc_ext_memory[i]);
-				}
-
-				if(dma_dac_int_status == PINGPONG_DAC_IDLE)
-				{
-					// si 'status == PINGPONG_DAC_IDLE', envia por el DAC el buffer X procesado y pone 'status = PINGPONG_DAC_TRANSFIRIENDO_X'
-					Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_dac_int_canal,
-											dma_dac_int_descriptor,
-											GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
-
-					dma_dac_int_status = pingpong_dac_transfiriendo;
-				}
-				else
-				{
-					// si 'status == PINGPONG_DAC_TRANSFIRIENDO_Y' pone 'status = PINGPONG_DAC_RECIBIDO_X_ERR'
-					dma_dac_int_status = PINGPONG_DAC_TRANS2ERR(pingpong_dac_transfiriendo);
-				}
-			}
-		#endif
-
-		if(PINGPONG_ADC_ISERR(dma_adc_ext_status))
+		for(int i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
 		{
-			// Si termino de transferir antes de terminar procesamiento, se debe continuar con la transferencia
-			Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_adc_ext_canal,
-									dma_adc_ext_descriptor,
-									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
+			dma_dac_int_memory[i] = dac_int_set_data(dma_dac_int_memory[i]);
 		}
 
-		dma_adc_ext_memory = NULL;
-		dma_adc_ext_descriptor = NULL;
+		xSemaphoreTake(sem_dac_finish, 0);
 
-		PINGPONG_ADC_PROC2TRANS(dma_adc_ext_status);
+		while(!dac_int_disponible());	// Espera hasta que el dac este disponible para enviar
+
+			// Si el DAC esta disponible para enviar, envia el buffer y pone 'status = STATUS_DAC_TRANSFIRIENDO'
+		Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_dac_int_canal,
+								&dma_dac_int_descriptor,
+								GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
+
+		dma_dac_int_status = STATUS_DAC_TRANSFIRIENDO;
+	}
+#endif
+
+#if USE_ADC_EXTERNO
+	void adc_ext_prepare(volatile uint32_t *buffer_A, 	// Prepara el buffer para poder recibir desde el ADC
+					 volatile uint32_t *buffer_B)
+	{
+		dma_adc_ext_memory_A = buffer_A;
+		dma_adc_ext_memory_B = buffer_B;
+
+		// Preparo el descriptor para el BUFFER_A
+		Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
+									(DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_A,
+									(uint32_t) GPDMA_CONN_I2S_Channel_1,
+									(uint32_t) dma_adc_ext_memory_A,
+									ADC_DMA_CANT_MUESTRAS,
+									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA,
+									NULL);
+		dma_adc_ext_descriptor_A.src = GPDMA_CONN_I2S_Channel_1;
+
+		// Preparo el descriptor para el BUFFER_B
+		Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
+									(DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_B,
+									(uint32_t) GPDMA_CONN_I2S_Channel_1,
+									(uint32_t) dma_adc_ext_memory_B,
+									ADC_DMA_CANT_MUESTRAS,
+									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA,
+									NULL);
+		dma_adc_ext_descriptor_B.src = GPDMA_CONN_I2S_Channel_1;
+
+		dma_adc_ext_status = STATUS_ADC_IDLE;
+
+		if(buffer_B)
+			adc_ext_start();
+	}
+
+	void adc_ext_start()
+	{
+		if(dma_adc_ext_status == STATUS_ADC_IDLE)
+		{
+			// Inicio la transmición del ADC -> MEMORY usando el BUFFER_A
+			Chip_GPDMA_SGTransfer(LPC_GPDMA,
+									dma_adc_ext_canal,
+									(DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_A,
+									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
+			dma_adc_ext_status = STATUS_ADC_TRANSFIRIENDO_A;
+		}
+	}
+
+	void adc_ext_post_procesamiento()
+	{
+		if(dma_adc_ext_memory_B)
+		{
+			if(STATUS_ADC_ISERR(dma_adc_ext_status))
+			{
+				// Si termino de transferir antes de terminar procesamiento, se debe continuar con la transferencia
+				Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_adc_ext_canal,
+										dma_adc_ext_descriptor,
+										GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
+			}
+
+			dma_adc_ext_memory = NULL;
+			dma_adc_ext_descriptor = NULL;
+
+			STATUS_ADC_PROC2TRANS(dma_adc_ext_status);
+		}
+		else
+		{
+			dma_adc_ext_status = STATUS_ADC_IDLE;
+		}
 	}
 #endif
 
