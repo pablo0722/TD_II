@@ -23,6 +23,13 @@
 		void adc_ext_post_procesamiento();					// Funcion que debe ejecutar luego de procesar los datos, para continuar con la transferencia del ADC
 	#endif
 
+	#if USE_DAC_EXTERNO
+		uint16_t dac_ext_set_data(uint32_t data);			// transforma un dato de uint32_t a uint16_t para ser transmitido por DAC
+		void dac_ext_prepare(volatile uint16_t *buffer);	// Prepara el buffer para poder ser enviado por DAC
+		bool dac_ext_disponible();							// Determina si el dac esta disponible para transmitir
+		void dac_ext_send();								// Envia una senial por DAC
+	#endif
+
 	#if USE_DAC_INTERNO
 		void dac_int_prepare(volatile uint16_t *buffer);	// Prepara el buffer para poder ser enviado por DAC
 		void dac_int_send();								// Envia una senial por DAC
@@ -47,13 +54,19 @@
 		extern volatile uint32_t 		*dma_adc_ext_memory;	// Apunta al buffer actual (el que se puede procesar) del ADC
 
 		#if (USE_RTOS)
-			extern xSemaphoreHandle 	sem_adc_proc;			// Semaforo que indica que recibio un dato por adc y debe ser procesado.
+			extern xSemaphoreHandle 	sem_adc_ext_proc;			// Semaforo que indica que recibio un dato por adc y debe ser procesado.
+		#endif
+	#endif
+
+	#if (USE_DAC_EXTERNO)
+		#if (USE_RTOS)
+			extern xSemaphoreHandle 	sem_dac_ext_finish;			// Semaforo que indica cuando se termino de enviar un dato por DAC
 		#endif
 	#endif
 
 	#if (USE_DAC_INTERNO)
 		#if (USE_RTOS)
-			extern xSemaphoreHandle 	sem_dac_finish;			// Semaforo que indica cuando se termino de enviar un dato por DAC
+			extern xSemaphoreHandle 	sem_dac_int_finish;			// Semaforo que indica cuando se termino de enviar un dato por DAC
 		#endif
 	#endif
 // ********************************************** //

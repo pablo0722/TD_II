@@ -35,6 +35,20 @@
 													__attribute__ ((section (".data.$RamAHB32"))) = STATUS_ADC_IDLE;
 #endif
 
+#if (USE_DAC_EXTERNO)
+	DMA_TransferDescriptor_t 	dma_dac_ext_descriptor	// Descriptor del buffer A del Ping-Pong del DAC
+													__attribute__ ((section (".bss.$RamAHB32")));
+
+	volatile uint16_t *			dma_dac_ext_memory		// Buffer A del Ping-Pong del DAC
+													__attribute__ ((section (".bss.$RamAHB32"))) = NULL;
+
+	uint8_t 					dma_dac_ext_canal		// Canal del DAC en el DMA
+													__attribute__ ((section (".bss.$RamAHB32"))) = 0;
+
+	volatile uint8_t 			dma_dac_ext_status		// Estado del DAC en la maquina de estados propia
+													__attribute__ ((section (".data.$RamAHB32"))) = STATUS_DAC_IDLE;
+#endif
+
 #if (USE_DAC_INTERNO)
 	DMA_TransferDescriptor_t 	dma_dac_int_descriptor	// Descriptor del buffer A del Ping-Pong del DAC
 													__attribute__ ((section (".bss.$RamAHB32")));

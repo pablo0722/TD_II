@@ -282,8 +282,8 @@
 		#endif
 
 		#if (USE_RTOS)
-			vSemaphoreCreateBinary(sem_adc_proc);
-			xSemaphoreTake(sem_adc_proc, 0);
+			vSemaphoreCreateBinary(sem_adc_ext_proc);
+			xSemaphoreTake(sem_adc_ext_proc, 0);
 		#endif
 
 		#if USE_DMA

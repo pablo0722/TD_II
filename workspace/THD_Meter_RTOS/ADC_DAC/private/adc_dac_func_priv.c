@@ -34,7 +34,7 @@
 			}
 
 			#if USE_RTOS
-				xSemaphoreGive(sem_adc_proc);
+				xSemaphoreGive(sem_adc_ext_proc);
 			#endif
 		}
 	}

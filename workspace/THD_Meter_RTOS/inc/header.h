@@ -43,16 +43,49 @@
 
 // *** BUFFERS *** //
 	extern uint32_t buffer_complex	[FFT_SIZE*2];
+	extern uint16_t buffer_dac_out	[FFT_SIZE*2];
 	extern uint32_t buffer_dep		[FFT_SIZE];
 	extern uint32_t buffer_dac		[FFT_SIZE/2];
 // *************** //
 
 
 // *** BOTONES *** //
-	#define	BUTTON0		2, 10
-	#define	BUTTON1		0, 18
-	#define	BUTTON2		0, 11
-	#define	BUTTON3		2, 13
+		// Pin 88 - Boton 0
+	#define	BUTTON0_INIT	1, 15, MD_PUP, ENTRADA
+	#define	BUTTON0			1, 15
+		// Pin 89 - Boton 1
+	#define	BUTTON1_INIT	1, 14, MD_PUP, ENTRADA
+	#define	BUTTON1			1, 14
+		// Pin 90 - Boton 2
+	#define	BUTTON2_INIT	1, 10, MD_PUP, ENTRADA
+	#define	BUTTON2			1, 10
+		// Pin 91 - Boton 3
+	#define	BUTTON3_INIT	1, 9,  MD_PUP, ENTRADA
+	#define	BUTTON3			1, 9
+// *************** //
+
+
+// *** LEDS *** //
+		// Pin 95 - Led 0
+	#define LED0_INIT		0, 7, MD_PLN, SALIDA
+	#define LED0			0, 7
+// *************** //
+
+
+// *** GPIOS DEL ADC*** //
+		// Pin 77 - OSR del ADC (I2STX-WS)
+	#define ADC_OSR_INIT	0, 8, MD_PLN, SALIDA
+	#define ADC_OSR			0, 8
+// *************** //
+
+
+// *** GPIOS DEL DAC*** //
+		// Pin 87 - Mute del DAC (0=mute off, 1=mute on)
+	#define DAC_MUTE_INIT	1, 16, MD_PLN, SALIDA
+	#define DAC_MUTE		1, 16
+		// Pin 86 - ZeroA del DAC
+	#define DAC_ZEROA_INIT	1, 17, MD_PLN, ENTRADA
+	#define DAC_ZEROA		1, 17
 // *************** //
 
 

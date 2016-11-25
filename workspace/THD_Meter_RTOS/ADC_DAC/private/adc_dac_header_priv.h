@@ -136,6 +136,16 @@
 		extern volatile uint8_t dma_adc_ext_status;
 	#endif
 
+	#if USE_DAC_EXTERNO
+		extern DMA_TransferDescriptor_t dma_dac_ext_descriptor;	// Descriptor del buffer A del Ping-Pong del DAC
+
+		extern volatile uint16_t *		dma_dac_ext_memory;		// Buffer A del Ping-Pong del DAC
+
+		extern uint8_t 					dma_dac_ext_canal;		// Canal del DAC en el DMA
+
+		extern volatile uint8_t 		dma_dac_ext_status;		// Estado del DAC en la maquina de estados propia
+	#endif
+
 	#if USE_DAC_INTERNO
 		extern DMA_TransferDescriptor_t dma_dac_int_descriptor;	// Descriptor del buffer A del Ping-Pong del DAC
 

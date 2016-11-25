@@ -15976,14 +15976,12 @@ void arm_rfft_fast_f32(
 
 
 
-#define USE_DAC_INTERNO ON
-#define USE_DAC_EXTERNO OFF
-
-
-
-#define DAC_INTERNO_INTERRUPCION 0
-#define DAC_INTERNO_DMA 1
-#define DAC_INTERNO_MODO DAC_INTERNO_INTERRUPCION
+#define USE_DAC_INTERNO OFF
+#define USE_DAC_EXTERNO ON
+# 102 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+#define DAC_EXTERNO_INTERRUPCION 0
+#define DAC_EXTERNO_DMA 1
+#define DAC_EXTERNO_MODO DAC_EXTERNO_DMA
 # 115 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_DMA ON
 
@@ -16088,7 +16086,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 #define FFT_SIZE_1024 1024
 #define FFT_SIZE_2048 2048
 #define FFT_SIZE_4096 4096
-#define FFT_SIZE FFT_SIZE_2048
+#define FFT_SIZE FFT_SIZE_1024
 
 
 
@@ -16117,14 +16115,14 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
    printf("[info] init FFT: \r\n");
    printf("\t format: q31 \r\n");
-   printf("\t fftLength(solo parte real): %d \r\n", 2048);
+   printf("\t fftLength(solo parte real): %d \r\n", 1024);
 
 
 
    arm_status st =
 
 
-  arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, 2048, TRUE, TRUE);
+  arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, 1024, TRUE, TRUE);
 
 
    if(st != ARM_MATH_SUCCESS)
@@ -16136,7 +16134,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
    st =
 
 
-  arm_rfft_init_q31(&ifft_inst_q31, &fft_inst_q31_complex, 2048, FALSE, TRUE);
+  arm_rfft_init_q31(&ifft_inst_q31, &fft_inst_q31_complex, 1024, FALSE, TRUE);
 
 
    if(st != ARM_MATH_SUCCESS)
@@ -16149,28 +16147,28 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 # 67 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_func.h" 1
 # 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_func.h"
- static inline void fft_toCmplx(q31_t fft_in_real[2048], q31_t fft_out_cmplx[2048*2])
+ static inline void fft_toCmplx(q31_t fft_in_real[1024], q31_t fft_out_cmplx[1024*2])
  {
   arm_rfft_q31(&fft_inst_q31, fft_in_real, fft_out_cmplx);
  }
 
- static inline void fft_toDep(q31_t fft_in_cmplx[2048*2], q31_t fft_out_dep[2048/2])
+ static inline void fft_toDep(q31_t fft_in_cmplx[1024*2], q31_t fft_out_dep[1024/2])
  {
-  q31_t aux_fft_out_dep[2048];
+  q31_t aux_fft_out_dep[1024];
 
-  arm_cmplx_mag_q31(fft_in_cmplx, aux_fft_out_dep, 2048*2);
+  arm_cmplx_mag_q31(fft_in_cmplx, aux_fft_out_dep, 1024*2);
 
-  memcpy(fft_out_dep, aux_fft_out_dep, 2048/2);
+  memcpy(fft_out_dep, aux_fft_out_dep, 1024/2);
 
 
   arm_mult_q31(
       (q31_t *) fft_out_dep,
       (q31_t *) fft_out_dep,
       (q31_t *) fft_out_dep,
-      2048);
+      1024);
  }
 
- static inline void fft_toReal(q31_t fft_in_cmplx[2048], q31_t fft_out_real[2048])
+ static inline void fft_toReal(q31_t fft_in_cmplx[1024], q31_t fft_out_real[1024])
  {
   arm_rfft_q31(&ifft_inst_q31, fft_in_cmplx, fft_out_real);
  }
@@ -16203,13 +16201,15 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
 
-  void dac_int_prepare(volatile uint16_t *buffer);
-  void dac_int_send();
-
-
-
-
-
+  uint16_t dac_ext_set_data(uint32_t data);
+  void dac_ext_prepare(volatile uint16_t *buffer);
+  
+# 29 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 3 4
+ _Bool 
+# 29 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+      dac_ext_disponible();
+  void dac_ext_send();
+# 41 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
 #define ADC_DMA_CANT_MUESTRAS 2048
 #define ADC_FREQ 32000
 
@@ -16226,13 +16226,13 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
   extern volatile uint32_t *dma_adc_ext_memory;
 
 
-   extern SemaphoreHandle_t sem_adc_proc;
+   extern SemaphoreHandle_t sem_adc_ext_proc;
 
 
 
 
 
-   extern SemaphoreHandle_t sem_dac_finish;
+   extern SemaphoreHandle_t sem_dac_ext_finish;
 # 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 1
 # 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
@@ -16467,26 +16467,27 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
  }
 
 
+
  static inline void task_init()
  {
 
   task_create( vTask_nvic_init, "vTask_nvic_init", ( ( unsigned short ) 128 ), 
-# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
                                                                             ((void *)0)
-# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
                                                                                 , 4 +1, (TaskHandle_t *) 
-# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
                                                                                                                       ((void *)0)
-# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
                                                                                                                           );
   task_create( vtask_ImAlive, "vtask_ImAlive", ( ( unsigned short ) 128 ), 
-# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
                                                                            ((void *)0)
-# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
                                                                                , 0, (TaskHandle_t *) 
-# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
                                                                                                                     ((void *)0)
-# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
                                                                                                                         );
 
 
@@ -16521,17 +16522,50 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
 
- extern uint32_t buffer_complex [2048*2];
- extern uint32_t buffer_dep [2048];
- extern uint32_t buffer_dac [2048/2];
+ extern uint32_t buffer_complex [1024*2];
+ extern uint16_t buffer_dac_out [1024*2];
+ extern uint32_t buffer_dep [1024];
+ extern uint32_t buffer_dac [1024/2];
 
 
 
 
-#define BUTTON0 2, 10
-#define BUTTON1 0, 18
-#define BUTTON2 0, 11
-#define BUTTON3 2, 13
+
+#define BUTTON0_INIT 1, 15, MD_PUP, ENTRADA
+#define BUTTON0 1, 15
+
+#define BUTTON1_INIT 1, 14, MD_PUP, ENTRADA
+#define BUTTON1 1, 14
+
+#define BUTTON2_INIT 1, 10, MD_PUP, ENTRADA
+#define BUTTON2 1, 10
+
+#define BUTTON3_INIT 1, 9, MD_PUP, ENTRADA
+#define BUTTON3 1, 9
+
+
+
+
+
+#define LED0_INIT 0, 7, MD_PLN, SALIDA
+#define LED0 0, 7
+
+
+
+
+
+#define ADC_OSR_INIT 0, 8, MD_PLN, SALIDA
+#define ADC_OSR 0, 8
+
+
+
+
+
+#define DAC_MUTE_INIT 1, 16, MD_PLN, SALIDA
+#define DAC_MUTE 1, 16
+
+#define DAC_ZEROA_INIT 1, 17, MD_PLN, ENTRADA
+#define DAC_ZEROA 1, 17
 # 10 "../TIMER/timer_irq.c" 2
 
 

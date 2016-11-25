@@ -15,7 +15,14 @@
 												__attribute__ ((section (".bss.$RamAHB32"))) = NULL;
 
 	#if (USE_RTOS)
-		xSemaphoreHandle 	sem_adc_proc				// Semaforo que indica cuando recibe un dato por adc y debe ser procesado.
+		xSemaphoreHandle 	sem_adc_ext_proc				// Semaforo que indica cuando recibe un dato por adc y debe ser procesado.
+												__attribute__ ((section (".bss.$RamAHB32")));
+	#endif
+#endif
+
+#if (USE_DAC_EXTERNO)
+	#if (USE_RTOS)
+		xSemaphoreHandle 	sem_dac_ext_finish				// Semaforo que indica cuando se termino de enviar un dato por DAC
 												__attribute__ ((section (".bss.$RamAHB32")));
 	#endif
 #endif

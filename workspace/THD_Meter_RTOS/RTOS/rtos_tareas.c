@@ -20,7 +20,7 @@
 		#endif
 
 		#if (USE_ADC_EXTERNO) || (USE_DAC_EXTERNO)
-			NVIC_EnableIRQ(I2S_IRQn);
+			NVIC_DisableIRQ(I2S_IRQn);
 		#endif
 
 		#if (USE_DMA)
@@ -33,9 +33,14 @@
 
 	void vtask_ImAlive(void * pvParameters)
 	{
+			// Pin 95 - Led 0
+		#define P1_0	1,0
+		Chip_IOCON_PinMux(LPC_IOCON, P1_0, IOCON_MODE_INACT, IOCON_FUNC0);
+		Chip_GPIO_WriteDirBit(LPC_GPIO, P1_0, true); // true = output - false = input
+
 		while (1)
 		{
-			Board_LED_Toggle(0, 22);
+			Chip_GPIO_SetPinToggle(LPC_GPIO, P1_0);
 			vTaskDelay(500 / portTICK_RATE_MS);
 		}
 	}

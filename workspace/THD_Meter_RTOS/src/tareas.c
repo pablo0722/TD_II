@@ -73,13 +73,21 @@
 		q31_t num = 0; 	// Es la raiz cuadrada de la suma cuadratica de los armonicos de la DEP (numerador del THD)
 		uint32_t i;
 
+
 		while(1)
 		{
-			if( (flag_do_thd) || (flag_do_rem) )
+			//if( (flag_do_thd) || (flag_do_rem) )
 			{
 				adc_ext_start();
-				xSemaphoreTake(sem_adc_proc, 0);
+				xSemaphoreTake(sem_adc_ext_proc, 0);
 
+				//while(!dac_ext_disponible());
+				for(i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
+				{
+					buffer_dac_out[i] = dac_ext_set_data(buffer_complex[i]);
+				}
+				dac_ext_send();
+/*
 					// Obtengo la fft
 				fft_toCmplx((q31_t *)buffer_complex, (q31_t *)buffer_complex);
 				fft_toDep((q31_t *)buffer_complex, (q31_t *)buffer_dep);
@@ -114,9 +122,10 @@
 	//				fft_cmplx[fft_max_idx*2] = fft_cmplx[fft_max_idx*2-1] = fft_min;
 	//				fft_toReal(fft_cmplx, (q31_t *) dma_adc_ext_memory);
 				}
-			}
+*/
 
-			//adc_post_procesamiento();
+				adc_ext_post_procesamiento();
+			}
 		}
 	}
 #endif
