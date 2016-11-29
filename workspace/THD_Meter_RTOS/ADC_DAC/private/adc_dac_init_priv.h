@@ -17,7 +17,7 @@
 	STATIC INLINE void dma_init()
 	{
 		/* *** Caracteristicas del DMA:
-		 * !!!!!!!!! EL DMA ES UNICAMENTE EN MODO BURST (NO MODO SINGLE) !!!!!!!!!
+		 * !!!!!!!!! EL DAC ES UNICAMENTE EN MODO BURST (NO MODO SINGLE) !!!!!!!!!
 		 *
 		 * Eight DMA channels. Each channel can support an unidirectional transfer.
 		 *
@@ -82,17 +82,18 @@
 
 		char flag_init = 1;
 
-		#if DEBUG_MODE
-			printf("[info] Init DMA \r\n");
-		#endif
-
 		if(flag_init)
 		{
+			#if DEBUG_MODE
+				printf("[info] Init DMA \r\n");
+			#endif
+
 			Chip_GPDMA_Init(LPC_GPDMA);
+			NVIC_DisableIRQ(DMA_IRQn);
 
 				// Setting GPDMA interrupt
-			NVIC_DisableIRQ(DMA_IRQn);
 			NVIC_SetPriority(DMA_IRQn, ((0x01<<3)|0x01));
+			NVIC_EnableIRQ(DMA_IRQn);
 
 
 			#if (USE_ADC_EXTERNO)
@@ -103,9 +104,21 @@
 				// Pido un canal disponible al GPDMA para el ADC
 				dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
 			#elif (USE_ADC_INTERNO)
+				#if DEBUG_MODE
+					printf("\t init buffers ADC interno \r\n");
+				#endif
+
+				// Pido un canal disponible al GPDMA para el ADC
+				dma_adc_int_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
 			#endif
 
 			#if (USE_DAC_EXTERNO)
+				#if DEBUG_MODE
+					printf("\t init buffers DAC externo \r\n");
+				#endif
+
+				// Pido un canal disponible al GPDMA para el DAC
+				dma_dac_ext_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
 			#elif (USE_DAC_INTERNO)
 				#if DEBUG_MODE
 					printf("\t init buffers DAC interno \r\n");
@@ -113,6 +126,10 @@
 
 				// Pido un canal disponible al GPDMA para el DAC
 				dma_dac_int_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
+			#endif
+
+			#if (!USE_RTOS)
+				NVIC_EnableIRQ(DMA_IRQn);
 			#endif
 
 			flag_init = 0;
@@ -282,24 +299,15 @@
 		#endif
 
 		#if (USE_RTOS)
-			vSemaphoreCreateBinary(sem_adc_ext_proc);
-			xSemaphoreTake(sem_adc_ext_proc, 0);
+			#if (USE_ADC_EXTERNO)
+				vSemaphoreCreateBinary(sem_adc_ext_proc);
+				xSemaphoreTake(sem_adc_ext_proc, portMAX_DELAY);
+			#endif
+			#if (USE_DAC_EXTERNO)
+				vSemaphoreCreateBinary(sem_dac_ext_finish);
+				xSemaphoreTake(sem_dac_ext_finish, portMAX_DELAY);
+			#endif
 		#endif
-
-		#if USE_DMA
-			dma_init();
-		#endif
-
-		//Configuro los pines de RX de P0, ver defines
-		pin_init(I2SRX_CLK);
-		pin_init(I2SRX_SDA);
-		pin_init(I2SRX_WS);
-		pin_init(RX_MCLK);
-		// Configuro los pines del TX de P0, ver defines
-		pin_init(I2STX_CLK);
-		pin_init(I2STX_SDA);
-		pin_init(I2STX_WS);
-		pin_init(TX_MCLK);
 
 		// Configuro I2S_TX usando la estructura I2S_AUDIO_FORMAT_T y modifico la función
 		I2S_AUDIO_FORMAT_T audio_Confg;
@@ -311,32 +319,48 @@
 		Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_I2S, SYSCTL_CLKDIV_1);
 
 		Chip_I2S_Init(LPC_I2S);
+		NVIC_DisableIRQ(I2S_IRQn);
 
-		Chip_I2S_RxStop(LPC_I2S);
-		Chip_I2S_TxStop(LPC_I2S);
-		Chip_I2S_EnableMute(LPC_I2S);
+		#if (USE_ADC_EXTERNO)
+			//Configuro los pines de RX de P0, ver defines
+			pin_init(I2SRX_CLK);
+			pin_init(I2SRX_SDA);
+			pin_init(I2SRX_WS);
+			pin_init(RX_MCLK);
 
+			// Configuro modo RX
+			Chip_I2S_Int_RxCmd(LPC_I2S, ENABLE, 1);
+			mi_Chip_I2S_RxConfig(LPC_I2S, &audio_Confg);
 
-		Chip_I2S_DisableMute(LPC_I2S);
-		Chip_I2S_RxStart(LPC_I2S);
-		Chip_I2S_TxStart(LPC_I2S);
+			#if (ADC_EXTERNO_MODO == ADC_EXTERNO_DMA)
+				Chip_I2S_DMA_RxCmd(LPC_I2S, I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
+			#else
+				Chip_I2S_DMA_RxCmd(LPC_I2S, I2S_DMA_REQUEST_CHANNEL_1, DISABLE, 1);
+				#if (!USE_RTOS)
+					NVIC_EnableIRQ(I2S_IRQn);
+				#endif
+			#endif
+		#endif
 
-		Chip_I2S_Int_RxCmd(LPC_I2S, ENABLE, 1);
-		Chip_I2S_Int_TxCmd(LPC_I2S, DISABLE, 1);
+		#if (USE_DAC_EXTERNO)
+			// Configuro los pines del TX de P0, ver defines
+			pin_init(I2STX_CLK);
+			pin_init(I2STX_SDA);
+			pin_init(I2STX_WS);
+			pin_init(TX_MCLK);
 
-		// Configuro modo RX
-		mi_Chip_I2S_RxConfig(LPC_I2S, &audio_Confg);
-		// Configuro modo TX
-		mi_Chip_I2S_TxConfig(LPC_I2S, &audio_Confg);
+			// Configuro modo TX
+			Chip_I2S_Int_TxCmd(LPC_I2S, ENABLE, 1);
+			mi_Chip_I2S_TxConfig(LPC_I2S, &audio_Confg);
 
-		#if USE_DMA
-			Chip_I2S_DMA_RxCmd(LPC_I2S, I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
-			Chip_I2S_DMA_TxCmd(LPC_I2S, I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
-
-			NVIC_DisableIRQ(I2S_IRQn);
-		#else
-
-			NVIC_EnableIRQ(I2S_IRQn);
+			#if (USE_DAC_EXTERNO == DAC_EXTERNO_DMA)
+				Chip_I2S_DMA_TxCmd(LPC_I2S, I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
+			#else
+				Chip_I2S_DMA_TxCmd(LPC_I2S, I2S_DMA_REQUEST_CHANNEL_2, DISABLE, 1);
+				#if (!USE_RTOS)
+					NVIC_EnableIRQ(I2S_IRQn);
+				#endif
+			#endif
 		#endif
 	}
 #endif
@@ -345,8 +369,16 @@
 #if (USE_ADC_INTERNO)
 	STATIC INLINE void adc_init()
 	{
-		#if USE_DMA
-			dma_init();
+		#if DEBUG_MODE
+			printf("[info] Init ADC (interno) \r\n");
+			printf("\t ADC freq %d \r\n", ADC_FREQ);
+			printf("\t DMA buff size %d \r\n", ADC_DMA_CANT_MUESTRAS);
+		#endif
+
+		#if (ADC_INTERNO_MODO == ADC_INTERNO_DMA)
+			#if DEBUG_MODE
+				printf("\t Usa DMA \r\n");
+			#endif
 		#endif
 
 		pin_init(0, 23, MD_PLN, IOCON_FUNC1); // P0[23] -> AD0.0 (entrada de ADC)
@@ -360,6 +392,12 @@
 		Chip_ADC_Int_SetChannelCmd(LPC_ADC, ADC_CH0, ENABLE);
 		Chip_ADC_SetBurstCmd(LPC_ADC, ENABLE);
 		//Chip_ADC_SetStartMode(LPC_ADC, ADC_START_NOW, ADC_TRIGGERMODE_RISING); // cuando NO es modo Burst
+
+		#if (ADC_INTERNO_MODO == ADC_INTERNO_INTERRUPCION)
+			#if (!USE_RTOS)
+				NVIC_EnableIRQ(ADC_IRQn);
+			#endif
+		#endif
 	}
 #endif
 
@@ -367,15 +405,24 @@
 #if (USE_DAC_INTERNO)
 	STATIC INLINE void dac_init()
 	{
-		#if USE_DMA
-			dma_init();
-		#endif
-
 		#if DEBUG_MODE
 			printf("[info] Init DAC \r\n");
 			printf("\t DAC freq %d \r\n", DAC_FREQ);
 			printf("\t DMA buff size %d \r\n", DAC_DMA_CANT_MUESTRAS);
 		#endif
+
+		#if (DAC_INTERNO_MODO == DAC_INTERNO_DMA)
+			#if DEBUG_MODE
+				printf("\t Usa DMA \r\n");
+			#endif
+		#endif
+
+		/*
+		#if (USE_RTOS)
+			vSemaphoreCreateBinary(sem_dac_int_finish);
+			xSemaphoreTake(sem_dac_int_finish, portMAX_DELAY);
+		#endif
+		*/
 
 		Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_DAC, SYSCTL_CLKDIV_4);
 

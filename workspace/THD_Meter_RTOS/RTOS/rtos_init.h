@@ -31,7 +31,6 @@
 	}
 
 
-
 	static inline void task_init()
 	{
 			// *** Tareas

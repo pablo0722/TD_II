@@ -15969,7 +15969,7 @@ void arm_rfft_fast_f32(
 
 
 
-#define DEBUG_MODE ON
+#define DEBUG_MODE OFF
 # 72 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_ADC_INTERNO OFF
 #define USE_ADC_EXTERNO ON
@@ -15982,16 +15982,24 @@ void arm_rfft_fast_f32(
 
 
 
-#define USE_DAC_INTERNO OFF
+#define USE_DAC_INTERNO ON
 #define USE_DAC_EXTERNO ON
-# 102 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+
+
+
+#define DAC_INTERNO_INTERRUPCION 0
+#define DAC_INTERNO_DMA 1
+#define DAC_INTERNO_MODO DAC_INTERNO_DMA
+
+
+
 #define DAC_EXTERNO_INTERRUPCION 0
 #define DAC_EXTERNO_DMA 1
 #define DAC_EXTERNO_MODO DAC_EXTERNO_DMA
 # 115 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_DMA ON
-
-
+# 124 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+#define USE_I2S OFF
 
 
 
@@ -16055,7 +16063,7 @@ static inline void pin_gpio_init(uint8_t port, uint8_t pin, uint32_t mode,
 
 static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t func)
 {
- if(1)
+ if(0)
  {
   if(func == 0)
   {
@@ -16118,37 +16126,11 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
  static inline void fft_init()
  {
   static arm_cfft_radix4_instance_q31 fft_inst_q31_complex;
-
-   printf("[info] init FFT: \r\n");
-   printf("\t format: q31 \r\n");
-   printf("\t fftLength(solo parte real): %d \r\n", 1024);
-
-
-
-   arm_status st =
-
-
+# 33 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
   arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, 1024, TRUE, TRUE);
-
-
-   if(st != ARM_MATH_SUCCESS)
-   {
-    printf("[error] FFT init: \r\n");
-    printf("\t st = %d \r\n", st);
-   }
-
-   st =
-
-
+# 45 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
   arm_rfft_init_q31(&ifft_inst_q31, &fft_inst_q31_complex, 1024, FALSE, TRUE);
-
-
-   if(st != ARM_MATH_SUCCESS)
-   {
-    printf("[error] FFT init: \r\n");
-    printf("\t st = %d \r\n", st);
-   }
-
+# 54 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
  }
 # 67 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_func.h" 1
@@ -16201,21 +16183,34 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
   void adc_ext_prepare(volatile uint32_t *buffer_A,
-       volatile uint32_t *buffer_B);
+         volatile uint32_t *buffer_B);
   void adc_ext_start();
   void adc_ext_post_procesamiento();
-
-
-
+# 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
   uint16_t dac_ext_set_data(uint32_t data);
   void dac_ext_prepare(volatile uint16_t *buffer);
   
-# 29 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 3 4
+# 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 3 4
  _Bool 
-# 29 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+# 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
       dac_ext_disponible();
   void dac_ext_send();
-# 41 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+
+
+
+  uint16_t dac_int_set_data(uint32_t data);
+  void dac_int_prepare(volatile uint16_t *buffer);
+  
+# 43 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 3 4
+ _Bool 
+# 43 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+      dac_int_disponible();
+  void dac_int_send();
+
+
+
+
+
 #define ADC_DMA_CANT_MUESTRAS 2048
 #define ADC_FREQ 32000
 
@@ -16239,6 +16234,12 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
    extern SemaphoreHandle_t sem_dac_ext_finish;
+
+
+
+
+
+   extern SemaphoreHandle_t sem_dac_int_finish;
 # 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 1
 # 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
@@ -16450,7 +16451,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
         void * const pvParameters, UBaseType_t uxPriority, TaskHandle_t * const pxCreatedTask)
  {
 
-   BaseType_t ret_task =
+
 
 
   xTaskGenericCreate( ( pxTaskCode ), ( pcName ), ( usStackDepth ), ( pvParameters ), ( uxPriority ), ( pxCreatedTask ), ( 
@@ -16462,38 +16463,30 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
  ((void *)0) 
 # 22 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
  ) );
-
-
-   if(ret_task < 0)
-   {
-    printf("[error] tarea %s \n", pcName);
-    printf("\t no hay memoria suficiente");
-   }
-
+# 31 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
  }
-
 
 
  static inline void task_init()
  {
 
   task_create( vTask_nvic_init, "vTask_nvic_init", ( ( unsigned short ) 128 ), 
-# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
                                                                             ((void *)0)
-# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
                                                                                 , 4 +1, (TaskHandle_t *) 
-# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
                                                                                                                       ((void *)0)
-# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
                                                                                                                           );
   task_create( vtask_ImAlive, "vtask_ImAlive", ( ( unsigned short ) 128 ), 
-# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
                                                                            ((void *)0)
-# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
                                                                                , 0, (TaskHandle_t *) 
-# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
                                                                                                                     ((void *)0)
-# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
                                                                                                                         );
 
 
@@ -16528,6 +16521,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
 
+
  extern uint32_t buffer_complex [1024*2];
  extern uint16_t buffer_dac_out [1024*2];
  extern uint32_t buffer_dep [1024];
@@ -16553,8 +16547,20 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
 
-#define LED0_INIT 0, 7, MD_PLN, SALIDA
-#define LED0 0, 7
+#define LED_IM_ALIVE_INIT 1, 0, MD_PLN, SALIDA
+#define LED_IM_ALIVE 1, 0
+
+
+#define LED_1_INIT 1, 1, MD_PLN, SALIDA
+#define LED_1 1, 1
+
+
+#define LED_2_INIT 1, 4, MD_PLN, SALIDA
+#define LED_2 1, 4
+
+
+#define LED_3_INIT 1, 8, MD_PLN, SALIDA
+#define LED_3 1, 8
 
 
 
@@ -16562,6 +16568,9 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 #define ADC_OSR_INIT 0, 8, MD_PLN, SALIDA
 #define ADC_OSR 0, 8
+
+#define ADC_FSYNC_INIT 0, 7, MD_PLN, SALIDA
+#define ADC_FSYNC 0, 7
 
 
 
@@ -16572,6 +16581,9 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 #define DAC_ZEROA_INIT 1, 17, MD_PLN, ENTRADA
 #define DAC_ZEROA 1, 17
+
+#define DAC_DATA_INIT 0, 9, MD_PLN, SALIDA
+#define DAC_DATA 0, 9
 # 9 "../RTOS/rtos_tareas.c" 2
 
 
@@ -16583,18 +16595,8 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
 
-
-
-
-
-   NVIC_DisableIRQ(I2S_IRQn);
-
-
-
    NVIC_EnableIRQ(DMA_IRQn);
-
-
-
+# 31 "../RTOS/rtos_tareas.c"
   vTaskDelete(
 # 31 "../RTOS/rtos_tareas.c" 3 4
              ((void *)0)
@@ -16604,18 +16606,17 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
  void vtask_ImAlive(void * pvParameters)
  {
-
-#define P1_0 1,0
-  Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), 1,0, (0x2 << 2), 0x0);
-  Chip_GPIO_WriteDirBit(((LPC_GPIO_T *) 0x2009C000), 1,0, 
-# 39 "../RTOS/rtos_tareas.c" 3 4
-                                       1
-# 39 "../RTOS/rtos_tareas.c"
-                                           );
+  pin_gpio_init(1, 0, (0x2), 1);
+  pin_gpio_init(1, 1, (0x2), 1);
+  pin_gpio_init(1, 4, (0x2), 1);
+  pin_gpio_init(1, 8, (0x2), 1);
 
   while (1)
   {
-   Chip_GPIO_SetPinToggle(((LPC_GPIO_T *) 0x2009C000), 1,0);
+   Chip_GPIO_SetPinToggle(((LPC_GPIO_T *) 0x2009C000), 1, 0);
+   Chip_GPIO_SetPinToggle(((LPC_GPIO_T *) 0x2009C000), 1, 1);
+   Chip_GPIO_SetPinToggle(((LPC_GPIO_T *) 0x2009C000), 1, 4);
+   Chip_GPIO_SetPinToggle(((LPC_GPIO_T *) 0x2009C000), 1, 8);
    vTaskDelay(500 / ( ( TickType_t ) 1000 / ( ( TickType_t ) 1000 ) ));
   }
  }

@@ -29,7 +29,7 @@
 
 #if (USE_DAC_INTERNO)
 	#if (USE_RTOS)
-		xSemaphoreHandle 	sem_dac_finish				// Semaforo que indica cuando se termino de enviar un dato por DAC
+		xSemaphoreHandle 	sem_dac_int_finish				// Semaforo que indica cuando se termino de enviar un dato por DAC
 												__attribute__ ((section (".bss.$RamAHB32")));
 	#endif
 #endif

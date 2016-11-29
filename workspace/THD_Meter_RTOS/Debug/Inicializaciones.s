@@ -429,127 +429,6 @@ pin_gpio_init:
 	.cfi_endproc
 .LFE371:
 	.size	pin_gpio_init, .-pin_gpio_init
-	.section	.rodata
-	.align	2
-.LC0:
-	.ascii	"[info] init FFT: \015\012\000"
-	.align	2
-.LC1:
-	.ascii	"\011 format: q31 \015\012\000"
-	.align	2
-.LC2:
-	.ascii	"\011 fftLength(solo parte real): %d \015\012\000"
-	.align	2
-.LC3:
-	.ascii	"[error] FFT init: \015\012\000"
-	.align	2
-.LC4:
-	.ascii	"\011 st = %d \015\012\000"
-	.section	.text.fft_init,"ax",%progbits
-	.align	2
-	.thumb
-	.thumb_func
-	.type	fft_init, %function
-fft_init:
-.LFB373:
-	.file 3 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
-	.loc 3 21 0
-	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 8
-	@ frame_needed = 1, uses_anonymous_args = 0
-	push	{r7, lr}
-	.cfi_def_cfa_offset 8
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 24
-	add	r7, sp, #8
-	.cfi_def_cfa 7, 16
-	.loc 3 24 0
-	ldr	r0, .L24
-	bl	printf
-	.loc 3 25 0
-	ldr	r0, .L24+4
-	bl	printf
-	.loc 3 26 0
-	mov	r1, #1024
-	ldr	r0, .L24+8
-	bl	printf
-	.loc 3 30 0
-	movs	r3, #1
-	str	r3, [sp]
-	movs	r3, #1
-	mov	r2, #1024
-	ldr	r1, .L24+12
-	ldr	r0, .L24+16
-	bl	arm_rfft_init_q31
-	mov	r3, r0
-	strb	r3, [r7, #7]
-	.loc 3 36 0
-	ldrsb	r3, [r7, #7]
-	cmp	r3, #0
-	beq	.L21
-	.loc 3 38 0
-	ldr	r0, .L24+20
-	bl	printf
-	.loc 3 39 0
-	ldrsb	r3, [r7, #7]
-	mov	r1, r3
-	ldr	r0, .L24+24
-	bl	printf
-.L21:
-	.loc 3 42 0
-	movs	r3, #1
-	str	r3, [sp]
-	movs	r3, #0
-	mov	r2, #1024
-	ldr	r1, .L24+12
-	ldr	r0, .L24+28
-	bl	arm_rfft_init_q31
-	mov	r3, r0
-	strb	r3, [r7, #7]
-	.loc 3 48 0
-	ldrsb	r3, [r7, #7]
-	cmp	r3, #0
-	beq	.L23
-	.loc 3 50 0
-	ldr	r0, .L24+20
-	bl	printf
-	.loc 3 51 0
-	ldrsb	r3, [r7, #7]
-	mov	r1, r3
-	ldr	r0, .L24+24
-	bl	printf
-.L23:
-	.loc 3 54 0
-	nop
-	adds	r7, r7, #8
-	.cfi_def_cfa_offset 8
-	mov	sp, r7
-	.cfi_def_cfa_register 13
-	@ sp needed
-	pop	{r7, pc}
-.L25:
-	.align	2
-.L24:
-	.word	.LC0
-	.word	.LC1
-	.word	.LC2
-	.word	fft_inst_q31_complex.10166
-	.word	fft_inst_q31
-	.word	.LC3
-	.word	.LC4
-	.word	ifft_inst_q31
-	.cfi_endproc
-.LFE373:
-	.size	fft_init, .-fft_init
-	.section	.rodata
-	.align	2
-.LC5:
-	.ascii	"[error] tarea %s \012\000"
-	.align	2
-.LC6:
-	.ascii	"\011 no hay memoria suficiente\000"
 	.section	.text.task_create,"ax",%progbits
 	.align	2
 	.thumb
@@ -557,73 +436,55 @@ fft_init:
 	.type	task_create, %function
 task_create:
 .LFB378:
-	.file 4 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
-	.loc 4 17 0
+	.file 3 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+	.loc 3 17 0
 	.cfi_startproc
-	@ args = 8, pretend = 0, frame = 24
+	@ args = 8, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
 	push	{r7, lr}
 	.cfi_def_cfa_offset 8
 	.cfi_offset 7, -8
 	.cfi_offset 14, -4
-	sub	sp, sp, #40
-	.cfi_def_cfa_offset 48
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 40
 	add	r7, sp, #16
-	.cfi_def_cfa 7, 32
+	.cfi_def_cfa 7, 24
 	str	r0, [r7, #12]
 	str	r1, [r7, #8]
 	str	r3, [r7]
 	mov	r3, r2	@ movhi
 	strh	r3, [r7, #6]	@ movhi
-	.loc 4 19 0
+	.loc 3 22 0
 	ldrh	r2, [r7, #6]
 	movs	r3, #0
 	str	r3, [sp, #12]
 	movs	r3, #0
 	str	r3, [sp, #8]
-	ldr	r3, [r7, #36]
+	ldr	r3, [r7, #28]
 	str	r3, [sp, #4]
-	ldr	r3, [r7, #32]
+	ldr	r3, [r7, #24]
 	str	r3, [sp]
 	ldr	r3, [r7]
 	ldr	r1, [r7, #8]
 	ldr	r0, [r7, #12]
 	bl	xTaskGenericCreate
-	str	r0, [r7, #20]
-	.loc 4 25 0
-	ldr	r3, [r7, #20]
-	cmp	r3, #0
-	bge	.L28
-	.loc 4 27 0
-	ldr	r1, [r7, #8]
-	ldr	r0, .L29
-	bl	printf
-	.loc 4 28 0
-	ldr	r0, .L29+4
-	bl	printf
-.L28:
-	.loc 4 31 0
+	.loc 3 31 0
 	nop
-	adds	r7, r7, #24
+	adds	r7, r7, #16
 	.cfi_def_cfa_offset 8
 	mov	sp, r7
 	.cfi_def_cfa_register 13
 	@ sp needed
 	pop	{r7, pc}
-.L30:
-	.align	2
-.L29:
-	.word	.LC5
-	.word	.LC6
 	.cfi_endproc
 .LFE378:
 	.size	task_create, .-task_create
 	.section	.rodata
 	.align	2
-.LC7:
+.LC0:
 	.ascii	"vTask_nvic_init\000"
 	.align	2
-.LC8:
+.LC1:
 	.ascii	"vtask_ImAlive\000"
 	.section	.text.task_init,"ax",%progbits
 	.align	2
@@ -632,6 +493,155 @@ task_create:
 	.type	task_init, %function
 task_init:
 .LFB379:
+	.loc 3 35 0
+	.cfi_startproc
+	@ args = 0, pretend = 0, frame = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #8
+	.cfi_def_cfa 7, 8
+	.loc 3 37 0
+	movs	r3, #0
+	str	r3, [sp, #4]
+	movs	r3, #5
+	str	r3, [sp]
+	movs	r3, #0
+	movs	r2, #128
+	ldr	r1, .L22
+	ldr	r0, .L22+4
+	bl	task_create
+	.loc 3 38 0
+	movs	r3, #0
+	str	r3, [sp, #4]
+	movs	r3, #0
+	str	r3, [sp]
+	movs	r3, #0
+	movs	r2, #128
+	ldr	r1, .L22+8
+	ldr	r0, .L22+12
+	bl	task_create
+	.loc 3 44 0
+	bl	vTaskStartScheduler
+	.loc 3 45 0
+	nop
+	mov	sp, r7
+	.cfi_def_cfa_register 13
+	@ sp needed
+	pop	{r7, pc}
+.L23:
+	.align	2
+.L22:
+	.word	.LC0
+	.word	vTask_nvic_init
+	.word	.LC1
+	.word	vtask_ImAlive
+	.cfi_endproc
+.LFE379:
+	.size	task_init, .-task_init
+	.section	.text.main_gpio_init,"ax",%progbits
+	.align	2
+	.thumb
+	.thumb_func
+	.type	main_gpio_init, %function
+main_gpio_init:
+.LFB380:
+	.file 4 "../src/Inicializaciones.c"
+	.loc 4 13 0
+	.cfi_startproc
+	@ args = 0, pretend = 0, frame = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	.loc 4 15 0
+	movs	r3, #0
+	movs	r2, #0
+	movs	r1, #15
+	movs	r0, #1
+	bl	pin_gpio_init
+	.loc 4 16 0
+	movs	r3, #0
+	movs	r2, #0
+	movs	r1, #14
+	movs	r0, #1
+	bl	pin_gpio_init
+	.loc 4 17 0
+	movs	r3, #0
+	movs	r2, #0
+	movs	r1, #10
+	movs	r0, #1
+	bl	pin_gpio_init
+	.loc 4 18 0
+	movs	r3, #0
+	movs	r2, #0
+	movs	r1, #9
+	movs	r0, #1
+	bl	pin_gpio_init
+	.loc 4 25 0
+	movs	r3, #1
+	movs	r2, #2
+	movs	r1, #7
+	movs	r0, #0
+	bl	pin_gpio_init
+	.loc 4 26 0
+	movs	r2, #0
+	movs	r1, #7
+	movs	r0, #0
+	bl	pin_set
+	.loc 4 29 0
+	movs	r3, #1
+	movs	r2, #2
+	movs	r1, #16
+	movs	r0, #1
+	bl	pin_gpio_init
+	.loc 4 30 0
+	movs	r2, #0
+	movs	r1, #16
+	movs	r0, #1
+	bl	pin_set
+	.loc 4 31 0
+	movs	r3, #0
+	movs	r2, #2
+	movs	r1, #17
+	movs	r0, #1
+	bl	pin_gpio_init
+	.loc 4 32 0
+	movs	r3, #1
+	movs	r2, #2
+	movs	r1, #9
+	movs	r0, #0
+	bl	pin_gpio_init
+	.loc 4 33 0
+	nop
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE380:
+	.size	main_gpio_init, .-main_gpio_init
+	.section	.rodata
+	.align	2
+.LC2:
+	.ascii	"vTask_tft\000"
+	.align	2
+.LC3:
+	.ascii	"vTask_THD\000"
+	.align	2
+.LC4:
+	.ascii	"vTask_teclado\000"
+	.section	.text.main_task_init,"ax",%progbits
+	.align	2
+	.thumb
+	.thumb_func
+	.type	main_task_init, %function
+main_task_init:
+.LFB381:
 	.loc 4 36 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
@@ -644,15 +654,25 @@ task_init:
 	.cfi_def_cfa_offset 16
 	add	r7, sp, #8
 	.cfi_def_cfa 7, 8
-	.loc 4 38 0
+	.loc 4 37 0
 	movs	r3, #0
 	str	r3, [sp, #4]
-	movs	r3, #5
+	movs	r3, #0
 	str	r3, [sp]
 	movs	r3, #0
 	movs	r2, #128
-	ldr	r1, .L32
-	ldr	r0, .L32+4
+	ldr	r1, .L26
+	ldr	r0, .L26+4
+	bl	task_create
+	.loc 4 38 0
+	movs	r3, #0
+	str	r3, [sp, #4]
+	movs	r3, #0
+	str	r3, [sp]
+	movs	r3, #0
+	movs	r2, #136
+	ldr	r1, .L26+8
+	ldr	r0, .L26+12
 	bl	task_create
 	.loc 4 39 0
 	movs	r3, #0
@@ -661,182 +681,23 @@ task_init:
 	str	r3, [sp]
 	movs	r3, #0
 	movs	r2, #128
-	ldr	r1, .L32+8
-	ldr	r0, .L32+12
+	ldr	r1, .L26+16
+	ldr	r0, .L26+20
 	bl	task_create
-	.loc 4 45 0
-	bl	vTaskStartScheduler
-	.loc 4 46 0
+	.loc 4 40 0
 	nop
 	mov	sp, r7
 	.cfi_def_cfa_register 13
 	@ sp needed
 	pop	{r7, pc}
-.L33:
+.L27:
 	.align	2
-.L32:
-	.word	.LC7
-	.word	vTask_nvic_init
-	.word	.LC8
-	.word	vtask_ImAlive
-	.cfi_endproc
-.LFE379:
-	.size	task_init, .-task_init
-	.section	.text.main_gpio_init,"ax",%progbits
-	.align	2
-	.thumb
-	.thumb_func
-	.type	main_gpio_init, %function
-main_gpio_init:
-.LFB380:
-	.file 5 "../src/Inicializaciones.c"
-	.loc 5 13 0
-	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 0
-	@ frame_needed = 1, uses_anonymous_args = 0
-	push	{r7, lr}
-	.cfi_def_cfa_offset 8
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
-	add	r7, sp, #0
-	.cfi_def_cfa_register 7
-	.loc 5 15 0
-	movs	r3, #0
-	movs	r2, #0
-	movs	r1, #15
-	movs	r0, #1
-	bl	pin_gpio_init
-	.loc 5 16 0
-	movs	r3, #0
-	movs	r2, #0
-	movs	r1, #14
-	movs	r0, #1
-	bl	pin_gpio_init
-	.loc 5 17 0
-	movs	r3, #0
-	movs	r2, #0
-	movs	r1, #10
-	movs	r0, #1
-	bl	pin_gpio_init
-	.loc 5 18 0
-	movs	r3, #0
-	movs	r2, #0
-	movs	r1, #9
-	movs	r0, #1
-	bl	pin_gpio_init
-	.loc 5 21 0
-	movs	r3, #1
-	movs	r2, #2
-	movs	r1, #7
-	movs	r0, #0
-	bl	pin_gpio_init
-	.loc 5 24 0
-	movs	r3, #1
-	movs	r2, #2
-	movs	r1, #8
-	movs	r0, #0
-	bl	pin_gpio_init
-	.loc 5 25 0
-	movs	r2, #0
-	movs	r1, #8
-	movs	r0, #0
-	bl	pin_set
-	.loc 5 28 0
-	movs	r3, #1
-	movs	r2, #2
-	movs	r1, #16
-	movs	r0, #1
-	bl	pin_gpio_init
-	.loc 5 29 0
-	movs	r2, #0
-	movs	r1, #16
-	movs	r0, #1
-	bl	pin_set
-	.loc 5 30 0
-	movs	r3, #0
-	movs	r2, #2
-	movs	r1, #17
-	movs	r0, #1
-	bl	pin_gpio_init
-	.loc 5 31 0
-	nop
-	pop	{r7, pc}
-	.cfi_endproc
-.LFE380:
-	.size	main_gpio_init, .-main_gpio_init
-	.section	.rodata
-	.align	2
-.LC9:
-	.ascii	"vTask_tft\000"
-	.align	2
-.LC10:
-	.ascii	"vTask_THD\000"
-	.align	2
-.LC11:
-	.ascii	"vTask_teclado\000"
-	.section	.text.main_task_init,"ax",%progbits
-	.align	2
-	.thumb
-	.thumb_func
-	.type	main_task_init, %function
-main_task_init:
-.LFB381:
-	.loc 5 34 0
-	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 0
-	@ frame_needed = 1, uses_anonymous_args = 0
-	push	{r7, lr}
-	.cfi_def_cfa_offset 8
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
-	sub	sp, sp, #8
-	.cfi_def_cfa_offset 16
-	add	r7, sp, #8
-	.cfi_def_cfa 7, 8
-	.loc 5 35 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	movs	r3, #0
-	str	r3, [sp]
-	movs	r3, #0
-	movs	r2, #128
-	ldr	r1, .L36
-	ldr	r0, .L36+4
-	bl	task_create
-	.loc 5 36 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	movs	r3, #0
-	str	r3, [sp]
-	movs	r3, #0
-	movs	r2, #136
-	ldr	r1, .L36+8
-	ldr	r0, .L36+12
-	bl	task_create
-	.loc 5 37 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	movs	r3, #0
-	str	r3, [sp]
-	movs	r3, #0
-	movs	r2, #128
-	ldr	r1, .L36+16
-	ldr	r0, .L36+20
-	bl	task_create
-	.loc 5 38 0
-	nop
-	mov	sp, r7
-	.cfi_def_cfa_register 13
-	@ sp needed
-	pop	{r7, pc}
-.L37:
-	.align	2
-.L36:
-	.word	.LC9
+.L26:
+	.word	.LC2
 	.word	vTask_tft
-	.word	.LC10
+	.word	.LC3
 	.word	vTask_THD
-	.word	.LC11
+	.word	.LC4
 	.word	vTask_teclado
 	.cfi_endproc
 .LFE381:
@@ -848,7 +709,7 @@ main_task_init:
 	.type	main_buffer_init, %function
 main_buffer_init:
 .LFB382:
-	.loc 5 41 0
+	.loc 4 43 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -858,19 +719,22 @@ main_buffer_init:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 5 42 0
+	.loc 4 44 0
 	movs	r1, #0
-	ldr	r0, .L39
+	ldr	r0, .L29
 	bl	adc_ext_prepare
-	.loc 5 43 0
-	ldr	r0, .L39+4
+	.loc 4 46 0
+	ldr	r0, .L29+4
+	bl	dac_int_prepare
+	.loc 4 49 0
+	ldr	r0, .L29+4
 	bl	dac_ext_prepare
-	.loc 5 44 0
+	.loc 4 51 0
 	nop
 	pop	{r7, pc}
-.L40:
+.L30:
 	.align	2
-.L39:
+.L29:
 	.word	buffer_complex
 	.word	buffer_dac_out
 	.cfi_endproc
@@ -884,7 +748,7 @@ main_buffer_init:
 	.type	main_init, %function
 main_init:
 .LFB383:
-	.loc 5 47 0
+	.loc 4 54 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -894,60 +758,49 @@ main_init:
 	.cfi_offset 14, -4
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
-	.loc 5 48 0
+	.loc 4 55 0
 	bl	SystemCoreClockUpdate
-	.loc 5 50 0
+	.loc 4 57 0
 	bl	Board_Init
-	.loc 5 52 0
-	bl	tft_init
-	.loc 5 58 0
+	.loc 4 65 0
 	bl	adc_dac_init
-	.loc 5 61 0
-	bl	fft_init
-	.loc 5 64 0
+	.loc 4 71 0
 	bl	main_gpio_init
-	.loc 5 66 0
+	.loc 4 73 0
 	bl	main_buffer_init
-	.loc 5 68 0
+	.loc 4 75 0
 	bl	main_task_init
-	.loc 5 71 0
+	.loc 4 78 0
 	bl	task_init
-	.loc 5 73 0
+	.loc 4 80 0
 	nop
 	pop	{r7, pc}
 	.cfi_endproc
 .LFE383:
 	.size	main_init, .-main_init
-	.section	.bss.fft_inst_q31_complex.10166,"aw",%nobits
-	.align	2
-	.type	fft_inst_q31_complex.10166, %object
-	.size	fft_inst_q31_complex.10166, 16
-fft_inst_q31_complex.10166:
-	.space	16
 	.text
 .Letext0:
-	.file 6 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdint.h"
-	.file 7 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/iocon_17xx_40xx.h"
-	.file 8 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/projdefs.h"
-	.file 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\src\\portable\\GCC\\ARM_CM3/portmacro.h"
-	.file 10 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/task.h"
-	.file 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/lpc_types.h"
-	.file 12 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\CMSIS_DSPLIB_CM3\\inc/arm/arm_math.h"
-	.file 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/core_cm3.h"
-	.file 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/chip.h"
-	.file 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
-	.file 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h"
+	.file 5 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdint.h"
+	.file 6 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/iocon_17xx_40xx.h"
+	.file 7 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/projdefs.h"
+	.file 8 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\src\\portable\\GCC\\ARM_CM3/portmacro.h"
+	.file 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/task.h"
+	.file 10 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\CMSIS_DSPLIB_CM3\\inc/arm/arm_math.h"
+	.file 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/core_cm3.h"
+	.file 12 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/chip.h"
+	.file 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
+	.file 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x712
+	.4byte	0x668
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF2855
-	.byte	0xc
 	.4byte	.LASF2856
+	.byte	0xc
 	.4byte	.LASF2857
+	.4byte	.LASF2858
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -955,7 +808,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF2761
+	.4byte	.LASF2775
 	.uleb128 0x3
 	.byte	0x4
 	.byte	0x5
@@ -963,443 +816,392 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x5
-	.4byte	.LASF2762
-	.uleb128 0x2
-	.byte	0x4
-	.byte	0x7
-	.4byte	.LASF2763
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x4
-	.4byte	.LASF2764
-	.uleb128 0x2
-	.byte	0x1
-	.byte	0x6
-	.4byte	.LASF2765
-	.uleb128 0x4
-	.4byte	.LASF2767
-	.byte	0x6
-	.byte	0x1d
-	.4byte	0x29
-	.uleb128 0x2
-	.byte	0x2
-	.byte	0x5
-	.4byte	.LASF2766
-	.uleb128 0x4
-	.4byte	.LASF2768
-	.byte	0x6
-	.byte	0x5a
-	.4byte	0x70
-	.uleb128 0x2
-	.byte	0x2
-	.byte	0x7
-	.4byte	.LASF2769
-	.uleb128 0x4
-	.4byte	.LASF2770
-	.byte	0x6
-	.byte	0x91
-	.4byte	0x30
-	.uleb128 0x4
-	.4byte	.LASF2771
-	.byte	0x6
-	.byte	0x92
-	.4byte	0x3e
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x5
-	.4byte	.LASF2772
-	.uleb128 0x2
-	.byte	0x8
-	.byte	0x7
-	.4byte	.LASF2773
-	.uleb128 0x5
-	.byte	0x1
-	.4byte	0x29
-	.byte	0xb
-	.byte	0x32
-	.4byte	0xb4
-	.uleb128 0x6
-	.4byte	.LASF2774
-	.byte	0
-	.uleb128 0x6
-	.4byte	.LASF2775
-	.byte	0x1
-	.byte	0
-	.uleb128 0x2
-	.byte	0x1
-	.byte	0x8
 	.4byte	.LASF2776
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
 	.4byte	.LASF2777
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x4
+	.4byte	.LASF2778
+	.uleb128 0x2
+	.byte	0x1
+	.byte	0x6
+	.4byte	.LASF2779
+	.uleb128 0x4
+	.4byte	.LASF2781
+	.byte	0x5
+	.byte	0x1d
+	.4byte	0x29
+	.uleb128 0x2
+	.byte	0x2
+	.byte	0x5
+	.4byte	.LASF2780
+	.uleb128 0x4
+	.4byte	.LASF2782
+	.byte	0x5
+	.byte	0x5a
+	.4byte	0x70
+	.uleb128 0x2
+	.byte	0x2
+	.byte	0x7
+	.4byte	.LASF2783
+	.uleb128 0x4
+	.4byte	.LASF2784
+	.byte	0x5
+	.byte	0x91
+	.4byte	0x30
+	.uleb128 0x4
+	.4byte	.LASF2785
+	.byte	0x5
+	.byte	0x92
+	.4byte	0x3e
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x5
+	.4byte	.LASF2786
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x7
+	.4byte	.LASF2787
+	.uleb128 0x2
+	.byte	0x1
+	.byte	0x8
+	.4byte	.LASF2788
+	.uleb128 0x2
+	.byte	0x4
+	.byte	0x7
+	.4byte	.LASF2789
+	.uleb128 0x5
+	.4byte	0x82
+	.uleb128 0x6
+	.4byte	0x82
+	.4byte	0xbe
 	.uleb128 0x7
-	.4byte	0x82
-	.uleb128 0x8
-	.4byte	0x82
-	.4byte	0xd7
-	.uleb128 0x9
-	.4byte	0xbb
+	.4byte	0xa2
 	.byte	0x4
 	.byte	0
-	.uleb128 0xa
+	.uleb128 0x8
 	.byte	0x80
-	.byte	0x7
+	.byte	0x6
 	.byte	0x38
-	.4byte	0x11c
-	.uleb128 0xb
-	.4byte	.LASF2778
-	.byte	0x7
+	.4byte	0x103
+	.uleb128 0x9
+	.4byte	.LASF2790
+	.byte	0x6
 	.byte	0x3a
-	.4byte	0x12c
+	.4byte	0x113
 	.byte	0
-	.uleb128 0xb
-	.4byte	.LASF2779
-	.byte	0x7
+	.uleb128 0x9
+	.4byte	.LASF2791
+	.byte	0x6
 	.byte	0x3b
-	.4byte	0xc7
+	.4byte	0xae
 	.byte	0x2c
-	.uleb128 0xb
-	.4byte	.LASF2780
-	.byte	0x7
+	.uleb128 0x9
+	.4byte	.LASF2792
+	.byte	0x6
 	.byte	0x3c
-	.4byte	0x141
+	.4byte	0x128
 	.byte	0x40
-	.uleb128 0xb
-	.4byte	.LASF2781
-	.byte	0x7
+	.uleb128 0x9
+	.4byte	.LASF2793
+	.byte	0x6
 	.byte	0x3d
-	.4byte	0x156
+	.4byte	0x13d
 	.byte	0x68
-	.uleb128 0xb
-	.4byte	.LASF2782
-	.byte	0x7
+	.uleb128 0x9
+	.4byte	.LASF2794
+	.byte	0x6
 	.byte	0x3e
-	.4byte	0xc2
+	.4byte	0xa9
 	.byte	0x7c
 	.byte	0
-	.uleb128 0x8
-	.4byte	0xc2
-	.4byte	0x12c
-	.uleb128 0x9
-	.4byte	0xbb
+	.uleb128 0x6
+	.4byte	0xa9
+	.4byte	0x113
+	.uleb128 0x7
+	.4byte	0xa2
 	.byte	0xa
 	.byte	0
+	.uleb128 0x5
+	.4byte	0x103
+	.uleb128 0x6
+	.4byte	0xa9
+	.4byte	0x128
 	.uleb128 0x7
-	.4byte	0x11c
-	.uleb128 0x8
-	.4byte	0xc2
-	.4byte	0x141
-	.uleb128 0x9
-	.4byte	0xbb
+	.4byte	0xa2
 	.byte	0x9
 	.byte	0
+	.uleb128 0x5
+	.4byte	0x118
+	.uleb128 0x6
+	.4byte	0xa9
+	.4byte	0x13d
 	.uleb128 0x7
-	.4byte	0x131
-	.uleb128 0x8
-	.4byte	0xc2
-	.4byte	0x156
-	.uleb128 0x9
-	.4byte	0xbb
+	.4byte	0xa2
 	.byte	0x4
 	.byte	0
-	.uleb128 0x7
-	.4byte	0x146
+	.uleb128 0x5
+	.4byte	0x12d
 	.uleb128 0x4
-	.4byte	.LASF2783
-	.byte	0x7
+	.4byte	.LASF2795
+	.byte	0x6
 	.byte	0x42
-	.4byte	0xd7
+	.4byte	0xbe
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x2
-	.4byte	.LASF2784
-	.uleb128 0x8
+	.4byte	.LASF2796
+	.uleb128 0x6
 	.4byte	0x82
-	.4byte	0x17d
-	.uleb128 0x9
-	.4byte	0xbb
+	.4byte	0x164
+	.uleb128 0x7
+	.4byte	0xa2
 	.byte	0x2
 	.byte	0
-	.uleb128 0xa
+	.uleb128 0x8
 	.byte	0x20
 	.byte	0x1
 	.byte	0x32
-	.4byte	0x1ce
-	.uleb128 0xc
+	.4byte	0x1b5
+	.uleb128 0xa
 	.ascii	"DIR\000"
 	.byte	0x1
 	.byte	0x33
-	.4byte	0xc2
+	.4byte	0xa9
 	.byte	0
-	.uleb128 0xb
-	.4byte	.LASF2779
+	.uleb128 0x9
+	.4byte	.LASF2791
 	.byte	0x1
 	.byte	0x34
-	.4byte	0x16d
+	.4byte	0x154
 	.byte	0x4
-	.uleb128 0xb
-	.4byte	.LASF2785
+	.uleb128 0x9
+	.4byte	.LASF2797
 	.byte	0x1
 	.byte	0x35
-	.4byte	0xc2
+	.4byte	0xa9
 	.byte	0x10
-	.uleb128 0xc
+	.uleb128 0xa
 	.ascii	"PIN\000"
 	.byte	0x1
 	.byte	0x36
-	.4byte	0xc2
+	.4byte	0xa9
 	.byte	0x14
-	.uleb128 0xc
+	.uleb128 0xa
 	.ascii	"SET\000"
 	.byte	0x1
 	.byte	0x37
-	.4byte	0xc2
+	.4byte	0xa9
 	.byte	0x18
-	.uleb128 0xc
+	.uleb128 0xa
 	.ascii	"CLR\000"
 	.byte	0x1
 	.byte	0x38
-	.4byte	0xc2
+	.4byte	0xa9
 	.byte	0x1c
 	.byte	0
 	.uleb128 0x4
-	.4byte	.LASF2786
+	.4byte	.LASF2798
 	.byte	0x1
 	.byte	0x39
-	.4byte	0x17d
-	.uleb128 0xd
+	.4byte	0x164
+	.uleb128 0xb
 	.byte	0x4
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF2787
-	.uleb128 0x4
-	.4byte	.LASF2788
-	.byte	0x8
-	.byte	0x4d
-	.4byte	0x1ed
-	.uleb128 0xe
-	.byte	0x4
-	.4byte	0x1f3
-	.uleb128 0xf
-	.4byte	0x1fe
-	.uleb128 0x10
-	.4byte	0x1d9
-	.byte	0
-	.uleb128 0x4
-	.4byte	.LASF2789
-	.byte	0x9
-	.byte	0x62
-	.4byte	0x37
-	.uleb128 0x4
-	.4byte	.LASF2790
-	.byte	0x9
-	.byte	0x63
-	.4byte	0x1db
-	.uleb128 0x4
-	.4byte	.LASF2791
-	.byte	0xa
-	.byte	0x67
-	.4byte	0x1d9
-	.uleb128 0xe
-	.byte	0x4
-	.4byte	0x225
-	.uleb128 0x11
-	.4byte	0xb4
-	.uleb128 0x11
-	.4byte	0x21f
-	.uleb128 0x12
-	.byte	0x1
-	.4byte	0x4c
-	.byte	0xc
-	.2byte	0x151
-	.4byte	0x267
-	.uleb128 0x6
-	.4byte	.LASF2792
-	.byte	0
-	.uleb128 0x13
-	.4byte	.LASF2793
-	.sleb128 -1
-	.uleb128 0x13
-	.4byte	.LASF2794
-	.sleb128 -2
-	.uleb128 0x13
-	.4byte	.LASF2795
-	.sleb128 -3
-	.uleb128 0x13
-	.4byte	.LASF2796
-	.sleb128 -4
-	.uleb128 0x13
-	.4byte	.LASF2797
-	.sleb128 -5
-	.uleb128 0x13
-	.4byte	.LASF2798
-	.sleb128 -6
-	.byte	0
-	.uleb128 0x14
 	.4byte	.LASF2799
-	.byte	0xc
-	.2byte	0x159
-	.4byte	0x22f
-	.uleb128 0x14
+	.uleb128 0x4
 	.4byte	.LASF2800
-	.byte	0xc
+	.byte	0x7
+	.byte	0x4d
+	.4byte	0x1d4
+	.uleb128 0xc
+	.byte	0x4
+	.4byte	0x1da
+	.uleb128 0xd
+	.4byte	0x1e5
+	.uleb128 0xe
+	.4byte	0x1c0
+	.byte	0
+	.uleb128 0x4
+	.4byte	.LASF2801
+	.byte	0x8
+	.byte	0x63
+	.4byte	0x1c2
+	.uleb128 0x4
+	.4byte	.LASF2802
+	.byte	0x9
+	.byte	0x67
+	.4byte	0x1c0
+	.uleb128 0xc
+	.byte	0x4
+	.4byte	0x201
+	.uleb128 0xf
+	.4byte	0x9b
+	.uleb128 0xf
+	.4byte	0x1fb
+	.uleb128 0x10
+	.4byte	.LASF2803
+	.byte	0xa
 	.2byte	0x168
 	.4byte	0x77
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x4
-	.4byte	.LASF2801
-	.uleb128 0xe
+	.4byte	.LASF2804
+	.uleb128 0xc
 	.byte	0x4
-	.4byte	0x273
-	.uleb128 0xe
+	.4byte	0x20b
+	.uleb128 0xc
 	.byte	0x4
 	.4byte	0x65
-	.uleb128 0x15
+	.uleb128 0x11
 	.byte	0x10
-	.byte	0xc
+	.byte	0xa
 	.2byte	0x7f8
-	.4byte	0x2f7
-	.uleb128 0x16
-	.4byte	.LASF2802
-	.byte	0xc
+	.4byte	0x28f
+	.uleb128 0x12
+	.4byte	.LASF2805
+	.byte	0xa
 	.2byte	0x7fa
 	.4byte	0x65
 	.byte	0
-	.uleb128 0x16
-	.4byte	.LASF2803
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2806
+	.byte	0xa
 	.2byte	0x7fb
 	.4byte	0x53
 	.byte	0x2
-	.uleb128 0x16
-	.4byte	.LASF2804
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2807
+	.byte	0xa
 	.2byte	0x7fc
 	.4byte	0x53
 	.byte	0x3
-	.uleb128 0x16
-	.4byte	.LASF2805
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2808
+	.byte	0xa
 	.2byte	0x7fd
-	.4byte	0x286
+	.4byte	0x21e
 	.byte	0x4
-	.uleb128 0x16
-	.4byte	.LASF2806
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2809
+	.byte	0xa
 	.2byte	0x7fe
-	.4byte	0x28c
+	.4byte	0x224
 	.byte	0x8
-	.uleb128 0x16
-	.4byte	.LASF2807
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2810
+	.byte	0xa
 	.2byte	0x7ff
 	.4byte	0x65
 	.byte	0xc
-	.uleb128 0x16
-	.4byte	.LASF2808
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2811
+	.byte	0xa
 	.2byte	0x800
 	.4byte	0x65
 	.byte	0xe
 	.byte	0
-	.uleb128 0x14
-	.4byte	.LASF2809
-	.byte	0xc
+	.uleb128 0x10
+	.4byte	.LASF2812
+	.byte	0xa
 	.2byte	0x801
-	.4byte	0x292
-	.uleb128 0x11
+	.4byte	0x22a
+	.uleb128 0xf
 	.4byte	0x65
-	.uleb128 0x15
+	.uleb128 0x11
 	.byte	0x1c
-	.byte	0xc
+	.byte	0xa
 	.2byte	0x878
-	.4byte	0x37a
-	.uleb128 0x16
-	.4byte	.LASF2810
-	.byte	0xc
+	.4byte	0x312
+	.uleb128 0x12
+	.4byte	.LASF2813
+	.byte	0xa
 	.2byte	0x87a
 	.4byte	0x82
 	.byte	0
-	.uleb128 0x16
-	.4byte	.LASF2811
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2814
+	.byte	0xa
 	.2byte	0x87b
 	.4byte	0x82
 	.byte	0x4
-	.uleb128 0x16
-	.4byte	.LASF2812
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2815
+	.byte	0xa
 	.2byte	0x87c
 	.4byte	0x53
 	.byte	0x8
-	.uleb128 0x16
-	.4byte	.LASF2813
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2816
+	.byte	0xa
 	.2byte	0x87d
 	.4byte	0x53
 	.byte	0x9
-	.uleb128 0x16
-	.4byte	.LASF2814
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2817
+	.byte	0xa
 	.2byte	0x87e
 	.4byte	0x82
 	.byte	0xc
-	.uleb128 0x16
-	.4byte	.LASF2815
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2818
+	.byte	0xa
 	.2byte	0x87f
-	.4byte	0x286
+	.4byte	0x21e
 	.byte	0x10
-	.uleb128 0x16
-	.4byte	.LASF2816
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2819
+	.byte	0xa
 	.2byte	0x880
-	.4byte	0x286
+	.4byte	0x21e
 	.byte	0x14
-	.uleb128 0x16
-	.4byte	.LASF2817
-	.byte	0xc
+	.uleb128 0x12
+	.4byte	.LASF2820
+	.byte	0xa
 	.2byte	0x881
-	.4byte	0x37a
+	.4byte	0x312
 	.byte	0x18
 	.byte	0
-	.uleb128 0xe
+	.uleb128 0xc
 	.byte	0x4
-	.4byte	0x2f7
-	.uleb128 0x14
-	.4byte	.LASF2818
-	.byte	0xc
+	.4byte	0x28f
+	.uleb128 0x10
+	.4byte	.LASF2821
+	.byte	0xa
 	.2byte	0x882
-	.4byte	0x308
-	.uleb128 0x17
-	.4byte	.LASF2822
+	.4byte	0x2a0
+	.uleb128 0x13
+	.4byte	.LASF2825
 	.byte	0x1
 	.byte	0x58
 	.4byte	.LFB136
 	.4byte	.LFE136-.LFB136
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x3da
-	.uleb128 0x18
-	.4byte	.LASF2819
+	.4byte	0x372
+	.uleb128 0x14
+	.4byte	.LASF2822
 	.byte	0x1
 	.byte	0x58
-	.4byte	0x3da
+	.4byte	0x372
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x18
-	.4byte	.LASF2820
+	.uleb128 0x14
+	.4byte	.LASF2823
 	.byte	0x1
 	.byte	0x58
 	.4byte	0x53
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -13
-	.uleb128 0x19
+	.uleb128 0x15
 	.ascii	"pin\000"
 	.byte	0x1
 	.byte	0x58
@@ -1407,44 +1209,44 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -14
-	.uleb128 0x18
-	.4byte	.LASF2821
+	.uleb128 0x14
+	.4byte	.LASF2824
 	.byte	0x1
 	.byte	0x58
-	.4byte	0x166
+	.4byte	0x14d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -15
 	.byte	0
-	.uleb128 0xe
+	.uleb128 0xc
 	.byte	0x4
-	.4byte	0x1ce
-	.uleb128 0x17
-	.4byte	.LASF2823
+	.4byte	0x1b5
+	.uleb128 0x13
+	.4byte	.LASF2826
 	.byte	0x1
 	.byte	0x90
 	.4byte	.LFB140
 	.4byte	.LFE140-.LFB140
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x420
-	.uleb128 0x18
-	.4byte	.LASF2819
+	.4byte	0x3b8
+	.uleb128 0x14
+	.4byte	.LASF2822
 	.byte	0x1
 	.byte	0x90
-	.4byte	0x3da
+	.4byte	0x372
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x18
-	.4byte	.LASF2820
+	.uleb128 0x14
+	.4byte	.LASF2823
 	.byte	0x1
 	.byte	0x90
 	.4byte	0x53
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -13
-	.uleb128 0x19
+	.uleb128 0x15
 	.ascii	"pin\000"
 	.byte	0x1
 	.byte	0x90
@@ -1453,32 +1255,32 @@ fft_inst_q31_complex.10166:
 	.byte	0x91
 	.sleb128 -14
 	.byte	0
-	.uleb128 0x17
-	.4byte	.LASF2824
+	.uleb128 0x13
+	.4byte	.LASF2827
 	.byte	0x1
 	.byte	0x9c
 	.4byte	.LFB141
 	.4byte	.LFE141-.LFB141
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x460
-	.uleb128 0x18
-	.4byte	.LASF2819
+	.4byte	0x3f8
+	.uleb128 0x14
+	.4byte	.LASF2822
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0x3da
+	.4byte	0x372
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x18
-	.4byte	.LASF2820
+	.uleb128 0x14
+	.4byte	.LASF2823
 	.byte	0x1
 	.byte	0x9c
 	.4byte	0x53
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -13
-	.uleb128 0x19
+	.uleb128 0x15
 	.ascii	"pin\000"
 	.byte	0x1
 	.byte	0x9c
@@ -1487,32 +1289,32 @@ fft_inst_q31_complex.10166:
 	.byte	0x91
 	.sleb128 -14
 	.byte	0
-	.uleb128 0x1a
-	.4byte	.LASF2825
+	.uleb128 0x16
+	.4byte	.LASF2828
 	.byte	0x1
 	.byte	0xa9
 	.4byte	.LFB142
 	.4byte	.LFE142-.LFB142
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x4ae
-	.uleb128 0x18
-	.4byte	.LASF2819
+	.4byte	0x446
+	.uleb128 0x14
+	.4byte	.LASF2822
 	.byte	0x1
 	.byte	0xa9
-	.4byte	0x3da
+	.4byte	0x372
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x18
-	.4byte	.LASF2820
+	.uleb128 0x14
+	.4byte	.LASF2823
 	.byte	0x1
 	.byte	0xa9
 	.4byte	0x53
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -13
-	.uleb128 0x19
+	.uleb128 0x15
 	.ascii	"pin\000"
 	.byte	0x1
 	.byte	0xa9
@@ -1520,49 +1322,49 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -14
-	.uleb128 0x18
-	.4byte	.LASF2826
+	.uleb128 0x14
+	.4byte	.LASF2829
 	.byte	0x1
 	.byte	0xa9
-	.4byte	0x166
+	.4byte	0x14d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -15
 	.byte	0
-	.uleb128 0x1a
-	.4byte	.LASF2827
+	.uleb128 0x16
+	.4byte	.LASF2830
 	.byte	0x1
 	.byte	0xe6
 	.4byte	.LFB146
 	.4byte	.LFE146-.LFB146
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x4fc
-	.uleb128 0x18
-	.4byte	.LASF2819
+	.4byte	0x494
+	.uleb128 0x14
+	.4byte	.LASF2822
 	.byte	0x1
 	.byte	0xe6
-	.4byte	0x3da
+	.4byte	0x372
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x18
-	.4byte	.LASF2828
+	.uleb128 0x14
+	.4byte	.LASF2831
 	.byte	0x1
 	.byte	0xe6
 	.4byte	0x53
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -13
-	.uleb128 0x18
-	.4byte	.LASF2829
+	.uleb128 0x14
+	.4byte	.LASF2832
 	.byte	0x1
 	.byte	0xe6
 	.4byte	0x82
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
-	.uleb128 0x19
+	.uleb128 0x15
 	.ascii	"out\000"
 	.byte	0x1
 	.byte	0xe6
@@ -1571,24 +1373,24 @@ fft_inst_q31_complex.10166:
 	.byte	0x91
 	.sleb128 -14
 	.byte	0
-	.uleb128 0x1a
-	.4byte	.LASF2830
+	.uleb128 0x16
+	.4byte	.LASF2833
 	.byte	0x2
 	.byte	0xf
 	.4byte	.LFB369
 	.4byte	.LFE369-.LFB369
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x53c
-	.uleb128 0x18
-	.4byte	.LASF2820
+	.4byte	0x4d4
+	.uleb128 0x14
+	.4byte	.LASF2823
 	.byte	0x2
 	.byte	0xf
 	.4byte	0x53
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
-	.uleb128 0x19
+	.uleb128 0x15
 	.ascii	"pin\000"
 	.byte	0x2
 	.byte	0xf
@@ -1596,33 +1398,33 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -10
-	.uleb128 0x18
-	.4byte	.LASF2831
+	.uleb128 0x14
+	.4byte	.LASF2834
 	.byte	0x2
 	.byte	0xf
-	.4byte	0x166
+	.4byte	0x14d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -11
 	.byte	0
-	.uleb128 0x1a
-	.4byte	.LASF2832
+	.uleb128 0x16
+	.4byte	.LASF2835
 	.byte	0x2
 	.byte	0x19
 	.4byte	.LFB371
 	.4byte	.LFE371-.LFB371
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x58a
-	.uleb128 0x18
-	.4byte	.LASF2820
+	.4byte	0x522
+	.uleb128 0x14
+	.4byte	.LASF2823
 	.byte	0x2
 	.byte	0x19
 	.4byte	0x53
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
-	.uleb128 0x19
+	.uleb128 0x15
 	.ascii	"pin\000"
 	.byte	0x2
 	.byte	0x19
@@ -1630,215 +1432,181 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -10
-	.uleb128 0x18
-	.4byte	.LASF2833
+	.uleb128 0x14
+	.4byte	.LASF2836
 	.byte	0x2
 	.byte	0x19
 	.4byte	0x82
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
-	.uleb128 0x18
-	.4byte	.LASF2834
+	.uleb128 0x14
+	.4byte	.LASF2837
 	.byte	0x2
 	.byte	0x19
-	.4byte	0x166
+	.4byte	0x14d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -11
 	.byte	0
-	.uleb128 0x1b
-	.4byte	.LASF2858
+	.uleb128 0x16
+	.4byte	.LASF2838
 	.byte	0x3
-	.byte	0x14
-	.4byte	.LFB373
-	.4byte	.LFE373-.LFB373
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x5be
-	.uleb128 0x1c
-	.4byte	.LASF2835
-	.byte	0x3
-	.byte	0x16
-	.4byte	0x2f7
-	.uleb128 0x5
-	.byte	0x3
-	.4byte	fft_inst_q31_complex.10166
-	.uleb128 0x1d
-	.ascii	"st\000"
-	.byte	0x3
-	.byte	0x1e
-	.4byte	0x267
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -9
-	.byte	0
-	.uleb128 0x1a
-	.4byte	.LASF2836
-	.byte	0x4
 	.byte	0xf
 	.4byte	.LFB378
 	.4byte	.LFE378-.LFB378
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x636
-	.uleb128 0x18
-	.4byte	.LASF2837
-	.byte	0x4
-	.byte	0xf
-	.4byte	0x1e2
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -20
-	.uleb128 0x18
-	.4byte	.LASF2838
-	.byte	0x4
-	.byte	0xf
-	.4byte	0x22a
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -24
-	.uleb128 0x18
+	.4byte	0x58c
+	.uleb128 0x14
 	.4byte	.LASF2839
-	.byte	0x4
+	.byte	0x3
 	.byte	0xf
-	.4byte	0x303
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -26
-	.uleb128 0x18
-	.4byte	.LASF2840
-	.byte	0x4
-	.byte	0x10
-	.4byte	0x636
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -32
-	.uleb128 0x18
-	.4byte	.LASF2841
-	.byte	0x4
-	.byte	0x10
-	.4byte	0x209
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 0
-	.uleb128 0x18
-	.4byte	.LASF2842
-	.byte	0x4
-	.byte	0x10
-	.4byte	0x641
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 4
-	.uleb128 0x1c
-	.4byte	.LASF2843
-	.byte	0x4
-	.byte	0x13
-	.4byte	0x1fe
+	.4byte	0x1c9
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.byte	0
-	.uleb128 0x11
-	.4byte	0x1d9
-	.uleb128 0xe
-	.byte	0x4
-	.4byte	0x214
-	.uleb128 0x11
-	.4byte	0x63b
-	.uleb128 0x1e
+	.uleb128 0x14
+	.4byte	.LASF2840
+	.byte	0x3
+	.byte	0xf
+	.4byte	0x206
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x14
+	.4byte	.LASF2841
+	.byte	0x3
+	.byte	0xf
+	.4byte	0x29b
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -18
+	.uleb128 0x14
+	.4byte	.LASF2842
+	.byte	0x3
+	.byte	0x10
+	.4byte	0x58c
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x14
+	.4byte	.LASF2843
+	.byte	0x3
+	.byte	0x10
+	.4byte	0x1e5
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
+	.uleb128 0x14
 	.4byte	.LASF2844
+	.byte	0x3
+	.byte	0x10
+	.4byte	0x597
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 4
+	.byte	0
+	.uleb128 0xf
+	.4byte	0x1c0
+	.uleb128 0xc
 	.byte	0x4
-	.byte	0x23
+	.4byte	0x1f0
+	.uleb128 0xf
+	.4byte	0x591
+	.uleb128 0x17
+	.4byte	.LASF2845
+	.byte	0x3
+	.byte	0x22
 	.4byte	.LFB379
 	.4byte	.LFE379-.LFB379
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x1e
-	.4byte	.LASF2845
-	.byte	0x5
+	.uleb128 0x17
+	.4byte	.LASF2846
+	.byte	0x4
 	.byte	0xc
 	.4byte	.LFB380
 	.4byte	.LFE380-.LFB380
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x1e
-	.4byte	.LASF2846
-	.byte	0x5
-	.byte	0x21
+	.uleb128 0x17
+	.4byte	.LASF2847
+	.byte	0x4
+	.byte	0x23
 	.4byte	.LFB381
 	.4byte	.LFE381-.LFB381
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x1e
-	.4byte	.LASF2847
-	.byte	0x5
-	.byte	0x28
+	.uleb128 0x17
+	.4byte	.LASF2848
+	.byte	0x4
+	.byte	0x2a
 	.4byte	.LFB382
 	.4byte	.LFE382-.LFB382
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x1f
+	.uleb128 0x18
 	.4byte	.LASF2859
-	.byte	0x5
-	.byte	0x2e
+	.byte	0x4
+	.byte	0x35
 	.4byte	.LFB383
 	.4byte	.LFE383-.LFB383
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x20
-	.4byte	.LASF2848
-	.byte	0xd
-	.2byte	0x616
-	.4byte	0x6a7
-	.uleb128 0x7
-	.4byte	0x77
-	.uleb128 0x21
+	.uleb128 0x19
 	.4byte	.LASF2849
-	.byte	0xe
-	.byte	0x35
-	.4byte	0x6b7
-	.uleb128 0x11
-	.4byte	0x82
-	.uleb128 0x21
+	.byte	0xb
+	.2byte	0x616
+	.4byte	0x5fd
+	.uleb128 0x5
+	.4byte	0x77
+	.uleb128 0x1a
 	.4byte	.LASF2850
-	.byte	0xe
-	.byte	0x3d
-	.4byte	0x6b7
-	.uleb128 0x21
-	.4byte	.LASF2851
-	.byte	0xf
-	.byte	0x3b
-	.4byte	0x380
-	.uleb128 0x21
-	.4byte	.LASF2852
-	.byte	0xf
-	.byte	0x3c
-	.4byte	0x380
-	.uleb128 0x8
+	.byte	0xc
+	.byte	0x35
+	.4byte	0x60d
+	.uleb128 0xf
 	.4byte	0x82
-	.4byte	0x6ee
-	.uleb128 0x22
-	.4byte	0xbb
-	.2byte	0x7ff
-	.byte	0
-	.uleb128 0x21
+	.uleb128 0x1a
+	.4byte	.LASF2851
+	.byte	0xc
+	.byte	0x3d
+	.4byte	0x60d
+	.uleb128 0x1a
+	.4byte	.LASF2852
+	.byte	0xd
+	.byte	0x3b
+	.4byte	0x318
+	.uleb128 0x1a
 	.4byte	.LASF2853
-	.byte	0x10
-	.byte	0x2d
-	.4byte	0x6dd
-	.uleb128 0x8
-	.4byte	0x65
-	.4byte	0x70a
-	.uleb128 0x22
-	.4byte	0xbb
+	.byte	0xd
+	.byte	0x3c
+	.4byte	0x318
+	.uleb128 0x6
+	.4byte	0x82
+	.4byte	0x644
+	.uleb128 0x1b
+	.4byte	0xa2
 	.2byte	0x7ff
 	.byte	0
-	.uleb128 0x21
+	.uleb128 0x1a
 	.4byte	.LASF2854
-	.byte	0x10
+	.byte	0xe
 	.byte	0x2e
-	.4byte	0x6f9
+	.4byte	0x633
+	.uleb128 0x6
+	.4byte	0x65
+	.4byte	0x660
+	.uleb128 0x1b
+	.4byte	0xa2
+	.2byte	0x7ff
+	.byte	0
+	.uleb128 0x1a
+	.4byte	.LASF2855
+	.byte	0xe
+	.byte	0x2f
+	.4byte	0x64f
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -1899,37 +1667,13 @@ fft_inst_q31_complex.10166:
 	.byte	0
 	.byte	0
 	.uleb128 0x5
-	.uleb128 0x4
-	.byte	0x1
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x6
-	.uleb128 0x28
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x1c
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x7
 	.uleb128 0x35
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x8
+	.uleb128 0x6
 	.uleb128 0x1
 	.byte	0x1
 	.uleb128 0x49
@@ -1938,7 +1682,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x9
+	.uleb128 0x7
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
@@ -1947,7 +1691,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0xa
+	.uleb128 0x8
 	.uleb128 0x13
 	.byte	0x1
 	.uleb128 0xb
@@ -1960,7 +1704,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0xb
+	.uleb128 0x9
 	.uleb128 0xd
 	.byte	0
 	.uleb128 0x3
@@ -1975,7 +1719,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0xc
+	.uleb128 0xa
 	.uleb128 0xd
 	.byte	0
 	.uleb128 0x3
@@ -1990,14 +1734,14 @@ fft_inst_q31_complex.10166:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0xd
+	.uleb128 0xb
 	.uleb128 0xf
 	.byte	0
 	.uleb128 0xb
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0xe
+	.uleb128 0xc
 	.uleb128 0xf
 	.byte	0
 	.uleb128 0xb
@@ -2006,7 +1750,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0xf
+	.uleb128 0xd
 	.uleb128 0x15
 	.byte	0x1
 	.uleb128 0x27
@@ -2015,71 +1759,47 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x10
+	.uleb128 0xe
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x11
+	.uleb128 0xf
 	.uleb128 0x26
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
+	.uleb128 0x10
+	.uleb128 0x16
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0x5
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x11
+	.uleb128 0x13
+	.byte	0x1
+	.uleb128 0xb
+	.uleb128 0xb
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0x5
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
 	.uleb128 0x12
-	.uleb128 0x4
-	.byte	0x1
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x13
-	.uleb128 0x28
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x1c
-	.uleb128 0xd
-	.byte	0
-	.byte	0
-	.uleb128 0x14
-	.uleb128 0x16
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x15
-	.uleb128 0x13
-	.byte	0x1
-	.uleb128 0xb
-	.uleb128 0xb
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x16
 	.uleb128 0xd
 	.byte	0
 	.uleb128 0x3
@@ -2094,7 +1814,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x17
+	.uleb128 0x13
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3
@@ -2117,7 +1837,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x18
+	.uleb128 0x14
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -2132,7 +1852,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x19
+	.uleb128 0x15
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -2147,7 +1867,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x1a
+	.uleb128 0x16
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3
@@ -2170,58 +1890,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x1b
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2116
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1c
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x1d
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x1e
+	.uleb128 0x17
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3
@@ -2240,7 +1909,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x1f
+	.uleb128 0x18
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -2261,7 +1930,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x20
+	.uleb128 0x19
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -2278,7 +1947,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x21
+	.uleb128 0x1a
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -2295,7 +1964,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x22
+	.uleb128 0x1b
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
@@ -2306,7 +1975,7 @@ fft_inst_q31_complex.10166:
 	.byte	0
 	.byte	0
 	.section	.debug_aranges,"",%progbits
-	.4byte	0x84
+	.4byte	0x7c
 	.2byte	0x2
 	.4byte	.Ldebug_info0
 	.byte	0x4
@@ -2327,8 +1996,6 @@ fft_inst_q31_complex.10166:
 	.4byte	.LFE369-.LFB369
 	.4byte	.LFB371
 	.4byte	.LFE371-.LFB371
-	.4byte	.LFB373
-	.4byte	.LFE373-.LFB373
 	.4byte	.LFB378
 	.4byte	.LFE378-.LFB378
 	.4byte	.LFB379
@@ -2359,8 +2026,6 @@ fft_inst_q31_complex.10166:
 	.4byte	.LFE369
 	.4byte	.LFB371
 	.4byte	.LFE371
-	.4byte	.LFB373
-	.4byte	.LFE373
 	.4byte	.LFB378
 	.4byte	.LFE378
 	.4byte	.LFB379
@@ -2382,7 +2047,7 @@ fft_inst_q31_complex.10166:
 	.4byte	.Ldebug_line0
 	.byte	0x3
 	.uleb128 0
-	.uleb128 0x5
+	.uleb128 0x4
 	.byte	0x5
 	.uleb128 0x1
 	.4byte	.LASF0
@@ -3483,49 +3148,49 @@ fft_inst_q31_complex.10166:
 	.4byte	.LASF364
 	.byte	0x3
 	.uleb128 0x9
-	.uleb128 0x10
+	.uleb128 0xe
 	.byte	0x5
 	.uleb128 0xa
 	.4byte	.LASF365
-	.file 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+	.file 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 	.byte	0x3
 	.uleb128 0xc
-	.uleb128 0x11
+	.uleb128 0xf
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF366
-	.file 18 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/FreeRTOS.h"
+	.file 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/FreeRTOS.h"
 	.byte	0x3
 	.uleb128 0xc
-	.uleb128 0x12
+	.uleb128 0x10
 	.byte	0x5
 	.uleb128 0x47
 	.4byte	.LASF367
-	.file 19 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stddef.h"
+	.file 17 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stddef.h"
 	.byte	0x3
 	.uleb128 0x4c
-	.uleb128 0x13
+	.uleb128 0x11
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF368
-	.file 20 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\redlib_version.h"
+	.file 18 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\redlib_version.h"
 	.byte	0x3
 	.uleb128 0xb
-	.uleb128 0x14
+	.uleb128 0x12
 	.byte	0x7
 	.4byte	.Ldebug_macro1
 	.byte	0x4
 	.byte	0x5
 	.uleb128 0xe
 	.4byte	.LASF371
-	.file 21 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig.h"
+	.file 19 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig.h"
 	.byte	0x3
 	.uleb128 0x11
-	.uleb128 0x15
-	.file 22 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h"
+	.uleb128 0x13
+	.file 20 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h"
 	.byte	0x3
 	.uleb128 0x19
-	.uleb128 0x16
+	.uleb128 0x14
 	.byte	0x7
 	.4byte	.Ldebug_macro2
 	.byte	0x4
@@ -3535,90 +3200,91 @@ fft_inst_q31_complex.10166:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x5b
-	.uleb128 0x6
+	.uleb128 0x5
 	.byte	0x5
 	.uleb128 0xb
 	.4byte	.LASF421
 	.byte	0x3
 	.uleb128 0x13
-	.uleb128 0x15
+	.uleb128 0x13
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro4
 	.byte	0x4
-	.file 23 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/FreeRTOSConfig.h"
+	.file 21 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/FreeRTOSConfig.h"
 	.byte	0x3
 	.uleb128 0x62
-	.uleb128 0x17
+	.uleb128 0x15
 	.byte	0x5
 	.uleb128 0x4
 	.4byte	.LASF640
-	.file 24 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/board.h"
+	.file 22 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/board.h"
 	.byte	0x3
 	.uleb128 0x8
-	.uleb128 0x18
+	.uleb128 0x16
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF641
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0xe
+	.uleb128 0xc
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF642
+	.file 23 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/lpc_types.h"
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0xb
+	.uleb128 0x17
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF643
-	.file 25 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdbool.h"
+	.file 24 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdbool.h"
 	.byte	0x3
 	.uleb128 0x24
-	.uleb128 0x19
+	.uleb128 0x18
 	.byte	0x7
 	.4byte	.Ldebug_macro5
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro6
 	.byte	0x4
-	.file 26 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/sys_config.h"
+	.file 25 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/sys_config.h"
 	.byte	0x3
 	.uleb128 0x24
-	.uleb128 0x1a
+	.uleb128 0x19
 	.byte	0x7
 	.4byte	.Ldebug_macro7
 	.byte	0x4
-	.file 27 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/cmsis.h"
+	.file 26 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/cmsis.h"
 	.byte	0x3
 	.uleb128 0x25
-	.uleb128 0x1b
+	.uleb128 0x1a
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF668
-	.file 28 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/cmsis_175x_6x.h"
+	.file 27 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/cmsis_175x_6x.h"
 	.byte	0x3
 	.uleb128 0x2c
-	.uleb128 0x1c
+	.uleb128 0x1b
 	.byte	0x7
 	.4byte	.Ldebug_macro8
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x2e
-	.uleb128 0xd
+	.uleb128 0xb
 	.byte	0x7
 	.4byte	.Ldebug_macro9
-	.file 29 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/core_cmInstr.h"
+	.file 28 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/core_cmInstr.h"
 	.byte	0x3
 	.uleb128 0x88
-	.uleb128 0x1d
+	.uleb128 0x1c
 	.byte	0x7
 	.4byte	.Ldebug_macro10
 	.byte	0x4
-	.file 30 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/core_cmFunc.h"
+	.file 29 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/core_cmFunc.h"
 	.byte	0x3
 	.uleb128 0x89
-	.uleb128 0x1e
+	.uleb128 0x1d
 	.byte	0x5
 	.uleb128 0x27
 	.4byte	.LASF690
@@ -3627,64 +3293,64 @@ fft_inst_q31_complex.10166:
 	.4byte	.Ldebug_macro11
 	.byte	0x4
 	.byte	0x4
-	.file 31 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/chip_lpc175x_6x.h"
+	.file 30 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/chip_lpc175x_6x.h"
 	.byte	0x3
 	.uleb128 0x8b
-	.uleb128 0x1f
+	.uleb128 0x1e
 	.byte	0x7
 	.4byte	.Ldebug_macro12
-	.file 32 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/sysctl_17xx_40xx.h"
+	.file 31 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/sysctl_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa2
-	.uleb128 0x20
+	.uleb128 0x1f
 	.byte	0x7
 	.4byte	.Ldebug_macro13
 	.byte	0x4
-	.file 33 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/clock_17xx_40xx.h"
+	.file 32 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/clock_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa3
-	.uleb128 0x21
+	.uleb128 0x20
 	.byte	0x7
 	.4byte	.Ldebug_macro14
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xa4
-	.uleb128 0x7
+	.uleb128 0x6
 	.byte	0x7
 	.4byte	.Ldebug_macro15
 	.byte	0x4
-	.file 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/adc_17xx_40xx.h"
+	.file 33 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/adc_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa5
-	.uleb128 0x22
+	.uleb128 0x21
 	.byte	0x7
 	.4byte	.Ldebug_macro16
 	.byte	0x4
-	.file 35 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/can_17xx_40xx.h"
+	.file 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/can_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa6
-	.uleb128 0x23
+	.uleb128 0x22
 	.byte	0x7
 	.4byte	.Ldebug_macro17
 	.byte	0x4
-	.file 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/dac_17xx_40xx.h"
+	.file 35 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/dac_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa7
-	.uleb128 0x24
+	.uleb128 0x23
 	.byte	0x7
 	.4byte	.Ldebug_macro18
 	.byte	0x4
-	.file 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/enet_17xx_40xx.h"
+	.file 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/enet_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa8
-	.uleb128 0x25
+	.uleb128 0x24
 	.byte	0x7
 	.4byte	.Ldebug_macro19
 	.byte	0x4
-	.file 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/gpdma_17xx_40xx.h"
+	.file 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/gpdma_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa9
-	.uleb128 0x26
+	.uleb128 0x25
 	.byte	0x7
 	.4byte	.Ldebug_macro20
 	.byte	0x4
@@ -3694,143 +3360,143 @@ fft_inst_q31_complex.10166:
 	.byte	0x7
 	.4byte	.Ldebug_macro21
 	.byte	0x4
-	.file 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/gpioint_17xx_40xx.h"
+	.file 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/gpioint_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xab
-	.uleb128 0x27
+	.uleb128 0x26
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF1685
 	.byte	0x4
-	.file 40 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/i2c_17xx_40xx.h"
+	.file 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/i2c_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xac
-	.uleb128 0x28
+	.uleb128 0x27
 	.byte	0x7
 	.4byte	.Ldebug_macro22
 	.byte	0x4
-	.file 41 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/i2s_17xx_40xx.h"
+	.file 40 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/i2s_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xad
-	.uleb128 0x29
+	.uleb128 0x28
 	.byte	0x7
 	.4byte	.Ldebug_macro23
 	.byte	0x4
-	.file 42 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/mcpwm_17xx_40xx.h"
+	.file 41 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/mcpwm_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xae
-	.uleb128 0x2a
+	.uleb128 0x29
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF1832
 	.byte	0x4
-	.file 43 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/pmu_17xx_40xx.h"
+	.file 42 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/pmu_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xaf
-	.uleb128 0x2b
+	.uleb128 0x2a
 	.byte	0x7
 	.4byte	.Ldebug_macro24
 	.byte	0x4
-	.file 44 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/qei_17xx_40xx.h"
+	.file 43 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/qei_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb0
-	.uleb128 0x2c
+	.uleb128 0x2b
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF1843
 	.byte	0x4
-	.file 45 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/ritimer_17xx_40xx.h"
+	.file 44 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/ritimer_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb1
-	.uleb128 0x2d
+	.uleb128 0x2c
 	.byte	0x7
 	.4byte	.Ldebug_macro25
 	.byte	0x4
-	.file 46 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/rtc_17xx_40xx.h"
+	.file 45 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/rtc_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb2
-	.uleb128 0x2e
+	.uleb128 0x2d
 	.byte	0x7
 	.4byte	.Ldebug_macro26
 	.byte	0x4
-	.file 47 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/spi_17xx_40xx.h"
+	.file 46 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/spi_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb3
-	.uleb128 0x2f
+	.uleb128 0x2e
 	.byte	0x7
 	.4byte	.Ldebug_macro27
 	.byte	0x4
-	.file 48 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/ssp_17xx_40xx.h"
+	.file 47 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/ssp_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb4
-	.uleb128 0x30
+	.uleb128 0x2f
 	.byte	0x7
 	.4byte	.Ldebug_macro28
 	.byte	0x4
-	.file 49 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/timer_17xx_40xx.h"
+	.file 48 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/timer_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb5
-	.uleb128 0x31
+	.uleb128 0x30
 	.byte	0x7
 	.4byte	.Ldebug_macro29
 	.byte	0x4
-	.file 50 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/uart_17xx_40xx.h"
+	.file 49 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/uart_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb6
-	.uleb128 0x32
+	.uleb128 0x31
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF1963
-	.file 51 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/ring_buffer.h"
+	.file 50 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/ring_buffer.h"
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0x33
+	.uleb128 0x32
 	.byte	0x7
 	.4byte	.Ldebug_macro30
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro31
 	.byte	0x4
-	.file 52 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/usb_17xx_40xx.h"
+	.file 51 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/usb_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb7
-	.uleb128 0x34
+	.uleb128 0x33
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF2084
 	.byte	0x4
-	.file 53 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/wwdt_17xx_40xx.h"
+	.file 52 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/wwdt_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb8
-	.uleb128 0x35
+	.uleb128 0x34
 	.byte	0x7
 	.4byte	.Ldebug_macro32
 	.byte	0x4
-	.file 54 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/fmc_17xx_40xx.h"
+	.file 53 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/fmc_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb9
-	.uleb128 0x36
+	.uleb128 0x35
 	.byte	0x7
 	.4byte	.Ldebug_macro33
 	.byte	0x4
-	.file 55 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/romapi_17xx_40xx.h"
+	.file 54 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/romapi_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xba
-	.uleb128 0x37
+	.uleb128 0x36
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF2099
-	.file 56 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/iap.h"
+	.file 55 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/iap.h"
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0x38
+	.uleb128 0x37
 	.byte	0x7
 	.4byte	.Ldebug_macro34
 	.byte	0x4
-	.file 57 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/error.h"
+	.file 56 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/error.h"
 	.byte	0x3
 	.uleb128 0x24
-	.uleb128 0x39
+	.uleb128 0x38
 	.byte	0x7
 	.4byte	.Ldebug_macro35
 	.byte	0x4
@@ -3842,27 +3508,27 @@ fft_inst_q31_complex.10166:
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro36
-	.file 58 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/board_api.h"
+	.file 57 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/board_api.h"
 	.byte	0x3
 	.uleb128 0xdb
-	.uleb128 0x3a
+	.uleb128 0x39
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF2167
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0xb
+	.uleb128 0x17
 	.byte	0x4
-	.file 59 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdio.h"
+	.file 58 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdio.h"
 	.byte	0x3
 	.uleb128 0x24
-	.uleb128 0x3b
+	.uleb128 0x3a
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF2168
 	.byte	0x3
 	.uleb128 0x11
-	.uleb128 0x15
+	.uleb128 0x13
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro37
@@ -3870,16 +3536,16 @@ fft_inst_q31_complex.10166:
 	.byte	0x7
 	.4byte	.Ldebug_macro38
 	.byte	0x4
-	.file 60 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/lpc_phy.h"
+	.file 59 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/lpc_phy.h"
 	.byte	0x3
 	.uleb128 0xdc
-	.uleb128 0x3c
+	.uleb128 0x3b
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF2197
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0x18
+	.uleb128 0x16
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro39
@@ -3890,37 +3556,37 @@ fft_inst_q31_complex.10166:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x65
-	.uleb128 0x8
+	.uleb128 0x7
 	.byte	0x7
 	.4byte	.Ldebug_macro41
 	.byte	0x4
-	.file 61 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/portable.h"
+	.file 60 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/portable.h"
 	.byte	0x3
 	.uleb128 0x68
-	.uleb128 0x3d
+	.uleb128 0x3c
 	.byte	0x5
 	.uleb128 0x4b
 	.4byte	.LASF2296
-	.file 62 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/deprecated_definitions.h"
+	.file 61 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/deprecated_definitions.h"
 	.byte	0x3
 	.uleb128 0x57
-	.uleb128 0x3e
+	.uleb128 0x3d
 	.byte	0x5
 	.uleb128 0x47
 	.4byte	.LASF2297
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x5e
-	.uleb128 0x9
+	.uleb128 0x8
 	.byte	0x7
 	.4byte	.Ldebug_macro42
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro43
-	.file 63 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/mpu_wrappers.h"
+	.file 62 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/mpu_wrappers.h"
 	.byte	0x3
 	.uleb128 0x85
-	.uleb128 0x3f
+	.uleb128 0x3e
 	.byte	0x7
 	.4byte	.Ldebug_macro44
 	.byte	0x4
@@ -3930,31 +3596,31 @@ fft_inst_q31_complex.10166:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0xa
+	.uleb128 0x9
 	.byte	0x5
 	.uleb128 0x48
 	.4byte	.LASF2475
-	.file 64 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/list.h"
+	.file 63 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/list.h"
 	.byte	0x3
 	.uleb128 0x4e
-	.uleb128 0x40
+	.uleb128 0x3f
 	.byte	0x7
 	.4byte	.Ldebug_macro46
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro47
 	.byte	0x4
-	.file 65 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/semphr.h"
+	.file 64 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/semphr.h"
 	.byte	0x3
 	.uleb128 0x10
-	.uleb128 0x41
+	.uleb128 0x40
 	.byte	0x5
 	.uleb128 0x47
 	.4byte	.LASF2525
-	.file 66 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/queue.h"
+	.file 65 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/queue.h"
 	.byte	0x3
 	.uleb128 0x4d
-	.uleb128 0x42
+	.uleb128 0x41
 	.byte	0x7
 	.4byte	.Ldebug_macro48
 	.byte	0x4
@@ -3963,41 +3629,41 @@ fft_inst_q31_complex.10166:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x11
-	.uleb128 0x42
+	.uleb128 0x41
 	.byte	0x4
-	.file 67 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\string.h"
+	.file 66 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\string.h"
 	.byte	0x3
 	.uleb128 0x13
-	.uleb128 0x43
+	.uleb128 0x42
 	.byte	0x5
 	.uleb128 0xa
 	.4byte	.LASF2570
 	.byte	0x3
 	.uleb128 0x12
-	.uleb128 0x15
+	.uleb128 0x13
 	.byte	0x4
 	.byte	0x4
-	.file 68 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\math.h"
+	.file 67 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\math.h"
 	.byte	0x3
 	.uleb128 0x14
-	.uleb128 0x44
+	.uleb128 0x43
 	.byte	0x7
 	.4byte	.Ldebug_macro50
 	.byte	0x4
-	.file 69 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\CMSIS_DSPLIB_CM3\\inc/arm_math.h"
+	.file 68 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\CMSIS_DSPLIB_CM3\\inc/arm_math.h"
 	.byte	0x3
 	.uleb128 0x17
-	.uleb128 0x45
+	.uleb128 0x44
 	.byte	0x7
 	.4byte	.Ldebug_macro51
 	.byte	0x3
 	.uleb128 0x25
-	.uleb128 0xc
+	.uleb128 0xa
 	.byte	0x7
 	.4byte	.Ldebug_macro52
 	.byte	0x3
 	.uleb128 0x110
-	.uleb128 0xd
+	.uleb128 0xb
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro53
@@ -4006,33 +3672,34 @@ fft_inst_q31_complex.10166:
 	.byte	0x7
 	.4byte	.Ldebug_macro54
 	.byte	0x4
-	.file 70 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header.h"
+	.file 69 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header.h"
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0x46
+	.uleb128 0x45
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF2653
+	.4byte	.LASF2657
 	.byte	0x3
 	.uleb128 0xe
 	.uleb128 0x2
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF2654
+	.4byte	.LASF2658
 	.byte	0x3
 	.uleb128 0xc
-	.uleb128 0x10
+	.uleb128 0xe
 	.byte	0x4
 	.byte	0x4
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xe
-	.uleb128 0xf
+	.uleb128 0xd
 	.byte	0x7
 	.4byte	.Ldebug_macro55
+	.file 70 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
 	.byte	0x3
 	.uleb128 0x42
-	.uleb128 0x3
+	.uleb128 0x46
 	.byte	0x7
 	.4byte	.Ldebug_macro56
 	.byte	0x4
@@ -4048,7 +3715,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x48
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF2669
+	.4byte	.LASF2673
 	.file 73 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_init.h"
 	.byte	0x3
 	.uleb128 0x78
@@ -4089,7 +3756,7 @@ fft_inst_q31_complex.10166:
 	.4byte	.Ldebug_macro60
 	.byte	0x3
 	.uleb128 0x34
-	.uleb128 0x4
+	.uleb128 0x3
 	.byte	0x4
 	.byte	0x4
 	.byte	0x7
@@ -11091,7 +10758,7 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x1c77
 	.4byte	.LASF2631
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.utilidades.h.27.e4d335e1bbd5519d003d172d29e955da,comdat
+	.section	.debug_macro,"G",%progbits,wm4.utilidades.h.27.efb59e6b96e8595cc9b658b21c6439eb,comdat
 .Ldebug_macro54:
 	.2byte	0x4
 	.byte	0
@@ -11147,17 +10814,29 @@ fft_inst_q31_complex.10166:
 	.uleb128 0x5c
 	.4byte	.LASF2648
 	.byte	0x5
-	.uleb128 0x66
+	.uleb128 0x60
 	.4byte	.LASF2649
 	.byte	0x5
-	.uleb128 0x67
+	.uleb128 0x61
 	.4byte	.LASF2650
 	.byte	0x5
-	.uleb128 0x68
+	.uleb128 0x62
 	.4byte	.LASF2651
 	.byte	0x5
-	.uleb128 0x73
+	.uleb128 0x66
 	.4byte	.LASF2652
+	.byte	0x5
+	.uleb128 0x67
+	.4byte	.LASF2653
+	.byte	0x5
+	.uleb128 0x68
+	.4byte	.LASF2654
+	.byte	0x5
+	.uleb128 0x73
+	.4byte	.LASF2655
+	.byte	0x5
+	.uleb128 0x7c
+	.4byte	.LASF2656
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.fft_header.h.9.af3338477eda344c862d211ef5de3126,comdat
 .Ldebug_macro55:
@@ -11165,34 +10844,34 @@ fft_inst_q31_complex.10166:
 	.byte	0
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF2655
-	.byte	0x5
-	.uleb128 0x2c
-	.4byte	.LASF2656
-	.byte	0x5
-	.uleb128 0x2d
-	.4byte	.LASF2657
-	.byte	0x5
-	.uleb128 0x2e
-	.4byte	.LASF2658
-	.byte	0x5
-	.uleb128 0x2f
 	.4byte	.LASF2659
 	.byte	0x5
-	.uleb128 0x30
+	.uleb128 0x2c
 	.4byte	.LASF2660
 	.byte	0x5
-	.uleb128 0x31
+	.uleb128 0x2d
 	.4byte	.LASF2661
 	.byte	0x5
-	.uleb128 0x32
+	.uleb128 0x2e
 	.4byte	.LASF2662
 	.byte	0x5
-	.uleb128 0x33
+	.uleb128 0x2f
 	.4byte	.LASF2663
 	.byte	0x5
-	.uleb128 0x34
+	.uleb128 0x30
 	.4byte	.LASF2664
+	.byte	0x5
+	.uleb128 0x31
+	.4byte	.LASF2665
+	.byte	0x5
+	.uleb128 0x32
+	.4byte	.LASF2666
+	.byte	0x5
+	.uleb128 0x33
+	.4byte	.LASF2667
+	.byte	0x5
+	.uleb128 0x34
+	.4byte	.LASF2668
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.fft_init.h.13.49cf017b75dd80586daab5b37078043a,comdat
 .Ldebug_macro56:
@@ -11200,36 +10879,36 @@ fft_inst_q31_complex.10166:
 	.byte	0
 	.byte	0x5
 	.uleb128 0xd
-	.4byte	.LASF2665
+	.4byte	.LASF2669
 	.byte	0x5
 	.uleb128 0xe
-	.4byte	.LASF2666
+	.4byte	.LASF2670
 	.byte	0x5
 	.uleb128 0xf
-	.4byte	.LASF2667
+	.4byte	.LASF2671
 	.byte	0x5
 	.uleb128 0x10
-	.4byte	.LASF2668
+	.4byte	.LASF2672
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.adc_dac_header.h.9.6c8d18ee8f36ee8ef57c5e8c9f59a1c2,comdat
+	.section	.debug_macro,"G",%progbits,wm4.adc_dac_header.h.9.21d9b17796ee26f62a9aefdb2c3b945c,comdat
 .Ldebug_macro57:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF2670
-	.byte	0x5
-	.uleb128 0x29
-	.4byte	.LASF2671
-	.byte	0x5
-	.uleb128 0x2a
-	.4byte	.LASF2672
-	.byte	0x5
-	.uleb128 0x2e
-	.4byte	.LASF2673
-	.byte	0x5
-	.uleb128 0x2f
 	.4byte	.LASF2674
+	.byte	0x5
+	.uleb128 0x32
+	.4byte	.LASF2675
+	.byte	0x5
+	.uleb128 0x33
+	.4byte	.LASF2676
+	.byte	0x5
+	.uleb128 0x37
+	.4byte	.LASF2677
+	.byte	0x5
+	.uleb128 0x38
+	.4byte	.LASF2678
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.timer_header.h.11.374d3410c558a9ab7d702b0dc9c61e5d,comdat
 .Ldebug_macro58:
@@ -11237,10 +10916,10 @@ fft_inst_q31_complex.10166:
 	.byte	0
 	.byte	0x5
 	.uleb128 0xb
-	.4byte	.LASF2675
+	.4byte	.LASF2679
 	.byte	0x5
 	.uleb128 0x1b
-	.4byte	.LASF2676
+	.4byte	.LASF2680
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.tft_header.h.9.9c33551a99915182e4cce0b5b92c00f9,comdat
 .Ldebug_macro59:
@@ -11248,193 +10927,193 @@ fft_inst_q31_complex.10166:
 	.byte	0
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF2677
-	.byte	0x5
-	.uleb128 0x58
-	.4byte	.LASF2678
-	.byte	0x5
-	.uleb128 0x5c
-	.4byte	.LASF2679
-	.byte	0x5
-	.uleb128 0x5d
-	.4byte	.LASF2680
-	.byte	0x5
-	.uleb128 0x5e
 	.4byte	.LASF2681
 	.byte	0x5
-	.uleb128 0x5f
+	.uleb128 0x58
 	.4byte	.LASF2682
 	.byte	0x5
-	.uleb128 0x60
+	.uleb128 0x5c
 	.4byte	.LASF2683
 	.byte	0x5
-	.uleb128 0x61
+	.uleb128 0x5d
 	.4byte	.LASF2684
 	.byte	0x5
-	.uleb128 0x62
+	.uleb128 0x5e
 	.4byte	.LASF2685
 	.byte	0x5
-	.uleb128 0x63
+	.uleb128 0x5f
 	.4byte	.LASF2686
 	.byte	0x5
-	.uleb128 0x64
+	.uleb128 0x60
 	.4byte	.LASF2687
 	.byte	0x5
-	.uleb128 0x65
+	.uleb128 0x61
 	.4byte	.LASF2688
 	.byte	0x5
-	.uleb128 0x66
+	.uleb128 0x62
 	.4byte	.LASF2689
 	.byte	0x5
-	.uleb128 0x67
+	.uleb128 0x63
 	.4byte	.LASF2690
 	.byte	0x5
-	.uleb128 0x68
+	.uleb128 0x64
 	.4byte	.LASF2691
 	.byte	0x5
-	.uleb128 0x6a
+	.uleb128 0x65
 	.4byte	.LASF2692
 	.byte	0x5
-	.uleb128 0x6b
+	.uleb128 0x66
 	.4byte	.LASF2693
 	.byte	0x5
-	.uleb128 0x6c
+	.uleb128 0x67
 	.4byte	.LASF2694
 	.byte	0x5
-	.uleb128 0x6d
+	.uleb128 0x68
 	.4byte	.LASF2695
 	.byte	0x5
-	.uleb128 0x6e
+	.uleb128 0x6a
 	.4byte	.LASF2696
 	.byte	0x5
-	.uleb128 0x6f
+	.uleb128 0x6b
 	.4byte	.LASF2697
 	.byte	0x5
-	.uleb128 0x70
+	.uleb128 0x6c
 	.4byte	.LASF2698
 	.byte	0x5
-	.uleb128 0x71
+	.uleb128 0x6d
 	.4byte	.LASF2699
 	.byte	0x5
-	.uleb128 0x72
+	.uleb128 0x6e
 	.4byte	.LASF2700
 	.byte	0x5
-	.uleb128 0x73
+	.uleb128 0x6f
 	.4byte	.LASF2701
 	.byte	0x5
-	.uleb128 0x74
+	.uleb128 0x70
 	.4byte	.LASF2702
 	.byte	0x5
-	.uleb128 0x75
+	.uleb128 0x71
 	.4byte	.LASF2703
 	.byte	0x5
-	.uleb128 0x76
+	.uleb128 0x72
 	.4byte	.LASF2704
 	.byte	0x5
-	.uleb128 0x78
+	.uleb128 0x73
 	.4byte	.LASF2705
 	.byte	0x5
-	.uleb128 0x79
+	.uleb128 0x74
 	.4byte	.LASF2706
 	.byte	0x5
-	.uleb128 0x7a
+	.uleb128 0x75
 	.4byte	.LASF2707
 	.byte	0x5
-	.uleb128 0x7b
+	.uleb128 0x76
 	.4byte	.LASF2708
 	.byte	0x5
-	.uleb128 0x7c
+	.uleb128 0x78
 	.4byte	.LASF2709
 	.byte	0x5
-	.uleb128 0x7d
+	.uleb128 0x79
 	.4byte	.LASF2710
 	.byte	0x5
-	.uleb128 0x7e
+	.uleb128 0x7a
 	.4byte	.LASF2711
 	.byte	0x5
-	.uleb128 0x7f
+	.uleb128 0x7b
 	.4byte	.LASF2712
 	.byte	0x5
-	.uleb128 0x80
+	.uleb128 0x7c
 	.4byte	.LASF2713
 	.byte	0x5
-	.uleb128 0x81
+	.uleb128 0x7d
 	.4byte	.LASF2714
 	.byte	0x5
-	.uleb128 0x82
+	.uleb128 0x7e
 	.4byte	.LASF2715
 	.byte	0x5
-	.uleb128 0x83
+	.uleb128 0x7f
 	.4byte	.LASF2716
 	.byte	0x5
-	.uleb128 0x84
+	.uleb128 0x80
 	.4byte	.LASF2717
 	.byte	0x5
-	.uleb128 0x88
+	.uleb128 0x81
 	.4byte	.LASF2718
 	.byte	0x5
-	.uleb128 0x89
+	.uleb128 0x82
 	.4byte	.LASF2719
 	.byte	0x5
-	.uleb128 0x8a
+	.uleb128 0x83
 	.4byte	.LASF2720
 	.byte	0x5
-	.uleb128 0x8b
+	.uleb128 0x84
 	.4byte	.LASF2721
 	.byte	0x5
-	.uleb128 0x8c
+	.uleb128 0x88
 	.4byte	.LASF2722
 	.byte	0x5
-	.uleb128 0x8d
+	.uleb128 0x89
 	.4byte	.LASF2723
 	.byte	0x5
-	.uleb128 0x8e
+	.uleb128 0x8a
 	.4byte	.LASF2724
 	.byte	0x5
-	.uleb128 0x8f
+	.uleb128 0x8b
 	.4byte	.LASF2725
 	.byte	0x5
-	.uleb128 0x90
+	.uleb128 0x8c
 	.4byte	.LASF2726
 	.byte	0x5
-	.uleb128 0x91
+	.uleb128 0x8d
 	.4byte	.LASF2727
 	.byte	0x5
-	.uleb128 0x92
+	.uleb128 0x8e
 	.4byte	.LASF2728
 	.byte	0x5
-	.uleb128 0x93
+	.uleb128 0x8f
 	.4byte	.LASF2729
 	.byte	0x5
-	.uleb128 0x94
+	.uleb128 0x90
 	.4byte	.LASF2730
 	.byte	0x5
-	.uleb128 0x95
+	.uleb128 0x91
 	.4byte	.LASF2731
 	.byte	0x5
-	.uleb128 0x96
+	.uleb128 0x92
 	.4byte	.LASF2732
 	.byte	0x5
-	.uleb128 0x97
+	.uleb128 0x93
 	.4byte	.LASF2733
 	.byte	0x5
-	.uleb128 0x99
+	.uleb128 0x94
 	.4byte	.LASF2734
 	.byte	0x5
-	.uleb128 0x9a
+	.uleb128 0x95
 	.4byte	.LASF2735
 	.byte	0x5
-	.uleb128 0x9b
+	.uleb128 0x96
 	.4byte	.LASF2736
 	.byte	0x5
-	.uleb128 0x9c
+	.uleb128 0x97
 	.4byte	.LASF2737
 	.byte	0x5
-	.uleb128 0x9d
+	.uleb128 0x99
 	.4byte	.LASF2738
 	.byte	0x5
-	.uleb128 0x9f
+	.uleb128 0x9a
 	.4byte	.LASF2739
+	.byte	0x5
+	.uleb128 0x9b
+	.4byte	.LASF2740
+	.byte	0x5
+	.uleb128 0x9c
+	.4byte	.LASF2741
+	.byte	0x5
+	.uleb128 0x9d
+	.4byte	.LASF2742
+	.byte	0x5
+	.uleb128 0x9f
+	.4byte	.LASF2743
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.rtos_header.h.11.f118222a0c3672a9232d8b4d49694017,comdat
 .Ldebug_macro60:
@@ -11442,77 +11121,107 @@ fft_inst_q31_complex.10166:
 	.byte	0
 	.byte	0x5
 	.uleb128 0xb
-	.4byte	.LASF2740
+	.4byte	.LASF2744
 	.byte	0x5
 	.uleb128 0x1a
-	.4byte	.LASF2741
+	.4byte	.LASF2745
 	.byte	0x5
 	.uleb128 0x1b
-	.4byte	.LASF2742
+	.4byte	.LASF2746
 	.byte	0x5
 	.uleb128 0x2d
-	.4byte	.LASF2743
+	.4byte	.LASF2747
 	.byte	0x5
 	.uleb128 0x2e
-	.4byte	.LASF2744
+	.4byte	.LASF2748
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.header.h.54.eb107f9c3109b815d8b06eef977e2fb8,comdat
+	.section	.debug_macro,"G",%progbits,wm4.header.h.55.bb54484b9311461e29b31dd901ef5ff0,comdat
 .Ldebug_macro61:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x36
-	.4byte	.LASF2745
-	.byte	0x5
 	.uleb128 0x37
-	.4byte	.LASF2746
-	.byte	0x5
-	.uleb128 0x39
-	.4byte	.LASF2747
-	.byte	0x5
-	.uleb128 0x3a
-	.4byte	.LASF2748
-	.byte	0x5
-	.uleb128 0x3c
 	.4byte	.LASF2749
 	.byte	0x5
-	.uleb128 0x3d
+	.uleb128 0x38
 	.4byte	.LASF2750
 	.byte	0x5
-	.uleb128 0x3f
+	.uleb128 0x3a
 	.4byte	.LASF2751
 	.byte	0x5
-	.uleb128 0x40
+	.uleb128 0x3b
 	.4byte	.LASF2752
 	.byte	0x5
-	.uleb128 0x46
+	.uleb128 0x3d
 	.4byte	.LASF2753
 	.byte	0x5
-	.uleb128 0x47
+	.uleb128 0x3e
 	.4byte	.LASF2754
 	.byte	0x5
-	.uleb128 0x4d
+	.uleb128 0x40
 	.4byte	.LASF2755
 	.byte	0x5
-	.uleb128 0x4e
+	.uleb128 0x41
 	.4byte	.LASF2756
 	.byte	0x5
-	.uleb128 0x54
+	.uleb128 0x47
 	.4byte	.LASF2757
 	.byte	0x5
-	.uleb128 0x55
+	.uleb128 0x48
 	.4byte	.LASF2758
 	.byte	0x5
-	.uleb128 0x57
+	.uleb128 0x4b
 	.4byte	.LASF2759
 	.byte	0x5
-	.uleb128 0x58
+	.uleb128 0x4c
 	.4byte	.LASF2760
+	.byte	0x5
+	.uleb128 0x4f
+	.4byte	.LASF2761
+	.byte	0x5
+	.uleb128 0x50
+	.4byte	.LASF2762
+	.byte	0x5
+	.uleb128 0x53
+	.4byte	.LASF2763
+	.byte	0x5
+	.uleb128 0x54
+	.4byte	.LASF2764
+	.byte	0x5
+	.uleb128 0x5a
+	.4byte	.LASF2765
+	.byte	0x5
+	.uleb128 0x5b
+	.4byte	.LASF2766
+	.byte	0x5
+	.uleb128 0x5d
+	.4byte	.LASF2767
+	.byte	0x5
+	.uleb128 0x5e
+	.4byte	.LASF2768
+	.byte	0x5
+	.uleb128 0x64
+	.4byte	.LASF2769
+	.byte	0x5
+	.uleb128 0x65
+	.4byte	.LASF2770
+	.byte	0x5
+	.uleb128 0x67
+	.4byte	.LASF2771
+	.byte	0x5
+	.uleb128 0x68
+	.4byte	.LASF2772
+	.byte	0x5
+	.uleb128 0x6a
+	.4byte	.LASF2773
+	.byte	0x5
+	.uleb128 0x6b
+	.4byte	.LASF2774
 	.byte	0
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF2852:
+.LASF2853:
 	.ascii	"ifft_inst_q31\000"
 .LASF1763:
 	.ascii	"I2C_CheckError(ErrorCode) (ErrorCode & 0x10000000)\000"
@@ -11526,8 +11235,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"__thumb__ 1\000"
 .LASF1827:
 	.ascii	"I2S_TXMODE_4PIN_ENABLE ((uint32_t) (1 << 2))\000"
-.LASF1436:
-	.ascii	"DAC_VALUE(n) ((uint32_t) ((n & 0x3FF) << 6))\000"
+.LASF1704:
+	.ascii	"I2C_CON_STO (1UL << 4)\000"
 .LASF1141:
 	.ascii	"LPC_CANCR_BASE 0x40040000\000"
 .LASF2640:
@@ -11554,13 +11263,13 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_TSV0_TOTALBYTES 0x0FFFF000\000"
 .LASF1182:
 	.ascii	"LPC_TIMER0 ((LPC_TIMER_T *) LPC_TIMER0_BASE)\000"
-.LASF2684:
+.LASF2688:
 	.ascii	"TFT_COLOR_BLUE 0x001F\000"
 .LASF851:
 	.ascii	"ITM_TCR_DWTENA_Pos 3\000"
-.LASF1201:
-	.ascii	"LPC_CAN2 ((LPC_CAN_T *) LPC_CAN2_BASE)\000"
-.LASF2695:
+.LASF993:
+	.ascii	"TPI_DEVID_PTINVALID_Pos 9\000"
+.LASF2699:
 	.ascii	"TFT_FOREGROUND_GREEN TFT_COLOR_GREEN\000"
 .LASF2206:
 	.ascii	"configMAX_PRIORITIES ( 8 )\000"
@@ -11574,11 +11283,11 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_MAC2_CRCEN 0x00000010\000"
 .LASF612:
 	.ascii	"__SIZEOF_INTMAX __SIZEOF_LONG_LONG\000"
-.LASF2804:
+.LASF2807:
 	.ascii	"bitReverseFlag\000"
 .LASF2174:
 	.ascii	"BUFSIZ (4096)\000"
-.LASF2731:
+.LASF2735:
 	.ascii	"DB13 1,24\000"
 .LASF149:
 	.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
@@ -11588,8 +11297,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"__UACCUM_IBIT__ 16\000"
 .LASF1943:
 	.ascii	"SSP_SR_BITMASK ((uint32_t) (0x1F))\000"
-.LASF993:
-	.ascii	"TPI_DEVID_PTINVALID_Pos 9\000"
+.LASF249:
+	.ascii	"__LACCUM_FBIT__ 31\000"
 .LASF1206:
 	.ascii	"SSP_IRQHandler SSP0_IRQHandler\000"
 .LASF387:
@@ -11633,7 +11342,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"I2C_I2STAT_S_TX_ARB_LOST_M_SLA ((0xB0))\000"
 .LASF1912:
 	.ascii	"SPI_CR_LSB_FIRST_EN ((uint32_t) (1 << 6))\000"
-.LASF2714:
+.LASF2718:
 	.ascii	"TFT_BACKGROUND_CYAN TFT_COLOR_CYAN\000"
 .LASF2074:
 	.ascii	"UART_FDR_BITMASK (0xFF)\000"
@@ -11657,13 +11366,13 @@ fft_inst_q31_complex.10166:
 	.ascii	"UART_MSR_BITMASK (0xFF)\000"
 .LASF284:
 	.ascii	"__USQ_IBIT__ 0\000"
-.LASF2845:
+.LASF2846:
 	.ascii	"main_gpio_init\000"
 .LASF79:
 	.ascii	"__PTRDIFF_MAX__ 0x7fffffff\000"
 .LASF505:
 	.ascii	"__SCNoLEAST16 \"%ho\"\000"
-.LASF2854:
+.LASF2855:
 	.ascii	"buffer_dac_out\000"
 .LASF2108:
 	.ascii	"IAP_REINVOKE_ISP_CMD 57\000"
@@ -11671,7 +11380,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CAN_CMR_STB(n) ((uint32_t) (1 << (n + 5)))\000"
 .LASF1709:
 	.ascii	"I2C_I2STAT_NO_INF ((0xF8))\000"
-.LASF2738:
+.LASF2742:
 	.ascii	"REST 2,5\000"
 .LASF2111:
 	.ascii	"IAP_EEPROM_WRITE 61\000"
@@ -11681,7 +11390,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__STDC__ 1\000"
 .LASF681:
 	.ascii	"__INLINE inline\000"
-.LASF2784:
+.LASF2796:
 	.ascii	"_Bool\000"
 .LASF2480:
 	.ascii	"listFIRST_LIST_INTEGRITY_CHECK_VALUE \000"
@@ -11689,16 +11398,18 @@ fft_inst_q31_complex.10166:
 	.ascii	"LPC_UART3_BASE 0x4009C000\000"
 .LASF225:
 	.ascii	"__ULLFRACT_IBIT__ 0\000"
-.LASF2657:
+.LASF2661:
 	.ascii	"FFT_SIZE_64 64\000"
 .LASF453:
 	.ascii	"__PRIxLEAST8 \"%hhx\"\000"
-.LASF2708:
+.LASF2712:
 	.ascii	"TFT_BACKGROUND_GREEN TFT_COLOR_GREEN\000"
 .LASF600:
 	.ascii	"UINTPTR_MAX 0xffffffffU\000"
 .LASF291:
 	.ascii	"__SA_FBIT__ 15\000"
+.LASF448:
+	.ascii	"__PRIo8 \"%hho\"\000"
 .LASF2243:
 	.ascii	"pdMS_TO_TICKS(xTimeInMs) ( ( TickType_t ) ( ( ( Tic"
 	.ascii	"kType_t ) ( xTimeInMs ) * ( TickType_t ) configTICK"
@@ -11721,6 +11432,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"__UINT64_MAX__ 0xffffffffffffffffULL\000"
 .LASF1171:
 	.ascii	"LPC_GPIOINT ((LPC_GPIOINT_T *) LPC_GPIOINT_BASE)\000"
+.LASF1447:
+	.ascii	"ENET_MAC1_RXFLOWCTRL 0x00000004\000"
 .LASF1685:
 	.ascii	"__GPIOINT_17XX_40XX_H_ \000"
 .LASF1778:
@@ -11764,9 +11477,9 @@ fft_inst_q31_complex.10166:
 	.ascii	"TACT_Pos)\000"
 .LASF17:
 	.ascii	"__SIZEOF_LONG__ 4\000"
-.LASF2790:
+.LASF2801:
 	.ascii	"UBaseType_t\000"
-.LASF2673:
+.LASF2677:
 	.ascii	"DAC_DMA_CANT_MUESTRAS 2048\000"
 .LASF2168:
 	.ascii	"__STDIO_H_INCLUDED \000"
@@ -11793,7 +11506,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CAN_ICR_ERR_SOF (3)\000"
 .LASF1772:
 	.ascii	"I2S_MASTER_MODE (0UL << 5)\000"
-.LASF2725:
+.LASF2729:
 	.ascii	"DB7 1,25\000"
 .LASF990:
 	.ascii	"TPI_DEVID_NRZVALID_Msk (0x1UL << TPI_DEVID_NRZVALID"
@@ -11817,18 +11530,18 @@ fft_inst_q31_complex.10166:
 .LASF1331:
 	.ascii	"CAN_ICR_ERRC_VAL(n) ((uint32_t) (((n) >> 22) & 0x3)"
 	.ascii	")\000"
-.LASF2853:
+.LASF2854:
 	.ascii	"buffer_complex\000"
 .LASF1313:
 	.ascii	"CAN_ICR_ERR_ID20_ID18 (6)\000"
 .LASF904:
 	.ascii	"DWT_CTRL_POSTPRESET_Msk (0xFUL << DWT_CTRL_POSTPRES"
 	.ascii	"ET_Pos)\000"
-.LASF2825:
+.LASF2828:
 	.ascii	"Chip_GPIO_SetPinDIR\000"
-.LASF2785:
+.LASF2797:
 	.ascii	"MASK\000"
-.LASF2666:
+.LASF2670:
 	.ascii	"FFT_INIT_FFT TRUE\000"
 .LASF217:
 	.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
@@ -11914,12 +11627,12 @@ fft_inst_q31_complex.10166:
 .LASF2415:
 	.ascii	"traceEVENT_GROUP_CLEAR_BITS_FROM_ISR(xEventGroup,ux"
 	.ascii	"BitsToClear) \000"
-.LASF2694:
+.LASF2698:
 	.ascii	"TFT_FOREGROUND_RED TFT_COLOR_RED\000"
 .LASF796:
 	.ascii	"SCB_CFSR_MEMFAULTSR_Msk (0xFFUL << SCB_CFSR_MEMFAUL"
 	.ascii	"TSR_Pos)\000"
-.LASF2782:
+.LASF2794:
 	.ascii	"I2CPADCFG\000"
 .LASF1673:
 	.ascii	"GPDMA_BSIZE_32 ((4UL))\000"
@@ -11955,13 +11668,15 @@ fft_inst_q31_complex.10166:
 	.ascii	"DWT_CTRL_CYCEVTENA_Pos 22\000"
 .LASF2313:
 	.ascii	"portYIELD() vPortYield()\000"
+.LASF2656:
+	.ascii	"USE_I2S OFF\000"
 .LASF2499:
 	.ascii	"listGET_OWNER_OF_HEAD_ENTRY(pxList) ( (&( ( pxList "
 	.ascii	")->xListEnd ))->pxNext->pvOwner )\000"
 .LASF804:
 	.ascii	"SCB_DFSR_EXTERNAL_Msk (1UL << SCB_DFSR_EXTERNAL_Pos"
 	.ascii	")\000"
-.LASF2656:
+.LASF2660:
 	.ascii	"FFT_SIZE_32 32\000"
 .LASF2491:
 	.ascii	"listGET_LIST_ITEM_VALUE(pxListItem) ( ( pxListItem "
@@ -12026,7 +11741,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"traceMALLOC(pvAddress,uiSize) \000"
 .LASF556:
 	.ascii	"INT64_MIN (-0x8000000000000000LL)\000"
-.LASF2839:
+.LASF2841:
 	.ascii	"usStackDepth\000"
 .LASF1654:
 	.ascii	"GPDMA_CONN_UART1_Tx ((10UL))\000"
@@ -12082,7 +11797,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CoreDebug ((CoreDebug_Type *) CoreDebug_BASE)\000"
 .LASF7:
 	.ascii	"__GNUC_PATCHLEVEL__ 1\000"
-.LASF2674:
+.LASF2678:
 	.ascii	"DAC_FREQ ADC_FREQ\000"
 .LASF114:
 	.ascii	"__INT_FAST64_MAX__ 0x7fffffffffffffffLL\000"
@@ -12135,7 +11850,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__SIZEOF_INT__ 4\000"
 .LASF344:
 	.ascii	"__ARMEL__ 1\000"
-.LASF2771:
+.LASF2785:
 	.ascii	"uint32_t\000"
 .LASF778:
 	.ascii	"SCB_SHCSR_SYSTICKACT_Msk (1UL << SCB_SHCSR_SYSTICKA"
@@ -12166,8 +11881,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"isnan(x) ((sizeof (x) == sizeof (float)) ? __isnanf"
 	.ascii	"(x) : (sizeof (x) == sizeof (double)) ? __isnand(x)"
 	.ascii	" : __isnanl(x))\000"
-.LASF2775:
-	.ascii	"TRUE\000"
+.LASF1801:
+	.ascii	"I2S_STATE_IRQ ((uint32_t) (1))\000"
 .LASF819:
 	.ascii	"SCnSCB_ACTLR_DISMCYCINT_Pos 0\000"
 .LASF1168:
@@ -12180,8 +11895,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"__SSP_17XX_40XX_H_ \000"
 .LASF2470:
 	.ascii	"tmrTIMER_CALLBACK TimerCallbackFunction_t\000"
-.LASF2774:
-	.ascii	"FALSE\000"
+.LASF2484:
+	.ascii	"listSET_LIST_INTEGRITY_CHECK_1_VALUE(pxList) \000"
 .LASF2178:
 	.ascii	"L_tmpnam 32\000"
 .LASF2155:
@@ -12200,7 +11915,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
 .LASF52:
 	.ascii	"__INT_LEAST64_TYPE__ long long int\000"
-.LASF2770:
+.LASF2784:
 	.ascii	"int32_t\000"
 .LASF763:
 	.ascii	"SCB_SHCSR_USGFAULTENA_Pos 18\000"
@@ -12208,6 +11923,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"MPU_RASR_SRD_Msk (0xFFUL << MPU_RASR_SRD_Pos)\000"
 .LASF2079:
 	.ascii	"UART_SYNCCTRL_FES (1 << 2)\000"
+.LASF2649:
+	.ascii	"DAC_INTERNO_INTERRUPCION 0\000"
 .LASF2247:
 	.ascii	"pdFAIL ( pdFALSE )\000"
 .LASF2601:
@@ -12252,7 +11969,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"FP_ZERO 0\000"
 .LASF1156:
 	.ascii	"LPC_QEI_BASE 0x400BC000\000"
-.LASF2683:
+.LASF2687:
 	.ascii	"TFT_COLOR_GREEN2 0xB723\000"
 .LASF977:
 	.ascii	"TPI_FIFO1_ETM_bytecount_Pos 24\000"
@@ -12316,12 +12033,12 @@ fft_inst_q31_complex.10166:
 	.ascii	"INDEX_MASK 0x0000003F\000"
 .LASF1157:
 	.ascii	"LPC_SYSCTL_BASE 0x400FC000\000"
-.LASF2728:
+.LASF2732:
 	.ascii	"DB10 0,20\000"
 .LASF1098:
 	.ascii	"CoreDebug_DEMCR_VC_CORERESET_Msk (1UL << CoreDebug_"
 	.ascii	"DEMCR_VC_CORERESET_Pos)\000"
-.LASF2698:
+.LASF2702:
 	.ascii	"TFT_FOREGROUND_BLUE2 TFT_COLOR_BLUE2\000"
 .LASF2251:
 	.ascii	"errQUEUE_BLOCKED ( -4 )\000"
@@ -12329,7 +12046,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF1630:
 	.ascii	"GPDMA_DMACCxControl_Prot3 ((1UL << 30))\000"
-.LASF2678:
+.LASF2682:
 	.ascii	"BACKLIGHT_FREC 60\000"
 .LASF1546:
 	.ascii	"ENET_RSV_CONTROLFRAME 0x08000000\000"
@@ -12350,7 +12067,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"I2S_SLAVE_MODE (1UL << 5)\000"
 .LASF2091:
 	.ascii	"WWDT_WDMOD_WDTOF ((uint32_t) (1 << 2))\000"
-.LASF2819:
+.LASF2822:
 	.ascii	"pGPIO\000"
 .LASF2332:
 	.ascii	"MPU_WRAPPERS_H \000"
@@ -12363,11 +12080,11 @@ fft_inst_q31_complex.10166:
 	.ascii	"CAN_GSR_ES ((uint32_t) (1 << 6))\000"
 .LASF2188:
 	.ascii	"getchar() getc(stdin)\000"
-.LASF2818:
+.LASF2821:
 	.ascii	"arm_rfft_instance_q31\000"
 .LASF2528:
 	.ascii	"queueSEND_TO_FRONT ( ( BaseType_t ) 1 )\000"
-.LASF2750:
+.LASF2754:
 	.ascii	"BUTTON2 1, 10\000"
 .LASF1055:
 	.ascii	"CoreDebug_DHCSR_S_HALT_Pos 17\000"
@@ -12375,7 +12092,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"MPU_RASR_S_Msk (1UL << MPU_RASR_S_Pos)\000"
 .LASF980:
 	.ascii	"TPI_FIFO1_ITM2_Msk (0xFFUL << TPI_FIFO1_ITM2_Pos)\000"
-.LASF2689:
+.LASF2693:
 	.ascii	"TFT_COLOR_MAGENTA 0xA254\000"
 .LASF230:
 	.ascii	"__SACCUM_IBIT__ 8\000"
@@ -12424,7 +12141,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"SCnSCB_ACTLR_DISFOLD_Pos 2\000"
 .LASF2340:
 	.ascii	"INCLUDE_pcTaskGetTaskName 0\000"
-.LASF2724:
+.LASF2728:
 	.ascii	"DB6 3,26\000"
 .LASF1755:
 	.ascii	"I2C_OK 0x00\000"
@@ -12440,20 +12157,22 @@ fft_inst_q31_complex.10166:
 	.ascii	"MPU_TYPE_SEPARATE_Pos 0\000"
 .LASF1497:
 	.ascii	"ENET_MWTD_DATA(n) ((n) & 0xFFFF)\000"
+.LASF2757:
+	.ascii	"LED_IM_ALIVE_INIT 1, 0, MD_PLN, SALIDA\000"
 .LASF716:
 	.ascii	"SCB_ICSR_PENDSTCLR_Msk (1UL << SCB_ICSR_PENDSTCLR_P"
 	.ascii	"os)\000"
-.LASF2679:
+.LASF2683:
 	.ascii	"TFT_COLOR_WHITE 0xFFFF\000"
 .LASF814:
 	.ascii	"SCnSCB_ICTR_INTLINESNUM_Msk (0xFUL << SCnSCB_ICTR_I"
 	.ascii	"NTLINESNUM_Pos)\000"
 .LASF1914:
 	.ascii	"SPI_SR_BITMASK ((uint32_t) 0xF8)\000"
+.LASF1418:
+	.ascii	"CAN_STD_ENTRY_CTRL_NO_MASK (0x07)\000"
 .LASF1044:
 	.ascii	"MPU_RASR_ENABLE_Msk (1UL << MPU_RASR_ENABLE_Pos)\000"
-.LASF1939:
-	.ascii	"SSP_CR1_SO_DISABLE ((uint32_t) (1 << 3))\000"
 .LASF1749:
 	.ascii	"I2C_I2MASK_MASK(n) ((n & 0xFE))\000"
 .LASF351:
@@ -12464,7 +12183,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CoreDebug_DHCSR_S_RETIRE_ST_Pos 24\000"
 .LASF1059:
 	.ascii	"CoreDebug_DHCSR_C_SNAPSTALL_Pos 5\000"
-.LASF2805:
+.LASF2808:
 	.ascii	"pTwiddle\000"
 .LASF578:
 	.ascii	"__PRIxLEAST64 \"%llx\"\000"
@@ -12567,7 +12286,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ITM_TCR_TSENA_Msk (1UL << ITM_TCR_TSENA_Pos)\000"
 .LASF2607:
 	.ascii	"DELTA_Q31 (0x100)\000"
-.LASF2677:
+.LASF2681:
 	.ascii	"TFT_HEADER_H_ \000"
 .LASF1548:
 	.ascii	"ENET_RSV_UO 0x20000000\000"
@@ -12579,7 +12298,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_RXFILTERWOLSTATUS_AUHW 0x00000008\000"
 .LASF1708:
 	.ascii	"I2C_STAT_CODE_ERROR ((0xFF))\000"
-.LASF2800:
+.LASF2803:
 	.ascii	"q31_t\000"
 .LASF1041:
 	.ascii	"MPU_RASR_SIZE_Pos 1\000"
@@ -12608,8 +12327,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"configUSE_TIMERS 0\000"
 .LASF48:
 	.ascii	"__UINT64_TYPE__ long long unsigned int\000"
-.LASF2794:
-	.ascii	"ARM_MATH_LENGTH_ERROR\000"
+.LASF1939:
+	.ascii	"SSP_CR1_SO_DISABLE ((uint32_t) (1 << 3))\000"
 .LASF1510:
 	.ascii	"ENET_COMMAND_TXFLOWCONTROL 0x00000100\000"
 .LASF1923:
@@ -12618,7 +12337,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CAN_MOD_BITMASK (0xBF)\000"
 .LASF210:
 	.ascii	"__LFRACT_IBIT__ 0\000"
-.LASF2735:
+.LASF2739:
 	.ascii	"RS 0,8\000"
 .LASF897:
 	.ascii	"DWT_CTRL_SYNCTAP_Pos 10\000"
@@ -12650,7 +12369,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_TSV0_UNDERRUN 0x00000800\000"
 .LASF270:
 	.ascii	"__QQ_IBIT__ 0\000"
-.LASF2856:
+.LASF2857:
 	.ascii	"../src/Inicializaciones.c\000"
 .LASF840:
 	.ascii	"ITM_TPR_PRIVMASK_Msk (0xFUL << ITM_TPR_PRIVMASK_Pos"
@@ -12661,12 +12380,10 @@ fft_inst_q31_complex.10166:
 	.ascii	"SSP_CR0_CPOL_HI ((uint32_t) (1 << 6))\000"
 .LASF1697:
 	.ascii	"I2C_I2CONCLR_AAC ((1 << 2))\000"
-.LASF1217:
-	.ascii	"SYSCTL_OSCRANGE_15_25 (1 << 4)\000"
+.LASF2513:
+	.ascii	"taskDISABLE_INTERRUPTS() portDISABLE_INTERRUPTS()\000"
 .LASF1738:
 	.ascii	"I2C_I2STAT_S_TX_LAST_DAT_ACK ((0xC8))\000"
-.LASF2662:
-	.ascii	"FFT_SIZE_2048 2048\000"
 .LASF642:
 	.ascii	"__CHIP_H_ \000"
 .LASF1442:
@@ -12681,9 +12398,6 @@ fft_inst_q31_complex.10166:
 	.ascii	"UART_LCR_PARITY_F_0 (3 << 4)\000"
 .LASF148:
 	.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
-.LASF2524:
-	.ascii	"xTaskNotifyGive(xTaskToNotify) xTaskGenericNotify( "
-	.ascii	"( xTaskToNotify ), ( 0 ), eIncrement, NULL )\000"
 .LASF2022:
 	.ascii	"UART_MCR_LOOPB_EN (1 << 4)\000"
 .LASF111:
@@ -12692,8 +12406,6 @@ fft_inst_q31_complex.10166:
 	.ascii	"CAN_CMR_AT ((uint32_t) (1 << 1))\000"
 .LASF1598:
 	.ascii	"ENET_RINFO_LAST_FLAG 0x40000000\000"
-.LASF2650:
-	.ascii	"DAC_EXTERNO_DMA 1\000"
 .LASF598:
 	.ascii	"INTPTR_MIN (-0x80000000)\000"
 .LASF1809:
@@ -12701,7 +12413,7 @@ fft_inst_q31_complex.10166:
 	.ascii	")\000"
 .LASF124:
 	.ascii	"__DEC_EVAL_METHOD__ 2\000"
-.LASF2729:
+.LASF2733:
 	.ascii	"DB11 3,25\000"
 .LASF1295:
 	.ascii	"CAN_GSR_BS ((uint32_t) (1 << 7))\000"
@@ -12717,7 +12429,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"UART_IIR_BITMASK (0x3CF)\000"
 .LASF653:
 	.ascii	"_SBF\000"
-.LASF2815:
+.LASF2818:
 	.ascii	"pTwiddleAReal\000"
 .LASF2350:
 	.ascii	"configASSERT_DEFINED 0\000"
@@ -12736,8 +12448,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"MPU_RBAR_REGION_Msk (0xFUL << MPU_RBAR_REGION_Pos)\000"
 .LASF1563:
 	.ascii	"ENET_RXFILTERWOLSTATUS_AMW 0x00000004\000"
-.LASF1885:
-	.ascii	"RTC_MINUTE_MAX 59\000"
+.LASF2653:
+	.ascii	"DAC_EXTERNO_DMA 1\000"
 .LASF1819:
 	.ascii	"I2S_IRQ_TX_DEPTH_MASK ((uint32_t) ((0x0F) << 16))\000"
 .LASF520:
@@ -12777,7 +12489,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
 .LASF2307:
 	.ascii	"portTICK_TYPE_IS_ATOMIC 1\000"
-.LASF2788:
+.LASF2800:
 	.ascii	"TaskFunction_t\000"
 .LASF541:
 	.ascii	"__SCNdFAST32 \"%d\"\000"
@@ -12797,8 +12509,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"pdFREERTOS_ERRNO_ENOMEM 12\000"
 .LASF1431:
 	.ascii	"CAN_MSG_MAX_DATA_LEN (8)\000"
-.LASF2792:
-	.ascii	"ARM_MATH_SUCCESS\000"
+.LASF1173:
+	.ascii	"LPC_REGFILE ((LPC_REGFILE_T *) LPC_REGFILE_BASE)\000"
 .LASF2097:
 	.ascii	"FMC_FLASHSIG_BUSY (1UL << 17)\000"
 .LASF646:
@@ -12827,11 +12539,14 @@ fft_inst_q31_complex.10166:
 	.ascii	"LPC_IOCON ((LPC_IOCON_T *) LPC_IOCON_BASE)\000"
 .LASF1907:
 	.ascii	"SPI_CR_CPOL_LO ((uint32_t) (0))\000"
-.LASF1173:
-	.ascii	"LPC_REGFILE ((LPC_REGFILE_T *) LPC_REGFILE_BASE)\000"
+.LASF2524:
+	.ascii	"xTaskNotifyGive(xTaskToNotify) xTaskGenericNotify( "
+	.ascii	"( xTaskToNotify ), ( 0 ), eIncrement, NULL )\000"
 .LASF173:
 	.ascii	"__DEC32_EPSILON__ 1E-6DF\000"
-.LASF2715:
+.LASF2641:
+	.ascii	"DEBUG_MODE OFF\000"
+.LASF2719:
 	.ascii	"TFT_BACKGROUND_MAGENTA TFT_COLOR_CYAN\000"
 .LASF2185:
 	.ascii	"stdout (&__Ciob[1])\000"
@@ -12852,15 +12567,17 @@ fft_inst_q31_complex.10166:
 	.ascii	"__SIZEOF_FLOAT__COMPLEX 8\000"
 .LASF1215:
 	.ascii	"SYSCTL_PD_DPDFLAG (1 << 11)\000"
-.LASF2737:
+.LASF2741:
 	.ascii	"READ_DATA 0,6\000"
 .LASF1312:
 	.ascii	"CAN_ICR_ERR_ID28_ID21 (2)\000"
 .LASF2506:
 	.ascii	"tskKERNEL_VERSION_BUILD 3\000"
+.LASF1745:
+	.ascii	"I2C_I2MMCTRL_BITMASK ((0x07))\000"
 .LASF1153:
 	.ascii	"LPC_I2S_BASE 0x400A8000\000"
-.LASF2833:
+.LASF2836:
 	.ascii	"mode\000"
 .LASF490:
 	.ascii	"__PRIi16 \"%hi\"\000"
@@ -12868,7 +12585,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"UART_IIR_ABTO_INT (1 << 9)\000"
 .LASF1680:
 	.ascii	"DMA_CONTROLLER 0\000"
-.LASF2739:
+.LASF2743:
 	.ascii	"BL 2,4\000"
 .LASF234:
 	.ascii	"__USACCUM_FBIT__ 8\000"
@@ -12878,13 +12595,13 @@ fft_inst_q31_complex.10166:
 	.ascii	"I2C_STAT_CODE_BITMASK ((0xF8))\000"
 .LASF1339:
 	.ascii	"CAN_IER_TIE1 ((uint32_t) (1 << 1))\000"
-.LASF2849:
+.LASF2850:
 	.ascii	"OscRateIn\000"
 .LASF322:
 	.ascii	"__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\000"
 .LASF47:
 	.ascii	"__UINT32_TYPE__ long unsigned int\000"
-.LASF2747:
+.LASF2751:
 	.ascii	"BUTTON1_INIT 1, 14, MD_PUP, ENTRADA\000"
 .LASF135:
 	.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
@@ -12894,7 +12611,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"xPortPendSVHandler PendSV_Handler\000"
 .LASF2580:
 	.ascii	"FP_ILOGB0 INT_MIN\000"
-.LASF2757:
+.LASF2769:
 	.ascii	"DAC_MUTE_INIT 1, 16, MD_PLN, SALIDA\000"
 .LASF587:
 	.ascii	"__SCNiLEAST64 \"%lli\"\000"
@@ -12949,7 +12666,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"I2C_BYTE_RECV 0x02\000"
 .LASF2535:
 	.ascii	"queueQUEUE_TYPE_RECURSIVE_MUTEX ( ( uint8_t ) 4U )\000"
-.LASF2651:
+.LASF2654:
 	.ascii	"DAC_EXTERNO_MODO DAC_EXTERNO_DMA\000"
 .LASF1075:
 	.ascii	"CoreDebug_DEMCR_MON_REQ_Pos 19\000"
@@ -12964,7 +12681,7 @@ fft_inst_q31_complex.10166:
 .LASF726:
 	.ascii	"SCB_ICSR_VECTACTIVE_Msk (0x1FFUL << SCB_ICSR_VECTAC"
 	.ascii	"TIVE_Pos)\000"
-.LASF2761:
+.LASF2775:
 	.ascii	"unsigned char\000"
 .LASF2283:
 	.ascii	"pdFREERTOS_ERRNO_ENOPROTOOPT 109\000"
@@ -12996,9 +12713,9 @@ fft_inst_q31_complex.10166:
 	.ascii	"MPU_RBAR_ADDR_Pos 5\000"
 .LASF1834:
 	.ascii	"PMU_PCON_PM0_FLAG (1 << 0)\000"
-.LASF2705:
+.LASF2709:
 	.ascii	"TFT_BACKGROUND_WHITE TFT_COLOR_WHITE\000"
-.LASF2745:
+.LASF2749:
 	.ascii	"BUTTON0_INIT 1, 15, MD_PUP, ENTRADA\000"
 .LASF1676:
 	.ascii	"GPDMA_BSIZE_256 ((7UL))\000"
@@ -13006,14 +12723,16 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_TINFO_LATE_COL 0x10000000\000"
 .LASF127:
 	.ascii	"__FLT_DIG__ 6\000"
-.LASF2734:
+.LASF2763:
+	.ascii	"LED_3_INIT 1, 8, MD_PLN, SALIDA\000"
+.LASF2738:
 	.ascii	"CS 0,9\000"
 .LASF1014:
 	.ascii	"MPU_CTRL_HFNMIENA_Msk (1UL << MPU_CTRL_HFNMIENA_Pos"
 	.ascii	")\000"
 .LASF2360:
 	.ascii	"traceINCREASE_TICK_COUNT(x) \000"
-.LASF2801:
+.LASF2804:
 	.ascii	"float\000"
 .LASF849:
 	.ascii	"ITM_TCR_SWOENA_Pos 4\000"
@@ -13066,7 +12785,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_TSV0_GIANT 0x00000400\000"
 .LASF2343:
 	.ascii	"INCLUDE_eTaskGetState 0\000"
-.LASF2680:
+.LASF2684:
 	.ascii	"TFT_COLOR_BLACK 0x0000\000"
 .LASF85:
 	.ascii	"__SIG_ATOMIC_MAX__ 0x7fffffff\000"
@@ -13079,7 +12798,7 @@ fft_inst_q31_complex.10166:
 .LASF186:
 	.ascii	"__DEC128_MAX__ 9.999999999999999999999999999999999E"
 	.ascii	"6144DL\000"
-.LASF2826:
+.LASF2829:
 	.ascii	"output\000"
 .LASF2137:
 	.ascii	"DEBUG_SEMIHOSTING \000"
@@ -13103,7 +12822,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"UART_LCR_SBS_2BIT (1 << 2)\000"
 .LASF1843:
 	.ascii	"__QEI_17XX_40XX_H_ \000"
-.LASF2719:
+.LASF2723:
 	.ascii	"DB1 1,29\000"
 .LASF2040:
 	.ascii	"UART_MSR_DELTA_DCD (1 << 3)\000"
@@ -13127,12 +12846,14 @@ fft_inst_q31_complex.10166:
 	.ascii	"CAN_MOD_LOM ((uint32_t) (1 << 1))\000"
 .LASF674:
 	.ascii	"__FPU_PRESENT 0\000"
-.LASF2668:
+.LASF2672:
 	.ascii	"FFT_INIT_BIT_REVERSE TRUE\000"
 .LASF595:
 	.ascii	"__SCNx64 \"%llx\"\000"
 .LASF2304:
 	.ascii	"portSTACK_TYPE uint32_t\000"
+.LASF2764:
+	.ascii	"LED_3 1, 8\000"
 .LASF2521:
 	.ascii	"xTaskNotifyAndQuery(xTaskToNotify,ulValue,eAction,p"
 	.ascii	"ulPreviousNotifyValue) xTaskGenericNotify( ( xTaskT"
@@ -13194,8 +12915,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"__DBL_DECIMAL_DIG__ 17\000"
 .LASF18:
 	.ascii	"__SIZEOF_LONG_LONG__ 8\000"
-.LASF2647:
-	.ascii	"USE_DAC_INTERNO OFF\000"
+.LASF2666:
+	.ascii	"FFT_SIZE_2048 2048\000"
 .LASF704:
 	.ascii	"SCB_CPUID_PARTNO_Msk (0xFFFUL << SCB_CPUID_PARTNO_P"
 	.ascii	"os)\000"
@@ -13249,17 +12970,17 @@ fft_inst_q31_complex.10166:
 	.ascii	"rityTaskWoken) xQueueGenericSendFromISR( ( xQueue )"
 	.ascii	", ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ),"
 	.ascii	" queueSEND_TO_BACK )\000"
-.LASF2835:
-	.ascii	"fft_inst_q31_complex\000"
+.LASF1885:
+	.ascii	"RTC_MINUTE_MAX 59\000"
 .LASF884:
 	.ascii	"DWT_CTRL_FOLDEVTENA_Msk (0x1UL << DWT_CTRL_FOLDEVTE"
 	.ascii	"NA_Pos)\000"
-.LASF2752:
+.LASF2756:
 	.ascii	"BUTTON3 1, 9\000"
 .LASF898:
 	.ascii	"DWT_CTRL_SYNCTAP_Msk (0x3UL << DWT_CTRL_SYNCTAP_Pos"
 	.ascii	")\000"
-.LASF2663:
+.LASF2667:
 	.ascii	"FFT_SIZE_4096 4096\000"
 .LASF1595:
 	.ascii	"ENET_RINFO_ALIGN_ERR 0x08000000\000"
@@ -13271,13 +12992,13 @@ fft_inst_q31_complex.10166:
 	.ascii	"CoreDebug_BASE (0xE000EDF0UL)\000"
 .LASF1684:
 	.ascii	"GPIO_PORT_BITS 32\000"
-.LASF2703:
+.LASF2707:
 	.ascii	"TFT_FOREGROUND_GRAY TFT_COLOR_MAGENTA\000"
 .LASF689:
 	.ascii	"__USAT(ARG1,ARG2) ({ uint32_t __RES, __ARG1 = (ARG1"
 	.ascii	"); __ASM (\"usat %0, %1, %2\" : \"=r\" (__RES) : \""
 	.ascii	"I\" (ARG2), \"r\" (__ARG1) ); __RES; })\000"
-.LASF2824:
+.LASF2827:
 	.ascii	"Chip_GPIO_SetPinDIRInput\000"
 .LASF2027:
 	.ascii	"UART_LSR_OE (1 << 1)\000"
@@ -13295,7 +13016,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__I volatile const\000"
 .LASF561:
 	.ascii	"UINT_LEAST64_MAX 0xffffffffffffffffULL\000"
-.LASF2697:
+.LASF2701:
 	.ascii	"TFT_FOREGROUND_BLUE TFT_COLOR_BLUE\000"
 .LASF258:
 	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
@@ -13305,10 +13026,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"WWDT_CLKSEL_LOCK ((uint32_t) (1 << 31))\000"
 .LASF1324:
 	.ascii	"CAN_ICR_ERR_CRC_SEQ (0x08)\000"
-.LASF2658:
+.LASF2662:
 	.ascii	"FFT_SIZE_128 128\000"
-.LASF2795:
-	.ascii	"ARM_MATH_SIZE_MISMATCH\000"
 .LASF1240:
 	.ascii	"FUNC2 0x2\000"
 .LASF1576:
@@ -13398,6 +13117,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"xSemaphoreTake(xSemaphore,xBlockTime) xQueueGeneric"
 	.ascii	"Receive( ( QueueHandle_t ) ( xSemaphore ), NULL, ( "
 	.ascii	"xBlockTime ), pdFALSE )\000"
+.LASF2767:
+	.ascii	"ADC_FSYNC_INIT 0, 7, MD_PLN, SALIDA\000"
 .LASF171:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
 .LASF279:
@@ -13444,7 +13165,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"GPDMA_CONN_MAT2_1 ((21UL))\000"
 .LASF812:
 	.ascii	"SCB_DFSR_HALTED_Msk (1UL << SCB_DFSR_HALTED_Pos)\000"
-.LASF2655:
+.LASF2659:
 	.ascii	"FFT_HEADER_H_ \000"
 .LASF1478:
 	.ascii	"ENET_CLRT_COLLWIN(n) (((n) & 0x3F) << 8)\000"
@@ -13540,7 +13261,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"INT_LEAST32_MAX 0x7fffffff\000"
 .LASF2352:
 	.ascii	"INCLUDE_xTaskGetCurrentTaskHandle 0\000"
-.LASF2669:
+.LASF2673:
 	.ascii	"UART_HEADER_H_ \000"
 .LASF603:
 	.ascii	"__PRIoPTR \"%o\"\000"
@@ -13577,7 +13298,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"SCB_CCR_BFHFNMIGN_Pos 8\000"
 .LASF1247:
 	.ascii	"IOCON_BIT_INDEX(pin) ((pin % 16) * 2)\000"
-.LASF2786:
+.LASF2798:
 	.ascii	"LPC_GPIO_T\000"
 .LASF2648:
 	.ascii	"USE_DAC_EXTERNO ON\000"
@@ -13637,8 +13358,6 @@ fft_inst_q31_complex.10166:
 	.ascii	"__INT16_TYPE__ short int\000"
 .LASF2192:
 	.ascii	"ferror(stream) ((stream)->__flag & __IOERR)\000"
-.LASF2789:
-	.ascii	"BaseType_t\000"
 .LASF2329:
 	.ascii	"portNOP() \000"
 .LASF648:
@@ -13683,7 +13402,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"IAP_INVALID_CODE 16\000"
 .LASF281:
 	.ascii	"__UHQ_FBIT__ 16\000"
-.LASF2767:
+.LASF2781:
 	.ascii	"uint8_t\000"
 .LASF2057:
 	.ascii	"UART_RS485CTRL_SEL_DTR (1 << 3)\000"
@@ -13903,15 +13622,11 @@ fft_inst_q31_complex.10166:
 	.ascii	"__HA_FBIT__ 7\000"
 .LASF2348:
 	.ascii	"INCLUDE_xTimerPendFunctionCall 0\000"
-.LASF2500:
-	.ascii	"listIS_CONTAINED_WITHIN(pxList,pxListItem) ( ( Base"
-	.ascii	"Type_t ) ( ( pxListItem )->pvContainer == ( void * "
-	.ascii	") ( pxList ) ) )\000"
 .LASF246:
 	.ascii	"__UACCUM_MIN__ 0.0UK\000"
 .LASF67:
 	.ascii	"__has_include(STR) __has_include__(STR)\000"
-.LASF2759:
+.LASF2771:
 	.ascii	"DAC_ZEROA_INIT 1, 17, MD_PLN, ENTRADA\000"
 .LASF2342:
 	.ascii	"configNUM_THREAD_LOCAL_STORAGE_POINTERS 0\000"
@@ -13942,11 +13657,11 @@ fft_inst_q31_complex.10166:
 	.ascii	"__FLT_HAS_QUIET_NAN__ 1\000"
 .LASF611:
 	.ascii	"__SCNxPTR \"%x\"\000"
-.LASF2841:
+.LASF2843:
 	.ascii	"uxPriority\000"
 .LASF1714:
 	.ascii	"I2C_I2STAT_M_TX_SLAW_NACK ((0x20))\000"
-.LASF2687:
+.LASF2691:
 	.ascii	"TFT_COLOR_ORANGE 0xFBE4\000"
 .LASF2037:
 	.ascii	"UART_MSR_DELTA_CTS (1 << 0)\000"
@@ -13984,7 +13699,7 @@ fft_inst_q31_complex.10166:
 .LASF1818:
 	.ascii	"I2S_IRQ_TX_DEPTH(n) ((uint32_t) ((n & 0x0F) << 16))"
 	.ascii	"\000"
-.LASF2813:
+.LASF2816:
 	.ascii	"bitReverseFlagR\000"
 .LASF1380:
 	.ascii	"CAN_TID_ID29(n) ((uint32_t) ((n) & 0x1FFFFFFF))\000"
@@ -14017,7 +13732,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"xTaskNotify(xTaskToNotify,ulValue,eAction) xTaskGen"
 	.ascii	"ericNotify( ( xTaskToNotify ), ( ulValue ), ( eActi"
 	.ascii	"on ), NULL )\000"
-.LASF2821:
+.LASF2824:
 	.ascii	"setting\000"
 .LASF2120:
 	.ascii	"IAP_INVALID_SECTOR 7\000"
@@ -14196,6 +13911,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"UART_LSR_PE (1 << 2)\000"
 .LASF1298:
 	.ascii	"CAN_ICR_BITMASK (0xFFFF07FF)\000"
+.LASF2773:
+	.ascii	"DAC_DATA_INIT 0, 9, MD_PLN, SALIDA\000"
 .LASF2404:
 	.ascii	"traceTIMER_EXPIRED(pxTimer) \000"
 .LASF1871:
@@ -14210,7 +13927,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"BYTESEX_EVEN 1\000"
 .LASF1961:
 	.ascii	"TIMER_CAP_FALLING(n) (_BIT((((n) * 3) + 1)))\000"
-.LASF2700:
+.LASF2704:
 	.ascii	"TFT_FOREGROUND_ORANGE TFT_COLOR_ORANGE\000"
 .LASF1538:
 	.ascii	"ENET_RSV_RCV 0x00080000\000"
@@ -14237,13 +13954,13 @@ fft_inst_q31_complex.10166:
 	.ascii	"__BKPT(value) __ASM volatile (\"bkpt \"#value)\000"
 .LASF2258:
 	.ascii	"pdFREERTOS_ERRNO_ENXIO 6\000"
-.LASF2829:
+.LASF2832:
 	.ascii	"bitValue\000"
 .LASF460:
 	.ascii	"__SCNo8 \"%hho\"\000"
 .LASF1717:
 	.ascii	"I2C_I2STAT_M_TX_ARB_LOST ((0x38))\000"
-.LASF2716:
+.LASF2720:
 	.ascii	"TFT_BACKGROUND_GRAY TFT_COLOR_MAGENTA\000"
 .LASF2048:
 	.ascii	"UART_ACR_AUTO_RESTART (1 << 2)\000"
@@ -14291,8 +14008,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"__CLOCK_17XX_40XX_H_ \000"
 .LASF2527:
 	.ascii	"queueSEND_TO_BACK ( ( BaseType_t ) 0 )\000"
-.LASF1418:
-	.ascii	"CAN_STD_ENTRY_CTRL_NO_MASK (0x07)\000"
+.LASF80:
+	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
 .LASF1642:
 	.ascii	"GPDMA_DMACCxConfig_A ((1UL << 17))\000"
 .LASF1615:
@@ -14314,7 +14031,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"End.xItemValue == portMAX_DELAY )\000"
 .LASF620:
 	.ascii	"__PRIoMAX \"%llo\"\000"
-.LASF2847:
+.LASF2848:
 	.ascii	"main_buffer_init\000"
 .LASF69:
 	.ascii	"__GXX_ABI_VERSION 1009\000"
@@ -14345,13 +14062,13 @@ fft_inst_q31_complex.10166:
 	.ascii	"UINT16_MAX 0xffffU\000"
 .LASF699:
 	.ascii	"SCB_CPUID_VARIANT_Pos 20\000"
-.LASF2803:
+.LASF2806:
 	.ascii	"ifftFlag\000"
 .LASF1045:
 	.ascii	"CoreDebug_DHCSR_DBGKEY_Pos 16\000"
 .LASF1560:
 	.ascii	"ENET_RXFILTERCTRL_RFEW 0x00002000\000"
-.LASF2727:
+.LASF2731:
 	.ascii	"DB9 1,19\000"
 .LASF1696:
 	.ascii	"I2C_I2CONSET_I2EN ((0x40))\000"
@@ -14373,7 +14090,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"MPU_RBAR_VALID_Msk (1UL << MPU_RBAR_VALID_Pos)\000"
 .LASF1678:
 	.ascii	"GPDMA_WIDTH_HALFWORD ((1UL))\000"
-.LASF2756:
+.LASF2766:
 	.ascii	"ADC_OSR 0, 8\000"
 .LASF2170:
 	.ascii	"__IOERR 0x80\000"
@@ -14519,7 +14236,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"I2S_DAI_RESET ((uint32_t) (1 << 4))\000"
 .LASF198:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
-.LASF2855:
+.LASF2856:
 	.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
 	.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g3 -"
 	.ascii	"O0 -fmessage-length=0 -fno-builtin -ffunction-secti"
@@ -14528,7 +14245,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__INTMAX_C(c) c ## LL\000"
 .LASF251:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
-.LASF2664:
+.LASF2668:
 	.ascii	"FFT_SIZE FFT_SIZE_1024\000"
 .LASF116:
 	.ascii	"__UINT_FAST16_MAX__ 0xffffffffU\000"
@@ -14547,7 +14264,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"LPC_I2C2 ((LPC_I2C_T *) LPC_I2C2_BASE)\000"
 .LASF1723:
 	.ascii	"I2C_I2STAT_M_RX_DAT_ACK ((0x50))\000"
-.LASF2844:
+.LASF2845:
 	.ascii	"task_init\000"
 .LASF2503:
 	.ascii	"tskKERNEL_VERSION_NUMBER \"V8.2.3\"\000"
@@ -14582,8 +14299,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"pdFREERTOS_ERRNO_ENODEV 19\000"
 .LASF1877:
 	.ascii	"RTC_MIN_MASK (0x0000003F)\000"
-.LASF80:
-	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
+.LASF2768:
+	.ascii	"ADC_FSYNC 0, 7\000"
 .LASF605:
 	.ascii	"__PRIxPTR \"%x\"\000"
 .LASF589:
@@ -14597,8 +14314,6 @@ fft_inst_q31_complex.10166:
 	.ascii	"__CMSIS_GCC_OUT_REG(r) \"=r\" (r)\000"
 .LASF2157:
 	.ascii	"LED5_GPIO_PORT_NUM 0\000"
-.LASF1424:
-	.ascii	"CAN_STD_ENTRY_ID_MASK (0x7FF)\000"
 .LASF751:
 	.ascii	"SCB_CCR_STKALIGN_Pos 9\000"
 .LASF1656:
@@ -14615,8 +14330,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"SysTick_CTRL_ENABLE_Pos 0\000"
 .LASF1250:
 	.ascii	"ADC_TRIM_SUPPORT \000"
-.LASF1492:
-	.ascii	"ENET_MCMD_SCAN 0x00000002\000"
+.LASF1201:
+	.ascii	"LPC_CAN2 ((LPC_CAN_T *) LPC_CAN2_BASE)\000"
 .LASF2096:
 	.ascii	"__FMC_17XX_40XX_H_ \000"
 .LASF1635:
@@ -14673,7 +14388,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CAN_ICR_OTHER_ERROR (3)\000"
 .LASF169:
 	.ascii	"__DEC32_MIN_EXP__ (-94)\000"
-.LASF2661:
+.LASF2665:
 	.ascii	"FFT_SIZE_1024 1024\000"
 .LASF828:
 	.ascii	"SysTick_CTRL_ENABLE_Msk (1UL << SysTick_CTRL_ENABLE"
@@ -14684,8 +14399,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"__thumb2__ 1\000"
 .LASF310:
 	.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1\000"
-.LASF249:
-	.ascii	"__LACCUM_FBIT__ 31\000"
+.LASF1424:
+	.ascii	"CAN_STD_ENTRY_ID_MASK (0x7FF)\000"
 .LASF1536:
 	.ascii	"ENET_RSV_RXDVSEEN 0x00020000\000"
 .LASF1047:
@@ -14697,7 +14412,7 @@ fft_inst_q31_complex.10166:
 .LASF996:
 	.ascii	"TPI_DEVID_MinBufSz_Msk (0x7UL << TPI_DEVID_MinBufSz"
 	.ascii	"_Pos)\000"
-.LASF2733:
+.LASF2737:
 	.ascii	"DB15 1,18\000"
 .LASF1203:
 	.ascii	"LPC_FMC ((LPC_FMC_T *) LPC_FMC_BASE)\000"
@@ -14713,7 +14428,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ONS 0\000"
 .LASF1440:
 	.ascii	"DAC_CNT_ENA ((uint32_t) (1 << 2))\000"
-.LASF2730:
+.LASF2734:
 	.ascii	"DB12 2,6\000"
 .LASF1419:
 	.ascii	"CAN_STD_ENTRY_DISABLE_POS (12 )\000"
@@ -14722,7 +14437,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"\000"
 .LASF1545:
 	.ascii	"ENET_RSV_DRIBBLENIBBLE 0x04000000\000"
-.LASF2791:
+.LASF2802:
 	.ascii	"TaskHandle_t\000"
 .LASF73:
 	.ascii	"__LONG_MAX__ 0x7fffffffL\000"
@@ -14743,11 +14458,11 @@ fft_inst_q31_complex.10166:
 	.ascii	"RTC_CCR_CTCRST ((1 << 1))\000"
 .LASF422:
 	.ascii	"INT8_C(value) ((signed char)(value))\000"
-.LASF2837:
+.LASF2839:
 	.ascii	"pxTaskCode\000"
 .LASF1158:
 	.ascii	"LPC_PMU_BASE 0x400FC0C0\000"
-.LASF2777:
+.LASF2789:
 	.ascii	"sizetype\000"
 .LASF2278:
 	.ascii	"pdFREERTOS_ERRNO_ENMFILE 89\000"
@@ -14808,13 +14523,15 @@ fft_inst_q31_complex.10166:
 	.ascii	"UART_HDEN_HDEN ((1 << 0))\000"
 .LASF476:
 	.ascii	"UINT_FAST16_MAX 0xffffffffU\000"
-.LASF2769:
+.LASF2762:
+	.ascii	"LED_2 1, 4\000"
+.LASF2783:
 	.ascii	"short unsigned int\000"
-.LASF2840:
+.LASF2842:
 	.ascii	"pvParameters\000"
 .LASF823:
 	.ascii	"SysTick_CTRL_CLKSOURCE_Pos 2\000"
-.LASF2765:
+.LASF2779:
 	.ascii	"signed char\000"
 .LASF2547:
 	.ascii	"xQueueAltSendToFront(xQueue,pvItemToQueue,xTicksToW"
@@ -14830,11 +14547,9 @@ fft_inst_q31_complex.10166:
 	.ascii	"TPI_FIFO0_ETM_ATVALID_Pos 26\000"
 .LASF1648:
 	.ascii	"GPDMA_CONN_ADC ((4UL))\000"
-.LASF2753:
-	.ascii	"LED0_INIT 0, 7, MD_PLN, SALIDA\000"
-.LASF2811:
+.LASF2814:
 	.ascii	"fftLenBy2\000"
-.LASF2827:
+.LASF2830:
 	.ascii	"Chip_GPIO_SetDir\000"
 .LASF1233:
 	.ascii	"IOCON_FUNC3 0x3\000"
@@ -14888,7 +14603,7 @@ fft_inst_q31_complex.10166:
 .LASF954:
 	.ascii	"TPI_TRIGGER_TRIGGER_Msk (0x1UL << TPI_TRIGGER_TRIGG"
 	.ascii	"ER_Pos)\000"
-.LASF2744:
+.LASF2748:
 	.ascii	"SALIDA 1\000"
 .LASF475:
 	.ascii	"INT_FAST16_MAX 0x7fffffff\000"
@@ -14896,7 +14611,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_TINFO_DEFER 0x02000000\000"
 .LASF2050:
 	.ascii	"UART_ACR_ABTOINT_CLR (1 << 9)\000"
-.LASF2710:
+.LASF2714:
 	.ascii	"TFT_BACKGROUND_BLUE TFT_COLOR_BLUE\000"
 .LASF1371:
 	.ascii	"CAN_RFS_FF ((uint32_t) ((uint32_t) 1 << 31))\000"
@@ -14908,11 +14623,11 @@ fft_inst_q31_complex.10166:
 	.ascii	"IAP_DST_ADDR_ERROR 3\000"
 .LASF2469:
 	.ascii	"portTICK_RATE_MS portTICK_PERIOD_MS\000"
-.LASF2653:
+.LASF2657:
 	.ascii	"BASICS_HEADER_H_ \000"
 .LASF860:
 	.ascii	"ITM_IWR_ATVALIDM_Msk (1UL << ITM_IWR_ATVALIDM_Pos)\000"
-.LASF2850:
+.LASF2851:
 	.ascii	"RTCOscRateIn\000"
 .LASF1310:
 	.ascii	"CAN_ICR_ERRBIT_VAL(n) ((uint32_t) (((n) >> 16) & 0x"
@@ -14923,7 +14638,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"traceQUEUE_RECEIVE(pxQueue) \000"
 .LASF2267:
 	.ascii	"pdFREERTOS_ERRNO_EXDEV 18\000"
-.LASF2834:
+.LASF2837:
 	.ascii	"salida\000"
 .LASF786:
 	.ascii	"SCB_SHCSR_USGFAULTACT_Msk (1UL << SCB_SHCSR_USGFAUL"
@@ -14938,7 +14653,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"TMP_MAX 1000000000\000"
 .LASF2166:
 	.ascii	"GREEN_GPIO_BIT_NUM 4\000"
-.LASF2718:
+.LASF2722:
 	.ascii	"DB0 2,7\000"
 .LASF2399:
 	.ascii	"traceTASK_RESUME_FROM_ISR(pxTaskToResume) \000"
@@ -14968,11 +14683,9 @@ fft_inst_q31_complex.10166:
 .LASF1084:
 	.ascii	"CoreDebug_DEMCR_VC_HARDERR_Msk (1UL << CoreDebug_DE"
 	.ascii	"MCR_VC_HARDERR_Pos)\000"
-.LASF1801:
-	.ascii	"I2S_STATE_IRQ ((uint32_t) (1))\000"
 .LASF677:
 	.ascii	"__CM3_CMSIS_VERSION_SUB (0x20)\000"
-.LASF2857:
+.LASF2858:
 	.ascii	"D:\\\\UTN\\\\Git\\\\TD_II\\\\TD_II\\\\workspace\\\\"
 	.ascii	"THD_Meter_RTOS\\\\Debug\000"
 .LASF2620:
@@ -15002,8 +14715,6 @@ fft_inst_q31_complex.10166:
 	.ascii	"traceQUEUE_SEND_FROM_ISR_FAILED(pxQueue) \000"
 .LASF1543:
 	.ascii	"ENET_RSV_MULTICAST 0x01000000\000"
-.LASF2641:
-	.ascii	"DEBUG_MODE ON\000"
 .LASF2481:
 	.ascii	"listSECOND_LIST_INTEGRITY_CHECK_VALUE \000"
 .LASF177:
@@ -15023,15 +14734,15 @@ fft_inst_q31_complex.10166:
 	.ascii	"__USE_LPCOPEN 1\000"
 .LASF165:
 	.ascii	"__LDBL_HAS_DENORM__ 1\000"
-.LASF2858:
-	.ascii	"fft_init\000"
+.LASF2104:
+	.ascii	"IAP_BLANK_CHECK_SECTOR_CMD 53\000"
 .LASF2201:
 	.ascii	"PHY_LINK_CONNECTED (1 << 3)\000"
 .LASF1412:
 	.ascii	"CANAF_FULLCAN_MSG_ID11_BITMASK (0x7FF)\000"
 .LASF1474:
 	.ascii	"ENET_IPGR_P2_DEF (ENET_IPGR_NBTOBINTEGAP2(0x12))\000"
-.LASF2685:
+.LASF2689:
 	.ascii	"TFT_COLOR_BLUE2 0x051D\000"
 .LASF2454:
 	.ascii	"configENABLE_BACKWARD_COMPATIBILITY 1\000"
@@ -15195,7 +14906,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"UART_MSR_RI (1 << 6)\000"
 .LASF1631:
 	.ascii	"GPDMA_DMACCxControl_I ((1UL << 31))\000"
-.LASF2758:
+.LASF2770:
 	.ascii	"DAC_MUTE 1, 16\000"
 .LASF984:
 	.ascii	"TPI_FIFO1_ITM0_Msk (0xFFUL << TPI_FIFO1_ITM0_Pos)\000"
@@ -15221,7 +14932,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_RSV_CESEEN 0x00040000\000"
 .LASF630:
 	.ascii	"PTRDIFF_MIN (-0x80000000)\000"
-.LASF2699:
+.LASF2703:
 	.ascii	"TFT_FOREGROUND_YELLOW TFT_COLOR_YELLOW\000"
 .LASF523:
 	.ascii	"__PRIdFAST32 \"%d\"\000"
@@ -15241,7 +14952,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CAN_TFI_RTR ((uint32_t) (1 << 30))\000"
 .LASF852:
 	.ascii	"ITM_TCR_DWTENA_Msk (1UL << ITM_TCR_DWTENA_Pos)\000"
-.LASF2762:
+.LASF2776:
 	.ascii	"long int\000"
 .LASF396:
 	.ascii	"DOUBLE_EXP_LAST 1\000"
@@ -15261,8 +14972,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"BOOL_8 bool\000"
 .LASF658:
 	.ascii	"STATIC static\000"
-.LASF1745:
-	.ascii	"I2C_I2MMCTRL_BITMASK ((0x07))\000"
+.LASF1492:
+	.ascii	"ENET_MCMD_SCAN 0x00000002\000"
 .LASF1981:
 	.ascii	"UART2_IER_BITMASK (0x38F)\000"
 .LASF311:
@@ -15282,7 +14993,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"\000"
 .LASF2450:
 	.ascii	"portTICK_TYPE_ENTER_CRITICAL() \000"
-.LASF2851:
+.LASF2852:
 	.ascii	"fft_inst_q31\000"
 .LASF33:
 	.ascii	"__PTRDIFF_TYPE__ int\000"
@@ -15290,7 +15001,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2\000"
 .LASF464:
 	.ascii	"__SCNx8 \"%hhx\"\000"
-.LASF2846:
+.LASF2847:
 	.ascii	"main_task_init\000"
 .LASF1244:
 	.ascii	"MD_PUP (0x0)\000"
@@ -15341,17 +15052,17 @@ fft_inst_q31_complex.10166:
 .LASF2493:
 	.ascii	"listGET_HEAD_ENTRY(pxList) ( ( ( pxList )->xListEnd"
 	.ascii	" ).pxNext )\000"
-.LASF2778:
+.LASF2790:
 	.ascii	"PINSEL\000"
 .LASF555:
 	.ascii	"UINT64_C(value) ((unsigned long long)(value))\000"
-.LASF2780:
+.LASF2792:
 	.ascii	"PINMODE\000"
 .LASF1922:
 	.ascii	"SPI_INT_SPIF ((uint32_t) (1 << 0))\000"
 .LASF608:
 	.ascii	"__SCNiPTR \"%i\"\000"
-.LASF2748:
+.LASF2752:
 	.ascii	"BUTTON1 1, 14\000"
 .LASF439:
 	.ascii	"__SCNdFAST8 \"%d\"\000"
@@ -15382,6 +15093,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"inited(x) : __isfinitel(x))\000"
 .LASF1031:
 	.ascii	"MPU_RASR_TEX_Pos 19\000"
+.LASF2758:
+	.ascii	"LED_IM_ALIVE 1, 0\000"
 .LASF834:
 	.ascii	"SysTick_CALIB_NOREF_Msk (1UL << SysTick_CALIB_NOREF"
 	.ascii	"_Pos)\000"
@@ -15390,9 +15103,9 @@ fft_inst_q31_complex.10166:
 	.ascii	"Pos)\000"
 .LASF1304:
 	.ascii	"CAN_ICR_EPI ((uint32_t) (1 << 5))\000"
-.LASF1704:
-	.ascii	"I2C_CON_STO (1UL << 4)\000"
-.LASF2802:
+.LASF2639:
+	.ascii	"USE_TFT ON\000"
+.LASF2805:
 	.ascii	"fftLen\000"
 .LASF481:
 	.ascii	"__PRIxFAST16 \"%x\"\000"
@@ -15402,6 +15115,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"PI 3.14159265358979f\000"
 .LASF1435:
 	.ascii	"__DAC_17XX_40XX_H_ \000"
+.LASF2759:
+	.ascii	"LED_1_INIT 1, 1, MD_PLN, SALIDA\000"
 .LASF1504:
 	.ascii	"ENET_COMMAND_TXENABLE 0x00000002\000"
 .LASF1066:
@@ -15415,7 +15130,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__HQ_FBIT__ 15\000"
 .LASF2055:
 	.ascii	"UART_RS485CTRL_RX_DIS (1 << 1)\000"
-.LASF2681:
+.LASF2685:
 	.ascii	"TFT_COLOR_RED 0xF800\000"
 .LASF260:
 	.ascii	"__LLACCUM_IBIT__ 32\000"
@@ -15426,7 +15141,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__PRId64 \"%lld\"\000"
 .LASF1566:
 	.ascii	"ENET_RXFILTERWOLSTATUS_APW 0x00000020\000"
-.LASF2838:
+.LASF2840:
 	.ascii	"pcName\000"
 .LASF2364:
 	.ascii	"traceTASK_PRIORITY_INHERIT(pxTCBOfMutexHolder,uxInh"
@@ -15458,7 +15173,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"DWT_MASK_MASK_Msk (0x1FUL << DWT_MASK_MASK_Pos)\000"
 .LASF2525:
 	.ascii	"SEMAPHORE_H \000"
-.LASF2704:
+.LASF2708:
 	.ascii	"TFT_FOREGROUND_BROWN TFT_COLOR_GRAY\000"
 .LASF1754:
 	.ascii	"I2C_SETUP_STATUS_DONE (1 << 10)\000"
@@ -15486,7 +15201,7 @@ fft_inst_q31_complex.10166:
 	.ascii	" ) )\000"
 .LASF590:
 	.ascii	"__SCNoLEAST64 \"%llo\"\000"
-.LASF2713:
+.LASF2717:
 	.ascii	"TFT_BACKGROUND_ORANGE TFT_COLOR_ORANGE\000"
 .LASF913:
 	.ascii	"DWT_LSUCNT_LSUCNT_Pos 0\000"
@@ -15496,7 +15211,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__UINTMAX_TYPE__ long long unsigned int\000"
 .LASF2273:
 	.ascii	"pdFREERTOS_ERRNO_ESPIPE 29\000"
-.LASF2688:
+.LASF2692:
 	.ascii	"TFT_COLOR_CYAN 0x07FF\000"
 .LASF683:
 	.ascii	"__FPU_USED 0\000"
@@ -15505,13 +15220,13 @@ fft_inst_q31_complex.10166:
 .LASF956:
 	.ascii	"TPI_FIFO0_ITM_ATVALID_Msk (0x3UL << TPI_FIFO0_ITM_A"
 	.ascii	"TVALID_Pos)\000"
-.LASF2672:
+.LASF2676:
 	.ascii	"ADC_FREQ 32000\000"
 .LASF1858:
 	.ascii	"RTC_AMR_CIIR_IMMIN ((1 << 1))\000"
 .LASF1880:
 	.ascii	"RTC_DOW_MASK (0x00000007)\000"
-.LASF2808:
+.LASF2811:
 	.ascii	"bitRevFactor\000"
 .LASF944:
 	.ascii	"TPI_FFSR_TCPresent_Msk (0x1UL << TPI_FFSR_TCPresent"
@@ -15521,7 +15236,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"LD_Pos)\000"
 .LASF667:
 	.ascii	"CHIP_LPC175X_6X \000"
-.LASF2722:
+.LASF2726:
 	.ascii	"DB4 1,20\000"
 .LASF2568:
 	.ascii	"vSemaphoreDelete(xSemaphore) vQueueDelete( ( QueueH"
@@ -15535,7 +15250,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"os)\000"
 .LASF1790:
 	.ascii	"I2S_DAO_MUTE ((uint32_t) (1 << 15))\000"
-.LASF2787:
+.LASF2799:
 	.ascii	"long unsigned int\000"
 .LASF2452:
 	.ascii	"portTICK_TYPE_SET_INTERRUPT_MASK_FROM_ISR() 0\000"
@@ -15581,7 +15296,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_RINFO_MCAST 0x00200000\000"
 .LASF1238:
 	.ascii	"FUNC0 0x0\000"
-.LASF2816:
+.LASF2819:
 	.ascii	"pTwiddleBReal\000"
 .LASF221:
 	.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
@@ -15589,7 +15304,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"UART_IIR_INTID_CTI (6 << 1)\000"
 .LASF2630:
 	.ascii	"IAR_ONLY_LOW_OPTIMIZATION_ENTER \000"
-.LASF2660:
+.LASF2664:
 	.ascii	"FFT_SIZE_512 512\000"
 .LASF894:
 	.ascii	"DWT_CTRL_EXCTRCENA_Msk (0x1UL << DWT_CTRL_EXCTRCENA"
@@ -15627,7 +15342,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CAN_ICR_RI ((uint32_t) (1))\000"
 .LASF1582:
 	.ascii	"ENET_RCTRL_INT 0x80000000\000"
-.LASF2712:
+.LASF2716:
 	.ascii	"TFT_BACKGROUND_YELLOW TFT_COLOR_YELLOW\000"
 .LASF2437:
 	.ascii	"configPOST_SLEEP_PROCESSING(x) \000"
@@ -15637,14 +15352,14 @@ fft_inst_q31_complex.10166:
 	.ascii	"I2C_I2STAT_M_TX_START ((0x08))\000"
 .LASF1109:
 	.ascii	"SysTick ((SysTick_Type *) SysTick_BASE )\000"
-.LASF2711:
+.LASF2715:
 	.ascii	"TFT_BACKGROUND_BLUE2 TFT_COLOR_BLUE2\000"
-.LASF2691:
+.LASF2695:
 	.ascii	"TFT_COLOR_BROWN 0xBBCA\000"
 .LASF700:
 	.ascii	"SCB_CPUID_VARIANT_Msk (0xFUL << SCB_CPUID_VARIANT_P"
 	.ascii	"os)\000"
-.LASF2776:
+.LASF2788:
 	.ascii	"char\000"
 .LASF1420:
 	.ascii	"CAN_STD_ENTRY_DISABLE_MASK (0x01)\000"
@@ -15671,7 +15386,7 @@ fft_inst_q31_complex.10166:
 .LASF938:
 	.ascii	"TPI_ACPR_PRESCALER_Msk (0x1FFFUL << TPI_ACPR_PRESCA"
 	.ascii	"LER_Pos)\000"
-.LASF2740:
+.LASF2744:
 	.ascii	"RTOS_HEADER_H_ \000"
 .LASF998:
 	.ascii	"TPI_DEVID_AsynClkIn_Msk (0x1UL << TPI_DEVID_AsynClk"
@@ -15702,7 +15417,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__WCHAR_MAX__ 0xffffffffU\000"
 .LASF2006:
 	.ascii	"UART_LCR_WLEN7 (2 << 0)\000"
-.LASF2702:
+.LASF2706:
 	.ascii	"TFT_FOREGROUND_MAGENTA TFT_COLOR_CYAN\000"
 .LASF2046:
 	.ascii	"UART_ACR_START (1 << 0)\000"
@@ -15743,7 +15458,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__PRIx64 \"%llx\"\000"
 .LASF1007:
 	.ascii	"MPU_TYPE_DREGION_Pos 8\000"
-.LASF2822:
+.LASF2825:
 	.ascii	"Chip_GPIO_SetPinState\000"
 .LASF154:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
@@ -15755,11 +15470,11 @@ fft_inst_q31_complex.10166:
 	.ascii	"CT_Pos)\000"
 .LASF224:
 	.ascii	"__ULLFRACT_FBIT__ 64\000"
-.LASF2720:
+.LASF2724:
 	.ascii	"DB2 4,28\000"
 .LASF2299:
 	.ascii	"portCHAR char\000"
-.LASF2670:
+.LASF2674:
 	.ascii	"ADC_DAC_HEADER_H_ \000"
 .LASF2029:
 	.ascii	"UART_LSR_FE (1 << 3)\000"
@@ -15782,7 +15497,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"taskYIELD() portYIELD()\000"
 .LASF1477:
 	.ascii	"ENET_CLRT_RETRANSMAX(n) ((n) & 0x0F)\000"
-.LASF2675:
+.LASF2679:
 	.ascii	"TIMER_HEADER_H_ \000"
 .LASF655:
 	.ascii	"_BITMASK\000"
@@ -15869,8 +15584,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"I2S_DAO_RESET ((uint32_t) (1 << 4))\000"
 .LASF1338:
 	.ascii	"CAN_IER_RIE ((uint32_t) (1))\000"
-.LASF2843:
-	.ascii	"ret_task\000"
+.LASF241:
+	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
 .LASF967:
 	.ascii	"TPI_FIFO0_ETM0_Pos 0\000"
 .LASF27:
@@ -15894,7 +15609,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CAN_TID_ID11(n) ((uint32_t) ((n) & 0x7FF))\000"
 .LASF461:
 	.ascii	"__SCNoLEAST8 \"%hho\"\000"
-.LASF2709:
+.LASF2713:
 	.ascii	"TFT_BACKGROUND_GREEN2 TFT_COLOR_GREEN2\000"
 .LASF367:
 	.ascii	"INC_FREERTOS_H \000"
@@ -15908,7 +15623,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
 .LASF1065:
 	.ascii	"CoreDebug_DHCSR_C_HALT_Pos 1\000"
-.LASF2746:
+.LASF2750:
 	.ascii	"BUTTON0 1, 15\000"
 .LASF1071:
 	.ascii	"CoreDebug_DCRSR_REGSEL_Pos 0\000"
@@ -15921,7 +15636,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"portBYTE_ALIGNMENT 8\000"
 .LASF2044:
 	.ascii	"UART_MSR_DCD (1 << 7)\000"
-.LASF2809:
+.LASF2812:
 	.ascii	"arm_cfft_radix4_instance_q31\000"
 .LASF647:
 	.ascii	"true 1\000"
@@ -15931,7 +15646,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_MAC1_RESETMCSRX 0x00000800\000"
 .LASF2341:
 	.ascii	"configUSE_APPLICATION_TASK_TAG 0\000"
-.LASF2842:
+.LASF2844:
 	.ascii	"pxCreatedTask\000"
 .LASF410:
 	.ascii	"_Csys_seek_(fh,pos) __sys_seek((int)fh,(int)pos)\000"
@@ -15967,7 +15682,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__SCNd32 \"%d\"\000"
 .LASF1845:
 	.ascii	"RIT_CTRL_INT ((uint32_t) (1))\000"
-.LASF2755:
+.LASF2765:
 	.ascii	"ADC_OSR_INIT 0, 8, MD_PLN, SALIDA\000"
 .LASF132:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
@@ -15997,7 +15712,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__CODE_RED 1\000"
 .LASF2456:
 	.ascii	"portTickType TickType_t\000"
-.LASF2783:
+.LASF2795:
 	.ascii	"LPC_IOCON_T\000"
 .LASF2430:
 	.ascii	"configUSE_MALLOC_FAILED_HOOK 0\000"
@@ -16005,6 +15720,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"TIMER_MATCH_INT(n) (_BIT((n) & 0x0F))\000"
 .LASF1503:
 	.ascii	"ENET_COMMAND_RXENABLE 0x00000001\000"
+.LASF2774:
+	.ascii	"DAC_DATA 0, 9\000"
 .LASF1705:
 	.ascii	"I2C_CON_STA (1UL << 5)\000"
 .LASF216:
@@ -16013,9 +15730,9 @@ fft_inst_q31_complex.10166:
 	.ascii	"DWT_MASK_MASK_Pos 0\000"
 .LASF1785:
 	.ascii	"I2S_DAO_STOP ((uint32_t) (1 << 3))\000"
-.LASF2741:
+.LASF2745:
 	.ascii	"PRIORIDAD_MAXIMA 4\000"
-.LASF2831:
+.LASF2834:
 	.ascii	"estado\000"
 .LASF514:
 	.ascii	"UINT32_MAX 0xffffffffU\000"
@@ -16072,8 +15789,6 @@ fft_inst_q31_complex.10166:
 	.ascii	"PHY_LINK_SPEED100 (1 << 4)\000"
 .LASF1457:
 	.ascii	"ENET_MAC2_FULLDUPLEX 0x00000001\000"
-.LASF2799:
-	.ascii	"arm_status\000"
 .LASF2214:
 	.ascii	"configUSE_16_BIT_TICKS 0\000"
 .LASF2059:
@@ -16082,7 +15797,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"PHY_LINK_CHANGED (1 << 2)\000"
 .LASF1842:
 	.ascii	"PMU_PCON_DPDFLAG (1 << 11)\000"
-.LASF2690:
+.LASF2694:
 	.ascii	"TFT_COLOR_GRAY 0x7BEF\000"
 .LASF746:
 	.ascii	"SCB_SCR_SEVONPEND_Msk (1UL << SCB_SCR_SEVONPEND_Pos"
@@ -16146,7 +15861,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"traceTASK_NOTIFY() \000"
 .LASF179:
 	.ascii	"__DEC64_MAX__ 9.999999999999999E384DD\000"
-.LASF2652:
+.LASF2655:
 	.ascii	"USE_DMA ON\000"
 .LASF586:
 	.ascii	"__SCNi64 \"%lli\"\000"
@@ -16195,17 +15910,17 @@ fft_inst_q31_complex.10166:
 	.ascii	"PMU_PCON_DSFLAG (1 << 9)\000"
 .LASF2603:
 	.ascii	"ARM_MATH_CM3 \000"
-.LASF2665:
+.LASF2669:
 	.ascii	"FFT_INIT_FFT_LENGTH FFT_SIZE\000"
 .LASF1323:
 	.ascii	"CAN_ICR_ERR_DATA_FIELD (0x0A)\000"
 .LASF2473:
 	.ascii	"xList List_t\000"
-.LASF2717:
+.LASF2721:
 	.ascii	"TFT_BACKGROUND_BROWN TFT_COLOR_GRAY\000"
-.LASF2701:
+.LASF2705:
 	.ascii	"TFT_FOREGROUND_CYAN TFT_COLOR_CYAN\000"
-.LASF2764:
+.LASF2778:
 	.ascii	"double\000"
 .LASF1064:
 	.ascii	"CoreDebug_DHCSR_C_STEP_Msk (1UL << CoreDebug_DHCSR_"
@@ -16280,8 +15995,6 @@ fft_inst_q31_complex.10166:
 	.ascii	"LPC_GPIO1 ((LPC_GPIO_T *) LPC_GPIO1_BASE)\000"
 .LASF391:
 	.ascii	"__EXIT_FAILURE 1\000"
-.LASF2320:
-	.ascii	"portENTER_CRITICAL() vPortEnterCritical()\000"
 .LASF2305:
 	.ascii	"portBASE_TYPE long\000"
 .LASF1500:
@@ -16322,7 +16035,9 @@ fft_inst_q31_complex.10166:
 	.ascii	"xQueueSend(xQueue,pvItemToQueue,xTicksToWait) xQueu"
 	.ascii	"eGenericSend( ( xQueue ), ( pvItemToQueue ), ( xTic"
 	.ascii	"ksToWait ), queueSEND_TO_BACK )\000"
-.LASF2671:
+.LASF2651:
+	.ascii	"DAC_INTERNO_MODO DAC_INTERNO_DMA\000"
+.LASF2675:
 	.ascii	"ADC_DMA_CANT_MUESTRAS 2048\000"
 .LASF1382:
 	.ascii	"CAN_TSR_TS(n) ((uint32_t) (1 << (n + 0)))\000"
@@ -16345,8 +16060,6 @@ fft_inst_q31_complex.10166:
 	.ascii	"TIMER_RESET ((uint32_t) (1 << 1))\000"
 .LASF769:
 	.ascii	"SCB_SHCSR_SVCALLPENDED_Pos 15\000"
-.LASF2104:
-	.ascii	"IAP_BLANK_CHECK_SECTOR_CMD 53\000"
 .LASF1369:
 	.ascii	"CAN_RFS_DLC(n) ((uint32_t) ((n >> 16) & 0x0F))\000"
 .LASF941:
@@ -16376,6 +16089,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_MCFG_SUPPPREAMBLE 0x00000002\000"
 .LASF1860:
 	.ascii	"RTC_AMR_CIIR_IMDOM ((1 << 3))\000"
+.LASF2760:
+	.ascii	"LED_1 1, 1\000"
 .LASF821:
 	.ascii	"SysTick_CTRL_COUNTFLAG_Pos 16\000"
 .LASF1653:
@@ -16393,11 +16108,11 @@ fft_inst_q31_complex.10166:
 .LASF1008:
 	.ascii	"MPU_TYPE_DREGION_Msk (0xFFUL << MPU_TYPE_DREGION_Po"
 	.ascii	"s)\000"
-.LASF2781:
+.LASF2793:
 	.ascii	"PINMODE_OD\000"
 .LASF13:
 	.ascii	"__ATOMIC_ACQ_REL 4\000"
-.LASF2676:
+.LASF2680:
 	.ascii	"TIMER0_TICKRATE 50\000"
 .LASF2150:
 	.ascii	"LED1_GPIO_BIT_NUM 22\000"
@@ -16412,7 +16127,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__CM3_REV 0x0200\000"
 .LASF41:
 	.ascii	"__INT8_TYPE__ signed char\000"
-.LASF2832:
+.LASF2835:
 	.ascii	"pin_gpio_init\000"
 .LASF164:
 	.ascii	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L\000"
@@ -16447,17 +16162,13 @@ fft_inst_q31_complex.10166:
 .LASF1920:
 	.ascii	"SPI_SR_ERROR (SPI_SR_ABRT | SPI_SR_MODF | SPI_SR_RO"
 	.ascii	"VR | SPI_SR_WCOL)\000"
-.LASF2743:
+.LASF2747:
 	.ascii	"ENTRADA 0\000"
 .LASF936:
 	.ascii	"DWT_FUNCTION_FUNCTION_Msk (0xFUL << DWT_FUNCTION_FU"
 	.ascii	"NCTION_Pos)\000"
-.LASF2754:
-	.ascii	"LED0 0, 7\000"
 .LASF1480:
 	.ascii	"ENET_MAXF_MAXFLEN(n) ((n) & 0xFFFF)\000"
-.LASF2793:
-	.ascii	"ARM_MATH_ARGUMENT_ERROR\000"
 .LASF242:
 	.ascii	"__ACCUM_MAX__ 0X7FFFFFFFP-15K\000"
 .LASF2277:
@@ -16470,7 +16181,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"xQueueAltSendToBack(xQueue,pvItemToQueue,xTicksToWa"
 	.ascii	"it) xQueueAltGenericSend( ( xQueue ), ( pvItemToQue"
 	.ascii	"ue ), ( xTicksToWait ), queueSEND_TO_BACK )\000"
-.LASF2779:
+.LASF2791:
 	.ascii	"RESERVED0\000"
 .LASF59:
 	.ascii	"__INT_FAST32_TYPE__ int\000"
@@ -16492,7 +16203,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CANAF_FULLCAN_MSG_RTR_POS (30)\000"
 .LASF937:
 	.ascii	"TPI_ACPR_PRESCALER_Pos 0\000"
-.LASF2828:
+.LASF2831:
 	.ascii	"portNum\000"
 .LASF2433:
 	.ascii	"pvPortMallocAligned(x,puxStackBuffer) ( ( ( puxStac"
@@ -16515,7 +16226,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"TVALID_Pos)\000"
 .LASF668:
 	.ascii	"__CMSIS_H_ \000"
-.LASF2817:
+.LASF2820:
 	.ascii	"pCfft\000"
 .LASF1594:
 	.ascii	"ENET_RINFO_RANGE_ERR 0x04000000\000"
@@ -16558,7 +16269,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__UART_17XX_40XX_H_ \000"
 .LASF1859:
 	.ascii	"RTC_AMR_CIIR_IMHOUR ((1 << 2))\000"
-.LASF2751:
+.LASF2755:
 	.ascii	"BUTTON3_INIT 1, 9, MD_PUP, ENTRADA\000"
 .LASF2354:
 	.ascii	"portPRE_TASK_DELETE_HOOK(pvTaskToDelete,pxYieldPend"
@@ -16590,8 +16301,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"__CLOCK_T_DEFINED \000"
 .LASF2090:
 	.ascii	"WWDT_WDMOD_WDRESET ((uint32_t) (1 << 1))\000"
-.LASF178:
-	.ascii	"__DEC64_MIN__ 1E-383DD\000"
+.LASF1436:
+	.ascii	"DAC_VALUE(n) ((uint32_t) ((n & 0x3FF) << 6))\000"
 .LASF98:
 	.ascii	"__INT16_C(c) c\000"
 .LASF35:
@@ -16602,7 +16313,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CAN_STD_ENTRY_IE_MASK (0x01)\000"
 .LASF663:
 	.ascii	"BOOL_16 bool\000"
-.LASF2848:
+.LASF2849:
 	.ascii	"ITM_RxBuffer\000"
 .LASF907:
 	.ascii	"DWT_CPICNT_CPICNT_Pos 0\000"
@@ -16621,7 +16332,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"BUTTONS_BUTTON1_GPIO_BIT_NUM 18\000"
 .LASF739:
 	.ascii	"SCB_AIRCR_SYSRESETREQ_Pos 2\000"
-.LASF2773:
+.LASF2787:
 	.ascii	"long long unsigned int\000"
 .LASF19:
 	.ascii	"__SIZEOF_SHORT__ 2\000"
@@ -16631,7 +16342,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__PRIoFAST64 \"%llo\"\000"
 .LASF1455:
 	.ascii	"ENET_MAC1_SOFTRESET 0x00008000\000"
-.LASF2721:
+.LASF2725:
 	.ascii	"DB3 1,23\000"
 .LASF800:
 	.ascii	"SCB_HFSR_FORCED_Msk (1UL << SCB_HFSR_FORCED_Pos)\000"
@@ -16673,7 +16384,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"I2C_CON_AA (1UL << 2)\000"
 .LASF887:
 	.ascii	"DWT_CTRL_SLEEPEVTENA_Pos 19\000"
-.LASF2810:
+.LASF2813:
 	.ascii	"fftLenReal\000"
 .LASF1539:
 	.ascii	"ENET_RSV_CRCERR 0x00100000\000"
@@ -16691,7 +16402,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CoreDebug_DCRSR_REGWnR_Pos 16\000"
 .LASF185:
 	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
-.LASF2706:
+.LASF2710:
 	.ascii	"TFT_BACKGROUND_BLACK TFT_COLOR_BLACK\000"
 .LASF2115:
 	.ascii	"IAP_SRC_ADDR_ERROR 2\000"
@@ -16743,6 +16454,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"__FLT_MIN__ 1.1754943508222875e-38F\000"
 .LASF50:
 	.ascii	"__INT_LEAST16_TYPE__ short int\000"
+.LASF2761:
+	.ascii	"LED_2_INIT 1, 4, MD_PLN, SALIDA\000"
 .LASF1302:
 	.ascii	"CAN_ICR_DOI ((uint32_t) (1 << 3))\000"
 .LASF56:
@@ -16812,7 +16525,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"CAN_RSR_RS(n) ((uint32_t) (1 << (n + 0)))\000"
 .LASF1334:
 	.ascii	"CAN_ICR_STUFF_ERROR (2)\000"
-.LASF2812:
+.LASF2815:
 	.ascii	"ifftFlagR\000"
 .LASF2413:
 	.ascii	"traceEVENT_GROUP_WAIT_BITS_END(xEventGroup,uxBitsTo"
@@ -16829,12 +16542,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"LEEPCNT_Pos)\000"
 .LASF2598:
 	.ascii	"isless(x,y) ((x) < (y))\000"
-.LASF2484:
-	.ascii	"listSET_LIST_INTEGRITY_CHECK_1_VALUE(pxList) \000"
 .LASF951:
 	.ascii	"TPI_FFCR_EnFCont_Pos 1\000"
-.LASF241:
-	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
 .LASF1505:
 	.ascii	"ENET_COMMAND_REGRESET 0x00000008\000"
 .LASF536:
@@ -16847,13 +16556,13 @@ fft_inst_q31_complex.10166:
 	.ascii	"000000) )\000"
 .LASF142:
 	.ascii	"__DBL_MIN_EXP__ (-1021)\000"
-.LASF1447:
-	.ascii	"ENET_MAC1_RXFLOWCTRL 0x00000004\000"
+.LASF178:
+	.ascii	"__DEC64_MIN__ 1E-383DD\000"
 .LASF427:
 	.ascii	"INT_LEAST8_MIN (-0x80)\000"
 .LASF2615:
 	.ascii	"ALIGN4 \000"
-.LASF2768:
+.LASF2782:
 	.ascii	"uint16_t\000"
 .LASF1108:
 	.ascii	"SCB ((SCB_Type *) SCB_BASE )\000"
@@ -16887,13 +16596,15 @@ fft_inst_q31_complex.10166:
 	.ascii	"__UINT_LEAST8_MAX__ 0xff\000"
 .LASF662:
 	.ascii	"BOOL_32 bool\000"
-.LASF2823:
+.LASF2650:
+	.ascii	"DAC_INTERNO_DMA 1\000"
+.LASF2826:
 	.ascii	"Chip_GPIO_SetPinDIROutput\000"
 .LASF1150:
 	.ascii	"LPC_UART2_BASE 0x40098000\000"
 .LASF1:
 	.ascii	"__STDC_VERSION__ 201112L\000"
-.LASF2760:
+.LASF2772:
 	.ascii	"DAC_ZEROA 1, 17\000"
 .LASF159:
 	.ascii	"__LDBL_MAX_10_EXP__ 308\000"
@@ -16901,7 +16612,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_IPGR_P1_DEF ENET_IPGR_NBTOBINTEGAP1(0x0C)\000"
 .LASF1200:
 	.ascii	"LPC_CAN1 ((LPC_CAN_T *) LPC_CAN1_BASE)\000"
-.LASF2654:
+.LASF2658:
 	.ascii	"BASICS_HEADER_INIT_H_ \000"
 .LASF1351:
 	.ascii	"CAN_BTR_SJW(n) ((uint32_t) (((n) & 0x3) << 14))\000"
@@ -16937,12 +16648,12 @@ fft_inst_q31_complex.10166:
 	.ascii	"__TA_FBIT__ 63\000"
 .LASF172:
 	.ascii	"__DEC32_MAX__ 9.999999E96DF\000"
-.LASF2686:
+.LASF2690:
 	.ascii	"TFT_COLOR_YELLOW 0xFFE0\000"
 .LASF1535:
 	.ascii	"ENET_RSV_PPI 0x00010000\000"
-.LASF2798:
-	.ascii	"ARM_MATH_TEST_FAILURE\000"
+.LASF1217:
+	.ascii	"SYSCTL_OSCRANGE_15_25 (1 << 4)\000"
 .LASF645:
 	.ascii	"bool _Bool\000"
 .LASF606:
@@ -16988,14 +16699,14 @@ fft_inst_q31_complex.10166:
 	.ascii	"ITM_TCR_SYNCENA_Msk (1UL << ITM_TCR_SYNCENA_Pos)\000"
 .LASF2369:
 	.ascii	"traceQUEUE_CREATE(pxNewQueue) \000"
-.LASF2693:
+.LASF2697:
 	.ascii	"TFT_FOREGROUND_BLACK TFT_COLOR_BLACK\000"
 .LASF1459:
 	.ascii	"ENET_MAC2_HFEN 0x00000004\000"
-.LASF2796:
-	.ascii	"ARM_MATH_NANINF\000"
-.LASF2797:
-	.ascii	"ARM_MATH_SINGULAR\000"
+.LASF2500:
+	.ascii	"listIS_CONTAINED_WITHIN(pxList,pxListItem) ( ( Base"
+	.ascii	"Type_t ) ( ( pxListItem )->pvContainer == ( void * "
+	.ascii	") ( pxList ) ) )\000"
 .LASF2123:
 	.ascii	"IAP_COMPARE_ERROR 10\000"
 .LASF498:
@@ -17006,7 +16717,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__BOARD_H_ \000"
 .LASF2004:
 	.ascii	"UART_LCR_WLEN5 (0 << 0)\000"
-.LASF2772:
+.LASF2786:
 	.ascii	"long long int\000"
 .LASF1281:
 	.ascii	"CAN_CMR_TR ((uint32_t) (1))\000"
@@ -17018,7 +16729,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ITM_IRR_ATREADYM_Msk (1UL << ITM_IRR_ATREADYM_Pos)\000"
 .LASF2167:
 	.ascii	"__BOARD_API_H_ \000"
-.LASF2820:
+.LASF2823:
 	.ascii	"port\000"
 .LASF711:
 	.ascii	"SCB_ICSR_PENDSVCLR_Pos 27\000"
@@ -17040,7 +16751,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_RSV_BROADCAST 0x02000000\000"
 .LASF2213:
 	.ascii	"configUSE_TRACE_FACILITY 1\000"
-.LASF2649:
+.LASF2652:
 	.ascii	"DAC_EXTERNO_INTERRUPCION 0\000"
 .LASF1185:
 	.ascii	"LPC_TIMER3 ((LPC_TIMER_T *) LPC_TIMER3_BASE)\000"
@@ -17057,13 +16768,11 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_MAC1_MASK 0xcf1f\000"
 .LASF1910:
 	.ascii	"SPI_CR_MASTER_EN ((uint32_t) (1 << 5))\000"
-.LASF2639:
-	.ascii	"USE_TFT ON\000"
 .LASF2160:
 	.ascii	"LED6_GPIO_BIT_NUM 11\000"
 .LASF2281:
 	.ascii	"pdFREERTOS_ERRNO_EOPNOTSUPP 95\000"
-.LASF2749:
+.LASF2753:
 	.ascii	"BUTTON2_INIT 1, 10, MD_PUP, ENTRADA\000"
 .LASF2517:
 	.ascii	"taskSCHEDULER_RUNNING ( ( BaseType_t ) 2 )\000"
@@ -17113,7 +16822,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"GPDMA_CONN_UART3_Tx ((14UL))\000"
 .LASF446:
 	.ascii	"__PRIi8 \"%hhi\"\000"
-.LASF2696:
+.LASF2700:
 	.ascii	"TFT_FOREGROUND_GREEN2 TFT_COLOR_GREEN2\000"
 .LASF1220:
 	.ascii	"SYSCTL_IRC_FREQ (4000000)\000"
@@ -17123,7 +16832,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"errQUEUE_FULL ( ( BaseType_t ) 0 )\000"
 .LASF1227:
 	.ascii	"SYSCTL_PLL1STS_CONNECTED (1 << 9)\000"
-.LASF2659:
+.LASF2663:
 	.ascii	"FFT_SIZE_256 256\000"
 .LASF1917:
 	.ascii	"SPI_SR_ROVR ((uint32_t) (1 << 5))\000"
@@ -17157,7 +16866,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_INT_RXDONE 0x00000008\000"
 .LASF2119:
 	.ascii	"IAP_COUNT_ERROR 6\000"
-.LASF2726:
+.LASF2730:
 	.ascii	"DB8 1,22\000"
 .LASF656:
 	.ascii	"_BITMASK(field_width) ( _BIT(field_width) - 1)\000"
@@ -17189,6 +16898,8 @@ fft_inst_q31_complex.10166:
 	.ascii	"__IO volatile\000"
 .LASF1469:
 	.ascii	"ENET_MAC2_EXCESSDEFER 0x00004000\000"
+.LASF2647:
+	.ascii	"USE_DAC_INTERNO ON\000"
 .LASF680:
 	.ascii	"__ASM __asm\000"
 .LASF558:
@@ -17226,11 +16937,11 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_RXFILTERCTRL_APE 0x00000020\000"
 .LASF1191:
 	.ascii	"LPC_QEI ((LPC_QEI_T *) LPC_QEI_BASE)\000"
-.LASF2707:
+.LASF2711:
 	.ascii	"TFT_BACKGROUND_RED TFT_COLOR_RED\000"
 .LASF161:
 	.ascii	"__LDBL_MAX__ 1.7976931348623157e+308L\000"
-.LASF2806:
+.LASF2809:
 	.ascii	"pBitRevTable\000"
 .LASF2208:
 	.ascii	"configCPU_CLOCK_HZ ( ( unsigned long ) SystemCoreCl"
@@ -17257,9 +16968,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__FLT_HAS_DENORM__ 1\000"
 .LASF1727:
 	.ascii	"I2C_I2STAT_S_RX_GENCALL_ACK ((0x70))\000"
-.LASF2513:
-	.ascii	"taskDISABLE_INTERRUPTS() portDISABLE_INTERRUPTS()\000"
-.LASF2766:
+.LASF2780:
 	.ascii	"short int\000"
 .LASF560:
 	.ascii	"INT_LEAST64_MAX 0x7fffffffffffffffLL\000"
@@ -17278,7 +16987,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__PRIoLEAST16 \"%ho\"\000"
 .LASF2468:
 	.ascii	"pdTASK_HOOK_CODE TaskHookFunction_t\000"
-.LASF2723:
+.LASF2727:
 	.ascii	"DB5 0,19\000"
 .LASF1983:
 	.ascii	"UART_IIR_FIFO_EN (3 << 6)\000"
@@ -17329,7 +17038,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"LED3_GPIO_BIT_NUM 3\000"
 .LASF1807:
 	.ascii	"I2S_DMA1_TX_ENABLE ((uint32_t) (1 << 1))\000"
-.LASF2836:
+.LASF2838:
 	.ascii	"task_create\000"
 .LASF53:
 	.ascii	"__UINT_LEAST8_TYPE__ unsigned char\000"
@@ -17367,11 +17076,11 @@ fft_inst_q31_complex.10166:
 	.ascii	"__CHAR16_TYPE__ short unsigned int\000"
 .LASF1841:
 	.ascii	"PMU_PCON_PDFLAG (1 << 10)\000"
-.LASF2667:
+.LASF2671:
 	.ascii	"FFT_INIT_IFFT FALSE\000"
 .LASF2374:
 	.ascii	"traceGIVE_MUTEX_RECURSIVE_FAILED(pxMutex) \000"
-.LASF2814:
+.LASF2817:
 	.ascii	"twidCoefRModifier\000"
 .LASF1023:
 	.ascii	"MPU_RBAR_REGION_Pos 0\000"
@@ -17379,7 +17088,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"__UFRACT_FBIT__ 16\000"
 .LASF682:
 	.ascii	"__STATIC_INLINE static inline\000"
-.LASF2763:
+.LASF2777:
 	.ascii	"unsigned int\000"
 .LASF2554:
 	.ascii	"semGIVE_BLOCK_TIME ( ( TickType_t ) 0U )\000"
@@ -17400,9 +17109,9 @@ fft_inst_q31_complex.10166:
 	.ascii	"ENET_RXFILTERWOLSTATUS_MPW 0x00000100\000"
 .LASF627:
 	.ascii	"__SCNuMAX \"%llu\"\000"
-.LASF2692:
+.LASF2696:
 	.ascii	"TFT_FOREGROUND_WHITE TFT_COLOR_WHITE\000"
-.LASF2830:
+.LASF2833:
 	.ascii	"pin_set\000"
 .LASF2224:
 	.ascii	"configQUEUE_REGISTRY_SIZE 10\000"
@@ -17420,11 +17129,11 @@ fft_inst_q31_complex.10166:
 .LASF738:
 	.ascii	"SCB_AIRCR_PRIGROUP_Msk (7UL << SCB_AIRCR_PRIGROUP_P"
 	.ascii	"os)\000"
-.LASF2736:
+.LASF2740:
 	.ascii	"WR 0,7\000"
 .LASF1005:
 	.ascii	"MPU_TYPE_IREGION_Pos 16\000"
-.LASF2807:
+.LASF2810:
 	.ascii	"twidCoefModifier\000"
 .LASF61:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
@@ -17449,7 +17158,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"DWT_CTRL_POSTPRESET_Pos 1\000"
 .LASF298:
 	.ascii	"__UHA_IBIT__ 8\000"
-.LASF2682:
+.LASF2686:
 	.ascii	"TFT_COLOR_GREEN 0x07E0\000"
 .LASF1805:
 	.ascii	"I2S_STATE_TX_LEVEL(n) ((uint32_t) ((n & 1F) << 16))"
@@ -17464,7 +17173,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"I2C_I2SCLL_BITMASK ((0xFFFF))\000"
 .LASF858:
 	.ascii	"ITM_TCR_ITMENA_Msk (1UL << ITM_TCR_ITMENA_Pos)\000"
-.LASF2742:
+.LASF2746:
 	.ascii	"PRIORIDAD_MINIMA 0\000"
 .LASF384:
 	.ascii	"__SIZEOF_LONG_DOUBLE 12\000"
@@ -17589,7 +17298,7 @@ fft_inst_q31_complex.10166:
 	.ascii	"ADC_DR_OVERRUN(n) ((((n) >> 30) & (1UL)))\000"
 .LASF343:
 	.ascii	"__ARM_ARCH_ISA_THUMB 2\000"
-.LASF2732:
+.LASF2736:
 	.ascii	"DB14 1,21\000"
 .LASF93:
 	.ascii	"__UINT32_MAX__ 0xffffffffUL\000"
@@ -17606,8 +17315,8 @@ fft_inst_q31_complex.10166:
 .LASF1637:
 	.ascii	"GPDMA_DMACCxConfig_DestPeripheral(n) (((n & 0x1F) <"
 	.ascii	"< 6))\000"
-.LASF448:
-	.ascii	"__PRIo8 \"%hho\"\000"
+.LASF2320:
+	.ascii	"portENTER_CRITICAL() vPortEnterCritical()\000"
 .LASF733:
 	.ascii	"SCB_AIRCR_VECTKEYSTAT_Pos 16\000"
 .LASF633:

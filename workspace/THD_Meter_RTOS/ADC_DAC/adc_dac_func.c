@@ -14,7 +14,7 @@
 
 #if USE_ADC_EXTERNO
 	void adc_ext_prepare(volatile uint32_t *buffer_A, 	// Prepara el buffer para poder recibir desde el ADC
-					 volatile uint32_t *buffer_B)
+					 	 volatile uint32_t *buffer_B)
 	{
 		dma_adc_ext_memory_A = buffer_A;
 		dma_adc_ext_memory_B = buffer_B;
@@ -82,6 +82,76 @@
 	}
 #endif
 
+#if USE_ADC_INTERNO
+	void adc_int_prepare(volatile uint32_t *buffer_A, 	// Prepara el buffer para poder recibir desde el ADC
+					 	 volatile uint32_t *buffer_B)
+	{
+		dma_adc_int_memory_A = buffer_A;
+		dma_adc_int_memory_B = buffer_B;
+
+		// Preparo el descriptor para el BUFFER_A
+		Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
+									(DMA_TransferDescriptor_t *) &dma_adc_int_descriptor_A,
+									(uint32_t) GPDMA_CONN_I2S_Channel_1,
+									(uint32_t) dma_adc_int_memory_A,
+									ADC_DMA_CANT_MUESTRAS,
+									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA,
+									NULL);
+		dma_adc_int_descriptor_A.src = GPDMA_CONN_I2S_Channel_1;
+
+		// Preparo el descriptor para el BUFFER_B
+		Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
+									(DMA_TransferDescriptor_t *) &dma_adc_int_descriptor_B,
+									(uint32_t) GPDMA_CONN_I2S_Channel_1,
+									(uint32_t) dma_adc_int_memory_B,
+									ADC_DMA_CANT_MUESTRAS,
+									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA,
+									NULL);
+		dma_adc_int_descriptor_B.src = GPDMA_CONN_I2S_Channel_1;
+
+		dma_adc_int_status = STATUS_ADC_IDLE;
+
+		if(buffer_B)
+			adc_int_start();
+	}
+
+	void adc_int_start()
+	{
+		if(dma_adc_int_status == STATUS_ADC_IDLE)
+		{
+			// Inicio la transmición del ADC -> MEMORY usando el BUFFER_A
+			Chip_GPDMA_SGTransfer(LPC_GPDMA,
+									dma_adc_int_canal,
+									(DMA_TransferDescriptor_t *) &dma_adc_int_descriptor_A,
+									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
+			dma_adc_int_status = STATUS_ADC_TRANSFIRIENDO_A;
+		}
+	}
+
+	void adc_int_post_procesamiento()
+	{
+		if(dma_adc_int_memory_B)
+		{
+			if(STATUS_ADC_ISERR(dma_adc_int_status))
+			{
+				// Si termino de transferir antes de terminar procesamiento, se debe continuar con la transferencia
+				Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_adc_int_canal,
+										dma_adc_int_descriptor,
+										GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
+			}
+
+			dma_adc_int_memory = NULL;
+			dma_adc_int_descriptor = NULL;
+
+			STATUS_ADC_PROC2TRANS(dma_adc_int_status);
+		}
+		else
+		{
+			dma_adc_int_status = STATUS_ADC_IDLE;
+		}
+	}
+#endif
+
 
 #if USE_DAC_EXTERNO
 	uint16_t dac_ext_set_data(uint32_t data)
@@ -119,7 +189,7 @@
 			dma_dac_ext_memory[i] = dac_ext_set_data(dma_dac_ext_memory[i]);
 		}
 
-		xSemaphoreTake(sem_dac_ext_finish, 0);
+		xSemaphoreTake(sem_dac_ext_finish, portMAX_DELAY);
 
 		while(!dac_ext_disponible());	// Espera hasta que el dac este disponible para enviar
 
@@ -134,7 +204,7 @@
 
 
 #if USE_DAC_INTERNO
-	STATIC INLINE uint16_t dac_int_set_data(uint32_t data)
+	uint16_t dac_int_set_data(uint32_t data)
 	{
 		return (data >> 8);
 	}
@@ -154,7 +224,7 @@
 		dma_dac_int_descriptor.dst = GPDMA_CONN_DAC;
 	}
 
-	STATIC INLINE bool dac_int_disponible()
+	bool dac_int_disponible()
 	{
 		if(dma_dac_int_status == STATUS_DAC_IDLE)
 			return true;
@@ -169,7 +239,7 @@
 			dma_dac_int_memory[i] = dac_int_set_data(dma_dac_int_memory[i]);
 		}
 
-		xSemaphoreTake(sem_dac_finish, 0);
+		//xSemaphoreTake(sem_dac_int_finish, portMAX_DELAY);
 
 		while(!dac_int_disponible());	// Espera hasta que el dac este disponible para enviar
 

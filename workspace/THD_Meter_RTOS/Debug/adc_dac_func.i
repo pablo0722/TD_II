@@ -15963,7 +15963,7 @@ void arm_rfft_fast_f32(
 
 
 
-#define DEBUG_MODE ON
+#define DEBUG_MODE OFF
 # 72 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_ADC_INTERNO OFF
 #define USE_ADC_EXTERNO ON
@@ -15976,16 +15976,24 @@ void arm_rfft_fast_f32(
 
 
 
-#define USE_DAC_INTERNO OFF
+#define USE_DAC_INTERNO ON
 #define USE_DAC_EXTERNO ON
-# 102 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+
+
+
+#define DAC_INTERNO_INTERRUPCION 0
+#define DAC_INTERNO_DMA 1
+#define DAC_INTERNO_MODO DAC_INTERNO_DMA
+
+
+
 #define DAC_EXTERNO_INTERRUPCION 0
 #define DAC_EXTERNO_DMA 1
 #define DAC_EXTERNO_MODO DAC_EXTERNO_DMA
 # 115 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_DMA ON
-
-
+# 124 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+#define USE_I2S OFF
 
 
 
@@ -16049,7 +16057,7 @@ static inline void pin_gpio_init(uint8_t port, uint8_t pin, uint32_t mode,
 
 static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t func)
 {
- if(1)
+ if(0)
  {
   if(func == 0)
   {
@@ -16112,37 +16120,11 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
  static inline void fft_init()
  {
   static arm_cfft_radix4_instance_q31 fft_inst_q31_complex;
-
-   printf("[info] init FFT: \r\n");
-   printf("\t format: q31 \r\n");
-   printf("\t fftLength(solo parte real): %d \r\n", 1024);
-
-
-
-   arm_status st =
-
-
+# 33 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
   arm_rfft_init_q31(&fft_inst_q31, &fft_inst_q31_complex, 1024, TRUE, TRUE);
-
-
-   if(st != ARM_MATH_SUCCESS)
-   {
-    printf("[error] FFT init: \r\n");
-    printf("\t st = %d \r\n", st);
-   }
-
-   st =
-
-
+# 45 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
   arm_rfft_init_q31(&ifft_inst_q31, &fft_inst_q31_complex, 1024, FALSE, TRUE);
-
-
-   if(st != ARM_MATH_SUCCESS)
-   {
-    printf("[error] FFT init: \r\n");
-    printf("\t st = %d \r\n", st);
-   }
-
+# 54 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
  }
 # 67 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_func.h" 1
@@ -16195,21 +16177,34 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
   void adc_ext_prepare(volatile uint32_t *buffer_A,
-       volatile uint32_t *buffer_B);
+         volatile uint32_t *buffer_B);
   void adc_ext_start();
   void adc_ext_post_procesamiento();
-
-
-
+# 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
   uint16_t dac_ext_set_data(uint32_t data);
   void dac_ext_prepare(volatile uint16_t *buffer);
   
-# 29 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 3 4
+# 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 3 4
  _Bool 
-# 29 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+# 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
       dac_ext_disponible();
   void dac_ext_send();
-# 41 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+
+
+
+  uint16_t dac_int_set_data(uint32_t data);
+  void dac_int_prepare(volatile uint16_t *buffer);
+  
+# 43 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 3 4
+ _Bool 
+# 43 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+      dac_int_disponible();
+  void dac_int_send();
+
+
+
+
+
 #define ADC_DMA_CANT_MUESTRAS 2048
 #define ADC_FREQ 32000
 
@@ -16233,6 +16228,12 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
    extern SemaphoreHandle_t sem_dac_ext_finish;
+
+
+
+
+
+   extern SemaphoreHandle_t sem_dac_int_finish;
 # 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 1
 # 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
@@ -16444,7 +16445,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
         void * const pvParameters, UBaseType_t uxPriority, TaskHandle_t * const pxCreatedTask)
  {
 
-   BaseType_t ret_task =
+
 
 
   xTaskGenericCreate( ( pxTaskCode ), ( pcName ), ( usStackDepth ), ( pvParameters ), ( uxPriority ), ( pxCreatedTask ), ( 
@@ -16456,38 +16457,30 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
  ((void *)0) 
 # 22 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
  ) );
-
-
-   if(ret_task < 0)
-   {
-    printf("[error] tarea %s \n", pcName);
-    printf("\t no hay memoria suficiente");
-   }
-
+# 31 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
  }
-
 
 
  static inline void task_init()
  {
 
   task_create( vTask_nvic_init, "vTask_nvic_init", ( ( unsigned short ) 128 ), 
-# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
                                                                             ((void *)0)
-# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
                                                                                 , 4 +1, (TaskHandle_t *) 
-# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
                                                                                                                       ((void *)0)
-# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+# 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
                                                                                                                           );
   task_create( vtask_ImAlive, "vtask_ImAlive", ( ( unsigned short ) 128 ), 
-# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
                                                                            ((void *)0)
-# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
                                                                                , 0, (TaskHandle_t *) 
-# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h" 3 4
                                                                                                                     ((void *)0)
-# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
+# 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\RTOS/rtos_init.h"
                                                                                                                         );
 
 
@@ -16522,6 +16515,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
 
+
  extern uint32_t buffer_complex [1024*2];
  extern uint16_t buffer_dac_out [1024*2];
  extern uint32_t buffer_dep [1024];
@@ -16547,8 +16541,20 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
 
-#define LED0_INIT 0, 7, MD_PLN, SALIDA
-#define LED0 0, 7
+#define LED_IM_ALIVE_INIT 1, 0, MD_PLN, SALIDA
+#define LED_IM_ALIVE 1, 0
+
+
+#define LED_1_INIT 1, 1, MD_PLN, SALIDA
+#define LED_1 1, 1
+
+
+#define LED_2_INIT 1, 4, MD_PLN, SALIDA
+#define LED_2 1, 4
+
+
+#define LED_3_INIT 1, 8, MD_PLN, SALIDA
+#define LED_3 1, 8
 
 
 
@@ -16556,6 +16562,9 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 #define ADC_OSR_INIT 0, 8, MD_PLN, SALIDA
 #define ADC_OSR 0, 8
+
+#define ADC_FSYNC_INIT 0, 7, MD_PLN, SALIDA
+#define ADC_FSYNC 0, 7
 
 
 
@@ -16566,6 +16575,9 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 #define DAC_ZEROA_INIT 1, 17, MD_PLN, ENTRADA
 #define DAC_ZEROA 1, 17
+
+#define DAC_DATA_INIT 0, 9, MD_PLN, SALIDA
+#define DAC_DATA 0, 9
 # 11 "../ADC_DAC/adc_dac_func.c" 2
 # 1 "../ADC_DAC/private/adc_dac_header_priv.h" 1
 # 9 "../ADC_DAC/private/adc_dac_header_priv.h"
@@ -16586,6 +16598,9 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 #define AOUT 0,26
 
 
+
+
+
 #define RX_CONFIG0 0
 #define RX_CONFIG1 1
 #define RX_CONFIG RX_CONFIG0
@@ -16594,7 +16609,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 #define I2SRX_CLK 0,4, MD_PLN, IOCON_FUNC1
 #define I2SRX_WS 0,5, MD_PLN, IOCON_FUNC1
 #define I2SRX_SDA 0,6, MD_PLN, IOCON_FUNC1
-# 42 "../ADC_DAC/private/adc_dac_header_priv.h"
+# 45 "../ADC_DAC/private/adc_dac_header_priv.h"
 #define RX_MCLK 4, 28, MD_PLN, IOCON_FUNC1
 
 
@@ -16607,9 +16622,9 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 #define I2STX_CLK 0, 7, MD_PLN, IOCON_FUNC1
 #define I2STX_WS 0, 8, MD_PLN, IOCON_FUNC1
 #define I2STX_SDA 0, 9, MD_PLN, IOCON_FUNC1
-# 62 "../ADC_DAC/private/adc_dac_header_priv.h"
+# 65 "../ADC_DAC/private/adc_dac_header_priv.h"
 #define TX_MCLK 4, 29, MD_PLN, IOCON_FUNC1
-# 81 "../ADC_DAC/private/adc_dac_header_priv.h"
+# 84 "../ADC_DAC/private/adc_dac_header_priv.h"
 #define STATUS_ADC_IDLE -1
 #define STATUS_ADC_TRANSFIRIENDO_A 0x00
 #define STATUS_ADC_TRANSFIRIENDO_B 0x01
@@ -16623,7 +16638,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 #define STATUS_ADC_PROC2ERR(status) status += 2
 #define STATUS_ADC_PROC2TRANS(status) status &= 0x01
-# 118 "../ADC_DAC/private/adc_dac_header_priv.h"
+# 121 "../ADC_DAC/private/adc_dac_header_priv.h"
 #define STATUS_DAC_IDLE -1
 #define STATUS_DAC_RECIBIDO 0x00
 #define STATUS_DAC_TRANSFIRIENDO 0x01
@@ -16642,7 +16657,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
   extern uint8_t dma_adc_ext_canal;
 
-  extern volatile uint8_t dma_adc_ext_status;
+  extern volatile int8_t dma_adc_ext_status;
 
 
 
@@ -16652,8 +16667,21 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
   extern uint8_t dma_dac_ext_canal;
 
-  extern volatile uint8_t dma_dac_ext_status;
-# 161 "../ADC_DAC/private/adc_dac_header_priv.h"
+  extern volatile int8_t dma_dac_ext_status;
+
+
+
+  extern DMA_TransferDescriptor_t dma_dac_int_descriptor;
+
+  extern volatile uint16_t * dma_dac_int_memory;
+
+  extern uint8_t dma_dac_int_canal;
+
+  extern volatile int8_t dma_dac_int_status;
+
+
+
+
 # 1 "../ADC_DAC/private/adc_dac_init_priv.h" 1
 # 9 "../ADC_DAC/private/adc_dac_init_priv.h"
 #define ADC_DAC_INIT_PRIV_H_ 
@@ -16670,27 +16698,23 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 # 83 "../ADC_DAC/private/adc_dac_init_priv.h"
   char flag_init = 1;
 
-
-   printf("[info] Init DMA \r\n");
-
-
   if(flag_init)
   {
+
+
+
+
    Chip_GPDMA_Init(((LPC_GPDMA_T *) 0x50004000));
-
-
    NVIC_DisableIRQ(DMA_IRQn);
+
+
    NVIC_SetPriority(DMA_IRQn, ((0x01<<3)|0x01));
-
-
-
-
-     printf("\t init buffers ADC externo \r\n");
-
-
-
+   NVIC_EnableIRQ(DMA_IRQn);
+# 105 "../ADC_DAC/private/adc_dac_init_priv.h"
     dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
-# 118 "../ADC_DAC/private/adc_dac_init_priv.h"
+# 121 "../ADC_DAC/private/adc_dac_init_priv.h"
+    dma_dac_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
+# 135 "../ADC_DAC/private/adc_dac_init_priv.h"
    flag_init = 0;
   }
  }
@@ -16854,40 +16878,43 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
  static inline void i2s_init()
  {
 
-   printf("[info] Init I2S \r\n");
 
 
 
-   { ( sem_adc_ext_proc ) = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) ); if( ( sem_adc_ext_proc ) != 
-# 285 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
-  ((void *)0) 
-# 285 "../ADC_DAC/private/adc_dac_init_priv.h"
-  ) { ( void ) xQueueGenericSend( ( QueueHandle_t ) ( ( sem_adc_ext_proc ) ), 
-# 285 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
-  ((void *)0)
-# 285 "../ADC_DAC/private/adc_dac_init_priv.h"
-  , ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) ); } };
-   xQueueGenericReceive( ( QueueHandle_t ) ( sem_adc_ext_proc ), 
-# 286 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
-  ((void *)0)
-# 286 "../ADC_DAC/private/adc_dac_init_priv.h"
-  , ( 0 ), ( ( BaseType_t ) 0 ) );
 
 
+    { ( sem_adc_ext_proc ) = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) ); if( ( sem_adc_ext_proc ) != 
+# 303 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
+   ((void *)0) 
+# 303 "../ADC_DAC/private/adc_dac_init_priv.h"
+   ) { ( void ) xQueueGenericSend( ( QueueHandle_t ) ( ( sem_adc_ext_proc ) ), 
+# 303 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
+   ((void *)0)
+# 303 "../ADC_DAC/private/adc_dac_init_priv.h"
+   , ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) ); } };
+    xQueueGenericReceive( ( QueueHandle_t ) ( sem_adc_ext_proc ), 
+# 304 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
+   ((void *)0)
+# 304 "../ADC_DAC/private/adc_dac_init_priv.h"
+   , ( ( TickType_t ) 0xffffffffUL ), ( ( BaseType_t ) 0 ) );
 
-   dma_init();
+
+    { ( sem_dac_ext_finish ) = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) ); if( ( sem_dac_ext_finish ) != 
+# 307 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
+   ((void *)0) 
+# 307 "../ADC_DAC/private/adc_dac_init_priv.h"
+   ) { ( void ) xQueueGenericSend( ( QueueHandle_t ) ( ( sem_dac_ext_finish ) ), 
+# 307 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
+   ((void *)0)
+# 307 "../ADC_DAC/private/adc_dac_init_priv.h"
+   , ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) ); } };
+    xQueueGenericReceive( ( QueueHandle_t ) ( sem_dac_ext_finish ), 
+# 308 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
+   ((void *)0)
+# 308 "../ADC_DAC/private/adc_dac_init_priv.h"
+   , ( ( TickType_t ) 0xffffffffUL ), ( ( BaseType_t ) 0 ) );
 
 
-
-  pin_init(0,4, (0x2), 0x1);
-  pin_init(0,6, (0x2), 0x1);
-  pin_init(0,5, (0x2), 0x1);
-  pin_init(4, 28, (0x2), 0x1);
-
-  pin_init(0, 7, (0x2), 0x1);
-  pin_init(0, 9, (0x2), 0x1);
-  pin_init(0, 8, (0x2), 0x1);
-  pin_init(4, 29, (0x2), 0x1);
 
 
   I2S_AUDIO_FORMAT_T audio_Confg;
@@ -16899,42 +16926,68 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
   Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_I2S, SYSCTL_CLKDIV_1);
 
   Chip_I2S_Init(((LPC_I2S_T *) 0x400A8000));
-
-  Chip_I2S_RxStop(((LPC_I2S_T *) 0x400A8000));
-  Chip_I2S_TxStop(((LPC_I2S_T *) 0x400A8000));
-  Chip_I2S_EnableMute(((LPC_I2S_T *) 0x400A8000));
+  NVIC_DisableIRQ(I2S_IRQn);
 
 
-  Chip_I2S_DisableMute(((LPC_I2S_T *) 0x400A8000));
-  Chip_I2S_RxStart(((LPC_I2S_T *) 0x400A8000));
-  Chip_I2S_TxStart(((LPC_I2S_T *) 0x400A8000));
 
-  Chip_I2S_Int_RxCmd(((LPC_I2S_T *) 0x400A8000), ENABLE, 1);
-  Chip_I2S_Int_TxCmd(((LPC_I2S_T *) 0x400A8000), DISABLE, 1);
-
-
-  mi_Chip_I2S_RxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
-
-  mi_Chip_I2S_TxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
+   pin_init(0,4, (0x2), 0x1);
+   pin_init(0,6, (0x2), 0x1);
+   pin_init(0,5, (0x2), 0x1);
+   pin_init(4, 28, (0x2), 0x1);
 
 
-   Chip_I2S_DMA_RxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
-   Chip_I2S_DMA_TxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
+   Chip_I2S_Int_RxCmd(((LPC_I2S_T *) 0x400A8000), ENABLE, 1);
+   mi_Chip_I2S_RxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
 
-   NVIC_DisableIRQ(I2S_IRQn);
+
+    Chip_I2S_DMA_RxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
+# 347 "../ADC_DAC/private/adc_dac_init_priv.h"
+   pin_init(0, 7, (0x2), 0x1);
+   pin_init(0, 9, (0x2), 0x1);
+   pin_init(0, 8, (0x2), 0x1);
+   pin_init(4, 29, (0x2), 0x1);
+
+
+   Chip_I2S_Int_TxCmd(((LPC_I2S_T *) 0x400A8000), ENABLE, 1);
+   mi_Chip_I2S_TxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
+
+
+    Chip_I2S_DMA_TxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
+
+
+
 
 
 
 
  }
-# 162 "../ADC_DAC/private/adc_dac_header_priv.h" 2
+# 406 "../ADC_DAC/private/adc_dac_init_priv.h"
+ static inline void dac_init()
+ {
+# 427 "../ADC_DAC/private/adc_dac_init_priv.h"
+  Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_DAC, SYSCTL_CLKDIV_4);
+
+  pin_init(0,26, (0x2), 0x2);
+
+  Chip_DAC_Init(((LPC_DAC_T *) 0x4008C000));
+
+
+
+  Chip_DAC_SetBias(((LPC_DAC_T *) 0x4008C000), 1);
+
+  Chip_DAC_SetDMATimeOut(((LPC_DAC_T *) 0x4008C000), (SystemCoreClock/4) / (32000 * 2048) );
+
+  Chip_DAC_ConfigDAConverterControl(((LPC_DAC_T *) 0x4008C000), ((uint32_t) (1 << 1)) | ((uint32_t) (1 << 2)) | ((uint32_t) (1 << 3)));
+
+ }
+# 165 "../ADC_DAC/private/adc_dac_header_priv.h" 2
 # 12 "../ADC_DAC/adc_dac_func.c" 2
 
 
 
 
  void adc_ext_prepare(volatile uint32_t *buffer_A,
-      volatile uint32_t *buffer_B)
+        volatile uint32_t *buffer_B)
  {
   dma_adc_ext_memory_A = buffer_A;
   dma_adc_ext_memory_B = buffer_B;
@@ -17016,10 +17069,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
    dma_adc_ext_status = -1;
   }
  }
-
-
-
-
+# 157 "../ADC_DAC/adc_dac_func.c"
  uint16_t dac_ext_set_data(uint32_t data)
  {
   return (data >> 8);
@@ -17037,29 +17087,29 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
          2048,
          GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA,
          
-# 103 "../ADC_DAC/adc_dac_func.c" 3 4
+# 173 "../ADC_DAC/adc_dac_func.c" 3 4
         ((void *)0)
-# 103 "../ADC_DAC/adc_dac_func.c"
+# 173 "../ADC_DAC/adc_dac_func.c"
             );
   dma_dac_ext_descriptor.dst = ((7UL));
  }
 
  
-# 107 "../ADC_DAC/adc_dac_func.c" 3 4
+# 177 "../ADC_DAC/adc_dac_func.c" 3 4
 _Bool 
-# 107 "../ADC_DAC/adc_dac_func.c"
+# 177 "../ADC_DAC/adc_dac_func.c"
      dac_ext_disponible()
  {
   if(dma_dac_ext_status == -1)
    return 
-# 110 "../ADC_DAC/adc_dac_func.c" 3 4
+# 180 "../ADC_DAC/adc_dac_func.c" 3 4
          1
-# 110 "../ADC_DAC/adc_dac_func.c"
+# 180 "../ADC_DAC/adc_dac_func.c"
              ;
   return 
-# 111 "../ADC_DAC/adc_dac_func.c" 3 4
+# 181 "../ADC_DAC/adc_dac_func.c" 3 4
         0
-# 111 "../ADC_DAC/adc_dac_func.c"
+# 181 "../ADC_DAC/adc_dac_func.c"
              ;
  }
 
@@ -17072,10 +17122,10 @@ _Bool
   }
 
   xQueueGenericReceive( ( QueueHandle_t ) ( sem_dac_ext_finish ), 
-# 122 "../ADC_DAC/adc_dac_func.c" 3 4
+# 192 "../ADC_DAC/adc_dac_func.c" 3 4
  ((void *)0)
-# 122 "../ADC_DAC/adc_dac_func.c"
- , ( 0 ), ( ( BaseType_t ) 0 ) );
+# 192 "../ADC_DAC/adc_dac_func.c"
+ , ( ( TickType_t ) 0xffffffffUL ), ( ( BaseType_t ) 0 ) );
 
   while(!dac_ext_disponible());
 
@@ -17085,4 +17135,70 @@ _Bool
         GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
 
   dma_dac_ext_status = 0x01;
+ }
+
+
+
+
+ uint16_t dac_int_set_data(uint32_t data)
+ {
+  return (data >> 8);
+ }
+
+ void dac_int_prepare(volatile uint16_t *buffer)
+ {
+  dma_dac_int_memory = buffer;
+
+
+  Chip_GPDMA_PrepareDescriptor(((LPC_GPDMA_T *) 0x50004000),
+         (DMA_TransferDescriptor_t *) &dma_dac_int_descriptor,
+         (uint32_t) dma_dac_int_memory,
+         (uint32_t) ((7UL)),
+         2048,
+         GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA,
+         
+# 223 "../ADC_DAC/adc_dac_func.c" 3 4
+        ((void *)0)
+# 223 "../ADC_DAC/adc_dac_func.c"
+            );
+  dma_dac_int_descriptor.dst = ((7UL));
+ }
+
+ 
+# 227 "../ADC_DAC/adc_dac_func.c" 3 4
+_Bool 
+# 227 "../ADC_DAC/adc_dac_func.c"
+     dac_int_disponible()
+ {
+  if(dma_dac_int_status == -1)
+   return 
+# 230 "../ADC_DAC/adc_dac_func.c" 3 4
+         1
+# 230 "../ADC_DAC/adc_dac_func.c"
+             ;
+  return 
+# 231 "../ADC_DAC/adc_dac_func.c" 3 4
+        0
+# 231 "../ADC_DAC/adc_dac_func.c"
+             ;
+ }
+
+ void dac_int_send()
+ {
+
+  for(int i=0; i<2048; i++)
+  {
+   dma_dac_int_memory[i] = dac_int_set_data(dma_dac_int_memory[i]);
+  }
+
+
+
+  while(!dac_int_disponible());
+
+
+  Chip_GPDMA_SGTransfer(((LPC_GPDMA_T *) 0x50004000), dma_dac_int_canal,
+        &dma_dac_int_descriptor,
+        GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
+
+  dma_dac_int_status = 0x01;
  }

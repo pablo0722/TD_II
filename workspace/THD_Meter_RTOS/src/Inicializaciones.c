@@ -18,16 +18,18 @@ static inline void main_gpio_init()
 	pin_gpio_init(BUTTON3_INIT);
 
 		// *** Habilito los leds
-	pin_gpio_init(LED0_INIT);
 
 		// *** Habilito los gpios del ADC
-	pin_gpio_init(ADC_OSR_INIT);
-	pin_set(ADC_OSR, 0);
+	//pin_gpio_init(ADC_OSR_INIT);
+	//pin_set(ADC_OSR, 0);
+	pin_gpio_init(ADC_FSYNC_INIT);
+	pin_set(ADC_FSYNC, 0);
 
 		// *** Habilito los gpios del DAC
 	pin_gpio_init(DAC_MUTE_INIT);
 	pin_set(DAC_MUTE, 0);
 	pin_gpio_init(DAC_ZEROA_INIT);
+	pin_gpio_init(DAC_DATA_INIT);
 }
 
 static inline void main_task_init()
@@ -40,7 +42,12 @@ static inline void main_task_init()
 static inline void main_buffer_init()
 {
 	adc_ext_prepare(buffer_complex, NULL);
-	dac_ext_prepare(buffer_dac_out);
+	#if (USE_DAC_INTERNO)
+		dac_int_prepare(buffer_dac_out);
+	#endif
+	#if (USE_DAC_EXTERNO)
+		dac_ext_prepare(buffer_dac_out);
+	#endif
 }
 
 void main_init()
@@ -49,7 +56,7 @@ void main_init()
 
 	Board_Init();
 
-	tft_init();
+	//tft_init();
 
 	#if USE_UART
 		uart_init();
@@ -58,7 +65,7 @@ void main_init()
 	adc_dac_init();
 
 	#if USE_FFT
-		fft_init();
+		//fft_init();
 	#endif
 
 	main_gpio_init();

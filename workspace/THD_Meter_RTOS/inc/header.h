@@ -41,6 +41,7 @@
 	#endif
 // ********************************************** //
 
+
 // *** BUFFERS *** //
 	extern uint32_t buffer_complex	[FFT_SIZE*2];
 	extern uint16_t buffer_dac_out	[FFT_SIZE*2];
@@ -66,9 +67,21 @@
 
 
 // *** LEDS *** //
-		// Pin 95 - Led 0
-	#define LED0_INIT		0, 7, MD_PLN, SALIDA
-	#define LED0			0, 7
+		// Pin 95 - Led 0 (led testigo)
+	#define LED_IM_ALIVE_INIT		1, 0, MD_PLN, SALIDA
+	#define LED_IM_ALIVE			1, 0
+
+		// Pin - Led 1
+	#define LED_1_INIT				1, 1, MD_PLN, SALIDA
+	#define LED_1					1, 1
+
+		// Pin - Led 2
+	#define LED_2_INIT				1, 4, MD_PLN, SALIDA
+	#define LED_2					1, 4
+
+		// Pin - Led 3
+	#define LED_3_INIT				1, 8, MD_PLN, SALIDA
+	#define LED_3					1, 8
 // *************** //
 
 
@@ -76,6 +89,9 @@
 		// Pin 77 - OSR del ADC (I2STX-WS)
 	#define ADC_OSR_INIT	0, 8, MD_PLN, SALIDA
 	#define ADC_OSR			0, 8
+		// Pin 77 - OSR del ADC (I2STX-WS)
+	#define ADC_FSYNC_INIT	0, 7, MD_PLN, SALIDA
+	#define ADC_FSYNC		0, 7
 // *************** //
 
 
@@ -86,6 +102,9 @@
 		// Pin 86 - ZeroA del DAC
 	#define DAC_ZEROA_INIT	1, 17, MD_PLN, ENTRADA
 	#define DAC_ZEROA		1, 17
+		// Pin 76 - Data del DAC
+	#define DAC_DATA_INIT	0, 9, MD_PLN, SALIDA
+	#define DAC_DATA		0, 9
 // *************** //
 
 

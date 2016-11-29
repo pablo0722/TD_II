@@ -19,8 +19,11 @@
 
 // ***************** DEFINES PRIVADAS ***************** //
 	// *** PIN-OUT *** //
-		#if (USE_ADC_EXTERNO)||(USE_DAC_EXTERNO)
+		#if (USE_DAC)
 			#define AOUT				0,26
+		#endif
+
+		#if (USE_ADC_EXTERNO)||(USE_DAC_EXTERNO)
 
 			// PARA EL ADC POR I2S
 				#define RX_CONFIG0		0
@@ -133,7 +136,7 @@
 
 		extern uint8_t dma_adc_ext_canal;
 
-		extern volatile uint8_t dma_adc_ext_status;
+		extern volatile int8_t dma_adc_ext_status;
 	#endif
 
 	#if USE_DAC_EXTERNO
@@ -143,7 +146,7 @@
 
 		extern uint8_t 					dma_dac_ext_canal;		// Canal del DAC en el DMA
 
-		extern volatile uint8_t 		dma_dac_ext_status;		// Estado del DAC en la maquina de estados propia
+		extern volatile int8_t 		dma_dac_ext_status;		// Estado del DAC en la maquina de estados propia
 	#endif
 
 	#if USE_DAC_INTERNO
@@ -153,7 +156,7 @@
 
 		extern uint8_t 					dma_dac_int_canal;		// Canal del DAC en el DMA
 
-		extern volatile uint8_t 		dma_dac_int_status;		// Estado del DAC en la maquina de estados propia
+		extern volatile int8_t 		dma_dac_int_status;		// Estado del DAC en la maquina de estados propia
 	#endif
 // ********************************************** //
 

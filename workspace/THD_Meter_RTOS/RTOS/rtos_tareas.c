@@ -15,32 +15,35 @@
 	       NVIC_EnableIRQ( TIMER1_IRQn );
 		#endif
 
-		#if (USE_ADC_INTERNO)
-			NVIC_EnableIRQ(ADC_IRQn);
-		#endif
-
-		#if (USE_ADC_EXTERNO) || (USE_DAC_EXTERNO)
-			NVIC_DisableIRQ(I2S_IRQn);
-		#endif
-
 		#if (USE_DMA)
 			NVIC_EnableIRQ(DMA_IRQn);
 		#endif
 
+		#if ( (USE_ADC_EXTERNO) && (ADC_EXTERNO_MODO == ADC_EXTERNO_INTERRUPCION) ) || \
+			( (USE_DAC_EXTERNO) && (DAC_EXTERNO_MODO == DAC_EXTERNO_INTERRUPCION) )
+			NVIC_EnableIRQ(I2S_IRQn);
+		#endif
+
+		#if (USE_ADC_INTERNO) && (ADC_INTERNO_MODO == ADC_INTERNO_INTERRUPCION)
+			NVIC_EnableIRQ(ADC_IRQn);
+		#endif
 
 		vTaskDelete(NULL);	// Se mata a si misma luego de inicianizar las interrupciones
 	}
 
 	void vtask_ImAlive(void * pvParameters)
 	{
-			// Pin 95 - Led 0
-		#define P1_0	1,0
-		Chip_IOCON_PinMux(LPC_IOCON, P1_0, IOCON_MODE_INACT, IOCON_FUNC0);
-		Chip_GPIO_WriteDirBit(LPC_GPIO, P1_0, true); // true = output - false = input
+		pin_gpio_init(LED_IM_ALIVE_INIT);
+		pin_gpio_init(LED_1_INIT);
+		pin_gpio_init(LED_2_INIT);
+		pin_gpio_init(LED_3_INIT);
 
 		while (1)
 		{
-			Chip_GPIO_SetPinToggle(LPC_GPIO, P1_0);
+			Chip_GPIO_SetPinToggle(LPC_GPIO, LED_IM_ALIVE);
+			Chip_GPIO_SetPinToggle(LPC_GPIO, LED_1);
+			Chip_GPIO_SetPinToggle(LPC_GPIO, LED_2);
+			Chip_GPIO_SetPinToggle(LPC_GPIO, LED_3);
 			vTaskDelay(500 / portTICK_RATE_MS);
 		}
 	}
@@ -65,6 +68,7 @@
 
 						uart0_proceso_listo();
 					}
+					vTaskDelay(20 / portTICK_RATE_MS);
 				}
 			}
 		#else

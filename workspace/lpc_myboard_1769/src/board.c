@@ -154,8 +154,6 @@ void Board_Init(void)
 
 	/* Initialize LEDs */
 	Board_LED_Init();
-	/* Initialize Tact Switch */
-	Board_Buttons_Init();
 }
 
 /* Returns the MAC address assigned to this board */

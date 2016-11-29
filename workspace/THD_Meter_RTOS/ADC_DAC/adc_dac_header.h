@@ -17,10 +17,17 @@
 	void adc_dac_init();								// Inicializa lo necesario para usar dma y adc/dac interno/externo (externo por i2s)
 
 	#if (USE_ADC_EXTERNO)
-		void adc_ext_prepare(volatile uint32_t *buffer_A,	// Prepara el buffer para poder recibir desde el ADC. Si esta definido buffer B, comienza a recibir por el A
-						 volatile uint32_t *buffer_B);
+		void adc_ext_prepare(volatile uint32_t *buffer_A,	// Prepara el buffer para poder recibir desde el ADC.
+						 	 volatile uint32_t *buffer_B);	// Si esta definido buffer B, comienza a recibir por el A. Sino, se debe llamar a funcion adc_ext_start() para comenzar transferencia
 		void adc_ext_start();								// Si el buffer B no fue definido, se detendra la transferencia luego de llenar el A. para reanudar hay que llamar a esta funcion
 		void adc_ext_post_procesamiento();					// Funcion que debe ejecutar luego de procesar los datos, para continuar con la transferencia del ADC
+	#endif
+
+	#if (USE_ADC_INTERNO)
+		void adc_int_prepare(volatile uint32_t *buffer_A,	// Prepara el buffer para poder recibir desde el ADC.
+						 	 volatile uint32_t *buffer_B);	// Si esta definido buffer B, comienza a recibir por el A. Sino, se debe llamar a funcion adc_int_start() para comenzar transferencia
+		void adc_int_start();								// Si el buffer B no fue definido, se detendra la transferencia luego de llenar el A. para reanudar hay que llamar a esta funcion
+		void adc_int_post_procesamiento();					// Funcion que debe ejecutar luego de procesar los datos, para continuar con la transferencia del ADC
 	#endif
 
 	#if USE_DAC_EXTERNO
@@ -31,7 +38,9 @@
 	#endif
 
 	#if USE_DAC_INTERNO
+		uint16_t dac_int_set_data(uint32_t data);			// transforma un dato de uint32_t a uint16_t para ser transmitido por DAC
 		void dac_int_prepare(volatile uint16_t *buffer);	// Prepara el buffer para poder ser enviado por DAC
+		bool dac_int_disponible();							// Determina si el dac esta disponible para transmitir
 		void dac_int_send();								// Envia una senial por DAC
 	#endif
 // ****************************** //

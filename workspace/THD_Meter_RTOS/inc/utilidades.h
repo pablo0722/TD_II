@@ -43,7 +43,7 @@
 
 
 // ***** UTILIDADES (main while) ***** //
-	#define DEBUG_MODE				ON
+	#define DEBUG_MODE				OFF
 
 	#if (USE_UART) && (USE_FFT)
 		#define UART_FFT_LOOPBACK	OFF
@@ -88,14 +88,14 @@
 
 	#if (USE_DAC)
 		//Usar DAC interno y/o externo (externo por I2S)
-		#define USE_DAC_INTERNO		OFF
+		#define USE_DAC_INTERNO		ON
 		#define USE_DAC_EXTERNO		ON
 
 		#if (USE_DAC_INTERNO)
 				// Modo de uso (por interrupcion o por DMA)
 				#define DAC_INTERNO_INTERRUPCION	0
 				#define DAC_INTERNO_DMA				1
-			#define DAC_INTERNO_MODO	DAC_INTERNO_INTERRUPCION
+			#define DAC_INTERNO_MODO	DAC_INTERNO_DMA
 		#endif
 		#if (USE_DAC_EXTERNO)
 				// Modo de uso (por interrupcion o por DMA)
@@ -108,13 +108,20 @@
 
 
 // ******** Utilidades implicitas ******** //
-	#if ( (defined(ADC_INTERNO_MODO) && ADC_INTERNO_MODO == ADC_INTERNO_DMA) || \
-		  (defined(ADC_EXTERNO_MODO) && ADC_EXTERNO_MODO == ADC_EXTERNO_DMA) || \
-		  (defined(DAC_INTERNO_MODO) && DAC_INTERNO_MODO == DAC_INTERNO_DMA) || \
-		  (defined(DAC_EXTERNO_MODO) && DAC_EXTERNO_MODO == DAC_EXTERNO_DMA) )
+	#if ( ((USE_ADC_INTERNO) && (ADC_INTERNO_MODO == ADC_INTERNO_DMA)) || \
+		  ((USE_ADC_EXTERNO) && (ADC_EXTERNO_MODO == ADC_EXTERNO_DMA)) || \
+		  ((USE_DAC_INTERNO) && (DAC_INTERNO_MODO == DAC_INTERNO_DMA)) || \
+		  ((USE_DAC_EXTERNO) && (DAC_EXTERNO_MODO == DAC_EXTERNO_DMA)) )
 		#define USE_DMA				ON
 	#else
 		#define USE_DMA				OFF
+	#endif
+
+	#if ( ((USE_ADC_EXTERNO) && (ADC_EXTERNO_MODO == ADC_EXTERNO_INTERRUPCION)) || \
+		  ((USE_DAC_EXTERNO) && (DAC_EXTERNO_MODO == DAC_EXTERNO_INTERRUPCION)) )
+		#define USE_I2S				ON
+	#else
+		#define USE_I2S				OFF
 	#endif
 // *************************************** //
 
