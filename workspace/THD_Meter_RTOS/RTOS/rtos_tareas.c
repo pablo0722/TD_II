@@ -28,7 +28,7 @@
 			NVIC_EnableIRQ(ADC_IRQn);
 		#endif
 
-		vTaskDelete(NULL);	// Se mata a si misma luego de inicianizar las interrupciones
+		vTaskDelete(NULL);	// Se mata a si misma luego de inicializar las interrupciones
 	}
 
 	void vtask_ImAlive(void * pvParameters)

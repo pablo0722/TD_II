@@ -325,7 +325,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./src/THD_Meter.o
  .debug_macro   0x00000000       0x12 ./src/THD_Meter.o
  .debug_macro   0x00000000       0xba ./src/THD_Meter.o
- .debug_macro   0x00000000       0x9a ./src/THD_Meter.o
+ .debug_macro   0x00000000       0x88 ./src/THD_Meter.o
  .debug_macro   0x00000000       0x40 ./src/THD_Meter.o
  .debug_macro   0x00000000       0x1c ./src/THD_Meter.o
  .debug_macro   0x00000000       0x22 ./src/THD_Meter.o
@@ -457,7 +457,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./src/globales.o
  .debug_macro   0x00000000       0x12 ./src/globales.o
  .debug_macro   0x00000000       0xba ./src/globales.o
- .debug_macro   0x00000000       0x9a ./src/globales.o
+ .debug_macro   0x00000000       0x88 ./src/globales.o
  .debug_macro   0x00000000       0x40 ./src/globales.o
  .debug_macro   0x00000000       0x1c ./src/globales.o
  .debug_macro   0x00000000       0x22 ./src/globales.o
@@ -659,7 +659,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./src/tareas.o
  .debug_macro   0x00000000       0x12 ./src/tareas.o
  .debug_macro   0x00000000       0xba ./src/tareas.o
- .debug_macro   0x00000000       0x9a ./src/tareas.o
+ .debug_macro   0x00000000       0x88 ./src/tareas.o
  .debug_macro   0x00000000       0x40 ./src/tareas.o
  .debug_macro   0x00000000       0x1c ./src/tareas.o
  .debug_macro   0x00000000       0x22 ./src/tareas.o
@@ -790,7 +790,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./UART/uart_func.o
  .debug_macro   0x00000000       0x12 ./UART/uart_func.o
  .debug_macro   0x00000000       0xba ./UART/uart_func.o
- .debug_macro   0x00000000       0x9a ./UART/uart_func.o
+ .debug_macro   0x00000000       0x88 ./UART/uart_func.o
  .debug_macro   0x00000000       0x40 ./UART/uart_func.o
  .debug_macro   0x00000000       0x1c ./UART/uart_func.o
  .debug_macro   0x00000000       0x22 ./UART/uart_func.o
@@ -800,7 +800,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xa0 ./UART/uart_func.o
  .debug_macro   0x00000000       0x52 ./UART/uart_func.o
  .debug_line    0x00000000      0x8d7 ./UART/uart_func.o
- .debug_str     0x00000000    0x16c89 ./UART/uart_func.o
+ .debug_str     0x00000000    0x16c3d ./UART/uart_func.o
  .comment       0x00000000       0x6f ./UART/uart_func.o
  .ARM.attributes
                 0x00000000       0x33 ./UART/uart_func.o
@@ -927,7 +927,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./UART/uart_globales_priv.o
  .debug_macro   0x00000000       0x12 ./UART/uart_globales_priv.o
  .debug_macro   0x00000000       0xba ./UART/uart_globales_priv.o
- .debug_macro   0x00000000       0x9a ./UART/uart_globales_priv.o
+ .debug_macro   0x00000000       0x88 ./UART/uart_globales_priv.o
  .debug_macro   0x00000000       0x40 ./UART/uart_globales_priv.o
  .debug_macro   0x00000000       0x1c ./UART/uart_globales_priv.o
  .debug_macro   0x00000000       0x22 ./UART/uart_globales_priv.o
@@ -937,7 +937,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xa0 ./UART/uart_globales_priv.o
  .debug_macro   0x00000000       0x52 ./UART/uart_globales_priv.o
  .debug_line    0x00000000      0x8e0 ./UART/uart_globales_priv.o
- .debug_str     0x00000000    0x16c92 ./UART/uart_globales_priv.o
+ .debug_str     0x00000000    0x16c46 ./UART/uart_globales_priv.o
  .comment       0x00000000       0x6f ./UART/uart_globales_priv.o
  .ARM.attributes
                 0x00000000       0x33 ./UART/uart_globales_priv.o
@@ -1064,7 +1064,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./UART/uart_irq.o
  .debug_macro   0x00000000       0x12 ./UART/uart_irq.o
  .debug_macro   0x00000000       0xba ./UART/uart_irq.o
- .debug_macro   0x00000000       0x9a ./UART/uart_irq.o
+ .debug_macro   0x00000000       0x88 ./UART/uart_irq.o
  .debug_macro   0x00000000       0x40 ./UART/uart_irq.o
  .debug_macro   0x00000000       0x1c ./UART/uart_irq.o
  .debug_macro   0x00000000       0x22 ./UART/uart_irq.o
@@ -1074,7 +1074,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xa0 ./UART/uart_irq.o
  .debug_macro   0x00000000       0x52 ./UART/uart_irq.o
  .debug_line    0x00000000      0x8e7 ./UART/uart_irq.o
- .debug_str     0x00000000    0x16c88 ./UART/uart_irq.o
+ .debug_str     0x00000000    0x16c3c ./UART/uart_irq.o
  .comment       0x00000000       0x6f ./UART/uart_irq.o
  .ARM.attributes
                 0x00000000       0x33 ./UART/uart_irq.o
@@ -1195,7 +1195,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./TIMER/timer_irq.o
  .debug_macro   0x00000000       0x12 ./TIMER/timer_irq.o
  .debug_macro   0x00000000       0xba ./TIMER/timer_irq.o
- .debug_macro   0x00000000       0x9a ./TIMER/timer_irq.o
+ .debug_macro   0x00000000       0x88 ./TIMER/timer_irq.o
  .debug_macro   0x00000000       0x40 ./TIMER/timer_irq.o
  .debug_macro   0x00000000       0x1c ./TIMER/timer_irq.o
  .debug_macro   0x00000000       0x22 ./TIMER/timer_irq.o
@@ -1369,7 +1369,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./TFT/tft_Init.o
  .debug_macro   0x00000000       0x12 ./TFT/tft_Init.o
  .debug_macro   0x00000000       0xba ./TFT/tft_Init.o
- .debug_macro   0x00000000       0x9a ./TFT/tft_Init.o
+ .debug_macro   0x00000000       0x88 ./TFT/tft_Init.o
  .debug_macro   0x00000000       0x40 ./TFT/tft_Init.o
  .debug_macro   0x00000000       0x1c ./TFT/tft_Init.o
  .debug_macro   0x00000000       0x22 ./TFT/tft_Init.o
@@ -1379,7 +1379,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xa0 ./TFT/tft_Init.o
  .debug_macro   0x00000000      0x10c ./TFT/tft_Init.o
  .debug_line    0x00000000      0xb11 ./TFT/tft_Init.o
- .debug_str     0x00000000    0x176bd ./TFT/tft_Init.o
+ .debug_str     0x00000000    0x17671 ./TFT/tft_Init.o
  .comment       0x00000000       0x6f ./TFT/tft_Init.o
  .debug_frame   0x00000000      0x31c ./TFT/tft_Init.o
  .ARM.attributes
@@ -1450,12 +1450,21 @@ Discarded input sections
  .bss           0x00000000        0x0 ./TFT/tft_fonts.o
  .rodata.TM_Font7x10
                 0x00000000      0x76c ./TFT/tft_fonts.o
+ .rodata.TM_Font11x18
+                0x00000000      0xd5c ./TFT/tft_fonts.o
  .rodata.TM_Font16x26
                 0x00000000     0x134c ./TFT/tft_fonts.o
  .data.tft_Font_7x10
                 0x00000000        0x8 ./TFT/tft_fonts.o
+ .data.tft_Font_11x18
+                0x00000000        0x8 ./TFT/tft_fonts.o
  .data.tft_Font_16x26
                 0x00000000        0x8 ./TFT/tft_fonts.o
+ .debug_info    0x00000000      0x3a0 ./TFT/tft_fonts.o
+ .debug_abbrev  0x00000000       0xfe ./TFT/tft_fonts.o
+ .debug_aranges
+                0x00000000       0x18 ./TFT/tft_fonts.o
+ .debug_macro   0x00000000      0xcdf ./TFT/tft_fonts.o
  .debug_macro   0x00000000       0x10 ./TFT/tft_fonts.o
  .debug_macro   0x00000000      0x12d ./TFT/tft_fonts.o
  .debug_macro   0x00000000       0x16 ./TFT/tft_fonts.o
@@ -1509,7 +1518,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./TFT/tft_fonts.o
  .debug_macro   0x00000000       0x12 ./TFT/tft_fonts.o
  .debug_macro   0x00000000       0xba ./TFT/tft_fonts.o
- .debug_macro   0x00000000       0x9a ./TFT/tft_fonts.o
+ .debug_macro   0x00000000       0x88 ./TFT/tft_fonts.o
  .debug_macro   0x00000000       0x40 ./TFT/tft_fonts.o
  .debug_macro   0x00000000       0x1c ./TFT/tft_fonts.o
  .debug_macro   0x00000000       0x22 ./TFT/tft_fonts.o
@@ -1517,6 +1526,11 @@ Discarded input sections
  .debug_macro   0x00000000      0x199 ./TFT/tft_fonts.o
  .debug_macro   0x00000000       0x22 ./TFT/tft_fonts.o
  .debug_macro   0x00000000       0xa0 ./TFT/tft_fonts.o
+ .debug_line    0x00000000      0x8c0 ./TFT/tft_fonts.o
+ .debug_str     0x00000000    0x16cd1 ./TFT/tft_fonts.o
+ .comment       0x00000000       0x6f ./TFT/tft_fonts.o
+ .ARM.attributes
+                0x00000000       0x33 ./TFT/tft_fonts.o
  .group         0x00000000        0x8 ./TFT/tft_func_priv.o
  .group         0x00000000        0x8 ./TFT/tft_func_priv.o
  .group         0x00000000        0x8 ./TFT/tft_func_priv.o
@@ -1581,8 +1595,23 @@ Discarded input sections
  .text          0x00000000        0x0 ./TFT/tft_func_priv.o
  .data          0x00000000        0x0 ./TFT/tft_func_priv.o
  .bss           0x00000000        0x0 ./TFT/tft_func_priv.o
+ .text.Chip_GPIO_SetPinState
+                0x00000000       0x68 ./TFT/tft_func_priv.o
+ .text.pin_set  0x00000000       0x2c ./TFT/tft_func_priv.o
  .text.tft_Delay_priv
                 0x00000000       0x20 ./TFT/tft_func_priv.o
+ .text.tft_SendCommand_priv
+                0x00000000       0x58 ./TFT/tft_func_priv.o
+ .text.tft_SendData_priv
+                0x00000000       0x4c ./TFT/tft_func_priv.o
+ .text.tft_TM_Send
+                0x00000000      0x1f0 ./TFT/tft_func_priv.o
+ .debug_info    0x00000000      0x3a8 ./TFT/tft_func_priv.o
+ .debug_abbrev  0x00000000      0x15b ./TFT/tft_func_priv.o
+ .debug_aranges
+                0x00000000       0x48 ./TFT/tft_func_priv.o
+ .debug_ranges  0x00000000       0x38 ./TFT/tft_func_priv.o
+ .debug_macro   0x00000000      0xcdf ./TFT/tft_func_priv.o
  .debug_macro   0x00000000       0x10 ./TFT/tft_func_priv.o
  .debug_macro   0x00000000      0x12d ./TFT/tft_func_priv.o
  .debug_macro   0x00000000       0x16 ./TFT/tft_func_priv.o
@@ -1636,7 +1665,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./TFT/tft_func_priv.o
  .debug_macro   0x00000000       0x12 ./TFT/tft_func_priv.o
  .debug_macro   0x00000000       0xba ./TFT/tft_func_priv.o
- .debug_macro   0x00000000       0x9a ./TFT/tft_func_priv.o
+ .debug_macro   0x00000000       0x88 ./TFT/tft_func_priv.o
  .debug_macro   0x00000000       0x40 ./TFT/tft_func_priv.o
  .debug_macro   0x00000000       0x1c ./TFT/tft_func_priv.o
  .debug_macro   0x00000000       0x22 ./TFT/tft_func_priv.o
@@ -1644,6 +1673,12 @@ Discarded input sections
  .debug_macro   0x00000000      0x199 ./TFT/tft_func_priv.o
  .debug_macro   0x00000000       0x22 ./TFT/tft_func_priv.o
  .debug_macro   0x00000000       0xa0 ./TFT/tft_func_priv.o
+ .debug_line    0x00000000      0x95e ./TFT/tft_func_priv.o
+ .debug_str     0x00000000    0x16b5b ./TFT/tft_func_priv.o
+ .comment       0x00000000       0x6f ./TFT/tft_func_priv.o
+ .debug_frame   0x00000000       0xf0 ./TFT/tft_func_priv.o
+ .ARM.attributes
+                0x00000000       0x33 ./TFT/tft_func_priv.o
  .group         0x00000000        0x8 ./TFT/tft_globales.o
  .group         0x00000000        0x8 ./TFT/tft_globales.o
  .group         0x00000000        0x8 ./TFT/tft_globales.o
@@ -1708,6 +1743,11 @@ Discarded input sections
  .text          0x00000000        0x0 ./TFT/tft_globales.o
  .data          0x00000000        0x0 ./TFT/tft_globales.o
  .bss           0x00000000        0x0 ./TFT/tft_globales.o
+ .debug_info    0x00000000      0x359 ./TFT/tft_globales.o
+ .debug_abbrev  0x00000000       0xdd ./TFT/tft_globales.o
+ .debug_aranges
+                0x00000000       0x18 ./TFT/tft_globales.o
+ .debug_macro   0x00000000      0xcdf ./TFT/tft_globales.o
  .debug_macro   0x00000000       0x10 ./TFT/tft_globales.o
  .debug_macro   0x00000000      0x12d ./TFT/tft_globales.o
  .debug_macro   0x00000000       0x16 ./TFT/tft_globales.o
@@ -1761,7 +1801,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./TFT/tft_globales.o
  .debug_macro   0x00000000       0x12 ./TFT/tft_globales.o
  .debug_macro   0x00000000       0xba ./TFT/tft_globales.o
- .debug_macro   0x00000000       0x9a ./TFT/tft_globales.o
+ .debug_macro   0x00000000       0x88 ./TFT/tft_globales.o
  .debug_macro   0x00000000       0x40 ./TFT/tft_globales.o
  .debug_macro   0x00000000       0x1c ./TFT/tft_globales.o
  .debug_macro   0x00000000       0x22 ./TFT/tft_globales.o
@@ -1769,6 +1809,12 @@ Discarded input sections
  .debug_macro   0x00000000      0x199 ./TFT/tft_globales.o
  .debug_macro   0x00000000       0x22 ./TFT/tft_globales.o
  .debug_macro   0x00000000       0xa0 ./TFT/tft_globales.o
+ .debug_line    0x00000000      0x8c3 ./TFT/tft_globales.o
+ .debug_str     0x00000000    0x16d4a ./TFT/tft_globales.o
+ .comment       0x00000000       0x6f ./TFT/tft_globales.o
+ .ARM.attributes
+                0x00000000       0x33 ./TFT/tft_globales.o
+ COMMON         0x00000000        0xa ./TFT/tft_globales.o
  .group         0x00000000        0x8 ./TFT/tft_lcd_primitivas.o
  .group         0x00000000        0x8 ./TFT/tft_lcd_primitivas.o
  .group         0x00000000        0x8 ./TFT/tft_lcd_primitivas.o
@@ -1834,16 +1880,38 @@ Discarded input sections
  .text          0x00000000        0x0 ./TFT/tft_lcd_primitivas.o
  .data          0x00000000        0x0 ./TFT/tft_lcd_primitivas.o
  .bss           0x00000000        0x0 ./TFT/tft_lcd_primitivas.o
+ .bss.using_tft
+                0x00000000        0x1 ./TFT/tft_lcd_primitivas.o
+ .text.tft_SetCursorPosition
+                0x00000000       0x94 ./TFT/tft_lcd_primitivas.o
+ .text.tft_DrawPixel
+                0x00000000       0x34 ./TFT/tft_lcd_primitivas.o
+ .text.tft_Fill
+                0x00000000       0x6c ./TFT/tft_lcd_primitivas.o
  .text.tft_Rotate
                 0x00000000       0xa4 ./TFT/tft_lcd_primitivas.o
+ .text.tft_Putc
+                0x00000000      0x114 ./TFT/tft_lcd_primitivas.o
+ .text.tft_Puts
+                0x00000000       0x70 ./TFT/tft_lcd_primitivas.o
  .text.tft_GetStringSize
                 0x00000000       0x48 ./TFT/tft_lcd_primitivas.o
+ .text.tft_DrawLine
+                0x00000000      0x164 ./TFT/tft_lcd_primitivas.o
  .text.tft_DrawRectangle
                 0x00000000       0x88 ./TFT/tft_lcd_primitivas.o
  .text.tft_DrawFilledRectangle
                 0x00000000       0x64 ./TFT/tft_lcd_primitivas.o
  .text.tft_DrawCircle
                 0x00000000      0x1c4 ./TFT/tft_lcd_primitivas.o
+ .text.tft_DrawFilledCircle
+                0x00000000      0x1d0 ./TFT/tft_lcd_primitivas.o
+ .debug_info    0x00000000      0x865 ./TFT/tft_lcd_primitivas.o
+ .debug_abbrev  0x00000000      0x1b7 ./TFT/tft_lcd_primitivas.o
+ .debug_aranges
+                0x00000000       0x78 ./TFT/tft_lcd_primitivas.o
+ .debug_ranges  0x00000000       0x68 ./TFT/tft_lcd_primitivas.o
+ .debug_macro   0x00000000      0xce8 ./TFT/tft_lcd_primitivas.o
  .debug_macro   0x00000000       0x10 ./TFT/tft_lcd_primitivas.o
  .debug_macro   0x00000000      0x12d ./TFT/tft_lcd_primitivas.o
  .debug_macro   0x00000000       0x16 ./TFT/tft_lcd_primitivas.o
@@ -1897,7 +1965,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./TFT/tft_lcd_primitivas.o
  .debug_macro   0x00000000       0x12 ./TFT/tft_lcd_primitivas.o
  .debug_macro   0x00000000       0xba ./TFT/tft_lcd_primitivas.o
- .debug_macro   0x00000000       0x9a ./TFT/tft_lcd_primitivas.o
+ .debug_macro   0x00000000       0x88 ./TFT/tft_lcd_primitivas.o
  .debug_macro   0x00000000       0x40 ./TFT/tft_lcd_primitivas.o
  .debug_macro   0x00000000       0x1c ./TFT/tft_lcd_primitivas.o
  .debug_macro   0x00000000       0x22 ./TFT/tft_lcd_primitivas.o
@@ -1906,6 +1974,12 @@ Discarded input sections
  .debug_macro   0x00000000       0x22 ./TFT/tft_lcd_primitivas.o
  .debug_macro   0x00000000       0xa0 ./TFT/tft_lcd_primitivas.o
  .debug_macro   0x00000000      0x10c ./TFT/tft_lcd_primitivas.o
+ .debug_line    0x00000000      0xb2b ./TFT/tft_lcd_primitivas.o
+ .debug_str     0x00000000    0x171b9 ./TFT/tft_lcd_primitivas.o
+ .comment       0x00000000       0x6f ./TFT/tft_lcd_primitivas.o
+ .debug_frame   0x00000000      0x1dc ./TFT/tft_lcd_primitivas.o
+ .ARM.attributes
+                0x00000000       0x33 ./TFT/tft_lcd_primitivas.o
  .text          0x00000000        0x0 ./TFT/tft_signalTFT.o
  .data          0x00000000        0x0 ./TFT/tft_signalTFT.o
  .bss           0x00000000        0x0 ./TFT/tft_signalTFT.o
@@ -2043,7 +2117,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./RTOS/rtos_globales.o
  .debug_macro   0x00000000       0x12 ./RTOS/rtos_globales.o
  .debug_macro   0x00000000       0xba ./RTOS/rtos_globales.o
- .debug_macro   0x00000000       0x9a ./RTOS/rtos_globales.o
+ .debug_macro   0x00000000       0x88 ./RTOS/rtos_globales.o
  .debug_macro   0x00000000       0x40 ./RTOS/rtos_globales.o
  .debug_macro   0x00000000       0x1c ./RTOS/rtos_globales.o
  .debug_macro   0x00000000       0x22 ./RTOS/rtos_globales.o
@@ -2052,7 +2126,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x22 ./RTOS/rtos_globales.o
  .debug_macro   0x00000000       0xa0 ./RTOS/rtos_globales.o
  .debug_line    0x00000000      0x8c5 ./RTOS/rtos_globales.o
- .debug_str     0x00000000    0x16b09 ./RTOS/rtos_globales.o
+ .debug_str     0x00000000    0x16abd ./RTOS/rtos_globales.o
  .comment       0x00000000       0x6f ./RTOS/rtos_globales.o
  .ARM.attributes
                 0x00000000       0x33 ./RTOS/rtos_globales.o
@@ -2173,7 +2247,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./RTOS/rtos_tareas.o
  .debug_macro   0x00000000       0x12 ./RTOS/rtos_tareas.o
  .debug_macro   0x00000000       0xba ./RTOS/rtos_tareas.o
- .debug_macro   0x00000000       0x9a ./RTOS/rtos_tareas.o
+ .debug_macro   0x00000000       0x88 ./RTOS/rtos_tareas.o
  .debug_macro   0x00000000       0x40 ./RTOS/rtos_tareas.o
  .debug_macro   0x00000000       0x1c ./RTOS/rtos_tareas.o
  .debug_macro   0x00000000       0x22 ./RTOS/rtos_tareas.o
@@ -2303,7 +2377,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./FFT/fft_globales.o
  .debug_macro   0x00000000       0x12 ./FFT/fft_globales.o
  .debug_macro   0x00000000       0xba ./FFT/fft_globales.o
- .debug_macro   0x00000000       0x9a ./FFT/fft_globales.o
+ .debug_macro   0x00000000       0x88 ./FFT/fft_globales.o
  .debug_macro   0x00000000       0x40 ./FFT/fft_globales.o
  .debug_macro   0x00000000       0x1c ./FFT/fft_globales.o
  .debug_macro   0x00000000       0x22 ./FFT/fft_globales.o
@@ -2312,7 +2386,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x22 ./FFT/fft_globales.o
  .debug_macro   0x00000000       0xa0 ./FFT/fft_globales.o
  .debug_line    0x00000000      0x8c3 ./FFT/fft_globales.o
- .debug_str     0x00000000    0x16ca9 ./FFT/fft_globales.o
+ .debug_str     0x00000000    0x16c5d ./FFT/fft_globales.o
  .comment       0x00000000       0x6f ./FFT/fft_globales.o
  .ARM.attributes
                 0x00000000       0x33 ./FFT/fft_globales.o
@@ -2450,7 +2524,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./ADC_DAC/private/adc_dac_func_priv.o
  .debug_macro   0x00000000       0x12 ./ADC_DAC/private/adc_dac_func_priv.o
  .debug_macro   0x00000000       0xba ./ADC_DAC/private/adc_dac_func_priv.o
- .debug_macro   0x00000000       0x9a ./ADC_DAC/private/adc_dac_func_priv.o
+ .debug_macro   0x00000000       0x88 ./ADC_DAC/private/adc_dac_func_priv.o
  .debug_macro   0x00000000       0x40 ./ADC_DAC/private/adc_dac_func_priv.o
  .debug_macro   0x00000000       0x1c ./ADC_DAC/private/adc_dac_func_priv.o
  .debug_macro   0x00000000       0x22 ./ADC_DAC/private/adc_dac_func_priv.o
@@ -2578,7 +2652,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./ADC_DAC/private/adc_dac_globales_priv.o
  .debug_macro   0x00000000       0x12 ./ADC_DAC/private/adc_dac_globales_priv.o
  .debug_macro   0x00000000       0xba ./ADC_DAC/private/adc_dac_globales_priv.o
- .debug_macro   0x00000000       0x9a ./ADC_DAC/private/adc_dac_globales_priv.o
+ .debug_macro   0x00000000       0x88 ./ADC_DAC/private/adc_dac_globales_priv.o
  .debug_macro   0x00000000       0x40 ./ADC_DAC/private/adc_dac_globales_priv.o
  .debug_macro   0x00000000       0x1c ./ADC_DAC/private/adc_dac_globales_priv.o
  .debug_macro   0x00000000       0x22 ./ADC_DAC/private/adc_dac_globales_priv.o
@@ -2656,18 +2730,8 @@ Discarded input sections
                 0x00000000      0x1f8 ./ADC_DAC/adc_dac_func.o
  .text.adc_ext_post_procesamiento
                 0x00000000       0x6c ./ADC_DAC/adc_dac_func.o
- .text.dac_ext_set_data
-                0x00000000       0x18 ./ADC_DAC/adc_dac_func.o
- .text.dac_ext_disponible
-                0x00000000       0x24 ./ADC_DAC/adc_dac_func.o
- .text.dac_ext_send
-                0x00000000       0x94 ./ADC_DAC/adc_dac_func.o
  .text.dac_int_set_data
                 0x00000000       0x18 ./ADC_DAC/adc_dac_func.o
- .text.dac_int_disponible
-                0x00000000       0x24 ./ADC_DAC/adc_dac_func.o
- .text.dac_int_send
-                0x00000000       0x80 ./ADC_DAC/adc_dac_func.o
  .debug_macro   0x00000000       0x10 ./ADC_DAC/adc_dac_func.o
  .debug_macro   0x00000000      0x12d ./ADC_DAC/adc_dac_func.o
  .debug_macro   0x00000000       0x16 ./ADC_DAC/adc_dac_func.o
@@ -2721,7 +2785,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./ADC_DAC/adc_dac_func.o
  .debug_macro   0x00000000       0x12 ./ADC_DAC/adc_dac_func.o
  .debug_macro   0x00000000       0xba ./ADC_DAC/adc_dac_func.o
- .debug_macro   0x00000000       0x9a ./ADC_DAC/adc_dac_func.o
+ .debug_macro   0x00000000       0x88 ./ADC_DAC/adc_dac_func.o
  .debug_macro   0x00000000       0x40 ./ADC_DAC/adc_dac_func.o
  .debug_macro   0x00000000       0x1c ./ADC_DAC/adc_dac_func.o
  .debug_macro   0x00000000       0x22 ./ADC_DAC/adc_dac_func.o
@@ -2860,7 +2924,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./ADC_DAC/adc_dac_globales.o
  .debug_macro   0x00000000       0x12 ./ADC_DAC/adc_dac_globales.o
  .debug_macro   0x00000000       0xba ./ADC_DAC/adc_dac_globales.o
- .debug_macro   0x00000000       0x9a ./ADC_DAC/adc_dac_globales.o
+ .debug_macro   0x00000000       0x88 ./ADC_DAC/adc_dac_globales.o
  .debug_macro   0x00000000       0x40 ./ADC_DAC/adc_dac_globales.o
  .debug_macro   0x00000000       0x1c ./ADC_DAC/adc_dac_globales.o
  .debug_macro   0x00000000       0x22 ./ADC_DAC/adc_dac_globales.o
@@ -2986,7 +3050,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./ADC_DAC/adc_dac_init.o
  .debug_macro   0x00000000       0x12 ./ADC_DAC/adc_dac_init.o
  .debug_macro   0x00000000       0xba ./ADC_DAC/adc_dac_init.o
- .debug_macro   0x00000000       0x9a ./ADC_DAC/adc_dac_init.o
+ .debug_macro   0x00000000       0x88 ./ADC_DAC/adc_dac_init.o
  .debug_macro   0x00000000       0x40 ./ADC_DAC/adc_dac_init.o
  .debug_macro   0x00000000       0x1c ./ADC_DAC/adc_dac_init.o
  .debug_macro   0x00000000       0x22 ./ADC_DAC/adc_dac_init.o
@@ -3115,7 +3179,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./ADC_DAC/adc_dac_irq.o
  .debug_macro   0x00000000       0x12 ./ADC_DAC/adc_dac_irq.o
  .debug_macro   0x00000000       0xba ./ADC_DAC/adc_dac_irq.o
- .debug_macro   0x00000000       0x9a ./ADC_DAC/adc_dac_irq.o
+ .debug_macro   0x00000000       0x88 ./ADC_DAC/adc_dac_irq.o
  .debug_macro   0x00000000       0x40 ./ADC_DAC/adc_dac_irq.o
  .debug_macro   0x00000000       0x1c ./ADC_DAC/adc_dac_irq.o
  .debug_macro   0x00000000       0x22 ./ADC_DAC/adc_dac_irq.o
@@ -3719,6 +3783,10 @@ Discarded input sections
                 0x00000000       0xc0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
  .text.Chip_I2S_RxConfig
                 0x00000000       0xc0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .text.Chip_I2S_Int_TxCmd
+                0x00000000       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .text.Chip_I2S_DMA_TxCmd
+                0x00000000       0xa0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
  .debug_macro   0x00000000      0x886 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
  .debug_macro   0x00000000       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
  .debug_macro   0x00000000      0x12d D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
@@ -5259,7 +5327,7 @@ END GROUP
                 0x20084000                __top_RamAHB32 = 0x20084000
                 0x20084000                __top_RAM2 = 0x20084000
 
-.text           0x00000000     0x61f8
+.text           0x00000000     0x4944
  FILL mask 0xff
                 0x00000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -5268,18 +5336,18 @@ END GROUP
                 0x000000cc                . = ALIGN (0x4)
                 0x000000cc                __section_table_start = .
                 0x000000cc                __data_section_table = .
-                0x000000cc        0x4 LONG 0x61fc LOADADDR (.data)
+                0x000000cc        0x4 LONG 0x4948 LOADADDR (.data)
                 0x000000d0        0x4 LONG 0x10000000 ADDR (.data)
-                0x000000d4        0x4 LONG 0x6c SIZEOF (.data)
-                0x000000d8        0x4 LONG 0x61f8 LOADADDR (.data_RAM2)
+                0x000000d4        0x4 LONG 0x64 SIZEOF (.data)
+                0x000000d8        0x4 LONG 0x4944 LOADADDR (.data_RAM2)
                 0x000000dc        0x4 LONG 0x2007c000 ADDR (.data_RAM2)
                 0x000000e0        0x4 LONG 0x4 SIZEOF (.data_RAM2)
                 0x000000e4                __data_section_table_end = .
                 0x000000e4                __bss_section_table = .
-                0x000000e4        0x4 LONG 0x1000006c ADDR (.bss)
-                0x000000e8        0x4 LONG 0x2ac8 SIZEOF (.bss)
+                0x000000e4        0x4 LONG 0x10000064 ADDR (.bss)
+                0x000000e8        0x4 LONG 0x2ab8 SIZEOF (.bss)
                 0x000000ec        0x4 LONG 0x2007c004 ADDR (.bss_RAM2)
-                0x000000f0        0x4 LONG 0x4870 SIZEOF (.bss_RAM2)
+                0x000000f0        0x4 LONG 0x4854 SIZEOF (.bss_RAM2)
                 0x000000f4                __bss_section_table_end = .
                 0x000000f4                __section_table_end = .
  *(.after_vectors*)
@@ -5354,610 +5422,586 @@ END GROUP
  .text.task_init
                 0x00000508       0x48 ./src/Inicializaciones.o
  .text.main_gpio_init
-                0x00000550       0x7c ./src/Inicializaciones.o
+                0x00000550       0x94 ./src/Inicializaciones.o
  .text.main_task_init
-                0x000005cc       0x60 ./src/Inicializaciones.o
+                0x000005e4       0x60 ./src/Inicializaciones.o
  .text.main_buffer_init
-                0x0000062c       0x24 ./src/Inicializaciones.o
+                0x00000644       0x20 ./src/Inicializaciones.o
  .text.main_init
-                0x00000650       0x24 ./src/Inicializaciones.o
-                0x00000650                main_init
- .text.main     0x00000674        0xc ./src/THD_Meter.o
-                0x00000674                main
+                0x00000664       0x24 ./src/Inicializaciones.o
+                0x00000664                main_init
+ .text.main     0x00000688        0xc ./src/THD_Meter.o
+                0x00000688                main
  .text.SystemInit
-                0x00000680       0x24 ./src/sysinit.o
-                0x00000680                SystemInit
+                0x00000694       0x24 ./src/sysinit.o
+                0x00000694                SystemInit
  .text.Chip_GPIO_GetPinState
-                0x000006a4       0x38 ./src/tareas.o
- .text.pin_get  0x000006dc       0x2c ./src/tareas.o
+                0x000006b8       0x38 ./src/tareas.o
+ .text.pin_get  0x000006f0       0x2c ./src/tareas.o
  .text.vTask_teclado
-                0x00000708       0x90 ./src/tareas.o
-                0x00000708                vTask_teclado
+                0x0000071c       0x90 ./src/tareas.o
+                0x0000071c                vTask_teclado
  .text.vTask_tft
-                0x00000798      0x1a0 ./src/tareas.o
-                0x00000798                vTask_tft
+                0x000007ac        0xc ./src/tareas.o
+                0x000007ac                vTask_tft
  .text.vTask_THD
-                0x00000938       0x10 ./src/tareas.o
-                0x00000938                vTask_THD
+                0x000007b8       0x4c ./src/tareas.o
+                0x000007b8                vTask_THD
  .text.Chip_GPIO_SetPinOutHigh
-                0x00000948       0x2c ./TIMER/timer_irq.o
+                0x00000804       0x2c ./TIMER/timer_irq.o
  .text.Chip_GPIO_SetPinOutLow
-                0x00000974       0x2c ./TIMER/timer_irq.o
+                0x00000830       0x2c ./TIMER/timer_irq.o
  .text.Chip_TIMER_MatchPending
-                0x000009a0       0x34 ./TIMER/timer_irq.o
+                0x0000085c       0x34 ./TIMER/timer_irq.o
  .text.Chip_TIMER_ClearMatch
-                0x000009d4       0x28 ./TIMER/timer_irq.o
+                0x00000890       0x28 ./TIMER/timer_irq.o
  .text.TIMER0_IRQHandler
-                0x000009fc       0x24 ./TIMER/timer_irq.o
-                0x000009fc                TIMER0_IRQHandler
+                0x000008b8       0x24 ./TIMER/timer_irq.o
+                0x000008b8                TIMER0_IRQHandler
  .text.TIMER1_IRQHandler
-                0x00000a20       0x50 ./TIMER/timer_irq.o
-                0x00000a20                TIMER1_IRQHandler
- .text.Chip_GPIO_SetPinState
-                0x00000a70       0x68 ./TFT/tft_func_priv.o
- .text.pin_set  0x00000ad8       0x2c ./TFT/tft_func_priv.o
- .text.tft_SendCommand_priv
-                0x00000b04       0x58 ./TFT/tft_func_priv.o
-                0x00000b04                tft_SendCommand_priv
- .text.tft_SendData_priv
-                0x00000b5c       0x4c ./TFT/tft_func_priv.o
-                0x00000b5c                tft_SendData_priv
- .text.tft_TM_Send
-                0x00000ba8      0x1f0 ./TFT/tft_func_priv.o
- .text.tft_SetCursorPosition
-                0x00000d98       0x94 ./TFT/tft_lcd_primitivas.o
-                0x00000d98                tft_SetCursorPosition
- .text.tft_DrawPixel
-                0x00000e2c       0x34 ./TFT/tft_lcd_primitivas.o
- .text.tft_Fill
-                0x00000e60       0x6c ./TFT/tft_lcd_primitivas.o
-                0x00000e60                tft_Fill
- .text.tft_Putc
-                0x00000ecc      0x114 ./TFT/tft_lcd_primitivas.o
- .text.tft_Puts
-                0x00000fe0       0x70 ./TFT/tft_lcd_primitivas.o
-                0x00000fe0                tft_Puts
- .text.tft_DrawLine
-                0x00001050      0x164 ./TFT/tft_lcd_primitivas.o
- .text.tft_DrawFilledCircle
-                0x000011b4      0x1d0 ./TFT/tft_lcd_primitivas.o
-                0x000011b4                tft_DrawFilledCircle
+                0x000008dc       0x50 ./TIMER/timer_irq.o
+                0x000008dc                TIMER1_IRQHandler
  .text.NVIC_EnableIRQ
-                0x00001384       0x30 ./RTOS/rtos_tareas.o
+                0x0000092c       0x30 ./RTOS/rtos_tareas.o
  .text.Chip_GPIO_SetPinState
-                0x000013b4       0x68 ./RTOS/rtos_tareas.o
+                0x0000095c       0x68 ./RTOS/rtos_tareas.o
  .text.Chip_GPIO_GetPinState
-                0x0000141c       0x38 ./RTOS/rtos_tareas.o
+                0x000009c4       0x38 ./RTOS/rtos_tareas.o
  .text.Chip_GPIO_SetPinDIROutput
-                0x00001454       0x38 ./RTOS/rtos_tareas.o
+                0x000009fc       0x38 ./RTOS/rtos_tareas.o
  .text.Chip_GPIO_SetPinDIRInput
-                0x0000148c       0x3c ./RTOS/rtos_tareas.o
+                0x00000a34       0x3c ./RTOS/rtos_tareas.o
  .text.Chip_GPIO_SetPinDIR
-                0x000014c8       0x44 ./RTOS/rtos_tareas.o
+                0x00000a70       0x44 ./RTOS/rtos_tareas.o
  .text.Chip_GPIO_SetDir
-                0x0000150c       0x34 ./RTOS/rtos_tareas.o
+                0x00000ab4       0x34 ./RTOS/rtos_tareas.o
  .text.Chip_GPIO_SetPinToggle
-                0x00001540       0x4c ./RTOS/rtos_tareas.o
- .text.pin_set  0x0000158c       0x2c ./RTOS/rtos_tareas.o
+                0x00000ae8       0x4c ./RTOS/rtos_tareas.o
+ .text.pin_set  0x00000b34       0x2c ./RTOS/rtos_tareas.o
  .text.pin_gpio_init
-                0x000015b8       0x54 ./RTOS/rtos_tareas.o
+                0x00000b60       0x54 ./RTOS/rtos_tareas.o
  .text.vTask_nvic_init
-                0x0000160c       0x24 ./RTOS/rtos_tareas.o
-                0x0000160c                vTask_nvic_init
+                0x00000bb4       0x24 ./RTOS/rtos_tareas.o
+                0x00000bb4                vTask_nvic_init
  .text.vtask_ImAlive
-                0x00001630       0x70 ./RTOS/rtos_tareas.o
-                0x00001630                vtask_ImAlive
+                0x00000bd8       0x70 ./RTOS/rtos_tareas.o
+                0x00000bd8                vtask_ImAlive
  .text.adc_ext_set_data
-                0x000016a0       0x1c ./ADC_DAC/private/adc_dac_func_priv.o
+                0x00000c48       0x1c ./ADC_DAC/private/adc_dac_func_priv.o
  .text.adc_ext_pre_procesamiento
-                0x000016bc       0x6c ./ADC_DAC/private/adc_dac_func_priv.o
-                0x000016bc                adc_ext_pre_procesamiento
+                0x00000c64       0x84 ./ADC_DAC/private/adc_dac_func_priv.o
+                0x00000c64                adc_ext_pre_procesamiento
  .text.adc_ext_prepare
-                0x00001728       0x94 ./ADC_DAC/adc_dac_func.o
-                0x00001728                adc_ext_prepare
+                0x00000ce8       0x94 ./ADC_DAC/adc_dac_func.o
+                0x00000ce8                adc_ext_prepare
  .text.adc_ext_start
-                0x000017bc       0x38 ./ADC_DAC/adc_dac_func.o
-                0x000017bc                adc_ext_start
- .text.dac_ext_prepare
-                0x000017f4       0x48 ./ADC_DAC/adc_dac_func.o
-                0x000017f4                dac_ext_prepare
+                0x00000d7c       0x38 ./ADC_DAC/adc_dac_func.o
+                0x00000d7c                adc_ext_start
  .text.dac_int_prepare
-                0x0000183c       0x48 ./ADC_DAC/adc_dac_func.o
-                0x0000183c                dac_int_prepare
+                0x00000db4       0x48 ./ADC_DAC/adc_dac_func.o
+                0x00000db4                dac_int_prepare
+ .text.dac_int_disponible
+                0x00000dfc       0x24 ./ADC_DAC/adc_dac_func.o
+                0x00000dfc                dac_int_disponible
+ .text.dac_int_send
+                0x00000e20       0x58 ./ADC_DAC/adc_dac_func.o
+                0x00000e20                dac_int_send
  .text.NVIC_EnableIRQ
-                0x00001884       0x30 ./ADC_DAC/adc_dac_init.o
+                0x00000e78       0x30 ./ADC_DAC/adc_dac_init.o
  .text.NVIC_DisableIRQ
-                0x000018b4       0x34 ./ADC_DAC/adc_dac_init.o
+                0x00000ea8       0x34 ./ADC_DAC/adc_dac_init.o
  .text.NVIC_SetPriority
-                0x000018e8       0x54 ./ADC_DAC/adc_dac_init.o
+                0x00000edc       0x54 ./ADC_DAC/adc_dac_init.o
  .text.Chip_DAC_ConfigDAConverterControl
-                0x0000193c       0x28 ./ADC_DAC/adc_dac_init.o
+                0x00000f30       0x28 ./ADC_DAC/adc_dac_init.o
  .text.Chip_DAC_SetDMATimeOut
-                0x00001964       0x1c ./ADC_DAC/adc_dac_init.o
- .text.pin_init
-                0x00001980       0x34 ./ADC_DAC/adc_dac_init.o
- .text.dma_init
-                0x000019b4       0x64 ./ADC_DAC/adc_dac_init.o
- .text.getClkDiv
-                0x00001a18      0x1f8 ./ADC_DAC/adc_dac_init.o
- .text.mi_Chip_I2S_TxConfig
-                0x00001c10       0xc0 ./ADC_DAC/adc_dac_init.o
- .text.mi_Chip_I2S_RxConfig
-                0x00001cd0       0xc0 ./ADC_DAC/adc_dac_init.o
- .text.i2s_init
-                0x00001d90      0x148 ./ADC_DAC/adc_dac_init.o
- .text.dac_init
-                0x00001ed8       0x54 ./ADC_DAC/adc_dac_init.o
- .text.adc_dac_init
-                0x00001f2c       0x14 ./ADC_DAC/adc_dac_init.o
-                0x00001f2c                adc_dac_init
- .text.DMA_IRQHandler
-                0x00001f40      0x164 ./ADC_DAC/adc_dac_irq.o
-                0x00001f40                DMA_IRQHandler
- .text.Chip_IOCON_Init
-                0x000020a4       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .text.Chip_GPIO_Init
-                0x000020bc       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x00000f58       0x1c ./ADC_DAC/adc_dac_init.o
+ .text.Chip_GPIO_SetPinState
+                0x00000f74       0x68 ./ADC_DAC/adc_dac_init.o
  .text.Chip_GPIO_SetPinDIROutput
-                0x000020d4       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x00000fdc       0x38 ./ADC_DAC/adc_dac_init.o
  .text.Chip_GPIO_SetPinDIRInput
-                0x0000210c       0x3c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x00001014       0x3c ./ADC_DAC/adc_dac_init.o
  .text.Chip_GPIO_SetPinDIR
-                0x00002148       0x44 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x00001050       0x44 ./ADC_DAC/adc_dac_init.o
+ .text.Chip_GPIO_SetDir
+                0x00001094       0x34 ./ADC_DAC/adc_dac_init.o
+ .text.pin_set  0x000010c8       0x2c ./ADC_DAC/adc_dac_init.o
+ .text.pin_gpio_init
+                0x000010f4       0x54 ./ADC_DAC/adc_dac_init.o
+ .text.pin_init
+                0x00001148       0x34 ./ADC_DAC/adc_dac_init.o
+ .text.dma_init
+                0x0000117c       0x64 ./ADC_DAC/adc_dac_init.o
+ .text.getClkDiv
+                0x000011e0      0x1f8 ./ADC_DAC/adc_dac_init.o
+ .text.mi_Chip_I2S_RxConfig
+                0x000013d8       0xc0 ./ADC_DAC/adc_dac_init.o
+ .text.i2s_init
+                0x00001498       0xc0 ./ADC_DAC/adc_dac_init.o
+ .text.dac_init
+                0x00001558       0x74 ./ADC_DAC/adc_dac_init.o
+ .text.adc_dac_init
+                0x000015cc       0x14 ./ADC_DAC/adc_dac_init.o
+                0x000015cc                adc_dac_init
+ .text.DMA_IRQHandler
+                0x000015e0       0xf0 ./ADC_DAC/adc_dac_irq.o
+                0x000015e0                DMA_IRQHandler
+ .text.Chip_IOCON_Init
+                0x000016d0       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .text.Chip_GPIO_Init
+                0x000016e8       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .text.Chip_GPIO_SetPinDIROutput
+                0x00001700       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .text.Chip_GPIO_SetPinDIRInput
+                0x00001738       0x3c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .text.Chip_GPIO_SetPinDIR
+                0x00001774       0x44 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
  .text.Chip_GPIO_WriteDirBit
-                0x0000218c       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x000017b8       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
  .text.Board_LED_Init
-                0x000021bc       0x6c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x000017e8       0x6c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
  .text.Board_Init
-                0x00002228       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
-                0x00002228                Board_Init
+                0x00001854       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x00001854                Board_Init
  .text.Chip_SYSCTL_SetFLASHAccess
-                0x00002248       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x00001874       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
  .text.Board_SetupMuxing
-                0x00002278       0x1c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
-                0x00002278                Board_SetupMuxing
+                0x000018a4       0x1c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x000018a4                Board_SetupMuxing
  .text.Board_SetupClocking
-                0x00002294       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
-                0x00002294                Board_SetupClocking
+                0x000018c0       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x000018c0                Board_SetupClocking
  .text.Board_SystemInit
-                0x000022a8       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
-                0x000022a8                Board_SystemInit
+                0x000018d4       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x000018d4                Board_SystemInit
  .text.SystemCoreClockUpdate
-                0x000022b8       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
-                0x000022b8                SystemCoreClockUpdate
+                0x000018e4       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+                0x000018e4                SystemCoreClockUpdate
  .text.Chip_Clock_IsMainPLLEnabled
-                0x000022d0       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000018fc       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_IsMainPLLConnected
-                0x000022f4       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001920       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_FeedPLL
-                0x00002318       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001944       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetMainPLLSource
-                0x0000234c       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001978       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetMainOscRate
-                0x0000236c       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001998       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetIntOscRate
-                0x00002380       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000019ac       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetRTCOscRate
-                0x00002394       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000019c0       0x14 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetMainPLLInClockRate
-                0x000023a8       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000019d4       0x10 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_EnablePLL
-                0x000023b8       0x44 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000023b8                Chip_Clock_EnablePLL
+                0x000019e4       0x44 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000019e4                Chip_Clock_EnablePLL
  .text.Chip_Clock_DisablePLL
-                0x000023fc       0x48 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000023fc                Chip_Clock_DisablePLL
+                0x00001a28       0x48 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001a28                Chip_Clock_DisablePLL
  .text.Chip_Clock_SetupPLL
-                0x00002444       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00002444                Chip_Clock_SetupPLL
+                0x00001a70       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001a70                Chip_Clock_SetupPLL
  .text.Chip_Clock_EnablePeriphClock
-                0x000024a0       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000024a0                Chip_Clock_EnablePeriphClock
+                0x00001acc       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001acc                Chip_Clock_EnablePeriphClock
  .text.Chip_Clock_GetCPUClockSource
-                0x000024d4       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000024d4                Chip_Clock_GetCPUClockSource
+                0x00001b00       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001b00                Chip_Clock_GetCPUClockSource
  .text.Chip_Clock_SetCPUClockDiv
-                0x000024f8       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000024f8                Chip_Clock_SetCPUClockDiv
+                0x00001b24       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001b24                Chip_Clock_SetCPUClockDiv
  .text.Chip_Clock_GetCPUClockDiv
-                0x00002518       0x1c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00002518                Chip_Clock_GetCPUClockDiv
+                0x00001b44       0x1c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001b44                Chip_Clock_GetCPUClockDiv
  .text.Chip_Clock_SetPCLKDiv
-                0x00002534       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00002534                Chip_Clock_SetPCLKDiv
+                0x00001b60       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001b60                Chip_Clock_SetPCLKDiv
  .text.Chip_Clock_GetPCLKDiv
-                0x00002598       0x8c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00002598                Chip_Clock_GetPCLKDiv
+                0x00001bc4       0x8c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001bc4                Chip_Clock_GetPCLKDiv
  .text.Chip_Clock_GetSYSCLKRate
-                0x00002624       0x44 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00002624                Chip_Clock_GetSYSCLKRate
+                0x00001c50       0x44 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001c50                Chip_Clock_GetSYSCLKRate
  .text.Chip_Clock_GetMainPLLOutClockRate
-                0x00002668       0x54 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00002668                Chip_Clock_GetMainPLLOutClockRate
+                0x00001c94       0x54 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001c94                Chip_Clock_GetMainPLLOutClockRate
  .text.Chip_Clock_GetMainClockRate
-                0x000026bc       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000026bc                Chip_Clock_GetMainClockRate
+                0x00001ce8       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001ce8                Chip_Clock_GetMainClockRate
  .text.Chip_Clock_GetSystemClockRate
-                0x000026e4       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000026e4                Chip_Clock_GetSystemClockRate
+                0x00001d10       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001d10                Chip_Clock_GetSystemClockRate
  .text.Chip_Clock_GetPeripheralClockRate
-                0x000026fc       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000026fc                Chip_Clock_GetPeripheralClockRate
+                0x00001d28       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00001d28                Chip_Clock_GetPeripheralClockRate
  .text.Chip_DAC_Init
-                0x00002724       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
-                0x00002724                Chip_DAC_Init
+                0x00001d50       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+                0x00001d50                Chip_DAC_Init
  .text.Chip_DAC_SetBias
-                0x0000273c       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
-                0x0000273c                Chip_DAC_SetBias
+                0x00001d68       0x34 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+                0x00001d68                Chip_DAC_SetBias
  .text.configDMAMux
-                0x00002770       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00001d9c       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .text.makeCtrlWord
-                0x000027d4      0x124 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x000027d4                makeCtrlWord
+                0x00001e00      0x124 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00001e00                makeCtrlWord
  .text.setupChannel
-                0x000028f8       0xbc D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x000028f8                setupChannel
+                0x00001f24       0xbc D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00001f24                setupChannel
  .text.Chip_GPDMA_Init
-                0x000029b4       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x000029b4                Chip_GPDMA_Init
+                0x00001fe0       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00001fe0                Chip_GPDMA_Init
  .text.Chip_GPDMA_Interrupt
-                0x00002a18       0x6c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x00002a18                Chip_GPDMA_Interrupt
+                0x00002044       0x6c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00002044                Chip_GPDMA_Interrupt
  .text.Chip_GPDMA_InitChannelCfg
-                0x00002a84       0xe0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x00002a84                Chip_GPDMA_InitChannelCfg
+                0x000020b0       0xe0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x000020b0                Chip_GPDMA_InitChannelCfg
  .text.Chip_GPDMA_IntGetStatus
-                0x00002b64       0xbc D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x00002b64                Chip_GPDMA_IntGetStatus
+                0x00002190       0xbc D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00002190                Chip_GPDMA_IntGetStatus
  .text.Chip_GPDMA_ClearIntPending
-                0x00002c20       0x40 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x00002c20                Chip_GPDMA_ClearIntPending
+                0x0000224c       0x40 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x0000224c                Chip_GPDMA_ClearIntPending
  .text.Chip_GPDMA_ChannelCmd
-                0x00002c60       0x48 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x00002c60                Chip_GPDMA_ChannelCmd
+                0x0000228c       0x48 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x0000228c                Chip_GPDMA_ChannelCmd
  .text.Chip_GPDMA_PrepareDescriptor
-                0x00002ca8       0xc4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x00002ca8                Chip_GPDMA_PrepareDescriptor
+                0x000022d4       0xc4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x000022d4                Chip_GPDMA_PrepareDescriptor
  .text.Chip_GPDMA_SGTransfer
-                0x00002d6c       0xd0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x00002d6c                Chip_GPDMA_SGTransfer
+                0x00002398       0xd0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00002398                Chip_GPDMA_SGTransfer
  .text.Chip_GPDMA_GetFreeChannel
-                0x00002e3c       0x58 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x00002e3c                Chip_GPDMA_GetFreeChannel
+                0x00002468       0x58 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00002468                Chip_GPDMA_GetFreeChannel
  .text.Chip_I2S_Init
-                0x00002e94       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
-                0x00002e94                Chip_I2S_Init
- .text.Chip_I2S_Int_TxCmd
-                0x00002eac       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
-                0x00002eac                Chip_I2S_Int_TxCmd
+                0x000024c0       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+                0x000024c0                Chip_I2S_Init
  .text.Chip_I2S_Int_RxCmd
-                0x00002f08       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
-                0x00002f08                Chip_I2S_Int_RxCmd
- .text.Chip_I2S_DMA_TxCmd
-                0x00002f64       0xa0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
-                0x00002f64                Chip_I2S_DMA_TxCmd
+                0x000024d8       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+                0x000024d8                Chip_I2S_Int_RxCmd
  .text.Chip_I2S_DMA_RxCmd
-                0x00003004       0xa0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
-                0x00003004                Chip_I2S_DMA_RxCmd
+                0x00002534       0xa0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+                0x00002534                Chip_I2S_DMA_RxCmd
  .text.Chip_IOCON_PinMuxSet
-                0x000030a4       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
-                0x000030a4                Chip_IOCON_PinMuxSet
+                0x000025d4       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x000025d4                Chip_IOCON_PinMuxSet
  .text.Chip_IOCON_PinMux
-                0x000030dc       0x94 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
-                0x000030dc                Chip_IOCON_PinMux
+                0x0000260c       0x94 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x0000260c                Chip_IOCON_PinMux
  .text.Chip_IOCON_SetPinMuxing
-                0x00003170       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
-                0x00003170                Chip_IOCON_SetPinMuxing
+                0x000026a0       0x64 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x000026a0                Chip_IOCON_SetPinMuxing
  .text.Chip_Clock_IsMainPLLEnabled
-                0x000031d4       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00002704       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_IsMainPLLLocked
-                0x000031f8       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00002728       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_IsMainPLLConnected
-                0x0000321c       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x0000274c       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_EnableCrystal
-                0x00003240       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00002770       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_IsCrystalEnabled
-                0x00003260       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00002790       0x24 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_SetMainPLLSource
-                0x00003284       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x000027b4       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_SetupXtalClocking
-                0x000032a4       0x90 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
-                0x000032a4                Chip_SetupXtalClocking
+                0x000027d4       0x90 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x000027d4                Chip_SetupXtalClocking
  .text.xQueueGenericReset
-                0x00003334       0xa4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
-                0x00003334                xQueueGenericReset
+                0x00002864       0xa4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+                0x00002864                xQueueGenericReset
  .text.xQueueGenericCreate
-                0x000033d8       0x80 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
-                0x000033d8                xQueueGenericCreate
+                0x00002908       0x80 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+                0x00002908                xQueueGenericCreate
  .text.xQueueGenericSend
-                0x00003458      0x120 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
-                0x00003458                xQueueGenericSend
+                0x00002988      0x120 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+                0x00002988                xQueueGenericSend
  .text.xQueueGiveFromISR
-                0x00003578       0x80 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
-                0x00003578                xQueueGiveFromISR
+                0x00002aa8       0x80 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+                0x00002aa8                xQueueGiveFromISR
  .text.xQueueGenericReceive
-                0x000035f8      0x16c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
-                0x000035f8                xQueueGenericReceive
+                0x00002b28      0x16c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+                0x00002b28                xQueueGenericReceive
  .text.prvCopyDataToQueue
-                0x00003764       0xd8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+                0x00002c94       0xd8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
  .text.prvCopyDataFromQueue
-                0x0000383c       0x4c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+                0x00002d6c       0x4c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
  .text.prvUnlockQueue
-                0x00003888       0x98 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+                0x00002db8       0x98 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
  .text.prvIsQueueEmpty
-                0x00003920       0x2c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+                0x00002e50       0x2c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
  .text.prvIsQueueFull
-                0x0000394c       0x30 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+                0x00002e7c       0x30 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
  .text.xTaskGenericCreate
-                0x0000397c      0x13c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x0000397c                xTaskGenericCreate
+                0x00002eac      0x13c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x00002eac                xTaskGenericCreate
  .text.vTaskDelete
-                0x00003ab8       0xd8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00003ab8                vTaskDelete
+                0x00002fe8       0xd8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x00002fe8                vTaskDelete
  .text.vTaskDelay
-                0x00003b90       0x74 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00003b90                vTaskDelay
+                0x000030c0       0x74 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x000030c0                vTaskDelay
  .text.vTaskStartScheduler
-                0x00003c04       0x64 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00003c04                vTaskStartScheduler
+                0x00003134       0x64 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x00003134                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x00003c68       0x1c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00003c68                vTaskSuspendAll
+                0x00003198       0x1c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x00003198                vTaskSuspendAll
  .text.xTaskResumeAll
-                0x00003c84       0xfc D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00003c84                xTaskResumeAll
+                0x000031b4       0xfc D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x000031b4                xTaskResumeAll
  .text.xTaskIncrementTick
-                0x00003d80      0x15c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00003d80                xTaskIncrementTick
+                0x000032b0      0x15c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x000032b0                xTaskIncrementTick
  .text.vTaskSwitchContext
-                0x00003edc       0x8c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00003edc                vTaskSwitchContext
+                0x0000340c       0x8c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x0000340c                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x00003f68       0x84 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00003f68                vTaskPlaceOnEventList
+                0x00003498       0x84 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x00003498                vTaskPlaceOnEventList
  .text.xTaskRemoveFromEventList
-                0x00003fec       0xa8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00003fec                xTaskRemoveFromEventList
+                0x0000351c       0xa8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x0000351c                xTaskRemoveFromEventList
  .text.vTaskSetTimeOutState
-                0x00004094       0x2c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00004094                vTaskSetTimeOutState
+                0x000035c4       0x2c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x000035c4                vTaskSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x000040c0       0x88 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x000040c0                xTaskCheckForTimeOut
+                0x000035f0       0x88 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x000035f0                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x00004148       0x18 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00004148                vTaskMissedYield
+                0x00003678       0x18 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x00003678                vTaskMissedYield
  .text.prvIdleTask
-                0x00004160       0x24 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x00003690       0x24 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .text.prvInitialiseTCBVariables
-                0x00004184       0xa8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x000036b4       0xa8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .text.prvInitialiseTaskLists
-                0x0000422c       0x80 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x0000375c       0x80 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .text.prvCheckTasksWaitingTermination
-                0x000042ac       0x78 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x000037dc       0x78 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .text.prvAddCurrentTaskToDelayedList
-                0x00004324       0x6c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x00003854       0x6c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .text.prvAllocateTCBAndStack
-                0x00004390       0x6c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x000038c0       0x6c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .text.prvDeleteTCB
-                0x000043fc       0x20 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x0000392c       0x20 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .text.prvResetNextTaskUnblockTime
-                0x0000441c       0x48 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x0000394c       0x48 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .text.vTaskPriorityInherit
-                0x00004464       0xec D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00004464                vTaskPriorityInherit
+                0x00003994       0xec D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x00003994                vTaskPriorityInherit
  .text.xTaskPriorityDisinherit
-                0x00004550       0xc8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00004550                xTaskPriorityDisinherit
+                0x00003a80       0xc8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x00003a80                xTaskPriorityDisinherit
  .text.pvTaskIncrementMutexHeldCount
-                0x00004618       0x28 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x00004618                pvTaskIncrementMutexHeldCount
+                0x00003b48       0x28 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x00003b48                pvTaskIncrementMutexHeldCount
  .text.pvPortMalloc
-                0x00004640       0x8c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
-                0x00004640                pvPortMalloc
+                0x00003b70       0x8c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+                0x00003b70                pvPortMalloc
  .text.vPortFree
-                0x000046cc       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
-                0x000046cc                vPortFree
+                0x00003bfc       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+                0x00003bfc                vPortFree
  .text.pxPortInitialiseStack
-                0x000046e0       0x54 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
-                0x000046e0                pxPortInitialiseStack
+                0x00003c10       0x54 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003c10                pxPortInitialiseStack
  .text.prvTaskExitError
-                0x00004734        0xc D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003c64        0xc D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
  .text.SVC_Handler
-                0x00004740       0x28 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
-                0x00004740                SVC_Handler
+                0x00003c70       0x28 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003c70                SVC_Handler
  .text.prvPortStartFirstTask
-                0x00004768       0x20 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003c98       0x20 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
  .text.xPortStartScheduler
-                0x00004788       0x3c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
-                0x00004788                xPortStartScheduler
+                0x00003cb8       0x3c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003cb8                xPortStartScheduler
  .text.vPortYield
-                0x000047c4       0x20 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
-                0x000047c4                vPortYield
+                0x00003cf4       0x20 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003cf4                vPortYield
  .text.vPortEnterCritical
-                0x000047e4       0x24 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
-                0x000047e4                vPortEnterCritical
+                0x00003d14       0x24 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003d14                vPortEnterCritical
  .text.vPortExitCritical
-                0x00004808       0x24 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
-                0x00004808                vPortExitCritical
+                0x00003d38       0x24 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003d38                vPortExitCritical
  .text.ulPortSetInterruptMask
-                0x0000482c       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
-                0x0000482c                ulPortSetInterruptMask
+                0x00003d5c       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003d5c                ulPortSetInterruptMask
  .text.vPortClearInterruptMask
-                0x00004840        0x8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
-                0x00004840                vPortClearInterruptMask
+                0x00003d70        0x8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003d70                vPortClearInterruptMask
  .text.PendSV_Handler
-                0x00004848       0x48 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
-                0x00004848                PendSV_Handler
+                0x00003d78       0x48 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003d78                PendSV_Handler
  .text.SysTick_Handler
-                0x00004890       0x28 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
-                0x00004890                SysTick_Handler
+                0x00003dc0       0x28 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003dc0                SysTick_Handler
  .text.vPortSetupTimerInterrupt
-                0x000048b8       0x34 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
-                0x000048b8                vPortSetupTimerInterrupt
+                0x00003de8       0x34 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x00003de8                vPortSetupTimerInterrupt
  .text.vApplicationIdleHook
-                0x000048ec       0x10 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
-                0x000048ec                vApplicationIdleHook
+                0x00003e1c       0x10 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
+                0x00003e1c                vApplicationIdleHook
  .text.vListInitialise
-                0x000048fc       0x40 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
-                0x000048fc                vListInitialise
+                0x00003e2c       0x40 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+                0x00003e2c                vListInitialise
  .text.vListInitialiseItem
-                0x0000493c       0x18 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
-                0x0000493c                vListInitialiseItem
+                0x00003e6c       0x18 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+                0x00003e6c                vListInitialiseItem
  .text.vListInsertEnd
-                0x00004954       0x48 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
-                0x00004954                vListInsertEnd
+                0x00003e84       0x48 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+                0x00003e84                vListInsertEnd
  .text.vListInsert
-                0x0000499c       0x70 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
-                0x0000499c                vListInsert
+                0x00003ecc       0x70 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+                0x00003ecc                vListInsert
  .text.uxListRemove
-                0x00004a0c       0x54 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
-                0x00004a0c                uxListRemove
- .text.__main   0x00004a60       0x14 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(_cr__main.o)
-                0x00004a60                __CR_SEMIHOST
-                0x00004a60                __main
- .text.memcpy   0x00004a74        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memcpy.o)
-                0x00004a74                memcpy
- .text.memset   0x00004a78        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
-                0x00004a78                memset
- .text._initio  0x00004a7c       0xa4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(initio.o)
-                0x00004a7c                _initio
- .text.setvbuf  0x00004b20       0x40 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(setvbuf.o)
-                0x00004b20                setvbuf
- .text.strlen   0x00004b60       0x4a c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(strlen.o)
-                0x00004b60                strlen
+                0x00003f3c       0x54 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+                0x00003f3c                uxListRemove
+ .text.__main   0x00003f90       0x14 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(_cr__main.o)
+                0x00003f90                __CR_SEMIHOST
+                0x00003f90                __main
+ .text.memcpy   0x00003fa4        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memcpy.o)
+                0x00003fa4                memcpy
+ .text.memset   0x00003fa8        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
+                0x00003fa8                memset
+ .text._initio  0x00003fac       0xa4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(initio.o)
+                0x00003fac                _initio
+ .text.setvbuf  0x00004050       0x40 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(setvbuf.o)
+                0x00004050                setvbuf
+ .text.strlen   0x00004090       0x4a c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(strlen.o)
+                0x00004090                strlen
  .text._deferredlazyseek
-                0x00004baa       0x44 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_deferredlazyseek.o)
-                0x00004baa                _deferredlazyseek
- .text._fdopen  0x00004bee       0x6a c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_fdopen.o)
-                0x00004bee                _fdopen
- .text._fflush  0x00004c58       0x58 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_fflush.o)
-                0x00004c58                _fflush
+                0x000040da       0x44 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_deferredlazyseek.o)
+                0x000040da                _deferredlazyseek
+ .text._fdopen  0x0000411e       0x6a c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_fdopen.o)
+                0x0000411e                _fdopen
+ .text._fflush  0x00004188       0x58 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_fflush.o)
+                0x00004188                _fflush
  .text._Cwritebuf
-                0x00004cb0       0x68 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_writebuf.o)
-                0x00004cb0                _Cwritebuf
- .text.malloc   0x00004d18       0xc8 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(alloc.o)
-                0x00004d18                malloc
- .text.free     0x00004de0       0x30 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(alloc.o)
-                0x00004de0                free
+                0x000041e0       0x68 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_writebuf.o)
+                0x000041e0                _Cwritebuf
+ .text.malloc   0x00004248       0xc8 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(alloc.o)
+                0x00004248                malloc
+ .text.free     0x00004310       0x30 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(alloc.o)
+                0x00004310                free
  .text._Csys_alloc
-                0x00004e10       0x20 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(alloc.o)
-                0x00004e10                _Csys_alloc
- .text.fclose   0x00004e30       0x6c c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fclose.o)
-                0x00004e30                fclose
- .text.fflush   0x00004e9c       0x30 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fflush.o)
-                0x00004e9c                fflush
- .text.fseek    0x00004ecc      0x110 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fseek.o)
-                0x00004ecc                fseek
- .text.ftell    0x00004fdc       0x4c c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(ftell.o)
-                0x00004fdc                ftell
- .text.remove   0x00005028       0x14 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(remove.o)
-                0x00005028                remove
- .text._sbrk    0x0000503c       0x40 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_cr_sbrk.o)
-                0x0000503c                _sbrk
+                0x00004340       0x20 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(alloc.o)
+                0x00004340                _Csys_alloc
+ .text.fclose   0x00004360       0x6c c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fclose.o)
+                0x00004360                fclose
+ .text.fflush   0x000043cc       0x30 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fflush.o)
+                0x000043cc                fflush
+ .text.fseek    0x000043fc      0x110 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fseek.o)
+                0x000043fc                fseek
+ .text.ftell    0x0000450c       0x4c c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(ftell.o)
+                0x0000450c                ftell
+ .text.remove   0x00004558       0x14 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(remove.o)
+                0x00004558                remove
+ .text._sbrk    0x0000456c       0x40 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_cr_sbrk.o)
+                0x0000456c                _sbrk
  .text._do_fflush
-                0x0000507c       0x44 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_do_fflush.o)
-                0x0000507c                _do_fflush
+                0x000045ac       0x44 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_do_fflush.o)
+                0x000045ac                _do_fflush
  .text.__check_heap_overflow
-                0x000050c0       0x18 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_cr_check_heap.o)
-                0x000050c0                __check_heap_overflow
+                0x000045f0       0x18 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_cr_check_heap.o)
+                0x000045f0                __check_heap_overflow
  .text.__aeabi_division_uldivmod
-                0x000050d8      0x174 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
-                0x000050d8                __aeabi_uldivmod
-                0x000050dc                __bhs_ldivmod1
+                0x00004608      0x174 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
+                0x00004608                __aeabi_uldivmod
+                0x0000460c                __bhs_ldivmod1
  .text.__aeabi_division_idiv0
-                0x0000524c        0x2 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_idiv0.o)
-                0x0000524c                __aeabi_idiv0
+                0x0000477c        0x2 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_idiv0.o)
+                0x0000477c                __aeabi_idiv0
  .text.__aeabi_memcpy
-                0x0000524e       0x34 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(memcpy.o)
-                0x0000524e                __aeabi_memcpy
-                0x00005258                __aeabi_memcpy8
-                0x00005258                __aeabi_memcpy4
+                0x0000477e       0x34 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(memcpy.o)
+                0x0000477e                __aeabi_memcpy
+                0x00004788                __aeabi_memcpy8
+                0x00004788                __aeabi_memcpy4
  .text.__aeabi_memset_lowlevel
-                0x00005282       0x32 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(memcpy.o)
-                0x00005282                __aeabi_lowlevel_memset
+                0x000047b2       0x32 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(memcpy.o)
+                0x000047b2                __aeabi_lowlevel_memset
  .text.__sys_appexit
-                0x000052b4        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_appexit.o)
-                0x000052b4                __sys_appexit
-                0x000052b4                __exit
+                0x000047e4        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_appexit.o)
+                0x000047e4                __sys_appexit
+                0x000047e4                __exit
  .text.__sys_close
-                0x000052c0        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_close.o)
-                0x000052c0                __sys_close
+                0x000047f0        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_close.o)
+                0x000047f0                __sys_close
  .text.__sys_flen
-                0x000052cc        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_flen.o)
-                0x000052cc                __sys_flen
+                0x000047fc        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_flen.o)
+                0x000047fc                __sys_flen
  .text.__sys_istty
-                0x000052d8        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_istty.o)
-                0x000052d8                __sys_istty
+                0x00004808        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_istty.o)
+                0x00004808                __sys_istty
  .text.__sys_remove
-                0x000052e4        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_remove.o)
-                0x000052e4                __sys_remove
+                0x00004814        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_remove.o)
+                0x00004814                __sys_remove
  .text.__sys_seek
-                0x000052f0        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_seek.o)
-                0x000052f0                __sys_seek
+                0x00004820        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_seek.o)
+                0x00004820                __sys_seek
  .text.__sys_tmpnam
-                0x000052fc        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_tmpnam.o)
-                0x000052fc                __sys_tmpnam
+                0x0000482c        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_tmpnam.o)
+                0x0000482c                __sys_tmpnam
  .text.__sys_write
-                0x00005308        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_write.o)
-                0x00005308                __sys_write
-                0x00005308                __write
+                0x00004838        0xc c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_write.o)
+                0x00004838                __sys_write
+                0x00004838                __write
  *(.rodata .rodata.* .constdata .constdata.*)
- .rodata        0x00005314       0x46 ./src/Inicializaciones.o
- *fill*         0x0000535a        0x2 ff
- .rodata        0x0000535c       0x88 ./src/tareas.o
- .rodata.TM_Font11x18
-                0x000053e4      0xd5c ./TFT/tft_fonts.o
+ .rodata        0x00004844       0x46 ./src/Inicializaciones.o
+ *fill*         0x0000488a        0x2 ff
  .rodata.OscRateIn
-                0x00006140        0x4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
-                0x00006140                OscRateIn
+                0x0000488c        0x4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x0000488c                OscRateIn
  .rodata.RTCOscRateIn
-                0x00006144        0x4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
-                0x00006144                RTCOscRateIn
+                0x00004890        0x4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x00004890                RTCOscRateIn
  .rodata.pinmuxing
-                0x00006148       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x00004894       0x5c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
  .rodata.GPDMA_LUTPerBurst
-                0x000061a4       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x000061a4                GPDMA_LUTPerBurst
+                0x000048f0       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x000048f0                GPDMA_LUTPerBurst
  .rodata.GPDMA_LUTPerWid
-                0x000061bc       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x000061bc                GPDMA_LUTPerWid
- .rodata        0x000061d4        0x5 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x00004908       0x18 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00004908                GPDMA_LUTPerWid
+ .rodata        0x00004920        0x5 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .rodata.str1.1
-                0x000061d9        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(initio.o)
+                0x00004925        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(initio.o)
  .rodata.str1.1
-                0x000061dd       0x18 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(alloc.o)
-                0x000061f8                . = ALIGN (0x4)
- *fill*         0x000061f5        0x3 ff
+                0x00004929       0x18 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(alloc.o)
+                0x00004944                . = ALIGN (0x4)
+ *fill*         0x00004941        0x3 ff
 
-.glue_7         0x000061f8        0x0
- .glue_7        0x000061f8        0x0 linker stubs
+.glue_7         0x00004944        0x0
+ .glue_7        0x00004944        0x0 linker stubs
 
-.glue_7t        0x000061f8        0x0
- .glue_7t       0x000061f8        0x0 linker stubs
+.glue_7t        0x00004944        0x0
+ .glue_7t       0x00004944        0x0 linker stubs
 
-.vfp11_veneer   0x000061f8        0x0
- .vfp11_veneer  0x000061f8        0x0 linker stubs
+.vfp11_veneer   0x00004944        0x0
+ .vfp11_veneer  0x00004944        0x0 linker stubs
 
-.v4_bx          0x000061f8        0x0
- .v4_bx         0x000061f8        0x0 linker stubs
+.v4_bx          0x00004944        0x0
+ .v4_bx         0x00004944        0x0 linker stubs
 
-.iplt           0x000061f8        0x0
- .iplt          0x000061f8        0x0 ./src/Inicializaciones.o
+.iplt           0x00004944        0x0
+ .iplt          0x00004944        0x0 ./src/Inicializaciones.o
 
-.rel.dyn        0x000061f8        0x0
- .rel.iplt      0x000061f8        0x0 ./src/Inicializaciones.o
+.rel.dyn        0x00004944        0x0
+ .rel.iplt      0x00004944        0x0 ./src/Inicializaciones.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000061f8                __exidx_start = .
+                0x00004944                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000061f8                __exidx_end = .
-                0x000061f8                _etext = .
+                0x00004944                __exidx_end = .
+                0x00004944                _etext = .
 
-.data_RAM2      0x2007c000        0x4 load address 0x000061f8
+.data_RAM2      0x2007c000        0x4 load address 0x00004944
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM2, .)
  *(.ramfunc.$RAM2)
@@ -5965,12 +6009,11 @@ END GROUP
  *(.data.$RAM2*)
  *(.data.$RamAHB32*)
  .data.$RamAHB32
-                0x2007c000        0x3 ./ADC_DAC/private/adc_dac_globales_priv.o
+                0x2007c000        0x2 ./ADC_DAC/private/adc_dac_globales_priv.o
                 0x2007c000                dma_adc_ext_status
-                0x2007c001                dma_dac_ext_status
-                0x2007c002                dma_dac_int_status
+                0x2007c001                dma_dac_int_status
                 0x2007c004                . = ALIGN (0x4)
- *fill*         0x2007c003        0x1 ff
+ *fill*         0x2007c002        0x2 ff
                 [!provide]                PROVIDE (__end_data_RAM2, .)
 
 .uninit_RESERVED
@@ -5979,27 +6022,24 @@ END GROUP
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _end_uninit_RESERVED = .
 
-.data           0x10000000       0x6c load address 0x000061fc
+.data           0x10000000       0x64 load address 0x00004948
  FILL mask 0xff
                 0x10000000                _data = .
  *(vtable)
  *(.ramfunc*)
  *(.data*)
- .data.tft_Font_11x18
-                0x10000000        0x8 ./TFT/tft_fonts.o
-                0x10000000                tft_Font_11x18
  .data.GPDMA_LUTPerAddr
-                0x10000008       0x60 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
-                0x10000008                GPDMA_LUTPerAddr
+                0x10000000       0x60 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x10000000                GPDMA_LUTPerAddr
  .data.uxCriticalNesting
-                0x10000068        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
-                0x1000006c                . = ALIGN (0x4)
-                0x1000006c                _edata = .
+                0x10000060        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x10000064                . = ALIGN (0x4)
+                0x10000064                _edata = .
 
-.igot.plt       0x1000006c        0x0 load address 0x00006268
- .igot.plt      0x1000006c        0x0 ./src/Inicializaciones.o
+.igot.plt       0x10000064        0x0 load address 0x000049ac
+ .igot.plt      0x10000064        0x0 ./src/Inicializaciones.o
 
-.bss_RAM2       0x2007c004     0x4870
+.bss_RAM2       0x2007c004     0x4854
                 [!provide]                PROVIDE (__start_bss_RAM2, .)
  *(.bss.$RAM2*)
  *(.bss.$RamAHB32*)
@@ -6010,202 +6050,182 @@ END GROUP
                 0x2007f004                buffer_dep
                 0x20080004                buffer_dac
  .bss.$RamAHB32
-                0x20080804       0x5d ./ADC_DAC/private/adc_dac_globales_priv.o
+                0x20080804       0x45 ./ADC_DAC/private/adc_dac_globales_priv.o
                 0x20080804                dma_adc_ext_descriptor
                 0x20080808                dma_adc_ext_descriptor_A
                 0x20080818                dma_adc_ext_descriptor_B
                 0x20080828                dma_adc_ext_memory_A
                 0x2008082c                dma_adc_ext_memory_B
                 0x20080830                dma_adc_ext_canal
-                0x20080834                dma_dac_ext_descriptor
-                0x20080844                dma_dac_ext_memory
-                0x20080848                dma_dac_ext_canal
-                0x2008084c                dma_dac_int_descriptor
-                0x2008085c                dma_dac_int_memory
-                0x20080860                dma_dac_int_canal
- *fill*         0x20080861        0x3 
+                0x20080834                dma_dac_int_descriptor
+                0x20080844                dma_dac_int_memory
+                0x20080848                dma_dac_int_canal
+ *fill*         0x20080849        0x3 
  .bss.$RamAHB32
-                0x20080864       0x10 ./ADC_DAC/adc_dac_globales.o
-                0x20080864                dma_adc_ext_memory
-                0x20080868                sem_adc_ext_proc
-                0x2008086c                sem_dac_ext_finish
-                0x20080870                sem_dac_int_finish
-                0x20080874                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x2008084c        0xc ./ADC_DAC/adc_dac_globales.o
+                0x2008084c                dma_adc_ext_memory
+                0x20080850                sem_adc_ext_proc
+                0x20080854                sem_dac_int_finish
+                0x20080858                . = ALIGN ((. != 0x0)?0x4:0x1)
                 [!provide]                PROVIDE (__end_bss_RAM2, .)
 
-.bss            0x1000006c     0x2ac8
-                0x1000006c                _bss = .
+.bss            0x10000064     0x2ab8
+                0x10000064                _bss = .
  *(.bss*)
- .bss.using_tft
-                0x1000006c        0x1 ./TFT/tft_lcd_primitivas.o
- *fill*         0x1000006d        0x3 
  .bss.ChannelHandlerArray
-                0x10000070        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x10000064        0x8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .bss.pxCurrentTCB
-                0x10000078        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
-                0x10000078                pxCurrentTCB
+                0x1000006c        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x1000006c                pxCurrentTCB
  .bss.pxReadyTasksLists
-                0x1000007c       0xa0 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000070       0xa0 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.xDelayedTaskList1
-                0x1000011c       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000110       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.xDelayedTaskList2
-                0x10000130       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000124       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.pxDelayedTaskList
-                0x10000144        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000138        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.pxOverflowDelayedTaskList
-                0x10000148        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x1000013c        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.xPendingReadyList
-                0x1000014c       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000140       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.xTasksWaitingTermination
-                0x10000160       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000154       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.uxTasksDeleted
-                0x10000174        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000168        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.xSuspendedTaskList
-                0x10000178       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x1000016c       0x14 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.uxCurrentNumberOfTasks
-                0x1000018c        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000180        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.xTickCount
-                0x10000190        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000184        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.uxTopReadyPriority
-                0x10000194        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000188        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.xSchedulerRunning
-                0x10000198        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x1000018c        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.uxPendedTicks
-                0x1000019c        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000190        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.xYieldPending
-                0x100001a0        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000194        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.xNumOfOverflows
-                0x100001a4        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x10000198        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.uxTaskNumber
-                0x100001a8        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x1000019c        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.xNextTaskUnblockTime
-                0x100001ac        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x100001a0        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .bss.uxSchedulerSuspended
-                0x100001b0        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
- .bss.ucHeap    0x100001b4     0x2800 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+                0x100001a4        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+ .bss.ucHeap    0x100001a8     0x2800 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
  .bss.xNextFreeByte
-                0x100029b4        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+                0x100029a8        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
  .bss.pucAlignedHeap.7712
-                0x100029b8        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
- .bss._extra    0x100029bc        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(initio.o)
-                0x100029bc                _extra
- .bss.__Ciob    0x100029c0      0x140 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(stdio.o)
-                0x100029c0                __Ciob
- .bss.errno     0x10002b00        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(errno.o)
-                0x10002b00                errno
- .bss.__heaps   0x10002b04        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__init_alloc.o)
-                0x10002b04                __heaps
+                0x100029ac        0x4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+ .bss._extra    0x100029b0        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(initio.o)
+                0x100029b0                _extra
+ .bss.__Ciob    0x100029b4      0x140 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(stdio.o)
+                0x100029b4                __Ciob
+ .bss.errno     0x10002af4        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(errno.o)
+                0x10002af4                errno
+ .bss.__heaps   0x10002af8        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__init_alloc.o)
+                0x10002af8                __heaps
  .bss.__end_of_heap
-                0x10002b08        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__init_alloc.o)
-                0x10002b08                __end_of_heap
+                0x10002afc        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__init_alloc.o)
+                0x10002afc                __end_of_heap
  *(COMMON)
- COMMON         0x10002b0c       0x18 ./src/globales.o
-                0x10002b0c                THD
-                0x10002b10                flag_dac_send
-                0x10002b11                flag_do_rem
-                0x10002b14                fft_max
-                0x10002b18                flag_do_thd
-                0x10002b1c                fft_min
-                0x10002b20                fft_max_idx
- COMMON         0x10002b24        0xa ./TFT/tft_globales.o
-                0x10002b24                tft_x
-                0x10002b26                tft_y
-                0x10002b28                tft_Opts
- *fill*         0x10002b2e        0x2 
- COMMON         0x10002b30        0x4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
-                0x10002b30                SystemCoreClock
-                0x10002b34                . = ALIGN (0x4)
-                0x10002b34                _ebss = .
+ COMMON         0x10002b00       0x18 ./src/globales.o
+                0x10002b00                THD
+                0x10002b04                flag_dac_send
+                0x10002b05                flag_do_rem
+                0x10002b08                fft_max
+                0x10002b0c                flag_do_thd
+                0x10002b10                fft_min
+                0x10002b14                fft_max_idx
+ COMMON         0x10002b18        0x4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+                0x10002b18                SystemCoreClock
+                0x10002b1c                . = ALIGN (0x4)
+                0x10002b1c                _ebss = .
                 [!provide]                PROVIDE (end, .)
 
-.noinit_RAM2    0x20080874        0x0
+.noinit_RAM2    0x20080858        0x0
  *(.noinit.$RAM2*)
  *(.noinit.$RamAHB32*)
-                0x20080874                . = ALIGN (0x4)
+                0x20080858                . = ALIGN (0x4)
 
-.noinit         0x10002b34        0x0
-                0x10002b34                _noinit = .
+.noinit         0x10002b1c        0x0
+                0x10002b1c                _noinit = .
  *(.noinit*)
-                0x10002b34                . = ALIGN (0x4)
-                0x10002b34                _end_noinit = .
-                0x10002b34                PROVIDE (_pvHeapStart, DEFINED (__user_heap_base)?__user_heap_base:.)
+                0x10002b1c                . = ALIGN (0x4)
+                0x10002b1c                _end_noinit = .
+                0x10002b1c                PROVIDE (_pvHeapStart, DEFINED (__user_heap_base)?__user_heap_base:.)
                 0x10008000                PROVIDE (_vStackTop, DEFINED (__user_stack_top)?__user_stack_top:(__top_RamLoc32 - 0x0))
                 0xefff74b2                PROVIDE (__valid_user_code_checksum, (0x0 - ((((((_vStackTop + (ResetISR + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
 OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
 
-.debug_info     0x00000000     0xdecf
+.debug_info     0x00000000     0xcbe8
  .debug_info    0x00000000      0x66c ./src/Inicializaciones.o
  .debug_info    0x0000066c      0x223 ./src/THD_Meter.o
  .debug_info    0x0000088f      0x253 ./src/cr_startup_lpc175x_6x.o
  .debug_info    0x00000ae2       0x3f ./src/crp.o
  .debug_info    0x00000b21      0x3d5 ./src/globales.o
  .debug_info    0x00000ef6      0x110 ./src/sysinit.o
- .debug_info    0x00001006      0x422 ./src/tareas.o
- .debug_info    0x00001428      0x47f ./TIMER/timer_irq.o
- .debug_info    0x000018a7      0x3a0 ./TFT/tft_fonts.o
- .debug_info    0x00001c47      0x3a8 ./TFT/tft_func_priv.o
- .debug_info    0x00001fef      0x359 ./TFT/tft_globales.o
- .debug_info    0x00002348      0x865 ./TFT/tft_lcd_primitivas.o
- .debug_info    0x00002bad      0x8ad ./RTOS/rtos_tareas.o
- .debug_info    0x0000345a      0x5f5 ./ADC_DAC/private/adc_dac_func_priv.o
- .debug_info    0x00003a4f      0x769 ./ADC_DAC/private/adc_dac_globales_priv.o
- .debug_info    0x000041b8      0x9a4 ./ADC_DAC/adc_dac_func.o
- .debug_info    0x00004b5c      0x319 ./ADC_DAC/adc_dac_globales.o
- .debug_info    0x00004e75      0xec8 ./ADC_DAC/adc_dac_init.o
- .debug_info    0x00005d3d      0x849 ./ADC_DAC/adc_dac_irq.o
- .debug_info    0x00006586     0x1214 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_info    0x0000779a      0x591 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_info    0x00007d2b      0x51e D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_info    0x00008249      0xb62 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_info    0x00008dab      0x1e0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .debug_info    0x00008f8b     0x1323 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .debug_info    0x0000a2ae      0x77e D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
- .debug_info    0x0000aa2c      0x2e9 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_info    0x0000ad15      0x439 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
- .debug_info    0x0000b14e      0xcc6 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
- .debug_info    0x0000be14     0x16b5 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
- .debug_info    0x0000d4c9      0x25b D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
- .debug_info    0x0000d724      0x32d D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
- .debug_info    0x0000da51      0x19f D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
- .debug_info    0x0000dbf0      0x2df D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+ .debug_info    0x00001006      0x3f3 ./src/tareas.o
+ .debug_info    0x000013f9      0x47f ./TIMER/timer_irq.o
+ .debug_info    0x00001878      0x8ad ./RTOS/rtos_tareas.o
+ .debug_info    0x00002125      0x5f7 ./ADC_DAC/private/adc_dac_func_priv.o
+ .debug_info    0x0000271c      0x71a ./ADC_DAC/private/adc_dac_globales_priv.o
+ .debug_info    0x00002e36      0x8ca ./ADC_DAC/adc_dac_func.o
+ .debug_info    0x00003700      0x308 ./ADC_DAC/adc_dac_globales.o
+ .debug_info    0x00003a08     0x10be ./ADC_DAC/adc_dac_init.o
+ .debug_info    0x00004ac6      0x7d9 ./ADC_DAC/adc_dac_irq.o
+ .debug_info    0x0000529f     0x1214 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_info    0x000064b3      0x591 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_info    0x00006a44      0x51e D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_info    0x00006f62      0xb62 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_info    0x00007ac4      0x1e0 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_info    0x00007ca4     0x1323 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_info    0x00008fc7      0x77e D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_info    0x00009745      0x2e9 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_info    0x00009a2e      0x439 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_info    0x00009e67      0xcc6 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+ .debug_info    0x0000ab2d     0x16b5 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+ .debug_info    0x0000c1e2      0x25b D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+ .debug_info    0x0000c43d      0x32d D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+ .debug_info    0x0000c76a      0x19f D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
+ .debug_info    0x0000c909      0x2df D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
 
-.debug_abbrev   0x00000000     0x32ec
+.debug_abbrev   0x00000000     0x2dff
  .debug_abbrev  0x00000000      0x171 ./src/Inicializaciones.o
  .debug_abbrev  0x00000171       0xb6 ./src/THD_Meter.o
  .debug_abbrev  0x00000227       0xf5 ./src/cr_startup_lpc175x_6x.o
  .debug_abbrev  0x0000031c       0x36 ./src/crp.o
  .debug_abbrev  0x00000352       0xe4 ./src/globales.o
  .debug_abbrev  0x00000436       0xa3 ./src/sysinit.o
- .debug_abbrev  0x000004d9      0x19a ./src/tareas.o
- .debug_abbrev  0x00000673      0x168 ./TIMER/timer_irq.o
- .debug_abbrev  0x000007db       0xfe ./TFT/tft_fonts.o
- .debug_abbrev  0x000008d9      0x15b ./TFT/tft_func_priv.o
- .debug_abbrev  0x00000a34       0xdd ./TFT/tft_globales.o
- .debug_abbrev  0x00000b11      0x1b7 ./TFT/tft_lcd_primitivas.o
- .debug_abbrev  0x00000cc8      0x214 ./RTOS/rtos_tareas.o
- .debug_abbrev  0x00000edc      0x198 ./ADC_DAC/private/adc_dac_func_priv.o
- .debug_abbrev  0x00001074      0x18c ./ADC_DAC/private/adc_dac_globales_priv.o
- .debug_abbrev  0x00001200      0x21c ./ADC_DAC/adc_dac_func.o
- .debug_abbrev  0x0000141c       0xc8 ./ADC_DAC/adc_dac_globales.o
- .debug_abbrev  0x000014e4      0x290 ./ADC_DAC/adc_dac_init.o
- .debug_abbrev  0x00001774      0x1c5 ./ADC_DAC/adc_dac_irq.o
- .debug_abbrev  0x00001939      0x2e4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_abbrev  0x00001c1d      0x15c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_abbrev  0x00001d79      0x13c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_abbrev  0x00001eb5      0x2ec D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_abbrev  0x000021a1      0x10a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .debug_abbrev  0x000022ab      0x27a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .debug_abbrev  0x00002525      0x1b7 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
- .debug_abbrev  0x000026dc      0x126 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_abbrev  0x00002802      0x175 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
- .debug_abbrev  0x00002977      0x1cc D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
- .debug_abbrev  0x00002b43      0x2ae D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
- .debug_abbrev  0x00002df1      0x139 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
- .debug_abbrev  0x00002f2a      0x1ad D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
- .debug_abbrev  0x000030d7      0x129 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
- .debug_abbrev  0x00003200       0xec D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+ .debug_abbrev  0x000004d9      0x196 ./src/tareas.o
+ .debug_abbrev  0x0000066f      0x168 ./TIMER/timer_irq.o
+ .debug_abbrev  0x000007d7      0x214 ./RTOS/rtos_tareas.o
+ .debug_abbrev  0x000009eb      0x198 ./ADC_DAC/private/adc_dac_func_priv.o
+ .debug_abbrev  0x00000b83      0x18c ./ADC_DAC/private/adc_dac_globales_priv.o
+ .debug_abbrev  0x00000d0f      0x21c ./ADC_DAC/adc_dac_func.o
+ .debug_abbrev  0x00000f2b       0xc8 ./ADC_DAC/adc_dac_globales.o
+ .debug_abbrev  0x00000ff3      0x2aa ./ADC_DAC/adc_dac_init.o
+ .debug_abbrev  0x0000129d      0x1af ./ADC_DAC/adc_dac_irq.o
+ .debug_abbrev  0x0000144c      0x2e4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_abbrev  0x00001730      0x15c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_abbrev  0x0000188c      0x13c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_abbrev  0x000019c8      0x2ec D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_abbrev  0x00001cb4      0x10a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_abbrev  0x00001dbe      0x27a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_abbrev  0x00002038      0x1b7 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_abbrev  0x000021ef      0x126 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_abbrev  0x00002315      0x175 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_abbrev  0x0000248a      0x1cc D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+ .debug_abbrev  0x00002656      0x2ae D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+ .debug_abbrev  0x00002904      0x139 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+ .debug_abbrev  0x00002a3d      0x1ad D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+ .debug_abbrev  0x00002bea      0x129 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
+ .debug_abbrev  0x00002d13       0xec D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
 
-.debug_aranges  0x00000000      0xd58
+.debug_aranges  0x00000000      0xc78
  .debug_aranges
                 0x00000000       0x80 ./src/Inicializaciones.o
  .debug_aranges
@@ -6223,90 +6243,80 @@ OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
  .debug_aranges
                 0x000001b0       0x48 ./TIMER/timer_irq.o
  .debug_aranges
-                0x000001f8       0x18 ./TFT/tft_fonts.o
+                0x000001f8       0x78 ./RTOS/rtos_tareas.o
  .debug_aranges
-                0x00000210       0x48 ./TFT/tft_func_priv.o
+                0x00000270       0x30 ./ADC_DAC/private/adc_dac_func_priv.o
  .debug_aranges
-                0x00000258       0x18 ./TFT/tft_globales.o
+                0x000002a0       0x20 ./ADC_DAC/private/adc_dac_globales_priv.o
  .debug_aranges
-                0x00000270       0x78 ./TFT/tft_lcd_primitivas.o
+                0x000002c0       0x58 ./ADC_DAC/adc_dac_func.o
  .debug_aranges
-                0x000002e8       0x78 ./RTOS/rtos_tareas.o
+                0x00000318       0x18 ./ADC_DAC/adc_dac_globales.o
  .debug_aranges
-                0x00000360       0x30 ./ADC_DAC/private/adc_dac_func_priv.o
+                0x00000330       0xb0 ./ADC_DAC/adc_dac_init.o
  .debug_aranges
-                0x00000390       0x20 ./ADC_DAC/private/adc_dac_globales_priv.o
+                0x000003e0       0x28 ./ADC_DAC/adc_dac_irq.o
  .debug_aranges
-                0x000003b0       0x78 ./ADC_DAC/adc_dac_func.o
+                0x00000408      0x138 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
  .debug_aranges
-                0x00000428       0x18 ./ADC_DAC/adc_dac_globales.o
+                0x00000540       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
  .debug_aranges
-                0x00000440       0x80 ./ADC_DAC/adc_dac_init.o
+                0x00000578       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
  .debug_aranges
-                0x000004c0       0x28 ./ADC_DAC/adc_dac_irq.o
+                0x000005b0      0x120 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .debug_aranges
-                0x000004e8      0x138 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x000006d0       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
  .debug_aranges
-                0x00000620       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x00000708       0x90 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .debug_aranges
-                0x00000658       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+                0x00000798       0x60 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
  .debug_aranges
-                0x00000690      0x120 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000007f8       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
  .debug_aranges
-                0x000007b0       0x38 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+                0x00000828       0x60 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .debug_aranges
-                0x000007e8       0x90 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x00000888       0xf8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
  .debug_aranges
-                0x00000878       0x60 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+                0x00000980      0x1b8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .debug_aranges
-                0x000008d8       0x30 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x00000b38       0x38 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
  .debug_aranges
-                0x00000908       0x60 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00000b70       0x88 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
  .debug_aranges
-                0x00000968       0xf8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+                0x00000bf8       0x40 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
  .debug_aranges
-                0x00000a60      0x1b8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
- .debug_aranges
-                0x00000c18       0x38 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
- .debug_aranges
-                0x00000c50       0x88 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
- .debug_aranges
-                0x00000cd8       0x40 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
- .debug_aranges
-                0x00000d18       0x40 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+                0x00000c38       0x40 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
 
-.debug_ranges   0x00000000      0xb10
+.debug_ranges   0x00000000      0xa80
  .debug_ranges  0x00000000       0x70 ./src/Inicializaciones.o
  .debug_ranges  0x00000070       0x10 ./src/THD_Meter.o
  .debug_ranges  0x00000080       0x70 ./src/cr_startup_lpc175x_6x.o
  .debug_ranges  0x000000f0       0x10 ./src/sysinit.o
  .debug_ranges  0x00000100       0x30 ./src/tareas.o
  .debug_ranges  0x00000130       0x38 ./TIMER/timer_irq.o
- .debug_ranges  0x00000168       0x38 ./TFT/tft_func_priv.o
- .debug_ranges  0x000001a0       0x68 ./TFT/tft_lcd_primitivas.o
- .debug_ranges  0x00000208       0x68 ./RTOS/rtos_tareas.o
- .debug_ranges  0x00000270       0x20 ./ADC_DAC/private/adc_dac_func_priv.o
- .debug_ranges  0x00000290       0x10 ./ADC_DAC/private/adc_dac_globales_priv.o
- .debug_ranges  0x000002a0       0x68 ./ADC_DAC/adc_dac_func.o
- .debug_ranges  0x00000308       0x70 ./ADC_DAC/adc_dac_init.o
- .debug_ranges  0x00000378       0x18 ./ADC_DAC/adc_dac_irq.o
- .debug_ranges  0x00000390      0x128 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_ranges  0x000004b8       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_ranges  0x000004e0       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_ranges  0x00000508      0x110 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_ranges  0x00000618       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .debug_ranges  0x00000640       0x80 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .debug_ranges  0x000006c0       0x50 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
- .debug_ranges  0x00000710       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_ranges  0x00000730       0x50 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
- .debug_ranges  0x00000780       0xe8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
- .debug_ranges  0x00000868      0x1a8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
- .debug_ranges  0x00000a10       0x28 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
- .debug_ranges  0x00000a38       0x78 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
- .debug_ranges  0x00000ab0       0x30 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
- .debug_ranges  0x00000ae0       0x30 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+ .debug_ranges  0x00000168       0x68 ./RTOS/rtos_tareas.o
+ .debug_ranges  0x000001d0       0x20 ./ADC_DAC/private/adc_dac_func_priv.o
+ .debug_ranges  0x000001f0       0x10 ./ADC_DAC/private/adc_dac_globales_priv.o
+ .debug_ranges  0x00000200       0x48 ./ADC_DAC/adc_dac_func.o
+ .debug_ranges  0x00000248       0xa0 ./ADC_DAC/adc_dac_init.o
+ .debug_ranges  0x000002e8       0x18 ./ADC_DAC/adc_dac_irq.o
+ .debug_ranges  0x00000300      0x128 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_ranges  0x00000428       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_ranges  0x00000450       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_ranges  0x00000478      0x110 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_ranges  0x00000588       0x28 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_ranges  0x000005b0       0x80 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_ranges  0x00000630       0x50 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_ranges  0x00000680       0x20 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_ranges  0x000006a0       0x50 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_ranges  0x000006f0       0xe8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+ .debug_ranges  0x000007d8      0x1a8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+ .debug_ranges  0x00000980       0x28 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+ .debug_ranges  0x000009a8       0x78 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+ .debug_ranges  0x00000a20       0x30 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
+ .debug_ranges  0x00000a50       0x30 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
 
-.debug_macro    0x00000000    0x1626f
+.debug_macro    0x00000000    0x12ed8
  .debug_macro   0x00000000      0xcdf ./src/Inicializaciones.o
  .debug_macro   0x00000cdf       0x10 ./src/Inicializaciones.o
  .debug_macro   0x00000cef      0x12d ./src/Inicializaciones.o
@@ -6361,163 +6371,147 @@ OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
  .debug_macro   0x0000478a       0x10 ./src/Inicializaciones.o
  .debug_macro   0x0000479a       0x12 ./src/Inicializaciones.o
  .debug_macro   0x000047ac       0xba ./src/Inicializaciones.o
- .debug_macro   0x00004866       0x9a ./src/Inicializaciones.o
- .debug_macro   0x00004900       0x40 ./src/Inicializaciones.o
- .debug_macro   0x00004940       0x1c ./src/Inicializaciones.o
- .debug_macro   0x0000495c       0x22 ./src/Inicializaciones.o
- .debug_macro   0x0000497e       0x10 ./src/Inicializaciones.o
- .debug_macro   0x0000498e      0x199 ./src/Inicializaciones.o
- .debug_macro   0x00004b27       0x22 ./src/Inicializaciones.o
- .debug_macro   0x00004b49       0xa0 ./src/Inicializaciones.o
- .debug_macro   0x00004be9      0xce8 ./src/THD_Meter.o
- .debug_macro   0x000058d1       0x82 ./src/THD_Meter.o
- .debug_macro   0x00005953      0x992 ./src/cr_startup_lpc175x_6x.o
- .debug_macro   0x000062e5      0x98f ./src/crp.o
- .debug_macro   0x00006c74       0x34 ./src/crp.o
- .debug_macro   0x00006ca8      0xcdf ./src/globales.o
- .debug_macro   0x00007987      0xb8c ./src/sysinit.o
- .debug_macro   0x00008513       0x7b ./src/sysinit.o
- .debug_macro   0x0000858e       0x18 ./src/sysinit.o
- .debug_macro   0x000085a6      0xcdf ./src/tareas.o
- .debug_macro   0x00009285      0xceb ./TIMER/timer_irq.o
- .debug_macro   0x00009f70      0xcdf ./TFT/tft_fonts.o
- .debug_macro   0x0000ac4f      0xcdf ./TFT/tft_func_priv.o
- .debug_macro   0x0000b92e      0xcdf ./TFT/tft_globales.o
- .debug_macro   0x0000c60d      0xce8 ./TFT/tft_lcd_primitivas.o
- .debug_macro   0x0000d2f5      0xcdf ./RTOS/rtos_tareas.o
- .debug_macro   0x0000dfd4      0xcf7 ./ADC_DAC/private/adc_dac_func_priv.o
- .debug_macro   0x0000eccb       0xb8 ./ADC_DAC/private/adc_dac_func_priv.o
- .debug_macro   0x0000ed83      0xcf7 ./ADC_DAC/private/adc_dac_globales_priv.o
- .debug_macro   0x0000fa7a      0xcf7 ./ADC_DAC/adc_dac_func.o
- .debug_macro   0x00010771      0xcdf ./ADC_DAC/adc_dac_globales.o
- .debug_macro   0x00011450      0xcf7 ./ADC_DAC/adc_dac_init.o
- .debug_macro   0x00012147      0xcf7 ./ADC_DAC/adc_dac_irq.o
- .debug_macro   0x00012e3e      0x22e D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_macro   0x0001306c      0x886 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_macro   0x000138f2       0x12 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_macro   0x00013904      0x217 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_macro   0x00013b1b      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_macro   0x00013ce8      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_macro   0x00013eb5      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .debug_macro   0x00014082      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .debug_macro   0x0001424f      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
- .debug_macro   0x0001441c      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_macro   0x000145e9      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
- .debug_macro   0x000147b6      0x303 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
- .debug_macro   0x00014ab9      0x886 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
- .debug_macro   0x0001533f       0x28 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
- .debug_macro   0x00015367      0x33f D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
- .debug_macro   0x000156a6       0x91 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
- .debug_macro   0x00015737       0x11 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
- .debug_macro   0x00015748      0x2bb D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
- .debug_macro   0x00015a03      0x333 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
- .debug_macro   0x00015d36      0x29f D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
- .debug_macro   0x00015fd5      0x29a D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+ .debug_macro   0x00004866       0x88 ./src/Inicializaciones.o
+ .debug_macro   0x000048ee       0x40 ./src/Inicializaciones.o
+ .debug_macro   0x0000492e       0x1c ./src/Inicializaciones.o
+ .debug_macro   0x0000494a       0x22 ./src/Inicializaciones.o
+ .debug_macro   0x0000496c       0x10 ./src/Inicializaciones.o
+ .debug_macro   0x0000497c      0x199 ./src/Inicializaciones.o
+ .debug_macro   0x00004b15       0x22 ./src/Inicializaciones.o
+ .debug_macro   0x00004b37       0xa0 ./src/Inicializaciones.o
+ .debug_macro   0x00004bd7      0xce8 ./src/THD_Meter.o
+ .debug_macro   0x000058bf       0x82 ./src/THD_Meter.o
+ .debug_macro   0x00005941      0x992 ./src/cr_startup_lpc175x_6x.o
+ .debug_macro   0x000062d3      0x98f ./src/crp.o
+ .debug_macro   0x00006c62       0x34 ./src/crp.o
+ .debug_macro   0x00006c96      0xcdf ./src/globales.o
+ .debug_macro   0x00007975      0xb8c ./src/sysinit.o
+ .debug_macro   0x00008501       0x7b ./src/sysinit.o
+ .debug_macro   0x0000857c       0x18 ./src/sysinit.o
+ .debug_macro   0x00008594      0xcdf ./src/tareas.o
+ .debug_macro   0x00009273      0xceb ./TIMER/timer_irq.o
+ .debug_macro   0x00009f5e      0xcdf ./RTOS/rtos_tareas.o
+ .debug_macro   0x0000ac3d      0xcf7 ./ADC_DAC/private/adc_dac_func_priv.o
+ .debug_macro   0x0000b934       0xb8 ./ADC_DAC/private/adc_dac_func_priv.o
+ .debug_macro   0x0000b9ec      0xcf7 ./ADC_DAC/private/adc_dac_globales_priv.o
+ .debug_macro   0x0000c6e3      0xcf7 ./ADC_DAC/adc_dac_func.o
+ .debug_macro   0x0000d3da      0xcdf ./ADC_DAC/adc_dac_globales.o
+ .debug_macro   0x0000e0b9      0xcf7 ./ADC_DAC/adc_dac_init.o
+ .debug_macro   0x0000edb0      0xcf7 ./ADC_DAC/adc_dac_irq.o
+ .debug_macro   0x0000faa7      0x22e D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_macro   0x0000fcd5      0x886 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_macro   0x0001055b       0x12 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_macro   0x0001056d      0x217 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_macro   0x00010784      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_macro   0x00010951      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_macro   0x00010b1e      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_macro   0x00010ceb      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_macro   0x00010eb8      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_macro   0x00011085      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_macro   0x00011252      0x1cd D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_macro   0x0001141f      0x303 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+ .debug_macro   0x00011722      0x886 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+ .debug_macro   0x00011fa8       0x28 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+ .debug_macro   0x00011fd0      0x33f D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+ .debug_macro   0x0001230f       0x91 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+ .debug_macro   0x000123a0       0x11 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+ .debug_macro   0x000123b1      0x2bb D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+ .debug_macro   0x0001266c      0x333 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+ .debug_macro   0x0001299f      0x29f D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
+ .debug_macro   0x00012c3e      0x29a D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
 
-.debug_line     0x00000000     0xfe49
- .debug_line    0x00000000      0x9d9 ./src/Inicializaciones.o
- .debug_line    0x000009d9      0x92c ./src/THD_Meter.o
- .debug_line    0x00001305       0xd5 ./src/cr_startup_lpc175x_6x.o
- .debug_line    0x000013da       0x78 ./src/crp.o
- .debug_line    0x00001452      0x8bf ./src/globales.o
- .debug_line    0x00001d11      0x45a ./src/sysinit.o
- .debug_line    0x0000216b      0x943 ./src/tareas.o
- .debug_line    0x00002aae      0x93b ./TIMER/timer_irq.o
- .debug_line    0x000033e9      0x8c0 ./TFT/tft_fonts.o
- .debug_line    0x00003ca9      0x95e ./TFT/tft_func_priv.o
- .debug_line    0x00004607      0x8c3 ./TFT/tft_globales.o
- .debug_line    0x00004eca      0xb2b ./TFT/tft_lcd_primitivas.o
- .debug_line    0x000059f5      0x9dd ./RTOS/rtos_tareas.o
- .debug_line    0x000063d2      0x9d1 ./ADC_DAC/private/adc_dac_func_priv.o
- .debug_line    0x00006da3      0x99c ./ADC_DAC/private/adc_dac_globales_priv.o
- .debug_line    0x0000773f      0xa85 ./ADC_DAC/adc_dac_func.o
- .debug_line    0x000081c4      0x8cb ./ADC_DAC/adc_dac_globales.o
- .debug_line    0x00008a8f      0xb1c ./ADC_DAC/adc_dac_init.o
- .debug_line    0x000095ab      0x99a ./ADC_DAC/adc_dac_irq.o
- .debug_line    0x00009f45      0x77b D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_line    0x0000a6c0      0x49a D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_line    0x0000ab5a      0x442 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_line    0x0000af9c      0x6be D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_line    0x0000b65a      0x42a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .debug_line    0x0000ba84      0x5e2 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .debug_line    0x0000c066      0x573 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
- .debug_line    0x0000c5d9      0x42e D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_line    0x0000ca07      0x4b8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
- .debug_line    0x0000cebf      0x934 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
- .debug_line    0x0000d7f3      0xe03 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
- .debug_line    0x0000e5f6      0x5da D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
- .debug_line    0x0000ebd0      0x6a0 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
- .debug_line    0x0000f270      0x5f3 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
- .debug_line    0x0000f863      0x5e6 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+.debug_line     0x00000000     0xd7f5
+ .debug_line    0x00000000      0x9da ./src/Inicializaciones.o
+ .debug_line    0x000009da      0x92c ./src/THD_Meter.o
+ .debug_line    0x00001306       0xd5 ./src/cr_startup_lpc175x_6x.o
+ .debug_line    0x000013db       0x78 ./src/crp.o
+ .debug_line    0x00001453      0x8bf ./src/globales.o
+ .debug_line    0x00001d12      0x45a ./src/sysinit.o
+ .debug_line    0x0000216c      0x94d ./src/tareas.o
+ .debug_line    0x00002ab9      0x93b ./TIMER/timer_irq.o
+ .debug_line    0x000033f4      0x9dd ./RTOS/rtos_tareas.o
+ .debug_line    0x00003dd1      0x9da ./ADC_DAC/private/adc_dac_func_priv.o
+ .debug_line    0x000047ab      0x99c ./ADC_DAC/private/adc_dac_globales_priv.o
+ .debug_line    0x00005147      0xa11 ./ADC_DAC/adc_dac_func.o
+ .debug_line    0x00005b58      0x8cb ./ADC_DAC/adc_dac_globales.o
+ .debug_line    0x00006423      0xb49 ./ADC_DAC/adc_dac_init.o
+ .debug_line    0x00006f6c      0x985 ./ADC_DAC/adc_dac_irq.o
+ .debug_line    0x000078f1      0x77b D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_line    0x0000806c      0x49a D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_line    0x00008506      0x442 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_line    0x00008948      0x6be D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_line    0x00009006      0x42a D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_line    0x00009430      0x5e2 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_line    0x00009a12      0x573 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_line    0x00009f85      0x42e D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_line    0x0000a3b3      0x4b8 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_line    0x0000a86b      0x934 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+ .debug_line    0x0000b19f      0xe03 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+ .debug_line    0x0000bfa2      0x5da D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+ .debug_line    0x0000c57c      0x6a0 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+ .debug_line    0x0000cc1c      0x5f3 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
+ .debug_line    0x0000d20f      0x5e6 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
 
-.debug_str      0x00000000    0x1ceb7
- .debug_str     0x00000000    0x16ba0 ./src/Inicializaciones.o
-                              0x16cf1 (size before relaxing)
- .debug_str     0x00016ba0      0x461 ./src/THD_Meter.o
-                              0x16f52 (size before relaxing)
- .debug_str     0x00017001      0x197 ./src/cr_startup_lpc175x_6x.o
+.debug_str      0x00000000    0x1c774
+ .debug_str     0x00000000    0x16b54 ./src/Inicializaciones.o
+                              0x16ca5 (size before relaxing)
+ .debug_str     0x00016b54      0x461 ./src/THD_Meter.o
+                              0x16f06 (size before relaxing)
+ .debug_str     0x00016fb5      0x197 ./src/cr_startup_lpc175x_6x.o
                                0x26bb (size before relaxing)
- .debug_str     0x00017198       0xe9 ./src/crp.o
+ .debug_str     0x0001714c       0xe9 ./src/crp.o
                                0x25d3 (size before relaxing)
- .debug_str     0x00017281      0x20c ./src/globales.o
-                              0x16d2b (size before relaxing)
- .debug_str     0x0001748d       0x51 ./src/sysinit.o
+ .debug_str     0x00017235      0x20c ./src/globales.o
+                              0x16cdf (size before relaxing)
+ .debug_str     0x00017441       0x51 ./src/sysinit.o
                               0x10bbd (size before relaxing)
- .debug_str     0x000174de       0x7f ./src/tareas.o
-                              0x16be8 (size before relaxing)
- .debug_str     0x0001755d       0xcd ./TIMER/timer_irq.o
-                              0x16bea (size before relaxing)
- .debug_str     0x0001762a       0x56 ./TFT/tft_fonts.o
-                              0x16d1d (size before relaxing)
- .debug_str     0x00017680       0x5f ./TFT/tft_func_priv.o
-                              0x16ba7 (size before relaxing)
- .debug_str     0x000176df      0x103 ./TFT/tft_globales.o
-                              0x16d96 (size before relaxing)
- .debug_str     0x000177e2      0x458 ./TFT/tft_lcd_primitivas.o
-                              0x17205 (size before relaxing)
- .debug_str     0x00017c3a      0x2e3 ./RTOS/rtos_tareas.o
-                              0x16f31 (size before relaxing)
- .debug_str     0x00017f1d      0x75a ./ADC_DAC/private/adc_dac_func_priv.o
-                              0x172a6 (size before relaxing)
- .debug_str     0x00018677      0x15f ./ADC_DAC/private/adc_dac_globales_priv.o
-                              0x17527 (size before relaxing)
- .debug_str     0x000187d6      0x2de ./ADC_DAC/adc_dac_func.o
-                              0x17696 (size before relaxing)
- .debug_str     0x00018ab4       0x31 ./ADC_DAC/adc_dac_globales.o
-                              0x16d1b (size before relaxing)
- .debug_str     0x00018ae5      0x1c5 ./ADC_DAC/adc_dac_init.o
-                              0x1781d (size before relaxing)
- .debug_str     0x00018caa       0x41 ./ADC_DAC/adc_dac_irq.o
-                              0x17598 (size before relaxing)
- .debug_str     0x00018ceb      0x954 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_str     0x00017492       0x50 ./src/tareas.o
+                              0x16b77 (size before relaxing)
+ .debug_str     0x000174e2       0xcd ./TIMER/timer_irq.o
+                              0x16b9e (size before relaxing)
+ .debug_str     0x000175af      0x2e3 ./RTOS/rtos_tareas.o
+                              0x16ee5 (size before relaxing)
+ .debug_str     0x00017892      0x74e ./ADC_DAC/private/adc_dac_func_priv.o
+                              0x17243 (size before relaxing)
+ .debug_str     0x00017fe0      0x110 ./ADC_DAC/private/adc_dac_globales_priv.o
+                              0x17467 (size before relaxing)
+ .debug_str     0x000180f0      0x29d ./ADC_DAC/adc_dac_func.o
+                              0x1757f (size before relaxing)
+ .debug_str     0x0001838d       0x31 ./ADC_DAC/adc_dac_globales.o
+                              0x16cbc (size before relaxing)
+ .debug_str     0x000183be      0x1b0 ./ADC_DAC/adc_dac_init.o
+                              0x1785f (size before relaxing)
+ .debug_str     0x0001856e       0x28 ./ADC_DAC/adc_dac_irq.o
+                              0x174cb (size before relaxing)
+ .debug_str     0x00018596      0x954 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
                               0x11789 (size before relaxing)
- .debug_str     0x0001963f      0x22d D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_str     0x00018eea      0x22d D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
                               0x10f8e (size before relaxing)
- .debug_str     0x0001986c       0xab D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_str     0x00019117       0xab D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
                               0x10b6a (size before relaxing)
- .debug_str     0x00019917      0x5ce D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_str     0x000191c2      0x5ce D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
                               0x111d8 (size before relaxing)
- .debug_str     0x00019ee5       0xb1 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_str     0x00019790       0xb1 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
                               0x1062c (size before relaxing)
- .debug_str     0x00019f96      0x443 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_str     0x00019841      0x443 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
                               0x1129d (size before relaxing)
- .debug_str     0x0001a3d9       0xa9 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_str     0x00019c84       0xbb D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
                               0x10c7a (size before relaxing)
- .debug_str     0x0001a482       0x74 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_str     0x00019d3f       0x74 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
                               0x10655 (size before relaxing)
- .debug_str     0x0001a4f6       0xc4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_str     0x00019db3       0xc4 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
                               0x1083d (size before relaxing)
- .debug_str     0x0001a5ba      0x84a D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+ .debug_str     0x00019e77      0x84a D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
                               0x15634 (size before relaxing)
- .debug_str     0x0001ae04     0x1880 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+ .debug_str     0x0001a6c1     0x1880 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
                               0x15eb2 (size before relaxing)
- .debug_str     0x0001c684       0xe4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+ .debug_str     0x0001bf41       0xe4 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
                               0x144fa (size before relaxing)
- .debug_str     0x0001c768      0x607 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+ .debug_str     0x0001c025      0x607 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
                               0x149fa (size before relaxing)
- .debug_str     0x0001cd6f       0xad D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
+ .debug_str     0x0001c62c       0xad D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
                               0x14293 (size before relaxing)
- .debug_str     0x0001ce1c       0x9b D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+ .debug_str     0x0001c6d9       0x9b D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
                               0x13c0b (size before relaxing)
 
 .comment        0x00000000       0xdc
@@ -6530,10 +6524,6 @@ OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
  .comment       0x0000006e       0x6f ./src/sysinit.o
  .comment       0x0000006e       0x6f ./src/tareas.o
  .comment       0x0000006e       0x6f ./TIMER/timer_irq.o
- .comment       0x0000006e       0x6f ./TFT/tft_fonts.o
- .comment       0x0000006e       0x6f ./TFT/tft_func_priv.o
- .comment       0x0000006e       0x6f ./TFT/tft_globales.o
- .comment       0x0000006e       0x6f ./TFT/tft_lcd_primitivas.o
  .comment       0x0000006e       0x6f ./RTOS/rtos_tareas.o
  .comment       0x0000006e       0x6f ./ADC_DAC/private/adc_dac_func_priv.o
  .comment       0x0000006e       0x6f ./ADC_DAC/private/adc_dac_globales_priv.o
@@ -6599,151 +6589,141 @@ OUTPUT(THD_Meter_RTOS.axf elf32-littlearm)
  .ARM.attributes
                 0x00000165       0x33 ./TIMER/timer_irq.o
  .ARM.attributes
-                0x00000198       0x33 ./TFT/tft_fonts.o
+                0x00000198       0x33 ./RTOS/rtos_tareas.o
  .ARM.attributes
-                0x000001cb       0x33 ./TFT/tft_func_priv.o
+                0x000001cb       0x33 ./ADC_DAC/private/adc_dac_func_priv.o
  .ARM.attributes
-                0x000001fe       0x33 ./TFT/tft_globales.o
+                0x000001fe       0x33 ./ADC_DAC/private/adc_dac_globales_priv.o
  .ARM.attributes
-                0x00000231       0x33 ./TFT/tft_lcd_primitivas.o
+                0x00000231       0x33 ./ADC_DAC/adc_dac_func.o
  .ARM.attributes
-                0x00000264       0x33 ./RTOS/rtos_tareas.o
+                0x00000264       0x33 ./ADC_DAC/adc_dac_globales.o
  .ARM.attributes
-                0x00000297       0x33 ./ADC_DAC/private/adc_dac_func_priv.o
+                0x00000297       0x33 ./ADC_DAC/adc_dac_init.o
  .ARM.attributes
-                0x000002ca       0x33 ./ADC_DAC/private/adc_dac_globales_priv.o
+                0x000002ca       0x33 ./ADC_DAC/adc_dac_irq.o
  .ARM.attributes
-                0x000002fd       0x33 ./ADC_DAC/adc_dac_func.o
+                0x000002fd       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
  .ARM.attributes
-                0x00000330       0x33 ./ADC_DAC/adc_dac_globales.o
+                0x00000330       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
  .ARM.attributes
-                0x00000363       0x33 ./ADC_DAC/adc_dac_init.o
+                0x00000363       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
  .ARM.attributes
-                0x00000396       0x33 ./ADC_DAC/adc_dac_irq.o
+                0x00000396       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .ARM.attributes
-                0x000003c9       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+                0x000003c9       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
  .ARM.attributes
-                0x000003fc       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+                0x000003fc       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
  .ARM.attributes
-                0x0000042f       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+                0x0000042f       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
  .ARM.attributes
-                0x00000462       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00000462       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
  .ARM.attributes
-                0x00000495       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+                0x00000495       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .ARM.attributes
-                0x000004c8       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+                0x000004c8       0x33 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
  .ARM.attributes
-                0x000004fb       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+                0x000004fb       0x33 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
  .ARM.attributes
-                0x0000052e       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x0000052e       0x33 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
  .ARM.attributes
-                0x00000561       0x33 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00000561       0x33 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
  .ARM.attributes
-                0x00000594       0x33 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+                0x00000594       0x33 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
  .ARM.attributes
-                0x000005c7       0x33 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+                0x000005c7       0x33 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
  .ARM.attributes
-                0x000005fa       0x33 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+                0x000005fa       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(_cr__main.o)
  .ARM.attributes
-                0x0000062d       0x33 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+                0x0000062d       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memcpy.o)
  .ARM.attributes
-                0x00000660       0x33 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
+                0x00000660       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
  .ARM.attributes
-                0x00000693       0x33 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+                0x00000693       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(initio.o)
  .ARM.attributes
-                0x000006c6       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(_cr__main.o)
+                0x000006c6       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(setvbuf.o)
  .ARM.attributes
-                0x000006f9       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memcpy.o)
+                0x000006f9       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(stdio.o)
  .ARM.attributes
-                0x0000072c       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
+                0x0000072c       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(strlen.o)
  .ARM.attributes
-                0x0000075f       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(initio.o)
+                0x0000075f       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_deferredlazyseek.o)
  .ARM.attributes
-                0x00000792       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(setvbuf.o)
+                0x00000792       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_fdopen.o)
  .ARM.attributes
-                0x000007c5       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(stdio.o)
+                0x000007c5       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_fflush.o)
  .ARM.attributes
-                0x000007f8       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(strlen.o)
+                0x000007f8       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_writebuf.o)
  .ARM.attributes
-                0x0000082b       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_deferredlazyseek.o)
+                0x0000082b       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(alloc.o)
  .ARM.attributes
-                0x0000085e       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_fdopen.o)
+                0x0000085e       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(errno.o)
  .ARM.attributes
-                0x00000891       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_fflush.o)
+                0x00000891       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fclose.o)
  .ARM.attributes
-                0x000008c4       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_writebuf.o)
+                0x000008c4       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fflush.o)
  .ARM.attributes
-                0x000008f7       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(alloc.o)
+                0x000008f7       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fseek.o)
  .ARM.attributes
-                0x0000092a       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(errno.o)
+                0x0000092a       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(ftell.o)
  .ARM.attributes
-                0x0000095d       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fclose.o)
+                0x0000095d       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(remove.o)
  .ARM.attributes
-                0x00000990       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fflush.o)
+                0x00000990       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__init_alloc.o)
  .ARM.attributes
-                0x000009c3       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fseek.o)
+                0x000009c3       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_cr_sbrk.o)
  .ARM.attributes
-                0x000009f6       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(ftell.o)
+                0x000009f6       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_do_fflush.o)
  .ARM.attributes
-                0x00000a29       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(remove.o)
+                0x00000a29       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_cr_check_heap.o)
  .ARM.attributes
-                0x00000a5c       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__init_alloc.o)
+                0x00000a5c       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
  .ARM.attributes
-                0x00000a8f       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_cr_sbrk.o)
+                0x00000a7d       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_idiv0.o)
  .ARM.attributes
-                0x00000ac2       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_do_fflush.o)
+                0x00000a9e       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(memcpy.o)
  .ARM.attributes
-                0x00000af5       0x33 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(_cr_check_heap.o)
+                0x00000abf       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_appexit.o)
  .ARM.attributes
-                0x00000b28       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_64.o)
+                0x00000ae0       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_close.o)
  .ARM.attributes
-                0x00000b49       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(division_idiv0.o)
+                0x00000b01       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_flen.o)
  .ARM.attributes
-                0x00000b6a       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libcr_eabihelpers.a(memcpy.o)
+                0x00000b22       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_istty.o)
  .ARM.attributes
-                0x00000b8b       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_appexit.o)
+                0x00000b43       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_remove.o)
  .ARM.attributes
-                0x00000bac       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_close.o)
+                0x00000b64       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_seek.o)
  .ARM.attributes
-                0x00000bcd       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_flen.o)
+                0x00000b85       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_tmpnam.o)
  .ARM.attributes
-                0x00000bee       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_istty.o)
- .ARM.attributes
-                0x00000c0f       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_remove.o)
- .ARM.attributes
-                0x00000c30       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_seek.o)
- .ARM.attributes
-                0x00000c51       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_tmpnam.o)
- .ARM.attributes
-                0x00000c72       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_write.o)
+                0x00000ba6       0x21 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(__sys_write.o)
 
-.debug_frame    0x00000000     0x2f24
+.debug_frame    0x00000000     0x2c98
  .debug_frame   0x00000000      0x1d8 ./src/Inicializaciones.o
  .debug_frame   0x000001d8       0x2c ./src/THD_Meter.o
  .debug_frame   0x00000204      0x170 ./src/cr_startup_lpc175x_6x.o
  .debug_frame   0x00000374       0x34 ./src/sysinit.o
  .debug_frame   0x000003a8       0xb8 ./src/tareas.o
  .debug_frame   0x00000460       0xe8 ./TIMER/timer_irq.o
- .debug_frame   0x00000548       0xf0 ./TFT/tft_func_priv.o
- .debug_frame   0x00000638      0x1dc ./TFT/tft_lcd_primitivas.o
- .debug_frame   0x00000814      0x1d0 ./RTOS/rtos_tareas.o
- .debug_frame   0x000009e4       0x94 ./ADC_DAC/private/adc_dac_func_priv.o
- .debug_frame   0x00000a78       0x44 ./ADC_DAC/private/adc_dac_globales_priv.o
- .debug_frame   0x00000abc      0x1c8 ./ADC_DAC/adc_dac_func.o
- .debug_frame   0x00000c84      0x200 ./ADC_DAC/adc_dac_init.o
- .debug_frame   0x00000e84       0x68 ./ADC_DAC/adc_dac_irq.o
- .debug_frame   0x00000eec      0x52c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
- .debug_frame   0x00001418       0x8c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
- .debug_frame   0x000014a4       0x88 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_frame   0x0000152c      0x490 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_frame   0x000019bc       0xac D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
- .debug_frame   0x00001a68      0x25c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
- .debug_frame   0x00001cc4      0x17c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
- .debug_frame   0x00001e40       0x80 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_frame   0x00001ec0      0x12c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
- .debug_frame   0x00001fec      0x428 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
- .debug_frame   0x00002414      0x778 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
- .debug_frame   0x00002b8c       0x9c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
- .debug_frame   0x00002c28      0x174 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
- .debug_frame   0x00002d9c       0xb0 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
- .debug_frame   0x00002e4c       0xd8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)
+ .debug_frame   0x00000548      0x1d0 ./RTOS/rtos_tareas.o
+ .debug_frame   0x00000718       0x94 ./ADC_DAC/private/adc_dac_func_priv.o
+ .debug_frame   0x000007ac       0x44 ./ADC_DAC/private/adc_dac_globales_priv.o
+ .debug_frame   0x000007f0      0x130 ./ADC_DAC/adc_dac_func.o
+ .debug_frame   0x00000920      0x2e0 ./ADC_DAC/adc_dac_init.o
+ .debug_frame   0x00000c00       0x60 ./ADC_DAC/adc_dac_irq.o
+ .debug_frame   0x00000c60      0x52c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board.o)
+ .debug_frame   0x0000118c       0x8c D:\UTN\Git\TD_II\TD_II\workspace\lpc_myboard_1769\Debug\liblpc_myboard_1769.a(board_sysinit.o)
+ .debug_frame   0x00001218       0x88 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_frame   0x000012a0      0x490 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_frame   0x00001730       0xac D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(dac_17xx_40xx.o)
+ .debug_frame   0x000017dc      0x25c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(gpdma_17xx_40xx.o)
+ .debug_frame   0x00001a38      0x17c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(i2s_17xx_40xx.o)
+ .debug_frame   0x00001bb4       0x80 D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_frame   0x00001c34      0x12c D:\UTN\Git\TD_II\TD_II\workspace\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_frame   0x00001d60      0x428 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(queue.o)
+ .debug_frame   0x00002188      0x778 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(tasks.o)
+ .debug_frame   0x00002900       0x9c D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(heap_1.o)
+ .debug_frame   0x0000299c      0x174 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(port.o)
+ .debug_frame   0x00002b10       0xb0 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(FreeRTOSCommonHooks.o)
+ .debug_frame   0x00002bc0       0xd8 D:\UTN\Git\TD_II\TD_II\workspace\LibFreeRTOS_8.2.3\Debug\libLibFreeRTOS_8.2.3.a(list.o)

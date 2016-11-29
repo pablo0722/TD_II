@@ -15957,7 +15957,7 @@ void arm_rfft_fast_f32(
 #define USE_ADC ON
 #define USE_DAC ON
 #define USE_FFT ON
-#define USE_TFT ON
+#define USE_TFT OFF
 #define USE_RTOS ON
 
 
@@ -15977,19 +15977,13 @@ void arm_rfft_fast_f32(
 
 
 #define USE_DAC_INTERNO ON
-#define USE_DAC_EXTERNO ON
+#define USE_DAC_EXTERNO OFF
 
 
 
 #define DAC_INTERNO_INTERRUPCION 0
 #define DAC_INTERNO_DMA 1
 #define DAC_INTERNO_MODO DAC_INTERNO_DMA
-
-
-
-#define DAC_EXTERNO_INTERRUPCION 0
-#define DAC_EXTERNO_DMA 1
-#define DAC_EXTERNO_MODO DAC_EXTERNO_DMA
 # 115 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_DMA ON
 # 124 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
@@ -16180,18 +16174,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
          volatile uint32_t *buffer_B);
   void adc_ext_start();
   void adc_ext_post_procesamiento();
-# 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-  uint16_t dac_ext_set_data(uint32_t data);
-  void dac_ext_prepare(volatile uint16_t *buffer);
-  
-# 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 3 4
- _Bool 
-# 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-      dac_ext_disponible();
-  void dac_ext_send();
-
-
-
+# 41 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
   uint16_t dac_int_set_data(uint32_t data);
   void dac_int_prepare(volatile uint16_t *buffer);
   
@@ -16222,17 +16205,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
    extern SemaphoreHandle_t sem_adc_ext_proc;
-
-
-
-
-
-   extern SemaphoreHandle_t sem_dac_ext_finish;
-
-
-
-
-
+# 78 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
    extern SemaphoreHandle_t sem_dac_int_finish;
 # 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 1
@@ -16611,32 +16584,10 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
  void vTask_tft(void *pvParameters)
  {
-  tft_Fill(0x0000);
-  tft_Puts(0, 0, "TECNICAS DIGITALES", &tft_Font_11x18, 0x07E0, 0x0000);
-  tft_Puts(120, 25, "II", &tft_Font_11x18, 0xF800, 0x0000);
-  tft_Puts(0, 50, "PROCESAMIENTO DE", &tft_Font_11x18, 0x001F, 0x0000);
-  tft_Puts(100, 75, "AUDIO", &tft_Font_11x18, 0x001F, 0x0000);
-  tft_Puts(0, 100, "MENU", &tft_Font_11x18, 0x001F, 0x0000);
-  tft_Puts(50, 125, "Reverb", &tft_Font_11x18, 0x001F, 0x0000);
-  tft_Puts( 50, 150, "Echo", &tft_Font_11x18, 0x001F, 0x0000);
-  tft_Puts(50, 175, "High Pass Filter", &tft_Font_11x18, 0x001F, 0x0000);
-  tft_Puts(50, 200, "Low Pass Filter", &tft_Font_11x18, 0x001F, 0x0000);
-
-  tft_DrawFilledCircle(30, 135, 7, 0xFFFF);
-  tft_DrawFilledCircle(30, 160, 7, 0xFFFF);
-  tft_DrawFilledCircle(30, 185, 7, 0xFFFF);
-  tft_DrawFilledCircle(30, 210, 7, 0xFFFF);
-
+# 60 "../src/tareas.c"
   while(1)
   {
-   if(flag_dac_send)
-    tft_Puts(200, 20, "Boton 0", &tft_Font_11x18, 0xF800, 0x0000);
-   if(flag_do_thd)
-    tft_Puts(200, 20, "Boton 1", &tft_Font_11x18, 0x07E0, 0x0000);
-   if(flag_do_rem)
-    tft_Puts(200, 20, "Boton 2", &tft_Font_11x18, 0x001F, 0x0000);
-
-   vTaskDelay(100/( ( TickType_t ) 1000 / ( ( TickType_t ) 1000 ) ));
+# 72 "../src/tareas.c"
   }
  }
 
@@ -16645,11 +16596,17 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
   q31_t num = 0;
   uint32_t i;
 
+  for(i=0; i<1024*2; i++)
+   buffer_dac_out[i] = i*32;
+
   while(1)
   {
 
    {
-# 132 "../src/tareas.c"
+# 102 "../src/tareas.c"
+     while(!dac_int_disponible());
+     dac_int_send();
+# 145 "../src/tareas.c"
    }
   }
  }

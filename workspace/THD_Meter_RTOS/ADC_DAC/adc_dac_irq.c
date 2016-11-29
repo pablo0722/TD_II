@@ -13,8 +13,9 @@
 #if USE_DMA
 	void DMA_IRQHandler(void)
 	{
+
 		#if USE_ADC_EXTERNO
-			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_adc_ext_canal)) // Se fija si interrumpio el ADC externo
+			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_adc_ext_canal) == SUCCESS) // Se fija si interrumpio el ADC externo
 			{
 				if(dma_adc_ext_status == STATUS_ADC_TRANSFIRIENDO_A)	// Si SOLO estaba transfiriendo buffer A, ya termino de transferir.
 				{
@@ -69,7 +70,7 @@
 		#endif
 
 		#if USE_ADC_INTERNO
-			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_adc_int_canal)) // Se fija si interrumpio el ADC externo
+			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_adc_int_canal) == SUCCESS) // Se fija si interrumpio el ADC externo
 			{
 				if(dma_adc_int_status == STATUS_ADC_TRANSFIRIENDO_A)	// Si SOLO estaba transfiriendo buffer A, ya termino de transferir.
 				{
@@ -124,7 +125,7 @@
 		#endif
 
 		#if USE_DAC_EXTERNO
-			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_dac_ext_canal)) // Se fija si interrumpio el DAC interno
+			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_dac_ext_canal) == SUCCESS) // Se fija si interrumpio el DAC interno
 			{
 				BaseType_t pxHigherPiorityTaskWoken = pdFALSE;
 				xSemaphoreGiveFromISR(sem_dac_ext_finish, &pxHigherPiorityTaskWoken);
@@ -136,16 +137,17 @@
 		#endif
 
 		#if USE_DAC_INTERNO
-			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_dac_int_canal)) // Se fija si interrumpio el DAC interno
+			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_dac_int_canal) == SUCCESS) // Se fija si interrumpio el DAC interno
 			{
-				BaseType_t pxHigherPiorityTaskWoken = pdFALSE;
-				xSemaphoreGiveFromISR(sem_dac_int_finish, &pxHigherPiorityTaskWoken);
+//				BaseType_t pxHigherPiorityTaskWoken = pdFALSE;
+//				xSemaphoreGiveFromISR(sem_dac_int_finish, &pxHigherPiorityTaskWoken);
 
 				dma_dac_int_status = STATUS_DAC_IDLE;
 
-				portEND_SWITCHING_ISR(pxHigherPiorityTaskWoken);
+//				portEND_SWITCHING_ISR(pxHigherPiorityTaskWoken);
 			}
 		#endif
+
 	}
 #endif
 

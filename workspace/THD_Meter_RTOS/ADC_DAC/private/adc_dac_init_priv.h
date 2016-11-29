@@ -102,14 +102,15 @@
 				#endif
 
 				// Pido un canal disponible al GPDMA para el ADC
-				dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
-			#elif (USE_ADC_INTERNO)
+				dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, GPDMA_CONN_I2S_Channel_1);
+			#endif
+			#if (USE_ADC_INTERNO)
 				#if DEBUG_MODE
 					printf("\t init buffers ADC interno \r\n");
 				#endif
 
 				// Pido un canal disponible al GPDMA para el ADC
-				dma_adc_int_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
+				dma_adc_int_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, GPDMA_CONN_ADC);
 			#endif
 
 			#if (USE_DAC_EXTERNO)
@@ -118,14 +119,15 @@
 				#endif
 
 				// Pido un canal disponible al GPDMA para el DAC
-				dma_dac_ext_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
-			#elif (USE_DAC_INTERNO)
+				dma_dac_ext_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, GPDMA_CONN_I2S_Channel_0);
+			#endif
+			#if (USE_DAC_INTERNO)
 				#if DEBUG_MODE
 					printf("\t init buffers DAC interno \r\n");
 				#endif
 
 				// Pido un canal disponible al GPDMA para el DAC
-				dma_dac_int_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
+				dma_dac_int_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, GPDMA_CONN_DAC);
 			#endif
 
 			#if (!USE_RTOS)
@@ -294,6 +296,8 @@
 
 	STATIC INLINE void i2s_init()
 	{
+		I2S_AUDIO_FORMAT_T audio_Confg;
+
 		#if DEBUG_MODE
 			printf("[info] Init I2S \r\n");
 		#endif
@@ -310,7 +314,6 @@
 		#endif
 
 		// Configuro I2S_TX usando la estructura I2S_AUDIO_FORMAT_T y modifico la función
-		I2S_AUDIO_FORMAT_T audio_Confg;
 		audio_Confg.SampleRate = ADC_FREQ;
 		audio_Confg.ChannelNumber = 2;			// 1 mono 2 stereo
 		audio_Confg.WordWidth = 32;				// Word Len
@@ -424,7 +427,11 @@
 		#endif
 		*/
 
-		Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_DAC, SYSCTL_CLKDIV_4);
+		Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_DAC, SYSCTL_CLKDIV_1);
+
+		pin_gpio_init(AOUT, MD_PLN, SALIDA); // P0[26] -> AOUT (salida de DAC)
+		pin_set(AOUT, 1);
+		pin_set(AOUT, 0);
 
 		pin_init(AOUT, MD_PLN, IOCON_FUNC2); // P0[26] -> AOUT (salida de DAC)
 
@@ -434,10 +441,9 @@
 			//	Bias == 1 => 	f_max = 400 kHz, 	I_max = 350 uA
 		Chip_DAC_SetBias(LPC_DAC, 1);
 
-		Chip_DAC_SetDMATimeOut(LPC_DAC, (SystemCoreClock/4) / (DAC_FREQ * DAC_DMA_CANT_MUESTRAS) ); // Se configura el TimeOut.
+		Chip_DAC_SetDMATimeOut(LPC_DAC, (SystemCoreClock) / (DAC_FREQ) ); // Se configura el TimeOut.
 
-		Chip_DAC_ConfigDAConverterControl(LPC_DAC, DAC_DBLBUF_ENA | DAC_CNT_ENA | DAC_DMA_ENA); // Se habilita el DMA y soporte de cuenta.
-
+		Chip_DAC_ConfigDAConverterControl(LPC_DAC, /*DAC_DBLBUF_ENA |*/ DAC_CNT_ENA | DAC_DMA_ENA); // Se habilita el DMA y soporte de cuenta.
 	}
 #endif
 

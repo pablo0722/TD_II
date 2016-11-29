@@ -17,12 +17,12 @@ void adc_dac_init()
 		dac_init();
 	#endif
 
-	#if (USE_ADC_INTERNO)
-		adc_init();
-	#endif
-
 	#if (USE_ADC_EXTERNO) || (USE_DAC_EXTERNO)
 		i2s_init();
+	#endif
+
+	#if (USE_ADC_INTERNO)
+		adc_init();
 	#endif
 
 	#if USE_DMA

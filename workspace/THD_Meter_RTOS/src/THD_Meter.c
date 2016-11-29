@@ -22,7 +22,6 @@
 	}
 #endif
 
-
 int main(void)
 {
 	main_init();

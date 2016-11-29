@@ -39,32 +39,36 @@
 
 	void vTask_tft(void *pvParameters)
 	{
-		tft_Fill(TFT_COLOR_BLACK);
-		tft_Puts(0, 0, 		"TECNICAS DIGITALES",	&tft_Font_11x18, 	TFT_FOREGROUND_GREEN, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(120, 25, 	"II",					&tft_Font_11x18, 	TFT_FOREGROUND_RED, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(0, 50, 	"PROCESAMIENTO DE",		&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(100, 75, 	"AUDIO",				&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(0, 100, 	"MENU",					&tft_Font_11x18,	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(50, 125, 	"Reverb",				&tft_Font_11x18,	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
-		tft_Puts( 50, 150, 	"Echo",					&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(50, 175, 	"High Pass Filter",		&tft_Font_11x18,  	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
-		tft_Puts(50, 200, 	"Low Pass Filter",		&tft_Font_11x18,  	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+		#if (USE_TFT)
+			tft_Fill(TFT_COLOR_BLACK);
+			tft_Puts(0, 0, 		"TECNICAS DIGITALES",	&tft_Font_11x18, 	TFT_FOREGROUND_GREEN, 	TFT_BACKGROUND_BLACK);
+			tft_Puts(120, 25, 	"II",					&tft_Font_11x18, 	TFT_FOREGROUND_RED, 	TFT_BACKGROUND_BLACK);
+			tft_Puts(0, 50, 	"PROCESAMIENTO DE",		&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+			tft_Puts(100, 75, 	"AUDIO",				&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+			tft_Puts(0, 100, 	"MENU",					&tft_Font_11x18,	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+			tft_Puts(50, 125, 	"Reverb",				&tft_Font_11x18,	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+			tft_Puts( 50, 150, 	"Echo",					&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+			tft_Puts(50, 175, 	"High Pass Filter",		&tft_Font_11x18,  	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+			tft_Puts(50, 200, 	"Low Pass Filter",		&tft_Font_11x18,  	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
 
-		tft_DrawFilledCircle(30, 135, 7, TFT_COLOR_WHITE);
-		tft_DrawFilledCircle(30, 160, 7, TFT_COLOR_WHITE);
-		tft_DrawFilledCircle(30, 185, 7, TFT_COLOR_WHITE);
-		tft_DrawFilledCircle(30, 210, 7, TFT_COLOR_WHITE);
+			tft_DrawFilledCircle(30, 135, 7, TFT_COLOR_WHITE);
+			tft_DrawFilledCircle(30, 160, 7, TFT_COLOR_WHITE);
+			tft_DrawFilledCircle(30, 185, 7, TFT_COLOR_WHITE);
+			tft_DrawFilledCircle(30, 210, 7, TFT_COLOR_WHITE);
+		#endif
 
 		while(1)
 		{
-			if(flag_dac_send)
-				tft_Puts(200, 20, "Boton 0",	&tft_Font_11x18, 	TFT_FOREGROUND_RED, 	TFT_BACKGROUND_BLACK);
-			if(flag_do_thd)
-				tft_Puts(200, 20, "Boton 1",	&tft_Font_11x18, 	TFT_FOREGROUND_GREEN, 	TFT_BACKGROUND_BLACK);
-			if(flag_do_rem)
-				tft_Puts(200, 20, "Boton 2",	&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
+			#if (USE_TFT)
+				if(flag_dac_send)
+					tft_Puts(200, 20, "Boton 0",	&tft_Font_11x18, 	TFT_FOREGROUND_RED, 	TFT_BACKGROUND_BLACK);
+				if(flag_do_thd)
+					tft_Puts(200, 20, "Boton 1",	&tft_Font_11x18, 	TFT_FOREGROUND_GREEN, 	TFT_BACKGROUND_BLACK);
+				if(flag_do_rem)
+					tft_Puts(200, 20, "Boton 2",	&tft_Font_11x18, 	TFT_FOREGROUND_BLUE, 	TFT_BACKGROUND_BLACK);
 
-			vTaskDelay(100/portTICK_PERIOD_MS);
+				vTaskDelay(100/portTICK_PERIOD_MS);
+			#endif
 		}
 	}
 
@@ -73,24 +77,31 @@
 		q31_t num = 0; 	// Es la raiz cuadrada de la suma cuadratica de los armonicos de la DEP (numerador del THD)
 		uint32_t i;
 
+		for(i=0; i<FFT_SIZE*2; i++)
+			buffer_dac_out[i] = i*32;
+
 		while(1)
 		{
 			//if( (flag_do_thd) || (flag_do_rem) )
 			{
-				/*
-				while(!dac_int_disponible());
-				dac_int_send();
-				adc_ext_start();
-				xSemaphoreTake(sem_adc_ext_proc, portMAX_DELAY);
+				#if (USE_ADC_EXTERNO)
+					//adc_ext_start();
+					//xSemaphoreTake(sem_adc_ext_proc, portMAX_DELAY);
+				#endif
 
 				#if (USE_DAC_EXTERNO)
-					//while(!dac_ext_disponible());
+					while(!dac_ext_disponible());
 					for(i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
 					{
 						buffer_dac_out[i] = dac_ext_set_data(buffer_complex[i]);
 					}
 					dac_ext_send();
-				#endif*/
+				#endif
+
+				#if (USE_DAC_INTERNO)
+					while(!dac_int_disponible());
+					dac_int_send();
+				#endif
 /*
 					// Obtengo la fft
 				fft_toCmplx((q31_t *)buffer_complex, (q31_t *)buffer_complex);
@@ -128,7 +139,9 @@
 				}
 */
 
-				//adc_ext_post_procesamiento();
+				#if (USE_ADC_EXTERNO)
+					//adc_ext_post_procesamiento();
+				#endif
 			}
 		}
 	}

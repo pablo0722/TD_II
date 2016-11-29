@@ -31,7 +31,9 @@
 			}
 
 			#if USE_RTOS
-				xSemaphoreGive(sem_adc_ext_proc);
+				BaseType_t pxHigherPiorityTaskWoken = pdFALSE;
+				xSemaphoreGiveFromISR(sem_adc_ext_proc, &pxHigherPiorityTaskWoken);
+				portEND_SWITCHING_ISR(pxHigherPiorityTaskWoken);
 			#endif
 		}
 	}
@@ -58,7 +60,9 @@
 			}
 
 			#if USE_RTOS
-				xSemaphoreGive(sem_adc_int_proc);
+				BaseType_t pxHigherPiorityTaskWoken = pdFALSE;
+				xSemaphoreGiveFromISR(sem_adc_int_proc, &pxHigherPiorityTaskWoken);
+				portEND_SWITCHING_ISR(pxHigherPiorityTaskWoken);
 			#endif
 		}
 	}

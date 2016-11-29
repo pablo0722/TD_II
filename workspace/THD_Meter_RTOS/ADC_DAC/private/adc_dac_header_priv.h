@@ -89,8 +89,8 @@
 			#define STATUS_ADC_TRANS_B_PROC_A_ERR	0x04	// ERROR: termino de transferir buffer B pero no termino de procesar A
 			#define STATUS_ADC_TRANS_A_PROC_B_ERR	0x05	// ERROR: termino de transferir buffer A pero no termino de procesar B
 
-		#define STATUS_ADC_ISPROC(status)			((status & 0x06) == 0x02) // Analiza si 'status' es PINGPONG_TRANS_X_PROC_Y
-		#define STATUS_ADC_ISERR(status)			((status & 0x06) == 0x04) // Analiza si 'status' es PINGPONG_TRANS_X_PROC_Y_ERR
+		#define STATUS_ADC_ISPROC(status)			((status & 0x06)) 	// Analiza si 'status' es PINGPONG_TRANS_X_PROC_Y o STATUS_ADC_TRANS_X_PROC_Y_ERR
+		#define STATUS_ADC_ISERR(status)			(status & 0x04) 	// Analiza si 'status' es PINGPONG_TRANS_X_PROC_Y_ERR
 
 		#define STATUS_ADC_PROC2ERR(status)			status += 2 	// Convierte 'status' de PINGPONG_TRANS_X_PROC_Y a PINGPONG_TRANS_X_PROC_Y_ERR
 		#define STATUS_ADC_PROC2TRANS(status)		status &= 0x01 	// Convierte 'status' de (PINGPONG_TRANS_X_PROC_Y o PINGPONG_TRANS_Y_PROC_X_ERR) a PINGPONG_TRANSFIRIENDO_X

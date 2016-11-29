@@ -20,10 +20,10 @@ static inline void main_gpio_init()
 		// *** Habilito los leds
 
 		// *** Habilito los gpios del ADC
-	//pin_gpio_init(ADC_OSR_INIT);
-	//pin_set(ADC_OSR, 0);
+	pin_gpio_init(ADC_OSR_INIT);
+	pin_set(ADC_OSR, 0);
 	pin_gpio_init(ADC_FSYNC_INIT);
-	pin_set(ADC_FSYNC, 0);
+	pin_set(ADC_FSYNC, 1);
 
 		// *** Habilito los gpios del DAC
 	pin_gpio_init(DAC_MUTE_INIT);
@@ -41,7 +41,9 @@ static inline void main_task_init()
 
 static inline void main_buffer_init()
 {
-	adc_ext_prepare(buffer_complex, NULL);
+	#if (USE_ADC_EXTERNO)
+		adc_ext_prepare(buffer_complex, NULL);
+	#endif
 	#if (USE_DAC_INTERNO)
 		dac_int_prepare(buffer_dac_out);
 	#endif

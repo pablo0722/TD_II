@@ -189,8 +189,6 @@
 			dma_dac_ext_memory[i] = dac_ext_set_data(dma_dac_ext_memory[i]);
 		}
 
-		xSemaphoreTake(sem_dac_ext_finish, portMAX_DELAY);
-
 		while(!dac_ext_disponible());	// Espera hasta que el dac este disponible para enviar
 
 			// Si el DAC esta disponible para enviar, envia el buffer y pone 'status = STATUS_DAC_TRANSFIRIENDO'
@@ -236,7 +234,7 @@
 			// acomodar el dato antes de enviar por DAC
 		for(int i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
 		{
-			dma_dac_int_memory[i] = dac_int_set_data(dma_dac_int_memory[i]);
+			//dma_dac_int_memory[i] = dac_int_set_data(dma_dac_int_memory[i]);
 		}
 
 		//xSemaphoreTake(sem_dac_int_finish, portMAX_DELAY);

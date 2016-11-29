@@ -15957,7 +15957,7 @@ void arm_rfft_fast_f32(
 #define USE_ADC ON
 #define USE_DAC ON
 #define USE_FFT ON
-#define USE_TFT ON
+#define USE_TFT OFF
 #define USE_RTOS ON
 
 
@@ -15977,19 +15977,13 @@ void arm_rfft_fast_f32(
 
 
 #define USE_DAC_INTERNO ON
-#define USE_DAC_EXTERNO ON
+#define USE_DAC_EXTERNO OFF
 
 
 
 #define DAC_INTERNO_INTERRUPCION 0
 #define DAC_INTERNO_DMA 1
 #define DAC_INTERNO_MODO DAC_INTERNO_DMA
-
-
-
-#define DAC_EXTERNO_INTERRUPCION 0
-#define DAC_EXTERNO_DMA 1
-#define DAC_EXTERNO_MODO DAC_EXTERNO_DMA
 # 115 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define USE_DMA ON
 # 124 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
@@ -16180,18 +16174,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
          volatile uint32_t *buffer_B);
   void adc_ext_start();
   void adc_ext_post_procesamiento();
-# 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-  uint16_t dac_ext_set_data(uint32_t data);
-  void dac_ext_prepare(volatile uint16_t *buffer);
-  
-# 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h" 3 4
- _Bool 
-# 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-      dac_ext_disponible();
-  void dac_ext_send();
-
-
-
+# 41 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
   uint16_t dac_int_set_data(uint32_t data);
   void dac_int_prepare(volatile uint16_t *buffer);
   
@@ -16222,17 +16205,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
    extern SemaphoreHandle_t sem_adc_ext_proc;
-
-
-
-
-
-   extern SemaphoreHandle_t sem_dac_ext_finish;
-
-
-
-
-
+# 78 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
    extern SemaphoreHandle_t sem_dac_int_finish;
 # 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 1
@@ -16633,8 +16606,8 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 #define STATUS_ADC_TRANS_B_PROC_A_ERR 0x04
 #define STATUS_ADC_TRANS_A_PROC_B_ERR 0x05
 
-#define STATUS_ADC_ISPROC(status) ((status & 0x06) == 0x02)
-#define STATUS_ADC_ISERR(status) ((status & 0x06) == 0x04)
+#define STATUS_ADC_ISPROC(status) ((status & 0x06))
+#define STATUS_ADC_ISERR(status) (status & 0x04)
 
 #define STATUS_ADC_PROC2ERR(status) status += 2
 #define STATUS_ADC_PROC2TRANS(status) status &= 0x01
@@ -16658,19 +16631,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
   extern uint8_t dma_adc_ext_canal;
 
   extern volatile int8_t dma_adc_ext_status;
-
-
-
-  extern DMA_TransferDescriptor_t dma_dac_ext_descriptor;
-
-  extern volatile uint16_t * dma_dac_ext_memory;
-
-  extern uint8_t dma_dac_ext_canal;
-
-  extern volatile int8_t dma_dac_ext_status;
-
-
-
+# 153 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_header_priv.h"
   extern DMA_TransferDescriptor_t dma_dac_int_descriptor;
 
   extern volatile uint16_t * dma_dac_int_memory;
@@ -16711,10 +16672,15 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
    NVIC_SetPriority(DMA_IRQn, ((0x01<<3)|0x01));
    NVIC_EnableIRQ(DMA_IRQn);
 # 105 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
-    dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
-# 121 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
-    dma_dac_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
-# 135 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
+    dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), ((6UL)));
+# 130 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
+    dma_dac_int_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), ((7UL)));
+
+
+
+
+
+
    flag_init = 0;
   }
  }
@@ -16877,6 +16843,8 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
  static inline void i2s_init()
  {
+  I2S_AUDIO_FORMAT_T audio_Confg;
+
 
 
 
@@ -16884,40 +16852,20 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
     { ( sem_adc_ext_proc ) = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) ); if( ( sem_adc_ext_proc ) != 
-# 303 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
+# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
    ((void *)0) 
-# 303 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
+# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
    ) { ( void ) xQueueGenericSend( ( QueueHandle_t ) ( ( sem_adc_ext_proc ) ), 
-# 303 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
+# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
    ((void *)0)
-# 303 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
+# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
    , ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) ); } };
     xQueueGenericReceive( ( QueueHandle_t ) ( sem_adc_ext_proc ), 
-# 304 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
-   ((void *)0)
-# 304 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
-   , ( ( TickType_t ) 0xffffffffUL ), ( ( BaseType_t ) 0 ) );
-
-
-    { ( sem_dac_ext_finish ) = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) ); if( ( sem_dac_ext_finish ) != 
-# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
-   ((void *)0) 
-# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
-   ) { ( void ) xQueueGenericSend( ( QueueHandle_t ) ( ( sem_dac_ext_finish ) ), 
-# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
-   ((void *)0)
-# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
-   , ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) ); } };
-    xQueueGenericReceive( ( QueueHandle_t ) ( sem_dac_ext_finish ), 
 # 308 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
    ((void *)0)
 # 308 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
    , ( ( TickType_t ) 0xffffffffUL ), ( ( BaseType_t ) 0 ) );
-
-
-
-
-  I2S_AUDIO_FORMAT_T audio_Confg;
+# 317 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
   audio_Confg.SampleRate = 32000;
   audio_Confg.ChannelNumber = 2;
   audio_Confg.WordWidth = 32;
@@ -16941,31 +16889,17 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
     Chip_I2S_DMA_RxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
-# 347 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
-   pin_init(0, 7, (0x2), 0x1);
-   pin_init(0, 9, (0x2), 0x1);
-   pin_init(0, 8, (0x2), 0x1);
-   pin_init(4, 29, (0x2), 0x1);
-
-
-   Chip_I2S_Int_TxCmd(((LPC_I2S_T *) 0x400A8000), ENABLE, 1);
-   mi_Chip_I2S_TxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
-
-
-    Chip_I2S_DMA_TxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
-
-
-
-
-
-
-
+# 368 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
  }
-# 406 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
+# 409 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
  static inline void dac_init()
  {
-# 427 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
-  Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_DAC, SYSCTL_CLKDIV_4);
+# 430 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
+  Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_DAC, SYSCTL_CLKDIV_1);
+
+  pin_gpio_init(0,26, (0x2), 1);
+  pin_set(0,26, 1);
+  pin_set(0,26, 0);
 
   pin_init(0,26, (0x2), 0x2);
 
@@ -16975,10 +16909,9 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
   Chip_DAC_SetBias(((LPC_DAC_T *) 0x4008C000), 1);
 
-  Chip_DAC_SetDMATimeOut(((LPC_DAC_T *) 0x4008C000), (SystemCoreClock/4) / (32000 * 2048) );
+  Chip_DAC_SetDMATimeOut(((LPC_DAC_T *) 0x4008C000), (SystemCoreClock) / (32000) );
 
-  Chip_DAC_ConfigDAConverterControl(((LPC_DAC_T *) 0x4008C000), ((uint32_t) (1 << 1)) | ((uint32_t) (1 << 2)) | ((uint32_t) (1 << 3)));
-
+  Chip_DAC_ConfigDAConverterControl(((LPC_DAC_T *) 0x4008C000), ((uint32_t) (1 << 2)) | ((uint32_t) (1 << 3)));
  }
 # 165 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_header_priv.h" 2
 # 12 "../ADC_DAC/private/adc_dac_globales_priv.c" 2
@@ -17018,27 +16951,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
  volatile int8_t dma_adc_ext_status
              __attribute__ ((section (".data.$RamAHB32"))) = -1;
-
-
-
- DMA_TransferDescriptor_t dma_dac_ext_descriptor
-             __attribute__ ((section (".bss.$RamAHB32")));
-
- volatile uint16_t * dma_dac_ext_memory
-             __attribute__ ((section (".bss.$RamAHB32"))) = 
-# 43 "../ADC_DAC/private/adc_dac_globales_priv.c" 3 4
-                                                           ((void *)0)
-# 43 "../ADC_DAC/private/adc_dac_globales_priv.c"
-                                                               ;
-
- uint8_t dma_dac_ext_canal
-             __attribute__ ((section (".bss.$RamAHB32"))) = 0;
-
- volatile int8_t dma_dac_ext_status
-             __attribute__ ((section (".data.$RamAHB32"))) = -1;
-
-
-
+# 53 "../ADC_DAC/private/adc_dac_globales_priv.c"
  DMA_TransferDescriptor_t dma_dac_int_descriptor
              __attribute__ ((section (".bss.$RamAHB32")));
 
