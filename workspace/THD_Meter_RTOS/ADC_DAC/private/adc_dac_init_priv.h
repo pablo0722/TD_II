@@ -309,7 +309,6 @@
 			#endif
 			#if (USE_DAC_EXTERNO)
 				vSemaphoreCreateBinary(sem_dac_ext_finish);
-				xSemaphoreTake(sem_dac_ext_finish, portMAX_DELAY);
 			#endif
 		#endif
 
@@ -323,6 +322,7 @@
 
 		Chip_I2S_Init(LPC_I2S);
 		NVIC_DisableIRQ(I2S_IRQn);
+		NVIC_SetPriority(I2S_IRQn, ((0x01<<3)|0x01));
 
 		#if (USE_ADC_EXTERNO)
 			//Configuro los pines de RX de P0, ver defines
@@ -330,6 +330,32 @@
 			pin_init(I2SRX_SDA);
 			pin_init(I2SRX_WS);
 			pin_init(RX_MCLK);
+		#endif
+
+		#if (USE_DAC_EXTERNO)
+			// Configuro los pines del TX de P0, ver defines
+			pin_init(I2STX_CLK);
+			pin_init(I2STX_SDA);
+			pin_init(I2STX_WS);
+			pin_init(TX_MCLK);
+		#endif
+
+		// Configuro el clk del periférico para que trabaje a 96MHz
+		Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_I2S, SYSCTL_CLKDIV_1);
+
+		Chip_I2S_Init(LPC_I2S);
+		NVIC_DisableIRQ(I2S_IRQn);
+
+		Chip_I2S_RxStop(LPC_I2S);
+		Chip_I2S_TxStop(LPC_I2S);
+		Chip_I2S_EnableMute(LPC_I2S);
+
+
+		Chip_I2S_DisableMute(LPC_I2S);
+		Chip_I2S_RxStart(LPC_I2S);
+		Chip_I2S_TxStart(LPC_I2S);
+
+		#if (USE_ADC_EXTERNO)
 
 			// Configuro modo RX
 			Chip_I2S_Int_RxCmd(LPC_I2S, ENABLE, 1);
@@ -346,12 +372,6 @@
 		#endif
 
 		#if (USE_DAC_EXTERNO)
-			// Configuro los pines del TX de P0, ver defines
-			pin_init(I2STX_CLK);
-			pin_init(I2STX_SDA);
-			pin_init(I2STX_WS);
-			pin_init(TX_MCLK);
-
 			// Configuro modo TX
 			Chip_I2S_Int_TxCmd(LPC_I2S, ENABLE, 1);
 			mi_Chip_I2S_TxConfig(LPC_I2S, &audio_Confg);
@@ -420,18 +440,14 @@
 			#endif
 		#endif
 
-		/*
+
 		#if (USE_RTOS)
 			vSemaphoreCreateBinary(sem_dac_int_finish);
-			xSemaphoreTake(sem_dac_int_finish, portMAX_DELAY);
+			//xSemaphoreTake(sem_dac_int_finish, portMAX_DELAY);
 		#endif
-		*/
+
 
 		Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_DAC, SYSCTL_CLKDIV_1);
-
-		pin_gpio_init(AOUT, MD_PLN, SALIDA); // P0[26] -> AOUT (salida de DAC)
-		pin_set(AOUT, 1);
-		pin_set(AOUT, 0);
 
 		pin_init(AOUT, MD_PLN, IOCON_FUNC2); // P0[26] -> AOUT (salida de DAC)
 

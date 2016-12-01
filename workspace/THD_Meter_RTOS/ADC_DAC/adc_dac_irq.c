@@ -130,8 +130,6 @@
 				BaseType_t pxHigherPiorityTaskWoken = pdFALSE;
 				xSemaphoreGiveFromISR(sem_dac_ext_finish, &pxHigherPiorityTaskWoken);
 
-				dma_dac_ext_status = STATUS_DAC_IDLE;
-
 				portEND_SWITCHING_ISR(pxHigherPiorityTaskWoken);
 			}
 		#endif
@@ -139,15 +137,12 @@
 		#if USE_DAC_INTERNO
 			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_dac_int_canal) == SUCCESS) // Se fija si interrumpio el DAC interno
 			{
-//				BaseType_t pxHigherPiorityTaskWoken = pdFALSE;
-//				xSemaphoreGiveFromISR(sem_dac_int_finish, &pxHigherPiorityTaskWoken);
+				BaseType_t pxHigherPiorityTaskWoken = pdFALSE;
+				xSemaphoreGiveFromISR(sem_dac_int_finish, &pxHigherPiorityTaskWoken);
 
-				dma_dac_int_status = STATUS_DAC_IDLE;
-
-//				portEND_SWITCHING_ISR(pxHigherPiorityTaskWoken);
+				portEND_SWITCHING_ISR(pxHigherPiorityTaskWoken);
 			}
 		#endif
-
 	}
 #endif
 

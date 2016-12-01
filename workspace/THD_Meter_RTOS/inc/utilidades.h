@@ -89,7 +89,7 @@
 	#if (USE_DAC)
 		//Usar DAC interno y/o externo (externo por I2S)
 		#define USE_DAC_INTERNO		ON
-		#define USE_DAC_EXTERNO		OFF
+		#define USE_DAC_EXTERNO		ON
 
 		#if (USE_DAC_INTERNO)
 				// Modo de uso (por interrupcion o por DMA)

@@ -23,12 +23,12 @@
 			#define AOUT				0,26
 		#endif
 
-		#if (USE_ADC_EXTERNO)||(USE_DAC_EXTERNO)
-
+		#if (USE_ADC_EXTERNO)
 			// PARA EL ADC POR I2S
 				#define RX_CONFIG0		0
 				#define RX_CONFIG1		1
-			#define RX_CONFIG	RX_CONFIG0
+				#define RX_CONFIG_ADA	2	// El de Agustin Diaz Antuña (ADA)
+			#define RX_CONFIG	RX_CONFIG_ADA
 
 			#if (RX_CONFIG == RX_CONFIG0)
 				#define I2SRX_CLK			0,4, MD_PLN, IOCON_FUNC1	// Se puede usar el mismo CLK para RX y TX
@@ -42,13 +42,22 @@
 				#define I2SRX_SDA			0,25, MD_PLN, IOCON_FUNC2
 			#endif
 
+			#if (RX_CONFIG == RX_CONFIG_ADA)
+				#define I2SRX_CLK			0,23, MD_PLN, IOCON_FUNC2	// Se puede usar el mismo CLK para RX y TX
+				#define I2SRX_WS			0,24, MD_PLN, IOCON_FUNC2
+				#define I2SRX_SDA			0,25, MD_PLN, IOCON_FUNC2
+			#endif
+
 			#define RX_MCLK				4, 28, MD_PLN, IOCON_FUNC1
+		#endif
 
 
+		#if (USE_DAC_EXTERNO)
 			// PARA EL DAC POR I2S
 				#define TX_CONFIG0		0
 				#define TX_CONFIG1		1
-			#define TX_CONFIG	TX_CONFIG0
+				#define TX_CONFIG_ADA	2	// El de Agustin Diaz Antuña (ADA)
+			#define TX_CONFIG	TX_CONFIG_ADA
 
 			#if (TX_CONFIG == TX_CONFIG0)
 				#define I2STX_CLK			0, 7,  MD_PLN, IOCON_FUNC1	// Se puede usar el mismo CLK para RX y TX
@@ -60,6 +69,12 @@
 				#define I2STX_CLK			2, 11, MD_PLN, IOCON_FUNC2
 				#define I2STX_WS			2, 12, MD_PLN, IOCON_FUNC2
 				#define I2STX_SDA			2, 13, MD_PLN, IOCON_FUNC2
+			#endif
+
+			#if (TX_CONFIG == TX_CONFIG_ADA)
+				#define I2STX_CLK			2, 11, MD_PLN, IOCON_FUNC3
+				#define I2STX_WS			2, 12, MD_PLN, IOCON_FUNC3
+				#define I2STX_SDA			2, 13, MD_PLN, IOCON_FUNC3
 			#endif
 
 			#define TX_MCLK				4, 29, MD_PLN, IOCON_FUNC1
@@ -95,33 +110,6 @@
 		#define STATUS_ADC_PROC2ERR(status)			status += 2 	// Convierte 'status' de PINGPONG_TRANS_X_PROC_Y a PINGPONG_TRANS_X_PROC_Y_ERR
 		#define STATUS_ADC_PROC2TRANS(status)		status &= 0x01 	// Convierte 'status' de (PINGPONG_TRANS_X_PROC_Y o PINGPONG_TRANS_Y_PROC_X_ERR) a PINGPONG_TRANSFIRIENDO_X
 	// *** ********************** *** //
-
-	// *** MAQUINA DE ESTADOS - DAC *** //
-		/* maquina de estados (dac):
-		 * 1 - En la inicializacion del DAC, se pone 'status = PINGPONG_DAC_IDLE'
-		 * 2 - cuando el ADC termina de procesar buffer A,
-		 * 		si 'status == PINGPONG_DAC_IDLE', envia por el DAC el buffer A procesado y pone 'status = PINGPONG_DAC_TRANSFIRIENDO_A'
-		 * 3 - Cuando interrumpe el DAC,
-		 * 		si 'status == PINGPONG_DAC_TRANSFIRIENDO_A' se pone 'status = PINGPONG_DAC_IDLE'
-		 * 4 - cuando el ADC termina de procesar buffer B,
-		 * 		si 'status == PINGPONG_DAC_IDLE', envia por el DAC el buffer B procesado y pone 'status = PINGPONG_DAC_TRANSFIRIENDO_B'
-		 * 		si 'status == PINGPONG_DAC_TRANSFIRIENDO_A' pone 'status = PINGPONG_DAC_RECIBIDO_B_ERR'
-		 * 5 - Cuando interrumpe el DAC,
-		 * 		si 'status == PINGPONG_DAC_TRANSFIRIENDO_B' se pone 'status = PINGPONG_DAC_IDLE'
-		 * 		si 'status == PINGPONG_DAC_RECIBIDO_B_ERR', envia por el DAC el buffer B procesado y pone 'status = PINGPONG_DAC_TRANSFIRIENDO_B'
-		 * 2' - cuando el ADC termina de procesar buffer A,
-		 * 		si 'status == PINGPONG_DAC_IDLE', envia por el DAC el buffer A procesado y pone 'status = PINGPONG_DAC_TRANSFIRIENDO_A'
-		 * 		si 'status == PINGPONG_DAC_TRANSFIRIENDO_B' pone 'status = PINGPONG_DAC_RECIBIDO_A_ERR'
-		 * 3' - Cuando interrumpe el DAC,
-		 * 		si 'status == PINGPONG_DAC_TRANSFIRIENDO_A' se pone 'status = PINGPONG_DAC_IDLE'
-		 * 		si 'status == PINGPONG_DAC_RECIBIDO_A_ERR', envia por el DAC el buffer A procesado y pone 'status = PINGPONG_DAC_IDLE'
-		 * 8 - repite desde paso 4
-		 */
-			// Estados del DMA del DAC (para una maquina de estados)
-		#define STATUS_DAC_IDLE				-1		// Esperando
-		#define STATUS_DAC_RECIBIDO			0x00	// Buffer A de ping-pong recibido
-		#define STATUS_DAC_TRANSFIRIENDO	0x01	// Transfiriendo buffer de por DAC
-	// ******************************** //
 // **************************************************** //
 
 
@@ -145,8 +133,6 @@
 		extern volatile uint16_t *		dma_dac_ext_memory;		// Buffer A del Ping-Pong del DAC
 
 		extern uint8_t 					dma_dac_ext_canal;		// Canal del DAC en el DMA
-
-		extern volatile int8_t 		dma_dac_ext_status;		// Estado del DAC en la maquina de estados propia
 	#endif
 
 	#if USE_DAC_INTERNO
@@ -155,8 +141,6 @@
 		extern volatile uint16_t *		dma_dac_int_memory;		// Buffer A del Ping-Pong del DAC
 
 		extern uint8_t 					dma_dac_int_canal;		// Canal del DAC en el DMA
-
-		extern volatile int8_t 		dma_dac_int_status;		// Estado del DAC en la maquina de estados propia
 	#endif
 // ********************************************** //
 

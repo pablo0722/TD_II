@@ -44,9 +44,6 @@
 
 	uint8_t 					dma_dac_ext_canal		// Canal del DAC en el DMA
 													__attribute__ ((section (".bss.$RamAHB32"))) = 0;
-
-	volatile int8_t 			dma_dac_ext_status		// Estado del DAC en la maquina de estados propia
-													__attribute__ ((section (".data.$RamAHB32"))) = STATUS_DAC_IDLE;
 #endif
 
 #if (USE_DAC_INTERNO)
@@ -58,7 +55,4 @@
 
 	uint8_t 					dma_dac_int_canal		// Canal del DAC en el DMA
 													__attribute__ ((section (".bss.$RamAHB32"))) = 0;
-
-	volatile int8_t 			dma_dac_int_status		// Estado del DAC en la maquina de estados propia
-													__attribute__ ((section (".data.$RamAHB32"))) = STATUS_DAC_IDLE;
 #endif

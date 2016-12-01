@@ -35,7 +35,7 @@ static inline void main_gpio_init()
 static inline void main_task_init()
 {
 	task_create(vTask_tft, 		"vTask_tft", 		configMINIMAL_STACK_SIZE, 	NULL, PRIORIDAD_MINIMA, (xTaskHandle *) NULL);
-	task_create(vTask_THD, 		"vTask_THD", 		configMINIMAL_STACK_SIZE+8, NULL, PRIORIDAD_MINIMA, (xTaskHandle *) NULL);
+	task_create(vTask_THD, 		"vTask_THD", 		configMINIMAL_STACK_SIZE+8, NULL, PRIORIDAD_MAXIMA, (xTaskHandle *) NULL);
 	task_create(vTask_teclado, 	"vTask_teclado", 	configMINIMAL_STACK_SIZE, 	NULL, PRIORIDAD_MINIMA, (xTaskHandle *) NULL);
 }
 
@@ -64,13 +64,15 @@ void main_init()
 		uart_init();
 	#endif
 
-	adc_dac_init();
+	#if (USE_ADC_INTERNO) || (USE_DAC_INTERNO) || (USE_ADC_EXTERNO) || (USE_DAC_EXTERNO)
+		adc_dac_init();
+	#endif
 
 	#if USE_FFT
 		//fft_init();
 	#endif
 
-	main_gpio_init();
+	//main_gpio_init();
 
 	main_buffer_init();
 

@@ -22,22 +22,22 @@
 		// Preparo el descriptor para el BUFFER_A
 		Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
 									(DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_A,
-									(uint32_t) GPDMA_CONN_I2S_Channel_1,
+									(uint32_t) GPDMA_CONN_I2S_Channel_0,
 									(uint32_t) dma_adc_ext_memory_A,
 									ADC_DMA_CANT_MUESTRAS,
 									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA,
 									NULL);
-		dma_adc_ext_descriptor_A.src = GPDMA_CONN_I2S_Channel_1;
+		dma_adc_ext_descriptor_A.src = GPDMA_CONN_I2S_Channel_0;
 
 		// Preparo el descriptor para el BUFFER_B
 		Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
 									(DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_B,
-									(uint32_t) GPDMA_CONN_I2S_Channel_1,
+									(uint32_t) GPDMA_CONN_I2S_Channel_0,
 									(uint32_t) dma_adc_ext_memory_B,
 									ADC_DMA_CANT_MUESTRAS,
 									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA,
 									NULL);
-		dma_adc_ext_descriptor_B.src = GPDMA_CONN_I2S_Channel_1;
+		dma_adc_ext_descriptor_B.src = GPDMA_CONN_I2S_Channel_0;
 
 		dma_adc_ext_status = STATUS_ADC_IDLE;
 
@@ -167,18 +167,11 @@
 		Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
 									(DMA_TransferDescriptor_t *) &dma_dac_ext_descriptor,
 									(uint32_t) dma_dac_ext_memory,
-									(uint32_t) GPDMA_CONN_DAC,
+									(uint32_t) GPDMA_CONN_I2S_Channel_0,
 									DAC_DMA_CANT_MUESTRAS,
 									GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA,
 									NULL);
-		dma_dac_ext_descriptor.dst = GPDMA_CONN_DAC;
-	}
-
-	bool dac_ext_disponible()
-	{
-		if(dma_dac_ext_status == STATUS_DAC_IDLE)
-			return true;
-		return false;
+		dma_dac_ext_descriptor.dst = GPDMA_CONN_I2S_Channel_0;
 	}
 
 	void dac_ext_send()
@@ -186,17 +179,13 @@
 			// acomodar el dato antes de enviar por DAC
 		for(int i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
 		{
-			dma_dac_ext_memory[i] = dac_ext_set_data(dma_dac_ext_memory[i]);
+			//dma_dac_ext_memory[i] = dac_ext_set_data(dma_dac_ext_memory[i]);
 		}
-
-		while(!dac_ext_disponible());	// Espera hasta que el dac este disponible para enviar
 
 			// Si el DAC esta disponible para enviar, envia el buffer y pone 'status = STATUS_DAC_TRANSFIRIENDO'
 		Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_dac_ext_canal,
 								&dma_dac_ext_descriptor,
 								GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
-
-		dma_dac_ext_status = STATUS_DAC_TRANSFIRIENDO;
 	}
 #endif
 
@@ -222,13 +211,6 @@
 		dma_dac_int_descriptor.dst = GPDMA_CONN_DAC;
 	}
 
-	bool dac_int_disponible()
-	{
-		if(dma_dac_int_status == STATUS_DAC_IDLE)
-			return true;
-		return false;
-	}
-
 	void dac_int_send()
 	{
 			// acomodar el dato antes de enviar por DAC
@@ -237,16 +219,10 @@
 			//dma_dac_int_memory[i] = dac_int_set_data(dma_dac_int_memory[i]);
 		}
 
-		//xSemaphoreTake(sem_dac_int_finish, portMAX_DELAY);
-
-		while(!dac_int_disponible());	// Espera hasta que el dac este disponible para enviar
-
 			// Si el DAC esta disponible para enviar, envia el buffer y pone 'status = STATUS_DAC_TRANSFIRIENDO'
 		Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_dac_int_canal,
 								&dma_dac_int_descriptor,
 								GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
-
-		dma_dac_int_status = STATUS_DAC_TRANSFIRIENDO;
 	}
 #endif
 

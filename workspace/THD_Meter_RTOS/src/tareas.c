@@ -89,18 +89,20 @@
 					//xSemaphoreTake(sem_adc_ext_proc, portMAX_DELAY);
 				#endif
 
+				#if (USE_DAC_INTERNO)
+					xSemaphoreTake(sem_dac_int_finish, portMAX_DELAY);
+				#endif
+
 				#if (USE_DAC_EXTERNO)
-					while(!dac_ext_disponible());
-					for(i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
-					{
-						buffer_dac_out[i] = dac_ext_set_data(buffer_complex[i]);
-					}
-					dac_ext_send();
+					xSemaphoreTake(sem_dac_ext_finish, portMAX_DELAY);
 				#endif
 
 				#if (USE_DAC_INTERNO)
-					while(!dac_int_disponible());
 					dac_int_send();
+				#endif
+
+				#if (USE_DAC_EXTERNO)
+					dac_ext_send();
 				#endif
 /*
 					// Obtengo la fft
