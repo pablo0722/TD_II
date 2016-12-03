@@ -15957,7 +15957,7 @@ void arm_rfft_fast_f32(
 #define USE_ADC ON
 #define USE_DAC ON
 #define USE_FFT ON
-#define USE_TFT OFF
+#define USE_TFT ON
 #define USE_RTOS ON
 
 
@@ -15976,17 +15976,9 @@ void arm_rfft_fast_f32(
 
 
 
-#define USE_DAC_INTERNO ON
+#define USE_DAC_INTERNO OFF
 #define USE_DAC_EXTERNO ON
-
-
-
-#define DAC_INTERNO_INTERRUPCION 0
-#define DAC_INTERNO_DMA 1
-#define DAC_INTERNO_MODO DAC_INTERNO_DMA
-
-
-
+# 102 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
 #define DAC_EXTERNO_INTERRUPCION 0
 #define DAC_EXTERNO_DMA 1
 #define DAC_EXTERNO_MODO DAC_EXTERNO_DMA
@@ -16181,20 +16173,10 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
   void adc_ext_start();
   void adc_ext_post_procesamiento();
 # 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-  uint16_t dac_ext_set_data(uint32_t data);
-  void dac_ext_prepare(volatile uint16_t *buffer);
+  uint32_t dac_ext_set_data(uint32_t data);
+  void dac_ext_prepare(volatile uint32_t *buffer);
   void dac_ext_send();
-
-
-
-  uint16_t dac_int_set_data(uint32_t data);
-  void dac_int_prepare(volatile uint16_t *buffer);
-  void dac_int_send();
-
-
-
-
-
+# 48 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
 #define ADC_DMA_CANT_MUESTRAS 2048
 #define ADC_FREQ 32000
 
@@ -16218,12 +16200,6 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
    extern SemaphoreHandle_t sem_dac_ext_finish;
-
-
-
-
-
-   extern SemaphoreHandle_t sem_dac_int_finish;
 # 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 1
 # 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
@@ -16507,7 +16483,7 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
  extern uint32_t buffer_complex [1024*2];
- extern uint16_t buffer_dac_out [1024*2];
+ extern uint32_t buffer_dac_out [1024*2];
  extern uint32_t buffer_dep [1024];
  extern uint32_t buffer_dac [1024/2];
 
@@ -16601,10 +16577,36 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
  void vTask_tft(void *pvParameters)
  {
-# 60 "../src/tareas.c"
+
+   tft_Fill(0x0000);
+   tft_Puts(0, 0, "TECNICAS DIGITALES", &tft_Font_11x18, 0x07E0, 0x0000);
+   tft_Puts(120, 25, "II", &tft_Font_11x18, 0xF800, 0x0000);
+   tft_Puts(0, 50, "PROCESAMIENTO DE", &tft_Font_11x18, 0x001F, 0x0000);
+   tft_Puts(100, 75, "AUDIO", &tft_Font_11x18, 0x001F, 0x0000);
+   tft_Puts(0, 100, "MENU", &tft_Font_11x18, 0x001F, 0x0000);
+   tft_Puts(50, 125, "Reverb", &tft_Font_11x18, 0x001F, 0x0000);
+   tft_Puts( 50, 150, "Echo", &tft_Font_11x18, 0x001F, 0x0000);
+   tft_Puts(50, 175, "High Pass Filter", &tft_Font_11x18, 0x001F, 0x0000);
+   tft_Puts(50, 200, "Low Pass Filter", &tft_Font_11x18, 0x001F, 0x0000);
+
+   tft_DrawFilledCircle(30, 135, 7, 0xFFFF);
+   tft_DrawFilledCircle(30, 160, 7, 0xFFFF);
+   tft_DrawFilledCircle(30, 185, 7, 0xFFFF);
+   tft_DrawFilledCircle(30, 210, 7, 0xFFFF);
+
+
   while(1)
   {
-# 72 "../src/tareas.c"
+
+    if(flag_dac_send)
+     tft_Puts(200, 20, "Boton 0", &tft_Font_11x18, 0xF800, 0x0000);
+    if(flag_do_thd)
+     tft_Puts(200, 20, "Boton 1", &tft_Font_11x18, 0x07E0, 0x0000);
+    if(flag_do_rem)
+     tft_Puts(200, 20, "Boton 2", &tft_Font_11x18, 0x001F, 0x0000);
+
+    vTaskDelay(100/( ( TickType_t ) 1000 / ( ( TickType_t ) 1000 ) ));
+
   }
  }
 
@@ -16614,23 +16616,23 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
   uint32_t i;
 
   for(i=0; i<1024*2; i++)
-   buffer_dac_out[i] = i*32;
+   buffer_dac_out[i] = i*128;
 
   while(1)
   {
 
    {
 
-
-
-
-
-
-     xQueueGenericReceive( ( QueueHandle_t ) ( sem_dac_int_finish ), 
-# 93 "../src/tareas.c" 3 4
+     adc_ext_start();
+     xQueueGenericReceive( ( QueueHandle_t ) ( sem_adc_ext_proc ), 
+# 89 "../src/tareas.c" 3 4
     ((void *)0)
-# 93 "../src/tareas.c"
+# 89 "../src/tareas.c"
     , ( ( TickType_t ) 0xffffffffUL ), ( ( BaseType_t ) 0 ) );
+
+
+
+
 
 
 
@@ -16642,12 +16644,14 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
 
-     dac_int_send();
+
 
 
 
      dac_ext_send();
-# 147 "../src/tareas.c"
+# 145 "../src/tareas.c"
+     adc_ext_post_procesamiento();
+
    }
   }
  }

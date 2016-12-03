@@ -58,7 +58,7 @@ void main_init()
 
 	Board_Init();
 
-	//tft_init();
+	tft_init();
 
 	#if USE_UART
 		uart_init();
@@ -72,7 +72,7 @@ void main_init()
 		//fft_init();
 	#endif
 
-	//main_gpio_init();
+	main_gpio_init();
 
 	main_buffer_init();
 

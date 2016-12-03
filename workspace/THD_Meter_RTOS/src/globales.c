@@ -24,7 +24,7 @@
 	uint32_t buffer_complex	[FFT_SIZE*2]
 							 	 	 __attribute__ ((section (".bss.$RamAHB32")));
 
-	uint16_t buffer_dac_out	[FFT_SIZE*2]
+	uint32_t buffer_dac_out	[FFT_SIZE*2]
 							 	 	 __attribute__ ((section (".bss.$RamAHB32")));
 
 	uint32_t buffer_dep		[FFT_SIZE]

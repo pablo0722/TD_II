@@ -154,12 +154,31 @@
 
 
 #if USE_DAC_EXTERNO
-	uint16_t dac_ext_set_data(uint32_t data)
+	uint32_t dac_ext_set_data(uint32_t data)
 	{
-		return (data >> 8);
+		uint32_t aux = 0;
+
+		aux = data;
+
+		if(aux < 0)
+			aux = (aux >> 8);
+		else
+		{
+			aux = aux >> 8 ;
+//			aux &= (0x00FFFFFF);
+		}
+
+		if(aux < 16777216)		// 2^24
+			aux = aux + 8388608;
+		else
+			aux = aux - 8388608;
+
+		aux &= (0x00FFFFFF);
+
+		return (aux << 8);
 	}
 
-	void dac_ext_prepare(volatile uint16_t *buffer)
+	void dac_ext_prepare(volatile uint32_t *buffer)
 	{
 		dma_dac_ext_memory = buffer;
 
@@ -179,7 +198,7 @@
 			// acomodar el dato antes de enviar por DAC
 		for(int i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
 		{
-			//dma_dac_ext_memory[i] = dac_ext_set_data(dma_dac_ext_memory[i]);
+			dma_dac_ext_memory[i] = dac_ext_set_data(dma_dac_ext_memory[i]);
 		}
 
 			// Si el DAC esta disponible para enviar, envia el buffer y pone 'status = STATUS_DAC_TRANSFIRIENDO'

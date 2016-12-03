@@ -78,15 +78,15 @@
 		uint32_t i;
 
 		for(i=0; i<FFT_SIZE*2; i++)
-			buffer_dac_out[i] = i*32;
+			buffer_dac_out[i] = i*128;
 
 		while(1)
 		{
 			//if( (flag_do_thd) || (flag_do_rem) )
 			{
 				#if (USE_ADC_EXTERNO)
-					//adc_ext_start();
-					//xSemaphoreTake(sem_adc_ext_proc, portMAX_DELAY);
+					adc_ext_start();
+					xSemaphoreTake(sem_adc_ext_proc, portMAX_DELAY);
 				#endif
 
 				#if (USE_DAC_INTERNO)
@@ -142,7 +142,7 @@
 */
 
 				#if (USE_ADC_EXTERNO)
-					//adc_ext_post_procesamiento();
+					adc_ext_post_procesamiento();
 				#endif
 			}
 		}

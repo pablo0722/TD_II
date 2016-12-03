@@ -31,8 +31,8 @@
 	#endif
 
 	#if USE_DAC_EXTERNO
-		uint16_t dac_ext_set_data(uint32_t data);			// transforma un dato de uint32_t a uint16_t para ser transmitido por DAC
-		void dac_ext_prepare(volatile uint16_t *buffer);	// Prepara el buffer para poder ser enviado por DAC
+		uint32_t dac_ext_set_data(uint32_t data);			// transforma un dato de uint32_t a uint16_t para ser transmitido por DAC
+		void dac_ext_prepare(volatile uint32_t *buffer);	// Prepara el buffer para poder ser enviado por DAC
 		void dac_ext_send();								// Envia una senial por DAC
 	#endif
 

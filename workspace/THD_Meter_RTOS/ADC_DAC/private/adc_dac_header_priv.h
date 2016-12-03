@@ -25,10 +25,9 @@
 
 		#if (USE_ADC_EXTERNO)
 			// PARA EL ADC POR I2S
-				#define RX_CONFIG0		0
-				#define RX_CONFIG1		1
-				#define RX_CONFIG_ADA	2	// El de Agustin Diaz Antuña (ADA)
-			#define RX_CONFIG	RX_CONFIG_ADA
+				#define RX_CONFIG0		0	// El nuestro
+				#define RX_CONFIG1		1	// El de Agustin Diaz Antuña (ADA)
+			#define RX_CONFIG	RX_CONFIG0
 
 			#if (RX_CONFIG == RX_CONFIG0)
 				#define I2SRX_CLK			0,4, MD_PLN, IOCON_FUNC1	// Se puede usar el mismo CLK para RX y TX
@@ -37,12 +36,6 @@
 			#endif
 
 			#if (RX_CONFIG == RX_CONFIG1)
-				#define I2SRX_CLK			0,23, MD_PLN, IOCON_FUNC2
-				#define I2SRX_WS			0,24, MD_PLN, IOCON_FUNC2
-				#define I2SRX_SDA			0,25, MD_PLN, IOCON_FUNC2
-			#endif
-
-			#if (RX_CONFIG == RX_CONFIG_ADA)
 				#define I2SRX_CLK			0,23, MD_PLN, IOCON_FUNC2	// Se puede usar el mismo CLK para RX y TX
 				#define I2SRX_WS			0,24, MD_PLN, IOCON_FUNC2
 				#define I2SRX_SDA			0,25, MD_PLN, IOCON_FUNC2
@@ -54,10 +47,9 @@
 
 		#if (USE_DAC_EXTERNO)
 			// PARA EL DAC POR I2S
-				#define TX_CONFIG0		0
-				#define TX_CONFIG1		1
-				#define TX_CONFIG_ADA	2	// El de Agustin Diaz Antuña (ADA)
-			#define TX_CONFIG	TX_CONFIG_ADA
+				#define TX_CONFIG0		0	// El nuestro
+				#define TX_CONFIG1		1	// El de Agustin Diaz Antuña (ADA)
+			#define TX_CONFIG	TX_CONFIG0
 
 			#if (TX_CONFIG == TX_CONFIG0)
 				#define I2STX_CLK			0, 7,  MD_PLN, IOCON_FUNC1	// Se puede usar el mismo CLK para RX y TX
@@ -66,13 +58,7 @@
 			#endif
 
 			#if (TX_CONFIG == TX_CONFIG1)
-				#define I2STX_CLK			2, 11, MD_PLN, IOCON_FUNC2
-				#define I2STX_WS			2, 12, MD_PLN, IOCON_FUNC2
-				#define I2STX_SDA			2, 13, MD_PLN, IOCON_FUNC2
-			#endif
-
-			#if (TX_CONFIG == TX_CONFIG_ADA)
-				#define I2STX_CLK			2, 11, MD_PLN, IOCON_FUNC3
+				#define I2STX_CLK			2, 11, MD_PLN, IOCON_FUNC3	// Se puede usar el mismo CLK para RX y TX
 				#define I2STX_WS			2, 12, MD_PLN, IOCON_FUNC3
 				#define I2STX_SDA			2, 13, MD_PLN, IOCON_FUNC3
 			#endif
@@ -130,7 +116,7 @@
 	#if USE_DAC_EXTERNO
 		extern DMA_TransferDescriptor_t dma_dac_ext_descriptor;	// Descriptor del buffer A del Ping-Pong del DAC
 
-		extern volatile uint16_t *		dma_dac_ext_memory;		// Buffer A del Ping-Pong del DAC
+		extern volatile uint32_t *		dma_dac_ext_memory;		// Buffer A del Ping-Pong del DAC
 
 		extern uint8_t 					dma_dac_ext_canal;		// Canal del DAC en el DMA
 	#endif

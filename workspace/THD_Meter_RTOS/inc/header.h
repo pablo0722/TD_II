@@ -44,7 +44,7 @@
 
 // *** BUFFERS *** //
 	extern uint32_t buffer_complex	[FFT_SIZE*2];
-	extern uint16_t buffer_dac_out	[FFT_SIZE*2];
+	extern uint32_t buffer_dac_out	[FFT_SIZE*2];
 	extern uint32_t buffer_dep		[FFT_SIZE];
 	extern uint32_t buffer_dac		[FFT_SIZE/2];
 // *************** //

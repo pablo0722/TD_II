@@ -37,7 +37,7 @@
 	#define USE_ADC		ON
 	#define USE_DAC		ON
 	#define USE_FFT		ON
-	#define USE_TFT		OFF
+	#define USE_TFT		ON
 	#define USE_RTOS	ON
 // ****************************** //
 
@@ -88,7 +88,7 @@
 
 	#if (USE_DAC)
 		//Usar DAC interno y/o externo (externo por I2S)
-		#define USE_DAC_INTERNO		ON
+		#define USE_DAC_INTERNO		OFF
 		#define USE_DAC_EXTERNO		ON
 
 		#if (USE_DAC_INTERNO)
