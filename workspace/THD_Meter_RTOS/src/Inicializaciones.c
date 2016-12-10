@@ -41,6 +41,11 @@ static inline void main_task_init()
 
 static inline void main_buffer_init()
 {
+	for(int i=0; i<FFT_SIZE*2; i++)
+	{
+		buffer_complex[i] = 0;
+	}
+
 	#if (USE_ADC_EXTERNO)
 		adc_ext_prepare(buffer_complex, NULL);
 	#endif
@@ -72,7 +77,7 @@ void main_init()
 		//fft_init();
 	#endif
 
-	main_gpio_init();
+	//main_gpio_init();
 
 	main_buffer_init();
 

@@ -27,7 +27,7 @@
 				// Acomodar el dato del ADC antes de procesar
 			for(int i=0; i<DAC_DMA_CANT_MUESTRAS; i++)
 			{
-				dma_adc_ext_memory[i] = adc_ext_set_data(dma_adc_ext_memory[i]);
+				//dma_adc_ext_memory[i] = adc_ext_set_data(dma_adc_ext_memory[i]);
 			}
 
 			#if USE_RTOS

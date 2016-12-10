@@ -96,30 +96,13 @@
 			NVIC_EnableIRQ(DMA_IRQn);
 
 
-			#if (USE_ADC_EXTERNO)
-				#if DEBUG_MODE
-					printf("\t init buffers ADC externo \r\n");
-				#endif
-
-				// Pido un canal disponible al GPDMA para el ADC
-				dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, GPDMA_CONN_I2S_Channel_1);
-			#endif
-			#if (USE_ADC_INTERNO)
-				#if DEBUG_MODE
-					printf("\t init buffers ADC interno \r\n");
-				#endif
-
-				// Pido un canal disponible al GPDMA para el ADC
-				dma_adc_int_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, GPDMA_CONN_ADC);
-			#endif
-
 			#if (USE_DAC_EXTERNO)
 				#if DEBUG_MODE
 					printf("\t init buffers DAC externo \r\n");
 				#endif
 
 				// Pido un canal disponible al GPDMA para el DAC
-				dma_dac_ext_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, GPDMA_CONN_I2S_Channel_0);
+				dma_dac_ext_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
 			#endif
 			#if (USE_DAC_INTERNO)
 				#if DEBUG_MODE
@@ -127,7 +110,24 @@
 				#endif
 
 				// Pido un canal disponible al GPDMA para el DAC
-				dma_dac_int_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, GPDMA_CONN_DAC);
+				dma_dac_int_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
+			#endif
+
+			#if (USE_ADC_EXTERNO)
+				#if DEBUG_MODE
+					printf("\t init buffers ADC externo \r\n");
+				#endif
+
+				// Pido un canal disponible al GPDMA para el ADC
+				dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
+			#endif
+			#if (USE_ADC_INTERNO)
+				#if DEBUG_MODE
+					printf("\t init buffers ADC interno \r\n");
+				#endif
+
+				// Pido un canal disponible al GPDMA para el ADC
+				dma_adc_int_canal = Chip_GPDMA_GetFreeChannel(LPC_GPDMA, 0);
 			#endif
 
 			#if (!USE_RTOS)
@@ -294,10 +294,9 @@
 		return SUCCESS;
 	}
 
+
 	STATIC INLINE void i2s_init()
 	{
-		I2S_AUDIO_FORMAT_T audio_Confg;
-
 		#if DEBUG_MODE
 			printf("[info] Init I2S \r\n");
 		#endif
@@ -311,6 +310,10 @@
 				vSemaphoreCreateBinary(sem_dac_ext_finish);
 			#endif
 		#endif
+
+
+		///*
+		I2S_AUDIO_FORMAT_T audio_Confg;
 
 		// Configuro I2S_TX usando la estructura I2S_AUDIO_FORMAT_T y modifico la función
 		audio_Confg.SampleRate = ADC_FREQ;
@@ -385,6 +388,72 @@
 				#endif
 			#endif
 		#endif
+		//*/
+
+
+
+
+
+
+		/*
+		static char init_flag = 0;
+
+		if(!init_flag)
+		{
+			// Configuro los pines de RX de P0, ver defines
+			Chip_IOCON_PinMux(LPC_IOCON, I2SRX_CLK);
+			Chip_IOCON_PinMux(LPC_IOCON, I2SRX_SDA);
+			Chip_IOCON_PinMux(LPC_IOCON, I2SRX_WS);
+			Chip_IOCON_PinMux(LPC_IOCON, RX_MCLK);
+			// Configuro los pibes del TX de P0, ver defines
+			Chip_IOCON_PinMux(LPC_IOCON, I2STX_CLK);
+			Chip_IOCON_PinMux(LPC_IOCON, I2STX_SDA);
+			Chip_IOCON_PinMux(LPC_IOCON, I2STX_WS);
+			Chip_IOCON_PinMux(LPC_IOCON, TX_MCLK);
+
+
+			// Configuro I2S_TX usando la estructura I2S_AUDIO_FORMAT_T y modifico la función
+			I2S_AUDIO_FORMAT_T audio_Confg;
+			audio_Confg.SampleRate = 32000;
+			audio_Confg.ChannelNumber = 2;			// 1 mono 2 stereo
+			audio_Confg.WordWidth = 32;				// Word Len
+
+			// Configuro el clk del periférico para que trabaje a 96MHz
+			Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_I2S, SYSCTL_CLKDIV_1);
+
+			Chip_I2S_Init(LPC_I2S);
+
+			Chip_I2S_RxStop(LPC_I2S);
+			Chip_I2S_TxStop(LPC_I2S);
+			Chip_I2S_EnableMute(LPC_I2S);
+
+
+			Chip_I2S_DisableMute(LPC_I2S);
+			Chip_I2S_RxStart(LPC_I2S);
+			Chip_I2S_TxStart(LPC_I2S);
+
+			Chip_I2S_Int_RxCmd(LPC_I2S, ENABLE, 1);
+			Chip_I2S_Int_TxCmd(LPC_I2S, ENABLE, 1);
+
+			// Configuro modo RX
+			mi_Chip_I2S_RxConfig(LPC_I2S, &audio_Confg);
+			// Configuro modo TX
+			mi_Chip_I2S_TxConfig(LPC_I2S, &audio_Confg);
+
+			#if USE_DMA
+				Chip_I2S_DMA_RxCmd(LPC_I2S, I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
+				Chip_I2S_DMA_TxCmd(LPC_I2S, I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
+
+				NVIC_DisableIRQ(I2S_IRQn);
+			#else
+
+				NVIC_EnableIRQ(I2S_IRQn);
+			#endif
+
+
+			init_flag = 1;
+		}
+		*/
 	}
 #endif
 

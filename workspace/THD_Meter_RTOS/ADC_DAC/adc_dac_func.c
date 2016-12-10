@@ -22,26 +22,26 @@
 		// Preparo el descriptor para el BUFFER_A
 		Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
 									(DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_A,
-									(uint32_t) GPDMA_CONN_I2S_Channel_0,
+									(uint32_t) GPDMA_CONN_I2S_Channel_1,
 									(uint32_t) dma_adc_ext_memory_A,
 									ADC_DMA_CANT_MUESTRAS,
 									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA,
 									NULL);
-		dma_adc_ext_descriptor_A.src = GPDMA_CONN_I2S_Channel_0;
+		dma_adc_ext_descriptor_A.src = GPDMA_CONN_I2S_Channel_1;
 
 		// Preparo el descriptor para el BUFFER_B
 		Chip_GPDMA_PrepareDescriptor(LPC_GPDMA,
 									(DMA_TransferDescriptor_t *) &dma_adc_ext_descriptor_B,
-									(uint32_t) GPDMA_CONN_I2S_Channel_0,
+									(uint32_t) GPDMA_CONN_I2S_Channel_1,
 									(uint32_t) dma_adc_ext_memory_B,
 									ADC_DMA_CANT_MUESTRAS,
 									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA,
 									NULL);
-		dma_adc_ext_descriptor_B.src = GPDMA_CONN_I2S_Channel_0;
+		dma_adc_ext_descriptor_B.src = GPDMA_CONN_I2S_Channel_1;
 
 		dma_adc_ext_status = STATUS_ADC_IDLE;
 
-		if(buffer_B)
+		//if(buffer_B)
 			adc_ext_start();
 	}
 

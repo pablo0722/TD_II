@@ -31,7 +31,6 @@ static inline void pin_gpio_init(uint8_t port, uint8_t pin, uint32_t mode, bool 
 //	}
 
 	Chip_IOCON_PinMux(LPC_IOCON, port, pin, mode, IOCON_FUNC0);		// Setea modo (inactivo/pulldown/pullup/repeater) y funcion (gpio) del pin
-
 	Chip_GPIO_SetDir(LPC_GPIO, port, pin, (uint8_t)salida);			// Setea direccion del pin: entrada o salida
 
 	if(salida)

@@ -13,7 +13,7 @@
 #if USE_DMA
 	void DMA_IRQHandler(void)
 	{
-
+		/*
 		#if USE_ADC_EXTERNO
 			if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_adc_ext_canal) == SUCCESS) // Se fija si interrumpio el ADC externo
 			{
@@ -143,6 +143,28 @@
 				portEND_SWITCHING_ISR(pxHigherPiorityTaskWoken);
 			}
 		#endif
+		*/
+
+
+
+
+
+
+
+		if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_adc_ext_canal)) // Se fija si interrumpio el ADC
+		{
+			// Transmito el BUFFER
+			Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_dac_ext_canal,
+									&dma_dac_ext_descriptor,
+									GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
+		}
+		if(Chip_GPDMA_Interrupt(LPC_GPDMA, dma_dac_ext_canal)) // Se fija si interrumpio el DAC
+		{
+			Chip_GPDMA_SGTransfer(LPC_GPDMA, dma_adc_ext_canal,
+									&dma_adc_ext_descriptor_A,
+									GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
+		}
+
 	}
 #endif
 

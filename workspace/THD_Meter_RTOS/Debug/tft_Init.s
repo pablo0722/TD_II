@@ -815,24 +815,24 @@ pin_gpio_init:
 	ldr	r3, [r7]
 	ldr	r0, .L31
 	bl	Chip_IOCON_PinMux
-	.loc 4 35 0
+	.loc 4 34 0
 	ldrb	r2, [r7, #6]	@ zero_extendqisi2
 	ldrb	r3, [r7, #5]	@ zero_extendqisi2
 	ldrb	r1, [r7, #7]	@ zero_extendqisi2
 	ldr	r0, .L31+4
 	bl	Chip_GPIO_SetDir
-	.loc 4 37 0
+	.loc 4 36 0
 	ldrb	r3, [r7, #5]	@ zero_extendqisi2
 	cmp	r3, #0
 	beq	.L30
-	.loc 4 38 0
+	.loc 4 37 0
 	ldrb	r1, [r7, #6]	@ zero_extendqisi2
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	movs	r2, #0
 	mov	r0, r3
 	bl	pin_set
 .L30:
-	.loc 4 39 0
+	.loc 4 38 0
 	nop
 	adds	r7, r7, #8
 	.cfi_def_cfa_offset 8
@@ -12509,7 +12509,7 @@ tft_LCD_Init_priv:
 	.uleb128 0x1c77
 	.4byte	.LASF2631
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.utilidades.h.27.754c52679afafffb22bd854bcb8fe334,comdat
+	.section	.debug_macro,"G",%progbits,wm4.utilidades.h.27.7953e4c421cbccbf3a101e6dec5e80be,comdat
 .Ldebug_macro54:
 	.2byte	0x4
 	.byte	0
@@ -12877,7 +12877,7 @@ tft_LCD_Init_priv:
 	.uleb128 0x2e
 	.4byte	.LASF2745
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.header.h.55.bb54484b9311461e29b31dd901ef5ff0,comdat
+	.section	.debug_macro,"G",%progbits,wm4.header.h.55.19eed82b19e4c74fe5e72b84ad6bd540,comdat
 .Ldebug_macro61:
 	.2byte	0x4
 	.byte	0
@@ -14070,8 +14070,6 @@ tft_LCD_Init_priv:
 	.ascii	"MPU_TYPE_SEPARATE_Pos 0\000"
 .LASF1497:
 	.ascii	"ENET_MWTD_DATA(n) ((n) & 0xFFFF)\000"
-.LASF2754:
-	.ascii	"LED_IM_ALIVE_INIT 1, 0, MD_PLN, SALIDA\000"
 .LASF716:
 	.ascii	"SCB_ICSR_PENDSTCLR_Msk (1UL << SCB_ICSR_PENDSTCLR_P"
 	.ascii	"os)\000"
@@ -15525,6 +15523,8 @@ tft_LCD_Init_priv:
 	.ascii	"UART_FCR_TRG_LEV0 (0)\000"
 .LASF419:
 	.ascii	"NULL ((void *)0)\000"
+.LASF2755:
+	.ascii	"LED_IM_ALIVE 0, 16\000"
 .LASF1698:
 	.ascii	"I2C_I2CONCLR_SIC ((1 << 3))\000"
 .LASF893:
@@ -16269,8 +16269,6 @@ tft_LCD_Init_priv:
 	.ascii	"LPC_I2C2 ((LPC_I2C_T *) LPC_I2C2_BASE)\000"
 .LASF215:
 	.ascii	"__ULFRACT_IBIT__ 0\000"
-.LASF2639:
-	.ascii	"USE_TFT ON\000"
 .LASF2503:
 	.ascii	"tskKERNEL_VERSION_NUMBER \"V8.2.3\"\000"
 .LASF1208:
@@ -16333,6 +16331,8 @@ tft_LCD_Init_priv:
 	.ascii	"CR_ARM_MATH_H_ \000"
 .LASF2254:
 	.ascii	"pdINTEGRITY_CHECK_VALUE 0x5a5a5a5aUL\000"
+.LASF2639:
+	.ascii	"USE_TFT OFF\000"
 .LASF392:
 	.ascii	"__EXIT_SUCCESS 0\000"
 .LASF115:
@@ -16620,6 +16620,8 @@ tft_LCD_Init_priv:
 	.ascii	"SSP_SLAVE_MODE SSP_CR1_SLAVE_EN\000"
 .LASF2175:
 	.ascii	"EOF (-1)\000"
+.LASF2754:
+	.ascii	"LED_IM_ALIVE_INIT 0, 16, MD_PLN, SALIDA\000"
 .LASF2474:
 	.ascii	"configUSE_TASK_FPU_SUPPORT 1\000"
 .LASF954:
@@ -17151,8 +17153,6 @@ tft_LCD_Init_priv:
 	.ascii	"inited(x) : __isfinitel(x))\000"
 .LASF1031:
 	.ascii	"MPU_RASR_TEX_Pos 19\000"
-.LASF2755:
-	.ascii	"LED_IM_ALIVE 1, 0\000"
 .LASF834:
 	.ascii	"SysTick_CALIB_NOREF_Msk (1UL << SysTick_CALIB_NOREF"
 	.ascii	"_Pos)\000"

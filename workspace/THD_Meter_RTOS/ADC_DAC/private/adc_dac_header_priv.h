@@ -27,7 +27,7 @@
 			// PARA EL ADC POR I2S
 				#define RX_CONFIG0		0	// El nuestro
 				#define RX_CONFIG1		1	// El de Agustin Diaz Antuña (ADA)
-			#define RX_CONFIG	RX_CONFIG0
+			#define RX_CONFIG	RX_CONFIG1
 
 			#if (RX_CONFIG == RX_CONFIG0)
 				#define I2SRX_CLK			0,4, MD_PLN, IOCON_FUNC1	// Se puede usar el mismo CLK para RX y TX
@@ -49,7 +49,7 @@
 			// PARA EL DAC POR I2S
 				#define TX_CONFIG0		0	// El nuestro
 				#define TX_CONFIG1		1	// El de Agustin Diaz Antuña (ADA)
-			#define TX_CONFIG	TX_CONFIG0
+			#define TX_CONFIG	TX_CONFIG1
 
 			#if (TX_CONFIG == TX_CONFIG0)
 				#define I2STX_CLK			0, 7,  MD_PLN, IOCON_FUNC1	// Se puede usar el mismo CLK para RX y TX

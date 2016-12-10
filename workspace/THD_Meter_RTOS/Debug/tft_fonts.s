@@ -14636,7 +14636,7 @@ tft_Font_16x26:
 	.uleb128 0x1c77
 	.4byte	.LASF2631
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.utilidades.h.27.754c52679afafffb22bd854bcb8fe334,comdat
+	.section	.debug_macro,"G",%progbits,wm4.utilidades.h.27.7953e4c421cbccbf3a101e6dec5e80be,comdat
 .Ldebug_macro54:
 	.2byte	0x4
 	.byte	0
@@ -15004,7 +15004,7 @@ tft_Font_16x26:
 	.uleb128 0x2e
 	.4byte	.LASF2745
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.header.h.55.bb54484b9311461e29b31dd901ef5ff0,comdat
+	.section	.debug_macro,"G",%progbits,wm4.header.h.55.19eed82b19e4c74fe5e72b84ad6bd540,comdat
 .Ldebug_macro61:
 	.2byte	0x4
 	.byte	0
@@ -16013,8 +16013,6 @@ tft_Font_16x26:
 	.ascii	"MPU_TYPE_SEPARATE_Pos 0\000"
 .LASF1497:
 	.ascii	"ENET_MWTD_DATA(n) ((n) & 0xFFFF)\000"
-.LASF2754:
-	.ascii	"LED_IM_ALIVE_INIT 1, 0, MD_PLN, SALIDA\000"
 .LASF716:
 	.ascii	"SCB_ICSR_PENDSTCLR_Msk (1UL << SCB_ICSR_PENDSTCLR_P"
 	.ascii	"os)\000"
@@ -18102,8 +18100,6 @@ tft_Font_16x26:
 	.ascii	"LPC_I2C2 ((LPC_I2C_T *) LPC_I2C2_BASE)\000"
 .LASF1723:
 	.ascii	"I2C_I2STAT_M_RX_DAT_ACK ((0x50))\000"
-.LASF2639:
-	.ascii	"USE_TFT ON\000"
 .LASF2136:
 	.ascii	"DEBUG_ENABLE \000"
 .LASF445:
@@ -18159,6 +18155,8 @@ tft_Font_16x26:
 	.ascii	"CAN_GSR_DOS ((uint32_t) (1 << 1))\000"
 .LASF2254:
 	.ascii	"pdINTEGRITY_CHECK_VALUE 0x5a5a5a5aUL\000"
+.LASF2639:
+	.ascii	"USE_TFT OFF\000"
 .LASF392:
 	.ascii	"__EXIT_SUCCESS 0\000"
 .LASF115:
@@ -18441,6 +18439,8 @@ tft_Font_16x26:
 	.ascii	"SSP_SLAVE_MODE SSP_CR1_SLAVE_EN\000"
 .LASF2175:
 	.ascii	"EOF (-1)\000"
+.LASF2754:
+	.ascii	"LED_IM_ALIVE_INIT 0, 16, MD_PLN, SALIDA\000"
 .LASF2474:
 	.ascii	"configUSE_TASK_FPU_SUPPORT 1\000"
 .LASF954:
@@ -18931,8 +18931,6 @@ tft_Font_16x26:
 	.ascii	"inited(x) : __isfinitel(x))\000"
 .LASF1031:
 	.ascii	"MPU_RASR_TEX_Pos 19\000"
-.LASF2755:
-	.ascii	"LED_IM_ALIVE 1, 0\000"
 .LASF834:
 	.ascii	"SysTick_CALIB_NOREF_Msk (1UL << SysTick_CALIB_NOREF"
 	.ascii	"_Pos)\000"
@@ -19001,6 +18999,8 @@ tft_Font_16x26:
 	.ascii	"SysTick_LOAD_RELOAD_Pos 0\000"
 .LASF2131:
 	.ascii	"IAP_INVALID_STOP_BIT 18\000"
+.LASF2755:
+	.ascii	"LED_IM_ALIVE 0, 16\000"
 .LASF1354:
 	.ascii	"CAN_BTR_SAM ((uint32_t) (1 << 23))\000"
 .LASF318:

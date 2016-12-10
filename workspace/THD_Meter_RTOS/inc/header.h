@@ -68,8 +68,8 @@
 
 // *** LEDS *** //
 		// Pin 95 - Led 0 (led testigo)
-	#define LED_IM_ALIVE_INIT		1, 0, MD_PLN, SALIDA
-	#define LED_IM_ALIVE			1, 0
+	#define LED_IM_ALIVE_INIT		0, 16, MD_PLN, SALIDA
+	#define LED_IM_ALIVE			0, 16
 
 		// Pin - Led 1
 	#define LED_1_INIT				1, 1, MD_PLN, SALIDA

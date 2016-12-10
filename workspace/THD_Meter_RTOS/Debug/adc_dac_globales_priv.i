@@ -15957,7 +15957,7 @@ void arm_rfft_fast_f32(
 #define USE_ADC ON
 #define USE_DAC ON
 #define USE_FFT ON
-#define USE_TFT ON
+#define USE_TFT OFF
 #define USE_RTOS ON
 
 
@@ -16040,7 +16040,6 @@ static inline void pin_gpio_init(uint8_t port, uint8_t pin, uint32_t mode,
 
 
  Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, 0x0);
-
  Chip_GPIO_SetDir(((LPC_GPIO_T *) 0x2009C000), port, pin, (uint8_t)salida);
 
  if(salida)
@@ -16507,8 +16506,8 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
 
-#define LED_IM_ALIVE_INIT 1, 0, MD_PLN, SALIDA
-#define LED_IM_ALIVE 1, 0
+#define LED_IM_ALIVE_INIT 0, 16, MD_PLN, SALIDA
+#define LED_IM_ALIVE 0, 16
 
 
 #define LED_1_INIT 1, 1, MD_PLN, SALIDA
@@ -16568,13 +16567,13 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 #define RX_CONFIG0 0
 #define RX_CONFIG1 1
-#define RX_CONFIG RX_CONFIG0
+#define RX_CONFIG RX_CONFIG1
+# 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_header_priv.h"
+#define I2SRX_CLK 0,23, MD_PLN, IOCON_FUNC2
+#define I2SRX_WS 0,24, MD_PLN, IOCON_FUNC2
+#define I2SRX_SDA 0,25, MD_PLN, IOCON_FUNC2
 
 
-#define I2SRX_CLK 0,4, MD_PLN, IOCON_FUNC1
-#define I2SRX_WS 0,5, MD_PLN, IOCON_FUNC1
-#define I2SRX_SDA 0,6, MD_PLN, IOCON_FUNC1
-# 44 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_header_priv.h"
 #define RX_MCLK 4, 28, MD_PLN, IOCON_FUNC1
 
 
@@ -16583,13 +16582,13 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 #define TX_CONFIG0 0
 #define TX_CONFIG1 1
-#define TX_CONFIG TX_CONFIG0
+#define TX_CONFIG TX_CONFIG1
+# 61 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_header_priv.h"
+#define I2STX_CLK 2, 11, MD_PLN, IOCON_FUNC3
+#define I2STX_WS 2, 12, MD_PLN, IOCON_FUNC3
+#define I2STX_SDA 2, 13, MD_PLN, IOCON_FUNC3
 
 
-#define I2STX_CLK 0, 7, MD_PLN, IOCON_FUNC1
-#define I2STX_WS 0, 8, MD_PLN, IOCON_FUNC1
-#define I2STX_SDA 0, 9, MD_PLN, IOCON_FUNC1
-# 66 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_header_priv.h"
 #define TX_MCLK 4, 29, MD_PLN, IOCON_FUNC1
 # 85 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_header_priv.h"
 #define STATUS_ADC_IDLE -1
@@ -16659,9 +16658,9 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
    NVIC_SetPriority(DMA_IRQn, ((0x01<<3)|0x01));
    NVIC_EnableIRQ(DMA_IRQn);
 # 105 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
-    dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), ((6UL)));
+    dma_dac_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
 # 122 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
-    dma_dac_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), ((5UL)));
+    dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
 # 137 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
    flag_init = 0;
   }
@@ -16823,10 +16822,9 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
   return SUCCESS;
  }
 
+
  static inline void i2s_init()
  {
-  I2S_AUDIO_FORMAT_T audio_Confg;
-
 
 
 
@@ -16834,32 +16832,36 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
     { ( sem_adc_ext_proc ) = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) ); if( ( sem_adc_ext_proc ) != 
-# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
+# 306 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
    ((void *)0) 
-# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
+# 306 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
    ) { ( void ) xQueueGenericSend( ( QueueHandle_t ) ( ( sem_adc_ext_proc ) ), 
-# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
+# 306 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
    ((void *)0)
-# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
+# 306 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
    , ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) ); } };
     xQueueGenericReceive( ( QueueHandle_t ) ( sem_adc_ext_proc ), 
-# 308 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
+# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
    ((void *)0)
-# 308 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
+# 307 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
    , ( ( TickType_t ) 0xffffffffUL ), ( ( BaseType_t ) 0 ) );
 
 
     { ( sem_dac_ext_finish ) = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) ); if( ( sem_dac_ext_finish ) != 
-# 311 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
+# 310 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
    ((void *)0) 
-# 311 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
+# 310 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
    ) { ( void ) xQueueGenericSend( ( QueueHandle_t ) ( ( sem_dac_ext_finish ) ), 
-# 311 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
+# 310 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h" 3 4
    ((void *)0)
-# 311 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
+# 310 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
    , ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) ); } };
 
 
+
+
+
+  I2S_AUDIO_FORMAT_T audio_Confg;
 
 
   audio_Confg.SampleRate = 32000;
@@ -16875,17 +16877,17 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
 
-   pin_init(0,4, (0x2), 0x1);
-   pin_init(0,6, (0x2), 0x1);
-   pin_init(0,5, (0x2), 0x1);
+   pin_init(0,23, (0x2), 0x2);
+   pin_init(0,25, (0x2), 0x2);
+   pin_init(0,24, (0x2), 0x2);
    pin_init(4, 28, (0x2), 0x1);
 
 
 
 
-   pin_init(0, 7, (0x2), 0x1);
-   pin_init(0, 9, (0x2), 0x1);
-   pin_init(0, 8, (0x2), 0x1);
+   pin_init(2, 11, (0x2), 0x3);
+   pin_init(2, 13, (0x2), 0x3);
+   pin_init(2, 12, (0x2), 0x3);
    pin_init(4, 29, (0x2), 0x1);
 
 
@@ -16912,19 +16914,13 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
     Chip_I2S_DMA_RxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
-# 376 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
+# 379 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
    Chip_I2S_Int_TxCmd(((LPC_I2S_T *) 0x400A8000), ENABLE, 1);
    mi_Chip_I2S_TxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
 
 
     Chip_I2S_DMA_TxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
-
-
-
-
-
-
-
+# 457 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_init_priv.h"
  }
 # 135 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/private/adc_dac_header_priv.h" 2
 # 12 "../ADC_DAC/private/adc_dac_globales_priv.c" 2

@@ -220,43 +220,6 @@ vTask_teclado:
 	.cfi_endproc
 .LFE380:
 	.size	vTask_teclado, .-vTask_teclado
-	.section	.rodata
-	.align	2
-.LC0:
-	.ascii	"TECNICAS DIGITALES\000"
-	.align	2
-.LC1:
-	.ascii	"II\000"
-	.align	2
-.LC2:
-	.ascii	"PROCESAMIENTO DE\000"
-	.align	2
-.LC3:
-	.ascii	"AUDIO\000"
-	.align	2
-.LC4:
-	.ascii	"MENU\000"
-	.align	2
-.LC5:
-	.ascii	"Reverb\000"
-	.align	2
-.LC6:
-	.ascii	"Echo\000"
-	.align	2
-.LC7:
-	.ascii	"High Pass Filter\000"
-	.align	2
-.LC8:
-	.ascii	"Low Pass Filter\000"
-	.align	2
-.LC9:
-	.ascii	"Boton 0\000"
-	.align	2
-.LC10:
-	.ascii	"Boton 1\000"
-	.align	2
-.LC11:
-	.ascii	"Boton 2\000"
 	.section	.text.vTask_tft,"ax",%progbits
 	.align	2
 	.global	vTask_tft
@@ -269,205 +232,18 @@ vTask_tft:
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
-	push	{r7, lr}
-	.cfi_def_cfa_offset 8
-	.cfi_offset 7, -8
-	.cfi_offset 14, -4
-	sub	sp, sp, #16
-	.cfi_def_cfa_offset 24
-	add	r7, sp, #8
-	.cfi_def_cfa 7, 16
+	@ link register save eliminated.
+	push	{r7}
+	.cfi_def_cfa_offset 4
+	.cfi_offset 7, -4
+	sub	sp, sp, #12
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 3 43 0
-	movs	r0, #0
-	bl	tft_Fill
-	.loc 3 44 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	mov	r3, #2016
-	str	r3, [sp]
-	ldr	r3, .L19
-	ldr	r2, .L19+4
-	movs	r1, #0
-	movs	r0, #0
-	bl	tft_Puts
-	.loc 3 45 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	mov	r3, #63488
-	str	r3, [sp]
-	ldr	r3, .L19
-	ldr	r2, .L19+8
-	movs	r1, #25
-	movs	r0, #120
-	bl	tft_Puts
-	.loc 3 46 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	movs	r3, #31
-	str	r3, [sp]
-	ldr	r3, .L19
-	ldr	r2, .L19+12
-	movs	r1, #50
-	movs	r0, #0
-	bl	tft_Puts
-	.loc 3 47 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	movs	r3, #31
-	str	r3, [sp]
-	ldr	r3, .L19
-	ldr	r2, .L19+16
-	movs	r1, #75
-	movs	r0, #100
-	bl	tft_Puts
-	.loc 3 48 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	movs	r3, #31
-	str	r3, [sp]
-	ldr	r3, .L19
-	ldr	r2, .L19+20
-	movs	r1, #100
-	movs	r0, #0
-	bl	tft_Puts
-	.loc 3 49 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	movs	r3, #31
-	str	r3, [sp]
-	ldr	r3, .L19
-	ldr	r2, .L19+24
-	movs	r1, #125
-	movs	r0, #50
-	bl	tft_Puts
-	.loc 3 50 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	movs	r3, #31
-	str	r3, [sp]
-	ldr	r3, .L19
-	ldr	r2, .L19+28
-	movs	r1, #150
-	movs	r0, #50
-	bl	tft_Puts
-	.loc 3 51 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	movs	r3, #31
-	str	r3, [sp]
-	ldr	r3, .L19
-	ldr	r2, .L19+32
-	movs	r1, #175
-	movs	r0, #50
-	bl	tft_Puts
-	.loc 3 52 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	movs	r3, #31
-	str	r3, [sp]
-	ldr	r3, .L19
-	ldr	r2, .L19+36
-	movs	r1, #200
-	movs	r0, #50
-	bl	tft_Puts
-	.loc 3 54 0
-	movw	r3, #65535
-	movs	r2, #7
-	movs	r1, #135
-	movs	r0, #30
-	bl	tft_DrawFilledCircle
-	.loc 3 55 0
-	movw	r3, #65535
-	movs	r2, #7
-	movs	r1, #160
-	movs	r0, #30
-	bl	tft_DrawFilledCircle
-	.loc 3 56 0
-	movw	r3, #65535
-	movs	r2, #7
-	movs	r1, #185
-	movs	r0, #30
-	bl	tft_DrawFilledCircle
-	.loc 3 57 0
-	movw	r3, #65535
-	movs	r2, #7
-	movs	r1, #210
-	movs	r0, #30
-	bl	tft_DrawFilledCircle
-.L18:
-	.loc 3 63 0
-	ldr	r3, .L19+40
-	ldrb	r3, [r3]	@ zero_extendqisi2
-	cmp	r3, #0
-	beq	.L15
-	.loc 3 64 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	mov	r3, #63488
-	str	r3, [sp]
-	ldr	r3, .L19
-	ldr	r2, .L19+44
-	movs	r1, #20
-	movs	r0, #200
-	bl	tft_Puts
 .L15:
-	.loc 3 65 0
-	ldr	r3, .L19+48
-	ldrb	r3, [r3]	@ zero_extendqisi2
-	cmp	r3, #0
-	beq	.L16
-	.loc 3 66 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	mov	r3, #2016
-	str	r3, [sp]
-	ldr	r3, .L19
-	ldr	r2, .L19+52
-	movs	r1, #20
-	movs	r0, #200
-	bl	tft_Puts
-.L16:
-	.loc 3 67 0
-	ldr	r3, .L19+56
-	ldrb	r3, [r3]	@ zero_extendqisi2
-	cmp	r3, #0
-	beq	.L17
-	.loc 3 68 0
-	movs	r3, #0
-	str	r3, [sp, #4]
-	movs	r3, #31
-	str	r3, [sp]
-	ldr	r3, .L19
-	ldr	r2, .L19+60
-	movs	r1, #20
-	movs	r0, #200
-	bl	tft_Puts
-.L17:
-	.loc 3 70 0
-	movs	r0, #100
-	bl	vTaskDelay
-	.loc 3 72 0
-	b	.L18
-.L20:
-	.align	2
-.L19:
-	.word	tft_Font_11x18
-	.word	.LC0
-	.word	.LC1
-	.word	.LC2
-	.word	.LC3
-	.word	.LC4
-	.word	.LC5
-	.word	.LC6
-	.word	.LC7
-	.word	.LC8
-	.word	flag_dac_send
-	.word	.LC9
-	.word	flag_do_thd
-	.word	.LC10
-	.word	flag_do_rem
-	.word	.LC11
+	.loc 3 72 0 discriminator 1
+	b	.L15
 	.cfi_endproc
 .LFE381:
 	.size	vTask_tft, .-vTask_tft
@@ -498,35 +274,35 @@ vTask_THD:
 	.loc 3 80 0
 	movs	r3, #0
 	str	r3, [r7, #12]
-	b	.L22
-.L23:
+	b	.L17
+.L18:
 	.loc 3 81 0 discriminator 3
 	ldr	r3, [r7, #12]
 	lsls	r2, r3, #7
-	ldr	r1, .L25
+	ldr	r1, .L20
 	ldr	r3, [r7, #12]
 	str	r2, [r1, r3, lsl #2]
 	.loc 3 80 0 discriminator 3
 	ldr	r3, [r7, #12]
 	adds	r3, r3, #1
 	str	r3, [r7, #12]
-.L22:
+.L17:
 	.loc 3 80 0 is_stmt 0 discriminator 1
 	ldr	r3, [r7, #12]
 	cmp	r3, #2048
-	bcc	.L23
-.L24:
+	bcc	.L18
+.L19:
 	.loc 3 88 0 is_stmt 1 discriminator 1
 	bl	adc_ext_start
 	.loc 3 89 0 discriminator 1
-	ldr	r3, .L25+4
+	ldr	r3, .L20+4
 	ldr	r0, [r3]
 	movs	r3, #0
 	mov	r2, #-1
 	movs	r1, #0
 	bl	xQueueGenericReceive
 	.loc 3 97 0 discriminator 1
-	ldr	r3, .L25+8
+	ldr	r3, .L20+8
 	ldr	r0, [r3]
 	movs	r3, #0
 	mov	r2, #-1
@@ -537,10 +313,10 @@ vTask_THD:
 	.loc 3 145 0 discriminator 1
 	bl	adc_ext_post_procesamiento
 	.loc 3 148 0 discriminator 1
-	b	.L24
-.L26:
+	b	.L19
+.L21:
 	.align	2
-.L25:
+.L20:
 	.word	buffer_dac_out
 	.word	sem_adc_ext_proc
 	.word	sem_dac_ext_finish
@@ -555,23 +331,22 @@ vTask_THD:
 	.file 7 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/queue.h"
 	.file 8 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/semphr.h"
 	.file 9 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\CMSIS_DSPLIB_CM3\\inc/arm/arm_math.h"
-	.file 10 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TFT/tft_header.h"
-	.file 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/core_cm3.h"
-	.file 12 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/chip.h"
-	.file 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
-	.file 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-	.file 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h"
+	.file 10 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/core_cm3.h"
+	.file 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/chip.h"
+	.file 12 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_header.h"
+	.file 13 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
+	.file 14 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x474
+	.4byte	0x426
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF2842
+	.4byte	.LASF2837
 	.byte	0xc
-	.4byte	.LASF2843
-	.4byte	.LASF2844
+	.4byte	.LASF2838
+	.4byte	.LASF2839
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -816,16 +591,11 @@ vTask_THD:
 	.byte	0x9
 	.2byte	0x801
 	.4byte	0x199
-	.uleb128 0xf
-	.byte	0x4
-	.4byte	0x210
-	.uleb128 0x12
-	.4byte	0x65
 	.uleb128 0x10
 	.byte	0x1c
 	.byte	0x9
 	.2byte	0x878
-	.4byte	0x287
+	.4byte	0x27c
 	.uleb128 0x11
 	.4byte	.LASF2809
 	.byte	0x9
@@ -872,7 +642,7 @@ vTask_THD:
 	.4byte	.LASF2816
 	.byte	0x9
 	.2byte	0x881
-	.4byte	0x287
+	.4byte	0x27c
 	.byte	0x18
 	.byte	0
 	.uleb128 0xf
@@ -882,38 +652,9 @@ vTask_THD:
 	.4byte	.LASF2817
 	.byte	0x9
 	.2byte	0x882
-	.4byte	0x215
-	.uleb128 0xa
-	.byte	0x8
-	.byte	0xa
-	.byte	0x21
-	.4byte	0x2c6
-	.uleb128 0xc
-	.4byte	.LASF2818
-	.byte	0xa
-	.byte	0x23
-	.4byte	0x29
-	.byte	0
-	.uleb128 0xc
-	.4byte	.LASF2819
-	.byte	0xa
-	.byte	0x24
-	.4byte	0x29
-	.byte	0x1
-	.uleb128 0xc
-	.4byte	.LASF2820
-	.byte	0xa
-	.byte	0x25
 	.4byte	0x20a
-	.byte	0x4
-	.byte	0
-	.uleb128 0x4
-	.4byte	.LASF2821
-	.byte	0xa
-	.byte	0x26
-	.4byte	0x299
-	.uleb128 0x13
-	.4byte	.LASF2824
+	.uleb128 0x12
+	.4byte	.LASF2820
 	.byte	0x1
 	.byte	0x77
 	.4byte	0xd2
@@ -921,24 +662,24 @@ vTask_THD:
 	.4byte	.LFE138-.LFB138
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x315
-	.uleb128 0x14
-	.4byte	.LASF2822
+	.4byte	0x2d2
+	.uleb128 0x13
+	.4byte	.LASF2818
 	.byte	0x1
 	.byte	0x77
-	.4byte	0x315
+	.4byte	0x2d2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x14
-	.4byte	.LASF2823
+	.uleb128 0x13
+	.4byte	.LASF2819
 	.byte	0x1
 	.byte	0x77
 	.4byte	0x53
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -13
-	.uleb128 0x15
+	.uleb128 0x14
 	.ascii	"pin\000"
 	.byte	0x1
 	.byte	0x77
@@ -950,8 +691,8 @@ vTask_THD:
 	.uleb128 0xf
 	.byte	0x4
 	.4byte	0x13a
-	.uleb128 0x16
-	.4byte	.LASF2825
+	.uleb128 0x15
+	.4byte	.LASF2821
 	.byte	0x2
 	.byte	0x14
 	.4byte	0xd2
@@ -959,16 +700,16 @@ vTask_THD:
 	.4byte	.LFE370-.LFB370
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x351
-	.uleb128 0x14
-	.4byte	.LASF2823
+	.4byte	0x30e
+	.uleb128 0x13
+	.4byte	.LASF2819
 	.byte	0x2
 	.byte	0x14
 	.4byte	0x53
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
-	.uleb128 0x15
+	.uleb128 0x14
 	.ascii	"pin\000"
 	.byte	0x2
 	.byte	0x14
@@ -977,17 +718,17 @@ vTask_THD:
 	.byte	0x91
 	.sleb128 -10
 	.byte	0
-	.uleb128 0x17
-	.4byte	.LASF2827
+	.uleb128 0x16
+	.4byte	.LASF2823
 	.byte	0x3
 	.byte	0xd
 	.4byte	.LFB380
 	.4byte	.LFE380-.LFB380
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x375
-	.uleb128 0x14
-	.4byte	.LASF2826
+	.4byte	0x332
+	.uleb128 0x13
+	.4byte	.LASF2822
 	.byte	0x3
 	.byte	0xd
 	.4byte	0x145
@@ -996,16 +737,16 @@ vTask_THD:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x17
-	.4byte	.LASF2828
+	.4byte	.LASF2824
 	.byte	0x3
 	.byte	0x28
 	.4byte	.LFB381
 	.4byte	.LFE381-.LFB381
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x399
-	.uleb128 0x14
-	.4byte	.LASF2826
+	.4byte	0x356
+	.uleb128 0x13
+	.4byte	.LASF2822
 	.byte	0x3
 	.byte	0x28
 	.4byte	0x145
@@ -1013,17 +754,17 @@ vTask_THD:
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0x17
-	.4byte	.LASF2829
+	.uleb128 0x16
+	.4byte	.LASF2825
 	.byte	0x3
 	.byte	0x4b
 	.4byte	.LFB382
 	.4byte	.LFE382-.LFB382
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x3d7
-	.uleb128 0x14
-	.4byte	.LASF2826
+	.4byte	0x394
+	.uleb128 0x13
+	.4byte	.LASF2822
 	.byte	0x3
 	.byte	0x4b
 	.4byte	0x145
@@ -1048,76 +789,71 @@ vTask_THD:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x19
-	.4byte	.LASF2830
-	.byte	0xb
+	.4byte	.LASF2826
+	.byte	0xa
 	.2byte	0x616
-	.4byte	0x3e3
+	.4byte	0x3a0
 	.uleb128 0x7
 	.4byte	0x77
 	.uleb128 0x1a
-	.4byte	.LASF2831
-	.byte	0xc
+	.4byte	.LASF2827
+	.byte	0xb
 	.byte	0x35
-	.4byte	0x3f3
-	.uleb128 0x12
+	.4byte	0x3b0
+	.uleb128 0x1b
 	.4byte	0x82
 	.uleb128 0x1a
-	.4byte	.LASF2832
-	.byte	0xc
+	.4byte	.LASF2828
+	.byte	0xb
 	.byte	0x3d
-	.4byte	0x3f3
+	.4byte	0x3b0
 	.uleb128 0x1a
-	.4byte	.LASF2833
-	.byte	0xd
+	.4byte	.LASF2829
+	.byte	0xc
 	.byte	0x3b
-	.4byte	0x28d
+	.4byte	0x282
 	.uleb128 0x1a
-	.4byte	.LASF2834
-	.byte	0xd
+	.4byte	.LASF2830
+	.byte	0xc
 	.byte	0x3c
-	.4byte	0x28d
+	.4byte	0x282
 	.uleb128 0x1a
-	.4byte	.LASF2835
-	.byte	0xe
+	.4byte	.LASF2831
+	.byte	0xd
 	.byte	0x40
 	.4byte	0x16f
 	.uleb128 0x1a
-	.4byte	.LASF2836
-	.byte	0xe
+	.4byte	.LASF2832
+	.byte	0xd
 	.byte	0x46
 	.4byte	0x16f
 	.uleb128 0x1a
-	.4byte	.LASF2837
-	.byte	0xa
-	.byte	0x3e
-	.4byte	0x2c6
-	.uleb128 0x1a
-	.4byte	.LASF2838
-	.byte	0xf
+	.4byte	.LASF2833
+	.byte	0xe
 	.byte	0x21
 	.4byte	0xb4
 	.uleb128 0x1a
-	.4byte	.LASF2839
-	.byte	0xf
+	.4byte	.LASF2834
+	.byte	0xe
 	.byte	0x22
 	.4byte	0xb4
 	.uleb128 0x1a
-	.4byte	.LASF2840
-	.byte	0xf
+	.4byte	.LASF2835
+	.byte	0xe
 	.byte	0x23
 	.4byte	0xb4
 	.uleb128 0x8
 	.4byte	0x82
-	.4byte	0x46c
-	.uleb128 0x1b
+	.4byte	0x41e
+	.uleb128 0x1c
 	.4byte	0xc6
 	.2byte	0x7ff
 	.byte	0
 	.uleb128 0x1a
-	.4byte	.LASF2841
-	.byte	0xf
+	.4byte	.LASF2836
+	.byte	0xe
 	.byte	0x2f
-	.4byte	0x45b
+	.4byte	0x40d
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -1327,13 +1063,6 @@ vTask_THD:
 	.byte	0
 	.byte	0
 	.uleb128 0x12
-	.uleb128 0x26
-	.byte	0
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x13
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3
@@ -1358,7 +1087,7 @@ vTask_THD:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x14
+	.uleb128 0x13
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -1373,7 +1102,7 @@ vTask_THD:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x14
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -1388,7 +1117,7 @@ vTask_THD:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x16
+	.uleb128 0x15
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3
@@ -1401,6 +1130,31 @@ vTask_THD:
 	.uleb128 0x19
 	.uleb128 0x49
 	.uleb128 0x13
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2116
+	.uleb128 0x19
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x16
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0x19
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -1432,7 +1186,7 @@ vTask_THD:
 	.uleb128 0x6
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2116
+	.uleb128 0x2117
 	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
@@ -1488,6 +1242,13 @@ vTask_THD:
 	.byte	0
 	.byte	0
 	.uleb128 0x1b
+	.uleb128 0x26
+	.byte	0
+	.uleb128 0x49
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x1c
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
@@ -2639,49 +2400,49 @@ vTask_THD:
 	.4byte	.LASF364
 	.byte	0x3
 	.uleb128 0x9
-	.uleb128 0xf
+	.uleb128 0xe
 	.byte	0x5
 	.uleb128 0xa
 	.4byte	.LASF365
-	.file 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+	.file 15 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+	.byte	0x3
+	.uleb128 0xc
+	.uleb128 0xf
+	.byte	0x5
+	.uleb128 0x9
+	.4byte	.LASF366
+	.file 16 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/FreeRTOS.h"
 	.byte	0x3
 	.uleb128 0xc
 	.uleb128 0x10
 	.byte	0x5
-	.uleb128 0x9
-	.4byte	.LASF366
-	.file 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/FreeRTOS.h"
-	.byte	0x3
-	.uleb128 0xc
-	.uleb128 0x11
-	.byte	0x5
 	.uleb128 0x47
 	.4byte	.LASF367
-	.file 18 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stddef.h"
+	.file 17 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stddef.h"
 	.byte	0x3
 	.uleb128 0x4c
-	.uleb128 0x12
+	.uleb128 0x11
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF368
-	.file 19 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\redlib_version.h"
+	.file 18 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\redlib_version.h"
 	.byte	0x3
 	.uleb128 0xb
-	.uleb128 0x13
+	.uleb128 0x12
 	.byte	0x7
 	.4byte	.Ldebug_macro1
 	.byte	0x4
 	.byte	0x5
 	.uleb128 0xe
 	.4byte	.LASF371
-	.file 20 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig.h"
+	.file 19 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig.h"
 	.byte	0x3
 	.uleb128 0x11
-	.uleb128 0x14
-	.file 21 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h"
+	.uleb128 0x13
+	.file 20 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\sys\\libconfig-arm.h"
 	.byte	0x3
 	.uleb128 0x19
-	.uleb128 0x15
+	.uleb128 0x14
 	.byte	0x7
 	.4byte	.Ldebug_macro2
 	.byte	0x4
@@ -2697,28 +2458,28 @@ vTask_THD:
 	.4byte	.LASF421
 	.byte	0x3
 	.uleb128 0x13
-	.uleb128 0x14
+	.uleb128 0x13
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro4
 	.byte	0x4
-	.file 22 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/FreeRTOSConfig.h"
+	.file 21 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/FreeRTOSConfig.h"
 	.byte	0x3
 	.uleb128 0x62
-	.uleb128 0x16
+	.uleb128 0x15
 	.byte	0x5
 	.uleb128 0x4
 	.4byte	.LASF640
-	.file 23 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/board.h"
+	.file 22 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/board.h"
 	.byte	0x3
 	.uleb128 0x8
-	.uleb128 0x17
+	.uleb128 0x16
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF641
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0xc
+	.uleb128 0xb
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF642
@@ -2728,53 +2489,53 @@ vTask_THD:
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF643
-	.file 24 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdbool.h"
+	.file 23 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdbool.h"
 	.byte	0x3
 	.uleb128 0x24
-	.uleb128 0x18
+	.uleb128 0x17
 	.byte	0x7
 	.4byte	.Ldebug_macro5
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro6
 	.byte	0x4
-	.file 25 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/sys_config.h"
+	.file 24 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/sys_config.h"
 	.byte	0x3
 	.uleb128 0x24
-	.uleb128 0x19
+	.uleb128 0x18
 	.byte	0x7
 	.4byte	.Ldebug_macro7
 	.byte	0x4
-	.file 26 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/cmsis.h"
+	.file 25 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/cmsis.h"
 	.byte	0x3
 	.uleb128 0x25
-	.uleb128 0x1a
+	.uleb128 0x19
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF668
-	.file 27 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/cmsis_175x_6x.h"
+	.file 26 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/cmsis_175x_6x.h"
 	.byte	0x3
 	.uleb128 0x2c
-	.uleb128 0x1b
+	.uleb128 0x1a
 	.byte	0x7
 	.4byte	.Ldebug_macro8
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x2e
-	.uleb128 0xb
+	.uleb128 0xa
 	.byte	0x7
 	.4byte	.Ldebug_macro9
-	.file 28 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/core_cmInstr.h"
+	.file 27 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/core_cmInstr.h"
 	.byte	0x3
 	.uleb128 0x88
-	.uleb128 0x1c
+	.uleb128 0x1b
 	.byte	0x7
 	.4byte	.Ldebug_macro10
 	.byte	0x4
-	.file 29 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/core_cmFunc.h"
+	.file 28 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/core_cmFunc.h"
 	.byte	0x3
 	.uleb128 0x89
-	.uleb128 0x1d
+	.uleb128 0x1c
 	.byte	0x5
 	.uleb128 0x27
 	.4byte	.LASF690
@@ -2783,65 +2544,65 @@ vTask_THD:
 	.4byte	.Ldebug_macro11
 	.byte	0x4
 	.byte	0x4
-	.file 30 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/chip_lpc175x_6x.h"
+	.file 29 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/chip_lpc175x_6x.h"
 	.byte	0x3
 	.uleb128 0x8b
-	.uleb128 0x1e
+	.uleb128 0x1d
 	.byte	0x7
 	.4byte	.Ldebug_macro12
-	.file 31 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/sysctl_17xx_40xx.h"
+	.file 30 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/sysctl_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa2
-	.uleb128 0x1f
+	.uleb128 0x1e
 	.byte	0x7
 	.4byte	.Ldebug_macro13
 	.byte	0x4
-	.file 32 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/clock_17xx_40xx.h"
+	.file 31 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/clock_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa3
-	.uleb128 0x20
+	.uleb128 0x1f
 	.byte	0x7
 	.4byte	.Ldebug_macro14
 	.byte	0x4
-	.file 33 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/iocon_17xx_40xx.h"
+	.file 32 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/iocon_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa4
-	.uleb128 0x21
+	.uleb128 0x20
 	.byte	0x7
 	.4byte	.Ldebug_macro15
 	.byte	0x4
-	.file 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/adc_17xx_40xx.h"
+	.file 33 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/adc_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa5
-	.uleb128 0x22
+	.uleb128 0x21
 	.byte	0x7
 	.4byte	.Ldebug_macro16
 	.byte	0x4
-	.file 35 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/can_17xx_40xx.h"
+	.file 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/can_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa6
-	.uleb128 0x23
+	.uleb128 0x22
 	.byte	0x7
 	.4byte	.Ldebug_macro17
 	.byte	0x4
-	.file 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/dac_17xx_40xx.h"
+	.file 35 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/dac_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa7
-	.uleb128 0x24
+	.uleb128 0x23
 	.byte	0x7
 	.4byte	.Ldebug_macro18
 	.byte	0x4
-	.file 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/enet_17xx_40xx.h"
+	.file 36 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/enet_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa8
-	.uleb128 0x25
+	.uleb128 0x24
 	.byte	0x7
 	.4byte	.Ldebug_macro19
 	.byte	0x4
-	.file 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/gpdma_17xx_40xx.h"
+	.file 37 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/gpdma_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xa9
-	.uleb128 0x26
+	.uleb128 0x25
 	.byte	0x7
 	.4byte	.Ldebug_macro20
 	.byte	0x4
@@ -2851,143 +2612,143 @@ vTask_THD:
 	.byte	0x7
 	.4byte	.Ldebug_macro21
 	.byte	0x4
-	.file 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/gpioint_17xx_40xx.h"
+	.file 38 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/gpioint_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xab
-	.uleb128 0x27
+	.uleb128 0x26
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF1685
 	.byte	0x4
-	.file 40 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/i2c_17xx_40xx.h"
+	.file 39 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/i2c_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xac
-	.uleb128 0x28
+	.uleb128 0x27
 	.byte	0x7
 	.4byte	.Ldebug_macro22
 	.byte	0x4
-	.file 41 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/i2s_17xx_40xx.h"
+	.file 40 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/i2s_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xad
-	.uleb128 0x29
+	.uleb128 0x28
 	.byte	0x7
 	.4byte	.Ldebug_macro23
 	.byte	0x4
-	.file 42 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/mcpwm_17xx_40xx.h"
+	.file 41 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/mcpwm_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xae
-	.uleb128 0x2a
+	.uleb128 0x29
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF1832
 	.byte	0x4
-	.file 43 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/pmu_17xx_40xx.h"
+	.file 42 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/pmu_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xaf
-	.uleb128 0x2b
+	.uleb128 0x2a
 	.byte	0x7
 	.4byte	.Ldebug_macro24
 	.byte	0x4
-	.file 44 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/qei_17xx_40xx.h"
+	.file 43 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/qei_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb0
-	.uleb128 0x2c
+	.uleb128 0x2b
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF1843
 	.byte	0x4
-	.file 45 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/ritimer_17xx_40xx.h"
+	.file 44 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/ritimer_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb1
-	.uleb128 0x2d
+	.uleb128 0x2c
 	.byte	0x7
 	.4byte	.Ldebug_macro25
 	.byte	0x4
-	.file 46 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/rtc_17xx_40xx.h"
+	.file 45 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/rtc_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb2
-	.uleb128 0x2e
+	.uleb128 0x2d
 	.byte	0x7
 	.4byte	.Ldebug_macro26
 	.byte	0x4
-	.file 47 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/spi_17xx_40xx.h"
+	.file 46 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/spi_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb3
-	.uleb128 0x2f
+	.uleb128 0x2e
 	.byte	0x7
 	.4byte	.Ldebug_macro27
 	.byte	0x4
-	.file 48 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/ssp_17xx_40xx.h"
+	.file 47 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/ssp_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb4
-	.uleb128 0x30
+	.uleb128 0x2f
 	.byte	0x7
 	.4byte	.Ldebug_macro28
 	.byte	0x4
-	.file 49 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/timer_17xx_40xx.h"
+	.file 48 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/timer_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb5
-	.uleb128 0x31
+	.uleb128 0x30
 	.byte	0x7
 	.4byte	.Ldebug_macro29
 	.byte	0x4
-	.file 50 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/uart_17xx_40xx.h"
+	.file 49 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/uart_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb6
-	.uleb128 0x32
+	.uleb128 0x31
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF1963
-	.file 51 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/ring_buffer.h"
+	.file 50 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/ring_buffer.h"
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0x33
+	.uleb128 0x32
 	.byte	0x7
 	.4byte	.Ldebug_macro30
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro31
 	.byte	0x4
-	.file 52 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/usb_17xx_40xx.h"
+	.file 51 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/usb_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb7
-	.uleb128 0x34
+	.uleb128 0x33
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF2084
 	.byte	0x4
-	.file 53 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/wwdt_17xx_40xx.h"
+	.file 52 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/wwdt_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb8
-	.uleb128 0x35
+	.uleb128 0x34
 	.byte	0x7
 	.4byte	.Ldebug_macro32
 	.byte	0x4
-	.file 54 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/fmc_17xx_40xx.h"
+	.file 53 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/fmc_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xb9
-	.uleb128 0x36
+	.uleb128 0x35
 	.byte	0x7
 	.4byte	.Ldebug_macro33
 	.byte	0x4
-	.file 55 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/romapi_17xx_40xx.h"
+	.file 54 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/romapi_17xx_40xx.h"
 	.byte	0x3
 	.uleb128 0xba
-	.uleb128 0x37
+	.uleb128 0x36
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF2099
-	.file 56 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/iap.h"
+	.file 55 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/iap.h"
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0x38
+	.uleb128 0x37
 	.byte	0x7
 	.4byte	.Ldebug_macro34
 	.byte	0x4
-	.file 57 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/error.h"
+	.file 56 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_chip_175x_6x\\inc/error.h"
 	.byte	0x3
 	.uleb128 0x24
-	.uleb128 0x39
+	.uleb128 0x38
 	.byte	0x7
 	.4byte	.Ldebug_macro35
 	.byte	0x4
@@ -2999,10 +2760,10 @@ vTask_THD:
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro36
-	.file 58 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/board_api.h"
+	.file 57 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/board_api.h"
 	.byte	0x3
 	.uleb128 0xdb
-	.uleb128 0x3a
+	.uleb128 0x39
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF2167
@@ -3010,16 +2771,16 @@ vTask_THD:
 	.uleb128 0x23
 	.uleb128 0x5
 	.byte	0x4
-	.file 59 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdio.h"
+	.file 58 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\stdio.h"
 	.byte	0x3
 	.uleb128 0x24
-	.uleb128 0x3b
+	.uleb128 0x3a
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF2168
 	.byte	0x3
 	.uleb128 0x11
-	.uleb128 0x14
+	.uleb128 0x13
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro37
@@ -3027,16 +2788,16 @@ vTask_THD:
 	.byte	0x7
 	.4byte	.Ldebug_macro38
 	.byte	0x4
-	.file 60 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/lpc_phy.h"
+	.file 59 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\lpc_myboard_1769\\inc/lpc_phy.h"
 	.byte	0x3
 	.uleb128 0xdc
-	.uleb128 0x3c
+	.uleb128 0x3b
 	.byte	0x5
 	.uleb128 0x21
 	.4byte	.LASF2197
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0x17
+	.uleb128 0x16
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro39
@@ -3045,24 +2806,24 @@ vTask_THD:
 	.byte	0x7
 	.4byte	.Ldebug_macro40
 	.byte	0x4
-	.file 61 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/projdefs.h"
+	.file 60 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/projdefs.h"
 	.byte	0x3
 	.uleb128 0x65
-	.uleb128 0x3d
+	.uleb128 0x3c
 	.byte	0x7
 	.4byte	.Ldebug_macro41
 	.byte	0x4
-	.file 62 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/portable.h"
+	.file 61 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/portable.h"
 	.byte	0x3
 	.uleb128 0x68
-	.uleb128 0x3e
+	.uleb128 0x3d
 	.byte	0x5
 	.uleb128 0x4b
 	.4byte	.LASF2296
-	.file 63 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/deprecated_definitions.h"
+	.file 62 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/deprecated_definitions.h"
 	.byte	0x3
 	.uleb128 0x57
-	.uleb128 0x3f
+	.uleb128 0x3e
 	.byte	0x5
 	.uleb128 0x47
 	.4byte	.LASF2297
@@ -3075,10 +2836,10 @@ vTask_THD:
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro43
-	.file 64 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/mpu_wrappers.h"
+	.file 63 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/mpu_wrappers.h"
 	.byte	0x3
 	.uleb128 0x85
-	.uleb128 0x40
+	.uleb128 0x3f
 	.byte	0x7
 	.4byte	.Ldebug_macro44
 	.byte	0x4
@@ -3086,17 +2847,17 @@ vTask_THD:
 	.byte	0x7
 	.4byte	.Ldebug_macro45
 	.byte	0x4
-	.file 65 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/task.h"
+	.file 64 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/task.h"
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0x41
+	.uleb128 0x40
 	.byte	0x5
 	.uleb128 0x48
 	.4byte	.LASF2475
-	.file 66 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/list.h"
+	.file 65 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\LibFreeRTOS_8.2.3\\inc/list.h"
 	.byte	0x3
 	.uleb128 0x4e
-	.uleb128 0x42
+	.uleb128 0x41
 	.byte	0x7
 	.4byte	.Ldebug_macro46
 	.byte	0x4
@@ -3122,29 +2883,29 @@ vTask_THD:
 	.uleb128 0x11
 	.uleb128 0x7
 	.byte	0x4
-	.file 67 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\string.h"
+	.file 66 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\string.h"
 	.byte	0x3
 	.uleb128 0x13
-	.uleb128 0x43
+	.uleb128 0x42
 	.byte	0x5
 	.uleb128 0xa
 	.4byte	.LASF2570
 	.byte	0x3
 	.uleb128 0x12
-	.uleb128 0x14
+	.uleb128 0x13
 	.byte	0x4
 	.byte	0x4
-	.file 68 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\math.h"
+	.file 67 "c:\\nxp\\lpcxpresso_8.2.2_650\\lpcxpresso\\tools\\redlib\\include\\math.h"
 	.byte	0x3
 	.uleb128 0x14
-	.uleb128 0x44
+	.uleb128 0x43
 	.byte	0x7
 	.4byte	.Ldebug_macro50
 	.byte	0x4
-	.file 69 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\CMSIS_DSPLIB_CM3\\inc/arm_math.h"
+	.file 68 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\CMSIS_DSPLIB_CM3\\inc/arm_math.h"
 	.byte	0x3
 	.uleb128 0x17
-	.uleb128 0x45
+	.uleb128 0x44
 	.byte	0x7
 	.4byte	.Ldebug_macro51
 	.byte	0x3
@@ -3154,7 +2915,7 @@ vTask_THD:
 	.4byte	.Ldebug_macro52
 	.byte	0x3
 	.uleb128 0x110
-	.uleb128 0xb
+	.uleb128 0xa
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro53
@@ -3163,10 +2924,10 @@ vTask_THD:
 	.byte	0x7
 	.4byte	.Ldebug_macro54
 	.byte	0x4
-	.file 70 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header.h"
+	.file 69 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\BASICS/basics_header.h"
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0x46
+	.uleb128 0x45
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF2654
@@ -3178,62 +2939,63 @@ vTask_THD:
 	.4byte	.LASF2655
 	.byte	0x3
 	.uleb128 0xc
-	.uleb128 0xf
+	.uleb128 0xe
 	.byte	0x4
 	.byte	0x4
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xe
-	.uleb128 0xd
+	.uleb128 0xc
 	.byte	0x7
 	.4byte	.Ldebug_macro55
-	.file 71 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
+	.file 70 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_init.h"
 	.byte	0x3
 	.uleb128 0x42
-	.uleb128 0x47
+	.uleb128 0x46
 	.byte	0x7
 	.4byte	.Ldebug_macro56
 	.byte	0x4
-	.file 72 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_func.h"
+	.file 71 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\FFT/fft_func.h"
 	.byte	0x3
 	.uleb128 0x43
-	.uleb128 0x48
+	.uleb128 0x47
 	.byte	0x4
 	.byte	0x4
-	.file 73 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
+	.file 72 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_header.h"
 	.byte	0x3
 	.uleb128 0xf
-	.uleb128 0x49
+	.uleb128 0x48
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF2670
-	.file 74 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_init.h"
+	.file 73 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\UART/uart_init.h"
 	.byte	0x3
 	.uleb128 0x78
-	.uleb128 0x4a
+	.uleb128 0x49
 	.byte	0x4
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x10
-	.uleb128 0xe
+	.uleb128 0xd
 	.byte	0x7
 	.4byte	.Ldebug_macro57
 	.byte	0x4
-	.file 75 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
+	.file 74 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
 	.byte	0x3
 	.uleb128 0x11
-	.uleb128 0x4b
+	.uleb128 0x4a
 	.byte	0x7
 	.4byte	.Ldebug_macro58
-	.file 76 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_init.h"
+	.file 75 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_init.h"
 	.byte	0x3
 	.uleb128 0x21
-	.uleb128 0x4c
+	.uleb128 0x4b
 	.byte	0x4
 	.byte	0x4
+	.file 76 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TFT/tft_header.h"
 	.byte	0x3
 	.uleb128 0x12
-	.uleb128 0xa
+	.uleb128 0x4c
 	.byte	0x7
 	.4byte	.Ldebug_macro59
 	.byte	0x4
@@ -10248,7 +10010,7 @@ vTask_THD:
 	.uleb128 0x1c77
 	.4byte	.LASF2631
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.utilidades.h.27.754c52679afafffb22bd854bcb8fe334,comdat
+	.section	.debug_macro,"G",%progbits,wm4.utilidades.h.27.7953e4c421cbccbf3a101e6dec5e80be,comdat
 .Ldebug_macro54:
 	.2byte	0x4
 	.byte	0
@@ -10616,7 +10378,7 @@ vTask_THD:
 	.uleb128 0x2e
 	.4byte	.LASF2745
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.header.h.55.bb54484b9311461e29b31dd901ef5ff0,comdat
+	.section	.debug_macro,"G",%progbits,wm4.header.h.55.19eed82b19e4c74fe5e72b84ad6bd540,comdat
 .Ldebug_macro61:
 	.2byte	0x4
 	.byte	0
@@ -10702,7 +10464,7 @@ vTask_THD:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF2834:
+.LASF2830:
 	.ascii	"ifft_inst_q31\000"
 .LASF1763:
 	.ascii	"I2C_CheckError(ErrorCode) (ErrorCode & 0x10000000)\000"
@@ -10855,7 +10617,7 @@ vTask_THD:
 	.ascii	"__PTRDIFF_MAX__ 0x7fffffff\000"
 .LASF505:
 	.ascii	"__SCNoLEAST16 \"%ho\"\000"
-.LASF2841:
+.LASF2836:
 	.ascii	"buffer_dac_out\000"
 .LASF2108:
 	.ascii	"IAP_REINVOKE_ISP_CMD 57\000"
@@ -11472,7 +11234,7 @@ vTask_THD:
 	.ascii	"__PRIiFAST32 \"%i\"\000"
 .LASF1980:
 	.ascii	"UART1_IER_BITMASK (0x30F)\000"
-.LASF2829:
+.LASF2825:
 	.ascii	"vTask_THD\000"
 .LASF25:
 	.ascii	"__BIGGEST_ALIGNMENT__ 8\000"
@@ -11545,7 +11307,7 @@ vTask_THD:
 	.ascii	"I2S_SLAVE_MODE (1UL << 5)\000"
 .LASF2091:
 	.ascii	"WWDT_WDMOD_WDTOF ((uint32_t) (1 << 2))\000"
-.LASF2822:
+.LASF2818:
 	.ascii	"pGPIO\000"
 .LASF2332:
 	.ascii	"MPU_WRAPPERS_H \000"
@@ -11589,7 +11351,7 @@ vTask_THD:
 	.ascii	"pdFREERTOS_ERRNO_ENOTEMPTY 90\000"
 .LASF2226:
 	.ascii	"INCLUDE_vTaskPrioritySet 1\000"
-.LASF2835:
+.LASF2831:
 	.ascii	"sem_adc_ext_proc\000"
 .LASF1321:
 	.ascii	"CAN_ICR_ERR_ReservedBit_0 (0x09)\000"
@@ -11637,8 +11399,6 @@ vTask_THD:
 	.ascii	"MPU_TYPE_SEPARATE_Pos 0\000"
 .LASF1497:
 	.ascii	"ENET_MWTD_DATA(n) ((n) & 0xFFFF)\000"
-.LASF2754:
-	.ascii	"LED_IM_ALIVE_INIT 1, 0, MD_PLN, SALIDA\000"
 .LASF716:
 	.ascii	"SCB_ICSR_PENDSTCLR_Msk (1UL << SCB_ICSR_PENDSTCLR_P"
 	.ascii	"os)\000"
@@ -11659,8 +11419,8 @@ vTask_THD:
 	.ascii	"I2C_I2STAT_S_RX_PRE_SLA_DAT_NACK ((0x88))\000"
 .LASF1049:
 	.ascii	"CoreDebug_DHCSR_S_RETIRE_ST_Pos 24\000"
-.LASF1059:
-	.ascii	"CoreDebug_DHCSR_C_SNAPSTALL_Pos 5\000"
+.LASF1451:
+	.ascii	"ENET_MAC1_RESETMCSTX 0x00000200\000"
 .LASF2804:
 	.ascii	"pTwiddle\000"
 .LASF578:
@@ -12067,7 +11827,7 @@ vTask_THD:
 	.ascii	"I2C_STAT_CODE_BITMASK ((0xF8))\000"
 .LASF1339:
 	.ascii	"CAN_IER_TIE1 ((uint32_t) (1 << 1))\000"
-.LASF2831:
+.LASF2827:
 	.ascii	"OscRateIn\000"
 .LASF322:
 	.ascii	"__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\000"
@@ -12270,7 +12030,7 @@ vTask_THD:
 .LASF186:
 	.ascii	"__DEC128_MAX__ 9.999999999999999999999999999999999E"
 	.ascii	"6144DL\000"
-.LASF2824:
+.LASF2820:
 	.ascii	"Chip_GPIO_GetPinState\000"
 .LASF2137:
 	.ascii	"DEBUG_SEMIHOSTING \000"
@@ -12288,8 +12048,10 @@ vTask_THD:
 	.ascii	"RTC_AUXEN_RTC_OSCFEN ((1 << 4))\000"
 .LASF574:
 	.ascii	"__PRIu64 \"%llu\"\000"
-.LASF2837:
-	.ascii	"tft_Font_11x18\000"
+.LASF2562:
+	.ascii	"xSemaphoreAltGive(xSemaphore) xQueueAltGenericSend("
+	.ascii	" ( QueueHandle_t ) ( xSemaphore ), NULL, semGIVE_BL"
+	.ascii	"OCK_TIME, queueSEND_TO_BACK )\000"
 .LASF2010:
 	.ascii	"UART_LCR_SBS_2BIT (1 << 2)\000"
 .LASF1843:
@@ -12310,8 +12072,8 @@ vTask_THD:
 	.ascii	"CANAF_ENDADDR(n) ((uint32_t) (((n) & 0x3FF) << 2))\000"
 .LASF725:
 	.ascii	"SCB_ICSR_VECTACTIVE_Pos 0\000"
-.LASF1033:
-	.ascii	"MPU_RASR_S_Pos 18\000"
+.LASF1384:
+	.ascii	"CAN_TSR_TCS(n) ((uint32_t) (1 << (n + 16)))\000"
 .LASF1274:
 	.ascii	"CAN_MOD_LOM ((uint32_t) (1 << 1))\000"
 .LASF674:
@@ -12448,8 +12210,6 @@ vTask_THD:
 	.ascii	"FFT_SIZE_4096 4096\000"
 .LASF1595:
 	.ascii	"ENET_RINFO_ALIGN_ERR 0x08000000\000"
-.LASF563:
-	.ascii	"INT_FAST64_MAX 0x7fffffffffffffffLL\000"
 .LASF2425:
 	.ascii	"traceTASK_NOTIFY_WAIT() \000"
 .LASF966:
@@ -12619,8 +12379,8 @@ vTask_THD:
 	.ascii	"__USA_FBIT__ 16\000"
 .LASF1587:
 	.ascii	"ENET_RINFO_VLAN 0x00080000\000"
-.LASF2819:
-	.ascii	"FontHeight\000"
+.LASF192:
+	.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
 .LASF1569:
 	.ascii	"ENET_RXFILTERWOLSTATUS_BITMASK 0x01BF\000"
 .LASF554:
@@ -12689,6 +12449,9 @@ vTask_THD:
 	.ascii	"FP_ILOGBNAN INT_MIN\000"
 .LASF2140:
 	.ascii	"BUTTONS_BUTTON1 0x01\000"
+.LASF2558:
+	.ascii	"xSemaphoreTakeRecursive(xMutex,xBlockTime) xQueueTa"
+	.ascii	"keMutexRecursive( ( xMutex ), ( xBlockTime ) )\000"
 .LASF2218:
 	.ascii	"configUSE_TICKLESS_IDLE 0\000"
 .LASF1296:
@@ -12982,9 +12745,8 @@ vTask_THD:
 	.ascii	"portEND_SWITCHING_ISR(xSwitchRequired) if( xSwitchR"
 	.ascii	"equired ) portNVIC_INT_CTRL_REG = portNVIC_PENDSVSE"
 	.ascii	"T_BIT\000"
-.LASF2558:
-	.ascii	"xSemaphoreTakeRecursive(xMutex,xBlockTime) xQueueTa"
-	.ascii	"keMutexRecursive( ( xMutex ), ( xBlockTime ) )\000"
+.LASF911:
+	.ascii	"DWT_SLEEPCNT_SLEEPCNT_Pos 0\000"
 .LASF672:
 	.ascii	"__NVIC_PRIO_BITS 5\000"
 .LASF199:
@@ -13083,8 +12845,6 @@ vTask_THD:
 	.ascii	"__INT16_MAX__ 0x7fff\000"
 .LASF276:
 	.ascii	"__DQ_IBIT__ 0\000"
-.LASF2090:
-	.ascii	"WWDT_WDMOD_WDRESET ((uint32_t) (1 << 1))\000"
 .LASF289:
 	.ascii	"__HA_FBIT__ 7\000"
 .LASF2348:
@@ -13176,6 +12936,8 @@ vTask_THD:
 	.ascii	"WDT_OSC (500000 / 4)\000"
 .LASF919:
 	.ascii	"DWT_FUNCTION_MATCHED_Pos 24\000"
+.LASF1204:
+	.ascii	"UART_IRQHandler UART0_IRQHandler\000"
 .LASF2444:
 	.ascii	"portASSERT_IF_INTERRUPT_PRIORITY_INVALID() \000"
 .LASF1524:
@@ -13294,8 +13056,8 @@ vTask_THD:
 	.ascii	"CoreDebug_DHCSR_C_DEBUGEN_Pos 0\000"
 .LASF1940:
 	.ascii	"SSP_CR1_BITMASK ((uint32_t) (0x0F))\000"
-.LASF2710:
-	.ascii	"TFT_BACKGROUND_GREEN2 TFT_COLOR_GREEN2\000"
+.LASF1033:
+	.ascii	"MPU_RASR_S_Pos 18\000"
 .LASF901:
 	.ascii	"DWT_CTRL_POSTINIT_Pos 5\000"
 .LASF1589:
@@ -13493,7 +13255,7 @@ vTask_THD:
 	.ascii	"ITM_LSR_Access_Pos 1\000"
 .LASF2427:
 	.ascii	"traceTASK_NOTIFY_FROM_ISR() \000"
-.LASF2843:
+.LASF2838:
 	.ascii	"../src/tareas.c\000"
 .LASF1970:
 	.ascii	"UART_LOAD_DLM(div) (((div) >> 8) & 0xFF)\000"
@@ -13703,7 +13465,7 @@ vTask_THD:
 	.ascii	"I2S_DAI_RESET ((uint32_t) (1 << 4))\000"
 .LASF198:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
-.LASF2842:
+.LASF2837:
 	.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
 	.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g3 -"
 	.ascii	"O0 -fmessage-length=0 -fno-builtin -ffunction-secti"
@@ -13731,8 +13493,6 @@ vTask_THD:
 	.ascii	"LPC_I2C2 ((LPC_I2C_T *) LPC_I2C2_BASE)\000"
 .LASF1723:
 	.ascii	"I2C_I2STAT_M_RX_DAT_ACK ((0x50))\000"
-.LASF2639:
-	.ascii	"USE_TFT ON\000"
 .LASF1208:
 	.ascii	"SYSCTL_RST_POR (1 << 0)\000"
 .LASF2136:
@@ -13789,6 +13549,8 @@ vTask_THD:
 	.ascii	"CAN_GSR_DOS ((uint32_t) (1 << 1))\000"
 .LASF2254:
 	.ascii	"pdINTEGRITY_CHECK_VALUE 0x5a5a5a5aUL\000"
+.LASF2639:
+	.ascii	"USE_TFT OFF\000"
 .LASF392:
 	.ascii	"__EXIT_SUCCESS 0\000"
 .LASF115:
@@ -13885,8 +13647,9 @@ vTask_THD:
 	.ascii	"traceEVENT_GROUP_CREATE_FAILED() \000"
 .LASF2465:
 	.ascii	"xTaskStatusType TaskStatus_t\000"
-.LASF1727:
-	.ascii	"I2C_I2STAT_S_RX_GENCALL_ACK ((0x70))\000"
+.LASF2365:
+	.ascii	"traceTASK_PRIORITY_DISINHERIT(pxTCBOfMutexHolder,ux"
+	.ascii	"OriginalPriority) \000"
 .LASF2441:
 	.ascii	"configINCLUDE_APPLICATION_DEFINED_PRIVILEGED_FUNCTI"
 	.ascii	"ONS 0\000"
@@ -13993,7 +13756,7 @@ vTask_THD:
 	.ascii	"LED_2 1, 4\000"
 .LASF2780:
 	.ascii	"short unsigned int\000"
-.LASF2826:
+.LASF2822:
 	.ascii	"pvParameters\000"
 .LASF823:
 	.ascii	"SysTick_CTRL_CLKSOURCE_Pos 2\000"
@@ -14015,8 +13778,6 @@ vTask_THD:
 	.ascii	"GPDMA_CONN_ADC ((4UL))\000"
 .LASF2810:
 	.ascii	"fftLenBy2\000"
-.LASF2057:
-	.ascii	"UART_RS485CTRL_SEL_DTR (1 << 3)\000"
 .LASF1233:
 	.ascii	"IOCON_FUNC3 0x3\000"
 .LASF1003:
@@ -14046,7 +13807,7 @@ vTask_THD:
 	.ascii	"RED_GPIO_BIT_NUM 3\000"
 .LASF1275:
 	.ascii	"CAN_MOD_STM ((uint32_t) (1 << 2))\000"
-.LASF2840:
+.LASF2835:
 	.ascii	"flag_do_rem\000"
 .LASF2383:
 	.ascii	"traceQUEUE_PEEK_FROM_ISR(pxQueue) \000"
@@ -14064,6 +13825,8 @@ vTask_THD:
 	.ascii	"QueueHandle_t\000"
 .LASF2175:
 	.ascii	"EOF (-1)\000"
+.LASF2754:
+	.ascii	"LED_IM_ALIVE_INIT 0, 16, MD_PLN, SALIDA\000"
 .LASF2474:
 	.ascii	"configUSE_TASK_FPU_SUPPORT 1\000"
 .LASF954:
@@ -14093,7 +13856,7 @@ vTask_THD:
 	.ascii	"BASICS_HEADER_H_ \000"
 .LASF860:
 	.ascii	"ITM_IWR_ATVALIDM_Msk (1UL << ITM_IWR_ATVALIDM_Pos)\000"
-.LASF2832:
+.LASF2828:
 	.ascii	"RTCOscRateIn\000"
 .LASF1310:
 	.ascii	"CAN_ICR_ERRBIT_VAL(n) ((uint32_t) (((n) >> 16) & 0x"
@@ -14151,7 +13914,7 @@ vTask_THD:
 	.ascii	"I2S_STATE_IRQ ((uint32_t) (1))\000"
 .LASF147:
 	.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
-.LASF2844:
+.LASF2839:
 	.ascii	"D:\\\\UTN\\\\Git\\\\TD_II\\\\TD_II\\\\workspace\\\\"
 	.ascii	"THD_Meter_RTOS\\\\Debug\000"
 .LASF2620:
@@ -14338,7 +14101,7 @@ vTask_THD:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF1345:
 	.ascii	"CAN_IER_BEIE ((uint32_t) (1 << 7))\000"
-.LASF2838:
+.LASF2833:
 	.ascii	"flag_dac_send\000"
 .LASF1826:
 	.ascii	"I2S_TXMODE_CLKSEL(n) ((uint32_t) (n & 0x03))\000"
@@ -14408,8 +14171,8 @@ vTask_THD:
 	.ascii	"SCB_ICSR_VECTPENDING_Pos 12\000"
 .LASF1241:
 	.ascii	"FUNC3 0x3\000"
-.LASF1668:
-	.ascii	"GPDMA_CONN_MEMORY ((24UL))\000"
+.LASF591:
+	.ascii	"__SCNoFAST64 \"%llo\"\000"
 .LASF2617:
 	.ascii	"CMSIS_UNUSED __attribute__((unused))\000"
 .LASF1736:
@@ -14461,7 +14224,7 @@ vTask_THD:
 	.ascii	"\000"
 .LASF2450:
 	.ascii	"portTICK_TYPE_ENTER_CRITICAL() \000"
-.LASF2833:
+.LASF2829:
 	.ascii	"fft_inst_q31\000"
 .LASF33:
 	.ascii	"__PTRDIFF_TYPE__ int\000"
@@ -14477,8 +14240,8 @@ vTask_THD:
 	.ascii	"SCB_HFSR_FORCED_Pos 30\000"
 .LASF1643:
 	.ascii	"GPDMA_DMACCxConfig_H ((1UL << 18))\000"
-.LASF941:
-	.ascii	"TPI_FFSR_FtNonStop_Pos 3\000"
+.LASF2531:
+	.ascii	"queueQUEUE_TYPE_SET ( ( uint8_t ) 0U )\000"
 .LASF701:
 	.ascii	"SCB_CPUID_ARCHITECTURE_Pos 16\000"
 .LASF2257:
@@ -14500,10 +14263,6 @@ vTask_THD:
 	.ascii	"__SIZEOF_INT 4\000"
 .LASF2643:
 	.ascii	"USE_ADC_EXTERNO ON\000"
-.LASF2562:
-	.ascii	"xSemaphoreAltGive(xSemaphore) xQueueAltGenericSend("
-	.ascii	" ( QueueHandle_t ) ( xSemaphore ), NULL, semGIVE_BL"
-	.ascii	"OCK_TIME, queueSEND_TO_BACK )\000"
 .LASF678:
 	.ascii	"__CM3_CMSIS_VERSION ((__CM3_CMSIS_VERSION_MAIN << 1"
 	.ascii	"6) | __CM3_CMSIS_VERSION_SUB )\000"
@@ -14511,6 +14270,8 @@ vTask_THD:
 	.ascii	"__SCNxLEAST64 \"%llx\"\000"
 .LASF915:
 	.ascii	"DWT_FOLDCNT_FOLDCNT_Pos 0\000"
+.LASF1668:
+	.ascii	"GPDMA_CONN_MEMORY ((24UL))\000"
 .LASF2443:
 	.ascii	"configUSE_STATS_FORMATTING_FUNCTIONS 0\000"
 .LASF2493:
@@ -14555,8 +14316,6 @@ vTask_THD:
 	.ascii	"inited(x) : __isfinitel(x))\000"
 .LASF1031:
 	.ascii	"MPU_RASR_TEX_Pos 19\000"
-.LASF2755:
-	.ascii	"LED_IM_ALIVE 1, 0\000"
 .LASF834:
 	.ascii	"SysTick_CALIB_NOREF_Msk (1UL << SysTick_CALIB_NOREF"
 	.ascii	"_Pos)\000"
@@ -14641,9 +14400,6 @@ vTask_THD:
 	.ascii	"__START_CRITICAL_REGION() do {} while (0)\000"
 .LASF2388:
 	.ascii	"traceQUEUE_RECEIVE_FROM_ISR_FAILED(pxQueue) \000"
-.LASF2365:
-	.ascii	"traceTASK_PRIORITY_DISINHERIT(pxTCBOfMutexHolder,ux"
-	.ascii	"OriginalPriority) \000"
 .LASF2209:
 	.ascii	"configTICK_RATE_HZ ( ( portTickType ) 1000 )\000"
 .LASF2448:
@@ -14894,8 +14650,6 @@ vTask_THD:
 	.ascii	"TPI_FIFO0_ITM_ATVALID_Pos 29\000"
 .LASF1810:
 	.ascii	"I2S_DMA2_RX_ENABLE ((uint32_t) (1))\000"
-.LASF192:
-	.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
 .LASF2274:
 	.ascii	"pdFREERTOS_ERRNO_EROFS 30\000"
 .LASF570:
@@ -15047,6 +14801,8 @@ vTask_THD:
 	.ascii	"CAN_IER_RIE ((uint32_t) (1))\000"
 .LASF241:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
+.LASF1059:
+	.ascii	"CoreDebug_DHCSR_C_SNAPSTALL_Pos 5\000"
 .LASF967:
 	.ascii	"TPI_FIFO0_ETM0_Pos 0\000"
 .LASF27:
@@ -15070,6 +14826,8 @@ vTask_THD:
 	.ascii	"CAN_TID_ID11(n) ((uint32_t) ((n) & 0x7FF))\000"
 .LASF461:
 	.ascii	"__SCNoLEAST8 \"%hho\"\000"
+.LASF2710:
+	.ascii	"TFT_BACKGROUND_GREEN2 TFT_COLOR_GREEN2\000"
 .LASF367:
 	.ascii	"INC_FREERTOS_H \000"
 .LASF989:
@@ -15119,7 +14877,7 @@ vTask_THD:
 .LASF1012:
 	.ascii	"MPU_CTRL_PRIVDEFENA_Msk (1UL << MPU_CTRL_PRIVDEFENA"
 	.ascii	"_Pos)\000"
-.LASF2828:
+.LASF2824:
 	.ascii	"vTask_tft\000"
 .LASF272:
 	.ascii	"__HQ_IBIT__ 0\000"
@@ -15217,8 +14975,6 @@ vTask_THD:
 .LASF1336:
 	.ascii	"CAN_ICR_ALCBIT_VAL(n) ((uint32_t) (((n) >> 24) & 0x"
 	.ascii	"FF))\000"
-.LASF468:
-	.ascii	"INT16_MIN (-0x8000)\000"
 .LASF1120:
 	.ascii	"LPC_GPIO0_BASE 0x2009C000\000"
 .LASF400:
@@ -15343,8 +15099,6 @@ vTask_THD:
 	.ascii	"pdFREERTOS_ERRNO_EEXIST 17\000"
 .LASF1160:
 	.ascii	"LPC_GPDMA_BASE 0x50004000\000"
-.LASF1451:
-	.ascii	"ENET_MAC1_RESETMCSTX 0x00000200\000"
 .LASF569:
 	.ascii	"__PRIiLEAST64 \"%lli\"\000"
 .LASF2584:
@@ -15483,7 +15237,7 @@ vTask_THD:
 	.ascii	"TPI_DEVID_MANCVALID_Pos 10\000"
 .LASF1221:
 	.ascii	"SYSCTL_PLL_ENABLE (1 << 0)\000"
-.LASF2839:
+.LASF2834:
 	.ascii	"flag_do_thd\000"
 .LASF1326:
 	.ascii	"CAN_ICR_ERR_ACK (0x19)\000"
@@ -15502,8 +15256,6 @@ vTask_THD:
 	.ascii	"xQueueSend(xQueue,pvItemToQueue,xTicksToWait) xQueu"
 	.ascii	"eGenericSend( ( xQueue ), ( pvItemToQueue ), ( xTic"
 	.ascii	"ksToWait ), queueSEND_TO_BACK )\000"
-.LASF2820:
-	.ascii	"data\000"
 .LASF2672:
 	.ascii	"ADC_DMA_CANT_MUESTRAS 2048\000"
 .LASF1382:
@@ -15529,8 +15281,8 @@ vTask_THD:
 	.ascii	"SCB_SHCSR_SVCALLPENDED_Pos 15\000"
 .LASF1369:
 	.ascii	"CAN_RFS_DLC(n) ((uint32_t) ((n >> 16) & 0x0F))\000"
-.LASF911:
-	.ascii	"DWT_SLEEPCNT_SLEEPCNT_Pos 0\000"
+.LASF941:
+	.ascii	"TPI_FFSR_FtNonStop_Pos 3\000"
 .LASF1550:
 	.ascii	"ENET_FLOWCONTROLCOUNTER_MC(n) ((n) & 0xFFFF)\000"
 .LASF820:
@@ -15598,7 +15350,7 @@ vTask_THD:
 	.ascii	"xQueueSetMemberHandle QueueSetMemberHandle_t\000"
 .LASF1663:
 	.ascii	"GPDMA_CONN_MAT1_1 ((19UL))\000"
-.LASF2825:
+.LASF2821:
 	.ascii	"pin_get\000"
 .LASF1393:
 	.ascii	"CANAF_AFMR_ACCOFF ((uint32_t) (1))\000"
@@ -15676,8 +15428,6 @@ vTask_THD:
 	.ascii	"CAN_TFI_PRIO(n) ((uint32_t) ((n) & 0xFF))\000"
 .LASF471:
 	.ascii	"INT_LEAST16_MIN (-0x8000)\000"
-.LASF2531:
-	.ascii	"queueQUEUE_TYPE_SET ( ( uint8_t ) 0U )\000"
 .LASF96:
 	.ascii	"__INT8_C(c) c\000"
 .LASF2121:
@@ -15764,8 +15514,8 @@ vTask_THD:
 	.ascii	"RTC_CTIME0_SECONDS_MASK ((0x3F))\000"
 .LASF408:
 	.ascii	"__CLOCK_T_DEFINED \000"
-.LASF381:
-	.ascii	"__SIZEOF_LONG_LONG 8\000"
+.LASF2090:
+	.ascii	"WWDT_WDMOD_WDRESET ((uint32_t) (1 << 1))\000"
 .LASF1436:
 	.ascii	"DAC_VALUE(n) ((uint32_t) ((n & 0x3FF) << 6))\000"
 .LASF98:
@@ -15778,7 +15528,7 @@ vTask_THD:
 	.ascii	"CAN_STD_ENTRY_IE_MASK (0x01)\000"
 .LASF663:
 	.ascii	"BOOL_16 bool\000"
-.LASF2830:
+.LASF2826:
 	.ascii	"ITM_RxBuffer\000"
 .LASF907:
 	.ascii	"DWT_CPICNT_CPICNT_Pos 0\000"
@@ -15879,7 +15629,7 @@ vTask_THD:
 .LASF2497:
 	.ascii	"listCURRENT_LIST_LENGTH(pxList) ( ( pxList )->uxNum"
 	.ascii	"berOfItems )\000"
-.LASF2827:
+.LASF2823:
 	.ascii	"vTask_teclado\000"
 .LASF2507:
 	.ascii	"tskIDLE_PRIORITY ( ( UBaseType_t ) 0U )\000"
@@ -15891,8 +15641,8 @@ vTask_THD:
 	.ascii	"IAP_CMD_LOCKED 15\000"
 .LASF1140:
 	.ascii	"LPC_CANAF_BASE 0x4003C000\000"
-.LASF1384:
-	.ascii	"CAN_TSR_TCS(n) ((uint32_t) (1 << (n + 16)))\000"
+.LASF2755:
+	.ascii	"LED_IM_ALIVE 0, 16\000"
 .LASF120:
 	.ascii	"__UINTPTR_MAX__ 0xffffffffU\000"
 .LASF2148:
@@ -15951,7 +15701,7 @@ vTask_THD:
 	.ascii	"__PRIXMAX \"%llX\"\000"
 .LASF1688:
 	.ascii	"RET_SLAVE_RX 5\000"
-.LASF2836:
+.LASF2832:
 	.ascii	"sem_dac_ext_finish\000"
 .LASF1741:
 	.ascii	"I2C_I2DAT_IDLE_CHAR (0xFF)\000"
@@ -16133,8 +15883,8 @@ vTask_THD:
 	.ascii	"__IOEOF 0x40\000"
 .LASF55:
 	.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
-.LASF1204:
-	.ascii	"UART_IRQHandler UART0_IRQHandler\000"
+.LASF1439:
+	.ascii	"DAC_DBLBUF_ENA ((uint32_t) (1 << 1))\000"
 .LASF1584:
 	.ascii	"ENET_RHASH_DA 0x001FF000\000"
 .LASF622:
@@ -16192,7 +15942,7 @@ vTask_THD:
 	.ascii	"ITM_IRR_ATREADYM_Msk (1UL << ITM_IRR_ATREADYM_Pos)\000"
 .LASF2167:
 	.ascii	"__BOARD_API_H_ \000"
-.LASF2823:
+.LASF2819:
 	.ascii	"port\000"
 .LASF711:
 	.ascii	"SCB_ICSR_PENDSVCLR_Pos 27\000"
@@ -16243,8 +15993,8 @@ vTask_THD:
 	.ascii	"xQueueAltPeek(xQueue,pvBuffer,xTicksToWait) xQueueA"
 	.ascii	"ltGenericReceive( ( xQueue ), ( pvBuffer ), ( xTick"
 	.ascii	"sToWait ), pdTRUE )\000"
-.LASF1449:
-	.ascii	"ENET_MAC1_LOOPBACK 0x00000010\000"
+.LASF2057:
+	.ascii	"UART_RS485CTRL_SEL_DTR (1 << 3)\000"
 .LASF841:
 	.ascii	"ITM_TCR_BUSY_Pos 23\000"
 .LASF2397:
@@ -16259,8 +16009,8 @@ vTask_THD:
 	.ascii	"ENET_MCMD_READ 0x00000001\000"
 .LASF1611:
 	.ascii	"ENET_TINFO_EXCESS_COL 0x08000000\000"
-.LASF591:
-	.ascii	"__SCNoFAST64 \"%llo\"\000"
+.LASF381:
+	.ascii	"__SIZEOF_LONG_LONG 8\000"
 .LASF1672:
 	.ascii	"GPDMA_BSIZE_16 ((3UL))\000"
 .LASF2065:
@@ -16340,6 +16090,8 @@ vTask_THD:
 .LASF826:
 	.ascii	"SysTick_CTRL_TICKINT_Msk (1UL << SysTick_CTRL_TICKI"
 	.ascii	"NT_Pos)\000"
+.LASF118:
+	.ascii	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL\000"
 .LASF1992:
 	.ascii	"UART_IIR_INTID_MODEM (0 << 1)\000"
 .LASF2184:
@@ -16365,8 +16117,8 @@ vTask_THD:
 	.ascii	"listSECOND_LIST_ITEM_INTEGRITY_CHECK_VALUE \000"
 .LASF1413:
 	.ascii	"CANAF_FULCAN_MSG_AF_UPDATING (0x01)\000"
-.LASF1439:
-	.ascii	"DAC_DBLBUF_ENA ((uint32_t) (1 << 1))\000"
+.LASF1449:
+	.ascii	"ENET_MAC1_LOOPBACK 0x00000010\000"
 .LASF1928:
 	.ascii	"SSP_CR0_FRF_MICROWIRE ((uint32_t) (2 << 4))\000"
 .LASF2429:
@@ -16380,8 +16132,8 @@ vTask_THD:
 	.ascii	"IAP_REPID_CMD 54\000"
 .LASF899:
 	.ascii	"DWT_CTRL_CYCTAP_Pos 9\000"
-.LASF2821:
-	.ascii	"tft_font_t\000"
+.LASF468:
+	.ascii	"INT16_MIN (-0x8000)\000"
 .LASF2391:
 	.ascii	"traceTASK_CREATE(pxNewTCB) \000"
 .LASF1905:
@@ -16423,8 +16175,8 @@ vTask_THD:
 	.ascii	"CAN_IER_ALIE ((uint32_t) (1 << 6))\000"
 .LASF137:
 	.ascii	"__FLT_HAS_DENORM__ 1\000"
-.LASF2818:
-	.ascii	"FontWidth\000"
+.LASF1727:
+	.ascii	"I2C_I2STAT_S_RX_GENCALL_ACK ((0x70))\000"
 .LASF2777:
 	.ascii	"short int\000"
 .LASF560:
@@ -16674,8 +16426,8 @@ vTask_THD:
 	.ascii	"__DEC64_EPSILON__ 1E-15DD\000"
 .LASF771:
 	.ascii	"SCB_SHCSR_BUSFAULTPENDED_Pos 14\000"
-.LASF118:
-	.ascii	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL\000"
+.LASF563:
+	.ascii	"INT_FAST64_MAX 0x7fffffffffffffffLL\000"
 .LASF2293:
 	.ascii	"pdFREERTOS_ERRNO_ECANCELED 140\000"
 .LASF926:

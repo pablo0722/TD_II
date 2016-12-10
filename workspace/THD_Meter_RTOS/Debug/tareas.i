@@ -15957,7 +15957,7 @@ void arm_rfft_fast_f32(
 #define USE_ADC ON
 #define USE_DAC ON
 #define USE_FFT ON
-#define USE_TFT ON
+#define USE_TFT OFF
 #define USE_RTOS ON
 
 
@@ -16040,7 +16040,6 @@ static inline void pin_gpio_init(uint8_t port, uint8_t pin, uint32_t mode,
 
 
  Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, 0x0);
-
  Chip_GPIO_SetDir(((LPC_GPIO_T *) 0x2009C000), port, pin, (uint8_t)salida);
 
  if(salida)
@@ -16507,8 +16506,8 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
 
-#define LED_IM_ALIVE_INIT 1, 0, MD_PLN, SALIDA
-#define LED_IM_ALIVE 1, 0
+#define LED_IM_ALIVE_INIT 0, 16, MD_PLN, SALIDA
+#define LED_IM_ALIVE 0, 16
 
 
 #define LED_1_INIT 1, 1, MD_PLN, SALIDA
@@ -16577,36 +16576,10 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
  void vTask_tft(void *pvParameters)
  {
-
-   tft_Fill(0x0000);
-   tft_Puts(0, 0, "TECNICAS DIGITALES", &tft_Font_11x18, 0x07E0, 0x0000);
-   tft_Puts(120, 25, "II", &tft_Font_11x18, 0xF800, 0x0000);
-   tft_Puts(0, 50, "PROCESAMIENTO DE", &tft_Font_11x18, 0x001F, 0x0000);
-   tft_Puts(100, 75, "AUDIO", &tft_Font_11x18, 0x001F, 0x0000);
-   tft_Puts(0, 100, "MENU", &tft_Font_11x18, 0x001F, 0x0000);
-   tft_Puts(50, 125, "Reverb", &tft_Font_11x18, 0x001F, 0x0000);
-   tft_Puts( 50, 150, "Echo", &tft_Font_11x18, 0x001F, 0x0000);
-   tft_Puts(50, 175, "High Pass Filter", &tft_Font_11x18, 0x001F, 0x0000);
-   tft_Puts(50, 200, "Low Pass Filter", &tft_Font_11x18, 0x001F, 0x0000);
-
-   tft_DrawFilledCircle(30, 135, 7, 0xFFFF);
-   tft_DrawFilledCircle(30, 160, 7, 0xFFFF);
-   tft_DrawFilledCircle(30, 185, 7, 0xFFFF);
-   tft_DrawFilledCircle(30, 210, 7, 0xFFFF);
-
-
+# 60 "../src/tareas.c"
   while(1)
   {
-
-    if(flag_dac_send)
-     tft_Puts(200, 20, "Boton 0", &tft_Font_11x18, 0xF800, 0x0000);
-    if(flag_do_thd)
-     tft_Puts(200, 20, "Boton 1", &tft_Font_11x18, 0x07E0, 0x0000);
-    if(flag_do_rem)
-     tft_Puts(200, 20, "Boton 2", &tft_Font_11x18, 0x001F, 0x0000);
-
-    vTaskDelay(100/( ( TickType_t ) 1000 / ( ( TickType_t ) 1000 ) ));
-
+# 72 "../src/tareas.c"
   }
  }
 

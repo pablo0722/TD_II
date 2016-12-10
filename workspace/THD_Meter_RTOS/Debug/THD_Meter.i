@@ -15997,7 +15997,7 @@ void arm_rfft_fast_f32(
 #define USE_ADC ON
 #define USE_DAC ON
 #define USE_FFT ON
-#define USE_TFT ON
+#define USE_TFT OFF
 #define USE_RTOS ON
 
 
@@ -16080,7 +16080,6 @@ static inline void pin_gpio_init(uint8_t port, uint8_t pin, uint32_t mode,
 
 
  Chip_IOCON_PinMux(((LPC_IOCON_T *) 0x4002C000), port, pin, mode, 0x0);
-
  Chip_GPIO_SetDir(((LPC_GPIO_T *) 0x2009C000), port, pin, (uint8_t)salida);
 
  if(salida)
@@ -16547,8 +16546,8 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
 
-#define LED_IM_ALIVE_INIT 1, 0, MD_PLN, SALIDA
-#define LED_IM_ALIVE 1, 0
+#define LED_IM_ALIVE_INIT 0, 16, MD_PLN, SALIDA
+#define LED_IM_ALIVE 0, 16
 
 
 #define LED_1_INIT 1, 1, MD_PLN, SALIDA

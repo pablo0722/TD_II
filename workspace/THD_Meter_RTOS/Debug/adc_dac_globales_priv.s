@@ -10417,7 +10417,7 @@ dma_dac_ext_canal:
 	.uleb128 0x1c77
 	.4byte	.LASF2631
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.utilidades.h.27.754c52679afafffb22bd854bcb8fe334,comdat
+	.section	.debug_macro,"G",%progbits,wm4.utilidades.h.27.7953e4c421cbccbf3a101e6dec5e80be,comdat
 .Ldebug_macro54:
 	.2byte	0x4
 	.byte	0
@@ -10785,7 +10785,7 @@ dma_dac_ext_canal:
 	.uleb128 0x2e
 	.4byte	.LASF2745
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.header.h.55.bb54484b9311461e29b31dd901ef5ff0,comdat
+	.section	.debug_macro,"G",%progbits,wm4.header.h.55.19eed82b19e4c74fe5e72b84ad6bd540,comdat
 .Ldebug_macro61:
 	.2byte	0x4
 	.byte	0
@@ -10868,7 +10868,7 @@ dma_dac_ext_canal:
 	.uleb128 0x6b
 	.4byte	.LASF2771
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.adc_dac_header_priv.h.9.f296693c43f9c95dbc57f2c081155d0c,comdat
+	.section	.debug_macro,"G",%progbits,wm4.adc_dac_header_priv.h.9.a42582b758b66c6e3a015378c27aeb8c,comdat
 .Ldebug_macro62:
 	.2byte	0x4
 	.byte	0
@@ -10888,13 +10888,13 @@ dma_dac_ext_canal:
 	.uleb128 0x1e
 	.4byte	.LASF2776
 	.byte	0x5
-	.uleb128 0x21
+	.uleb128 0x27
 	.4byte	.LASF2777
 	.byte	0x5
-	.uleb128 0x22
+	.uleb128 0x28
 	.4byte	.LASF2778
 	.byte	0x5
-	.uleb128 0x23
+	.uleb128 0x29
 	.4byte	.LASF2779
 	.byte	0x5
 	.uleb128 0x2c
@@ -10909,13 +10909,13 @@ dma_dac_ext_canal:
 	.uleb128 0x34
 	.4byte	.LASF2783
 	.byte	0x5
-	.uleb128 0x37
+	.uleb128 0x3d
 	.4byte	.LASF2784
 	.byte	0x5
-	.uleb128 0x38
+	.uleb128 0x3e
 	.4byte	.LASF2785
 	.byte	0x5
-	.uleb128 0x39
+	.uleb128 0x3f
 	.4byte	.LASF2786
 	.byte	0x5
 	.uleb128 0x42
@@ -11126,6 +11126,8 @@ dma_dac_ext_canal:
 	.ascii	"CAN_CMR_STB(n) ((uint32_t) (1 << (n + 5)))\000"
 .LASF1709:
 	.ascii	"I2C_I2STAT_NO_INF ((0xF8))\000"
+.LASF2778:
+	.ascii	"I2SRX_WS 0,24, MD_PLN, IOCON_FUNC2\000"
 .LASF2739:
 	.ascii	"REST 2,5\000"
 .LASF2111:
@@ -11493,6 +11495,8 @@ dma_dac_ext_canal:
 	.ascii	"ITM_TPR_PRIVMASK_Pos 0\000"
 .LASF1411:
 	.ascii	"CANAF_FULLCAN_MSG_ID11_POS (0)\000"
+.LASF2783:
+	.ascii	"TX_CONFIG TX_CONFIG1\000"
 .LASF2406:
 	.ascii	"traceMALLOC(pvAddress,uiSize) \000"
 .LASF556:
@@ -11668,8 +11672,6 @@ dma_dac_ext_canal:
 	.ascii	"MPU_RASR_SRD_Msk (0xFFUL << MPU_RASR_SRD_Pos)\000"
 .LASF2079:
 	.ascii	"UART_SYNCCTRL_FES (1 << 2)\000"
-.LASF2786:
-	.ascii	"I2STX_SDA 0, 9, MD_PLN, IOCON_FUNC1\000"
 .LASF2247:
 	.ascii	"pdFAIL ( pdFALSE )\000"
 .LASF2601:
@@ -11911,8 +11913,6 @@ dma_dac_ext_canal:
 	.ascii	"MPU_TYPE_SEPARATE_Pos 0\000"
 .LASF1497:
 	.ascii	"ENET_MWTD_DATA(n) ((n) & 0xFFFF)\000"
-.LASF2754:
-	.ascii	"LED_IM_ALIVE_INIT 1, 0, MD_PLN, SALIDA\000"
 .LASF716:
 	.ascii	"SCB_ICSR_PENDSTCLR_Msk (1UL << SCB_ICSR_PENDSTCLR_P"
 	.ascii	"os)\000"
@@ -12258,7 +12258,7 @@ dma_dac_ext_canal:
 .LASF129:
 	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
 .LASF2776:
-	.ascii	"RX_CONFIG RX_CONFIG0\000"
+	.ascii	"RX_CONFIG RX_CONFIG1\000"
 .LASF541:
 	.ascii	"__SCNdFAST32 \"%d\"\000"
 .LASF838:
@@ -12333,6 +12333,8 @@ dma_dac_ext_canal:
 	.ascii	"__SIZEOF_FLOAT__COMPLEX 8\000"
 .LASF1215:
 	.ascii	"SYSCTL_PD_DPDFLAG (1 << 11)\000"
+.LASF2777:
+	.ascii	"I2SRX_CLK 0,23, MD_PLN, IOCON_FUNC2\000"
 .LASF2738:
 	.ascii	"READ_DATA 0,6\000"
 .LASF1312:
@@ -12616,6 +12618,8 @@ dma_dac_ext_canal:
 	.ascii	"SCB_ICSR_VECTACTIVE_Pos 0\000"
 .LASF1033:
 	.ascii	"MPU_RASR_S_Pos 18\000"
+.LASF2779:
+	.ascii	"I2SRX_SDA 0,25, MD_PLN, IOCON_FUNC2\000"
 .LASF1274:
 	.ascii	"CAN_MOD_LOM ((uint32_t) (1 << 1))\000"
 .LASF674:
@@ -12948,8 +12952,6 @@ dma_dac_ext_canal:
 	.ascii	"__SCNo16 \"%ho\"\000"
 .LASF1815:
 	.ascii	"I2S_IRQ_TX_ENABLE ((uint32_t) (1 << 1))\000"
-.LASF2779:
-	.ascii	"I2SRX_SDA 0,6, MD_PLN, IOCON_FUNC1\000"
 .LASF1232:
 	.ascii	"IOCON_FUNC2 0x2\000"
 .LASF736:
@@ -13465,8 +13467,6 @@ dma_dac_ext_canal:
 	.ascii	"LPC_REGFILE_BASE 0x40024044\000"
 .LASF695:
 	.ascii	"NVIC_STIR_INTID_Pos 0\000"
-.LASF2783:
-	.ascii	"TX_CONFIG TX_CONFIG0\000"
 .LASF743:
 	.ascii	"SCB_AIRCR_VECTRESET_Pos 0\000"
 .LASF909:
@@ -14074,8 +14074,6 @@ dma_dac_ext_canal:
 	.ascii	"LPC_I2C2 ((LPC_I2C_T *) LPC_I2C2_BASE)\000"
 .LASF1723:
 	.ascii	"I2C_I2STAT_M_RX_DAT_ACK ((0x50))\000"
-.LASF2639:
-	.ascii	"USE_TFT ON\000"
 .LASF1208:
 	.ascii	"SYSCTL_RST_POR (1 << 0)\000"
 .LASF2136:
@@ -14143,6 +14141,8 @@ dma_dac_ext_canal:
 	.ascii	"CR_ARM_MATH_H_ \000"
 .LASF2254:
 	.ascii	"pdINTEGRITY_CHECK_VALUE 0x5a5a5a5aUL\000"
+.LASF2639:
+	.ascii	"USE_TFT OFF\000"
 .LASF392:
 	.ascii	"__EXIT_SUCCESS 0\000"
 .LASF115:
@@ -14422,6 +14422,8 @@ dma_dac_ext_canal:
 	.ascii	"QueueHandle_t\000"
 .LASF2175:
 	.ascii	"EOF (-1)\000"
+.LASF2754:
+	.ascii	"LED_IM_ALIVE_INIT 0, 16, MD_PLN, SALIDA\000"
 .LASF2474:
 	.ascii	"configUSE_TASK_FPU_SUPPORT 1\000"
 .LASF954:
@@ -14574,8 +14576,6 @@ dma_dac_ext_canal:
 	.ascii	"TX_CONFIG0 0\000"
 .LASF2765:
 	.ascii	"ADC_FSYNC 0, 7\000"
-.LASF2777:
-	.ascii	"I2SRX_CLK 0,4, MD_PLN, IOCON_FUNC1\000"
 .LASF2903:
 	.ascii	"fftLenBy2\000"
 .LASF1474:
@@ -14927,8 +14927,6 @@ dma_dac_ext_canal:
 	.ascii	"inited(x) : __isfinitel(x))\000"
 .LASF1031:
 	.ascii	"MPU_RASR_TEX_Pos 19\000"
-.LASF2755:
-	.ascii	"LED_IM_ALIVE 1, 0\000"
 .LASF834:
 	.ascii	"SysTick_CALIB_NOREF_Msk (1UL << SysTick_CALIB_NOREF"
 	.ascii	"_Pos)\000"
@@ -15002,6 +15000,8 @@ dma_dac_ext_canal:
 	.ascii	"portDOUBLE double\000"
 .LASF2131:
 	.ascii	"IAP_INVALID_STOP_BIT 18\000"
+.LASF2755:
+	.ascii	"LED_IM_ALIVE 0, 16\000"
 .LASF1354:
 	.ascii	"CAN_BTR_SAM ((uint32_t) (1 << 23))\000"
 .LASF318:
@@ -15022,6 +15022,8 @@ dma_dac_ext_canal:
 	.ascii	"__START_CRITICAL_REGION() do {} while (0)\000"
 .LASF2388:
 	.ascii	"traceQUEUE_RECEIVE_FROM_ISR_FAILED(pxQueue) \000"
+.LASF2786:
+	.ascii	"I2STX_SDA 2, 13, MD_PLN, IOCON_FUNC3\000"
 .LASF2209:
 	.ascii	"configTICK_RATE_HZ ( ( portTickType ) 1000 )\000"
 .LASF2448:
@@ -15393,6 +15395,8 @@ dma_dac_ext_canal:
 	.ascii	"__BOARD_API_H_ \000"
 .LASF1520:
 	.ascii	"ENET_TSV0_BROADCAST 0x00000020\000"
+.LASF2785:
+	.ascii	"I2STX_WS 2, 12, MD_PLN, IOCON_FUNC3\000"
 .LASF2248:
 	.ascii	"errQUEUE_EMPTY ( ( BaseType_t ) 0 )\000"
 .LASF459:
@@ -15621,8 +15625,6 @@ dma_dac_ext_canal:
 	.ascii	"FF))\000"
 .LASF1120:
 	.ascii	"LPC_GPIO0_BASE 0x2009C000\000"
-.LASF2778:
-	.ascii	"I2SRX_WS 0,5, MD_PLN, IOCON_FUNC1\000"
 .LASF400:
 	.ascii	"FILEHANDLE int\000"
 .LASF609:
@@ -16615,8 +16617,6 @@ dma_dac_ext_canal:
 	.ascii	"CoreDebug_DHCSR_S_REGRDY_Pos 16\000"
 .LASF862:
 	.ascii	"ITM_IRR_ATREADYM_Msk (1UL << ITM_IRR_ATREADYM_Pos)\000"
-.LASF2785:
-	.ascii	"I2STX_WS 0, 8, MD_PLN, IOCON_FUNC1\000"
 .LASF711:
 	.ascii	"SCB_ICSR_PENDSVCLR_Pos 27\000"
 .LASF1509:
@@ -16648,6 +16648,8 @@ dma_dac_ext_canal:
 	.ascii	"__ARM_FEATURE_CLZ 1\000"
 .LASF550:
 	.ascii	"__SCNuFAST32 \"%u\"\000"
+.LASF2784:
+	.ascii	"I2STX_CLK 2, 11, MD_PLN, IOCON_FUNC3\000"
 .LASF1444:
 	.ascii	"ENET_MAC1_MASK 0xcf1f\000"
 .LASF1910:
@@ -17228,8 +17230,6 @@ dma_dac_ext_canal:
 	.ascii	"__PRIoFAST32 \"%o\"\000"
 .LASF7:
 	.ascii	"__GNUC_PATCHLEVEL__ 1\000"
-.LASF2784:
-	.ascii	"I2STX_CLK 0, 7, MD_PLN, IOCON_FUNC1\000"
 .LASF2860:
 	.ascii	"CANAF_RAM_SECTION_NUM\000"
 	.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-branch revision 237715]"
