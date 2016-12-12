@@ -74,7 +74,7 @@
 
 	void vTask_THD(void *pvParameters)
 	{
-		q31_t num = 0; 	// Es la raiz cuadrada de la suma cuadratica de los armonicos de la DEP (numerador del THD)
+		//q31_t num = 0; 	// Es la raiz cuadrada de la suma cuadratica de los armonicos de la DEP (numerador del THD)
 		uint32_t i;
 
 		for(i=0; i<FFT_SIZE*2; i++)

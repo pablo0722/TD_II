@@ -15954,37 +15954,24 @@ void arm_rfft_fast_f32(
 
 #define USE_UART OFF
 #define USE_TIMER ON
-#define USE_ADC ON
-#define USE_DAC ON
+#define USE_ADC OFF
+#define USE_DAC OFF
 #define USE_FFT ON
-#define USE_TFT OFF
+#define USE_TFT ON
 #define USE_RTOS ON
 
 
 
 
 #define DEBUG_MODE OFF
-# 72 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
-#define USE_ADC_INTERNO OFF
-#define USE_ADC_EXTERNO ON
-# 83 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
-#define ADC_EXTERNO_INTERRUPCION 0
-#define ADC_EXTERNO_DMA 1
-#define ADC_EXTERNO_MODO ADC_EXTERNO_DMA
+# 117 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+#define USE_DMA OFF
 
 
 
 
 
-#define USE_DAC_INTERNO OFF
-#define USE_DAC_EXTERNO ON
-# 102 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
-#define DAC_EXTERNO_INTERRUPCION 0
-#define DAC_EXTERNO_DMA 1
-#define DAC_EXTERNO_MODO DAC_EXTERNO_DMA
-# 115 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
-#define USE_DMA ON
-# 124 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+
 #define USE_I2S OFF
 
 
@@ -16165,40 +16152,6 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
  void adc_dac_init();
-
-
-  void adc_ext_prepare(volatile uint32_t *buffer_A,
-         volatile uint32_t *buffer_B);
-  void adc_ext_start();
-  void adc_ext_post_procesamiento();
-# 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-  uint32_t dac_ext_set_data(uint32_t data);
-  void dac_ext_prepare(volatile uint32_t *buffer);
-  void dac_ext_send();
-# 48 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-#define ADC_DMA_CANT_MUESTRAS 2048
-#define ADC_FREQ 32000
-
-
-
-#define DAC_DMA_CANT_MUESTRAS 2048
-#define DAC_FREQ ADC_FREQ
-
-
-
-
-
-
-  extern volatile uint32_t *dma_adc_ext_memory;
-
-
-   extern SemaphoreHandle_t sem_adc_ext_proc;
-
-
-
-
-
-   extern SemaphoreHandle_t sem_dac_ext_finish;
 # 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 1
 # 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
@@ -16544,24 +16497,3 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 #define DAC_DATA_INIT 0, 9, MD_PLN, SALIDA
 #define DAC_DATA 0, 9
 # 10 "../ADC_DAC/adc_dac_globales.c" 2
-
-
-
-
- volatile uint32_t * dma_adc_ext_memory
-            __attribute__ ((section (".bss.$RamAHB32"))) = 
-# 15 "../ADC_DAC/adc_dac_globales.c" 3 4
-                                                          ((void *)0)
-# 15 "../ADC_DAC/adc_dac_globales.c"
-                                                              ;
-
-
-  SemaphoreHandle_t sem_adc_ext_proc
-            __attribute__ ((section (".bss.$RamAHB32")));
-
-
-
-
-
-  SemaphoreHandle_t sem_dac_ext_finish
-            __attribute__ ((section (".bss.$RamAHB32")));

@@ -15954,37 +15954,24 @@ void arm_rfft_fast_f32(
 
 #define USE_UART OFF
 #define USE_TIMER ON
-#define USE_ADC ON
-#define USE_DAC ON
+#define USE_ADC OFF
+#define USE_DAC OFF
 #define USE_FFT ON
-#define USE_TFT OFF
+#define USE_TFT ON
 #define USE_RTOS ON
 
 
 
 
 #define DEBUG_MODE OFF
-# 72 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
-#define USE_ADC_INTERNO OFF
-#define USE_ADC_EXTERNO ON
-# 83 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
-#define ADC_EXTERNO_INTERRUPCION 0
-#define ADC_EXTERNO_DMA 1
-#define ADC_EXTERNO_MODO ADC_EXTERNO_DMA
+# 117 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+#define USE_DMA OFF
 
 
 
 
 
-#define USE_DAC_INTERNO OFF
-#define USE_DAC_EXTERNO ON
-# 102 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
-#define DAC_EXTERNO_INTERRUPCION 0
-#define DAC_EXTERNO_DMA 1
-#define DAC_EXTERNO_MODO DAC_EXTERNO_DMA
-# 115 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
-#define USE_DMA ON
-# 124 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/utilidades.h"
+
 #define USE_I2S OFF
 
 
@@ -16165,40 +16152,6 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
  void adc_dac_init();
-
-
-  void adc_ext_prepare(volatile uint32_t *buffer_A,
-         volatile uint32_t *buffer_B);
-  void adc_ext_start();
-  void adc_ext_post_procesamiento();
-# 34 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-  uint32_t dac_ext_set_data(uint32_t data);
-  void dac_ext_prepare(volatile uint32_t *buffer);
-  void dac_ext_send();
-# 48 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\ADC_DAC/adc_dac_header.h"
-#define ADC_DMA_CANT_MUESTRAS 2048
-#define ADC_FREQ 32000
-
-
-
-#define DAC_DMA_CANT_MUESTRAS 2048
-#define DAC_FREQ ADC_FREQ
-
-
-
-
-
-
-  extern volatile uint32_t *dma_adc_ext_memory;
-
-
-   extern SemaphoreHandle_t sem_adc_ext_proc;
-
-
-
-
-
-   extern SemaphoreHandle_t sem_dac_ext_finish;
 # 17 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\inc/header.h" 2
 # 1 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h" 1
 # 11 "D:\\UTN\\Git\\TD_II\\TD_II\\workspace\\THD_Meter_RTOS\\TIMER/timer_header.h"
@@ -16554,42 +16507,6 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 
  void adc_ext_pre_procesamiento();
-
-
-
-
-
-
-#define AOUT 0,26
-
-
-
-
-#define RX_CONFIG0 0
-#define RX_CONFIG1 1
-#define RX_CONFIG RX_CONFIG1
-# 39 "../ADC_DAC/private/adc_dac_header_priv.h"
-#define I2SRX_CLK 0,23, MD_PLN, IOCON_FUNC2
-#define I2SRX_WS 0,24, MD_PLN, IOCON_FUNC2
-#define I2SRX_SDA 0,25, MD_PLN, IOCON_FUNC2
-
-
-#define RX_MCLK 4, 28, MD_PLN, IOCON_FUNC1
-
-
-
-
-
-#define TX_CONFIG0 0
-#define TX_CONFIG1 1
-#define TX_CONFIG TX_CONFIG1
-# 61 "../ADC_DAC/private/adc_dac_header_priv.h"
-#define I2STX_CLK 2, 11, MD_PLN, IOCON_FUNC3
-#define I2STX_WS 2, 12, MD_PLN, IOCON_FUNC3
-#define I2STX_SDA 2, 13, MD_PLN, IOCON_FUNC3
-
-
-#define TX_MCLK 4, 29, MD_PLN, IOCON_FUNC1
 # 85 "../ADC_DAC/private/adc_dac_header_priv.h"
 #define STATUS_ADC_IDLE -1
 #define STATUS_ADC_TRANSFIRIENDO_A 0x00
@@ -16604,30 +16521,6 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 #define STATUS_ADC_PROC2ERR(status) status += 2
 #define STATUS_ADC_PROC2TRANS(status) status &= 0x01
-
-
-
-
-
-
-  extern DMA_TransferDescriptor_t *dma_adc_ext_descriptor;
-  extern DMA_TransferDescriptor_t dma_adc_ext_descriptor_A;
-  extern DMA_TransferDescriptor_t dma_adc_ext_descriptor_B;
-
-  extern volatile uint32_t *dma_adc_ext_memory_A;
-  extern volatile uint32_t *dma_adc_ext_memory_B;
-
-  extern uint8_t dma_adc_ext_canal;
-
-  extern volatile int8_t dma_adc_ext_status;
-
-
-
-  extern DMA_TransferDescriptor_t dma_dac_ext_descriptor;
-
-  extern volatile uint32_t * dma_dac_ext_memory;
-
-  extern uint8_t dma_dac_ext_canal;
 # 134 "../ADC_DAC/private/adc_dac_header_priv.h"
 # 1 "../ADC_DAC/private/adc_dac_init_priv.h" 1
 # 9 "../ADC_DAC/private/adc_dac_init_priv.h"
@@ -16637,311 +16530,5 @@ static inline void pin_init(uint8_t port, uint8_t pin, uint32_t mode, uint8_t fu
 
 # 1 "../ADC_DAC/private/adc_dac_header_priv.h" 1
 # 14 "../ADC_DAC/private/adc_dac_init_priv.h" 2
-
-
-
- static inline void dma_init()
- {
-# 83 "../ADC_DAC/private/adc_dac_init_priv.h"
-  char flag_init = 1;
-
-  if(flag_init)
-  {
-
-
-
-
-   Chip_GPDMA_Init(((LPC_GPDMA_T *) 0x50004000));
-   NVIC_DisableIRQ(DMA_IRQn);
-
-
-   NVIC_SetPriority(DMA_IRQn, ((0x01<<3)|0x01));
-   NVIC_EnableIRQ(DMA_IRQn);
-# 105 "../ADC_DAC/private/adc_dac_init_priv.h"
-    dma_dac_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
-# 122 "../ADC_DAC/private/adc_dac_init_priv.h"
-    dma_adc_ext_canal = Chip_GPDMA_GetFreeChannel(((LPC_GPDMA_T *) 0x50004000), 0);
-# 137 "../ADC_DAC/private/adc_dac_init_priv.h"
-   flag_init = 0;
-  }
- }
-
-
-
-
-
- static Status getClkDiv(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format, uint16_t *pxDiv, uint16_t *pyDiv, uint32_t *pN)
- {
-  uint32_t pClk;
-  uint32_t x, y;
-  uint64_t divider;
-  uint16_t dif;
-  uint16_t xDiv = 0, yDiv = 0;
-  uint32_t N;
-  uint16_t err, ErrorOptimal = 0xFFFF;
-
-
-  pClk = Chip_Clock_GetPeripheralClockRate(SYSCTL_PCLK_I2S);
-
-
-
-
-
-  divider = (((uint64_t) (format->SampleRate) * 2 * (format->WordWidth) * 2) << 16) / pClk;
-
-  for (N = 64; N > 0; N--) {
-   if ((divider * N) < (1 << 16)) {
-    break;
-   }
-  }
-  if (N == 0) {
-   return ERROR;
-  }
-  divider *= N;
-  for (y = 255; y > 0; y--) {
-   x = y * divider;
-   if (x & (0xFF000000)) {
-    continue;
-   }
-   dif = x & 0xFFFF;
-   if (dif > 0x8000) {
-    err = 0x10000 - dif;
-   }
-   else {
-    err = dif;
-   }
-   if (err == 0) {
-    yDiv = y;
-    break;
-   }
-   else if (err < ErrorOptimal) {
-    ErrorOptimal = err;
-    yDiv = y;
-   }
-  }
-  xDiv = ((uint64_t) yDiv * (format->SampleRate) * 2 * (format->WordWidth) * N * 2) / pClk;
-  if (xDiv >= 256) {
-   xDiv = 0xFF;
-  }
-  if (xDiv == 0) {
-   xDiv = 1;
-  }
-
-  *pxDiv = xDiv;
-  *pyDiv = yDiv;
-  *pN = N;
-  return SUCCESS;
- }
-
-
-
- static inline Status mi_Chip_I2S_TxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
- {
-  uint32_t temp;
-  uint16_t xDiv, yDiv;
-  uint32_t N;
-
-
-  if (getClkDiv(pI2S, format, &xDiv, &yDiv, &N) == ERROR)
-  {
-   return ERROR;
-  }
-
-  temp = pI2S->DAO & (~(((uint32_t) (3)) | ((uint32_t) (1 << 2)) | ((uint32_t) (1 << 5)) | ((uint32_t) ((0x1FF) << 6))));
-  if (format->WordWidth <= 8)
-  {
-   temp |= (0UL << 0);
-  }
-  else if (format->WordWidth <= 16)
-  {
-   temp |= (1UL << 0);
-  }
-  else
-  {
-   temp |= (3UL << 0);
-  }
-
-  temp |= (format->ChannelNumber) == 1 ? (1UL << 2) : (0UL << 2);
-  temp |= (0UL << 5);
-  temp |= ((uint32_t) (((format->WordWidth - 1) & 0x1FF) << 6));
-  pI2S->DAO = temp;
-
-  pI2S->TXMODE = 0x8;
-
-  Chip_Clock_GetPeripheralClockRate(SYSCTL_PCLK_I2S);
-
-  xDiv = 32;
-  yDiv = 125;
-
-  pI2S->TXBITRATE = 5;
-
-  pI2S->TXRATE = yDiv | (xDiv << 8);
-  return SUCCESS;
- }
-
-
-
- static inline Status mi_Chip_I2S_RxConfig(LPC_I2S_T *pI2S, I2S_AUDIO_FORMAT_T *format)
- {
-  uint32_t temp;
-  uint16_t xDiv, yDiv;
-  uint32_t N;
-
-  if (getClkDiv(pI2S, format, &xDiv, &yDiv, &N) == ERROR) {
-   return ERROR;
-  }
-  temp = pI2S->DAI & (~(((uint32_t) (3)) | ((uint32_t) (1 << 2)) | ((uint32_t) (1 << 5)) | ((uint32_t) ((0x1FF) << 6))));
-  if (format->WordWidth <= 8)
-  {
-   temp |= (0UL << 0);
-  }
-  else if (format->WordWidth <= 16)
-  {
-   temp |= (1UL << 0);
-  }
-  else
-  {
-   temp |= (3UL << 0);
-  }
-
-  temp |= (format->ChannelNumber) == 1 ? (1UL << 2) : (0UL << 2);
-  temp |= (0UL << 5);
-  temp |= ((uint32_t) (((format->WordWidth - 1) & 0x1FF) << 6));
-  pI2S->DAI = temp;
-
-  pI2S->RXMODE = 0x8;
-
-  Chip_Clock_GetPeripheralClockRate(SYSCTL_PCLK_I2S);
-
-  xDiv = 32;
-  yDiv = 125;
-
-  pI2S->RXBITRATE = 5;
-
-  pI2S->RXRATE = yDiv | (xDiv << 8);
-  return SUCCESS;
- }
-
-
- static inline void i2s_init()
- {
-
-
-
-
-
-
-    { ( sem_adc_ext_proc ) = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) ); if( ( sem_adc_ext_proc ) != 
-# 306 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
-   ((void *)0) 
-# 306 "../ADC_DAC/private/adc_dac_init_priv.h"
-   ) { ( void ) xQueueGenericSend( ( QueueHandle_t ) ( ( sem_adc_ext_proc ) ), 
-# 306 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
-   ((void *)0)
-# 306 "../ADC_DAC/private/adc_dac_init_priv.h"
-   , ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) ); } };
-    xQueueGenericReceive( ( QueueHandle_t ) ( sem_adc_ext_proc ), 
-# 307 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
-   ((void *)0)
-# 307 "../ADC_DAC/private/adc_dac_init_priv.h"
-   , ( ( TickType_t ) 0xffffffffUL ), ( ( BaseType_t ) 0 ) );
-
-
-    { ( sem_dac_ext_finish ) = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) ); if( ( sem_dac_ext_finish ) != 
-# 310 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
-   ((void *)0) 
-# 310 "../ADC_DAC/private/adc_dac_init_priv.h"
-   ) { ( void ) xQueueGenericSend( ( QueueHandle_t ) ( ( sem_dac_ext_finish ) ), 
-# 310 "../ADC_DAC/private/adc_dac_init_priv.h" 3 4
-   ((void *)0)
-# 310 "../ADC_DAC/private/adc_dac_init_priv.h"
-   , ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) ); } };
-
-
-
-
-
-  I2S_AUDIO_FORMAT_T audio_Confg;
-
-
-  audio_Confg.SampleRate = 32000;
-  audio_Confg.ChannelNumber = 2;
-  audio_Confg.WordWidth = 32;
-
-
-  Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_I2S, SYSCTL_CLKDIV_1);
-
-  Chip_I2S_Init(((LPC_I2S_T *) 0x400A8000));
-  NVIC_DisableIRQ(I2S_IRQn);
-  NVIC_SetPriority(I2S_IRQn, ((0x01<<3)|0x01));
-
-
-
-   pin_init(0,23, (0x2), 0x2);
-   pin_init(0,25, (0x2), 0x2);
-   pin_init(0,24, (0x2), 0x2);
-   pin_init(4, 28, (0x2), 0x1);
-
-
-
-
-   pin_init(2, 11, (0x2), 0x3);
-   pin_init(2, 13, (0x2), 0x3);
-   pin_init(2, 12, (0x2), 0x3);
-   pin_init(4, 29, (0x2), 0x1);
-
-
-
-  Chip_Clock_SetPCLKDiv(SYSCTL_PCLK_I2S, SYSCTL_CLKDIV_1);
-
-  Chip_I2S_Init(((LPC_I2S_T *) 0x400A8000));
-  NVIC_DisableIRQ(I2S_IRQn);
-
-  Chip_I2S_RxStop(((LPC_I2S_T *) 0x400A8000));
-  Chip_I2S_TxStop(((LPC_I2S_T *) 0x400A8000));
-  Chip_I2S_EnableMute(((LPC_I2S_T *) 0x400A8000));
-
-
-  Chip_I2S_DisableMute(((LPC_I2S_T *) 0x400A8000));
-  Chip_I2S_RxStart(((LPC_I2S_T *) 0x400A8000));
-  Chip_I2S_TxStart(((LPC_I2S_T *) 0x400A8000));
-
-
-
-
-   Chip_I2S_Int_RxCmd(((LPC_I2S_T *) 0x400A8000), ENABLE, 1);
-   mi_Chip_I2S_RxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
-
-
-    Chip_I2S_DMA_RxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_1, ENABLE, 1);
-# 379 "../ADC_DAC/private/adc_dac_init_priv.h"
-   Chip_I2S_Int_TxCmd(((LPC_I2S_T *) 0x400A8000), ENABLE, 1);
-   mi_Chip_I2S_TxConfig(((LPC_I2S_T *) 0x400A8000), &audio_Confg);
-
-
-    Chip_I2S_DMA_TxCmd(((LPC_I2S_T *) 0x400A8000), I2S_DMA_REQUEST_CHANNEL_2, ENABLE, 1);
-# 457 "../ADC_DAC/private/adc_dac_init_priv.h"
- }
 # 135 "../ADC_DAC/private/adc_dac_header_priv.h" 2
 # 11 "../ADC_DAC/adc_dac_irq.c" 2
-
-
-
- void DMA_IRQHandler(void)
- {
-# 154 "../ADC_DAC/adc_dac_irq.c"
-  if(Chip_GPDMA_Interrupt(((LPC_GPDMA_T *) 0x50004000), dma_adc_ext_canal))
-  {
-
-   Chip_GPDMA_SGTransfer(((LPC_GPDMA_T *) 0x50004000), dma_dac_ext_canal,
-         &dma_dac_ext_descriptor,
-         GPDMA_TRANSFERTYPE_M2P_CONTROLLER_DMA);
-  }
-  if(Chip_GPDMA_Interrupt(((LPC_GPDMA_T *) 0x50004000), dma_dac_ext_canal))
-  {
-   Chip_GPDMA_SGTransfer(((LPC_GPDMA_T *) 0x50004000), dma_adc_ext_canal,
-         &dma_adc_ext_descriptor_A,
-         GPDMA_TRANSFERTYPE_P2M_CONTROLLER_DMA);
-  }
-
- }

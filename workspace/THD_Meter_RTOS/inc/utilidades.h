@@ -34,10 +34,10 @@
 // ***** PERIFERICOS (init) ***** //
 	#define USE_UART	OFF
 	#define USE_TIMER	ON
-	#define USE_ADC		ON
-	#define USE_DAC		ON
+	#define USE_ADC		OFF
+	#define USE_DAC		OFF
 	#define USE_FFT		ON
-	#define USE_TFT		OFF
+	#define USE_TFT		ON
 	#define USE_RTOS	ON
 // ****************************** //
 
