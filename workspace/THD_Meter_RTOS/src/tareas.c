@@ -74,8 +74,8 @@
 
 	void vTask_THD(void *pvParameters)
 	{
-		//q31_t num = 0; 	// Es la raiz cuadrada de la suma cuadratica de los armonicos de la DEP (numerador del THD)
-		uint32_t i;
+		//q31_t num = 0; 	// Es la raiz cuadrada de la suma de los armonicos de la DEP (numerador del THD)
+		uint32_t i, j;
 
 		for(i=0; i<FFT_SIZE*2; i++)
 			buffer_dac_out[i] = i*128;
@@ -118,8 +118,10 @@
 						// Armado del numerador de la división, sumará armonicos hasta el fin del vector, el denominador es max_val
 					for(i=2; i*fft_max_idx < FFT_SIZE; i++)
 					{
-						num += buffer_dep[i*fft_max_idx];
-						i++;
+						for(j = -FFT_ANCHO_LOBULO; j <= FFT_ANCHO_LOBULO; j++);
+						{
+							num += buffer_dep[i*fft_max_idx + j];
+						}
 					}
 
 					arm_sqrt_q31(num, &num);
